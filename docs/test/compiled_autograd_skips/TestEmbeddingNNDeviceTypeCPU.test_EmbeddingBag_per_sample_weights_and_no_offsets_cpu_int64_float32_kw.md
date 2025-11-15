@@ -1,0 +1,4 @@
+# Keywords: TestEmbeddingNNDeviceTypeCPU.test_EmbeddingBag_per_sample_weights_and_no_offsets_cpu_int64_float32
+
+## Keyword Index
+
