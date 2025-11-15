@@ -1,0 +1,311 @@
+# Documentation: `docs/aten/src/ATen/native/cuda/CuFFTUtils.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/cuda/CuFFTUtils.h_docs.md`
+- **Size**: 4,530 bytes (4.42 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/native/cuda/CuFFTUtils.h`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/cuda/CuFFTUtils.h`
+- **Size**: 1,931 bytes (1.89 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#pragma once
+
+#include <ATen/Config.h>
+
+#include <string>
+#include <stdexcept>
+#include <sstream>
+#include <cufft.h>
+#include <cufftXt.h>
+
+namespace at { namespace native {
+
+// This means that max dim is 3 + 2 = 5 with batch dimension and possible
+// complex dimension
+constexpr int max_rank = 3;
+
+static inline std::string _cudaGetErrorEnum(cufftResult error)
+{
+  switch (error)
+  {
+    case CUFFT_SUCCESS:
+      return "CUFFT_SUCCESS";
+    case CUFFT_INVALID_PLAN:
+      return "CUFFT_INVALID_PLAN";
+    case CUFFT_ALLOC_FAILED:
+      return "CUFFT_ALLOC_FAILED";
+    case CUFFT_INVALID_TYPE:
+      return "CUFFT_INVALID_TYPE";
+    case CUFFT_INVALID_VALUE:
+      return "CUFFT_INVALID_VALUE";
+    case CUFFT_INTERNAL_ERROR:
+      return "CUFFT_INTERNAL_ERROR";
+    case CUFFT_EXEC_FAILED:
+      return "CUFFT_EXEC_FAILED";
+    case CUFFT_SETUP_FAILED:
+      return "CUFFT_SETUP_FAILED";
+    case CUFFT_INVALID_SIZE:
+      return "CUFFT_INVALID_SIZE";
+    case CUFFT_UNALIGNED_DATA:
+      return "CUFFT_UNALIGNED_DATA";
+    case CUFFT_INVALID_DEVICE:
+      return "CUFFT_INVALID_DEVICE";
+    case CUFFT_NO_WORKSPACE:
+      return "CUFFT_NO_WORKSPACE";
+    case CUFFT_NOT_IMPLEMENTED:
+      return "CUFFT_NOT_IMPLEMENTED";
+#if CUDA_VERSION <= 12090
+    case CUFFT_INCOMPLETE_PARAMETER_LIST:
+      return "CUFFT_INCOMPLETE_PARAMETER_LIST";
+    case CUFFT_PARSE_ERROR:
+      return "CUFFT_PARSE_ERROR";
+#endif
+#if !defined(USE_ROCM) && CUDA_VERSION <= 12090
+    case CUFFT_LICENSE_ERROR:
+      return "CUFFT_LICENSE_ERROR";
+#endif
+    case CUFFT_NOT_SUPPORTED:
+      return "CUFFT_NOT_SUPPORTED";
+    default:
+      std::ostringstream ss;
+      ss << "unknown error " << error;
+      return ss.str();
+  }
+}
+
+static inline void CUFFT_CHECK(cufftResult error)
+{
+  if (error != CUFFT_SUCCESS) {
+    std::ostringstream ss;
+    ss << "cuFFT error: " << _cudaGetErrorEnum(error);
+    TORCH_CHECK(false, ss.str());
+  }
+}
+
+}} // at::native
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 2 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `native`, `at`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native/cuda`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/Config.h`
+- `string`
+- `stdexcept`
+- `sstream`
+- `cufft.h`
+- `cufftXt.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native/cuda`):
+
+- [`LogcumsumexpKernel.cu_docs.md`](./LogcumsumexpKernel.cu_docs.md)
+- [`WeightNorm.cu_docs.md`](./WeightNorm.cu_docs.md)
+- [`SparseBinaryOpIntersectionKernel.cu_docs.md`](./SparseBinaryOpIntersectionKernel.cu_docs.md)
+- [`jit_utils.cpp_docs.md`](./jit_utils.cpp_docs.md)
+- [`ReduceNormKernel.cu_docs.md`](./ReduceNormKernel.cu_docs.md)
+- [`BinaryMiscOpsKernels.cu_docs.md`](./BinaryMiscOpsKernels.cu_docs.md)
+- [`RowwiseScaledMM.h_docs.md`](./RowwiseScaledMM.h_docs.md)
+- [`fused_adamw_amsgrad_impl.cuh_docs.md`](./fused_adamw_amsgrad_impl.cuh_docs.md)
+- [`Col2Im.cu_docs.md`](./Col2Im.cu_docs.md)
+- [`DistributionRandomKernel.cu_docs.md`](./DistributionRandomKernel.cu_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `CuFFTUtils.h_docs.md`
+- **Keyword Index**: `CuFFTUtils.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native/cuda`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native/cuda`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native/cuda`):
+
+- [`DeviceSqrt.cuh_kw.md_docs.md`](./DeviceSqrt.cuh_kw.md_docs.md)
+- [`UnaryGeometricAsinKernel.cu_kw.md_docs.md`](./UnaryGeometricAsinKernel.cu_kw.md_docs.md)
+- [`Distributions.cpp_docs.md_docs.md`](./Distributions.cpp_docs.md_docs.md)
+- [`fused_adamw_impl.cu_docs.md_docs.md`](./fused_adamw_impl.cu_docs.md_docs.md)
+- [`TensorTopK.h_kw.md_docs.md`](./TensorTopK.h_kw.md_docs.md)
+- [`ReduceOps.cpp_kw.md_docs.md`](./ReduceOps.cpp_kw.md_docs.md)
+- [`FusedSgdKernel.cu_docs.md_docs.md`](./FusedSgdKernel.cu_docs.md_docs.md)
+- [`Distributions.cu_kw.md_docs.md`](./Distributions.cu_kw.md_docs.md)
+- [`block_reduce.cuh_docs.md_docs.md`](./block_reduce.cuh_docs.md_docs.md)
+- [`fused_adagrad_impl.cuh_kw.md_docs.md`](./fused_adagrad_impl.cuh_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `CuFFTUtils.h_docs.md_docs.md`
+- **Keyword Index**: `CuFFTUtils.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,82 @@
+# Keyword Index: `docs/torch/nativert/graph/passes/pass_manager/PassPipeline.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/nativert/graph/passes/pass_manager/PassPipeline.h_kw.md](../../../../../../../docs/torch/nativert/graph/passes/pass_manager/PassPipeline.h_kw.md)
+- **Documentation**: [`PassPipeline.h_kw.md_docs.md`](./PassPipeline.h_kw.md_docs.md)
+- **Folder**: `docs/torch/nativert/graph/passes/pass_manager`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Architecture`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Basic`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Class`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Complete`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Considerations`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Dependencies`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Design`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Detailed`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Documentation`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Efficiency`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Extracted`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`File`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Folder`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Functions`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Generated`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`GraphPassPipeline`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`GraphPassRegistry`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`High`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`How`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`In`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Includes`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Index`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Information`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Keyword`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Keywords`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Level`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Map`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Metadata`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Namespaces`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Original`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Overview`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`PassPipeline`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Performance`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Purpose`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`PyTorch`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Related`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Repository`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Safety`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Section`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Security`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Source`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Structs`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`System`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Testing`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`The`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`This`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+- **`Usage`**: [PassPipeline.h_kw.md_docs.md](./PassPipeline.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

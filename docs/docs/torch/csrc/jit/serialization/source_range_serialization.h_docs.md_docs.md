@@ -1,0 +1,303 @@
+# Documentation: `docs/torch/csrc/jit/serialization/source_range_serialization.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/jit/serialization/source_range_serialization.h_docs.md`
+- **Size**: 4,449 bytes (4.34 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/csrc/jit/serialization/source_range_serialization.h`
+
+## File Metadata
+
+- **Path**: `torch/csrc/jit/serialization/source_range_serialization.h`
+- **Size**: 1,666 bytes (1.63 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#pragma once
+
+#include <c10/core/Allocator.h>
+#include <torch/csrc/jit/frontend/source_range.h>
+
+#include <ATen/core/ivalue.h>
+
+#include <unordered_map>
+#include <vector>
+
+namespace c10 {
+struct IValue;
+}
+
+namespace torch::jit {
+
+class Pickler;
+class SourceRangeSerializer;
+static constexpr size_t kByteOffsetIndex = 0;
+static constexpr size_t kSourceRangeIndex = 1;
+static constexpr size_t kSourceRangeTagIndex = 2;
+constexpr std::string_view kFormatWithStringTable = "FORMAT_WITH_STRING_TABLE";
+
+class SourceRangePickler {
+ public:
+  SourceRangePickler();
+
+  std::vector<char> pickle(
+      const SourceRangeRecords& ranges,
+      const SourceRangeTagMap& source_range_tags);
+
+ private:
+  std::shared_ptr<SourceRangeSerializer> srs;
+};
+
+class SourceRangeDeserializer {
+ public:
+  SourceRangeDeserializer() = default;
+  explicit SourceRangeDeserializer(const c10::IValue& text_table) {
+    for (const auto& x : text_table.toTuple()->elements()) {
+      text_table_.emplace_back(std::make_shared<std::string>(x.toStringRef()));
+    }
+  }
+  SourceRange deserialize(const c10::IValue& iv);
+
+ private:
+  std::shared_ptr<Source> deserialize_source(const c10::IValue& iv);
+  std::unordered_map<
+      c10::intrusive_ptr<c10::ivalue::Tuple>,
+      std::shared_ptr<Source>>
+      cached_sources;
+  std::vector<std::shared_ptr<std::string>> text_table_;
+};
+
+class SourceRangeUnpickler {
+ public:
+  virtual std::optional<SourceRange> findSourceRangeThatGenerated(
+      const SourceRange& range) = 0;
+
+  virtual ~SourceRangeUnpickler() = default;
+};
+
+TORCH_API void setShouldUseFormatWithStringTable(
+    bool should_use_format_with_string_table);
+
+} // namespace torch::jit
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 5 class(es)/struct(s) and 3 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`, `c10`
+
+**Classes/Structs**: `IValue`, `Pickler`, `SourceRangeSerializer`, `SourceRangePickler`, `SourceRangeDeserializer`, `SourceRangeUnpickler`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/jit/serialization`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `c10/core/Allocator.h`
+- `torch/csrc/jit/frontend/source_range.h`
+- `ATen/core/ivalue.h`
+- `unordered_map`
+- `vector`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Implements or uses **caching** mechanisms.
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- **Serialization**: Uses pickle - be cautious with untrusted data
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/jit/serialization`):
+
+- [`import_read.h_docs.md`](./import_read.h_docs.md)
+- [`unpickler.h_docs.md`](./unpickler.h_docs.md)
+- [`import_export_functions.h_docs.md`](./import_export_functions.h_docs.md)
+- [`import.h_docs.md`](./import.h_docs.md)
+- [`pickle.cpp_docs.md`](./pickle.cpp_docs.md)
+- [`source_range_serialization_impl.h_docs.md`](./source_range_serialization_impl.h_docs.md)
+- [`mobile_bytecode_generated.h_docs.md`](./mobile_bytecode_generated.h_docs.md)
+- [`import_export_helpers.cpp_docs.md`](./import_export_helpers.cpp_docs.md)
+- [`import_export_constants.h_docs.md`](./import_export_constants.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `source_range_serialization.h_docs.md`
+- **Keyword Index**: `source_range_serialization.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/jit/serialization`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/jit/serialization`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Implements or uses **caching** mechanisms.
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- **Serialization**: Uses pickle - be cautious with untrusted data
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/jit/serialization`):
+
+- [`pickler.h_docs.md_docs.md`](./pickler.h_docs.md_docs.md)
+- [`onnx.h_kw.md_docs.md`](./onnx.h_kw.md_docs.md)
+- [`import_export_functions.h_docs.md_docs.md`](./import_export_functions.h_docs.md_docs.md)
+- [`import_export_helpers.h_docs.md_docs.md`](./import_export_helpers.h_docs.md_docs.md)
+- [`flatbuffer_serializer_jit.cpp_kw.md_docs.md`](./flatbuffer_serializer_jit.cpp_kw.md_docs.md)
+- [`source_range_serialization.cpp_kw.md_docs.md`](./source_range_serialization.cpp_kw.md_docs.md)
+- [`export.cpp_kw.md_docs.md`](./export.cpp_kw.md_docs.md)
+- [`import_read.h_kw.md_docs.md`](./import_read.h_kw.md_docs.md)
+- [`pickle.cpp_kw.md_docs.md`](./pickle.cpp_kw.md_docs.md)
+- [`export_bytecode.cpp_docs.md_docs.md`](./export_bytecode.cpp_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `source_range_serialization.h_docs.md_docs.md`
+- **Keyword Index**: `source_range_serialization.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

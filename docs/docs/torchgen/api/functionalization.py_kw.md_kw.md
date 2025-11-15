@@ -1,0 +1,77 @@
+# Keyword Index: `docs/torchgen/api/functionalization.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torchgen/api/functionalization.py_kw.md](../../../../docs/torchgen/api/functionalization.py_kw.md)
+- **Documentation**: [`functionalization.py_kw.md_docs.md`](./functionalization.py_kw.md_docs.md)
+- **Folder**: `docs/torchgen/api`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`Architecture`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`Basic`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`Classs`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`Complete`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`Considerations`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`Dependencies`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`Design`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`Detailed`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`Documentation`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`Efficiency`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`Extracted`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`File`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`Folder`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`Functions`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`Generated`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`High`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`How`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`Imports`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`In`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`Index`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`Information`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`Keyword`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`Keywords`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`Level`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`Map`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`Metadata`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`Original`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`Overview`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`Performance`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`Purpose`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`PyTorch`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`Related`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`Repository`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`Safety`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`Section`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`Security`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`Source`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`System`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`Testing`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`The`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`This`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+- **`Usage`**: [functionalization.py_kw.md_docs.md](./functionalization.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

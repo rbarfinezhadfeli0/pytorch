@@ -1,0 +1,292 @@
+# Documentation: `docs/torch/csrc/utils/init.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/utils/init.cpp_docs.md`
+- **Size**: 4,829 bytes (4.72 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/csrc/utils/init.cpp`
+
+## File Metadata
+
+- **Path**: `torch/csrc/utils/init.cpp`
+- **Size**: 2,261 bytes (2.21 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#include <ATen/core/ivalue.h>
+#include <torch/csrc/utils/init.h>
+#include <torch/csrc/utils/throughput_benchmark.h>
+
+#include <pybind11/functional.h>
+#include <torch/csrc/utils/pybind.h>
+
+namespace torch::throughput_benchmark {
+
+void initThroughputBenchmarkBindings(PyObject* module) {
+  auto m = py::handle(module).cast<py::module>();
+  using namespace torch::throughput_benchmark;
+  py::class_<BenchmarkConfig>(m, "BenchmarkConfig")
+      .def(py::init<>())
+      .def_readwrite(
+          "num_calling_threads", &BenchmarkConfig::num_calling_threads)
+      .def_readwrite("num_worker_threads", &BenchmarkConfig::num_worker_threads)
+      .def_readwrite("num_warmup_iters", &BenchmarkConfig::num_warmup_iters)
+      .def_readwrite("num_iters", &BenchmarkConfig::num_iters)
+      .def_readwrite(
+          "profiler_output_path", &BenchmarkConfig::profiler_output_path);
+
+  py::class_<BenchmarkExecutionStats>(m, "BenchmarkExecutionStats")
+      .def_readonly("latency_avg_ms", &BenchmarkExecutionStats::latency_avg_ms)
+      .def_readonly("num_iters", &BenchmarkExecutionStats::num_iters);
+
+  py::class_<ThroughputBenchmark>(m, "ThroughputBenchmark", py::dynamic_attr())
+      .def(py::init<jit::Module>())
+      .def(py::init<py::object>())
+      .def(
+          "add_input",
+          [](ThroughputBenchmark& self, py::args args, py::kwargs kwargs) {
+            self.addInput(std::move(args), std::move(kwargs));
+          })
+      .def(
+          "run_once",
+          [](ThroughputBenchmark& self,
+             const py::args& args,
+             const py::kwargs& kwargs) {
+            // Depending on this being ScriptModule of nn.Module we will release
+            // the GIL or not further down in the stack
+            return self.runOnce(args, kwargs);
+          })
+      .def(
+          "benchmark",
+          [](ThroughputBenchmark& self, const BenchmarkConfig& config) {
+            // The benchmark always runs without the GIL. GIL will be used where
+            // needed. This will happen only in the nn.Module mode when
+            // manipulating inputs and running actual inference
+            pybind11::gil_scoped_release no_gil_guard;
+            return self.benchmark(config);
+          });
+}
+
+} // namespace torch::throughput_benchmark
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 1 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/utils`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/core/ivalue.h`
+- `torch/csrc/utils/init.h`
+- `torch/csrc/utils/throughput_benchmark.h`
+- `pybind11/functional.h`
+- `torch/csrc/utils/pybind.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/utils`):
+
+- [`tensor_list.h_docs.md`](./tensor_list.h_docs.md)
+- [`disable_torch_function.cpp_docs.md`](./disable_torch_function.cpp_docs.md)
+- [`tensor_new.cpp_docs.md`](./tensor_new.cpp_docs.md)
+- [`tensor_apply.cpp_docs.md`](./tensor_apply.cpp_docs.md)
+- [`cpp_stacktraces.cpp_docs.md`](./cpp_stacktraces.cpp_docs.md)
+- [`numpy_stub.h_docs.md`](./numpy_stub.h_docs.md)
+- [`nested.h_docs.md`](./nested.h_docs.md)
+- [`nested.cpp_docs.md`](./nested.cpp_docs.md)
+- [`six.h_docs.md`](./six.h_docs.md)
+- [`python_scalars.h_docs.md`](./python_scalars.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `init.cpp_docs.md`
+- **Keyword Index**: `init.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/utils`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/utils`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/utils`):
+
+- [`python_tuples.h_kw.md_docs.md`](./python_tuples.h_kw.md_docs.md)
+- [`six.h_kw.md_docs.md`](./six.h_kw.md_docs.md)
+- [`tensor_types.cpp_docs.md_docs.md`](./tensor_types.cpp_docs.md_docs.md)
+- [`tensor_list.h_kw.md_docs.md`](./tensor_list.h_kw.md_docs.md)
+- [`verbose.h_kw.md_docs.md`](./verbose.h_kw.md_docs.md)
+- [`invalid_arguments.cpp_kw.md_docs.md`](./invalid_arguments.cpp_kw.md_docs.md)
+- [`tensor_apply.h_kw.md_docs.md`](./tensor_apply.h_kw.md_docs.md)
+- [`cuda_enabled.h_docs.md_docs.md`](./cuda_enabled.h_docs.md_docs.md)
+- [`tensor_layouts.h_docs.md_docs.md`](./tensor_layouts.h_docs.md_docs.md)
+- [`variadic.h_kw.md_docs.md`](./variadic.h_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `init.cpp_docs.md_docs.md`
+- **Keyword Index**: `init.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

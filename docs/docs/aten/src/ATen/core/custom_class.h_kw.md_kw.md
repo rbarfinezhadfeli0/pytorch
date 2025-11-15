@@ -1,0 +1,83 @@
+# Keyword Index: `docs/aten/src/ATen/core/custom_class.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/core/custom_class.h_kw.md](../../../../../../docs/aten/src/ATen/core/custom_class.h_kw.md)
+- **Documentation**: [`custom_class.h_kw.md_docs.md`](./custom_class.h_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/core`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Analysis`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Architecture`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Basic`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Class`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`ClassType`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Complete`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Considerations`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Dependencies`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Design`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Detailed`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Documentation`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Efficiency`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Exception`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Export`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Extracted`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`File`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Folder`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Generated`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`High`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`How`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`In`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Includes`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Index`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Information`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Keyword`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Keywords`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Level`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Macros`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Map`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Metadata`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Namespaces`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Original`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Overview`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Performance`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Purpose`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`PyTorch`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Related`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Repository`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Safety`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Section`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Security`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Source`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Structs`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`System`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Testing`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`The`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`This`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+- **`Usage`**: [custom_class.h_kw.md_docs.md](./custom_class.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

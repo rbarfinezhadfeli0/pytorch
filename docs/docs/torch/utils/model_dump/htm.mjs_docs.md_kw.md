@@ -1,0 +1,91 @@
+# Keyword Index: `docs/torch/utils/model_dump/htm.mjs_docs.md`
+
+## File Information
+
+- **Original File**: [docs/torch/utils/model_dump/htm.mjs_docs.md](../../../../../docs/torch/utils/model_dump/htm.mjs_docs.md)
+- **Documentation**: [`htm.mjs_docs.md_docs.md`](./htm.mjs_docs.md_docs.md)
+- **Folder**: `docs/torch/utils/model_dump`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Apache`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Architecture`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Code`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Common`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Considerations`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Cross`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Dependencies`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Dependency`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Design`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Detailed`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Documentation`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Examples`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Extension`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`File`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Files`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Folder`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`For`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Generated`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`HTM`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`High`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Idioms`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Import`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Index`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`KB`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Keyword`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Level`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`License`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Manual`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Map`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Metadata`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`No`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Notes`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Object`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Original`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Overview`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Path`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Patterns`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Performance`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Purpose`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`PyTorch`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`References`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Related`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Repository`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Role`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Safety`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Security`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`See`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Size`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Source`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Structure`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`System`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Test`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Testing`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`This`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Type`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+- **`Usage`**: [htm.mjs_docs.md_docs.md](./htm.mjs_docs.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,88 @@
+# Keyword Index: `test/inductor/test_indexing.py`
+
+## File Information
+
+- **Original File**: [test/inductor/test_indexing.py](../../../test/inductor/test_indexing.py)
+- **Documentation**: [`test_indexing.py_docs.md`](./test_indexing.py_docs.md)
+- **Folder**: `test/inductor`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`ExprPrinterTests`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`TestIndexingSimplification`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+
+### Functions
+
+- **`f`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`foo`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`test_expand_floor_div_applied`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`test_expand_floor_div_skipped`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`test_floordiv_div_sympy_is_integer_bug`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`test_indexing_join`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`test_indexing_simplification`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`test_int8_unpack`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`test_modular_indexing_pairs_merged`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`test_modular_indexing_pairs_not_merged`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`test_modular_indexing_positive`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`test_print_Min_Max`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`test_print_ceil`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`test_print_floor`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`test_print_floor_div`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`test_print_integer`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`test_print_mod`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`test_print_mod_index`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`test_print_pow`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`test_print_python_mod`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`test_print_round`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`test_print_round_decimal`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+
+### Imports
+
+- **`GPU_TYPE`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`SizeVarAllocator`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`TestCase`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`benchmarker`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`cexpr`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`os`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`pexpr`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`run_and_get_triton_code`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`run_tests`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`sympy`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`sys`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`texpr`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`torch`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`torch._inductor.codegen.cpp`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`torch._inductor.codegen.triton`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`torch._inductor.codegen.wrapper`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`torch._inductor.runtime.benchmarking`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`torch._inductor.sizevars`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`torch._inductor.test_case`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`torch._inductor.utils`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`torch.testing._internal.inductor_utils`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`torch.utils._sympy.functions`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+- **`unittest`**: [test_indexing.py_docs.md](./test_indexing.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

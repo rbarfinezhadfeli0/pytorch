@@ -1,0 +1,424 @@
+# Documentation: `docs/test/dynamo/test_higher_order_ops.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/test/dynamo/test_higher_order_ops.py_kw.md`
+- **Size**: 28,256 bytes (27.59 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `test/dynamo/test_higher_order_ops.py`
+
+## File Information
+
+- **Original File**: [test/dynamo/test_higher_order_ops.py](../../../test/dynamo/test_higher_order_ops.py)
+- **Documentation**: [`test_higher_order_ops.py_docs.md`](./test_higher_order_ops.py_docs.md)
+- **Folder**: `test/dynamo`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`ActivationCheckpointingTests`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`Foo`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`FuncTorchHigherOrderOpTests`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`GraphModule`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`HigherOrderOpTests`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`HigherOrderOpVmapGuardTests`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`MockModule`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`Mod`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`Module`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`MyClass`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`MyMode`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`MyModule`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`Obj`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`SomeEnum`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`TestHigherOrderOpsOpInfo`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`ToyModel`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`_FallthroughTestOnly`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`hints_wrapper_body_0`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`hints_wrapper_body_1`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`wrap_body_0`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`wrap_body_1`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+
+### Functions
+
+- **`_`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`__call__`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`__init__`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`__torch_dispatch__`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`_assert_wrap_fallback`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`_check_cond_graph_and_extract`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`_check_map_graph_and_extract`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`_check_size_stride_contiguous`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`_compile_check`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`_construct_pytree`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`_get_source_fn_stack`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`_reduce_max`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`_reduce_sum`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`_test_wrap_simple`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`_validate`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`assert_dict_matches_regex`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`bad_fn`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`body`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`cond_f`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`cos`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`count_ops`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`default_args_generator`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`does_side_effect`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`does_side_effect_wrapped`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`f`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`false_branch`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`false_fn`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`false_fn2`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`find_first_node`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`fn`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`fn_2`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`fn_nested`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`fn_with_hints`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`forward`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`g`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`get_vjp`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`gn`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`h`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`inner`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`inner2`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`inner_body_fn`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`inner_does_side_effect`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`inner_f`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`inner_fn`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`k`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`map_f`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`my_args_generator`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`my_hop_fn`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`my_hop_fn_2`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`my_hop_fn_2_impl`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`my_hop_fn_impl`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`op_count`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`outer`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`outer_body_fn`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`outer_wrapped`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`output_mismatch_test`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`ref_fn`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`save_activations`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`setup`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`sin`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`tearDown`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_access_module_attr`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_allow_python_side_effects_utility`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_capture_constants`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_capture_global_num`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_capture_global_num_adds_guard`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_capture_input_num`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_capture_numpy_number`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_capture_tracked`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_capture_tracked_nested`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_capture_untracked_global`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_capture_untracked_global_nested`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_capture_untracked_nonlocal`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_capture_value_created_in_subgraph`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_concat_unbacked_shape_tensor`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_cond_branches_no_arguments`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_cond_branches_no_arguments_no_closure`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_cond_free_variable_in_both_branches`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_cond_graph_break_in_one_branch`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_cond_pytree_operands`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_cond_pytree_operands_with_non_tensor_leaves`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_cond_side_effect_in_one_branches`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_cond_source_fn_stack`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_cond_subgraph_name_is_valid`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_cond_with_constant_pred`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_cond_with_empty_operands`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_cond_with_invalid_kwargs`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_cond_with_kwargs`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_cond_with_mismatched_output`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_dropout`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_dropout_inductor`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_dual_level_guard`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_dynamic_shapes_over_vmap_batch_size`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_emit_functorch_guard_if_active`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_enum_arg`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_error_message_sane`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_fallback`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_fallback_on_graph_break_complicated`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_fallback_on_graph_break_simple`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_flat_list_output`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_flop_counter_for_cond`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_flop_counter_for_cond_unbalanced_branches`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_flop_counter_for_nested_cond`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_fn_with_kwargs_in_torch_ops`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_freevars_as_inputs_to_wrap`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_function`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_function_with_kwargs`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_functional_call`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_functional_call_disable_inline_nn_module`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_functional_call_sequential_params_and_buffers`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_grad`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_grad_call_compiled_backward_fn`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_grad_call_torch_compile_fn`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_grad_capture_tensor`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_grad_closure_scalar`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_grad_fn_with_kwargs`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_grad_freevar_python_scalar`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_grad_freevar_tensor`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_grad_guard_fail`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_grad_has_aux`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_grad_non_tensor_input`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_grad_over_grad`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_grad_pytree`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_grad_recompile`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_grad_source_fn_stack`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_grad_two_tensor_all_grad_has_aux`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_grad_two_tensor_has_aux`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_grad_with_graph_break`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_grad_with_side_effect`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_hessian`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_hessian_argnums`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_hints_wrapper`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_hints_wrapper_incorrect_type`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_hints_wrapper_no_hints`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_hints_wrapper_pytree_inputs`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_hooks`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_hopify_generic_wrap`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_hops_compile`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_inlined_functions`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_internal_nonlocal`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_jacfwd`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_jacfwd_has_aux`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_jacfwd_randomness`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_jacfwd_two_tensors_argnums`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_jacrev`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_jacrev_has_aux`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_jacrev_two_tensors_argnums`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_jvp_call_torch_compile_fn`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_jvp_freevar_python_scalar`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_jvp_freevar_tensor`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_jvp_guard_fail`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_jvp_has_aux`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_jvp_jvp`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_jvp_simple`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_jvp_two_tensors_disable_enable_disable_grad`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_jvp_two_tensors_disable_grad`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_jvp_two_tensors_has_aux`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_lift_tensor_constant`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_lift_tensors_with_compound_expressions`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_lift_tensors_with_shared_symbols`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_linearize_jvp_fn`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_linearize_recompiles`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_make_closure`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_map_example_value_metadata_consistent_with_eager`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_map_graph_break`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_map_kwargs`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_map_lowers_to_graph`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_map_multi_return`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_map_pytree_return`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_map_side_effect`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_map_source_fn_stack`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_map_subgraph_name_is_valid`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_map_symint_input`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_module`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_modules`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_nested_tuple_output`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_nested_wrap`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_no_freevars`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_non_aliasing_util`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_output_with_dict`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_override_fallthrough_dispatch_key`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_register_mode`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_register_subclass`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_return_captured_var`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_return_captured_var_used_multiple_times`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_return_captured_vars`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_same_freevar_twice`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_side_effect_del_existing_attr_global_module`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_side_effect_del_existing_attr_global_obj`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_side_effect_del_existing_attr_nonlocal_module`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_side_effect_del_existing_attr_nonlocal_obj`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_side_effect_in_body`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_side_effect_local_list_append_no_graph_break`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_side_effect_mutate_global_list`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_side_effect_mutate_global_num`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_side_effect_mutate_global_num_builtin`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_side_effect_mutate_global_tensor`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_side_effect_mutate_global_tensor_builtin`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`test_side_effect_mutate_nonlocal_num`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+
+### Imports
+
+- **`FlopCounterMode`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`LoggingTestCase`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`TwoTensor`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`_assert_tensors_nonaliasing`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`aot_autograd`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`cond_op`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`copy`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`counters`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`deepcopy`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`dynamo_bypassing_wrapper`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`enum`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`functools`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`functorch.experimental.control_flow`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`hints_wrapper`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`hop_db`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`map_dense`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`numpy`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`pprint`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`re`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`requires_cuda_and_triton`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`run_tests`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`torch`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`torch._dynamo.backends.common`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`torch._dynamo.config`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`torch._dynamo.test_case`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`torch._dynamo.testing`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`torch._dynamo.utils`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`torch._dynamo.variables.higher_order_ops`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`torch._functorch.config`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`torch._higher_order_ops.cond`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`torch._higher_order_ops.hints_wrap`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`torch._higher_order_ops.map`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`torch._higher_order_ops.wrap`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`torch.nn`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`torch.testing._internal.common_device_type`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`torch.testing._internal.hop_db`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`torch.testing._internal.logging_utils`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`torch.testing._internal.triton_utils`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`torch.testing._internal.two_tensor`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`torch.utils._pytree`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`torch.utils.checkpoint`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`torch.utils.flop_counter`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`unittest`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`warnings`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+- **`wrap`**: [test_higher_order_ops.py_docs.md](./test_higher_order_ops.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/dynamo`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/dynamo`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/dynamo/test_higher_order_ops.py_kw.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/dynamo`):
+
+- [`test_error_messages.py_docs.md_docs.md`](./test_error_messages.py_docs.md_docs.md)
+- [`test_hooks.py_kw.md_docs.md`](./test_hooks.py_kw.md_docs.md)
+- [`test_unittest.py_docs.md_docs.md`](./test_unittest.py_docs.md_docs.md)
+- [`test_minifier.py_kw.md_docs.md`](./test_minifier.py_kw.md_docs.md)
+- [`test_aot_autograd.py_kw.md_docs.md`](./test_aot_autograd.py_kw.md_docs.md)
+- [`test_einops.py_docs.md_docs.md`](./test_einops.py_docs.md_docs.md)
+- [`test_compile.py_kw.md_docs.md`](./test_compile.py_kw.md_docs.md)
+- [`test_misc.py_docs.md_docs.md`](./test_misc.py_docs.md_docs.md)
+- [`test_buffers_override.py_kw.md_docs.md`](./test_buffers_override.py_kw.md_docs.md)
+- [`test_frame_init.py_docs.md_docs.md`](./test_frame_init.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_higher_order_ops.py_kw.md_docs.md`
+- **Keyword Index**: `test_higher_order_ops.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

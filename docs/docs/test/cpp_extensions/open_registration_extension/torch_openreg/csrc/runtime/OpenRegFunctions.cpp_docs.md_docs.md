@@ -1,0 +1,321 @@
+# Documentation: `docs/test/cpp_extensions/open_registration_extension/torch_openreg/csrc/runtime/OpenRegFunctions.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/cpp_extensions/open_registration_extension/torch_openreg/csrc/runtime/OpenRegFunctions.cpp_docs.md`
+- **Size**: 4,885 bytes (4.77 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/cpp_extensions/open_registration_extension/torch_openreg/csrc/runtime/OpenRegFunctions.cpp`
+
+## File Metadata
+
+- **Path**: `test/cpp_extensions/open_registration_extension/torch_openreg/csrc/runtime/OpenRegFunctions.cpp`
+- **Size**: 2,158 bytes (2.11 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**.
+
+## Original Source
+
+```cpp
+#include <c10/util/Exception.h>
+#include <include/openreg.h>
+
+#include "OpenRegException.h"
+#include "OpenRegFunctions.h"
+
+namespace c10::openreg {
+
+orError_t GetDeviceCount(int* dev_count) {
+  return orGetDeviceCount(dev_count);
+}
+
+orError_t GetDevice(DeviceIndex* device) {
+  int tmp_device = -1;
+  auto err = orGetDevice(&tmp_device);
+  *device = static_cast<DeviceIndex>(tmp_device);
+  return err;
+}
+// LITERALINCLUDE START: OPENREG SetDevice FUNCTION
+orError_t SetDevice(DeviceIndex device) {
+  int cur_device = -1;
+  OPENREG_CHECK(orGetDevice(&cur_device));
+  if (device == cur_device) {
+    return orSuccess;
+  }
+  return orSetDevice(device);
+}
+// LITERALINCLUDE END: OPENREG SetDevice FUNCTION
+
+int device_count_impl() {
+  int count = 0;
+  GetDeviceCount(&count);
+  return count;
+}
+
+OPENREG_EXPORT DeviceIndex device_count() noexcept {
+  // initialize number of devices only once
+  static int count = []() {
+    try {
+      auto result = device_count_impl();
+      TORCH_CHECK(
+          result <= std::numeric_limits<DeviceIndex>::max(),
+          "Too many devices, DeviceIndex overflowed");
+      return result;
+    } catch (const Error& ex) {
+      // We don't want to fail, but still log the warning
+      // msg() returns the message without the stack trace
+      TORCH_WARN("Device initialization: ", ex.msg());
+      return 0;
+    }
+  }();
+  return static_cast<DeviceIndex>(count);
+}
+
+OPENREG_EXPORT DeviceIndex current_device() {
+  DeviceIndex cur_device = -1;
+  OPENREG_CHECK(GetDevice(&cur_device));
+  return cur_device;
+}
+
+// LITERALINCLUDE START: OPENREG set_device FUNCTION
+OPENREG_EXPORT void set_device(DeviceIndex device) {
+  check_device_index(device);
+  OPENREG_CHECK(SetDevice(device));
+}
+// LITERALINCLUDE END: OPENREG set_device FUNCTION
+
+OPENREG_EXPORT DeviceIndex ExchangeDevice(DeviceIndex device) {
+  int current_device = -1;
+  orGetDevice(&current_device);
+
+  if (device != current_device) {
+    orSetDevice(device);
+  }
+
+  return current_device;
+}
+
+OPENREG_EXPORT DeviceIndex maybe_exchange_device(DeviceIndex to_device) {
+  check_device_index(to_device);
+  return ExchangeDevice(to_device);
+}
+} // namespace c10::openreg
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 13 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `c10`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/cpp_extensions/open_registration_extension/torch_openreg/csrc/runtime`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `c10/util/Exception.h`
+- `include/openreg.h`
+- `OpenRegException.h`
+- `OpenRegFunctions.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/cpp_extensions/open_registration_extension/torch_openreg/csrc/runtime/OpenRegFunctions.cpp
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/cpp_extensions/open_registration_extension/torch_openreg/csrc/runtime`):
+
+- [`OpenRegHostAllocator.cpp_docs.md`](./OpenRegHostAllocator.cpp_docs.md)
+- [`OpenRegStream.cpp_docs.md`](./OpenRegStream.cpp_docs.md)
+- [`OpenRegGenerator.cpp_docs.md`](./OpenRegGenerator.cpp_docs.md)
+- [`OpenRegHostAllocator.h_docs.md`](./OpenRegHostAllocator.h_docs.md)
+- [`OpenRegHooks.cpp_docs.md`](./OpenRegHooks.cpp_docs.md)
+- [`OpenRegSerialization.cpp_docs.md`](./OpenRegSerialization.cpp_docs.md)
+- [`OpenRegGuard.h_docs.md`](./OpenRegGuard.h_docs.md)
+- [`OpenRegDeviceAllocator.h_docs.md`](./OpenRegDeviceAllocator.h_docs.md)
+- [`OpenRegException.cpp_docs.md`](./OpenRegException.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `OpenRegFunctions.cpp_docs.md`
+- **Keyword Index**: `OpenRegFunctions.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/cpp_extensions/open_registration_extension/torch_openreg/csrc/runtime`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/cpp_extensions/open_registration_extension/torch_openreg/csrc/runtime`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/cpp_extensions/open_registration_extension/torch_openreg/csrc/runtime/OpenRegFunctions.cpp_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/cpp_extensions/open_registration_extension/torch_openreg/csrc/runtime`):
+
+- [`OpenRegStream.cpp_kw.md_docs.md`](./OpenRegStream.cpp_kw.md_docs.md)
+- [`OpenRegEvent.h_docs.md_docs.md`](./OpenRegEvent.h_docs.md_docs.md)
+- [`OpenRegEvent.h_kw.md_docs.md`](./OpenRegEvent.h_kw.md_docs.md)
+- [`OpenRegHooks.h_docs.md_docs.md`](./OpenRegHooks.h_docs.md_docs.md)
+- [`OpenRegException.cpp_docs.md_docs.md`](./OpenRegException.cpp_docs.md_docs.md)
+- [`OpenRegStream.h_kw.md_docs.md`](./OpenRegStream.h_kw.md_docs.md)
+- [`OpenRegSerialization.h_kw.md_docs.md`](./OpenRegSerialization.h_kw.md_docs.md)
+- [`OpenRegHostAllocator.cpp_docs.md_docs.md`](./OpenRegHostAllocator.cpp_docs.md_docs.md)
+- [`OpenRegGenerator.cpp_kw.md_docs.md`](./OpenRegGenerator.cpp_kw.md_docs.md)
+- [`OpenRegFunctions.h_kw.md_docs.md`](./OpenRegFunctions.h_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `OpenRegFunctions.cpp_docs.md_docs.md`
+- **Keyword Index**: `OpenRegFunctions.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

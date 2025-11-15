@@ -1,0 +1,99 @@
+# Keyword Index: `aten/src/ATen/native/Math.h`
+
+## File Information
+
+- **Original File**: [aten/src/ATen/native/Math.h](../../../../../aten/src/ATen/native/Math.h)
+- **Documentation**: [`Math.h_docs.md`](./Math.h_docs.md)
+- **Folder**: `aten/src/ATen/native`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Functions
+
+- **`_igam_helper_asymptotic_series`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`_igam_helper_fac`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`_igam_helper_series`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`_igamc_helper_continued_fraction`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`_igamc_helper_series`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`abs_impl`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`airy_ai_forward`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`bessel_j0_forward`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`bessel_j1_forward`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`bessel_y0_forward`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`bessel_y1_forward`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`calc_digamma`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`calc_erfinv`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`calc_i0`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`calc_i0e`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`calc_i1`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`calc_i1e`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`calc_igamma`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`calc_igammac`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`calc_log_ndtr`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`calc_ndtri`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`calc_polygamma`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`chbevl`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`chebyshev_polynomial_t_forward`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`chebyshev_polynomial_u_forward`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`chebyshev_polynomial_v_forward`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`chebyshev_polynomial_w_forward`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`constexpr`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`exp2_impl`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`getHermitianLimit`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`hermite_polynomial_h_forward`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`hermite_polynomial_he_forward`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`if`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`laguerre_polynomial_l_forward`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`lanczos_sum_expg_scaled`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`legendre_polynomial_p_forward`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`modified_bessel_i0_forward`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`modified_bessel_i1_forward`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`modified_bessel_k0_forward`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`modified_bessel_k1_forward`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`polevl`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`ratevl`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`scaled_modified_bessel_k0_forward`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`scaled_modified_bessel_k1_forward`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`shifted_chebyshev_polynomial_t_forward`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`shifted_chebyshev_polynomial_u_forward`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`shifted_chebyshev_polynomial_v_forward`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`shifted_chebyshev_polynomial_w_forward`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`spherical_bessel_j0_forward`**: [Math.h_docs.md](./Math.h_docs.md)
+
+### Includes
+
+- **`ATen/AccumulateType.h`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`ATen/NumericUtils.h`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`ATen/jiterator_macros.h`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`c10/macros/Macros.h`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`c10/util/BFloat16.h`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`c10/util/Half.h`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`c10/util/MathConstants.h`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`cfloat`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`cmath`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`cstdint`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`cstdlib`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`limits`**: [Math.h_docs.md](./Math.h_docs.md)
+- **`type_traits`**: [Math.h_docs.md](./Math.h_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,80 @@
+# Keyword Index: `docs/torch/csrc/jit/runtime/graph_iterator.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/csrc/jit/runtime/graph_iterator.h_kw.md](../../../../../../docs/torch/csrc/jit/runtime/graph_iterator.h_kw.md)
+- **Documentation**: [`graph_iterator.h_kw.md_docs.md`](./graph_iterator.h_kw.md_docs.md)
+- **Folder**: `docs/torch/csrc/jit/runtime`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Architecture`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Basic`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Class`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Complete`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Considerations`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Dependencies`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`DepthFirstGraphNodeIterator`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Design`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Detailed`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Documentation`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Efficiency`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Extracted`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`File`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Folder`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Functions`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Generated`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`High`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`How`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`In`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Includes`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Index`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Information`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Keyword`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Keywords`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Level`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Map`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Metadata`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Namespaces`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Original`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Overview`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Performance`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Purpose`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`PyTorch`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Related`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Repository`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Safety`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Section`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Security`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Source`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Structs`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`System`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Testing`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`The`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`This`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+- **`Usage`**: [graph_iterator.h_kw.md_docs.md](./graph_iterator.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

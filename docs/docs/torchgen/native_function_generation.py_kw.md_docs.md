@@ -1,0 +1,180 @@
+# Documentation: `docs/torchgen/native_function_generation.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/torchgen/native_function_generation.py_kw.md`
+- **Size**: 4,602 bytes (4.49 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `torchgen/native_function_generation.py`
+
+## File Information
+
+- **Original File**: [torchgen/native_function_generation.py](../../torchgen/native_function_generation.py)
+- **Documentation**: [`native_function_generation.py_docs.md`](./native_function_generation.py_docs.md)
+- **Folder**: `torchgen`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Functions
+
+- **`add_generated_native_functions`**: [native_function_generation.py_docs.md](./native_function_generation.py_docs.md)
+- **`functional_to_out_signature`**: [native_function_generation.py_docs.md](./native_function_generation.py_docs.md)
+- **`gather_nonaliased_inner_rets`**: [native_function_generation.py_docs.md](./native_function_generation.py_docs.md)
+- **`gen_composite_functional_kernel`**: [native_function_generation.py_docs.md](./native_function_generation.py_docs.md)
+- **`gen_composite_out_kernel`**: [native_function_generation.py_docs.md](./native_function_generation.py_docs.md)
+- **`generate_function`**: [native_function_generation.py_docs.md](./native_function_generation.py_docs.md)
+- **`generate_out_args_from_schema`**: [native_function_generation.py_docs.md](./native_function_generation.py_docs.md)
+- **`get_expected_out_variant_overload_name`**: [native_function_generation.py_docs.md](./native_function_generation.py_docs.md)
+- **`mutable_to_out_signature`**: [native_function_generation.py_docs.md](./native_function_generation.py_docs.md)
+- **`pre_group_native_functions`**: [native_function_generation.py_docs.md](./native_function_generation.py_docs.md)
+- **`return_str`**: [native_function_generation.py_docs.md](./native_function_generation.py_docs.md)
+- **`self_to_out_signature`**: [native_function_generation.py_docs.md](./native_function_generation.py_docs.md)
+
+### Imports
+
+- **`Binding`**: [native_function_generation.py_docs.md](./native_function_generation.py_docs.md)
+- **`Sequence`**: [native_function_generation.py_docs.md](./native_function_generation.py_docs.md)
+- **`TYPE_CHECKING`**: [native_function_generation.py_docs.md](./native_function_generation.py_docs.md)
+- **`__future__`**: [native_function_generation.py_docs.md](./native_function_generation.py_docs.md)
+- **`annotations`**: [native_function_generation.py_docs.md](./native_function_generation.py_docs.md)
+- **`collections`**: [native_function_generation.py_docs.md](./native_function_generation.py_docs.md)
+- **`collections.abc`**: [native_function_generation.py_docs.md](./native_function_generation.py_docs.md)
+- **`concatMap`**: [native_function_generation.py_docs.md](./native_function_generation.py_docs.md)
+- **`cpp`**: [native_function_generation.py_docs.md](./native_function_generation.py_docs.md)
+- **`defaultdict`**: [native_function_generation.py_docs.md](./native_function_generation.py_docs.md)
+- **`string`**: [native_function_generation.py_docs.md](./native_function_generation.py_docs.md)
+- **`torchgen.api`**: [native_function_generation.py_docs.md](./native_function_generation.py_docs.md)
+- **`torchgen.api.dispatcher`**: [native_function_generation.py_docs.md](./native_function_generation.py_docs.md)
+- **`torchgen.api.translate`**: [native_function_generation.py_docs.md](./native_function_generation.py_docs.md)
+- **`torchgen.api.types`**: [native_function_generation.py_docs.md](./native_function_generation.py_docs.md)
+- **`torchgen.context`**: [native_function_generation.py_docs.md](./native_function_generation.py_docs.md)
+- **`torchgen.model`**: [native_function_generation.py_docs.md](./native_function_generation.py_docs.md)
+- **`torchgen.utils`**: [native_function_generation.py_docs.md](./native_function_generation.py_docs.md)
+- **`translate`**: [native_function_generation.py_docs.md](./native_function_generation.py_docs.md)
+- **`typing`**: [native_function_generation.py_docs.md](./native_function_generation.py_docs.md)
+- **`with_native_function`**: [native_function_generation.py_docs.md](./native_function_generation.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torchgen`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torchgen`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torchgen`):
+
+- [`gen_functionalization_type.py_docs.md_docs.md`](./gen_functionalization_type.py_docs.md_docs.md)
+- [`BUILD.bazel_docs.md_docs.md`](./BUILD.bazel_docs.md_docs.md)
+- [`context.py_kw.md_docs.md`](./context.py_kw.md_docs.md)
+- [`gen_schema_utils.py_docs.md_docs.md`](./gen_schema_utils.py_docs.md_docs.md)
+- [`utils.py_docs.md_docs.md`](./utils.py_docs.md_docs.md)
+- [`gen_aoti_c_shim.py_docs.md_docs.md`](./gen_aoti_c_shim.py_docs.md_docs.md)
+- [`local.py_docs.md_docs.md`](./local.py_docs.md_docs.md)
+- [`gen.py_kw.md_docs.md`](./gen.py_kw.md_docs.md)
+- [`gen_aoti_c_shim.py_kw.md_docs.md`](./gen_aoti_c_shim.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `native_function_generation.py_kw.md_docs.md`
+- **Keyword Index**: `native_function_generation.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

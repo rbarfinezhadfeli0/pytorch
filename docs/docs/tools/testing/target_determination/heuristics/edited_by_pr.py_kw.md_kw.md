@@ -1,0 +1,80 @@
+# Keyword Index: `docs/tools/testing/target_determination/heuristics/edited_by_pr.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/tools/testing/target_determination/heuristics/edited_by_pr.py_kw.md](../../../../../../docs/tools/testing/target_determination/heuristics/edited_by_pr.py_kw.md)
+- **Documentation**: [`edited_by_pr.py_kw.md_docs.md`](./edited_by_pr.py_kw.md_docs.md)
+- **Folder**: `docs/tools/testing/target_determination/heuristics`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`Any`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`Architecture`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`Basic`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`Classs`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`Complete`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`Considerations`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`Dependencies`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`Design`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`Detailed`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`Documentation`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`EditedByPR`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`Efficiency`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`Extracted`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`File`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`Folder`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`Functions`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`Generated`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`High`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`How`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`Imports`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`In`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`Index`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`Information`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`Keyword`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`Keywords`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`Level`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`Map`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`Metadata`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`Original`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`Overview`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`Performance`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`Purpose`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`PyTorch`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`Related`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`Repository`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`Safety`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`Section`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`Security`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`Source`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`System`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`TestRun`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`Testing`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`The`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`This`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+- **`Usage`**: [edited_by_pr.py_kw.md_docs.md](./edited_by_pr.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,206 @@
+# Documentation: `torch/csrc/utils/tensor_flatten.h`
+
+## File Metadata
+
+- **Path**: `torch/csrc/utils/tensor_flatten.h`
+- **Size**: 2,745 bytes (2.68 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#pragma once
+
+#include <ATen/ATen.h>
+#include <ATen/core/functional.h>
+#include <c10/core/TensorOptions.h>
+#include <torch/csrc/Export.h>
+#include <utility>
+
+namespace torch::utils {
+
+/// Generate an ID for a combination of tensor backend + scalar type to be used
+/// when ordering tensors ('like' tensors are grouped by pulling out their
+/// backend + scalar type, so this function combines that into a single number)
+inline size_t type_id(const at::Tensor& tensor) {
+  return static_cast<size_t>(tensor.options().backend()) *
+      static_cast<size_t>(at::ScalarType::NumOptions) +
+      static_cast<size_t>(tensor.scalar_type());
+}
+
+inline at::Tensor flatten_dense_tensors(at::TensorList tensors) {
+  return at::flatten_dense_tensors(tensors);
+}
+
+inline std::vector<at::Tensor> unflatten_dense_tensors(
+    const at::Tensor& flat,
+    at::TensorList tensors) {
+  return at::unflatten_dense_tensors(flat, tensors);
+}
+
+struct TensorGroup {
+  std::vector<at::Tensor> tensors;
+  size_t size = 0;
+
+  size_t type_id() {
+    AT_ASSERT(!tensors.empty());
+    return ::torch::utils::type_id(tensors[0]);
+  }
+
+  const at::TensorOptions options() {
+    AT_ASSERT(!tensors.empty());
+    return tensors[0].options();
+  }
+};
+
+// Helper function that takes a list of tensors and splits them into tensor
+// groups by the size limit and outputs these tensor groups. If the input
+// tensors are of different tensor types, they will be split into different
+// groups as well.
+//
+// Two options of splitting provided to the user,
+//
+// Imagine the size_limit is 256 and the list of input tensors are:
+// tensor_a(fp16 - 128 bytes),
+// tensor_b(fp32 - 256 bytes),
+// tensor_c(fp16 - 128 bytes),
+//
+// when fine_grained == false:
+// The function will read the list of tensors sequentially and accumulate
+// enough tensors for each data type until the size_limit, therefore:
+// it will output: {{tensor_a, tensor_c}, {tensor_b}}
+//
+// when fine_grained == true:
+// The function will read the list of tensors sequentially and  accumulate
+// enough tensors for all data types until the size_limit, and then split
+// the accumulated tensors into different groups by data types, therefore:
+// it will output: {{tensor_a}, {tensor_b}, {tensor_c}}
+TORCH_API std::vector<TensorGroup> take_tensors(
+    at::TensorList tensors,
+    size_t size_limit,
+    bool fine_grained = false);
+
+TORCH_API void reorder_tensors_like(
+    std::vector<at::Tensor>& tensors,
+    at::TensorList order);
+
+TORCH_API std::pair<at::Tensor, at::Tensor> flatten_sparse_tensors(
+    at::TensorList tensors);
+
+TORCH_API std::vector<at::Tensor> unflatten_sparse_tensors(
+    const at::Tensor& flat_indices,
+    const at::Tensor& flat_values,
+    at::TensorList tensors);
+
+} // namespace torch::utils
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 6 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`
+
+**Classes/Structs**: `TensorGroup`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/utils`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/ATen.h`
+- `ATen/core/functional.h`
+- `c10/core/TensorOptions.h`
+- `torch/csrc/Export.h`
+- `utility`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/utils`):
+
+- [`tensor_list.h_docs.md`](./tensor_list.h_docs.md)
+- [`disable_torch_function.cpp_docs.md`](./disable_torch_function.cpp_docs.md)
+- [`tensor_new.cpp_docs.md`](./tensor_new.cpp_docs.md)
+- [`tensor_apply.cpp_docs.md`](./tensor_apply.cpp_docs.md)
+- [`cpp_stacktraces.cpp_docs.md`](./cpp_stacktraces.cpp_docs.md)
+- [`numpy_stub.h_docs.md`](./numpy_stub.h_docs.md)
+- [`nested.h_docs.md`](./nested.h_docs.md)
+- [`nested.cpp_docs.md`](./nested.cpp_docs.md)
+- [`six.h_docs.md`](./six.h_docs.md)
+- [`python_scalars.h_docs.md`](./python_scalars.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `tensor_flatten.h_docs.md`
+- **Keyword Index**: `tensor_flatten.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

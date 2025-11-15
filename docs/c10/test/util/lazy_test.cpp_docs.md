@@ -1,0 +1,225 @@
+# Documentation: `c10/test/util/lazy_test.cpp`
+
+## File Metadata
+
+- **Path**: `c10/test/util/lazy_test.cpp`
+- **Size**: 2,382 bytes (2.33 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**.
+
+## Original Source
+
+```cpp
+#include <atomic>
+#include <thread>
+#include <vector>
+
+#include <c10/util/Lazy.h>
+#include <gtest/gtest.h>
+
+namespace c10_test {
+
+// Long enough not to fit in typical SSO.
+const std::string kLongString = "I am a long enough string";
+
+TEST(LazyTest, OptimisticLazy) {
+  std::atomic<size_t> invocations = 0;
+  auto factory = [&] {
+    ++invocations;
+    return kLongString;
+  };
+
+  c10::OptimisticLazy<std::string> s;
+
+  constexpr size_t kNumThreads = 16;
+  std::vector<std::thread> threads;
+  std::atomic<std::string*> address = nullptr;
+
+  threads.reserve(kNumThreads);
+  for (size_t i = 0; i < kNumThreads; ++i) {
+    threads.emplace_back([&] {
+      auto* p = &s.ensure(factory);
+      auto old = address.exchange(p);
+      if (old != nullptr) {
+        // Even racing ensure()s should return a stable reference.
+        EXPECT_EQ(old, p);
+      }
+    });
+  }
+
+  for (auto& t : threads) {
+    t.join();
+  }
+
+  EXPECT_GE(invocations.load(), 1);
+  EXPECT_EQ(*address.load(), kLongString);
+
+  invocations = 0;
+  s.reset();
+  s.ensure(factory);
+  EXPECT_EQ(invocations.load(), 1);
+
+  invocations = 0;
+
+  auto sCopy = s;
+  EXPECT_EQ(sCopy.ensure(factory), kLongString);
+  EXPECT_EQ(invocations.load(), 0);
+
+  auto sMove = std::move(s); // codespell:ignore smove
+  EXPECT_EQ(sMove.ensure(factory), kLongString); // codespell:ignore smove
+  EXPECT_EQ(invocations.load(), 0);
+  // NOLINTNEXTLINE(bugprone-use-after-move)
+  EXPECT_EQ(s.ensure(factory), kLongString);
+  EXPECT_EQ(invocations.load(), 1);
+
+  invocations = 0;
+
+  s = sCopy;
+  EXPECT_EQ(s.ensure(factory), kLongString);
+  EXPECT_EQ(invocations.load(), 0);
+
+  s = std::move(sCopy);
+  EXPECT_EQ(s.ensure(factory), kLongString);
+  EXPECT_EQ(invocations.load(), 0);
+}
+
+TEST(LazyTest, PrecomputedLazyValue) {
+  static const std::string kLongString = "I am a string";
+  EXPECT_EQ(
+      std::make_shared<c10::PrecomputedLazyValue<std::string>>(kLongString)
+          ->get(),
+      kLongString);
+}
+
+TEST(LazyTest, OptimisticLazyValue) {
+  static const std::string kLongString = "I am a string";
+
+  class LazyString : public c10::OptimisticLazyValue<std::string> {
+    std::string compute() const override {
+      return kLongString;
+    }
+  };
+
+  auto ls = std::make_shared<LazyString>();
+  EXPECT_EQ(ls->get(), kLongString);
+
+  // Returned reference should be stable.
+  EXPECT_EQ(&ls->get(), &ls->get());
+}
+
+} // namespace c10_test
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 1 class(es)/struct(s) and 4 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `c10_test`
+
+**Classes/Structs**: `LazyString`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `c10/test/util`, which is part of **C10** (Caffe2 Core), the core library providing fundamental abstractions.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `atomic`
+- `thread`
+- `vector`
+- `c10/util/Lazy.h`
+- `gtest/gtest.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python c10/test/util/lazy_test.cpp
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`c10/test/util`):
+
+- [`bfloat16_test.cpp_docs.md`](./bfloat16_test.cpp_docs.md)
+- [`complex_test_common.h_docs.md`](./complex_test_common.h_docs.md)
+- [`TypeIndex_test.cpp_docs.md`](./TypeIndex_test.cpp_docs.md)
+- [`generic_math_test.cpp_docs.md`](./generic_math_test.cpp_docs.md)
+- [`Half_test.cpp_docs.md`](./Half_test.cpp_docs.md)
+- [`nofatal_test.cpp_docs.md`](./nofatal_test.cpp_docs.md)
+- [`small_vector_test.cpp_docs.md`](./small_vector_test.cpp_docs.md)
+- [`exception_test.cpp_docs.md`](./exception_test.cpp_docs.md)
+- [`string_view_test.cpp_docs.md`](./string_view_test.cpp_docs.md)
+- [`Enumerate_test.cpp_docs.md`](./Enumerate_test.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `lazy_test.cpp_docs.md`
+- **Keyword Index**: `lazy_test.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

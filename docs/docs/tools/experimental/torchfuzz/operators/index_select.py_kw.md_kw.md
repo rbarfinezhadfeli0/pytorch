@@ -1,0 +1,81 @@
+# Keyword Index: `docs/tools/experimental/torchfuzz/operators/index_select.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/tools/experimental/torchfuzz/operators/index_select.py_kw.md](../../../../../../docs/tools/experimental/torchfuzz/operators/index_select.py_kw.md)
+- **Documentation**: [`index_select.py_kw.md_docs.md`](./index_select.py_kw.md_docs.md)
+- **Folder**: `docs/tools/experimental/torchfuzz/operators`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Architecture`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Basic`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Classs`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Complete`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Considerations`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Dependencies`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Design`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Detailed`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Documentation`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Efficiency`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Extracted`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`File`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Folder`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Functions`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Generated`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`High`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`How`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Imports`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`In`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Index`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`IndexSelectOperator`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Information`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Keyword`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Keywords`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Level`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Map`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Metadata`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Operator`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Optional`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Original`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Overview`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Performance`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Purpose`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`PyTorch`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Related`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Repository`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Safety`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Section`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Security`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Source`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Spec`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`System`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Testing`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`The`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`This`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+- **`Usage`**: [index_select.py_kw.md_docs.md](./index_select.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

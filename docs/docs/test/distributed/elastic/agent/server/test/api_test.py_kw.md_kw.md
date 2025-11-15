@@ -1,0 +1,91 @@
+# Keyword Index: `docs/test/distributed/elastic/agent/server/test/api_test.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/test/distributed/elastic/agent/server/test/api_test.py_kw.md](../../../../../../../../docs/test/distributed/elastic/agent/server/test/api_test.py_kw.md)
+- **Documentation**: [`api_test.py_kw.md_docs.md`](./api_test.py_kw.md_docs.md)
+- **Folder**: `docs/test/distributed/elastic/agent/server/test`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`Any`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`Architecture`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`Basic`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`Classs`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`Complete`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`Considerations`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`ConstructEventTest`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`Dependencies`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`Design`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`Detailed`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`Documentation`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`Efficiency`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`EventSource`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`Extracted`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`File`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`Folder`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`Functions`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`Generated`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`High`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`How`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`Imports`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`In`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`Index`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`Information`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`Keyword`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`Keywords`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`Level`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`Map`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`Metadata`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`Original`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`Overview`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`Performance`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`ProcessFailure`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`Purpose`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`PyTorch`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`RecordWorkerEventsTest`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`Related`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`RendezvousGracefulExitError`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`RendezvousHandler`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`Repository`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`RoleInstanceInfoTest`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`Safety`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`Section`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`Security`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`SignalException`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`SimpleElasticAgentTest`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`Source`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`System`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`TestAgent`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`Testing`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`The`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`This`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`ThreadPool`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`Usage`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`WorkerGroupTest`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+- **`WorkerStateTest`**: [api_test.py_kw.md_docs.md](./api_test.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

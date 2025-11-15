@@ -1,0 +1,79 @@
+# Keyword Index: `docs/aten/src/ATen/functorch/BatchedFallback.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/functorch/BatchedFallback.h_kw.md](../../../../../../docs/aten/src/ATen/functorch/BatchedFallback.h_kw.md)
+- **Documentation**: [`BatchedFallback.h_kw.md_docs.md`](./BatchedFallback.h_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/functorch`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`Analysis`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`Architecture`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`Basic`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`BatchedFallback`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`Complete`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`Considerations`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`Dependencies`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`Design`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`Detailed`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`Documentation`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`Efficiency`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`Extracted`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`File`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`Folder`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`Functions`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`Generated`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`High`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`How`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`In`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`Includes`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`Index`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`Information`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`Keyword`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`Keywords`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`Level`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`Map`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`Metadata`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`Namespaces`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`Original`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`Overview`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`Performance`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`Purpose`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`PyTorch`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`Related`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`Repository`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`Safety`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`Section`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`Security`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`Source`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`System`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`Testing`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`The`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`This`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+- **`Usage`**: [BatchedFallback.h_kw.md_docs.md](./BatchedFallback.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

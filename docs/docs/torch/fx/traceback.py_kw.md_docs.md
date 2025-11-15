@@ -1,0 +1,206 @@
+# Documentation: `docs/torch/fx/traceback.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/fx/traceback.py_kw.md`
+- **Size**: 4,731 bytes (4.62 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `torch/fx/traceback.py`
+
+## File Information
+
+- **Original File**: [torch/fx/traceback.py](../../../torch/fx/traceback.py)
+- **Documentation**: [`traceback.py_docs.md`](./traceback.py_docs.md)
+- **Folder**: `torch/fx`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`NodeInfo`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`NodeSource`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`NodeSourceAction`**: [traceback.py_docs.md](./traceback.py_docs.md)
+
+### Functions
+
+- **`__eq__`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`__hash__`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`__init__`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`__repr__`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`_from_dict`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`_get_action_string`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`_get_custom_metadata`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`_make_hashable`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`_register_fx_metadata`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`annotate`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`annotate_fn`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`decorator`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`format_stack`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`get_current_meta`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`get_current_replay_node`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`get_graph_provenance_json`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`graph_id`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`has_preserved_node_meta`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`helper`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`my_function`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`name`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`preserve_node_meta`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`print_readable`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`reset_grad_fn_seq_nr`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`set_current_meta`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`set_current_replay_node`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`set_grad_fn_seq_nr`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`set_stack_trace`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`target`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`to_dict`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`wrapper`**: [traceback.py_docs.md](./traceback.py_docs.md)
+
+### Imports
+
+- **`._compatibility`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`.graph`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`.graph_module`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`.node`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`Any`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`Enum`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`Graph`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`GraphModule`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`Node`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`compatibility`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`contextlib`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`contextmanager`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`copy`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`enum`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`functools`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`logging`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`signpost_event`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`torch._utils_internal`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`traceback`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`typing`**: [traceback.py_docs.md](./traceback.py_docs.md)
+- **`wraps`**: [traceback.py_docs.md](./traceback.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/fx`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/fx`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/fx`):
+
+- [`annotate.py_kw.md_docs.md`](./annotate.py_kw.md_docs.md)
+- [`_compatibility.py_docs.md_docs.md`](./_compatibility.py_docs.md_docs.md)
+- [`tensor_type.py_kw.md_docs.md`](./tensor_type.py_kw.md_docs.md)
+- [`_graph_pickler.py_kw.md_docs.md`](./_graph_pickler.py_kw.md_docs.md)
+- [`_compatibility.py_kw.md_docs.md`](./_compatibility.py_kw.md_docs.md)
+- [`README.md_docs.md_docs.md`](./README.md_docs.md_docs.md)
+- [`interpreter.py_kw.md_docs.md`](./interpreter.py_kw.md_docs.md)
+- [`subgraph_rewriter.py_docs.md_docs.md`](./subgraph_rewriter.py_docs.md_docs.md)
+- [`node.py_docs.md_docs.md`](./node.py_docs.md_docs.md)
+- [`graph_module.py_docs.md_docs.md`](./graph_module.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `traceback.py_kw.md_docs.md`
+- **Keyword Index**: `traceback.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

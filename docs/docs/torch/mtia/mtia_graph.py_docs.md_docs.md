@@ -1,0 +1,326 @@
+# Documentation: `docs/torch/mtia/mtia_graph.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/mtia/mtia_graph.py_docs.md`
+- **Size**: 4,654 bytes (4.54 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/mtia/mtia_graph.py`
+
+## File Metadata
+
+- **Path**: `torch/mtia/mtia_graph.py`
+- **Size**: 2,384 bytes (2.33 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This is a python source code that is part of the PyTorch project.
+
+## Original Source
+
+```python
+from __future__ import annotations
+
+from typing import Optional, Union
+from typing_extensions import Self
+
+import torch
+
+
+_POOL_HANDLE = tuple[int, int]
+
+
+class MTIAGraph(torch._C._MTIAGraph):
+    """
+    Wrapper around a MTIA graph.
+    """
+
+    def __new__(cls, keep_graph: bool = False) -> Self:
+        return super().__new__(cls, keep_graph)
+
+    def capture_begin(self, pool: _POOL_HANDLE) -> None:
+        """
+        Begin capturing a MTIA graph.
+        """
+        super().capture_begin(pool)
+
+    def capture_end(self) -> None:
+        """
+        End the capture of a MTIA graph.
+        """
+        super().capture_end()
+
+    def instantiate(self) -> None:
+        """
+        Instantiate the captured MTIA graph.
+        """
+        super().instantiate()
+
+    def replay(self) -> None:
+        """
+        Replay the captured MTIA graph.
+        """
+        super().replay()
+
+    def reset(self) -> None:
+        """
+        Destroy the captured graph and reset the states.
+        """
+        super().reset()
+
+    def pool(self) -> _POOL_HANDLE:
+        """
+        Return an opaque token representing the id of this graph's memory pool
+        """
+        return super().pool()
+
+
+class graph:
+    default_capture_stream: Optional[torch.mtia.Stream] = None
+
+    def __init__(
+        self,
+        mtia_graph: MTIAGraph,
+        pool: Optional[_POOL_HANDLE] = None,
+        stream: Optional[torch.mtia.Stream] = None,
+    ):
+        if self.__class__.default_capture_stream is None:
+            self.__class__.default_capture_stream = torch.mtia.current_stream()
+
+        self.pool: Union[tuple[()], tuple[_POOL_HANDLE]] = (
+            () if pool is None else (pool,)
+        )
+        self.capture_stream = (
+            stream if stream is not None else self.__class__.default_capture_stream
+        )
+        assert self.capture_stream is not None
+        self.stream_ctx = torch.mtia.stream(self.capture_stream)
+        self.mtia_graph = mtia_graph
+
+    def __enter__(self) -> None:
+        torch.mtia.synchronize()
+        torch.mtia.empty_cache()
+
+        self.stream_ctx.__enter__()
+
+        pool_arg = self.pool[0] if self.pool else (0, 0)
+        self.mtia_graph.capture_begin(pool_arg)
+
+    def __exit__(self, *args: object) -> None:
+        self.mtia_graph.capture_end()
+        self.stream_ctx.__exit__(*args)
+
+
+__all__ = [
+    "MTIAGraph",
+    "graph",
+]
+
+```
+
+
+
+## High-Level Overview
+
+"""    Wrapper around a MTIA graph.
+
+This Python file contains 2 class(es) and 10 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `MTIAGraph`, `graph`
+
+**Functions defined**: `__new__`, `capture_begin`, `capture_end`, `instantiate`, `replay`, `reset`, `pool`, `__init__`, `__enter__`, `__exit__`
+
+**Key imports**: annotations, Optional, Union, Self, torch
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/mtia`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `__future__`: annotations
+- `typing`: Optional, Union
+- `typing_extensions`: Self
+- `torch`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+- **Context Manager**: Implements context manager protocol
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Implements or uses **caching** mechanisms.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/mtia`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`_utils.py_docs.md`](./_utils.py_docs.md)
+- [`memory.py_docs.md`](./memory.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `mtia_graph.py_docs.md`
+- **Keyword Index**: `mtia_graph.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/mtia`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/mtia`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+- **Context Manager**: Implements context manager protocol
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Implements or uses **caching** mechanisms.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/mtia`):
+
+- [`mtia_graph.py_kw.md_docs.md`](./mtia_graph.py_kw.md_docs.md)
+- [`memory.py_kw.md_docs.md`](./memory.py_kw.md_docs.md)
+- [`memory.py_docs.md_docs.md`](./memory.py_docs.md_docs.md)
+- [`_utils.py_kw.md_docs.md`](./_utils.py_kw.md_docs.md)
+- [`_utils.py_docs.md_docs.md`](./_utils.py_docs.md_docs.md)
+- [`__init__.py_docs.md_docs.md`](./__init__.py_docs.md_docs.md)
+- [`__init__.py_kw.md_docs.md`](./__init__.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `mtia_graph.py_docs.md_docs.md`
+- **Keyword Index**: `mtia_graph.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

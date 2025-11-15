@@ -1,0 +1,296 @@
+# Documentation: `docs/torch/ao/pruning/_experimental/pruner/parametrization.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/ao/pruning/_experimental/pruner/parametrization.py_docs.md`
+- **Size**: 4,900 bytes (4.79 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/ao/pruning/_experimental/pruner/parametrization.py`
+
+## File Metadata
+
+- **Path**: `torch/ao/pruning/_experimental/pruner/parametrization.py`
+- **Size**: 2,047 bytes (2.00 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This is a python source code that is part of the PyTorch project.
+
+## Original Source
+
+```python
+# mypy: allow-untyped-defs
+import torch
+from torch import nn
+from torch.nn.utils.parametrize import is_parametrized
+
+
+def module_contains_param(module, parametrization):
+    if is_parametrized(module):
+        # see if any of the module tensors have a parametriztion attached that matches the one passed in
+        return any(
+            any(isinstance(param, parametrization) for param in param_list)
+            for key, param_list in module.parametrizations.items()
+        )
+    return False
+
+
+# Structured Pruning Parameterizations
+class FakeStructuredSparsity(nn.Module):
+    r"""
+    Parametrization for Structured Pruning. Like FakeSparsity, this should be attached to
+    the  'weight' or any other parameter that requires a mask.
+
+    Instead of an element-wise bool mask, this parameterization uses a row-wise bool mask.
+    """
+
+    def __init__(self, mask):
+        super().__init__()
+        self.register_buffer("mask", mask)
+
+    def forward(self, x):
+        if not isinstance(self.mask, torch.Tensor):
+            raise AssertionError("mask must be a torch.Tensor")
+        if self.mask.shape[0] != x.shape[0]:
+            raise AssertionError(
+                f"mask shape[0] ({self.mask.shape[0]}) must match x shape[0] ({x.shape[0]})"
+            )
+        shape = [1] * len(x.shape)
+        shape[0] = -1
+        return self.mask.reshape(shape) * x
+
+    def state_dict(self, *args, **kwargs):
+        # avoid double saving masks
+        return {}
+
+
+class BiasHook:
+    def __init__(self, parametrization, prune_bias):
+        self.param = parametrization
+        self.prune_bias = prune_bias
+
+    def __call__(self, module, input, output):
+        if getattr(module, "_bias", None) is not None:
+            bias = module._bias.data
+            if self.prune_bias:
+                bias[~self.param.mask] = 0
+
+            # reshape bias to broadcast over output dimensions
+            idx = [1] * len(output.shape)
+            idx[1] = -1
+            bias = bias.reshape(idx)
+
+            output += bias
+        return output
+
+```
+
+
+
+## High-Level Overview
+
+r"""    Parametrization for Structured Pruning. Like FakeSparsity, this should be attached to    the  'weight' or any other parameter that requires a mask.    Instead of an element-wise bool mask, this parameterization uses a row-wise bool mask.
+
+This Python file contains 2 class(es) and 6 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `FakeStructuredSparsity`, `BiasHook`
+
+**Functions defined**: `module_contains_param`, `__init__`, `forward`, `state_dict`, `__init__`, `__call__`
+
+**Key imports**: torch, nn, is_parametrized
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/ao/pruning/_experimental/pruner`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `torch`
+- `torch.nn.utils.parametrize`: is_parametrized
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/ao/pruning/_experimental/pruner`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`prune_functions.py_docs.md`](./prune_functions.py_docs.md)
+- [`FPGM_pruner.py_docs.md`](./FPGM_pruner.py_docs.md)
+- [`base_structured_sparsifier.py_docs.md`](./base_structured_sparsifier.py_docs.md)
+- [`match_utils.py_docs.md`](./match_utils.py_docs.md)
+- [`lstm_saliency_pruner.py_docs.md`](./lstm_saliency_pruner.py_docs.md)
+- [`README.md_docs.md`](./README.md_docs.md)
+- [`saliency_pruner.py_docs.md`](./saliency_pruner.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `parametrization.py_docs.md`
+- **Keyword Index**: `parametrization.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/ao/pruning/_experimental/pruner`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/ao/pruning/_experimental/pruner`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/ao/pruning/_experimental/pruner`):
+
+- [`saliency_pruner.py_kw.md_docs.md`](./saliency_pruner.py_kw.md_docs.md)
+- [`README.md_docs.md_docs.md`](./README.md_docs.md_docs.md)
+- [`base_structured_sparsifier.py_kw.md_docs.md`](./base_structured_sparsifier.py_kw.md_docs.md)
+- [`lstm_saliency_pruner.py_docs.md_docs.md`](./lstm_saliency_pruner.py_docs.md_docs.md)
+- [`match_utils.py_docs.md_docs.md`](./match_utils.py_docs.md_docs.md)
+- [`prune_functions.py_docs.md_docs.md`](./prune_functions.py_docs.md_docs.md)
+- [`FPGM_pruner.py_kw.md_docs.md`](./FPGM_pruner.py_kw.md_docs.md)
+- [`match_utils.py_kw.md_docs.md`](./match_utils.py_kw.md_docs.md)
+- [`__init__.py_docs.md_docs.md`](./__init__.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `parametrization.py_docs.md_docs.md`
+- **Keyword Index**: `parametrization.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

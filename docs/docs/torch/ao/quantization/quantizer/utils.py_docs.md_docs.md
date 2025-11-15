@@ -1,0 +1,320 @@
+# Documentation: `docs/torch/ao/quantization/quantizer/utils.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/ao/quantization/quantizer/utils.py_docs.md`
+- **Size**: 6,734 bytes (6.58 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/ao/quantization/quantizer/utils.py`
+
+## File Metadata
+
+- **Path**: `torch/ao/quantization/quantizer/utils.py`
+- **Size**: 3,422 bytes (3.34 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This is a python source code that is part of the PyTorch project.
+
+## Original Source
+
+```python
+from collections.abc import Callable
+
+from torch.ao.quantization.pt2e.utils import _is_sym_size_node
+from torch.ao.quantization.quantizer.quantizer import (
+    QuantizationAnnotation,
+    QuantizationSpecBase,
+)
+from torch.fx import Node
+
+
+__all__: list[str] = []
+
+
+def _annotate_input_qspec_map(
+    node: Node, input_node: Node, qspec: QuantizationSpecBase | None
+) -> None:
+    quantization_annotation = node.meta.get(
+        "quantization_annotation", QuantizationAnnotation()
+    )
+    if quantization_annotation.input_qspec_map is None:
+        quantization_annotation.input_qspec_map = {}
+    quantization_annotation.input_qspec_map[input_node] = qspec
+    node.meta["quantization_annotation"] = quantization_annotation
+
+
+def _annotate_output_qspec(node: Node, qspec: QuantizationSpecBase | None) -> None:
+    quantization_annotation = node.meta.get(
+        "quantization_annotation", QuantizationAnnotation()
+    )
+    quantization_annotation.output_qspec = qspec
+    node.meta["quantization_annotation"] = quantization_annotation
+
+
+def _node_only_used_for_sym_size(node: Node, partition_nodes: list[Node]) -> bool:
+    """
+    This utility is used to handle cases when dynami_shape=True tracing leads
+    to symint nodes in the pattern of linear module. In those cases, we need to
+    distinguish between the nodes that are in input for just extracting value of
+    some dimensions (and symint nodes) vs. the one that is activation.
+    For example:
+    graph(x, y, weight):
+       size_0 = torch.ops.aten.sym_size([x], [0])
+       size_1 = torch.ops.aten.sym_size([y], [1])
+       view_size = size_0 * size_1
+       size_3 = torch.ops.aten.sym_size([x], [2])
+       vie_out = torch.ops.aten.view(x, [view_size, size_3])
+       return mm(view_out, weight)
+    In the example above y node is not actual input. It exist only to extract size_1
+    """
+    if _is_sym_size_node(node):
+        return True
+
+    return all(
+        ((user not in partition_nodes) or _is_sym_size_node(user))
+        for user in node.users
+    )
+
+
+def _get_module_name_filter(module_name: str) -> Callable[[Node], bool]:
+    """Get the module_name_filter function for a given module name, the filter accepts
+    a node and checks if the node comes from a module that has certain module name
+
+    For example:
+        node: linear_op = call_function[...](...)  # comes from a module with name blocks.sub.linear1
+
+
+    >> module_name_filter = _get_module_name_filter("blocks.sub")
+    >> print(module_name_filter(node))
+    True  # the node is from "blocks.sub" based on the fully qualified name "blocks.sub.linear1"
+    """
+
+    def module_name_filter(n: Node) -> bool:
+        # example: {
+        #    'L__self___sub': ("L['self'].sub", <class '....Sub'>),
+        #    'L__self___sub_linear': ("L['self'].sub.linear", <class 'torch.nn.modules.linear.Linear'>)
+        # }
+        # get_attr nodes doesn't have nn_module_stack?
+        nn_module_stack = n.meta.get("nn_module_stack", {})
+
+        def _normalize_path(n: str) -> str:
+            prefix = 0
+            # TODO This is non standard behavior and should be removed when we migrate off capture_pre_autograd_graph.
+            if n.startswith("L['self']."):
+                prefix = len("L['self'].")
+            return n[prefix:]
+
+        names = [_normalize_path(n) for n, _ in nn_module_stack.values()]
+        return module_name in names
+
+    return module_name_filter
+
+```
+
+
+
+## High-Level Overview
+
+"""    This utility is used to handle cases when dynami_shape=True tracing leads    to symint nodes in the pattern of linear module. In those cases, we need to    distinguish between the nodes that are in input for just extracting value of    some dimensions (and symint nodes) vs. the one that is activation.    For example:    graph(x, y, weight):       size_0 = torch.ops.aten.sym_size([x], [0])       size_1 = torch.ops.aten.sym_size([y], [1])       view_size = size_0 * size_1       size_3 = torch.ops.aten.sym_size([x], [2])       vie_out = torch.ops.aten.view(x, [view_size, size_3])       return mm(view_out, weight)    In the example above y node is not actual input. It exist only to extract size_1
+
+This Python file contains 0 class(es) and 6 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Functions defined**: `_annotate_input_qspec_map`, `_annotate_output_qspec`, `_node_only_used_for_sym_size`, `_get_module_name_filter`, `module_name_filter`, `_normalize_path`
+
+**Key imports**: Callable, _is_sym_size_node, Node
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/ao/quantization/quantizer`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `collections.abc`: Callable
+- `torch.ao.quantization.pt2e.utils`: _is_sym_size_node
+- `torch.fx`: Node
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/ao/quantization/quantizer`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`x86_inductor_quantizer.py_docs.md`](./x86_inductor_quantizer.py_docs.md)
+- [`xnnpack_quantizer_utils.py_docs.md`](./xnnpack_quantizer_utils.py_docs.md)
+- [`xpu_inductor_quantizer.py_docs.md`](./xpu_inductor_quantizer.py_docs.md)
+- [`quantizer.py_docs.md`](./quantizer.py_docs.md)
+- [`composable_quantizer.py_docs.md`](./composable_quantizer.py_docs.md)
+- [`xnnpack_quantizer.py_docs.md`](./xnnpack_quantizer.py_docs.md)
+- [`embedding_quantizer.py_docs.md`](./embedding_quantizer.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `utils.py_docs.md`
+- **Keyword Index**: `utils.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/ao/quantization/quantizer`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/ao/quantization/quantizer`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/ao/quantization/quantizer`):
+
+- [`xpu_inductor_quantizer.py_docs.md_docs.md`](./xpu_inductor_quantizer.py_docs.md_docs.md)
+- [`xnnpack_quantizer_utils.py_kw.md_docs.md`](./xnnpack_quantizer_utils.py_kw.md_docs.md)
+- [`x86_inductor_quantizer.py_kw.md_docs.md`](./x86_inductor_quantizer.py_kw.md_docs.md)
+- [`embedding_quantizer.py_kw.md_docs.md`](./embedding_quantizer.py_kw.md_docs.md)
+- [`embedding_quantizer.py_docs.md_docs.md`](./embedding_quantizer.py_docs.md_docs.md)
+- [`composable_quantizer.py_docs.md_docs.md`](./composable_quantizer.py_docs.md_docs.md)
+- [`xnnpack_quantizer_utils.py_docs.md_docs.md`](./xnnpack_quantizer_utils.py_docs.md_docs.md)
+- [`__init__.py_docs.md_docs.md`](./__init__.py_docs.md_docs.md)
+- [`composable_quantizer.py_kw.md_docs.md`](./composable_quantizer.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `utils.py_docs.md_docs.md`
+- **Keyword Index**: `utils.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

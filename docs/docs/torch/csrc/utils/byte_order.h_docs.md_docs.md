@@ -1,0 +1,321 @@
+# Documentation: `docs/torch/csrc/utils/byte_order.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/utils/byte_order.h_docs.md`
+- **Size**: 4,781 bytes (4.67 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/csrc/utils/byte_order.h`
+
+## File Metadata
+
+- **Path**: `torch/csrc/utils/byte_order.h`
+- **Size**: 2,254 bytes (2.20 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#pragma once
+
+#include <c10/util/BFloat16.h>
+#include <c10/util/Float8_e4m3fn.h>
+#include <c10/util/Float8_e4m3fnuz.h>
+#include <c10/util/Float8_e5m2.h>
+#include <c10/util/Float8_e5m2fnuz.h>
+#include <c10/util/Half.h>
+#include <torch/csrc/Export.h>
+#include <cstddef>
+#include <cstdint>
+
+#ifdef __FreeBSD__
+#include <sys/endian.h>
+#include <sys/types.h>
+#define thp_bswap16(x) bswap16(x)
+#define thp_bswap32(x) bswap32(x)
+#define thp_bswap64(x) bswap64(x)
+#elif defined(__APPLE__)
+#include <libkern/OSByteOrder.h>
+#define thp_bswap16(x) OSSwapInt16(x)
+#define thp_bswap32(x) OSSwapInt32(x)
+#define thp_bswap64(x) OSSwapInt64(x)
+#elif defined(__GNUC__) && !defined(__MINGW32__)
+#include <byteswap.h>
+#define thp_bswap16(x) bswap_16(x)
+#define thp_bswap32(x) bswap_32(x)
+#define thp_bswap64(x) bswap_64(x)
+#elif defined _WIN32 || defined _WIN64
+#define thp_bswap16(x) _byteswap_ushort(x)
+#define thp_bswap32(x) _byteswap_ulong(x)
+#define thp_bswap64(x) _byteswap_uint64(x)
+#endif
+
+#if __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__
+#define to_be16(x) thp_bswap16(x)
+#define from_be16(x) thp_bswap16(x)
+#define to_be32(x) thp_bswap32(x)
+#define from_be32(x) thp_bswap32(x)
+#define to_be64(x) thp_bswap64(x)
+#define from_be64(x) thp_bswap64(x)
+#define to_le16(x) (x)
+#define from_le16(x) (x)
+#define to_le32(x) (x)
+#define from_le32(x) (x)
+#define to_le64(x) (x)
+#define from_le64(x) (x)
+#elif __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__
+#define to_be16(x) (x)
+#define from_be16(x) (x)
+#define to_be32(x) (x)
+#define from_be32(x) (x)
+#define to_be64(x) (x)
+#define from_be64(x) (x)
+#define to_le16(x) thp_bswap16(x)
+#define from_le16(x) thp_bswap16(x)
+#define to_le32(x) thp_bswap32(x)
+#define from_le32(x) thp_bswap32(x)
+#define to_le64(x) thp_bswap64(x)
+#define from_le64(x) thp_bswap64(x)
+#else
+#error Unexpected or undefined __BYTE_ORDER__
+#endif
+
+namespace torch::utils {
+
+enum THPByteOrder { THP_LITTLE_ENDIAN = 0, THP_BIG_ENDIAN = 1 };
+
+TORCH_API THPByteOrder THP_nativeByteOrder();
+
+template <typename T, typename U>
+TORCH_API void THP_decodeBuffer(T* dst, const uint8_t* src, U type, size_t len);
+
+template <typename T>
+TORCH_API void THP_encodeBuffer(
+    uint8_t* dst,
+    const T* src,
+    THPByteOrder order,
+    size_t len);
+
+} // namespace torch::utils
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 41 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/utils`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `c10/util/BFloat16.h`
+- `c10/util/Float8_e4m3fn.h`
+- `c10/util/Float8_e4m3fnuz.h`
+- `c10/util/Float8_e5m2.h`
+- `c10/util/Float8_e5m2fnuz.h`
+- `c10/util/Half.h`
+- `torch/csrc/Export.h`
+- `cstddef`
+- `cstdint`
+- `sys/endian.h`
+- `sys/types.h`
+- `libkern/OSByteOrder.h`
+- `byteswap.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/utils`):
+
+- [`tensor_list.h_docs.md`](./tensor_list.h_docs.md)
+- [`disable_torch_function.cpp_docs.md`](./disable_torch_function.cpp_docs.md)
+- [`tensor_new.cpp_docs.md`](./tensor_new.cpp_docs.md)
+- [`tensor_apply.cpp_docs.md`](./tensor_apply.cpp_docs.md)
+- [`cpp_stacktraces.cpp_docs.md`](./cpp_stacktraces.cpp_docs.md)
+- [`numpy_stub.h_docs.md`](./numpy_stub.h_docs.md)
+- [`nested.h_docs.md`](./nested.h_docs.md)
+- [`nested.cpp_docs.md`](./nested.cpp_docs.md)
+- [`six.h_docs.md`](./six.h_docs.md)
+- [`python_scalars.h_docs.md`](./python_scalars.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `byte_order.h_docs.md`
+- **Keyword Index**: `byte_order.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/utils`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/utils`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/utils`):
+
+- [`python_tuples.h_kw.md_docs.md`](./python_tuples.h_kw.md_docs.md)
+- [`six.h_kw.md_docs.md`](./six.h_kw.md_docs.md)
+- [`tensor_types.cpp_docs.md_docs.md`](./tensor_types.cpp_docs.md_docs.md)
+- [`tensor_list.h_kw.md_docs.md`](./tensor_list.h_kw.md_docs.md)
+- [`verbose.h_kw.md_docs.md`](./verbose.h_kw.md_docs.md)
+- [`invalid_arguments.cpp_kw.md_docs.md`](./invalid_arguments.cpp_kw.md_docs.md)
+- [`tensor_apply.h_kw.md_docs.md`](./tensor_apply.h_kw.md_docs.md)
+- [`cuda_enabled.h_docs.md_docs.md`](./cuda_enabled.h_docs.md_docs.md)
+- [`tensor_layouts.h_docs.md_docs.md`](./tensor_layouts.h_docs.md_docs.md)
+- [`variadic.h_kw.md_docs.md`](./variadic.h_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `byte_order.h_docs.md_docs.md`
+- **Keyword Index**: `byte_order.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

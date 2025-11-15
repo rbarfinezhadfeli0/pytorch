@@ -1,0 +1,76 @@
+# Keyword Index: `docs/torch/csrc/jit/backends/coreml/objc/PTMCoreMLCompiler.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/csrc/jit/backends/coreml/objc/PTMCoreMLCompiler.h_kw.md](../../../../../../../../docs/torch/csrc/jit/backends/coreml/objc/PTMCoreMLCompiler.h_kw.md)
+- **Documentation**: [`PTMCoreMLCompiler.h_kw.md_docs.md`](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **Folder**: `docs/torch/csrc/jit/backends/coreml/objc`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`Architecture`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`Basic`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`Complete`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`Considerations`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`Dependencies`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`Design`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`Detailed`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`Documentation`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`Efficiency`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`Extracted`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`File`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`Folder`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`Generated`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`High`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`How`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`In`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`Includes`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`Index`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`Information`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`Keyword`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`Keywords`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`Level`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`Map`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`Metadata`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`Original`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`Overview`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`PTMCoreMLCompiler`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`Performance`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`Purpose`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`PyTorch`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`Related`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`Repository`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`Safety`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`Section`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`Security`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`Source`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`System`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`Testing`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`The`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`This`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+- **`Usage`**: [PTMCoreMLCompiler.h_kw.md_docs.md](./PTMCoreMLCompiler.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

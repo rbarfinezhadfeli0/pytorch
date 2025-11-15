@@ -1,0 +1,101 @@
+# Subtree Keyword Index: `docs/torch/distributed/tensor/_ops/`
+
+## Scope
+
+This index covers all files within `docs/torch/distributed/tensor/_ops/` and all its subdirectories (recursively).
+
+## Keywords
+
+
+### __init__
+
+- [`docs/torch/distributed/tensor/_ops/__init__.py_docs.md`](./__init__.py_docs.md_docs.md)
+- [`docs/torch/distributed/tensor/_ops/__init__.py_kw.md`](./__init__.py_kw.md_docs.md)
+
+### _common_rules
+
+- [`docs/torch/distributed/tensor/_ops/_common_rules.py_docs.md`](./_common_rules.py_docs.md_docs.md)
+- [`docs/torch/distributed/tensor/_ops/_common_rules.py_kw.md`](./_common_rules.py_kw.md_docs.md)
+
+### _conv_ops
+
+- [`docs/torch/distributed/tensor/_ops/_conv_ops.py_kw.md`](./_conv_ops.py_kw.md_docs.md)
+- [`docs/torch/distributed/tensor/_ops/_conv_ops.py_docs.md`](./_conv_ops.py_docs.md_docs.md)
+
+### _einsum_strategy
+
+- [`docs/torch/distributed/tensor/_ops/_einsum_strategy.py_kw.md`](./_einsum_strategy.py_kw.md_docs.md)
+- [`docs/torch/distributed/tensor/_ops/_einsum_strategy.py_docs.md`](./_einsum_strategy.py_docs.md_docs.md)
+
+### _embedding_ops
+
+- [`docs/torch/distributed/tensor/_ops/_embedding_ops.py_docs.md`](./_embedding_ops.py_docs.md_docs.md)
+- [`docs/torch/distributed/tensor/_ops/_embedding_ops.py_kw.md`](./_embedding_ops.py_kw.md_docs.md)
+
+### _mask_buffer
+
+- [`docs/torch/distributed/tensor/_ops/_mask_buffer.py_kw.md`](./_mask_buffer.py_kw.md_docs.md)
+- [`docs/torch/distributed/tensor/_ops/_mask_buffer.py_docs.md`](./_mask_buffer.py_docs.md_docs.md)
+
+### _math_ops
+
+- [`docs/torch/distributed/tensor/_ops/_math_ops.py_kw.md`](./_math_ops.py_kw.md_docs.md)
+- [`docs/torch/distributed/tensor/_ops/_math_ops.py_docs.md`](./_math_ops.py_docs.md_docs.md)
+
+### _matrix_ops
+
+- [`docs/torch/distributed/tensor/_ops/_matrix_ops.py_docs.md`](./_matrix_ops.py_docs.md_docs.md)
+- [`docs/torch/distributed/tensor/_ops/_matrix_ops.py_kw.md`](./_matrix_ops.py_kw.md_docs.md)
+
+### _pointwise_ops
+
+- [`docs/torch/distributed/tensor/_ops/_pointwise_ops.py_docs.md`](./_pointwise_ops.py_docs.md_docs.md)
+- [`docs/torch/distributed/tensor/_ops/_pointwise_ops.py_kw.md`](./_pointwise_ops.py_kw.md_docs.md)
+
+### _random_ops
+
+- [`docs/torch/distributed/tensor/_ops/_random_ops.py_kw.md`](./_random_ops.py_kw.md_docs.md)
+- [`docs/torch/distributed/tensor/_ops/_random_ops.py_docs.md`](./_random_ops.py_docs.md_docs.md)
+
+### _tensor_ops
+
+- [`docs/torch/distributed/tensor/_ops/_tensor_ops.py_docs.md`](./_tensor_ops.py_docs.md_docs.md)
+- [`docs/torch/distributed/tensor/_ops/_tensor_ops.py_kw.md`](./_tensor_ops.py_kw.md_docs.md)
+
+### _view_ops
+
+- [`docs/torch/distributed/tensor/_ops/_view_ops.py_kw.md`](./_view_ops.py_kw.md_docs.md)
+- [`docs/torch/distributed/tensor/_ops/_view_ops.py_docs.md`](./_view_ops.py_docs.md_docs.md)
+
+### files-.md
+
+- [`docs/torch/distributed/tensor/_ops/_tensor_ops.py_docs.md`](./_tensor_ops.py_docs.md_docs.md)
+- [`docs/torch/distributed/tensor/_ops/_matrix_ops.py_docs.md`](./_matrix_ops.py_docs.md_docs.md)
+- [`docs/torch/distributed/tensor/_ops/utils.py_docs.md`](./utils.py_docs.md_docs.md)
+- [`docs/torch/distributed/tensor/_ops/_matrix_ops.py_kw.md`](./_matrix_ops.py_kw.md_docs.md)
+- [`docs/torch/distributed/tensor/_ops/_random_ops.py_kw.md`](./_random_ops.py_kw.md_docs.md)
+- [`docs/torch/distributed/tensor/_ops/_pointwise_ops.py_docs.md`](./_pointwise_ops.py_docs.md_docs.md)
+- [`docs/torch/distributed/tensor/_ops/_tensor_ops.py_kw.md`](./_tensor_ops.py_kw.md_docs.md)
+- [`docs/torch/distributed/tensor/_ops/_math_ops.py_kw.md`](./_math_ops.py_kw.md_docs.md)
+- [`docs/torch/distributed/tensor/_ops/_embedding_ops.py_docs.md`](./_embedding_ops.py_docs.md_docs.md)
+- [`docs/torch/distributed/tensor/_ops/_einsum_strategy.py_kw.md`](./_einsum_strategy.py_kw.md_docs.md)
+- [`docs/torch/distributed/tensor/_ops/_view_ops.py_kw.md`](./_view_ops.py_kw.md_docs.md)
+- [`docs/torch/distributed/tensor/_ops/_common_rules.py_docs.md`](./_common_rules.py_docs.md_docs.md)
+- [`docs/torch/distributed/tensor/_ops/__init__.py_docs.md`](./__init__.py_docs.md_docs.md)
+- [`docs/torch/distributed/tensor/_ops/_random_ops.py_docs.md`](./_random_ops.py_docs.md_docs.md)
+- [`docs/torch/distributed/tensor/_ops/_einsum_strategy.py_docs.md`](./_einsum_strategy.py_docs.md_docs.md)
+- [`docs/torch/distributed/tensor/_ops/_math_ops.py_docs.md`](./_math_ops.py_docs.md_docs.md)
+- [`docs/torch/distributed/tensor/_ops/__init__.py_kw.md`](./__init__.py_kw.md_docs.md)
+- [`docs/torch/distributed/tensor/_ops/_view_ops.py_docs.md`](./_view_ops.py_docs.md_docs.md)
+- [`docs/torch/distributed/tensor/_ops/_embedding_ops.py_kw.md`](./_embedding_ops.py_kw.md_docs.md)
+- [`docs/torch/distributed/tensor/_ops/_common_rules.py_kw.md`](./_common_rules.py_kw.md_docs.md)
+
+### utils
+
+- [`docs/torch/distributed/tensor/_ops/utils.py_docs.md`](./utils.py_docs.md_docs.md)
+- [`docs/torch/distributed/tensor/_ops/utils.py_kw.md`](./utils.py_kw.md_docs.md)
+
+
+---
+
+*Generated by PyTorch Repository Documentation System*

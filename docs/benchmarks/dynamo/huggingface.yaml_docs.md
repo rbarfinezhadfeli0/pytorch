@@ -1,0 +1,215 @@
+# Documentation: `benchmarks/dynamo/huggingface.yaml`
+
+## File Metadata
+
+- **Path**: `benchmarks/dynamo/huggingface.yaml`
+- **Size**: 2,415 bytes (2.36 KB)
+- **Type**: YAML Configuration
+- **Extension**: `.yaml`
+
+## File Purpose
+
+This file contains **examples or benchmarks**.
+
+## Original Source
+
+```yaml
+skip:
+  all:
+    # Difficult to setup accuracy test because .eval() not supported
+    - Reformer
+    # Fails deepcopy
+    - BlenderbotForConditionalGeneration
+    - GPTNeoForCausalLM
+    - GPTNeoForSequenceClassification
+    # Fails with even batch size = 1
+    - GPTJForCausalLM
+    - GPTJForQuestionAnswering
+    # Model too big
+    - google/gemma-3-4b-it
+    - openai/gpt-oss-20b
+    - mistralai/Mistral-7B-Instruct-v0.3
+
+  device:
+    cpu:
+      - meta-llama/Llama-3.2-1B
+      - google/gemma-2-2b
+      - google/gemma-3-4b-it
+      - openai/whisper-tiny
+      - Qwen/Qwen3-0.6B
+      - mistralai/Mistral-7B-Instruct-v0.3
+      - openai/gpt-oss-20b
+
+  control_flow:
+    - AllenaiLongformerBase
+
+batch_size:
+  # TODO - Fails even after fake tensors
+  divisors:
+    AlbertForMaskedLM: 2
+    AllenaiLongformerBase: 2
+    BartForCausalLM: 2
+    BertForMaskedLM: 2
+    BlenderbotForCausalLM: 8
+    # BlenderbotForConditionalGeneration : 16
+    DebertaV2ForMaskedLM: 4
+    DistilBertForMaskedLM: 2
+    DistillGPT2: 2
+    ElectraForCausalLM: 2
+    GPT2ForSequenceClassification: 2
+    # GPTJForCausalLM : 2
+    # GPTJForQuestionAnswering : 2
+    # GPTNeoForCausalLM : 32
+    # GPTNeoForSequenceClassification : 2
+    GoogleFnet: 2
+    LayoutLMForMaskedLM: 2
+    M2M100ForConditionalGeneration: 4
+    MBartForCausalLM: 2
+    MT5ForConditionalGeneration: 2
+    MegatronBertForCausalLM: 4
+    MobileBertForMaskedLM: 2
+    OPTForCausalLM: 2
+    PLBartForCausalLM: 2
+    PegasusForCausalLM: 4
+    RobertaForCausalLM: 2
+    T5ForConditionalGeneration: 2
+    T5Small: 2
+    TrOCRForCausalLM: 2
+    XGLMForCausalLM: 4
+    XLNetLMHeadModel: 2
+    YituTechConvBert: 2
+    meta-llama/Llama-3.2-1B: 8
+    google/gemma-2-2b: 8
+    google/gemma-3-4b-it: 8
+    openai/whisper-tiny: 8
+    Qwen/Qwen3-0.6B: 8
+    mistralai/Mistral-7B-Instruct-v0.3: 8
+    openai/gpt-oss-20b: 8
+
+
+tolerance:
+  higher_training:
+    - MT5ForConditionalGeneration
+
+  higher_max_autotune_training: []
+
+  higher_inference:
+    - GPT2ForSequenceClassification
+
+  higher_inference_cpu:
+    - GPT2ForSequenceClassification
+
+  cosine: []
+
+
+accuracy:
+  skip:
+    large_models:
+      # Models too large to have eager, dynamo and fp64_numbers simultaneously
+      # even for 40 GB machine.
+      - DebertaV2ForMaskedLM
+      - BlenderbotForCausalLM
+
+only_inference:
+  # Fails with dynamo for train mode
+  - M2M100ForConditionalGeneration
+
+only_fp32:
+  - GoogleFnet
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `benchmarks/dynamo`.
+
+## Detailed Analysis
+
+### Code Structure
+
+This is a configuration file. See the original source for structure.
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `benchmarks/dynamo`, which is part of the PyTorch project infrastructure.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- **Code Execution**: Uses `eval()` or `exec()` - ensure input is sanitized
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`benchmarks/dynamo`):
+
+- [`timm_models_list_cpu.txt_docs.md`](./timm_models_list_cpu.txt_docs.md)
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`test.py_docs.md`](./test.py_docs.md)
+- [`benchmarks.py_docs.md`](./benchmarks.py_docs.md)
+- [`check_graph_breaks.py_docs.md`](./check_graph_breaks.py_docs.md)
+- [`check_csv.py_docs.md`](./check_csv.py_docs.md)
+- [`all_torchbench_models_list.txt_docs.md`](./all_torchbench_models_list.txt_docs.md)
+- [`check_accuracy.py_docs.md`](./check_accuracy.py_docs.md)
+- [`torchbench_models_list_cpu.txt_docs.md`](./torchbench_models_list_cpu.txt_docs.md)
+- [`timm_models.py_docs.md`](./timm_models.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `huggingface.yaml_docs.md`
+- **Keyword Index**: `huggingface.yaml_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

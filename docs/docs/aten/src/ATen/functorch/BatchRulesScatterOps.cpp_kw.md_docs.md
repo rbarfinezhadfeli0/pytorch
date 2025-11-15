@@ -1,0 +1,186 @@
+# Documentation: `docs/aten/src/ATen/functorch/BatchRulesScatterOps.cpp_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/functorch/BatchRulesScatterOps.cpp_kw.md`
+- **Size**: 4,659 bytes (4.55 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `aten/src/ATen/functorch/BatchRulesScatterOps.cpp`
+
+## File Information
+
+- **Original File**: [aten/src/ATen/functorch/BatchRulesScatterOps.cpp](../../../../../aten/src/ATen/functorch/BatchRulesScatterOps.cpp)
+- **Documentation**: [`BatchRulesScatterOps.cpp_docs.md`](./BatchRulesScatterOps.cpp_docs.md)
+- **Folder**: `aten/src/ATen/functorch`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Functions
+
+- **`_index_put_impl__batch_rule`**: [BatchRulesScatterOps.cpp_docs.md](./BatchRulesScatterOps.cpp_docs.md)
+- **`any_has_value`**: [BatchRulesScatterOps.cpp_docs.md](./BatchRulesScatterOps.cpp_docs.md)
+- **`are_advanced_indices_adjacent`**: [BatchRulesScatterOps.cpp_docs.md](./BatchRulesScatterOps.cpp_docs.md)
+- **`compute_indexed_shape`**: [BatchRulesScatterOps.cpp_docs.md](./BatchRulesScatterOps.cpp_docs.md)
+- **`get_expanded_index`**: [BatchRulesScatterOps.cpp_docs.md](./BatchRulesScatterOps.cpp_docs.md)
+- **`get_indexed_shape`**: [BatchRulesScatterOps.cpp_docs.md](./BatchRulesScatterOps.cpp_docs.md)
+- **`get_max_index_logical_dim`**: [BatchRulesScatterOps.cpp_docs.md](./BatchRulesScatterOps.cpp_docs.md)
+- **`get_num_leading_nones`**: [BatchRulesScatterOps.cpp_docs.md](./BatchRulesScatterOps.cpp_docs.md)
+- **`if`**: [BatchRulesScatterOps.cpp_docs.md](./BatchRulesScatterOps.cpp_docs.md)
+- **`index_add__batch_rule`**: [BatchRulesScatterOps.cpp_docs.md](./BatchRulesScatterOps.cpp_docs.md)
+- **`index_copy_decomp`**: [BatchRulesScatterOps.cpp_docs.md](./BatchRulesScatterOps.cpp_docs.md)
+- **`index_fill__int_scalar_batch_rule`**: [BatchRulesScatterOps.cpp_docs.md](./BatchRulesScatterOps.cpp_docs.md)
+- **`index_fill__int_tensor_batch_rule`**: [BatchRulesScatterOps.cpp_docs.md](./BatchRulesScatterOps.cpp_docs.md)
+- **`index_plumbing`**: [BatchRulesScatterOps.cpp_docs.md](./BatchRulesScatterOps.cpp_docs.md)
+- **`index_put__batch_rule`**: [BatchRulesScatterOps.cpp_docs.md](./BatchRulesScatterOps.cpp_docs.md)
+- **`index_put_plumbing`**: [BatchRulesScatterOps.cpp_docs.md](./BatchRulesScatterOps.cpp_docs.md)
+- **`index_select_decomp`**: [BatchRulesScatterOps.cpp_docs.md](./BatchRulesScatterOps.cpp_docs.md)
+- **`is_advanced_index`**: [BatchRulesScatterOps.cpp_docs.md](./BatchRulesScatterOps.cpp_docs.md)
+- **`maybe_permute_values`**: [BatchRulesScatterOps.cpp_docs.md](./BatchRulesScatterOps.cpp_docs.md)
+- **`select_scatter_decomp`**: [BatchRulesScatterOps.cpp_docs.md](./BatchRulesScatterOps.cpp_docs.md)
+- **`slice_scatter_decomp`**: [BatchRulesScatterOps.cpp_docs.md](./BatchRulesScatterOps.cpp_docs.md)
+- **`swap_regions`**: [BatchRulesScatterOps.cpp_docs.md](./BatchRulesScatterOps.cpp_docs.md)
+- **`unpackSelfAndIndicesAndValuesAtCurrentLevel`**: [BatchRulesScatterOps.cpp_docs.md](./BatchRulesScatterOps.cpp_docs.md)
+
+### Includes
+
+- **`ATen/Operators.h`**: [BatchRulesScatterOps.cpp_docs.md](./BatchRulesScatterOps.cpp_docs.md)
+- **`ATen/functorch/BatchRulesHelper.h`**: [BatchRulesScatterOps.cpp_docs.md](./BatchRulesScatterOps.cpp_docs.md)
+- **`ATen/functorch/BatchedFallback.h`**: [BatchRulesScatterOps.cpp_docs.md](./BatchRulesScatterOps.cpp_docs.md)
+- **`ATen/functorch/PlumbingHelper.h`**: [BatchRulesScatterOps.cpp_docs.md](./BatchRulesScatterOps.cpp_docs.md)
+- **`ATen/native/IndexKernel.h`**: [BatchRulesScatterOps.cpp_docs.md](./BatchRulesScatterOps.cpp_docs.md)
+- **`ATen/native/IndexingUtils.h`**: [BatchRulesScatterOps.cpp_docs.md](./BatchRulesScatterOps.cpp_docs.md)
+- **`ATen/native/TensorAdvancedIndexing.h`**: [BatchRulesScatterOps.cpp_docs.md](./BatchRulesScatterOps.cpp_docs.md)
+- **`c10/util/Exception.h`**: [BatchRulesScatterOps.cpp_docs.md](./BatchRulesScatterOps.cpp_docs.md)
+- **`torch/library.h`**: [BatchRulesScatterOps.cpp_docs.md](./BatchRulesScatterOps.cpp_docs.md)
+
+### Namespaces
+
+- **`at`**: [BatchRulesScatterOps.cpp_docs.md](./BatchRulesScatterOps.cpp_docs.md)
+- **`std`**: [BatchRulesScatterOps.cpp_docs.md](./BatchRulesScatterOps.cpp_docs.md)
+- **`void`**: [BatchRulesScatterOps.cpp_docs.md](./BatchRulesScatterOps.cpp_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/functorch`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/functorch`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/functorch`):
+
+- [`BatchRulesNorm.cpp_docs.md_docs.md`](./BatchRulesNorm.cpp_docs.md_docs.md)
+- [`FunctionalizeInterpreter.h_kw.md_docs.md`](./FunctionalizeInterpreter.h_kw.md_docs.md)
+- [`TensorWrapper.cpp_kw.md_docs.md`](./TensorWrapper.cpp_kw.md_docs.md)
+- [`PlumbingHelper.h_docs.md_docs.md`](./PlumbingHelper.h_docs.md_docs.md)
+- [`BatchRulesNorm.cpp_kw.md_docs.md`](./BatchRulesNorm.cpp_kw.md_docs.md)
+- [`LegacyBatchingRegistrations.cpp_kw.md_docs.md`](./LegacyBatchingRegistrations.cpp_kw.md_docs.md)
+- [`BatchRulesHelper.h_docs.md_docs.md`](./BatchRulesHelper.h_docs.md_docs.md)
+- [`Interpreter.h_docs.md_docs.md`](./Interpreter.h_docs.md_docs.md)
+- [`BatchedTensorImpl.cpp_docs.md_docs.md`](./BatchedTensorImpl.cpp_docs.md_docs.md)
+- [`BatchRulesDecompositions.cpp_kw.md_docs.md`](./BatchRulesDecompositions.cpp_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `BatchRulesScatterOps.cpp_kw.md_docs.md`
+- **Keyword Index**: `BatchRulesScatterOps.cpp_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

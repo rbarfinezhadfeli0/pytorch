@@ -1,0 +1,87 @@
+# Keyword Index: `docs/torch/_export/verifier.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/_export/verifier.py_kw.md](../../../../docs/torch/_export/verifier.py_kw.md)
+- **Documentation**: [`verifier.py_kw.md_docs.md`](./verifier.py_kw.md_docs.md)
+- **Folder**: `docs/torch/_export`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Any`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Architecture`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Basic`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Classs`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Complete`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Considerations`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Dependencies`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Design`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Detailed`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Documentation`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Efficiency`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`ExportedProgram`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Extracted`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`FakeTensor`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`File`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Folder`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Functions`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Generated`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`GraphModule`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`High`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`HigherOrderOperator`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`How`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Imports`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`In`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Index`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Information`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Iterable`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Keyword`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Keywords`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Level`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Map`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Metadata`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Original`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Overview`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Performance`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Purpose`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`PyTorch`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Related`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Repository`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Safety`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Section`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Security`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Source`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`SpecViolationError`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`SymBool`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`System`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Testing`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`The`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`This`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`TrainingIRVerifier`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Usage`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+- **`Verifier`**: [verifier.py_kw.md_docs.md](./verifier.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

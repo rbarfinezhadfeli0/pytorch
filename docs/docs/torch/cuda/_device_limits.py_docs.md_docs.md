@@ -1,0 +1,376 @@
+# Documentation: `docs/torch/cuda/_device_limits.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/cuda/_device_limits.py_docs.md`
+- **Size**: 8,257 bytes (8.06 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/cuda/_device_limits.py`
+
+## File Metadata
+
+- **Path**: `torch/cuda/_device_limits.py`
+- **Size**: 5,500 bytes (5.37 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This is a python source code that is part of the PyTorch project.
+
+## Original Source
+
+```python
+import torch
+from torch._C import dtype
+
+
+__all__ = ["GPULimits"]
+
+
+class GPULimits:
+    r"""Utility class that provides the theoretical limits of Nvidia GPU devices. The
+    limits don't take into account thermal throttling (assume that the GPU run at its
+    peak rated frequency). This is because user hardware configuration may influence
+    power behavior.
+    """
+
+    def __init__(self, target_device: torch.device):
+        # The device properties object is obtained by calling 'cudaGetDeviceProperties' CUDA
+        # runtime function. We need the total memory bus width and the memory clock rate to
+        # calculate the memory bandwidth.
+        self.device_properties = torch.cuda.get_device_properties(target_device)
+
+        # The compute capability is needed to determine the number of FLOPs per cycle per SM
+        self.compute_capability = int(
+            f"{self.device_properties.major}{self.device_properties.minor}"
+        )
+
+    # FLOPs per cycle information derived from Table 2 in:
+    # https://resources.nvidia.com/en-us-hopper-architecture/nvidia-h100-tensor-c
+
+    # Returns the number of FMA instructions retired per cycle per SM for a given
+    # data type, when tensor cores are NOT used
+    def get_fma_per_cycle_per_sm_cuda_cores(self, data_type: dtype) -> int:
+        hardcoded_device_values = {
+            # Ampere Architecture
+            "fp16_80": 256,
+            "fp32_80": 64,
+            "fp64_80": 32,
+            # Hopper Architecture
+            "fp16_90": 64,
+            "fp32_90": 128,
+            "fp64_90": 64,
+            # Blackwell Architecture
+            "fp16_100": 256,
+            "fp32_100": 128,
+            "fp64_100": 64,
+        }
+        dict_key = ""
+        if data_type is torch.float16:
+            dict_key = f"fp16_{self.compute_capability}"
+        elif data_type is torch.float32:
+            dict_key = f"fp32_{self.compute_capability}"
+        elif data_type is torch.float64:
+            dict_key = f"fp64_{self.compute_capability}"
+        else:
+            dict_key = "unknown"
+
+        if dict_key not in hardcoded_device_values:
+            raise RuntimeError(
+                f"No data for sm_{self.compute_capability} and {data_type}."
+            )
+
+        return hardcoded_device_values[dict_key]
+
+    # Returns the number of FMA instructions retired per cycle per SM for a given
+    # data type, when tensor cores ARE used
+    def get_fma_per_cycle_per_sm_tensor_cores(self, data_type: dtype) -> int:
+        hardcoded_device_values = {
+            # Ampere Architecture
+            "int8_80": 2048,
+            "fp16_80": 1024,
+            "fp32_80": 512,
+            "fp64_80": 64,
+            # Hopper Architecture
+            "int8_90": 4096,
+            "fp8_90": 4096,
+            "fp16_90": 2048,
+            "fp32_90": 1024,
+            "fp64_90": 128,
+            # Blackwell Architecture
+            "int8_100": 8192,
+            "fp8_100": 8192,
+            "fp16_100": 4096,
+            "fp32_100": 2048,
+        }
+        dict_key = ""
+        if data_type is torch.float16:
+            dict_key = f"fp16_{self.compute_capability}"
+        elif data_type is torch.bfloat16:
+            # FP16 and BF16 are equivalent in terms of FLOPs per cycle per SM
+            dict_key = f"fp16_{self.compute_capability}"
+        elif data_type is torch.float32:
+            dict_key = f"fp32_{self.compute_capability}"
+        elif data_type is torch.int8:
+            dict_key = f"int8_{self.compute_capability}"
+        elif data_type is torch.float64:
+            dict_key = f"fp64_{self.compute_capability}"
+        else:
+            dict_key = "unknown"
+
+        if dict_key not in hardcoded_device_values:
+            raise RuntimeError(
+                f"No data for sm_{self.compute_capability} and {data_type}."
+            )
+
+        return hardcoded_device_values[dict_key]
+
+    def get_tflops_per_second(
+        self, data_type: dtype, use_tensor_cores: bool = True
+    ) -> float:
+        num_sms = self.device_properties.multi_processor_count
+        clock_rate = self.device_properties.clock_rate  # KHz
+
+        fma_per_cycle = 0
+        if use_tensor_cores:
+            fma_per_cycle = self.get_fma_per_cycle_per_sm_tensor_cores(data_type)
+        else:
+            fma_per_cycle = self.get_fma_per_cycle_per_sm_cuda_cores(data_type)
+
+        # 1 FMA counts as 2 floating point operations
+        # Clock rate is in KHz
+        tflops_per_second = num_sms * fma_per_cycle * 2 * clock_rate / 1e9
+        return tflops_per_second
+
+    def get_memory_bandwidth_Bps(self) -> int:
+        # DRAM devices are Double-Data which means they provide an output at both fronts of
+        # a clock beat
+        bus_bytes_per_cycle = int(2 * self.device_properties.memory_bus_width / 8)
+        mem_clock_rate_Hz = self.device_properties.memory_clock_rate * 1000
+        bytes_per_second = bus_bytes_per_cycle * mem_clock_rate_Hz * 2
+        return bytes_per_second
+
+    def get_shared_memory_bandwidth_Bps(self) -> int:
+        # Each warp can LD or ST 32 x 4 bytes per cycle. To calculate the
+        # device's throughput we need to multiply with frequency and number of SMs.
+        num_sms = self.device_properties.multi_processor_count
+        bytes_per_cycle_per_sm = 128
+        bytes_per_cycle_per_device = num_sms * bytes_per_cycle_per_sm
+        bytes_per_second = (
+            bytes_per_cycle_per_device * self.device_properties.clock_rate * 1000
+        )
+        return bytes_per_second
+
+```
+
+
+
+## High-Level Overview
+
+r"""Utility class that provides the theoretical limits of Nvidia GPU devices. The    limits don't take into account thermal throttling (assume that the GPU run at its    peak rated frequency). This is because user hardware configuration may influence    power behavior.
+
+This Python file contains 2 class(es) and 6 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `GPULimits`
+
+**Functions defined**: `__init__`, `get_fma_per_cycle_per_sm_cuda_cores`, `get_fma_per_cycle_per_sm_tensor_cores`, `get_tflops_per_second`, `get_memory_bandwidth_Bps`, `get_shared_memory_bandwidth_Bps`
+
+**Key imports**: torch, dtype
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/cuda`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `torch`
+- `torch._C`: dtype
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/cuda`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`nccl.py_docs.md`](./nccl.py_docs.md)
+- [`streams.py_docs.md`](./streams.py_docs.md)
+- [`jiterator.py_docs.md`](./jiterator.py_docs.md)
+- [`_sanitizer.py_docs.md`](./_sanitizer.py_docs.md)
+- [`graphs.py_docs.md`](./graphs.py_docs.md)
+- [`gds.py_docs.md`](./gds.py_docs.md)
+- [`_pin_memory_utils.py_docs.md`](./_pin_memory_utils.py_docs.md)
+- [`green_contexts.py_docs.md`](./green_contexts.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `_device_limits.py_docs.md`
+- **Keyword Index**: `_device_limits.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/cuda`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/cuda`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/cuda`):
+
+- [`profiler.py_docs.md_docs.md`](./profiler.py_docs.md_docs.md)
+- [`sparse.py_docs.md_docs.md`](./sparse.py_docs.md_docs.md)
+- [`tunable.py_kw.md_docs.md`](./tunable.py_kw.md_docs.md)
+- [`_pin_memory_utils.py_kw.md_docs.md`](./_pin_memory_utils.py_kw.md_docs.md)
+- [`nccl.py_kw.md_docs.md`](./nccl.py_kw.md_docs.md)
+- [`gds.py_kw.md_docs.md`](./gds.py_kw.md_docs.md)
+- [`jiterator.py_docs.md_docs.md`](./jiterator.py_docs.md_docs.md)
+- [`memory.py_kw.md_docs.md`](./memory.py_kw.md_docs.md)
+- [`random.py_docs.md_docs.md`](./random.py_docs.md_docs.md)
+- [`nvtx.py_kw.md_docs.md`](./nvtx.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `_device_limits.py_docs.md_docs.md`
+- **Keyword Index**: `_device_limits.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,82 @@
+# Keyword Index: `docs/aten/src/ATen/native/quantized/cpu/qhardswish.cpp_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/native/quantized/cpu/qhardswish.cpp_kw.md](../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qhardswish.cpp_kw.md)
+- **Documentation**: [`qhardswish.cpp_kw.md_docs.md`](./qhardswish.cpp_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/native/quantized/cpu`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Analysis`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Architecture`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Basic`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Complete`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Considerations`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Context`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Dependencies`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Design`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Detailed`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Documentation`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Efficiency`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Extracted`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`File`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Folder`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Functions`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Generated`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`High`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`How`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`In`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Includes`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Index`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Information`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Keyword`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Keywords`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Level`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Map`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Metadata`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Namespaces`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Original`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Overview`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Performance`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Purpose`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`PyTorch`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`QnnpackUtils`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`QuantizedOps`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Related`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Repository`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Safety`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Section`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Security`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Source`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`System`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Tensor`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Testing`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`The`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`This`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+- **`Usage`**: [qhardswish.cpp_kw.md_docs.md](./qhardswish.cpp_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

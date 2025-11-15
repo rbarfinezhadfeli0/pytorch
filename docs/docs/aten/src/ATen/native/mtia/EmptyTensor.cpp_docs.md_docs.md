@@ -1,0 +1,302 @@
+# Documentation: `docs/aten/src/ATen/native/mtia/EmptyTensor.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/mtia/EmptyTensor.cpp_docs.md`
+- **Size**: 4,688 bytes (4.58 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/native/mtia/EmptyTensor.cpp`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/mtia/EmptyTensor.cpp`
+- **Size**: 2,737 bytes (2.67 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#include <ATen/Context.h>
+#include <ATen/EmptyTensor.h>
+#include <ATen/native/mtia/EmptyTensor.h>
+#include <c10/core/Allocator.h>
+#include <c10/core/DeviceGuard.h>
+
+namespace at::detail {
+
+at::Allocator* GetMTIAAllocator() {
+  return GetAllocator(DeviceType::MTIA);
+}
+
+TensorBase empty_mtia(
+    IntArrayRef size,
+    ScalarType dtype,
+    std::optional<Device> device_opt,
+    std::optional<c10::MemoryFormat> memory_format_opt) {
+  at::globalContext().lazyInitDevice(c10::DeviceType::MTIA);
+  const auto device = device_or_default(device_opt);
+  TORCH_INTERNAL_ASSERT(device.is_mtia());
+  const DeviceGuard device_guard(device);
+  auto* allocator = GetMTIAAllocator();
+  constexpr c10::DispatchKeySet mtia_dks(c10::DispatchKey::MTIA);
+  return at::detail::empty_generic(
+      size, allocator, mtia_dks, dtype, memory_format_opt);
+}
+
+TensorBase empty_mtia(
+    IntArrayRef size,
+    std::optional<ScalarType> dtype_opt,
+    std::optional<Layout> layout_opt,
+    std::optional<Device> device_opt,
+    std::optional<bool> pin_memory_opt,
+    std::optional<c10::MemoryFormat> memory_format_opt) {
+  const auto dtype = dtype_or_default(dtype_opt);
+  return at::detail::empty_mtia(size, dtype, device_opt, memory_format_opt);
+}
+
+TensorBase empty_mtia(IntArrayRef size, const TensorOptions& options) {
+  return at::detail::empty_mtia(
+      size,
+      optTypeMetaToScalarType(options.dtype_opt()),
+      options.layout_opt(),
+      options.device_opt(),
+      options.pinned_memory_opt(),
+      options.memory_format_opt());
+}
+
+TensorBase empty_strided_mtia(
+    IntArrayRef size,
+    IntArrayRef stride,
+    ScalarType dtype,
+    std::optional<Device> device_opt) {
+  at::globalContext().lazyInitDevice(c10::DeviceType::MTIA);
+  const auto device = device_or_default(device_opt);
+  const DeviceGuard device_guard(device);
+  auto* allocator = GetMTIAAllocator();
+  constexpr c10::DispatchKeySet mtia_dks(c10::DispatchKey::MTIA);
+  return at::detail::empty_strided_generic(
+      size, stride, allocator, mtia_dks, dtype);
+}
+
+TensorBase empty_strided_mtia(
+    IntArrayRef size,
+    IntArrayRef stride,
+    std::optional<ScalarType> dtype_opt,
+    std::optional<Layout> layout_opt,
+    std::optional<Device> device_opt,
+    std::optional<bool> pin_memory_opt) {
+  const auto dtype = dtype_or_default(dtype_opt);
+  return at::detail::empty_strided_mtia(size, stride, dtype, device_opt);
+}
+
+TensorBase empty_strided_mtia(
+    IntArrayRef size,
+    IntArrayRef stride,
+    const TensorOptions& options) {
+  return at::detail::empty_strided_mtia(
+      size,
+      stride,
+      optTypeMetaToScalarType(options.dtype_opt()),
+      options.layout_opt(),
+      options.device_opt(),
+      options.pinned_memory_opt());
+}
+} // namespace at::detail
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 11 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `at`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native/mtia`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/Context.h`
+- `ATen/EmptyTensor.h`
+- `ATen/native/mtia/EmptyTensor.h`
+- `c10/core/Allocator.h`
+- `c10/core/DeviceGuard.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native/mtia`):
+
+- [`EmptyTensor.h_docs.md`](./EmptyTensor.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `EmptyTensor.cpp_docs.md`
+- **Keyword Index**: `EmptyTensor.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native/mtia`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native/mtia`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native/mtia`):
+
+- [`EmptyTensor.cpp_kw.md_docs.md`](./EmptyTensor.cpp_kw.md_docs.md)
+- [`EmptyTensor.h_kw.md_docs.md`](./EmptyTensor.h_kw.md_docs.md)
+- [`EmptyTensor.h_docs.md_docs.md`](./EmptyTensor.h_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `EmptyTensor.cpp_docs.md_docs.md`
+- **Keyword Index**: `EmptyTensor.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,219 @@
+# Documentation: `c10/util/env.cpp`
+
+## File Metadata
+
+- **Path**: `c10/util/env.cpp`
+- **Size**: 2,453 bytes (2.40 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#include <c10/util/Exception.h>
+#include <c10/util/env.h>
+#include <fmt/format.h>
+#include <cstdlib>
+#include <mutex>
+#include <shared_mutex>
+
+namespace c10::utils {
+
+static std::shared_mutex& get_env_mutex() {
+  static std::shared_mutex env_mutex;
+  return env_mutex;
+}
+
+// Set an environment variable.
+void set_env(const char* name, const char* value, bool overwrite) {
+  std::lock_guard lk(get_env_mutex());
+#ifdef _MSC_VER
+#pragma warning(push)
+#pragma warning(disable : 4996)
+  if (!overwrite) {
+    // NOLINTNEXTLINE(concurrency-mt-unsafe)
+    if (std::getenv(name) != nullptr) {
+      return;
+    }
+  }
+  auto full_env_variable = fmt::format("{}={}", name, value);
+  // NOLINTNEXTLINE(concurrency-mt-unsafe)
+  auto err = putenv(full_env_variable.c_str());
+  TORCH_INTERNAL_ASSERT(
+      err == 0,
+      "putenv failed for environment \"",
+      name,
+      "\", the error is: ",
+      err);
+#pragma warning(pop)
+#else
+  // NOLINTNEXTLINE(concurrency-mt-unsafe)
+  auto err = setenv(name, value, static_cast<int>(overwrite));
+  TORCH_INTERNAL_ASSERT(
+      err == 0,
+      "setenv failed for environment \"",
+      name,
+      "\", the error is: ",
+      err);
+#endif
+  return;
+}
+
+// Reads an environment variable and returns the content if it is set
+std::optional<std::string> get_env(const char* name) noexcept {
+  std::shared_lock lk(get_env_mutex());
+#ifdef _MSC_VER
+#pragma warning(push)
+#pragma warning(disable : 4996)
+#endif
+  // NOLINTNEXTLINE(concurrency-mt-unsafe)
+  auto envar = std::getenv(name);
+#ifdef _MSC_VER
+#pragma warning(pop)
+#endif
+  if (envar != nullptr) {
+    return std::string(envar);
+  }
+  return std::nullopt;
+}
+
+// Checks an environment variable is set.
+bool has_env(const char* name) noexcept {
+  return get_env(name).has_value();
+}
+
+// Reads an environment variable and returns
+// - optional<true>,              if set equal to "1"
+// - optional<false>,             if set equal to "0"
+// - nullopt,   otherwise
+//
+// NB:
+// Issues a warning if the value of the environment variable is not 0 or 1.
+std::optional<bool> check_env(const char* name) {
+  auto env_opt = get_env(name);
+  if (env_opt.has_value()) {
+    if (env_opt == "0") {
+      return false;
+    }
+    if (env_opt == "1") {
+      return true;
+    }
+    TORCH_WARN(
+        "Ignoring invalid value for boolean flag ",
+        name,
+        ": ",
+        *env_opt,
+        "valid values are 0 or 1.");
+  }
+  return std::nullopt;
+}
+} // namespace c10::utils
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 12 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `c10`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `c10/util`, which is part of **C10** (Caffe2 Core), the core library providing fundamental abstractions.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `c10/util/Exception.h`
+- `c10/util/env.h`
+- `fmt/format.h`
+- `cstdlib`
+- `mutex`
+- `shared_mutex`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`c10/util`):
+
+- [`CallOnce.h_docs.md`](./CallOnce.h_docs.md)
+- [`Unicode.cpp_docs.md`](./Unicode.cpp_docs.md)
+- [`logging_is_not_google_glog.h_docs.md`](./logging_is_not_google_glog.h_docs.md)
+- [`Array.h_docs.md`](./Array.h_docs.md)
+- [`complex_math.h_docs.md`](./complex_math.h_docs.md)
+- [`order_preserving_flat_hash_map.h_docs.md`](./order_preserving_flat_hash_map.h_docs.md)
+- [`flags_use_gflags.cpp_docs.md`](./flags_use_gflags.cpp_docs.md)
+- [`flags_use_no_gflags.cpp_docs.md`](./flags_use_no_gflags.cpp_docs.md)
+- [`Float8_e4m3fnuz.h_docs.md`](./Float8_e4m3fnuz.h_docs.md)
+- [`typeid.cpp_docs.md`](./typeid.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `env.cpp_docs.md`
+- **Keyword Index**: `env.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

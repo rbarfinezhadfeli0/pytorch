@@ -1,0 +1,298 @@
+# Documentation: `docs/torch/csrc/utils/torch_dispatch_mode.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/utils/torch_dispatch_mode.h_docs.md`
+- **Size**: 4,678 bytes (4.57 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/csrc/utils/torch_dispatch_mode.h`
+
+## File Metadata
+
+- **Path**: `torch/csrc/utils/torch_dispatch_mode.h`
+- **Size**: 2,275 bytes (2.22 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#pragma once
+
+#include <c10/core/impl/TorchDispatchModeTLS.h>
+
+namespace torch::torch_dispatch_mode {
+
+struct StashTorchDispatchModeGuard {
+ public:
+  StashTorchDispatchModeGuard() {
+    if (c10::impl::TorchDispatchModeTLS::any_modes_set(
+            /*skip_infra_modes=*/true)) {
+      saved_mode_ = c10::impl::TorchDispatchModeTLS::pop_stack();
+    } else {
+      auto mode_and_key =
+          c10::impl::TorchDispatchModeTLS::pop_highest_infra_mode();
+      saved_mode_ = std::move(std::get<0>(mode_and_key));
+      saved_mode_key_ = std::get<1>(mode_and_key);
+    }
+  }
+
+  ~StashTorchDispatchModeGuard() {
+    if (saved_mode_key_.has_value()) {
+      c10::impl::TorchDispatchModeTLS::set_mode(
+          saved_mode_, saved_mode_key_.value());
+    } else {
+      c10::impl::TorchDispatchModeTLS::push_non_infra_mode_onto_stack(
+          std::move(saved_mode_));
+    }
+  }
+  StashTorchDispatchModeGuard(const StashTorchDispatchModeGuard&) = delete;
+  StashTorchDispatchModeGuard(StashTorchDispatchModeGuard&&) = delete;
+  StashTorchDispatchModeGuard& operator=(const StashTorchDispatchModeGuard&) =
+      delete;
+  StashTorchDispatchModeGuard& operator=(StashTorchDispatchModeGuard&&) =
+      delete;
+
+  const std::shared_ptr<c10::impl::PyObject_TorchDispatchMode>& get_cur_mode() {
+    return saved_mode_;
+  }
+
+ private:
+  std::shared_ptr<c10::impl::PyObject_TorchDispatchMode> saved_mode_;
+  std::optional<c10::impl::TorchDispatchModeKey> saved_mode_key_;
+};
+
+struct StashTorchDispatchStackGuard {
+ public:
+  StashTorchDispatchStackGuard() {
+    auto old = c10::impl::TorchDispatchModeTLS::get_state();
+    c10::impl::TorchDispatchModeTLS::set_state(std::move(saved_state_));
+    saved_state_ = std::move(old);
+  }
+  StashTorchDispatchStackGuard(const StashTorchDispatchStackGuard&) = delete;
+  StashTorchDispatchStackGuard(StashTorchDispatchStackGuard&&) = delete;
+  StashTorchDispatchStackGuard& operator=(const StashTorchDispatchStackGuard&) =
+      delete;
+  StashTorchDispatchStackGuard& operator=(StashTorchDispatchStackGuard&&) =
+      delete;
+
+  ~StashTorchDispatchStackGuard() {
+    c10::impl::TorchDispatchModeTLS::set_state(std::move(saved_state_));
+  }
+
+ private:
+  c10::impl::TorchDispatchModeTLS saved_state_;
+};
+
+} // namespace torch::torch_dispatch_mode
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 0 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`
+
+**Classes/Structs**: `StashTorchDispatchModeGuard`, `StashTorchDispatchStackGuard`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/utils`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `c10/core/impl/TorchDispatchModeTLS.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/utils`):
+
+- [`tensor_list.h_docs.md`](./tensor_list.h_docs.md)
+- [`disable_torch_function.cpp_docs.md`](./disable_torch_function.cpp_docs.md)
+- [`tensor_new.cpp_docs.md`](./tensor_new.cpp_docs.md)
+- [`tensor_apply.cpp_docs.md`](./tensor_apply.cpp_docs.md)
+- [`cpp_stacktraces.cpp_docs.md`](./cpp_stacktraces.cpp_docs.md)
+- [`numpy_stub.h_docs.md`](./numpy_stub.h_docs.md)
+- [`nested.h_docs.md`](./nested.h_docs.md)
+- [`nested.cpp_docs.md`](./nested.cpp_docs.md)
+- [`six.h_docs.md`](./six.h_docs.md)
+- [`python_scalars.h_docs.md`](./python_scalars.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `torch_dispatch_mode.h_docs.md`
+- **Keyword Index**: `torch_dispatch_mode.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/utils`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/utils`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/utils`):
+
+- [`python_tuples.h_kw.md_docs.md`](./python_tuples.h_kw.md_docs.md)
+- [`six.h_kw.md_docs.md`](./six.h_kw.md_docs.md)
+- [`tensor_types.cpp_docs.md_docs.md`](./tensor_types.cpp_docs.md_docs.md)
+- [`tensor_list.h_kw.md_docs.md`](./tensor_list.h_kw.md_docs.md)
+- [`verbose.h_kw.md_docs.md`](./verbose.h_kw.md_docs.md)
+- [`invalid_arguments.cpp_kw.md_docs.md`](./invalid_arguments.cpp_kw.md_docs.md)
+- [`tensor_apply.h_kw.md_docs.md`](./tensor_apply.h_kw.md_docs.md)
+- [`cuda_enabled.h_docs.md_docs.md`](./cuda_enabled.h_docs.md_docs.md)
+- [`tensor_layouts.h_docs.md_docs.md`](./tensor_layouts.h_docs.md_docs.md)
+- [`variadic.h_kw.md_docs.md`](./variadic.h_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `torch_dispatch_mode.h_docs.md_docs.md`
+- **Keyword Index**: `torch_dispatch_mode.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

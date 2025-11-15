@@ -1,0 +1,520 @@
+# Documentation: `docs/torch/nn/modules/lazy.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/nn/modules/lazy.py_docs.md`
+- **Size**: 14,826 bytes (14.48 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/nn/modules/lazy.py`
+
+## File Metadata
+
+- **Path**: `torch/nn/modules/lazy.py`
+- **Size**: 11,687 bytes (11.41 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This is a python source code that is part of the PyTorch project.
+
+## Original Source
+
+```python
+# mypy: allow-untyped-defs
+import itertools
+from typing import Any, Optional, Protocol
+
+import torch
+from torch.nn.parameter import is_lazy
+
+
+__all__ = ["LazyModuleMixin"]
+
+
+class _LazyProtocol(Protocol):
+    """This class is used to avoid errors with mypy checks for the attributes in a mixin.
+
+    https://mypy.readthedocs.io/en/latest/more_types.html#mixin-classes
+    """
+
+    def _register_load_state_dict_pre_hook(self, hook): ...
+
+    def register_forward_pre_hook(self, hook, *, prepend=False, with_kwargs=False): ...
+
+    def _lazy_load_hook(
+        self,
+        state_dict,
+        prefix,
+        local_metadata,
+        strict,
+        missing_keys,
+        unexpected_keys,
+        error_msgs,
+    ): ...
+
+    def _get_name(self): ...
+
+    def _infer_parameters(self, module, input): ...
+
+    @property
+    def _parameters(self): ...
+
+    @property
+    def _buffers(self): ...
+
+    @property
+    def _non_persistent_buffers_set(self): ...
+
+    @property
+    def _load_hook(self): ...
+
+    @property
+    def _initialize_hook(self): ...
+
+
+class LazyModuleMixin:
+    r"""A mixin for modules that lazily initialize parameters, also known as "lazy modules".
+
+    .. warning:
+        Lazy modules are an experimental new feature under active development,
+        and their API is likely to change.
+
+    Modules that lazily initialize parameters, or "lazy modules",
+    derive the shapes of their parameters from the first input(s)
+    to their forward method. Until that first forward they contain
+    :class:`torch.nn.UninitializedParameter` s that should not be accessed
+    or used, and afterward they contain regular :class:`torch.nn.Parameter` s.
+    Lazy modules are convenient since they don't require computing some
+    module arguments, like the :attr:`in_features` argument of a
+    typical :class:`torch.nn.Linear`.
+
+    After construction, networks with lazy modules should first
+    be converted to the desired dtype and placed on the expected device.
+    This is because lazy modules only perform shape inference so the usual dtype
+    and device placement behavior applies.
+    The lazy modules should then perform "dry runs" to initialize all the components in the module.
+    These "dry runs" send inputs of the correct size, dtype, and device through
+    the network and to each one of its lazy modules. After this the network can be used as usual.
+
+    >>> # xdoctest: +SKIP
+    >>> class LazyMLP(torch.nn.Module):
+    ...     def __init__(self) -> None:
+    ...         super().__init__()
+    ...         self.fc1 = torch.nn.LazyLinear(10)
+    ...         self.relu1 = torch.nn.ReLU()
+    ...         self.fc2 = torch.nn.LazyLinear(1)
+    ...         self.relu2 = torch.nn.ReLU()
+    ...
+    ...     def forward(self, input):
+    ...         x = self.relu1(self.fc1(input))
+    ...         y = self.relu2(self.fc2(x))
+    ...         return y
+    >>> # constructs a network with lazy modules
+    >>> lazy_mlp = LazyMLP()
+    >>> # transforms the network's device and dtype
+    >>> # NOTE: these transforms can and should be applied after construction and before any 'dry runs'
+    >>> lazy_mlp = lazy_mlp.cuda()
+    >>> lazy_mlp
+    LazyMLP( (fc1): LazyLinear(in_features=0, out_features=10, bias=True)
+      (relu1): ReLU()
+      (fc2): LazyLinear(in_features=0, out_features=1, bias=True)
+      (relu2): ReLU()
+    )
+    >>> # performs a dry run to initialize the network's lazy modules
+    >>> lazy_mlp(torch.ones(10, 10).cuda())
+    >>> # after initialization, LazyLinear modules become regular Linear modules
+    >>> lazy_mlp
+    LazyMLP(
+      (fc1): Linear(in_features=10, out_features=10, bias=True)
+      (relu1): ReLU()
+      (fc2): Linear(in_features=10, out_features=1, bias=True)
+      (relu2): ReLU()
+    )
+    >>> # attaches an optimizer, since parameters can now be used as usual
+    >>> optim = torch.optim.SGD(lazy_mlp.parameters(), lr=0.01)
+
+    A final caveat when using lazy modules is that the order of initialization of a network's
+    parameters may change, since the lazy modules are always initialized after other modules.
+    For example, if the LazyMLP class defined above had a :class:`torch.nn.LazyLinear` module
+    first and then a regular :class:`torch.nn.Linear` second, the second module would be
+    initialized on construction and the first module would be initialized during the first dry run.
+    This can cause the parameters of a network using lazy modules to be initialized differently
+    than the parameters of a network without lazy modules as the order of parameter initializations,
+    which often depends on a stateful random number generator, is different.
+    Check :doc:`/notes/randomness` for more details.
+
+    Lazy modules can be serialized with a state dict like other modules. For example:
+
+    >>> lazy_mlp = LazyMLP()
+    >>> # The state dict shows the uninitialized parameters
+    >>> lazy_mlp.state_dict()
+    OrderedDict({'fc1.weight': <UninitializedParameter>,
+                 'fc1.bias': <UninitializedParameter>,
+                 'fc2.weight': <UninitializedParameter>,
+                 'fc2.bias': <UninitializedParameter>})
+
+    Lazy modules can load regular :class:`torch.nn.Parameter` s (i.e. you can serialize/deserialize
+    initialized LazyModules and they will remain initialized)
+
+
+    >>> full_mlp = LazyMLP()
+    >>> # Dry run to initialize another module
+    >>> full_mlp.forward(torch.ones(10, 1))
+    >>> # Load an initialized state into a lazy module
+    >>> lazy_mlp.load_state_dict(full_mlp.state_dict())
+    >>> # The state dict now holds valid values
+    >>> lazy_mlp.state_dict()
+    OrderedDict([('fc1.weight',
+                  tensor([[-0.3837],
+                          [ 0.0907],
+                          [ 0.6708],
+                          [-0.5223],
+                          [-0.9028],
+                          [ 0.2851],
+                          [-0.4537],
+                          [ 0.6813],
+                          [ 0.5766],
+                          [-0.8678]])),
+                 ('fc1.bias',
+                  tensor([-1.8832e+25,  4.5636e-41, -1.8832e+25,  4.5636e-41, -6.1598e-30,
+                           4.5637e-41, -1.8788e+22,  4.5636e-41, -2.0042e-31,  4.5637e-41])),
+                 ('fc2.weight',
+                  tensor([[ 0.1320,  0.2938,  0.0679,  0.2793,  0.1088, -0.1795, -0.2301,  0.2807,
+                            0.2479,  0.1091]])),
+                 ('fc2.bias', tensor([0.0019]))])
+
+    Note, however, that the loaded parameters will not be replaced when doing a "dry run" if they are initialized
+    when the state is loaded. This prevents using initialized modules in different contexts.
+    """
+
+    # modules inheriting from this will change their __class__ to the specified
+    # one after they are fully initialized
+    cls_to_become: Optional[type[Any]] = None
+
+    def __init__(self: _LazyProtocol, *args, **kwargs):
+        # Mypy doesn't like this super call in a mixin
+        super().__init__(*args, **kwargs)  # type: ignore[misc]
+        # pyrefly: ignore [read-only]
+        self._load_hook = self._register_load_state_dict_pre_hook(self._lazy_load_hook)
+        # pyrefly: ignore [read-only]
+        self._initialize_hook = self.register_forward_pre_hook(
+            self._infer_parameters, with_kwargs=True
+        )
+
+    def _save_to_state_dict(self: _LazyProtocol, destination, prefix, keep_vars):
+        # This should be ideally implemented as a hook,
+        # but we should override `detach` in the UninitializedParameter to return itself
+        # which is not clean
+        for name, param in self._parameters.items():
+            if param is not None:
+                if not (is_lazy(param) or keep_vars):
+                    param = param.detach()
+                destination[prefix + name] = param
+        for name, buf in self._buffers.items():
+            if buf is not None and name not in self._non_persistent_buffers_set:
+                if not (is_lazy(buf) or keep_vars):
+                    buf = buf.detach()
+                destination[prefix + name] = buf
+
+    def _lazy_load_hook(
+        self: _LazyProtocol,
+        state_dict,
+        prefix,
+        local_metadata,
+        strict,
+        missing_keys,
+        unexpected_keys,
+        error_msgs,
+    ):
+        """load_state_dict pre-hook function for lazy buffers and parameters.
+
+        The purpose of this hook is to adjust the current state and/or
+        ``state_dict`` being loaded so that a module instance serialized in
+        both un/initialized state can be deserialized onto both un/initialized
+        module instance.
+        See comment in ``torch.nn.Module._register_load_state_dict_pre_hook``
+        for the details of the hook specification.
+        """
+        for name, param in itertools.chain(
+            self._parameters.items(), self._buffers.items()
+        ):
+            key = prefix + name
+            if key in state_dict and param is not None:
+                input_param = state_dict[key]
+                if is_lazy(param):
+                    # The current parameter is not initialized but the one being loaded one is
+                    # create a new parameter based on the uninitialized one
+                    if not is_lazy(input_param):
+                        with torch.no_grad():
+                            param.materialize(input_param.shape)
+
+    def initialize_parameters(self: _LazyProtocol, *args, **kwargs):
+        r"""Initialize parameters according to the input batch properties.
+
+        This adds an interface to isolate parameter initialization from the
+        forward pass when doing parameter shape inference.
+        """
+        raise NotImplementedError(
+            f"initialize_parameters is not implemented for {self.__class__.__name__}"
+        )
+
+    def has_uninitialized_params(self: _LazyProtocol):
+        r"""Check if a module has parameters that are not initialized."""
+        # This is to avoid the JIT to track this parameter and force
+        # custom modules __setstate__ to add it
+        params = self._parameters.values()
+        buffers = self._buffers.values()
+        for param in itertools.chain(params, buffers):
+            if is_lazy(param):
+                return True
+        return False
+
+    # torchrec tests the code consistency with the following code
+    # fmt: off
+    def _infer_parameters(self: _LazyProtocol, module, args, kwargs=None):
+        r"""Infers the size and initializes the parameters according to the provided input batch.
+
+        Given a module that contains parameters that were declared inferable
+        using :class:`torch.nn.parameter.ParameterMode.Infer`, runs a forward pass
+        in the complete module using the provided input to initialize all the parameters
+        as needed.
+        The module is set into evaluation mode before running the forward pass in order
+        to avoid saving statistics or calculating gradients
+        """
+        kwargs = kwargs if kwargs else {}
+        module.initialize_parameters(*args, **kwargs)
+        if module.has_uninitialized_params():
+            raise RuntimeError(f'module {self._get_name()} has not been fully initialized')
+        module._initialize_hook.remove()
+        module._load_hook.remove()
+        delattr(module, '_initialize_hook')
+        delattr(module, '_load_hook')
+        if module.cls_to_become is not None:
+            module.__class__ = module.cls_to_become
+    # fmt: on
+
+    def _replicate_for_data_parallel(self: _LazyProtocol):
+        raise RuntimeError(
+            "Modules with uninitialized parameters can't be used with `DataParallel`. "
+            "Run a dummy forward pass to correctly initialize the modules"
+        )
+
+```
+
+
+
+## High-Level Overview
+
+"""This class is used to avoid errors with mypy checks for the attributes in a mixin.    https://mypy.readthedocs.io/en/latest/more_types.html#mixin-classes
+
+This Python file contains 5 class(es) and 19 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `_LazyProtocol`, `LazyModuleMixin`, `LazyMLP`
+
+**Functions defined**: `_register_load_state_dict_pre_hook`, `register_forward_pre_hook`, `_lazy_load_hook`, `_get_name`, `_infer_parameters`, `_parameters`, `_buffers`, `_non_persistent_buffers_set`, `_load_hook`, `_initialize_hook`, `__init__`, `forward`, `__init__`, `_save_to_state_dict`, `_lazy_load_hook`, `initialize_parameters`, `has_uninitialized_params`, `_infer_parameters`, `_replicate_for_data_parallel`
+
+**Key imports**: itertools, Any, Optional, Protocol, torch, is_lazy
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/nn/modules`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `itertools`
+- `typing`: Any, Optional, Protocol
+- `torch`
+- `torch.nn.parameter`: is_lazy
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/nn/modules`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`fold.py_docs.md`](./fold.py_docs.md)
+- [`rnn.py_docs.md`](./rnn.py_docs.md)
+- [`channelshuffle.py_docs.md`](./channelshuffle.py_docs.md)
+- [`utils.py_docs.md`](./utils.py_docs.md)
+- [`adaptive.py_docs.md`](./adaptive.py_docs.md)
+- [`conv.py_docs.md`](./conv.py_docs.md)
+- [`distance.py_docs.md`](./distance.py_docs.md)
+- [`linear.py_docs.md`](./linear.py_docs.md)
+- [`normalization.py_docs.md`](./normalization.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `lazy.py_docs.md`
+- **Keyword Index**: `lazy.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/nn/modules`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/nn/modules`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/nn/modules`):
+
+- [`sparse.py_docs.md_docs.md`](./sparse.py_docs.md_docs.md)
+- [`instancenorm.py_kw.md_docs.md`](./instancenorm.py_kw.md_docs.md)
+- [`activation.py_kw.md_docs.md`](./activation.py_kw.md_docs.md)
+- [`container.py_docs.md_docs.md`](./container.py_docs.md_docs.md)
+- [`distance.py_kw.md_docs.md`](./distance.py_kw.md_docs.md)
+- [`pixelshuffle.py_kw.md_docs.md`](./pixelshuffle.py_kw.md_docs.md)
+- [`module.py_docs.md_docs.md`](./module.py_docs.md_docs.md)
+- [`batchnorm.py_docs.md_docs.md`](./batchnorm.py_docs.md_docs.md)
+- [`transformer.py_kw.md_docs.md`](./transformer.py_kw.md_docs.md)
+- [`utils.py_docs.md_docs.md`](./utils.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `lazy.py_docs.md_docs.md`
+- **Keyword Index**: `lazy.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

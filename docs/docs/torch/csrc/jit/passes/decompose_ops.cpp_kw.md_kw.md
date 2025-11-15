@@ -1,0 +1,79 @@
+# Keyword Index: `docs/torch/csrc/jit/passes/decompose_ops.cpp_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/csrc/jit/passes/decompose_ops.cpp_kw.md](../../../../../../docs/torch/csrc/jit/passes/decompose_ops.cpp_kw.md)
+- **Documentation**: [`decompose_ops.cpp_kw.md_docs.md`](./decompose_ops.cpp_kw.md_docs.md)
+- **Folder**: `docs/torch/csrc/jit/passes`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`Analysis`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`Architecture`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`Basic`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`Complete`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`Considerations`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`DecomposeOps`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`Dependencies`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`Design`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`Detailed`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`Documentation`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`Efficiency`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`Extracted`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`File`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`Folder`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`Functions`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`Generated`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`High`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`How`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`In`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`Includes`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`Index`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`Information`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`Keyword`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`Keywords`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`Level`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`Map`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`Metadata`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`Namespaces`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`Original`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`Overview`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`Performance`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`Purpose`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`PyTorch`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`Related`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`Repository`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`Safety`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`Section`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`Security`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`Source`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`System`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`Testing`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`The`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`This`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+- **`Usage`**: [decompose_ops.cpp_kw.md_docs.md](./decompose_ops.cpp_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,441 @@
+# Documentation: `docs/test/functorch/test_eager_transforms.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/test/functorch/test_eager_transforms.py_kw.md`
+- **Size**: 29,886 bytes (29.19 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `test/functorch/test_eager_transforms.py`
+
+## File Information
+
+- **Original File**: [test/functorch/test_eager_transforms.py](../../../test/functorch/test_eager_transforms.py)
+- **Documentation**: [`test_eager_transforms.py_docs.md`](./test_eager_transforms.py_docs.md)
+- **Folder**: `test/functorch`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`A`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`B`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`Foo`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`FooBar`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`Id`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`IdentityWithDynamicBackwardOp`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`MLPClassifier`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`MyClass`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`MySin`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`MySquare`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`MySum`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`Net`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`NumpyCube`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`NumpyCubeNotComposable`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`SampleNet`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`TestAutogradFunction`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`TestAutogradFunctionVmapAPI`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`TestCompileTransforms`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`TestComposability`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`TestExamplesCorrectness`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`TestFunctionalize`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`TestGradTrackingTensorToList`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`TestGradTransform`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`TestHelpers`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`TestHessian`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`TestHigherOrderOperatorInteraction`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`TestJac`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`TestJvp`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`TestLinearize`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`TestMakeFunctional`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`TestSliceArgnums`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`TestVmapJvpInplaceView`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`TestVmapOfGrad`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`ThreeLayerNet`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`TwoZeros`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`VmapTearDownMixin`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`Zeros`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+
+### Functions
+
+- **`__call__`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`__init__`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`_check_functionalize_correctness`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`_compare_expected_and_result`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`_get_NumpyCubeNotComposable`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`_get_weights_and_functional_call`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`_get_weights_and_functional_call_with_buffers`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`_test_against_reference`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`_test_attributes`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`_update_params`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`backward`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`composite_output`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`compute_loss`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`construct_sum_pyop`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`f`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`f2`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`fn`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`foo`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`forward`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`func`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`g`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`get_batch`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`get_loss_for_task`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`get_module_info`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`grad_f_sum`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`h`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`init_fn`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`inner`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`inner_loss`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`jvp`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`jvp_fn`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`jvp_wrapper`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`lennard_jones`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`lennard_jones_force`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`loss`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`loss_fn`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`loss_for_task`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`make_prediction`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`make_spirals`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`mse_loss`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`my_fn`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`mysum_autograd_cpu`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`mysum_autograd_cuda`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`mysum_batch_rule`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`mysum_grad_rule`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`name`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`net_func`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`normalize_devices`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`params_dict`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`predict`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`push_jvp`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`sample_tasks`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`setup_context`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`silly_sin`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`slice_weights`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`tearDown`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_CtxWithSavedTensors_error_if_name_collision`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_CtxWithSavedTensors_nesting`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_CtxWithSavedTensors_overrides_saved_tensors`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_CtxWithSavedTensors_passthrough`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_advanced_indexing`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_against_reference_correctness_different_devices`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_against_reference_default_arg`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_against_reference_multi_input`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_against_reference_multi_input_multi_output`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_against_reference_simple`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_against_reference_unrelated_outputs`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_against_reference_zero_dim`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_all_dual_base_inplace`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_all_dual_base_view_inplace`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_all_dual_no_view`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_argnums`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_argnums_defaults_to_zero`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_argnums_effect_on_return`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_argnums_reorders`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_argnums_tuple`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_autograd_function_disables_fwd_grad`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_autograd_function_no_setup_context`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_autograd_functional_jacfwd_inside_transform`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_autograd_functional_jacrev_inside_transform`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_autograd_functional_jvp_inside_transform`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_autograd_functional_vjp_inside_transform`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_aux_pytree`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_aux_tensor`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_basic_sum`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_buffer_tying`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_can_use_functionalize_when_key_is_excluded`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_can_use_grad_when_key_is_excluded`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_can_use_vmap_when_key_is_excluded`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_chunk_jacrev`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_chunk_jacrev_chunksize_one`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_chunk_jacrev_composition`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_combine_state_for_ensemble_error`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_combine_state_for_ensemble_smoke`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_compile_vmap_hessian`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_complex_error`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_composed_with_autograd`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_composite_complicated`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_composite_simple`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_composite_two_ops`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_conj_bit`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_correctness_mnist`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_debug_unwrap`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_deprecation_transforms`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_deprecation_vmap`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_diff_numel`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_dimensionality`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_disable_autograd_tracking`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_disable_fwd_grad_inside`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_disable_fwd_grad_mixed`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_disable_fwd_grad_outside`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_dtype`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_duplicate_argnums`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_empty_argnums`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_empty_output`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_ensemble_regression`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_escaped_wrappers_are_ignored`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_escaped_wrappers_are_marked_as_dead`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_find_learning_rate_ensembling`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_flat_args_with_negative_int_argnum`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_flat_args_with_positive_int_argnum`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_flat_args_with_tuple_argnum`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_float_argnums`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_fn_with_kwargs`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_function_returns_input`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_functional_call_multiple_dicts`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_functional_init`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_functional_init_with_buffers`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_functionalize_fake_tensors`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_functionalize_fx_multi_out_op`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_functionalize_fx_out_op`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_functionalize_fx_reapply_views_simple`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_functionalize_fx_simple`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_functionalize_fx_transpose_simple`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_functionalize_grad`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_functionalize_nonfunctional_output`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_functionalize_opt_tensor_list`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_functionalize_optional_tensorlist1`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_functionalize_optional_tensorlist2`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_grad_aux_pytree`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_grad_aux_tensor`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_grad_deprecated_api`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_grad_fn_name`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_grad_grad`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_grad_grad_sum`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_grad_name_wrapping`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_grad_of_vjp_composition`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_grad_of_vjp_of_grad_composition`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_grad_pytree_inputs`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_grad_sum`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_grad_vjp`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_grad_vmap`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_has_vmap_staticmethod_and_has_generate_vmap_rule`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_hessian_simple`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_hessian_vectorize_correctness_multi_input`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_hessian_vectorize_correctness_simple`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_hessian_vectorize_correctness_unrelated_outputs`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_in_dims_multiple_inputs`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_in_dims_single_input`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_incompatible_out_dims_error_msg`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_info_object`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_inplace`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_inplace_on_captures`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_inplace_on_view`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_inplace_on_view_base`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_inplace_view`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_inputs_are_tuples_of_tensors`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_invalid_argnum_type`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_invalid_argnums`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_is_cuda`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_jac_with_non_tensor_args`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_jacfwd_different_levels`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_jvp_inside_autograd_function`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_jvp_new_tensor`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_jvp_supports_saved_tensor_hooks`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_kwarg_only_tensors`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_layout_sparse`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_lennard_jones_batched_jac`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_linear`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_linearize_basic`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_linearize_composition_grad`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_linearize_composition_vmap`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_linearize_errors`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_linearize_nested_input_nested_output`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_linearize_return`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_log_softmax`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_make_functional_state_correctly_returned_after_forward`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_make_fx_jacrev`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_make_fx_vjp`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_make_fx_vmap`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_maml_omniglot`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_maml_regression`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_manual_seed_inside_grad`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_multioutput_inplace_slice_view`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_multioutput_view`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_multiple_args`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_multiple_inputs`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_multiple_inputs_outputs`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_multiple_inputs_outputs_pytree`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`test_multiple_inputs_outputs_pytree_multidim`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+
+### Imports
+
+- **`FakeTensorMode`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`HigherOrderOperator`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`_ExcludeDispatchKeyGuard`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`_slice_argnums`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`allow_in_graph`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`common_utils`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`copy`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`enable_single_level_autograd_function`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`expectedFailureIf`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`functional_call`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`functionalize`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`functools`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`functorch`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`functorch.experimental`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`get_all_fp_dtypes`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`make_tensor`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`math`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`models`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`numpy`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`os`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`partial`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`subprocess`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`sys`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`torch`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`torch._C`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`torch._dynamo`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`torch._functorch.eager_transforms`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`torch._functorch.make_functional`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`torch._functorch.utils`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`torch._ops`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`torch._subclasses.fake_tensor`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`torch.autograd.forward_ad`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`torch.func`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`torch.nn`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`torch.nn.functional`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`torch.testing`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`torch.testing._internal.common_cuda`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`torch.testing._internal.common_device_type`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`torch.testing._internal.common_dtype`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`torch.utils._pytree`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`torchvision`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`torchvision.`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`tree_flatten`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`unittest`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+- **`warnings`**: [test_eager_transforms.py_docs.md](./test_eager_transforms.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/functorch`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/functorch`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Neural Network**: Defines or uses PyTorch neural network components
+- **Automatic Differentiation**: Uses autograd for gradient computation
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- **Command Execution**: Executes system commands - validate inputs
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/functorch/test_eager_transforms.py_kw.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/functorch`):
+
+- [`test_ops.py_docs.md_docs.md`](./test_ops.py_docs.md_docs.md)
+- [`test_aot_joint_with_descriptors.py_kw.md_docs.md`](./test_aot_joint_with_descriptors.py_kw.md_docs.md)
+- [`test_minifier.py_kw.md_docs.md`](./test_minifier.py_kw.md_docs.md)
+- [`test_eager_transforms.py_docs.md_docs.md`](./test_eager_transforms.py_docs.md_docs.md)
+- [`functorch_additional_op_db.py_kw.md_docs.md`](./functorch_additional_op_db.py_kw.md_docs.md)
+- [`test_ac_knapsack.py_docs.md_docs.md`](./test_ac_knapsack.py_docs.md_docs.md)
+- [`common_utils.py_kw.md_docs.md`](./common_utils.py_kw.md_docs.md)
+- [`test_logging.py_kw.md_docs.md`](./test_logging.py_kw.md_docs.md)
+- [`test_rearrange.py_kw.md_docs.md`](./test_rearrange.py_kw.md_docs.md)
+- [`test_dims.py_kw.md_docs.md`](./test_dims.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_eager_transforms.py_kw.md_docs.md`
+- **Keyword Index**: `test_eager_transforms.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,197 @@
+# Documentation: `docs/torch/testing/_internal/common_cuda.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/testing/_internal/common_cuda.py_kw.md`
+- **Size**: 4,600 bytes (4.49 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `torch/testing/_internal/common_cuda.py`
+
+## File Information
+
+- **Original File**: [torch/testing/_internal/common_cuda.py](../../../../torch/testing/_internal/common_cuda.py)
+- **Documentation**: [`common_cuda.py_docs.md`](./common_cuda.py_docs.md)
+- **Folder**: `torch/testing/_internal`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Functions
+
+- **`CDNA2OrLater`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`CDNA3OrLater`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`_check_cusparse_generic_available`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`_check_hipsparse_generic_available`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`_create_scaling_case`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`_create_scaling_models_optimizers`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`_get_magma_version`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`_get_torch_cuda_version`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`_get_torch_rocm_version`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`evaluate_gfx_arch_within`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`evaluate_platform_supports_cudnn_attention`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`evaluate_platform_supports_efficient_attention`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`evaluate_platform_supports_flash_attention`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`evaluate_platform_supports_fp8`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`evaluate_platform_supports_fp8_grouped_gemm`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`evaluate_platform_supports_green_context`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`evaluate_platform_supports_mx_gemm`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`evaluate_platform_supports_mxfp8_grouped_gemm`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`initialize_cuda_context_rng`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`test_matmul`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`test_my_op`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`tf32_enabled`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`tf32_off`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`tf32_on`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`tf32_on_and_off`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`with_tf32_disabled`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`with_tf32_enabled`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`with_tf32_off`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`wrapped`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`wrapper`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`xfailIfDistributedNotSupported`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`xfailIfSM100OrLater`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`xfailIfSM120OrLater`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`xfailIfSM89`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+
+### Imports
+
+- **`LazyVal`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`contextlib`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`functools`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`inspect`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`numba.cuda`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`os`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`torch`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`torch.cuda`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+- **`unittest`**: [common_cuda.py_docs.md](./common_cuda.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/testing/_internal`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/testing/_internal`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/torch/testing/_internal/common_cuda.py_kw.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/testing/_internal`):
+
+- [`hypothesis_utils.py_kw.md_docs.md`](./hypothesis_utils.py_kw.md_docs.md)
+- [`fake_config_module2.py_kw.md_docs.md`](./fake_config_module2.py_kw.md_docs.md)
+- [`static_module.py_kw.md_docs.md`](./static_module.py_kw.md_docs.md)
+- [`common_pruning.py_kw.md_docs.md`](./common_pruning.py_kw.md_docs.md)
+- [`composite_compliance.py_kw.md_docs.md`](./composite_compliance.py_kw.md_docs.md)
+- [`common_mkldnn.py_docs.md_docs.md`](./common_mkldnn.py_docs.md_docs.md)
+- [`triton_utils.py_docs.md_docs.md`](./triton_utils.py_docs.md_docs.md)
+- [`common_dtype.py_docs.md_docs.md`](./common_dtype.py_docs.md_docs.md)
+- [`common_methods_invocations.py_docs.md_docs.md`](./common_methods_invocations.py_docs.md_docs.md)
+- [`hypothesis_utils.py_docs.md_docs.md`](./hypothesis_utils.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `common_cuda.py_kw.md_docs.md`
+- **Keyword Index**: `common_cuda.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

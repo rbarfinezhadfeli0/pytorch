@@ -1,0 +1,469 @@
+# Documentation: `docs/test/torch_np/numpy_tests/core/test_multiarray.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/test/torch_np/numpy_tests/core/test_multiarray.py_kw.md`
+- **Size**: 27,386 bytes (26.74 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `test/torch_np/numpy_tests/core/test_multiarray.py`
+
+## File Information
+
+- **Original File**: [test/torch_np/numpy_tests/core/test_multiarray.py](../../../../../test/torch_np/numpy_tests/core/test_multiarray.py)
+- **Documentation**: [`test_multiarray.py_docs.md`](./test_multiarray.py_docs.md)
+- **Folder**: `test/torch_np/numpy_tests/core`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`A`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`ArrayLike`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`C`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`Fail`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`Foo`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`HasTrunc`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`Map`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`MatmulCommon`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`MyArr`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`NotConvertible`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`Point2`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`RaiseOnBool`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestArange`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestArgmax`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestArgmaxArgminCommon`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestArgmin`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestArrayAttributeDeletion`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestArrayConstruction`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestArrayCreationCopyArgument`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestArrayInterface`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestAssignment`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestAttributes`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestBinop`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestBool`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestCequenceMethods`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestChoose`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestClip`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestCompress`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestConversion`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestCreation`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestDelMisc`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestDot`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestDtypedescr`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestFancyIndexing`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestFlag`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestFlat`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestFormat`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestFromBuffer`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestHash`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestHashing`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestIO`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestInner`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestLexsort`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestMatmul`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestMatmulOperator`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestMethods`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestMinMax`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestMinScalarType`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestNewaxis`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestPEP3118Dtype`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestPutmask`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestRepeat`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestResize`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestRichcompareScalar`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestScalarIndexing`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestSortFloatMisc`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestStats`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestSubscripting`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestTake`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestVdot`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestViewDtype`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestWarnings`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestWhere`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestWritebackIfCopy`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`TestZeroRank`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`add_not_multiply`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`bad_sequence`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`frominterface`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`multiply_not_add`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`so`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`subclass`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`x`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+
+### Functions
+
+- **`__add__`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`__array__`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`__array_interface__`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`__bool__`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`__float__`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`__getitem__`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`__init__`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`__int__`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`__iter__`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`__len__`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`__matmul__`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`__mul__`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`__rmatmul__`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`__trunc__`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`_aligned_zeros`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`_check`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`_check_from`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`_check_range`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`_clip_type`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`_mean`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`_ragged_creation`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`_std`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`_test_cast_from_flexible`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`_var`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`aligned`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`aligned_array`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`as_aligned`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`assert_c`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`assert_dot_close`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`assert_fortran`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`assert_partitioned`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`assign`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`check_count_nonzero`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`check_round`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`decimal_sep_localization`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`dup_bigint`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`dup_str`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`fail`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`inject_str`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`int_types`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`make_array`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`runstring`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`setUp`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`set_strides`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`subscript`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`temppath`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_0d`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_0d_array_shape`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_0d_shape`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_1d_format`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_1d_no_format`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_3d_tensor`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test___array__`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test__complex__`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test__complex__should_not_work`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test__deepcopy__`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_accelerate_framework_sgemv_fix`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_all`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_all_where`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_any_where`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_arange_booleans`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_argmax_with_out`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_argmin_with_out`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_argpartition_empty_array`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_argpartition_gh5524`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_argpartition_integer`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_argpartition_out_of_range`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_argsort`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_argsort_axis`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_argsort_complex`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_arr_mult`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_arr_mult_2`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_array`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_array_as_keyword`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_array_base`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_array_cont`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_array_contains`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_array_copy_false`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_array_copy_false_2`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_array_copy_true`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_array_copy_true_2`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_array_empty`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_array_interfaces`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_array_object`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_array_of_ragged_array`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_array_priority_override`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_array_scalar_relational_operation`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_array_too_big`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_arrays_not_hashable`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_ascii`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_assign_mask`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_assign_mask2`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_assignment_broadcasting`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_assignment_errors`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_attributes`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_attributes_2`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_axis`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_axis_spec`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_bad_arguments_error`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_basic`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_big_binary`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_binary`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_bool_fromstring`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_broadcast1`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_broadcast2`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_buffer_interface`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_byteorder`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_byteorder_inside_struct`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_cast_from_bytes`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_cast_from_unicode`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_cast_from_void`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_cast_to_string`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_char_vs_string`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_check_reference`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_check_weakref`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_choose`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_choose_2`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_choose_mod_raise`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_clip`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_collections_hashable`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_combinations`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_compatible_cast`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_complex`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_complex_warning`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_compress`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_conjugate`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_conjugate_out`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_construction`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_constructor`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_contiguous`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_copy`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_count_nonzero`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_count_nonzero_all`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_count_nonzero_unaligned`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_counted_string`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_counted_string_with_ws`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_datetime`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_ddof`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_ddof_too_big`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_decimal`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_decimal_comma_separator`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_decimal_period_separator`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_deep_nonragged_object`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_diagonal`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_diagonal_memleak`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_diagonal_view_notwriteable`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_discontiguous`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_docstring_1`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_docstring_2`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_docstring_3`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_dot`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_dot_2args`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_dot_3args`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_dot_3args_errors`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_dot_array_order`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_dot_equivalent`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_dot_out`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_dot_out_mem_overlap`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_dotcolumnvect1`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_dotcolumnvect2`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_dotmatmat`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_dotmatvec`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_dotmatvec2`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_dotvecmat`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_dotvecmat2`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_dotvecmat3`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_dotvecscalar`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_dotvecscalar2`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_dotvecvecinner`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_dotvecvecouter`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_dtype`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_dtype_bool`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_dtype_from_dtype`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_dtype_from_input`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_dtype_mix`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_dtypeattr`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_ellipsis_subscript`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_ellipsis_subscript_assignment`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_empty`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_empty_files_binary`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_empty_files_text`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_empty_out`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_empty_result`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_empty_subscript`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_empty_subscript_assignment`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_empty_unicode`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_empty_view`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_error`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_error_paths_and_promotion`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_exceptions`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_exotic`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_exotic_2`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_explicit_dtype`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_f_contiguous`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_failed_len_sequence`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_false_len_iterable`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_false_len_sequence`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_field_order`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_file_position_after_fromfile`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`test_file_position_after_tofile`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+
+### Imports
+
+- **`CommaDecimalPointLocale`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`Decimal`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`IS_PYPY`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`Path`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`_dtype_from_pep3118`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`_no_tracing`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`builtins`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`collections.abc`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`contextlib`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`contextmanager`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`ctypes`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`decimal`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`dot`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`expectedFailure`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`functools`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`io`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`itertools`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`mkstemp`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`mmap`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`numpy`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`numpy._core.tests._locales`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`numpy.core._internal`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`numpy.core.multiarray`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`numpy.core.numeric`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`numpy.core.tests._locales`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`numpy.testing`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`numpy.testing._private.utils`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`operator`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`os`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`pathlib`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`pickle`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`pytest`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`raises`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`set_string_function`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`sys`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`tempfile`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`torch._numpy`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`torch._numpy.testing`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`unittest`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`warnings`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+- **`weakref`**: [test_multiarray.py_docs.md](./test_multiarray.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/torch_np/numpy_tests/core`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/torch_np/numpy_tests/core`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- **Serialization**: Uses pickle - be cautious with untrusted data
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/torch_np/numpy_tests/core/test_multiarray.py_kw.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/torch_np/numpy_tests/core`):
+
+- [`test_scalar_methods.py_docs.md_docs.md`](./test_scalar_methods.py_docs.md_docs.md)
+- [`test_einsum.py_docs.md_docs.md`](./test_einsum.py_docs.md_docs.md)
+- [`test_scalarmath.py_kw.md_docs.md`](./test_scalarmath.py_kw.md_docs.md)
+- [`test_scalarmath.py_docs.md_docs.md`](./test_scalarmath.py_docs.md_docs.md)
+- [`test_shape_base.py_docs.md_docs.md`](./test_shape_base.py_docs.md_docs.md)
+- [`test_numerictypes.py_docs.md_docs.md`](./test_numerictypes.py_docs.md_docs.md)
+- [`test_scalar_ctors.py_docs.md_docs.md`](./test_scalar_ctors.py_docs.md_docs.md)
+- [`test_scalar_methods.py_kw.md_docs.md`](./test_scalar_methods.py_kw.md_docs.md)
+- [`test_indexing.py_docs.md_docs.md`](./test_indexing.py_docs.md_docs.md)
+- [`test_scalar_ctors.py_kw.md_docs.md`](./test_scalar_ctors.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_multiarray.py_kw.md_docs.md`
+- **Keyword Index**: `test_multiarray.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

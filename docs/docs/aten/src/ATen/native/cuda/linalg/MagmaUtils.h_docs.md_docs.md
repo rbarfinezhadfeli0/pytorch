@@ -1,0 +1,320 @@
+# Documentation: `docs/aten/src/ATen/native/cuda/linalg/MagmaUtils.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/cuda/linalg/MagmaUtils.h_docs.md`
+- **Size**: 5,028 bytes (4.91 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/native/cuda/linalg/MagmaUtils.h`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/cuda/linalg/MagmaUtils.h`
+- **Size**: 2,491 bytes (2.43 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#pragma once
+#include <ATen/cuda/CUDAConfig.h>
+
+#if AT_MAGMA_ENABLED()
+#include <magma_types.h>
+#include <magma_v2.h>
+#endif
+
+namespace at {
+namespace native {
+
+#if AT_MAGMA_ENABLED()
+
+// RAII for a MAGMA Queue
+struct MAGMAQueue {
+
+  // Default constructor without a device will cause
+  // destroying a queue which has not been initialized.
+  MAGMAQueue() = delete;
+
+  // Constructor
+  explicit MAGMAQueue(int64_t device_id) {
+    cublasHandle_t handle = at::cuda::getCurrentCUDABlasHandle();
+#if !defined(USE_ROCM)
+    // Magma operations is numerically sensitive, so TF32 should be off
+    // regardless of the global flag.
+    TORCH_CUDABLAS_CHECK(cublasGetMathMode(handle, &original_math_mode));
+    TORCH_CUDABLAS_CHECK(cublasSetMathMode(handle, CUBLAS_DEFAULT_MATH));
+#endif
+    magma_queue_create_from_cuda(
+      device_id,
+      at::cuda::getCurrentCUDAStream(),
+      handle,
+      at::cuda::getCurrentCUDASparseHandle(),
+      &magma_queue_);
+  }
+
+  // Getter
+  magma_queue_t get_queue() const { return magma_queue_; }
+
+  // Destructor
+  ~MAGMAQueue() {
+#if !defined(USE_ROCM)
+    // We've manually set the math mode to CUBLAS_DEFAULT_MATH, now we
+    // should restore the original math mode back
+    cublasHandle_t handle = magma_queue_get_cublas_handle(magma_queue_);
+    cublasSetMathMode(handle, original_math_mode);
+#endif
+    magma_queue_destroy(magma_queue_);
+  }
+
+ private:
+  magma_queue_t magma_queue_;
+#if !defined(USE_ROCM)
+  cublasMath_t original_math_mode;
+#endif
+};
+
+static inline magma_int_t magma_int_cast(int64_t value, const char* varname) {
+  auto result = static_cast<magma_int_t>(value);
+  if (static_cast<int64_t>(result) != value) {
+    TORCH_CHECK(false, "magma: The value of ", varname, "(", (long long)value,
+             ") is too large to fit into a magma_int_t (", sizeof(magma_int_t), " bytes)");
+  }
+  return result;
+}
+
+// MAGMA functions that don't take a magma_queue_t aren't stream safe
+// Work around this by synchronizing with the default stream
+struct MagmaStreamSyncGuard {
+  MagmaStreamSyncGuard() {
+    auto stream = at::cuda::getCurrentCUDAStream();
+    if (stream != at::cuda::getDefaultCUDAStream()) {
+      at::cuda::stream_synchronize(stream);
+    }
+  }
+
+  ~MagmaStreamSyncGuard() noexcept(false) {
+    auto default_stream = at::cuda::getDefaultCUDAStream();
+    if (at::cuda::getCurrentCUDAStream() != default_stream) {
+      at::cuda::stream_synchronize(default_stream);
+    }
+  }
+};
+#endif
+
+} // namespace native
+} // namespace at
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 8 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `native`, `at`
+
+**Classes/Structs**: `MAGMAQueue`, `MagmaStreamSyncGuard`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native/cuda/linalg`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/cuda/CUDAConfig.h`
+- `magma_types.h`
+- `magma_v2.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native/cuda/linalg`):
+
+- [`BatchLinearAlgebraLib.h_docs.md`](./BatchLinearAlgebraLib.h_docs.md)
+- [`BatchLinearAlgebraLibBlas.cpp_docs.md`](./BatchLinearAlgebraLibBlas.cpp_docs.md)
+- [`CudssHandlePool.cpp_docs.md`](./CudssHandlePool.cpp_docs.md)
+- [`CUDASolver.h_docs.md`](./CUDASolver.h_docs.md)
+- [`BatchLinearAlgebraLib.cpp_docs.md`](./BatchLinearAlgebraLib.cpp_docs.md)
+- [`CUDASolver.cpp_docs.md`](./CUDASolver.cpp_docs.md)
+- [`CusolverDnHandlePool.cpp_docs.md`](./CusolverDnHandlePool.cpp_docs.md)
+- [`BatchLinearAlgebra.cpp_docs.md`](./BatchLinearAlgebra.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `MagmaUtils.h_docs.md`
+- **Keyword Index**: `MagmaUtils.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native/cuda/linalg`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native/cuda/linalg`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native/cuda/linalg`):
+
+- [`CUDASolver.h_kw.md_docs.md`](./CUDASolver.h_kw.md_docs.md)
+- [`MagmaUtils.h_kw.md_docs.md`](./MagmaUtils.h_kw.md_docs.md)
+- [`CUDASolver.cpp_docs.md_docs.md`](./CUDASolver.cpp_docs.md_docs.md)
+- [`CUDASolver.cpp_kw.md_docs.md`](./CUDASolver.cpp_kw.md_docs.md)
+- [`CudssHandlePool.cpp_kw.md_docs.md`](./CudssHandlePool.cpp_kw.md_docs.md)
+- [`BatchLinearAlgebraLibBlas.cpp_kw.md_docs.md`](./BatchLinearAlgebraLibBlas.cpp_kw.md_docs.md)
+- [`BatchLinearAlgebraLib.h_docs.md_docs.md`](./BatchLinearAlgebraLib.h_docs.md_docs.md)
+- [`CusolverDnHandlePool.cpp_docs.md_docs.md`](./CusolverDnHandlePool.cpp_docs.md_docs.md)
+- [`BatchLinearAlgebraLibBlas.cpp_docs.md_docs.md`](./BatchLinearAlgebraLibBlas.cpp_docs.md_docs.md)
+- [`BatchLinearAlgebraLib.h_kw.md_docs.md`](./BatchLinearAlgebraLib.h_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `MagmaUtils.h_docs.md_docs.md`
+- **Keyword Index**: `MagmaUtils.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,78 @@
+# Keyword Index: `docs/torch/ao/quantization/fx/lower_to_fbgemm.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/ao/quantization/fx/lower_to_fbgemm.py_kw.md](../../../../../../docs/torch/ao/quantization/fx/lower_to_fbgemm.py_kw.md)
+- **Documentation**: [`lower_to_fbgemm.py_kw.md_docs.md`](./lower_to_fbgemm.py_kw.md_docs.md)
+- **Folder**: `docs/torch/ao/quantization/fx`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`Architecture`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`Basic`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`Complete`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`Considerations`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`Dependencies`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`Design`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`Detailed`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`Documentation`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`Efficiency`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`Extracted`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`File`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`Folder`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`Functions`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`Generated`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`GraphModule`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`High`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`How`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`Imports`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`In`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`Index`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`Information`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`Keyword`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`Keywords`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`Level`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`Map`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`Metadata`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`Original`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`Overview`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`Performance`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`Purpose`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`PyTorch`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`QConfigAny`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`Related`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`Repository`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`Safety`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`Section`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`Security`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`Source`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`System`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`Testing`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`The`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`This`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+- **`Usage`**: [lower_to_fbgemm.py_kw.md_docs.md](./lower_to_fbgemm.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,306 @@
+# Documentation: `docs/test/test_license.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/test_license.py_docs.md`
+- **Size**: 4,993 bytes (4.88 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/test_license.py`
+
+## File Metadata
+
+- **Path**: `test/test_license.py`
+- **Size**: 2,085 bytes (2.04 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**. Contains **unit tests** using Python testing frameworks. Can be **executed as a standalone script**.
+
+## Original Source
+
+```python
+# Owner(s): ["module: unknown"]
+
+import glob
+import io
+import os
+import unittest
+
+import torch
+from torch.testing._internal.common_utils import run_tests, TestCase
+
+
+try:
+    from third_party.build_bundled import create_bundled
+except ImportError:
+    create_bundled = None
+
+license_file = "third_party/LICENSES_BUNDLED.txt"
+starting_txt = "The PyTorch repository and source distributions bundle"
+site_packages = os.path.dirname(os.path.dirname(torch.__file__))
+distinfo = glob.glob(os.path.join(site_packages, "torch-*dist-info"))
+
+
+class TestLicense(TestCase):
+    @unittest.skipIf(not create_bundled, "can only be run in a source tree")
+    def test_license_for_wheel(self):
+        current = io.StringIO()
+        create_bundled("third_party", current)
+        with open(license_file) as fid:
+            src_tree = fid.read()
+        if not src_tree == current.getvalue():
+            raise AssertionError(
+                f'the contents of "{license_file}" do not '
+                "match the current state of the third_party files. Use "
+                '"python third_party/build_bundled.py" to regenerate it'
+            )
+
+    @unittest.skipIf(len(distinfo) == 0, "no installation in site-package to test")
+    def test_distinfo_license(self):
+        """If run when pytorch is installed via a wheel, the license will be in
+        site-package/torch-*dist-info/LICENSE. Make sure it contains the third
+        party bundle of licenses"""
+
+        if len(distinfo) > 1:
+            raise AssertionError(
+                'Found too many "torch-*dist-info" directories '
+                f'in "{site_packages}, expected only one'
+            )
+        # setuptools renamed *dist-info/LICENSE to *dist-info/licenses/LICENSE since 77.0
+        license_file = os.path.join(distinfo[0], "licenses", "LICENSE")
+        if not os.path.exists(license_file):
+            license_file = os.path.join(distinfo[0], "LICENSE")
+        with open(license_file) as fid:
+            txt = fid.read()
+            self.assertTrue(starting_txt in txt)
+
+
+if __name__ == "__main__":
+    run_tests()
+
+```
+
+
+
+## High-Level Overview
+
+"""If run when pytorch is installed via a wheel, the license will be in        site-package/torch-*dist-info/LICENSE. Make sure it contains the third
+
+This Python file contains 1 class(es) and 2 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `TestLicense`
+
+**Functions defined**: `test_license_for_wheel`, `test_distinfo_license`
+
+**Key imports**: glob, io, os, unittest, torch, run_tests, TestCase, create_bundled
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `glob`
+- `io`
+- `os`
+- `unittest`
+- `torch`
+- `torch.testing._internal.common_utils`: run_tests, TestCase
+- `third_party.build_bundled`: create_bundled
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Error Handling**: Includes exception handling
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/test_license.py
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test`):
+
+- [`test_file_check.py_docs.md`](./test_file_check.py_docs.md)
+- [`test_jit_simple.py_docs.md`](./test_jit_simple.py_docs.md)
+- [`test_mkldnn.py_docs.md`](./test_mkldnn.py_docs.md)
+- [`test_expanded_weights.py_docs.md`](./test_expanded_weights.py_docs.md)
+- [`test_overrides.py_docs.md`](./test_overrides.py_docs.md)
+- [`test_decomp.py_docs.md`](./test_decomp.py_docs.md)
+- [`test_show_pickle.py_docs.md`](./test_show_pickle.py_docs.md)
+- [`test_utils_config_module.py_docs.md`](./test_utils_config_module.py_docs.md)
+- [`test_mobile_optimizer.py_docs.md`](./test_mobile_optimizer.py_docs.md)
+- [`test_type_info.py_docs.md`](./test_type_info.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_license.py_docs.md`
+- **Keyword Index**: `test_license.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Error Handling**: Includes exception handling
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- **Serialization**: Uses pickle - be cautious with untrusted data
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/test_license.py_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test`):
+
+- [`test_ops.py_docs.md_docs.md`](./test_ops.py_docs.md_docs.md)
+- [`test_tensorexpr.py_docs.md_docs.md`](./test_tensorexpr.py_docs.md_docs.md)
+- [`pytest_shard_custom.py_docs.md_docs.md`](./pytest_shard_custom.py_docs.md_docs.md)
+- [`test_weak.py_kw.md_docs.md`](./test_weak.py_kw.md_docs.md)
+- [`test_view_ops.py_kw.md_docs.md`](./test_view_ops.py_kw.md_docs.md)
+- [`test_varlen_attention.py_kw.md_docs.md`](./test_varlen_attention.py_kw.md_docs.md)
+- [`test_namedtensor.py_docs.md_docs.md`](./test_namedtensor.py_docs.md_docs.md)
+- [`test_binary_ufuncs.py_docs.md_docs.md`](./test_binary_ufuncs.py_docs.md_docs.md)
+- [`test_ops_gradients.py_kw.md_docs.md`](./test_ops_gradients.py_kw.md_docs.md)
+- [`test_torchfuzz_repros.py_docs.md_docs.md`](./test_torchfuzz_repros.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_license.py_docs.md_docs.md`
+- **Keyword Index**: `test_license.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

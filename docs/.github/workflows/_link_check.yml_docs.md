@@ -1,0 +1,175 @@
+# Documentation: `.github/workflows/_link_check.yml`
+
+## File Metadata
+
+- **Path**: `.github/workflows/_link_check.yml`
+- **Size**: 2,297 bytes (2.24 KB)
+- **Type**: YAML Configuration
+- **Extension**: `.yml`
+
+## File Purpose
+
+This is a yaml configuration that is part of the PyTorch project.
+
+## Original Source
+
+```yaml
+on:
+  workflow_call:
+    inputs:
+      runner:
+        type: string
+        required: true
+      ref:
+        type: string
+        required: true
+
+jobs:
+  lint-urls:
+    if: ${{ github.event_name != 'pull_request' || !contains(github.event.pull_request.labels.*.name, 'skip-url-lint') }}
+    uses: pytorch/test-infra/.github/workflows/linux_job_v2.yml@main
+    with:
+      job-name: lint-urls
+      timeout: 120
+      runner: ${{ inputs.runner }}linux.2xlarge
+      docker-image: ci-image:pytorch-linux-jammy-linter
+      fetch-depth: 0
+      submodules: false
+      ref: ${{ inputs.ref }}
+      script: |
+        ./scripts/lint_urls.sh $(
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "${{ github.event.pull_request.base.sha }}" "${{ github.event.pull_request.head.sha }}"
+          else
+            echo "${{ github.event.before }}" "${{ github.sha }}"
+          fi
+        ) || {
+          echo
+          echo "URL lint failed."
+          echo "If this is a transient outage, you can bypass it by adding the \`skip-url-lint\` label to your PR."
+          echo "Or add \`@lint-ignore\` somewhere on the same line as the URL you want to skip checking."
+          exit 1
+        }
+
+  lint-xrefs:
+    if: ${{ github.event_name != 'pull_request' || !contains(github.event.pull_request.labels.*.name, 'skip-xref-lint') }}
+    uses: pytorch/test-infra/.github/workflows/linux_job_v2.yml@main
+    with:
+      job-name: lint-xrefs
+      timeout: 60
+      runner: ${{ inputs.runner }}linux.2xlarge
+      docker-image: ci-image:pytorch-linux-jammy-linter
+      fetch-depth: 0
+      submodules: false
+      ref: ${{ inputs.ref }}
+      script: |
+        ./scripts/lint_xrefs.sh $(
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "${{ github.event.pull_request.base.sha }}" "${{ github.event.pull_request.head.sha }}"
+          else
+            echo "${{ github.event.before }}" "${{ github.sha }}"
+          fi
+        ) || {
+          echo
+          echo "Xref lint failed."
+          echo "If this is a transient outage, you can bypass it by adding the \`skip-xref-lint\` label to your PR."
+          echo "Or add \`@lint-ignore\` somewhere on the same line as the reference you want to skip checking."
+          exit 1
+        }
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `.github/workflows`.
+
+## Detailed Analysis
+
+### Code Structure
+
+This is a configuration file. See the original source for structure.
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `.github/workflows`, which is part of the PyTorch project infrastructure.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`.github/workflows`):
+
+- [`unstable-periodic.yml_docs.md`](./unstable-periodic.yml_docs.md)
+- [`runner_determinator_script_sync.yaml_docs.md`](./runner_determinator_script_sync.yaml_docs.md)
+- [`auto_request_review.yml_docs.md`](./auto_request_review.yml_docs.md)
+- [`attention_op_microbenchmark.yml_docs.md`](./attention_op_microbenchmark.yml_docs.md)
+- [`inductor-nightly.yml_docs.md`](./inductor-nightly.yml_docs.md)
+- [`lint-autoformat.yml_docs.md`](./lint-autoformat.yml_docs.md)
+- [`inductor-perf-test-b200.yml_docs.md`](./inductor-perf-test-b200.yml_docs.md)
+- [`inductor-unittest.yml_docs.md`](./inductor-unittest.yml_docs.md)
+- [`_linux-build.yml_docs.md`](./_linux-build.yml_docs.md)
+- [`inductor-perf-test-nightly.yml_docs.md`](./inductor-perf-test-nightly.yml_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `_link_check.yml_docs.md`
+- **Keyword Index**: `_link_check.yml_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

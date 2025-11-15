@@ -1,0 +1,211 @@
+# Documentation: `docs/torch/csrc/jit/api/module.h_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/jit/api/module.h_kw.md`
+- **Size**: 4,670 bytes (4.56 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `torch/csrc/jit/api/module.h`
+
+## File Information
+
+- **Original File**: [torch/csrc/jit/api/module.h](../../../../../torch/csrc/jit/api/module.h)
+- **Documentation**: [`module.h_docs.md`](./module.h_docs.md)
+- **Folder**: `torch/csrc/jit/api`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Class/Structs
+
+- **`FusionBehavior`**: [module.h_docs.md](./module.h_docs.md)
+- **`Module`**: [module.h_docs.md](./module.h_docs.md)
+- **`Named`**: [module.h_docs.md](./module.h_docs.md)
+- **`NamedPolicy`**: [module.h_docs.md](./module.h_docs.md)
+- **`TORCH_API`**: [module.h_docs.md](./module.h_docs.md)
+- **`slot_iterator_impl`**: [module.h_docs.md](./module.h_docs.md)
+- **`slot_list_impl`**: [module.h_docs.md](./module.h_docs.md)
+
+### Functions
+
+- **`create`**: [module.h_docs.md](./module.h_docs.md)
+- **`create_class`**: [module.h_docs.md](./module.h_docs.md)
+- **`cur`**: [module.h_docs.md](./module.h_docs.md)
+- **`eval`**: [module.h_docs.md](./module.h_docs.md)
+- **`getNameForMethod`**: [module.h_docs.md](./module.h_docs.md)
+- **`is_optimized`**: [module.h_docs.md](./module.h_docs.md)
+- **`is_training`**: [module.h_docs.md](./module.h_docs.md)
+- **`nameFragment`**: [module.h_docs.md](./module.h_docs.md)
+- **`next`**: [module.h_docs.md](./module.h_docs.md)
+- **`next_valid`**: [module.h_docs.md](./module.h_docs.md)
+- **`register_attribute`**: [module.h_docs.md](./module.h_docs.md)
+- **`register_buffer`**: [module.h_docs.md](./module.h_docs.md)
+- **`register_module`**: [module.h_docs.md](./module.h_docs.md)
+- **`register_parameter`**: [module.h_docs.md](./module.h_docs.md)
+- **`return_module`**: [module.h_docs.md](./module.h_docs.md)
+- **`set_delete_memory`**: [module.h_docs.md](./module.h_docs.md)
+- **`set_optimized`**: [module.h_docs.md](./module.h_docs.md)
+- **`size`**: [module.h_docs.md](./module.h_docs.md)
+- **`store_traced_inputs`**: [module.h_docs.md](./module.h_docs.md)
+- **`valid`**: [module.h_docs.md](./module.h_docs.md)
+- **`while_not_valid_next`**: [module.h_docs.md](./module.h_docs.md)
+
+### Includes
+
+- **`ATen/core/function_schema.h`**: [module.h_docs.md](./module.h_docs.md)
+- **`ATen/core/qualified_name.h`**: [module.h_docs.md](./module.h_docs.md)
+- **`c10/util/ArrayRef.h`**: [module.h_docs.md](./module.h_docs.md)
+- **`c10/util/Exception.h`**: [module.h_docs.md](./module.h_docs.md)
+- **`c10/util/irange.h`**: [module.h_docs.md](./module.h_docs.md)
+- **`functional`**: [module.h_docs.md](./module.h_docs.md)
+- **`memory`**: [module.h_docs.md](./module.h_docs.md)
+- **`mutex`**: [module.h_docs.md](./module.h_docs.md)
+- **`optional`**: [module.h_docs.md](./module.h_docs.md)
+- **`ostream`**: [module.h_docs.md](./module.h_docs.md)
+- **`string`**: [module.h_docs.md](./module.h_docs.md)
+- **`torch/csrc/Export.h`**: [module.h_docs.md](./module.h_docs.md)
+- **`torch/csrc/api/include/torch/ordered_dict.h`**: [module.h_docs.md](./module.h_docs.md)
+- **`torch/csrc/autograd/variable.h`**: [module.h_docs.md](./module.h_docs.md)
+- **`torch/csrc/jit/api/compilation_unit.h`**: [module.h_docs.md](./module.h_docs.md)
+- **`torch/csrc/jit/api/object.h`**: [module.h_docs.md](./module.h_docs.md)
+- **`torch/csrc/jit/frontend/source_range.h`**: [module.h_docs.md](./module.h_docs.md)
+- **`torch/csrc/jit/ir/ir.h`**: [module.h_docs.md](./module.h_docs.md)
+- **`torch/csrc/jit/ir/named_value.h`**: [module.h_docs.md](./module.h_docs.md)
+- **`torch/csrc/jit/runtime/argument_spec.h`**: [module.h_docs.md](./module.h_docs.md)
+- **`torch/csrc/jit/runtime/graph_executor.h`**: [module.h_docs.md](./module.h_docs.md)
+- **`unordered_map`**: [module.h_docs.md](./module.h_docs.md)
+- **`unordered_set`**: [module.h_docs.md](./module.h_docs.md)
+- **`utility`**: [module.h_docs.md](./module.h_docs.md)
+- **`vector`**: [module.h_docs.md](./module.h_docs.md)
+
+### Namespaces
+
+- **`detail`**: [module.h_docs.md](./module.h_docs.md)
+- **`script`**: [module.h_docs.md](./module.h_docs.md)
+- **`that`**: [module.h_docs.md](./module.h_docs.md)
+- **`torch`**: [module.h_docs.md](./module.h_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/jit/api`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/jit/api`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/jit/api`):
+
+- [`compilation_unit.h_docs.md_docs.md`](./compilation_unit.h_docs.md_docs.md)
+- [`object.cpp_docs.md_docs.md`](./object.cpp_docs.md_docs.md)
+- [`compilation_unit.h_kw.md_docs.md`](./compilation_unit.h_kw.md_docs.md)
+- [`function_impl.cpp_docs.md_docs.md`](./function_impl.cpp_docs.md_docs.md)
+- [`object.h_kw.md_docs.md`](./object.h_kw.md_docs.md)
+- [`module_save.cpp_kw.md_docs.md`](./module_save.cpp_kw.md_docs.md)
+- [`method.h_kw.md_docs.md`](./method.h_kw.md_docs.md)
+- [`module.h_docs.md_docs.md`](./module.h_docs.md_docs.md)
+- [`method.h_docs.md_docs.md`](./method.h_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `module.h_kw.md_docs.md`
+- **Keyword Index**: `module.h_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

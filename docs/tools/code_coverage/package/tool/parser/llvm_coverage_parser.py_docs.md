@@ -1,0 +1,187 @@
+# Documentation: `tools/code_coverage/package/tool/parser/llvm_coverage_parser.py`
+
+## File Metadata
+
+- **Path**: `tools/code_coverage/package/tool/parser/llvm_coverage_parser.py`
+- **Size**: 2,339 bytes (2.28 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is a **utility or tool script**.
+
+## Original Source
+
+```python
+from __future__ import annotations
+
+from typing import Any
+
+from .coverage_record import CoverageRecord
+from .llvm_coverage_segment import LlvmCoverageSegment, parse_segments
+
+
+class LlvmCoverageParser:
+    """
+    Accepts a parsed json produced by llvm-cov export -- typically,
+    representing a single C++ test and produces a list
+    of CoverageRecord(s).
+
+    """
+
+    def __init__(self, llvm_coverage: dict[str, Any]) -> None:
+        self._llvm_coverage = llvm_coverage
+
+    @staticmethod
+    def _skip_coverage(path: str) -> bool:
+        """
+        Returns True if file path should not be processed.
+        This is repo-specific and only makes sense for the current state of
+        ovrsource.
+        """
+        return "/third-party/" in path
+
+    @staticmethod
+    def _collect_coverage(
+        segments: list[LlvmCoverageSegment],
+    ) -> tuple[list[int], list[int]]:
+        """
+        Stateful parsing of coverage segments.
+        """
+        covered_lines: set[int] = set()
+        uncovered_lines: set[int] = set()
+        prev_segment = LlvmCoverageSegment(1, 0, 0, 0, 0, None)
+        for segment in segments:
+            covered_range, uncovered_range = segment.get_coverage(prev_segment)
+            covered_lines.update(covered_range)
+            uncovered_lines.update(uncovered_range)
+            prev_segment = segment
+
+        uncovered_lines.difference_update(covered_lines)
+        return sorted(covered_lines), sorted(uncovered_lines)
+
+    def parse(self, repo_name: str) -> list[CoverageRecord]:
+        # The JSON format is described in the LLVM source code
+        # https://github.com/llvm-mirror/llvm/blob/master/tools/llvm-cov/CoverageExporterJson.cpp
+        records: list[CoverageRecord] = []
+        for export_unit in self._llvm_coverage["data"]:
+            for file_info in export_unit["files"]:
+                filepath = file_info["filename"]
+                if self._skip_coverage(filepath):
+                    continue
+
+                if filepath is None:
+                    continue
+
+                segments = file_info["segments"]
+
+                covered_lines, uncovered_lines = self._collect_coverage(
+                    parse_segments(segments)
+                )
+
+                records.append(CoverageRecord(filepath, covered_lines, uncovered_lines))
+
+        return records
+
+```
+
+
+
+## High-Level Overview
+
+"""    Accepts a parsed json produced by llvm-cov export -- typically,    representing a single C++ test and produces a list    of CoverageRecord(s).
+
+This Python file contains 1 class(es) and 4 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `LlvmCoverageParser`
+
+**Functions defined**: `__init__`, `_skip_coverage`, `_collect_coverage`, `parse`
+
+**Key imports**: annotations, Any, CoverageRecord, LlvmCoverageSegment, parse_segments
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `tools/code_coverage/package/tool/parser`, which contains **development tools and scripts**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `__future__`: annotations
+- `typing`: Any
+- `.coverage_record`: CoverageRecord
+- `.llvm_coverage_segment`: LlvmCoverageSegment, parse_segments
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`tools/code_coverage/package/tool/parser`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`llvm_coverage_segment.py_docs.md`](./llvm_coverage_segment.py_docs.md)
+- [`gcov_coverage_parser.py_docs.md`](./gcov_coverage_parser.py_docs.md)
+- [`coverage_record.py_docs.md`](./coverage_record.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `llvm_coverage_parser.py_docs.md`
+- **Keyword Index**: `llvm_coverage_parser.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

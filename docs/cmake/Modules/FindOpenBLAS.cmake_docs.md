@@ -1,0 +1,209 @@
+# Documentation: `cmake/Modules/FindOpenBLAS.cmake`
+
+## File Metadata
+
+- **Path**: `cmake/Modules/FindOpenBLAS.cmake`
+- **Size**: 2,606 bytes (2.54 KB)
+- **Type**: CMake Build Script
+- **Extension**: `.cmake`
+
+## File Purpose
+
+This is a cmake build script that is part of the PyTorch project.
+
+## Original Source
+
+```cmake
+
+
+SET(Open_BLAS_INCLUDE_SEARCH_PATHS
+  /usr/include
+  /usr/include/openblas
+  /usr/include/openblas-base
+  /usr/local/include
+  /usr/local/include/openblas
+  /usr/local/include/openblas-base
+  /usr/local/opt/openblas/include
+  /opt/OpenBLAS/include
+  $ENV{OpenBLAS_HOME}
+  $ENV{OpenBLAS_HOME}/include
+  $ENV{OpenBLAS_HOME}/include/openblas
+)
+
+SET(Open_BLAS_LIB_SEARCH_PATHS
+        /lib/
+        /lib/openblas-base
+        /lib64/
+        /usr/lib
+        /usr/lib/openblas-base
+        /usr/lib64
+        /usr/local/lib
+        /usr/local/lib64
+        /usr/local/opt/openblas/lib
+        /opt/OpenBLAS/lib
+        $ENV{OpenBLAS}
+        $ENV{OpenBLAS}/lib
+        $ENV{OpenBLAS_HOME}
+        $ENV{OpenBLAS_HOME}/lib
+)
+
+SET(Open_BLAS_LIB_NAME openblas)
+IF(DEFINED ENV{OpenBLAS_LIB_NAME})
+  SET(Open_BLAS_LIB_NAME $ENV{OpenBLAS_LIB_NAME})
+ENDIF()
+
+FIND_PATH(OpenBLAS_INCLUDE_DIR NAMES cblas.h PATHS ${Open_BLAS_INCLUDE_SEARCH_PATHS})
+FIND_LIBRARY(OpenBLAS_LIB NAMES ${Open_BLAS_LIB_NAME} PATHS ${Open_BLAS_LIB_SEARCH_PATHS})
+
+SET(OpenBLAS_FOUND ON)
+
+#    Check include files
+IF(NOT OpenBLAS_INCLUDE_DIR)
+    SET(OpenBLAS_FOUND OFF)
+    MESSAGE(STATUS "Could not find OpenBLAS include. Turning OpenBLAS_FOUND off")
+ENDIF()
+
+#    Check libraries
+IF(NOT OpenBLAS_LIB)
+    SET(OpenBLAS_FOUND OFF)
+    MESSAGE(STATUS "Could not find OpenBLAS lib. Turning OpenBLAS_FOUND off")
+ENDIF()
+
+IF (OpenBLAS_FOUND)
+  IF (NOT OpenBLAS_FIND_QUIETLY)
+    MESSAGE(STATUS "Found OpenBLAS libraries: ${OpenBLAS_LIB}")
+    MESSAGE(STATUS "Found OpenBLAS include: ${OpenBLAS_INCLUDE_DIR}")
+  ENDIF (NOT OpenBLAS_FIND_QUIETLY)
+ELSE (OpenBLAS_FOUND)
+  IF (OpenBLAS_FIND_REQUIRED)
+    MESSAGE(FATAL_ERROR "Could not find OpenBLAS")
+  ENDIF (OpenBLAS_FIND_REQUIRED)
+ENDIF (OpenBLAS_FOUND)
+
+IF(OpenBLAS_LIB)
+ # Run ldd on the OpenBLAS library
+execute_process(
+  COMMAND ldd "${OpenBLAS_LIB}"
+  OUTPUT_VARIABLE LDD_OUTPUT
+  ERROR_VARIABLE LDD_ERROR
+  RESULT_VARIABLE LDD_RESULT
+  OUTPUT_STRIP_TRAILING_WHITESPACE
+)
+
+if(NOT LDD_RESULT EQUAL 0)
+  message(WARNING "ldd failed on ${OpenBLAS_LIB}: ${LDD_ERROR}")
+endif()
+
+# Check if the output contains "libgomp"
+string(FIND "${LDD_OUTPUT}" "libgomp" LIBGOMP_FOUND_INDEX)
+if(LIBGOMP_FOUND_INDEX GREATER -1)
+  message(STATUS "OpenBLAS is directly linked against libgomp")
+  set(OPENBLAS_USES_LIBGOMP TRUE CACHE BOOL "OpenBLAS uses libgomp")
+else()
+  message(STATUS "OpenBLAS is not directly linked against libgomp")
+  set(OPENBLAS_USES_LIBGOMP FALSE CACHE BOOL "OpenBLAS uses libgomp")
+endif()
+
+ENDIF(OpenBLAS_LIB)
+
+MARK_AS_ADVANCED(
+    OpenBLAS_INCLUDE_DIR
+    OpenBLAS_LIB
+    OpenBLAS
+)
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `cmake/Modules`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `cmake/Modules`, which is part of the PyTorch project infrastructure.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Implements or uses **caching** mechanisms.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`cmake/Modules`):
+
+- [`FindOpenTelemetryApi.cmake_docs.md`](./FindOpenTelemetryApi.cmake_docs.md)
+- [`FindSanitizer.cmake_docs.md`](./FindSanitizer.cmake_docs.md)
+- [`FindOpenMP.cmake_docs.md`](./FindOpenMP.cmake_docs.md)
+- [`FindGloo.cmake_docs.md`](./FindGloo.cmake_docs.md)
+- [`FindCUSPARSELT.cmake_docs.md`](./FindCUSPARSELT.cmake_docs.md)
+- [`FindAPL.cmake_docs.md`](./FindAPL.cmake_docs.md)
+- [`FindSYCLToolkit.cmake_docs.md`](./FindSYCLToolkit.cmake_docs.md)
+- [`FindBLIS.cmake_docs.md`](./FindBLIS.cmake_docs.md)
+- [`FindNCCL.cmake_docs.md`](./FindNCCL.cmake_docs.md)
+- [`Findpybind11.cmake_docs.md`](./Findpybind11.cmake_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `FindOpenBLAS.cmake_docs.md`
+- **Keyword Index**: `FindOpenBLAS.cmake_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

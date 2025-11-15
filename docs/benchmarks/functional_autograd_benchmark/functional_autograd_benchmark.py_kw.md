@@ -1,0 +1,76 @@
+# Keyword Index: `benchmarks/functional_autograd_benchmark/functional_autograd_benchmark.py`
+
+## File Information
+
+- **Original File**: [benchmarks/functional_autograd_benchmark/functional_autograd_benchmark.py](../../../benchmarks/functional_autograd_benchmark/functional_autograd_benchmark.py)
+- **Documentation**: [`functional_autograd_benchmark.py_docs.md`](./functional_autograd_benchmark.py_docs.md)
+- **Folder**: `benchmarks/functional_autograd_benchmark`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`ModelDef`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+
+### Functions
+
+- **`get_task_func`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+- **`get_task_functorch`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+- **`get_v_for`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+- **`hessian`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+- **`hessian_fwdrev`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+- **`hessian_revrev`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+- **`hvp`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+- **`jacfwd`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+- **`jacrev`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+- **`jvp`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+- **`main`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+- **`noop`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+- **`run_model`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+- **`run_once`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+- **`run_once_functorch`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+- **`vhp`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+- **`vjp`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+
+### Imports
+
+- **`Any`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+- **`ArgumentParser`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+- **`Callable`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+- **`GetterType`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+- **`argparse`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+- **`audio_text_models`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+- **`collections`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+- **`collections.abc`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+- **`defaultdict`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+- **`functional`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+- **`functorch`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+- **`ppl_models`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+- **`time`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+- **`torch`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+- **`torch.autograd`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+- **`typing`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+- **`utils`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+- **`vision_models`**: [functional_autograd_benchmark.py_docs.md](./functional_autograd_benchmark.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

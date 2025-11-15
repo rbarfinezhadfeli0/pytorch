@@ -1,0 +1,90 @@
+# Keyword Index: `docs/torchgen/api/python.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torchgen/api/python.py_kw.md](../../../../docs/torchgen/api/python.py_kw.md)
+- **Documentation**: [`python.py_kw.md_docs.md`](./python.py_kw.md_docs.md)
+- **Folder**: `docs/torchgen/api`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Architecture`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Basic`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Binding`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Classs`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Complete`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Considerations`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Dependencies`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Design`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Detailed`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`DispatchLambdaArgument`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`DispatchLambdaArgumentExprs`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Documentation`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Efficiency`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Extracted`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`File`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Folder`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Functions`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Generated`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`High`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`How`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Imports`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`In`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Index`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Information`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Iterable`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Keyword`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Keywords`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Level`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Map`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Metadata`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Original`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Overview`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Performance`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Purpose`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`PyTorch`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`PythonArgParserOutputExpr`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`PythonArgument`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`PythonOutArgument`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`PythonReturns`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`PythonSignature`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`PythonSignatureDeprecated`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`PythonSignatureGroup`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`PythonSignatureNativeFunctionPair`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Related`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Repository`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Safety`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Section`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Security`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Source`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`System`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`TYPE_CHECKING`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Testing`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`The`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`This`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+- **`Usage`**: [python.py_kw.md_docs.md](./python.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

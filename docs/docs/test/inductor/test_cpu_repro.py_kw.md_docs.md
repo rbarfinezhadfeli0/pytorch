@@ -1,0 +1,423 @@
+# Documentation: `docs/test/inductor/test_cpu_repro.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/test/inductor/test_cpu_repro.py_kw.md`
+- **Size**: 24,816 bytes (24.23 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `test/inductor/test_cpu_repro.py`
+
+## File Information
+
+- **Original File**: [test/inductor/test_cpu_repro.py](../../../test/inductor/test_cpu_repro.py)
+- **Documentation**: [`test_cpu_repro.py_docs.md`](./test_cpu_repro.py_docs.md)
+- **Folder**: `test/inductor`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`Attention`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`CPUReproTests`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`LstmModule`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`M`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`MaskedConv2d`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`Mod`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`Model`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`Model1`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`Model2`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`MyModel`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`RecordFunctions`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+
+### Functions
+
+- **`__init__`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`__torch_dispatch__`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`_can_check_vec_metrics`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`_internal_check`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`_test_decomposed_dequant_relu_quant_helper`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`_test_dequant_maxpool2d_lowering_helper`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`_test_dequant_quant_lowering_helper`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`_test_dequant_relu_quant_dequant_relu_quant_lowering_helper`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`_test_lstm_packed`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`_test_non_contiguous_load_buf_quant_helper`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`_test_per_channel_fake_quant_helper`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`_test_per_tensor_fake_quant_helper`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`_test_tile2d_load_decomposed_dequant_add_relu_quant_helper`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`_test_tile2d_store_channel_shuffle_cl_quant_output_helper`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`are`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`channel_shuffle`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`check_metrics_vec_kernel_count`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`check_use_full_bits`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`compile_fx_wrapper`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`f`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`fn`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`fn1`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`fn2`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`forward`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`fp8_cast`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`fq`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`func`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`func0`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`func1`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`func2`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`get_traj_idx`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`qdq`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`reduce_example`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`run`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`run_compile_decomposed_fake_quant`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`run_eager_aten_fake_quant`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`run_eager_decomposed_fake_quant`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`run_node_alt`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`set_num_threads`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`simd_lengths_to_test`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_ModularIndexing_range_issue_103133`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test__adaptive_avg_pool2d`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_acosh_with_negative_large_input`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_add_layernorm`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_argmax_argmin_with_nan_value`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_argmin`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_asinh_with_corner_inputs`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_aten_normal_dtype`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_atomic_add_lowp_fp`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_attention_size_mismatch`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_auto_simd`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_auto_zvec_vsx_simd`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_avx2_bool_constant_pad_nd`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_bf16_zeros`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_bitwise_logical_op_bool`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_bitwise_right_shift`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_bitwise_shift_corner_inputs`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_bool_max`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_bool_reduction_vec`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_broadcast_mul_lowp_fp`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_broadcast_scalar_cpp_tile_2d_kernel`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_cat_mul`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_channel_shuffle_cl_output`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_channels_last_view_as_complex`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_complex_cholesky_mh_view_fallback`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_complex_memory_overlap`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_concat_inner_vec`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_concat_with_conv`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_consistent_remove_buffers`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_constant_bool_vec`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_constant_store`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_conv1d_strided_weight_torch_compile`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_conv2d_autocast`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_conv2d_bn_mixed_dtype`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_conv2d_packed`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_conv_in_channel_1_dynamic_shapes`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_conv_stride_constraints`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_conv_transpose2d_has_output_size_input`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_conv_transpose2d_packed_cpu`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_conv_used_from_multiple_places`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_convert_double_to_fp32_vec`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_convert_fp32_int64_oob_vec`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_convert_fp32_to_double_vec`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_convert_fp32_to_int64_vec`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_convert_int32_to_int64_vec`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_convert_int64_to_fp32_vec`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_convert_int64_to_int32_vec`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_convert_int8_to_half_vec`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_cpp_kernel_profile`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_cpu_vec_cosim`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_decomposed_dequant_relu_quant_int8`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_decomposed_dequant_relu_quant_uint8`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_decomposed_fake_quant_per_channel`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_dequant_maxpool2d_lowering_int8`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_dequant_maxpool2d_lowering_uint8`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_dequant_quant_lowering_fp8_e4m3`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_dequant_quant_lowering_fp8_e5m2`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_dequant_quant_lowering_int8`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_dequant_quant_lowering_uint8`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_dequant_relu_quant_dequant_relu_quant_lowering_int8`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_dequant_relu_quant_dequant_relu_quant_lowering_uint8`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_disabled_amp`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_do_not_insert_to_dtype_for_memory_copy_only_kernel`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_double_pointwise_vec`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_double_reduction_vec`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_dropout`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_eliminate_meaningless_copy`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_embedding_vec`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_embedding_vec_bf16`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_expr_vec_non_contiguous`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_float32_to_uint8`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_for_loop_collapsed`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_fp32_load_with_to_lowp_fp`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_fp8_cast`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_fractional_max_pool2d_3d_input`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_frexp`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_full_bits_lowp`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_full_boolean_dynamic_shape`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_fused_attention_conv`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_fused_node`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_group_norm_backward_symint_divisible_channels`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_group_norm_large_input`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_group_norm_large_size`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_group_norm_vec`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_highp_to_lowp_cse_var_cache_with_store`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_horizontal_fusion`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_in_out_buffer`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_index_add`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_index_propagation_issue_102065`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_index_put`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_index_put2`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_inplace_add_alpha`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_inplace_squeeze_needed`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_insert_to_dtype_count`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_int32_pointwise_vec`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_int32_reduction_vec`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_int64_pointwise_vec`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_int64_reduction_vec`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_int_div`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_int_div_vec`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_invalid_dropout_args`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_invalid_index_of_empty_tensor`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_ir_node_str`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_issue122380`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_issue_148058`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_large_mean`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_linear_buffer_reuse`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_linear_float64`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_linear_packed`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_linear_used_from_multiple_places`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_linear_with_no_default_contiguous_input`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_linear_with_reshape`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_load_half`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_load_inf_bf16`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_load_same_bool_tensor_twice`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_local_buffer_in_outer_loop_fusion`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_local_buffer_with_line_reuse`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_logical_op_store_to_lowp_data_dtype`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_low_fp_index_expr_issue_147279`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_lowp_fp_neg_abs`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_lstm_packed`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_lstm_packed_change_input_sizes_cpu`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_masked_fill_softmax`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_masked_fill_with_inf_or_nan_value`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_masked_load_int64_vec`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_max_reduction_lowp_fp`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_maxpool2d_cpu_only`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_maxpool2d_with_pre_loop_collapse_cpu_only`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_memory_copy_with_fusion`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_meta_device`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_mkl_linear`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_module_buffer_mutation`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_multihead_attention_cpu`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_new_vec_op_cpu_only`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_nn_fold`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_nn_param_assign`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_nn_param_assign_wrapped`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_no_op_squeeze`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_no_redundant_to_dtypes_between_fused_scheduler_node`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_non_contiguous_index_with_constant_stride`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_non_contiguous_load_buf_quant_int8`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_non_contiguous_load_buf_quant_uint8`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_non_contiguous_reduction_store`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_ops_masked_with_bool_input`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_outer_looop_fusion_with_local_buf`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_outer_loop_fusion`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_outer_loop_fusion_buffer_remove`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_outer_mean_large_size`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_pack_padded_sequence_lstm`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_pad_with_nan_value`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_parallel_num_threads`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_parallel_reduction_vectorization`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_per_channel_fake_quant_int8`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_per_channel_fake_quant_int8_bf16_input`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_per_channel_fake_quant_module_uint8`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_per_channel_fake_quant_uint8`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_per_channel_fake_quant_uint8_bf16_input`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_per_tensor_fake_quant_int8`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_per_tensor_fake_quant_uint8`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_pow_cos`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+
+### Imports
+
+- **`.`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`Callable`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`CppOverrides`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`FileCheck`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`GraphLowering`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`HAS_CPU`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`InductorError`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`TorchDispatchMode`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`collections.abc`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`config`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`contextlib`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`copy`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`counters`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`functional`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`functools`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`inf`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`is_float_dtype`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`itertools`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`make_fx`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`math`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`nn`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`os`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`patch`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`platform`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`profile`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`rand_strided`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`run_tests`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`same`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`sdpa_kernel`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`sys`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`test_torchinductor`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`timed`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`torch`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`torch._C`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`torch._dynamo.testing`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`torch._dynamo.utils`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`torch._inductor`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`torch._inductor.codegen.cpp`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`torch._inductor.compile_fx`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`torch._inductor.exc`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`torch._inductor.graph`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`torch._inductor.test_case`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`torch._inductor.utils`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`torch._prims_common`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`torch.fx.experimental.proxy_tensor`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`torch.nn`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`torch.nn.attention`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`torch.profiler`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`torch.testing._internal.common_quantization`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`torch.testing._internal.inductor_utils`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`torch.utils._python_dispatch`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`unittest`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+- **`unittest.mock`**: [test_cpu_repro.py_docs.md](./test_cpu_repro.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/inductor`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/inductor`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Implements or uses **caching** mechanisms.
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/inductor/test_cpu_repro.py_kw.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/inductor`):
+
+- [`test_snode_runtime.py_kw.md_docs.md`](./test_snode_runtime.py_kw.md_docs.md)
+- [`test_metrics.py_docs.md_docs.md`](./test_metrics.py_docs.md_docs.md)
+- [`test_flex_attention.py_kw.md_docs.md`](./test_flex_attention.py_kw.md_docs.md)
+- [`test_cuda_repro.py_kw.md_docs.md`](./test_cuda_repro.py_kw.md_docs.md)
+- [`test_fxir_backend.py_kw.md_docs.md`](./test_fxir_backend.py_kw.md_docs.md)
+- [`test_split_cat_fx_passes.py_kw.md_docs.md`](./test_split_cat_fx_passes.py_kw.md_docs.md)
+- [`test_mmdecomp.py_kw.md_docs.md`](./test_mmdecomp.py_kw.md_docs.md)
+- [`test_torchinductor_codegen_config_overrides.py_kw.md_docs.md`](./test_torchinductor_codegen_config_overrides.py_kw.md_docs.md)
+- [`test_aot_inductor_custom_ops.py_kw.md_docs.md`](./test_aot_inductor_custom_ops.py_kw.md_docs.md)
+- [`test_minifier.py_kw.md_docs.md`](./test_minifier.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_cpu_repro.py_kw.md_docs.md`
+- **Keyword Index**: `test_cpu_repro.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

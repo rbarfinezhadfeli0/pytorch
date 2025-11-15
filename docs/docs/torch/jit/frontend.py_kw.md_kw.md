@@ -1,0 +1,87 @@
+# Keyword Index: `docs/torch/jit/frontend.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/jit/frontend.py_kw.md](../../../../docs/torch/jit/frontend.py_kw.md)
+- **Documentation**: [`frontend.py_kw.md_docs.md`](./frontend.py_kw.md_docs.md)
+- **Folder**: `docs/torch/jit`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`Architecture`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`Basic`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`Builder`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`Classs`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`Complete`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`Considerations`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`DATACLASS_MAGIC_METHODS`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`Dependencies`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`Design`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`Detailed`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`Documentation`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`Efficiency`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`ExprBuilder`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`Extracted`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`File`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`Folder`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`FrontendError`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`FrontendTypeError`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`Functions`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`Generated`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`High`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`How`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`Imports`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`In`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`Index`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`Information`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`Keyword`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`Keywords`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`Level`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`List`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`Map`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`Metadata`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`NotSupportedError`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`Original`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`Overview`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`Performance`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`Purpose`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`PyTorch`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`Related`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`Repository`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`Safety`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`Section`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`Security`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`Source`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`StmtBuilder`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`System`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`Testing`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`The`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`This`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`UnsupportedNodeError`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`Usage`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+- **`WithItemBuilder`**: [frontend.py_kw.md_docs.md](./frontend.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,310 @@
+# Documentation: `docs/GLOSSARY.md_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/GLOSSARY.md_docs.md`
+- **Size**: 4,680 bytes (4.57 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `GLOSSARY.md`
+
+## File Metadata
+
+- **Path**: `GLOSSARY.md`
+- **Size**: 2,470 bytes (2.41 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This is a markdown documentation that is part of the PyTorch project.
+
+## Original Source
+
+```markdown
+# PyTorch Glossary
+
+<!-- toc -->
+
+- [Operation and Kernel](#operation-and-kernel)
+  - [ATen](#aten)
+  - [Operation](#operation)
+  - [Native Operation](#native-operation)
+  - [Custom Operation](#custom-operation)
+  - [Kernel](#kernel)
+  - [Compound Operation](#compound-operation)
+  - [Composite Operation](#composite-operation)
+  - [Non-Leaf Operation](#non-leaf-operation)
+  - [Leaf Operation](#leaf-operation)
+  - [Device Kernel](#device-kernel)
+  - [Compound Kernel](#compound-kernel)
+- [JIT Compilation](#jit-compilation)
+  - [JIT](#jit)
+  - [TorchScript](#torchscript)
+  - [Tracing](#tracing)
+  - [Scripting](#scripting)
+
+<!-- tocstop -->
+
+# Operation and Kernel
+
+## ATen
+Short for "A Tensor Library". The foundational tensor and mathematical
+operation library on which all else is built.
+
+## Operation
+A unit of work. For example, the work of matrix multiplication is an operation
+called aten::matmul.
+
+## Native Operation
+An operation that comes natively with PyTorch ATen, for example aten::matmul.
+
+## Custom Operation
+An Operation that is defined by users and is usually a Compound Operation.
+For example, this
+[tutorial](https://pytorch.org/docs/stable/notes/extending.html) details how
+to create Custom Operations.
+
+## Kernel
+Implementation of a PyTorch operation, specifying what should be done when an
+operation executes.
+
+## Compound Operation
+A Compound Operation is composed of other operations. Its kernel is usually
+device-agnostic. Normally it doesn't have its own derivative functions defined.
+Instead, AutoGrad automatically computes its derivative based on operations it
+uses.
+
+## Composite Operation
+Same as Compound Operation.
+
+## Non-Leaf Operation
+Same as Compound Operation.
+
+## Leaf Operation
+An operation that's considered a basic operation, as opposed to a Compound
+Operation. Leaf Operation always has dispatch functions defined, usually has a
+derivative function defined as well.
+
+## Device Kernel
+Device-specific kernel of a leaf operation.
+
+## Compound Kernel
+Opposed to Device Kernels, Compound kernels are usually device-agnostic and belong to Compound Operations.
+
+# JIT Compilation
+
+## JIT
+Just-In-Time Compilation.
+
+## TorchScript
+An interface to the TorchScript JIT compiler and interpreter.
+
+## Tracing
+Using `torch.jit.trace` on a function to get an executable that can be optimized
+using just-in-time compilation.
+
+## Scripting
+Using `torch.jit.script` on a function to inspect source code and compile it as
+TorchScript code.
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at ``.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `root`, which is part of the PyTorch project infrastructure.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`root`):
+
+- [`AGENTS.md_docs.md`](./AGENTS.md_docs.md)
+- [`pytest.ini_docs.md`](./pytest.ini_docs.md)
+- [`codex_setup.sh_docs.md`](./codex_setup.sh_docs.md)
+- [`pt_template_srcs.bzl_docs.md`](./pt_template_srcs.bzl_docs.md)
+- [`aten.bzl_docs.md`](./aten.bzl_docs.md)
+- [`build.bzl_docs.md`](./build.bzl_docs.md)
+- [`buckbuild.bzl_docs.md`](./buckbuild.bzl_docs.md)
+- [`Dockerfile_docs.md`](./Dockerfile_docs.md)
+- [`.bc-linter.yml_docs.md`](./.bc-linter.yml_docs.md)
+- [`setup.py_docs.md`](./setup.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `GLOSSARY.md_docs.md`
+- **Keyword Index**: `GLOSSARY.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs`, which is part of the PyTorch project infrastructure.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs`):
+
+- [`Makefile_docs.md`](./Makefile_docs.md)
+- [`README.md_docs.md`](./README.md_docs.md)
+- [`requirements.txt_docs.md`](./requirements.txt_docs.md)
+- [`libtorch.rst_docs.md`](./libtorch.rst_docs.md)
+- [`BUILD.bazel_docs.md_docs.md`](./BUILD.bazel_docs.md_docs.md)
+- [`generate_repo_docs.py_kw.md_docs.md`](./generate_repo_docs.py_kw.md_docs.md)
+- [`CMakeLists.txt_docs.md_docs.md`](./CMakeLists.txt_docs.md_docs.md)
+- [`pt_template_srcs.bzl_kw.md_docs.md`](./pt_template_srcs.bzl_kw.md_docs.md)
+- [`CLAUDE.md_docs.md_docs.md`](./CLAUDE.md_docs.md_docs.md)
+- [`setup.py_kw.md_docs.md`](./setup.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `GLOSSARY.md_docs.md_docs.md`
+- **Keyword Index**: `GLOSSARY.md_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

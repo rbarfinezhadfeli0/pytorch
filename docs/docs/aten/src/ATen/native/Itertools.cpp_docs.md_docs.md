@@ -1,0 +1,314 @@
+# Documentation: `docs/aten/src/ATen/native/Itertools.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/Itertools.cpp_docs.md`
+- **Size**: 4,821 bytes (4.71 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/native/Itertools.cpp`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/Itertools.cpp`
+- **Size**: 2,179 bytes (2.13 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#define TORCH_ASSERT_ONLY_METHOD_OPERATORS
+#include <ATen/core/Tensor.h>
+#include <ATen/TensorOperators.h>
+
+#ifndef AT_PER_OPERATOR_HEADERS
+#include <ATen/Functions.h>
+#include <ATen/NativeFunctions.h>
+#else
+#include <ATen/ops/arange.h>
+#include <ATen/ops/cartesian_prod_native.h>
+#include <ATen/ops/combinations_native.h>
+#include <ATen/ops/empty.h>
+#include <ATen/ops/full.h>
+#include <ATen/ops/meshgrid.h>
+#include <ATen/ops/stack.h>
+#endif
+
+#include <vector>
+
+namespace {
+
+using namespace at;
+
+Tensor _triu_mask(int64_t n, int64_t dims, bool diagonal, TensorOptions opt) {
+  // get a mask that has value 1 whose indices satisfies i < j < k < ...
+  // or i <= j <= k <= ... (depending on diagonal)
+  Tensor range = at::arange(n, opt.dtype(kLong));
+  std::vector<Tensor> index_grids = at::meshgrid(std::vector<Tensor>(dims, range), "ij");
+  Tensor mask = at::full(index_grids[0].sizes(), true, opt.dtype(kBool));
+  if(diagonal) {
+    for(int64_t i = 0; i < dims - 1; i++) {
+      mask *= index_grids[i] <= index_grids[i+1];
+    }
+  } else {
+    for(int64_t i = 0; i < dims - 1; i++) {
+      mask *= index_grids[i] < index_grids[i+1];
+    }
+  }
+  return mask;
+}
+
+}  // namespace
+
+namespace at::native {
+
+Tensor cartesian_prod(TensorList tensors) {
+  for(const Tensor &t : tensors) {
+    TORCH_CHECK(t.dim() == 1, "Expect a 1D vector, but got shape ", t.sizes());
+  }
+  if (tensors.size() == 1) {
+    return tensors[0];
+  }
+  std::vector<Tensor> grids = at::meshgrid(tensors, "ij");
+  for(Tensor &t : grids) {
+    t = t.flatten();
+  }
+  return at::stack(grids, 1);
+}
+
+Tensor combinations(const Tensor& self, int64_t r, bool with_replacement) {
+  TORCH_CHECK(self.dim() == 1, "Expect a 1D vector, but got shape ", self.sizes());
+  TORCH_CHECK(r >= 0, "Expect a non-negative number, but got ", r);
+  if (r == 0) {
+    return at::empty({0}, self.options());
+  }
+  int64_t num_elements = self.numel();
+  std::vector<Tensor> grids = at::meshgrid(std::vector<Tensor>(r, self), "ij");
+  Tensor mask = _triu_mask(num_elements, r, with_replacement, self.options());
+  for(Tensor &t : grids) {
+    t = t.masked_select(mask);
+  }
+  return at::stack(grids, 1);
+}
+
+}  // namespace at::native
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 3 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `namespace`, `at`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/core/Tensor.h`
+- `ATen/TensorOperators.h`
+- `ATen/Functions.h`
+- `ATen/NativeFunctions.h`
+- `ATen/ops/arange.h`
+- `ATen/ops/cartesian_prod_native.h`
+- `ATen/ops/combinations_native.h`
+- `ATen/ops/empty.h`
+- `ATen/ops/full.h`
+- `ATen/ops/meshgrid.h`
+- `ATen/ops/stack.h`
+- `vector`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native`):
+
+- [`LossMulti.h_docs.md`](./LossMulti.h_docs.md)
+- [`NaiveConvolutionTranspose3d.cpp_docs.md`](./NaiveConvolutionTranspose3d.cpp_docs.md)
+- [`UnaryOps.cpp_docs.md`](./UnaryOps.cpp_docs.md)
+- [`ResizeCommon.h_docs.md`](./ResizeCommon.h_docs.md)
+- [`FusedAdagrad.cpp_docs.md`](./FusedAdagrad.cpp_docs.md)
+- [`SharedReduceOps.h_docs.md`](./SharedReduceOps.h_docs.md)
+- [`SpectralOpsUtils.h_docs.md`](./SpectralOpsUtils.h_docs.md)
+- [`FractionalMaxPooling.h_docs.md`](./FractionalMaxPooling.h_docs.md)
+- [`TensorDimApply.h_docs.md`](./TensorDimApply.h_docs.md)
+- [`Lerp.cpp_docs.md`](./Lerp.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `Itertools.cpp_docs.md`
+- **Keyword Index**: `Itertools.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native`):
+
+- [`AdaptiveMaxPooling2d.cpp_docs.md_docs.md`](./AdaptiveMaxPooling2d.cpp_docs.md_docs.md)
+- [`Distributions.cpp_docs.md_docs.md`](./Distributions.cpp_docs.md_docs.md)
+- [`im2col_shape_check.h_docs.md_docs.md`](./im2col_shape_check.h_docs.md_docs.md)
+- [`ReduceOps.cpp_kw.md_docs.md`](./ReduceOps.cpp_kw.md_docs.md)
+- [`Lerp.cpp_kw.md_docs.md`](./Lerp.cpp_kw.md_docs.md)
+- [`CPUFallback.h_docs.md_docs.md`](./CPUFallback.h_docs.md_docs.md)
+- [`MetaTensor.cpp_docs.md_docs.md`](./MetaTensor.cpp_docs.md_docs.md)
+- [`Correlation.cpp_kw.md_docs.md`](./Correlation.cpp_kw.md_docs.md)
+- [`im2col_shape_check.h_kw.md_docs.md`](./im2col_shape_check.h_kw.md_docs.md)
+- [`UpSampleNearest2d.cpp_kw.md_docs.md`](./UpSampleNearest2d.cpp_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `Itertools.cpp_docs.md_docs.md`
+- **Keyword Index**: `Itertools.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

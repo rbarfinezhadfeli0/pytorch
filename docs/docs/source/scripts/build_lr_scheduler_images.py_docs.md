@@ -1,0 +1,209 @@
+# Documentation: `docs/source/scripts/build_lr_scheduler_images.py`
+
+## File Metadata
+
+- **Path**: `docs/source/scripts/build_lr_scheduler_images.py`
+- **Size**: 2,883 bytes (2.82 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is part of the **documentation**. This file is a **utility or tool script**.
+
+## Original Source
+
+```python
+from pathlib import Path
+
+import matplotlib
+from matplotlib import pyplot as plt
+
+import torch
+import torch.optim as optim
+from torch.optim.lr_scheduler import (
+    ChainedScheduler,
+    ConstantLR,
+    CosineAnnealingLR,
+    CosineAnnealingWarmRestarts,
+    CyclicLR,
+    ExponentialLR,
+    LambdaLR,
+    LinearLR,
+    MultiplicativeLR,
+    MultiStepLR,
+    OneCycleLR,
+    PolynomialLR,
+    ReduceLROnPlateau,
+    SequentialLR,
+    StepLR,
+)
+
+
+matplotlib.use("Agg")
+
+LR_SCHEDULER_IMAGE_PATH = Path(__file__).parent / "lr_scheduler_images"
+
+if not LR_SCHEDULER_IMAGE_PATH.exists():
+    LR_SCHEDULER_IMAGE_PATH.mkdir()
+
+model = torch.nn.Linear(10, 1)
+optimizer = optim.SGD(model.parameters(), lr=0.05)
+
+num_epochs = 100
+
+scheduler1 = ConstantLR(optimizer, factor=0.1, total_iters=num_epochs // 5)
+scheduler2 = ExponentialLR(optimizer, gamma=0.9)
+
+schedulers = [
+    (lambda opt: LambdaLR(opt, lr_lambda=lambda epoch: epoch // 30)),
+    (lambda opt: MultiplicativeLR(opt, lr_lambda=lambda epoch: 0.95)),
+    (lambda opt: StepLR(opt, step_size=30, gamma=0.1)),
+    (lambda opt: MultiStepLR(opt, milestones=[30, 80], gamma=0.1)),
+    (lambda opt: ConstantLR(opt, factor=0.5, total_iters=40)),
+    (lambda opt: LinearLR(opt, start_factor=0.05, total_iters=40)),
+    (lambda opt: ExponentialLR(opt, gamma=0.95)),
+    (lambda opt: PolynomialLR(opt, total_iters=num_epochs / 2, power=0.9)),
+    (lambda opt: CosineAnnealingLR(opt, T_max=num_epochs)),
+    (lambda opt: CosineAnnealingWarmRestarts(opt, T_0=20)),
+    (lambda opt: CyclicLR(opt, base_lr=0.01, max_lr=0.1, step_size_up=10)),
+    (lambda opt: OneCycleLR(opt, max_lr=0.01, epochs=10, steps_per_epoch=10)),
+    (lambda opt: ReduceLROnPlateau(opt, mode="min")),
+    (lambda opt: ChainedScheduler([scheduler1, scheduler2])),
+    (
+        lambda opt: SequentialLR(
+            opt, schedulers=[scheduler1, scheduler2], milestones=[num_epochs // 5]
+        )
+    ),
+]
+
+
+def plot_function(scheduler):
+    plt.clf()
+    plt.grid(color="k", alpha=0.2, linestyle="--")
+    lrs = []
+    optimizer.param_groups[0]["lr"] = 0.05
+    scheduler = scheduler(optimizer)
+
+    plot_path = LR_SCHEDULER_IMAGE_PATH / f"{scheduler.__class__.__name__}.png"
+    if plot_path.exists():
+        return
+
+    for _ in range(num_epochs):
+        lrs.append(optimizer.param_groups[0]["lr"])
+        if isinstance(scheduler, ReduceLROnPlateau):
+            val_loss = torch.randn(1).item()
+            scheduler.step(val_loss)
+        else:
+            scheduler.step()
+
+    plt.plot(range(num_epochs), lrs)
+    plt.title(f"Learning Rate: {scheduler.__class__.__name__}")
+    plt.xlabel("Epoch")
+    plt.ylabel("Learning Rate")
+    plt.xlim([0, num_epochs])
+    plt.savefig(plot_path)
+    print(
+        f"Saved learning rate scheduler image for {scheduler.__class__.__name__} at {plot_path}"
+    )
+
+
+for scheduler in schedulers:
+    plot_function(scheduler)
+
+```
+
+
+
+## High-Level Overview
+
+
+This Python file contains 0 class(es) and 1 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Functions defined**: `plot_function`
+
+**Key imports**: Path, matplotlib, pyplot as plt, torch, torch.optim as optim
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/source/scripts`, which contains **development tools and scripts**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `pathlib`: Path
+- `matplotlib`
+- `torch`
+- `torch.optim as optim`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/source/scripts`):
+
+- [`build_opsets.py_docs.md`](./build_opsets.py_docs.md)
+- [`build_activation_images.py_docs.md`](./build_activation_images.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `build_lr_scheduler_images.py_docs.md`
+- **Keyword Index**: `build_lr_scheduler_images.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

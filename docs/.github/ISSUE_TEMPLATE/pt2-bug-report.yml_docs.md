@@ -1,0 +1,180 @@
+# Documentation: `.github/ISSUE_TEMPLATE/pt2-bug-report.yml`
+
+## File Metadata
+
+- **Path**: `.github/ISSUE_TEMPLATE/pt2-bug-report.yml`
+- **Size**: 2,651 bytes (2.59 KB)
+- **Type**: YAML Configuration
+- **Extension**: `.yml`
+
+## File Purpose
+
+This is a yaml configuration that is part of the PyTorch project.
+
+## Original Source
+
+```yaml
+name: 🐛 torch.compile Bug Report
+description: Create a report to help us reproduce and fix the bug
+labels: ["oncall: pt2"]
+
+body:
+  - type: markdown
+    attributes:
+      value: >
+        #### Note: Please write your bug report in English to ensure it can be understood and addressed by the development team.
+  - type: markdown
+    attributes:
+      value: >
+        #### Before submitting a bug, please make sure the issue hasn't been already addressed by searching through [the
+        existing and past issues](https://github.com/pytorch/pytorch/issues)
+        It's likely that your bug will be resolved by checking our FAQ or troubleshooting guide [documentation](https://pytorch.org/docs/main/dynamo/index.html)
+
+        Note: if you're submitting an issue that you generated from a fuzzer. Please do the following:
+
+        - Ensure rtol/atol are at default tolerances
+
+        - Don't compare indices of max/min etc, because that avoids the above requirement
+
+        - When comparing eager and torch.compile, use a higher precision result as a baseline. `torch._dynamo.utils.same` with fp64_ref will handle this comparison.
+
+        - Ensure rng state used to compare results is equivalent. Use `torch._inductor.config.fallback_random=True` and reset the torch rng seed between comparisons
+
+        If the above requirements are met, add the label "topic: fuzzer" to your issue.
+
+  - type: textarea
+    attributes:
+      label: 🐛 Describe the bug
+      description: |
+        Please provide a clear and concise description of what the bug is.
+
+        See https://pytorch.org/docs/main/torch.compiler_troubleshooting.html#reporting-issues
+        for guidance on what to additionally include. In particular, consider including:
+
+        - The `tlparse` for your program
+        - Ablation - which `torch.compile` backend/mode/settings cause the bug
+        - A minimal reproducer
+
+      placeholder: |
+        A clear and concise description of what the bug is.
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Error logs
+      description: |
+        Please provide the error you're seeing
+      placeholder: |
+        Error...
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Versions
+      description: |
+        Please run the following and paste the output below.
+        ```sh
+        curl -OL https://raw.githubusercontent.com/pytorch/pytorch/main/torch/utils/collect_env.py
+        # For security purposes, please check the contents of collect_env.py before running it.
+        python3 collect_env.py
+        ```
+    validations:
+      required: true
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `.github/ISSUE_TEMPLATE`.
+
+## Detailed Analysis
+
+### Code Structure
+
+This is a configuration file. See the original source for structure.
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `.github/ISSUE_TEMPLATE`, which is part of the PyTorch project infrastructure.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`.github/ISSUE_TEMPLATE`):
+
+- [`ci-sev.md_docs.md`](./ci-sev.md_docs.md)
+- [`config.yml_docs.md`](./config.yml_docs.md)
+- [`disable-ci-jobs.md_docs.md`](./disable-ci-jobs.md_docs.md)
+- [`disable-autorevert.md_docs.md`](./disable-autorevert.md_docs.md)
+- [`release-feature-request.yml_docs.md`](./release-feature-request.yml_docs.md)
+- [`documentation.yml_docs.md`](./documentation.yml_docs.md)
+- [`feature-request.yml_docs.md`](./feature-request.yml_docs.md)
+- [`bug-report.yml_docs.md`](./bug-report.yml_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `pt2-bug-report.yml_docs.md`
+- **Keyword Index**: `pt2-bug-report.yml_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,89 @@
+# Keyword Index: `docs/aten/src/ATen/native/Unique.cpp_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/native/Unique.cpp_kw.md](../../../../../../docs/aten/src/ATen/native/Unique.cpp_kw.md)
+- **Documentation**: [`Unique.cpp_kw.md_docs.md`](./Unique.cpp_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/native`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Analysis`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Architecture`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Basic`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Class`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Complete`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Considerations`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Dependencies`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Design`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Detailed`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Dispatch_v2`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Documentation`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Efficiency`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Extracted`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`File`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Folder`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`ForwardIt`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Functions`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Generated`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`High`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`How`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`In`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Includes`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Index`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Information`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`IsUnique`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Keyword`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Keywords`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Level`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Load`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Map`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Metadata`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Namespaces`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`NativeFunctions`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Original`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Overview`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Parallel`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Performance`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Purpose`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`PyTorch`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Related`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Repository`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Safety`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Section`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Security`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Source`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Structs`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`System`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Tensor`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`TensorIterator`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Testing`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`The`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`This`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Unique`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+- **`Usage`**: [Unique.cpp_kw.md_docs.md](./Unique.cpp_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

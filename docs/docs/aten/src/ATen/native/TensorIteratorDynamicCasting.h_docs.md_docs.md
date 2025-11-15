@@ -1,0 +1,288 @@
+# Documentation: `docs/aten/src/ATen/native/TensorIteratorDynamicCasting.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/TensorIteratorDynamicCasting.h_docs.md`
+- **Size**: 4,481 bytes (4.38 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/native/TensorIteratorDynamicCasting.h`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/TensorIteratorDynamicCasting.h`
+- **Size**: 1,810 bytes (1.77 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#pragma once
+
+#include <ATen/detail/FunctionTraits.h>
+#include <ATen/native/TensorIterator.h>
+#include <c10/core/ScalarType.h>
+#include <complex>
+#include <type_traits>
+
+// This file includes utilities for dynamic_casting done by TensorIterator, see
+// CUDALoops.cuh and Loops.h.
+
+// dynamic_casting handles when the types expected by the iterator do not match
+// the types of the arguments to the function that is being called. On CUDA, the
+// cast is currently pushed down into the kernel (for performance reasons). On
+// CPU, there is currently an internal assert that a dynamic_cast is not needed.
+
+namespace at::native {
+
+// `needs_dynamic_casting` compares the types expected by iterator
+// (i.e. dtypes of the operands) with the actual type of the arguments
+// (and returns) of func_t
+template <typename func_t, int nargs = function_traits<func_t>::arity>
+struct needs_dynamic_casting {
+  static bool check(TensorIteratorBase& iter) {
+    using traits = function_traits<func_t>;
+    using cpp_type = typename traits::template arg<nargs - 1>::type;
+    using cpp_map = c10::CppTypeToScalarType<cpp_type>;
+
+    if (iter.input_dtype(nargs - 1) != cpp_map::value) {
+      return true;
+    }
+    return needs_dynamic_casting<func_t, nargs - 1>::check(iter);
+  }
+};
+
+template <typename func_t>
+struct needs_dynamic_casting<func_t, 0> {
+  static bool check(TensorIteratorBase& iter) {
+    using traits = function_traits<func_t>;
+    using cpp_type = typename traits::result_type;
+
+    // we could assert output numbers are correct here, but checks
+    // (including arity) are currently pushed outside of this struct.
+    if constexpr (std::is_void_v<cpp_type>) {
+      return false;
+    } else {
+      return iter.dtype(0) != c10::CppTypeToScalarType<cpp_type>::value;
+    }
+  }
+};
+
+} // namespace at::native
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 4 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `at`
+
+**Classes/Structs**: `needs_dynamic_casting`, `needs_dynamic_casting`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/detail/FunctionTraits.h`
+- `ATen/native/TensorIterator.h`
+- `c10/core/ScalarType.h`
+- `complex`
+- `type_traits`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native`):
+
+- [`LossMulti.h_docs.md`](./LossMulti.h_docs.md)
+- [`NaiveConvolutionTranspose3d.cpp_docs.md`](./NaiveConvolutionTranspose3d.cpp_docs.md)
+- [`UnaryOps.cpp_docs.md`](./UnaryOps.cpp_docs.md)
+- [`ResizeCommon.h_docs.md`](./ResizeCommon.h_docs.md)
+- [`FusedAdagrad.cpp_docs.md`](./FusedAdagrad.cpp_docs.md)
+- [`SharedReduceOps.h_docs.md`](./SharedReduceOps.h_docs.md)
+- [`SpectralOpsUtils.h_docs.md`](./SpectralOpsUtils.h_docs.md)
+- [`FractionalMaxPooling.h_docs.md`](./FractionalMaxPooling.h_docs.md)
+- [`TensorDimApply.h_docs.md`](./TensorDimApply.h_docs.md)
+- [`Lerp.cpp_docs.md`](./Lerp.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `TensorIteratorDynamicCasting.h_docs.md`
+- **Keyword Index**: `TensorIteratorDynamicCasting.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native`):
+
+- [`AdaptiveMaxPooling2d.cpp_docs.md_docs.md`](./AdaptiveMaxPooling2d.cpp_docs.md_docs.md)
+- [`Distributions.cpp_docs.md_docs.md`](./Distributions.cpp_docs.md_docs.md)
+- [`im2col_shape_check.h_docs.md_docs.md`](./im2col_shape_check.h_docs.md_docs.md)
+- [`ReduceOps.cpp_kw.md_docs.md`](./ReduceOps.cpp_kw.md_docs.md)
+- [`Lerp.cpp_kw.md_docs.md`](./Lerp.cpp_kw.md_docs.md)
+- [`CPUFallback.h_docs.md_docs.md`](./CPUFallback.h_docs.md_docs.md)
+- [`MetaTensor.cpp_docs.md_docs.md`](./MetaTensor.cpp_docs.md_docs.md)
+- [`Correlation.cpp_kw.md_docs.md`](./Correlation.cpp_kw.md_docs.md)
+- [`im2col_shape_check.h_kw.md_docs.md`](./im2col_shape_check.h_kw.md_docs.md)
+- [`UpSampleNearest2d.cpp_kw.md_docs.md`](./UpSampleNearest2d.cpp_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `TensorIteratorDynamicCasting.h_docs.md_docs.md`
+- **Keyword Index**: `TensorIteratorDynamicCasting.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,404 @@
+# Documentation: `docs/test/jit/test_alias_analysis.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/jit/test_alias_analysis.py_docs.md`
+- **Size**: 9,060 bytes (8.85 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/jit/test_alias_analysis.py`
+
+## File Metadata
+
+- **Path**: `test/jit/test_alias_analysis.py`
+- **Size**: 5,602 bytes (5.47 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**. Can be **executed as a standalone script**.
+
+## Original Source
+
+```python
+# Owner(s): ["oncall: jit"]
+
+import torch
+from torch._C import parse_ir
+from torch.testing._internal.common_utils import (
+    raise_on_run_directly,
+    TemporaryFileName,
+)
+from torch.testing._internal.jit_utils import JitTestCase
+
+
+class TestAliasAnalysis(JitTestCase):
+    def test_becomes_wildcard_annotations(self):
+        graph_str = """
+        graph(%a.1 : Tensor, %b.1 : Tensor):
+            %11 : NoneType = prim::Constant()
+            %8 : int = prim::Constant[value=0]()
+            %7 : int = prim::Constant[value=1]()
+            %x.1 : Tensor = aten::add(%a.1, %b.1, %7)
+            %y.1 : Tensor[] = aten::split(%x.1, %7, %8)
+            return ()
+        """
+        graph = parse_ir(graph_str)
+        alias_db = graph.alias_db()
+        split_node = graph.findNode("aten::split")
+        # split input enters wildcard set, list initialized as containing wildcard set
+        self.assertTrue(
+            alias_db.may_contain_alias(next(split_node.inputs()), split_node.output())
+        )
+        # because %x.1 enters wildcard set, it now aliases other members of wildcard set (graph inputs)
+        self.assertTrue(
+            alias_db.may_contain_alias(next(split_node.inputs()), next(graph.inputs()))
+        )
+
+    def test_nested_list_construct_not_wildcard(self):
+        @torch.jit.script
+        def foo(x):
+            y = torch.rand([2, 2])
+            return [y]
+
+        graph = foo.graph
+        graph.alias_db()
+        alias_db = graph.alias_db()
+        ten_construct = graph.findNode("aten::rand").output()
+        output = next(graph.outputs())
+        self.assertTrue(alias_db.may_contain_alias(ten_construct, output))
+        self.assertFalse(
+            alias_db.may_contain_alias(next(graph.inputs()), ten_construct)
+        )
+
+    def test_recursive_calls(self):
+        @torch.jit.script
+        def foo(x, y):
+            x.add_(1)
+            return x + y
+
+        @torch.jit.script
+        def caller():
+            a = torch.rand([2, 2])
+            b = torch.ones([2, 2])
+            out1 = foo(a, b)
+            c = torch.rand([1])
+            d = torch.ones([2])
+            out2 = foo(d, c)
+            return out1, out2
+
+        isFrozen = False
+        descend_function_calls = True
+        alias_db = caller.graph.alias_db(isFrozen, descend_function_calls)
+        func_calls = caller.graph.findAllNodes("prim::CallFunction")
+        self.assertEqual(len(func_calls), 2)
+        for node in func_calls:
+            inps = list(node.inputs())
+            self.assertTrue(alias_db.has_writers(inps[1]))
+            self.assertFalse(alias_db.has_writers(inps[2]))
+
+        class Mod(torch.nn.Module):
+            def forward(self):
+                a = torch.rand([2, 2])
+                b = torch.ones([2, 2])
+                out1 = self.foo2(a, b)
+                c = torch.rand([1])
+                d = torch.ones([2])
+                out2 = self.foo2(d, c)
+                return out1, out2
+
+            def foo2(self, x, y):
+                x.add_(1)
+                return x + y
+
+        mod = torch.jit.script(Mod())
+        alias_db = mod.graph.alias_db(isFrozen, descend_function_calls)
+        func_calls = mod.graph.findAllNodes("prim::CallMethod")
+        self.assertEqual(len(func_calls), 2)
+        for node in func_calls:
+            inps = list(node.inputs())
+            self.assertTrue(alias_db.has_writers(inps[1]))
+            self.assertFalse(alias_db.has_writers(inps[2]))
+
+    def test_multiple_compilation_units(self):
+        # This is a repro of an internal issue we saw.
+        # Here, we have a large number (40) of modules each with the same name (MyModuleCUTest).
+        # AliasDB uses some hash tables that hash on types; each of these 40 modules are not
+        # identical because they have different compilation units, but they have the same name.
+        # Therefore, if we hash only on the module name (which we previously did), we will have
+        # hash collisions for all of these module types.
+        #
+        # flat_hash_map has very bad performance (exponential) for this hash collision behavior.
+        # This OOMs prior to the fix.
+        N = 40
+
+        class MultiTmpFile:
+            def __init__(self, N):
+                self.N = N
+                self.ctxs = [
+                    TemporaryFileName(mode="w", suffix=".py") for _ in range(N)
+                ]
+
+            def __enter__(self):
+                return [x.__enter__() for x in self.ctxs]
+
+            def __exit__(self, exc_type, exc_value, traceback):
+                return [x.__exit__(exc_type, exc_value, traceback) for x in self.ctxs]
+
+        class ModuleWrapper(torch.nn.Module):
+            def __init__(self, module_list):
+                super().__init__()
+                self.module_list = module_list
+
+            def forward(self, x):
+                for mod in self.module_list:
+                    x = mod(x)
+                return x
+
+        with MultiTmpFile(N) as fnames:
+            module_list = torch.nn.ModuleList()
+            global MyModuleCUTest
+
+            class MyModuleCUTest(torch.nn.Module):
+                def forward(self, x):
+                    return x + 2
+
+            for fname in fnames:
+                mod = torch.jit.script(MyModuleCUTest())
+                torch.jit.save(mod, fname)
+                loaded_mod = torch.jit.load(fname)
+                module_list.append(loaded_mod)
+
+            mod = ModuleWrapper(module_list)
+            mod = torch.jit.script(mod)
+            mod(torch.zeros((2, 2)))
+
+
+if __name__ == "__main__":
+    raise_on_run_directly("test/test_jit.py")
+
+```
+
+
+
+## High-Level Overview
+
+graph_str = """        graph(%a.1 : Tensor, %b.1 : Tensor):            %11 : NoneType = prim::Constant()            %8 : int = prim::Constant[value=0]()            %7 : int = prim::Constant[value=1]()            %x.1 : Tensor = aten::add(%a.1, %b.1, %7)            %y.1 : Tensor[] = aten::split(%x.1, %7, %8)            return ()
+
+This Python file contains 5 class(es) and 15 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `TestAliasAnalysis`, `Mod`, `MultiTmpFile`, `ModuleWrapper`, `MyModuleCUTest`
+
+**Functions defined**: `test_becomes_wildcard_annotations`, `test_nested_list_construct_not_wildcard`, `foo`, `test_recursive_calls`, `foo`, `caller`, `forward`, `foo2`, `test_multiple_compilation_units`, `__init__`, `__enter__`, `__exit__`, `__init__`, `forward`, `forward`
+
+**Key imports**: torch, parse_ir, JitTestCase
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/jit`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `torch`
+- `torch._C`: parse_ir
+- `torch.testing._internal.jit_utils`: JitTestCase
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+- **Context Manager**: Implements context manager protocol
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/jit/test_alias_analysis.py
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/jit`):
+
+- [`test_dataclasses.py_docs.md`](./test_dataclasses.py_docs.md)
+- [`test_recursive_script.py_docs.md`](./test_recursive_script.py_docs.md)
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`test_python_builtins.py_docs.md`](./test_python_builtins.py_docs.md)
+- [`test_functional_blocks.py_docs.md`](./test_functional_blocks.py_docs.md)
+- [`test_hooks_modules.py_docs.md`](./test_hooks_modules.py_docs.md)
+- [`mydecorator.py_docs.md`](./mydecorator.py_docs.md)
+- [`test_union.py_docs.md`](./test_union.py_docs.md)
+- [`test_python_bindings.py_docs.md`](./test_python_bindings.py_docs.md)
+- [`test_parametrization.py_docs.md`](./test_parametrization.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_alias_analysis.py_docs.md`
+- **Keyword Index**: `test_alias_analysis.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/jit`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/jit`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+- **Context Manager**: Implements context manager protocol
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/jit/test_alias_analysis.py_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/jit`):
+
+- [`test_attr.py_kw.md_docs.md`](./test_attr.py_kw.md_docs.md)
+- [`test_parametrization.py_kw.md_docs.md`](./test_parametrization.py_kw.md_docs.md)
+- [`test_hooks.py_kw.md_docs.md`](./test_hooks.py_kw.md_docs.md)
+- [`test_dataclasses.py_docs.md_docs.md`](./test_dataclasses.py_docs.md_docs.md)
+- [`test_aten_pow.py_kw.md_docs.md`](./test_aten_pow.py_kw.md_docs.md)
+- [`test_misc.py_docs.md_docs.md`](./test_misc.py_docs.md_docs.md)
+- [`test_graph_rewrite_passes.py_kw.md_docs.md`](./test_graph_rewrite_passes.py_kw.md_docs.md)
+- [`test_module_containers.py_kw.md_docs.md`](./test_module_containers.py_kw.md_docs.md)
+- [`test_complex.py_kw.md_docs.md`](./test_complex.py_kw.md_docs.md)
+- [`test_types.py_kw.md_docs.md`](./test_types.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_alias_analysis.py_docs.md_docs.md`
+- **Keyword Index**: `test_alias_analysis.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

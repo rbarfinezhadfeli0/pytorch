@@ -1,0 +1,180 @@
+# Documentation: `docs/torch/_inductor/codegen/aoti_runtime/interface.cpp_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/_inductor/codegen/aoti_runtime/interface.cpp_kw.md`
+- **Size**: 4,667 bytes (4.56 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `torch/_inductor/codegen/aoti_runtime/interface.cpp`
+
+## File Information
+
+- **Original File**: [torch/_inductor/codegen/aoti_runtime/interface.cpp](../../../../../torch/_inductor/codegen/aoti_runtime/interface.cpp)
+- **Documentation**: [`interface.cpp_docs.md`](./interface.cpp_docs.md)
+- **Folder**: `torch/_inductor/codegen/aoti_runtime`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Class/Structs
+
+- **`AOTINoGradGuard`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+
+### Functions
+
+- **`AOTInductorModelContainerCreate`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+- **`AOTInductorModelContainerCreateWithDevice`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+- **`AOTInductorModelContainerDelete`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+- **`AOTInductorModelContainerExtractConstantsMap`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+- **`AOTInductorModelContainerFreeInactiveConstantBuffer`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+- **`AOTInductorModelContainerGetCallSpec`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+- **`AOTInductorModelContainerGetConstantDataSize`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+- **`AOTInductorModelContainerGetConstantDtype`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+- **`AOTInductorModelContainerGetConstantFromFolded`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+- **`AOTInductorModelContainerGetConstantName`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+- **`AOTInductorModelContainerGetConstantOriginalFQN`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+- **`AOTInductorModelContainerGetConstantType`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+- **`AOTInductorModelContainerGetConstantsBlobSize`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+- **`AOTInductorModelContainerGetInputName`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+- **`AOTInductorModelContainerGetNumConstants`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+- **`AOTInductorModelContainerGetNumInputs`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+- **`AOTInductorModelContainerGetNumOutputs`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+- **`AOTInductorModelContainerGetOutputName`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+- **`AOTInductorModelContainerRun`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+- **`AOTInductorModelContainerRunConstantFolding`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+- **`AOTInductorModelContainerRunSingleThreaded`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+- **`AOTInductorModelContainerSwapConstantBuffer`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+- **`AOTInductorModelContainerUpdateConstantBuffer`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+- **`AOTInductorModelContainerUpdateInactiveConstantBuffer`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+- **`AOTInductorModelContainerUpdateUserManagedConstantBuffer`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+- **`AOTInductorModelContainerUpdateUserManagedConstantBufferPairs`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+- **`AOTInductorModelCreate`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+- **`AOTInductorModelDelete`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+- **`AOTInductorModelGetNumOutputs`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+- **`AOTInductorModelRun`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+- **`AOTInductorModelUpdateConstantsFromBlob`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+- **`AOTInductorModelUpdateConstantsMap`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+
+### Includes
+
+- **`iostream`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+- **`torch/csrc/inductor/aoti_runtime/interface.h`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+- **`torch/csrc/inductor/aoti_runtime/model_container.h`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+- **`vector`**: [interface.cpp_docs.md](./interface.cpp_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/_inductor/codegen/aoti_runtime`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/_inductor/codegen/aoti_runtime`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/_inductor/codegen/aoti_runtime`):
+
+- [`interface.cpp_docs.md_docs.md`](./interface.cpp_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `interface.cpp_kw.md_docs.md`
+- **Keyword Index**: `interface.cpp_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

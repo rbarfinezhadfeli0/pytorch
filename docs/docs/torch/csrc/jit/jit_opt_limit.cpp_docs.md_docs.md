@@ -1,0 +1,318 @@
+# Documentation: `docs/torch/csrc/jit/jit_opt_limit.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/jit/jit_opt_limit.cpp_docs.md`
+- **Size**: 4,737 bytes (4.63 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/csrc/jit/jit_opt_limit.cpp`
+
+## File Metadata
+
+- **Path**: `torch/csrc/jit/jit_opt_limit.cpp`
+- **Size**: 2,390 bytes (2.33 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#include <cstdlib>
+#include <sstream>
+#include <string>
+#include <utility>
+
+#include <ATen/core/function.h>
+#include <c10/util/Exception.h>
+#include <c10/util/StringUtil.h>
+#include <c10/util/env.h>
+#include <torch/csrc/jit/api/function_impl.h>
+#include <torch/csrc/jit/jit_opt_limit.h>
+
+// NOTE: Don't try to migrate jit to C++17 yet
+// As it's used in some embedded platforms
+
+namespace torch::jit {
+
+static std::unordered_map<std::string, int64_t>& passes_to_current_counter() {
+  static std::unordered_map<std::string, int64_t> passes_to_current_counter;
+  return passes_to_current_counter;
+}
+
+static int parseOptLimit(const std::string& opt_limit) {
+  try {
+    return std::stoi(opt_limit);
+  } catch (...) {
+    return -1;
+  }
+}
+
+static std::unordered_map<std::string, int64_t> parseJITOptLimitOption(
+    const std::string& option) {
+  std::stringstream in_ss;
+  in_ss << option;
+  std::unordered_map<std::string, int64_t> passes_to_opt_limits;
+  std::string line;
+  while (std::getline(in_ss, line, ':')) {
+    if (line.empty()) {
+      continue;
+    }
+    auto index_at = line.find_last_of('=');
+    auto pass_name = line.substr(0, index_at);
+    pass_name = c10::detail::ExcludeFileExtension(pass_name);
+    auto opt_limit = parseOptLimit(line.substr(index_at + 1));
+    passes_to_opt_limits.emplace(std::move(pass_name), opt_limit);
+  }
+
+  return passes_to_opt_limits;
+}
+
+bool opt_limit(const char* pass_name) {
+  static const auto opt_limit = c10::utils::get_env("PYTORCH_JIT_OPT_LIMIT");
+  // if nothing is provided, let's allow everything
+  if (!opt_limit.has_value()) {
+    return true;
+  }
+
+  static const std::unordered_map<std::string, int64_t> passes_to_opt_limits =
+      parseJITOptLimitOption(opt_limit.value());
+  std::string pass{pass_name};
+  pass = c10::detail::StripBasename(pass);
+  pass = c10::detail::ExcludeFileExtension(pass);
+
+  auto opt_limit_it = passes_to_opt_limits.find(pass);
+  if (opt_limit_it == passes_to_opt_limits.end()) {
+    return true;
+  }
+
+  auto current_count_it = passes_to_current_counter().find(pass);
+  if (current_count_it == passes_to_current_counter().end()) {
+    passes_to_current_counter().insert({pass, 0});
+  }
+
+  current_count_it = passes_to_current_counter().find(pass);
+  if (current_count_it->second >= opt_limit_it->second) {
+    return false;
+  }
+
+  current_count_it->second++;
+  return true;
+}
+
+} // namespace torch::jit
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 3 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/jit`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `cstdlib`
+- `sstream`
+- `string`
+- `utility`
+- `ATen/core/function.h`
+- `c10/util/Exception.h`
+- `c10/util/StringUtil.h`
+- `c10/util/env.h`
+- `torch/csrc/jit/api/function_impl.h`
+- `torch/csrc/jit/jit_opt_limit.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/jit`):
+
+- [`jit_log.cpp_docs.md`](./jit_log.cpp_docs.md)
+- [`resource_guard.h_docs.md`](./resource_guard.h_docs.md)
+- [`JIT-AUTOCAST.md_docs.md`](./JIT-AUTOCAST.md_docs.md)
+- [`README.md_docs.md`](./README.md_docs.md)
+- [`OVERVIEW.md_docs.md`](./OVERVIEW.md_docs.md)
+- [`jit_opt_limit.h_docs.md`](./jit_opt_limit.h_docs.md)
+- [`jit_log.h_docs.md`](./jit_log.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `jit_opt_limit.cpp_docs.md`
+- **Keyword Index**: `jit_opt_limit.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/jit`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/jit`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/jit`):
+
+- [`jit_log.cpp_docs.md_docs.md`](./jit_log.cpp_docs.md_docs.md)
+- [`README.md_docs.md_docs.md`](./README.md_docs.md_docs.md)
+- [`OVERVIEW.md_kw.md_docs.md`](./OVERVIEW.md_kw.md_docs.md)
+- [`jit_opt_limit.h_kw.md_docs.md`](./jit_opt_limit.h_kw.md_docs.md)
+- [`JIT-AUTOCAST.md_kw.md_docs.md`](./JIT-AUTOCAST.md_kw.md_docs.md)
+- [`jit_log.cpp_kw.md_docs.md`](./jit_log.cpp_kw.md_docs.md)
+- [`jit_opt_limit.cpp_kw.md_docs.md`](./jit_opt_limit.cpp_kw.md_docs.md)
+- [`resource_guard.h_docs.md_docs.md`](./resource_guard.h_docs.md_docs.md)
+- [`jit_log.h_docs.md_docs.md`](./jit_log.h_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `jit_opt_limit.cpp_docs.md_docs.md`
+- **Keyword Index**: `jit_opt_limit.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

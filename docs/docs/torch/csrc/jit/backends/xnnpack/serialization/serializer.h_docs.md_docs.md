@@ -1,0 +1,309 @@
+# Documentation: `docs/torch/csrc/jit/backends/xnnpack/serialization/serializer.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/jit/backends/xnnpack/serialization/serializer.h_docs.md`
+- **Size**: 4,905 bytes (4.79 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/csrc/jit/backends/xnnpack/serialization/serializer.h`
+
+## File Metadata
+
+- **Path**: `torch/csrc/jit/backends/xnnpack/serialization/serializer.h`
+- **Size**: 2,779 bytes (2.71 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+// Copyright (c) Meta Platforms, Inc. and affiliates.
+//
+// This source code is licensed under the BSD-style license found in the
+// LICENSE file in the root directory of this source tree.
+
+#include <torch/csrc/jit/backends/xnnpack/serialization/schema_generated.h>
+#include <cstddef>
+#include <cstdint>
+#include <string>
+#include <vector>
+
+namespace torch {
+namespace jit {
+namespace xnnpack {
+namespace delegate {
+
+using namespace fb_xnnpack; // Specified in the schema
+
+class XNNSerializer {
+ public:
+  // Constructors
+  // initial buffersize of 1024 which will grow
+  // automatically, constant buffer and buffer sizes initialized with dummy
+  // values as 0 index is reserved for non-constant tensors
+  XNNSerializer() : XNNSerializer(1024) {}
+
+  explicit XNNSerializer(size_t bufferSize)
+      : _builder(bufferSize),
+        _nodes(),
+        _values(),
+        _constantBuffer({CreateBuffer(
+            _builder,
+            {})}), // index 0 is reserved for non-const data
+        _bufferSizes({0}) {}
+
+  // Serializing Nodes
+
+  // Serialize add node, we are serializing the argument needed to call
+  // xnn_define_add2. Serializing these values, and at run time we build
+  // the graph by re running xnn_define_add2
+  void serializeAddNode(
+      uint32_t input1_id,
+      uint32_t input2_id,
+      uint32_t output_id,
+      uint32_t flags);
+
+  // Serializing Values
+  void serializeTensorValue(
+      uint32_t xnn_datatype,
+      size_t num_dims,
+      std::vector<size_t> dims,
+      size_t buffer_data_idx,
+      uint32_t external_id,
+      uint32_t flags,
+      uint32_t id_out);
+
+  // finish and serialize xnngraph returning serialized data
+  std::string finishAndSerialize(
+      std::vector<uint32_t> input_ids,
+      std::vector<uint32_t> output_ids,
+      size_t num_extern_ids);
+
+  // decoupled data serialization with tensor values. This way constant tensor
+  // data can be referenced by multiple intermediate tensors. This call
+  // serializes the num_bytes of the data_ptr and returns the index it was
+  // placed in.
+  size_t serializeData(const uint8_t* data_ptr, size_t num_bytes);
+
+ private:
+  // xnnpack version we are serializing
+  const char* _version_sha1 = "ae108ef49aa5623b896fc93d4298c49d1750d9ba";
+
+  // flatbuffer objects we will create and serialize together to create xnngraph
+  flatbuffers_fbsource::FlatBufferBuilder _builder;
+
+  // Vector of the serialized xnnpack nodes
+  std::vector<flatbuffers_fbsource::Offset<XNode>> _nodes;
+
+  // Vector of the serialized xnnpack values
+  std::vector<flatbuffers_fbsource::Offset<XValue>> _values;
+
+  std::vector<flatbuffers_fbsource::Offset<Buffer>> _constantBuffer;
+  std::vector<uint32_t> _bufferSizes;
+};
+
+} // namespace delegate
+} // namespace xnnpack
+} // namespace jit
+} // namespace torch
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 1 class(es)/struct(s) and 7 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`, `fb_xnnpack`, `jit`, `xnnpack`, `delegate`
+
+**Classes/Structs**: `XNNSerializer`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/jit/backends/xnnpack/serialization`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `torch/csrc/jit/backends/xnnpack/serialization/schema_generated.h`
+- `cstddef`
+- `cstdint`
+- `string`
+- `vector`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/jit/backends/xnnpack/serialization`):
+
+- [`serializer.cpp_docs.md`](./serializer.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `serializer.h_docs.md`
+- **Keyword Index**: `serializer.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/jit/backends/xnnpack/serialization`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/jit/backends/xnnpack/serialization`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/jit/backends/xnnpack/serialization`):
+
+- [`serializer.cpp_docs.md_docs.md`](./serializer.cpp_docs.md_docs.md)
+- [`serializer.h_kw.md_docs.md`](./serializer.h_kw.md_docs.md)
+- [`serializer.cpp_kw.md_docs.md`](./serializer.cpp_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `serializer.h_docs.md_docs.md`
+- **Keyword Index**: `serializer.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

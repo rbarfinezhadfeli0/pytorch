@@ -1,0 +1,281 @@
+# Documentation: `docs/torch/csrc/distributed/rpc/profiler/remote_profiler_manager.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/distributed/rpc/profiler/remote_profiler_manager.h_docs.md`
+- **Size**: 4,525 bytes (4.42 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/csrc/distributed/rpc/profiler/remote_profiler_manager.h`
+
+## File Metadata
+
+- **Path**: `torch/csrc/distributed/rpc/profiler/remote_profiler_manager.h`
+- **Size**: 2,226 bytes (2.17 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#pragma once
+#include <torch/csrc/Export.h>
+#include <torch/csrc/distributed/rpc/types.h>
+#include <mutex>
+#include <optional>
+#include <unordered_map>
+
+namespace torch::distributed::rpc {
+extern const std::string REMOTE_PROFILING_KEY_PREFIX;
+
+class TORCH_API RemoteProfilerManager {
+ public:
+  // Retrieves the lazily-initialized RemoteProfilerManager singleton instance.
+  static RemoteProfilerManager& getInstance();
+  // Sets the current, thread-local profiling key.
+  void setCurrentKey(std::string key);
+  // Returns whether the current profiling key is set.
+  bool isCurrentKeySet() const;
+  // Unsets the current, thread-local profiling key to allow other RPCs to reset
+  // it.
+  void unsetCurrentKey();
+  // inserts a pair (globallyUniqueId, key) to an in-memory map. The
+  // corresponding ID is used in RPC deserialization to prefix remotely profiled
+  // events with the right key.
+  void saveRPCKey(
+      ProfilingId globallyUniqueId,
+      const std::string& rpcProfilingKey);
+  // Retrieves the profiling key corresponding to the given globallyUniqueId.
+  // Throws if it is not found.
+  std::string retrieveRPCProfilingKey(const ProfilingId& globallyUniqueId);
+  // Generates the next globally unique ID for profiling.
+  ProfilingId getNextProfilerId();
+  // Retrieves the currently set thread-local profiling key. Throws if it is not
+  // set.
+  std::string& getCurrentProfilingKey();
+  // erases the globallyUniqueId from the map. This can help save memory in the
+  // case that many RPCs are being profiled.
+  void eraseKey(const ProfilingId& globallyUniqueId);
+
+  RemoteProfilerManager(const RemoteProfilerManager& other) = delete;
+  RemoteProfilerManager operator=(const RemoteProfilerManager& other) = delete;
+  RemoteProfilerManager(RemoteProfilerManager&&) = delete;
+  RemoteProfilerManager& operator=(RemoteProfilerManager&&) = delete;
+
+ private:
+  RemoteProfilerManager();
+  ~RemoteProfilerManager() = default;
+  local_id_t getNextLocalId();
+  std::unordered_map<ProfilingId, std::string, ProfilingId::Hash>
+      profiledRpcKeys_;
+  static thread_local std::optional<std::string> currentThreadLocalKey_;
+  std::mutex mutex_;
+  local_id_t currentLocalId_;
+};
+} // namespace torch::distributed::rpc
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 1 class(es)/struct(s) and 9 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`
+
+**Classes/Structs**: `TORCH_API`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/distributed/rpc/profiler`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `torch/csrc/Export.h`
+- `torch/csrc/distributed/rpc/types.h`
+- `mutex`
+- `optional`
+- `unordered_map`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/distributed/rpc/profiler`):
+
+- [`remote_profiler_manager.cpp_docs.md`](./remote_profiler_manager.cpp_docs.md)
+- [`server_process_global_profiler.h_docs.md`](./server_process_global_profiler.h_docs.md)
+- [`server_process_global_profiler.cpp_docs.md`](./server_process_global_profiler.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `remote_profiler_manager.h_docs.md`
+- **Keyword Index**: `remote_profiler_manager.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/distributed/rpc/profiler`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/distributed/rpc/profiler`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/distributed/rpc/profiler`):
+
+- [`remote_profiler_manager.cpp_kw.md_docs.md`](./remote_profiler_manager.cpp_kw.md_docs.md)
+- [`remote_profiler_manager.cpp_docs.md_docs.md`](./remote_profiler_manager.cpp_docs.md_docs.md)
+- [`server_process_global_profiler.cpp_docs.md_docs.md`](./server_process_global_profiler.cpp_docs.md_docs.md)
+- [`remote_profiler_manager.h_kw.md_docs.md`](./remote_profiler_manager.h_kw.md_docs.md)
+- [`server_process_global_profiler.h_docs.md_docs.md`](./server_process_global_profiler.h_docs.md_docs.md)
+- [`server_process_global_profiler.cpp_kw.md_docs.md`](./server_process_global_profiler.cpp_kw.md_docs.md)
+- [`server_process_global_profiler.h_kw.md_docs.md`](./server_process_global_profiler.h_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `remote_profiler_manager.h_docs.md_docs.md`
+- **Keyword Index**: `remote_profiler_manager.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

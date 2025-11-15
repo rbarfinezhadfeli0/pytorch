@@ -1,0 +1,77 @@
+# Keyword Index: `docs/aten/src/ATen/native/quantized/cpu/qnnpack/src/requantization/gemmlowp-scalar.c_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/native/quantized/cpu/qnnpack/src/requantization/gemmlowp-scalar.c_kw.md](../../../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/src/requantization/gemmlowp-scalar.c_kw.md)
+- **Documentation**: [`gemmlowp-scalar.c_kw.md_docs.md`](./gemmlowp-scalar.c_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/native/quantized/cpu/qnnpack/src/requantization`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`Analysis`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`Architecture`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`Basic`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`Complete`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`Considerations`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`Dependencies`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`Design`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`Detailed`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`Documentation`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`Efficiency`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`Extracted`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`File`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`Folder`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`Functions`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`Generated`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`High`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`How`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`In`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`Includes`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`Index`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`Information`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`Keyword`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`Keywords`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`Level`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`Map`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`Metadata`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`Original`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`Overview`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`Performance`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`Purpose`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`PyTorch`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`Related`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`Repository`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`Safety`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`Section`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`Security`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`Source`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`System`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`Testing`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`The`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`This`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+- **`Usage`**: [gemmlowp-scalar.c_kw.md_docs.md](./gemmlowp-scalar.c_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

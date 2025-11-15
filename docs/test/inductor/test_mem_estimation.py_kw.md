@@ -1,0 +1,82 @@
+# Keyword Index: `test/inductor/test_mem_estimation.py`
+
+## File Information
+
+- **Original File**: [test/inductor/test_mem_estimation.py](../../../test/inductor/test_mem_estimation.py)
+- **Documentation**: [`test_mem_estimation.py_docs.md`](./test_mem_estimation.py_docs.md)
+- **Folder**: `test/inductor`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`FakeTensorMemoryProfilerMode`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`TestMemoryProfilingResNet`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`TestMemoryTracker`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+
+### Functions
+
+- **`__init__`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`__torch_dispatch__`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`change_memory`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`create_inputs_and_weights`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`device_filter`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`fn`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`foo`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`increase_memory_use`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`is_releasable`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`tensor_cleanup`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`tensor_storage_id`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`test_conv_network`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`test_memory_tracker_different_scheduling`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`test_memory_tracker_original_order`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`test_simple_linear_layers`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+
+### Imports
+
+- **`Callable`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`Counter`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`FakeTensorMode`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`GPU_TYPE`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`Optional`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`TorchDispatchMode`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`WeakIdKeyDictionary`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`collections`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`collections.abc`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`functools`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`make_fx`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`run_tests`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`torch`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`torch._inductor.fx_passes.memory_estimator`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`torch._inductor.test_case`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`torch._subclasses.fake_tensor`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`torch.fx.experimental.proxy_tensor`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`torch.testing._internal.inductor_utils`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`torch.utils._python_dispatch`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`torch.utils._pytree`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`torch.utils.weak`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`tree_map_only`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`typing`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+- **`weakref`**: [test_mem_estimation.py_docs.md](./test_mem_estimation.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

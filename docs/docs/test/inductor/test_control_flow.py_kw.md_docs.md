@@ -1,0 +1,322 @@
+# Documentation: `docs/test/inductor/test_control_flow.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/test/inductor/test_control_flow.py_kw.md`
+- **Size**: 16,355 bytes (15.97 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `test/inductor/test_control_flow.py`
+
+## File Information
+
+- **Original File**: [test/inductor/test_control_flow.py](../../../test/inductor/test_control_flow.py)
+- **Documentation**: [`test_control_flow.py_docs.md`](./test_control_flow.py_docs.md)
+- **Folder**: `test/inductor`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`AssociativeScanTests`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`ChunkedCE`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`ChunkedCENoScan`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`CondInScan`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`CondModels`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`CondTests`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`Conv`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`DataDependentInOut`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`DataDependentInOutMismatch`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`DataDependentOpInSubgraph`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`FactoryBranches`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`FunctionalCall`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`InfiniteLoop`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`InnerModel`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`InnerModel1`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`InnerModel2`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`MapModels`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`MapTests`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`MismatchedOutputSize`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`MixedDevice`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`MixedDevice2`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`Model`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`MultipleOutputs`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`Nested`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`NestedWithCond`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`OuterBuffers`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`OuterCode`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`Parameters`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`PytreeCarry`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`PytreeInOut`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`ReinterpretView`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`ScanConv`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`ScanInCond`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`ScanLinearWithView`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`ScanModels`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`ScanTests`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`ScanWithClamp`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`SelectWithInputIdx`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`Simple`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`SimpleScan`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`SimpleWithIntClosure`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`SimpleWithLinearWithView`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`SimpleWithPytreeInOuts`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`SymExprCond`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`TestModel`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`UnbackedSymIntClosure`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`WhileLoopModels`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`WhileLoopStackOutputSimple`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`WhileLoopTests`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`WithNonTensorPredicate`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`ZeroLoop`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`ZeroLoop2`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`ZeroLoop3`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`ZeroLoop4`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+
+### Functions
+
+- **`__init__`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`_compare_result`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`_prepend_product_of_values`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`_run_model`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`_run_test`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`accumulate_chunk`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`body_fn`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`body_fn_nested`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`combine_fn`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`compute_loss`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`cond_fn`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`cond_fn_nested`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`f`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`false_false_fn`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`false_fn`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`false_true_false_fn`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`false_true_fn`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`false_true_true_fn`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`fct`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`fn`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`forward`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`inner_f`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`inner_fn1`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`inner_fn2`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`loss_fn`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`mark_first_dim_dyn`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`post_grad_pass_counter`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`pre_grad_pass_counter`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`prepend_counters`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`prepend_predicates`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`process_inputs`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`step`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_associative_scan_CUDA_flip`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_cond_advanced_dynamic_shapes`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_cond_aliasing_outputs`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_cond_control_flow_with_precomputed_size`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_cond_decompose_ops_in_subgraph`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_cond_decompose_ops_in_subgraph_recursive`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_cond_functional_call`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_cond_in_scan`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_cond_inductor_fx_passes_recursively_applied`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_cond_mismatched_branch_output_size`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_cond_multiple_outputs`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_cond_nested_control_flow`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_cond_non_tensor_predicates`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_cond_outer_code_before_after`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_cond_reintepret_view_inputs_outputs`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_cond_select_with_input_idx`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_cond_simple_control_flow`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_cond_simple_with_int_closure`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_cond_subgraphs_with_parameters`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_cond_unbacked_symint_closure`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_cond_unbacked_symint_inner`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_cond_unbacked_symint_inner_to_outer`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_cond_unbacked_symint_outer_to_inner`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_cond_use_buffers_from_outer_scope`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_map_nested_with_cond`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_map_pytree_in_out`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_map_simple`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_map_simple_linear_with_view`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_output_on_different_device`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_scan_chunked_ce`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_scan_compare_chunked_ce_with_no_scan`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_scan_conv`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_scan_in_cond`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_scan_nn_modules`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_scan_pytree_in_out`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_scan_with_clamp`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_while_loop_infinite_loop_error`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_while_loop_models_with_mixed_device`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_while_loop_nested_control_flow`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_while_loop_simple_control_flow`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_while_loop_stack_output_simple`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_while_loop_with_conv`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_while_loop_with_data_dependent_in_out`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_while_loop_with_data_dependent_in_out_mismatch`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_while_loop_with_data_dependent_ops`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_while_loop_with_outer_buffers`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_while_loop_with_outer_code`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_while_loop_with_parameters`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_while_loop_with_pytree_inputs`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_while_loop_with_sym_expr_cond`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_while_loop_with_unbacked_symint_closure`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`test_while_loop_zero_loop`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`tile_fn`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`true_false_false_fn`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`true_false_fn`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`true_false_true_fn`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`true_fn`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`true_true_fn`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+
+### Imports
+
+- **`GPU_TYPE`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`TestCase`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`_fake_map`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`_fake_scan`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`_pytree`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`associative_scan`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`copy`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`itertools`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`requires_gpu`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`run_tests`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`torch`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`torch._dynamo.testing`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`torch._higher_order_ops.associative_scan`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`torch._higher_order_ops.map`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`torch._higher_order_ops.scan`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`torch._inductor.test_case`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`torch.testing._internal.inductor_utils`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`torch.testing._internal.triton_utils`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`torch.utils`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`torch.utils._pytree`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+- **`unittest`**: [test_control_flow.py_docs.md](./test_control_flow.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/inductor`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/inductor`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/inductor/test_control_flow.py_kw.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/inductor`):
+
+- [`test_snode_runtime.py_kw.md_docs.md`](./test_snode_runtime.py_kw.md_docs.md)
+- [`test_metrics.py_docs.md_docs.md`](./test_metrics.py_docs.md_docs.md)
+- [`test_flex_attention.py_kw.md_docs.md`](./test_flex_attention.py_kw.md_docs.md)
+- [`test_cuda_repro.py_kw.md_docs.md`](./test_cuda_repro.py_kw.md_docs.md)
+- [`test_fxir_backend.py_kw.md_docs.md`](./test_fxir_backend.py_kw.md_docs.md)
+- [`test_split_cat_fx_passes.py_kw.md_docs.md`](./test_split_cat_fx_passes.py_kw.md_docs.md)
+- [`test_mmdecomp.py_kw.md_docs.md`](./test_mmdecomp.py_kw.md_docs.md)
+- [`test_torchinductor_codegen_config_overrides.py_kw.md_docs.md`](./test_torchinductor_codegen_config_overrides.py_kw.md_docs.md)
+- [`test_aot_inductor_custom_ops.py_kw.md_docs.md`](./test_aot_inductor_custom_ops.py_kw.md_docs.md)
+- [`test_minifier.py_kw.md_docs.md`](./test_minifier.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_control_flow.py_kw.md_docs.md`
+- **Keyword Index**: `test_control_flow.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

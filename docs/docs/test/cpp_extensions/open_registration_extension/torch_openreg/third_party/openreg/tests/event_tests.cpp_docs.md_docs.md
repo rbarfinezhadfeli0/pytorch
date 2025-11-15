@@ -1,0 +1,319 @@
+# Documentation: `docs/test/cpp_extensions/open_registration_extension/torch_openreg/third_party/openreg/tests/event_tests.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/cpp_extensions/open_registration_extension/torch_openreg/third_party/openreg/tests/event_tests.cpp_docs.md`
+- **Size**: 4,827 bytes (4.71 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/cpp_extensions/open_registration_extension/torch_openreg/third_party/openreg/tests/event_tests.cpp`
+
+## File Metadata
+
+- **Path**: `test/cpp_extensions/open_registration_extension/torch_openreg/third_party/openreg/tests/event_tests.cpp`
+- **Size**: 2,401 bytes (2.34 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**.
+
+## Original Source
+
+```cpp
+#include <gtest/gtest.h>
+#include <include/openreg.h>
+
+#include <atomic>
+#include <thread>
+
+namespace {
+
+class EventTest : public ::testing::Test {
+ protected:
+  void SetUp() override {
+    orSetDevice(0);
+  }
+};
+
+TEST_F(EventTest, EventCreateAndDestroy) {
+  orEvent_t event = nullptr;
+  EXPECT_EQ(orEventCreate(&event), orSuccess);
+  EXPECT_NE(event, nullptr);
+
+  EXPECT_EQ(orEventDestroy(event), orSuccess);
+}
+
+TEST_F(EventTest, EventCreateWithFlagsTiming) {
+  orEvent_t event = nullptr;
+  EXPECT_EQ(orEventCreateWithFlags(&event, orEventEnableTiming), orSuccess);
+  EXPECT_NE(event, nullptr);
+
+  EXPECT_EQ(orEventDestroy(event), orSuccess);
+}
+
+TEST_F(EventTest, EventRecordAndSynchronize) {
+  orStream_t stream = nullptr;
+  EXPECT_EQ(orStreamCreate(&stream), orSuccess);
+
+  orEvent_t event = nullptr;
+  EXPECT_EQ(orEventCreate(&event), orSuccess);
+
+  EXPECT_EQ(orEventRecord(event, stream), orSuccess);
+  EXPECT_EQ(orEventSynchronize(event), orSuccess);
+  EXPECT_EQ(orEventQuery(event), orSuccess);
+
+  EXPECT_EQ(orEventDestroy(event), orSuccess);
+  EXPECT_EQ(orStreamDestroy(stream), orSuccess);
+}
+
+TEST_F(EventTest, EventElapsedTime) {
+  orStream_t stream = nullptr;
+  EXPECT_EQ(orStreamCreate(&stream), orSuccess);
+
+  orEvent_t start = nullptr;
+  orEvent_t end = nullptr;
+  EXPECT_EQ(orEventCreateWithFlags(&start, orEventEnableTiming), orSuccess);
+  EXPECT_EQ(orEventCreateWithFlags(&end, orEventEnableTiming), orSuccess);
+
+  EXPECT_EQ(orEventRecord(start, stream), orSuccess);
+
+  std::this_thread::sleep_for(std::chrono::milliseconds(10));
+
+  EXPECT_EQ(orEventRecord(end, stream), orSuccess);
+
+  EXPECT_EQ(orEventSynchronize(start), orSuccess);
+  EXPECT_EQ(orEventSynchronize(end), orSuccess);
+
+  float elapsed_ms = 0.0f;
+  EXPECT_EQ(orEventElapsedTime(&elapsed_ms, start, end), orSuccess);
+  EXPECT_GE(elapsed_ms, 0.0f);
+
+  EXPECT_EQ(orEventDestroy(start), orSuccess);
+  EXPECT_EQ(orEventDestroy(end), orSuccess);
+}
+
+TEST_F(EventTest, StreamWaitEvent) {
+  orStream_t stream = nullptr;
+  EXPECT_EQ(orStreamCreate(&stream), orSuccess);
+
+  orEvent_t event = nullptr;
+  EXPECT_EQ(orEventCreate(&event), orSuccess);
+
+  EXPECT_EQ(orEventRecord(event, stream), orSuccess);
+  EXPECT_EQ(orStreamWaitEvent(stream, event, 0), orSuccess);
+
+  EXPECT_EQ(orEventSynchronize(event), orSuccess);
+  EXPECT_EQ(orEventDestroy(event), orSuccess);
+  EXPECT_EQ(orStreamDestroy(stream), orSuccess);
+}
+
+} // namespace
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 1 class(es)/struct(s) and 1 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes/Structs**: `EventTest`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/cpp_extensions/open_registration_extension/torch_openreg/third_party/openreg/tests`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `gtest/gtest.h`
+- `include/openreg.h`
+- `atomic`
+- `thread`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/cpp_extensions/open_registration_extension/torch_openreg/third_party/openreg/tests/event_tests.cpp
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/cpp_extensions/open_registration_extension/torch_openreg/third_party/openreg/tests`):
+
+- [`memory_tests.cpp_docs.md`](./memory_tests.cpp_docs.md)
+- [`device_tests.cpp_docs.md`](./device_tests.cpp_docs.md)
+- [`stream_tests.cpp_docs.md`](./stream_tests.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `event_tests.cpp_docs.md`
+- **Keyword Index**: `event_tests.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/cpp_extensions/open_registration_extension/torch_openreg/third_party/openreg/tests`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/cpp_extensions/open_registration_extension/torch_openreg/third_party/openreg/tests`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/cpp_extensions/open_registration_extension/torch_openreg/third_party/openreg/tests/event_tests.cpp_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/cpp_extensions/open_registration_extension/torch_openreg/third_party/openreg/tests`):
+
+- [`event_tests.cpp_kw.md_docs.md`](./event_tests.cpp_kw.md_docs.md)
+- [`memory_tests.cpp_kw.md_docs.md`](./memory_tests.cpp_kw.md_docs.md)
+- [`stream_tests.cpp_kw.md_docs.md`](./stream_tests.cpp_kw.md_docs.md)
+- [`memory_tests.cpp_docs.md_docs.md`](./memory_tests.cpp_docs.md_docs.md)
+- [`stream_tests.cpp_docs.md_docs.md`](./stream_tests.cpp_docs.md_docs.md)
+- [`device_tests.cpp_docs.md_docs.md`](./device_tests.cpp_docs.md_docs.md)
+- [`device_tests.cpp_kw.md_docs.md`](./device_tests.cpp_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `event_tests.cpp_docs.md_docs.md`
+- **Keyword Index**: `event_tests.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

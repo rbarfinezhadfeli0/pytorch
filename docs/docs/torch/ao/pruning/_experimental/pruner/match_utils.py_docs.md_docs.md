@@ -1,0 +1,297 @@
+# Documentation: `docs/torch/ao/pruning/_experimental/pruner/match_utils.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/ao/pruning/_experimental/pruner/match_utils.py_docs.md`
+- **Size**: 4,552 bytes (4.45 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/ao/pruning/_experimental/pruner/match_utils.py`
+
+## File Metadata
+
+- **Path**: `torch/ao/pruning/_experimental/pruner/match_utils.py`
+- **Size**: 1,949 bytes (1.90 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This is a python source code that is part of the PyTorch project.
+
+## Original Source
+
+```python
+"""
+Contains utility functions to check if a pattern is in the graph and return the matching nodes
+"""
+
+from typing import Any
+
+import torch
+from torch import nn
+from torch.ao.quantization.utils import MatchAllNode
+from torch.fx import Node
+from torch.nn.utils import parametrize
+
+
+def _match(
+    modules: dict[str, nn.ModuleDict],
+    node: Node,
+    current: nn.Module | Any,
+) -> bool:
+    r"""
+    checks to see if a single node of a pattern matches
+    """
+    if isinstance(current, type) and issubclass(current, MatchAllNode):
+        return True
+    if not isinstance(node, Node):
+        return False
+    if isinstance(current, type) and issubclass(current, torch.nn.Module):
+        return (
+            node.op == "call_module"
+            and parametrize.type_before_parametrizations(modules[node.target])  # type: ignore[index]
+            == current
+        )
+    elif callable(current):
+        return node.op == "call_function" and node.target is current
+    elif isinstance(current, str):
+        return node.target == current
+    return False
+
+
+def apply_match(
+    modules: dict[str, nn.ModuleDict],
+    pattern: tuple[Any] | Any,
+    node: Node,
+    matched_node_pattern: list[Node],
+) -> list[Node] | None:
+    r"""
+    This function will return the matched nodes if the pattern matches the node given
+    If there is no match, it will return None
+    """
+    if isinstance(pattern, tuple):
+        if len(pattern) == 1:
+            if _match(modules, node, pattern[0]):
+                return matched_node_pattern + [node]
+
+        first, *rest = pattern
+        if _match(modules, node, first):
+            if rest is None:
+                return matched_node_pattern + [node]
+
+            for user in node.users:
+                return apply_match(
+                    modules, tuple(rest), user, matched_node_pattern + [node]
+                )
+    elif _match(modules, node, pattern):
+        return [node]
+    return None
+
+```
+
+
+
+## High-Level Overview
+
+"""Contains utility functions to check if a pattern is in the graph and return the matching nodes
+
+This Python file contains 0 class(es) and 2 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Functions defined**: `_match`, `apply_match`
+
+**Key imports**: Any, torch, nn, MatchAllNode, Node, parametrize
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/ao/pruning/_experimental/pruner`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `typing`: Any
+- `torch`
+- `torch.ao.quantization.utils`: MatchAllNode
+- `torch.fx`: Node
+- `torch.nn.utils`: parametrize
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/ao/pruning/_experimental/pruner`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`prune_functions.py_docs.md`](./prune_functions.py_docs.md)
+- [`parametrization.py_docs.md`](./parametrization.py_docs.md)
+- [`FPGM_pruner.py_docs.md`](./FPGM_pruner.py_docs.md)
+- [`base_structured_sparsifier.py_docs.md`](./base_structured_sparsifier.py_docs.md)
+- [`lstm_saliency_pruner.py_docs.md`](./lstm_saliency_pruner.py_docs.md)
+- [`README.md_docs.md`](./README.md_docs.md)
+- [`saliency_pruner.py_docs.md`](./saliency_pruner.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `match_utils.py_docs.md`
+- **Keyword Index**: `match_utils.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/ao/pruning/_experimental/pruner`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/ao/pruning/_experimental/pruner`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/ao/pruning/_experimental/pruner`):
+
+- [`parametrization.py_docs.md_docs.md`](./parametrization.py_docs.md_docs.md)
+- [`saliency_pruner.py_kw.md_docs.md`](./saliency_pruner.py_kw.md_docs.md)
+- [`README.md_docs.md_docs.md`](./README.md_docs.md_docs.md)
+- [`base_structured_sparsifier.py_kw.md_docs.md`](./base_structured_sparsifier.py_kw.md_docs.md)
+- [`lstm_saliency_pruner.py_docs.md_docs.md`](./lstm_saliency_pruner.py_docs.md_docs.md)
+- [`prune_functions.py_docs.md_docs.md`](./prune_functions.py_docs.md_docs.md)
+- [`FPGM_pruner.py_kw.md_docs.md`](./FPGM_pruner.py_kw.md_docs.md)
+- [`match_utils.py_kw.md_docs.md`](./match_utils.py_kw.md_docs.md)
+- [`__init__.py_docs.md_docs.md`](./__init__.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `match_utils.py_docs.md_docs.md`
+- **Keyword Index**: `match_utils.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,298 @@
+# Documentation: `docs/aten/src/ATen/native/cpu/SparseFactories.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/cpu/SparseFactories.cpp_docs.md`
+- **Size**: 4,938 bytes (4.82 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/native/cpu/SparseFactories.cpp`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/cpu/SparseFactories.cpp`
+- **Size**: 2,323 bytes (2.27 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#define TORCH_ASSERT_NO_OPERATORS
+#include <ATen/native/sparse/SparseFactories.h>
+
+#include <ATen/Dispatch.h>
+#include <ATen/TensorIterator.h>
+#include <ATen/core/TensorBase.h>
+#include <ATen/native/cpu/Loops.h>
+#include <c10/core/ScalarType.h>
+#include <c10/util/Exception.h>
+
+namespace at::native {
+
+namespace {
+void _spdiags_kernel_cpu(
+    TensorIterator& iter,
+    const TensorBase& diagonals,
+    TensorBase& values,
+    TensorBase& indices) {
+  auto* row_index_write_ptr = indices.data_ptr<int64_t>();
+  auto* col_index_write_ptr = row_index_write_ptr ? row_index_write_ptr + indices.stride(0) : nullptr;
+  const int64_t diagonals_index_stride = diagonals.stride(0);
+  const int64_t diagonals_read_stride = diagonals.stride(1);
+  AT_DISPATCH_ALL_TYPES_AND_COMPLEX_AND4(
+      at::ScalarType::BFloat16,
+      at::ScalarType::Half,
+      at::ScalarType::Bool,
+      at::ScalarType::ComplexHalf,
+      diagonals.scalar_type(),
+      "spdiags_cpu",
+      [&] {
+        auto* const values_write_ptr = values.data_ptr<scalar_t>();
+        const auto* const diagonals_ptr = diagonals.const_data_ptr<scalar_t>();
+
+        cpu_kernel(
+            iter,
+            [&](int64_t diag_index,
+                int64_t diag_offset,
+                int64_t out_offset,
+                int64_t n_out) -> int64_t {
+              if (n_out > 0) {
+                auto* rows_start = row_index_write_ptr + out_offset;
+                auto* cols_start = col_index_write_ptr + out_offset;
+                auto* vals_start = values_write_ptr + out_offset;
+                const int64_t first_col = std::max<int64_t>(diag_offset, 0);
+                const int64_t first_row = first_col - diag_offset;
+                auto* data_read = (diagonals_ptr +
+                                   diagonals_index_stride * diag_index +
+                                   first_col * diagonals_read_stride);
+                for (int64_t i = 0; i < n_out; ++i) {
+                  rows_start[i] = first_row + i;
+                  cols_start[i] = first_col + i;
+                  vals_start[i] = data_read[i * diagonals_read_stride];
+                }
+              }
+              // dummy return
+              return 0;
+            });
+      });
+}
+
+} // namespace
+
+REGISTER_DISPATCH(spdiags_kernel_stub, &_spdiags_kernel_cpu)
+
+} // namespace at::native
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 2 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `REGISTER_DISPATCH`, `at`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native/cpu`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/native/sparse/SparseFactories.h`
+- `ATen/Dispatch.h`
+- `ATen/TensorIterator.h`
+- `ATen/core/TensorBase.h`
+- `ATen/native/cpu/Loops.h`
+- `c10/core/ScalarType.h`
+- `c10/util/Exception.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native/cpu`):
+
+- [`UpSampleKernelAVXAntialias.h_docs.md`](./UpSampleKernelAVXAntialias.h_docs.md)
+- [`UnfoldBackwardKernel.cpp_docs.md`](./UnfoldBackwardKernel.cpp_docs.md)
+- [`int8mm_kernel.cpp_docs.md`](./int8mm_kernel.cpp_docs.md)
+- [`LerpKernel.cpp_docs.md`](./LerpKernel.cpp_docs.md)
+- [`UpSampleKernel.cpp_docs.md`](./UpSampleKernel.cpp_docs.md)
+- [`scaled_modified_bessel_k0.cpp_docs.md`](./scaled_modified_bessel_k0.cpp_docs.md)
+- [`DistributionKernels.cpp_docs.md`](./DistributionKernels.cpp_docs.md)
+- [`CopyKernel.cpp_docs.md`](./CopyKernel.cpp_docs.md)
+- [`SampledAddmmKernel.cpp_docs.md`](./SampledAddmmKernel.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `SparseFactories.cpp_docs.md`
+- **Keyword Index**: `SparseFactories.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native/cpu`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native/cpu`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native/cpu`):
+
+- [`BinaryOpsKernel.cpp_docs.md_docs.md`](./BinaryOpsKernel.cpp_docs.md_docs.md)
+- [`MultinomialKernel.cpp_kw.md_docs.md`](./MultinomialKernel.cpp_kw.md_docs.md)
+- [`AmpGradScalerKernels.cpp_docs.md_docs.md`](./AmpGradScalerKernels.cpp_docs.md_docs.md)
+- [`FusedSGDKernel.cpp_docs.md_docs.md`](./FusedSGDKernel.cpp_docs.md_docs.md)
+- [`scaled_modified_bessel_k1.cpp_docs.md_docs.md`](./scaled_modified_bessel_k1.cpp_docs.md_docs.md)
+- [`int_mm_kernel.h_docs.md_docs.md`](./int_mm_kernel.h_docs.md_docs.md)
+- [`IsContiguous.h_docs.md_docs.md`](./IsContiguous.h_docs.md_docs.md)
+- [`MaxPooling.cpp_docs.md_docs.md`](./MaxPooling.cpp_docs.md_docs.md)
+- [`WeightNormKernel.cpp_kw.md_docs.md`](./WeightNormKernel.cpp_kw.md_docs.md)
+- [`FusedAdamKernel.cpp_docs.md_docs.md`](./FusedAdamKernel.cpp_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `SparseFactories.cpp_docs.md_docs.md`
+- **Keyword Index**: `SparseFactories.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

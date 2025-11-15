@@ -1,0 +1,307 @@
+# Documentation: `docs/test/inductor/test_xpu_basic.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/inductor/test_xpu_basic.py_docs.md`
+- **Size**: 4,434 bytes (4.33 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/inductor/test_xpu_basic.py`
+
+## File Metadata
+
+- **Path**: `test/inductor/test_xpu_basic.py`
+- **Size**: 1,561 bytes (1.52 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**. Can be **executed as a standalone script**.
+
+## Original Source
+
+```python
+# Owner(s): ["module: inductor"]
+import importlib
+import os
+import sys
+
+import torch
+
+
+importlib.import_module("filelock")
+
+pytorch_test_dir = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+sys.path.append(pytorch_test_dir)
+from inductor.test_torchinductor import (  # @manual=fbcode//caffe2/test/inductor:test_inductor-library
+    check_model_gpu,
+    TestCase,
+)
+
+
+# TODO: Remove this file.
+# This is a temporary test case to test the base functionality of first Intel GPU Inductor integration.
+# We are working on reuse and pass the test cases in test/inductor/*  step by step.
+# Will remove this file when pass full test in test/inductor/*.
+
+
+class XpuBasicTests(TestCase):
+    common = check_model_gpu
+    device = "xpu"
+
+    def test_add(self):
+        def fn(a, b):
+            return a + b
+
+        self.common(fn, (torch.rand(2, 3, 16, 16), torch.rand(2, 3, 16, 16)))
+
+    def test_sub(self):
+        def fn(a, b):
+            return a - b
+
+        self.common(fn, (torch.rand(2, 3, 16, 16), torch.rand(2, 3, 16, 16)))
+
+    def test_mul(self):
+        def fn(a, b):
+            return a * b
+
+        self.common(fn, (torch.rand(2, 3, 16, 16), torch.rand(2, 3, 16, 16)))
+
+    def test_div(self):
+        def fn(a, b):
+            return a / b
+
+        self.common(fn, (torch.rand(2, 3, 16, 16), torch.rand(2, 3, 16, 16)))
+
+
+if __name__ == "__main__":
+    from torch._dynamo.test_case import run_tests
+    from torch.testing._internal.inductor_utils import HAS_XPU_AND_TRITON
+
+    if HAS_XPU_AND_TRITON:
+        run_tests(needs="filelock")
+
+```
+
+
+
+## High-Level Overview
+
+
+This Python file contains 1 class(es) and 8 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `XpuBasicTests`
+
+**Functions defined**: `test_add`, `fn`, `test_sub`, `fn`, `test_mul`, `fn`, `test_div`, `fn`
+
+**Key imports**: importlib, os, sys, torch, run_tests, HAS_XPU_AND_TRITON
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/inductor`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `importlib`
+- `os`
+- `sys`
+- `torch`
+- `torch._dynamo.test_case`: run_tests
+- `torch.testing._internal.inductor_utils`: HAS_XPU_AND_TRITON
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/inductor/test_xpu_basic.py
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/inductor`):
+
+- [`test_benchmark_fusion.py_docs.md`](./test_benchmark_fusion.py_docs.md)
+- [`test_op_dtype_prop.py_docs.md`](./test_op_dtype_prop.py_docs.md)
+- [`test_custom_op_autotune.py_docs.md`](./test_custom_op_autotune.py_docs.md)
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`test_inductor_freezing.py_docs.md`](./test_inductor_freezing.py_docs.md)
+- [`test_b2b_gemm.py_docs.md`](./test_b2b_gemm.py_docs.md)
+- [`test_minifier_isolate.py_docs.md`](./test_minifier_isolate.py_docs.md)
+- [`test_move_constructors_to_cuda.py_docs.md`](./test_move_constructors_to_cuda.py_docs.md)
+- [`test_cutlass_backend.py_docs.md`](./test_cutlass_backend.py_docs.md)
+- [`test_cache.py_docs.md`](./test_cache.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_xpu_basic.py_docs.md`
+- **Keyword Index**: `test_xpu_basic.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/inductor`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/inductor`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Implements or uses **caching** mechanisms.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/inductor/test_xpu_basic.py_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/inductor`):
+
+- [`test_snode_runtime.py_kw.md_docs.md`](./test_snode_runtime.py_kw.md_docs.md)
+- [`test_metrics.py_docs.md_docs.md`](./test_metrics.py_docs.md_docs.md)
+- [`test_flex_attention.py_kw.md_docs.md`](./test_flex_attention.py_kw.md_docs.md)
+- [`test_cuda_repro.py_kw.md_docs.md`](./test_cuda_repro.py_kw.md_docs.md)
+- [`test_fxir_backend.py_kw.md_docs.md`](./test_fxir_backend.py_kw.md_docs.md)
+- [`test_split_cat_fx_passes.py_kw.md_docs.md`](./test_split_cat_fx_passes.py_kw.md_docs.md)
+- [`test_mmdecomp.py_kw.md_docs.md`](./test_mmdecomp.py_kw.md_docs.md)
+- [`test_torchinductor_codegen_config_overrides.py_kw.md_docs.md`](./test_torchinductor_codegen_config_overrides.py_kw.md_docs.md)
+- [`test_aot_inductor_custom_ops.py_kw.md_docs.md`](./test_aot_inductor_custom_ops.py_kw.md_docs.md)
+- [`test_minifier.py_kw.md_docs.md`](./test_minifier.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_xpu_basic.py_docs.md_docs.md`
+- **Keyword Index**: `test_xpu_basic.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

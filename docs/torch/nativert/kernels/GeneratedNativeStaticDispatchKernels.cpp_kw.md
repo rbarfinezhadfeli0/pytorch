@@ -1,0 +1,65 @@
+# Keyword Index: `torch/nativert/kernels/GeneratedNativeStaticDispatchKernels.cpp`
+
+## File Information
+
+- **Original File**: [torch/nativert/kernels/GeneratedNativeStaticDispatchKernels.cpp](../../../../torch/nativert/kernels/GeneratedNativeStaticDispatchKernels.cpp)
+- **Documentation**: [`GeneratedNativeStaticDispatchKernels.cpp_docs.md`](./GeneratedNativeStaticDispatchKernels.cpp_docs.md)
+- **Folder**: `torch/nativert/kernels`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Includes
+
+- **`ATen/CPUFunctions.h`**: [GeneratedNativeStaticDispatchKernels.cpp_docs.md](./GeneratedNativeStaticDispatchKernels.cpp_docs.md)
+- **`ATen/InferSize.h`**: [GeneratedNativeStaticDispatchKernels.cpp_docs.md](./GeneratedNativeStaticDispatchKernels.cpp_docs.md)
+- **`ATen/NativeFunctions.h`**: [GeneratedNativeStaticDispatchKernels.cpp_docs.md](./GeneratedNativeStaticDispatchKernels.cpp_docs.md)
+- **`ATen/Parallel.h`**: [GeneratedNativeStaticDispatchKernels.cpp_docs.md](./GeneratedNativeStaticDispatchKernels.cpp_docs.md)
+- **`ATen/ScalarOps.h`**: [GeneratedNativeStaticDispatchKernels.cpp_docs.md](./GeneratedNativeStaticDispatchKernels.cpp_docs.md)
+- **`ATen/TensorUtils.h`**: [GeneratedNativeStaticDispatchKernels.cpp_docs.md](./GeneratedNativeStaticDispatchKernels.cpp_docs.md)
+- **`ATen/cpu/vec/functional.h`**: [GeneratedNativeStaticDispatchKernels.cpp_docs.md](./GeneratedNativeStaticDispatchKernels.cpp_docs.md)
+- **`ATen/cpu/vec/vec.h`**: [GeneratedNativeStaticDispatchKernels.cpp_docs.md](./GeneratedNativeStaticDispatchKernels.cpp_docs.md)
+- **`ATen/native/EmbeddingBag.h`**: [GeneratedNativeStaticDispatchKernels.cpp_docs.md](./GeneratedNativeStaticDispatchKernels.cpp_docs.md)
+- **`ATen/native/Fill.h`**: [GeneratedNativeStaticDispatchKernels.cpp_docs.md](./GeneratedNativeStaticDispatchKernels.cpp_docs.md)
+- **`ATen/native/IndexingUtils.h`**: [GeneratedNativeStaticDispatchKernels.cpp_docs.md](./GeneratedNativeStaticDispatchKernels.cpp_docs.md)
+- **`ATen/native/NonSymbolicBC.h`**: [GeneratedNativeStaticDispatchKernels.cpp_docs.md](./GeneratedNativeStaticDispatchKernels.cpp_docs.md)
+- **`ATen/native/Resize.h`**: [GeneratedNativeStaticDispatchKernels.cpp_docs.md](./GeneratedNativeStaticDispatchKernels.cpp_docs.md)
+- **`ATen/native/SharedReduceOps.h`**: [GeneratedNativeStaticDispatchKernels.cpp_docs.md](./GeneratedNativeStaticDispatchKernels.cpp_docs.md)
+- **`ATen/native/TensorAdvancedIndexing.h`**: [GeneratedNativeStaticDispatchKernels.cpp_docs.md](./GeneratedNativeStaticDispatchKernels.cpp_docs.md)
+- **`ATen/native/cpu/SerialStackImpl.h`**: [GeneratedNativeStaticDispatchKernels.cpp_docs.md](./GeneratedNativeStaticDispatchKernels.cpp_docs.md)
+- **`ATen/native/layer_norm.h`**: [GeneratedNativeStaticDispatchKernels.cpp_docs.md](./GeneratedNativeStaticDispatchKernels.cpp_docs.md)
+- **`ATen/native/quantized/cpu/fbgemm_utils.h`**: [GeneratedNativeStaticDispatchKernels.cpp_docs.md](./GeneratedNativeStaticDispatchKernels.cpp_docs.md)
+- **`ATen/native/quantized/cpu/qembeddingbag.h`**: [GeneratedNativeStaticDispatchKernels.cpp_docs.md](./GeneratedNativeStaticDispatchKernels.cpp_docs.md)
+- **`ATen/native/quantized/cpu/qembeddingbag_prepack.h`**: [GeneratedNativeStaticDispatchKernels.cpp_docs.md](./GeneratedNativeStaticDispatchKernels.cpp_docs.md)
+- **`ATen/quantized/QTensorImpl.h`**: [GeneratedNativeStaticDispatchKernels.cpp_docs.md](./GeneratedNativeStaticDispatchKernels.cpp_docs.md)
+- **`ATen/quantized/Quantizer.h`**: [GeneratedNativeStaticDispatchKernels.cpp_docs.md](./GeneratedNativeStaticDispatchKernels.cpp_docs.md)
+- **`c10/core/ScalarType.h`**: [GeneratedNativeStaticDispatchKernels.cpp_docs.md](./GeneratedNativeStaticDispatchKernels.cpp_docs.md)
+- **`c10/core/WrapDimMinimal.h`**: [GeneratedNativeStaticDispatchKernels.cpp_docs.md](./GeneratedNativeStaticDispatchKernels.cpp_docs.md)
+- **`c10/util/irange.h`**: [GeneratedNativeStaticDispatchKernels.cpp_docs.md](./GeneratedNativeStaticDispatchKernels.cpp_docs.md)
+- **`iterator`**: [GeneratedNativeStaticDispatchKernels.cpp_docs.md](./GeneratedNativeStaticDispatchKernels.cpp_docs.md)
+- **`torch/nativert/kernels/KernelRegistry.h`**: [GeneratedNativeStaticDispatchKernels.cpp_docs.md](./GeneratedNativeStaticDispatchKernels.cpp_docs.md)
+
+### Namespaces
+
+- **`torch`**: [GeneratedNativeStaticDispatchKernels.cpp_docs.md](./GeneratedNativeStaticDispatchKernels.cpp_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

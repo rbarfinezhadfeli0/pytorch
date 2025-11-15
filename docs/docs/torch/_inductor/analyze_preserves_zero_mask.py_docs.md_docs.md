@@ -1,0 +1,411 @@
+# Documentation: `docs/torch/_inductor/analyze_preserves_zero_mask.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/_inductor/analyze_preserves_zero_mask.py_docs.md`
+- **Size**: 8,846 bytes (8.64 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/_inductor/analyze_preserves_zero_mask.py`
+
+## File Metadata
+
+- **Path**: `torch/_inductor/analyze_preserves_zero_mask.py`
+- **Size**: 5,490 bytes (5.36 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This is a python source code that is part of the PyTorch project.
+
+## Original Source
+
+```python
+import dataclasses
+import itertools
+from typing import Any, Optional, TYPE_CHECKING
+
+import sympy
+
+import torch
+from torch._inductor import config
+from torch._inductor.dtype_propagation import DtypePropagationOpsHandler
+from torch._inductor.index_propagation import SymPyOps, TypedExpr
+
+from .ops_handler import DefaultHandler
+from .virtualized import StoreMode, V
+
+
+if TYPE_CHECKING:
+    from torch._inductor.scheduler import SchedulerNode
+
+
+def construct_symbol(count: int, dtype: torch.dtype) -> sympy.Symbol:
+    return sympy.Symbol(f"unknown_{count}")
+
+
+class PreservesZeros(SymPyOps, DefaultHandler):
+    """
+    For prologue kernels where the loads are masked, does the final store of this kernel preserve
+    the zeros.
+    """
+
+    def __init__(self) -> None:
+        self.count = itertools.count(0)
+        self.store_preserves_zeros: Optional[bool] = None
+        self.dtype_prop = DtypePropagationOpsHandler()
+
+    def load(self, name: str, index: sympy.Expr) -> TypedExpr:
+        # In prologue fusion, all loads get broadcasted
+        dtype = self.dtype_prop.load(name, index)
+        return TypedExpr(
+            sympy.Float(0) if dtype.is_floating_point else sympy.Integer(0), dtype
+        )
+
+    def store(
+        self, name: str, index: sympy.Expr, value: TypedExpr, mode: "StoreMode" = None
+    ) -> None:
+        assert isinstance(self, PreservesZeros)
+        # should only have a single store in prologue
+        assert self.store_preserves_zeros is None
+        self.store_preserves_zeros = value.is_constant() and value.expr == 0
+
+    def indirect_indexing(self, *args: Any, **kwargs: Any) -> sympy.Expr:
+        return construct_symbol(next(self.count), torch.int32)
+
+    def _default(self, name: str, args: tuple[Any, ...], kwargs: dict[str, Any]) -> Any:
+        from torch._inductor.codegen.common import OpDecompositions
+
+        if hasattr(OpDecompositions, name):
+            return getattr(OpDecompositions, name)(*args, **kwargs).value
+
+        dtype = getattr(self.dtype_prop, name)(*args, **kwargs)
+        return TypedExpr(construct_symbol(next(self.count), dtype), dtype)
+
+
+def prologue_preserves_zero_mask(prologue: "SchedulerNode") -> bool:
+    """
+    Does this prologue preserve zero masks
+    """
+    preserves_zeros = PreservesZeros()
+    with V.set_ops_handler(preserves_zeros):
+        prologue._body(*prologue.get_ranges())
+
+    store_preserves_zeros = preserves_zeros.store_preserves_zeros
+    assert isinstance(store_preserves_zeros, bool)
+
+    return store_preserves_zeros
+
+
+@dataclasses.dataclass
+class DTypeContainer:
+    dtype: torch.dtype
+    is_scalar: bool = False
+
+
+class RecordLowPrecisionOps(DefaultHandler):
+    def __init__(self, disallow_fp32_ops: bool = False) -> None:
+        self.disallow_fp32_ops = disallow_fp32_ops
+        self.low_precision_numeric_op = False
+        self.dtype_prop = DtypePropagationOpsHandler()
+        self.non_numeric_ops = (
+            "to_dtype",
+            "constant",
+            "where",
+        )
+
+    def load(self, name: str, index: sympy.Expr) -> DTypeContainer:
+        return DTypeContainer(self.dtype_prop.load(name, index))
+
+    @staticmethod
+    def store(
+        name: str, index: sympy.Expr, value: TypedExpr, mode: "StoreMode" = None
+    ) -> None:
+        pass
+
+    def check_bounds(
+        self, expr: sympy.Expr, size: sympy.Expr, lower: bool, upper: bool
+    ) -> None:
+        pass
+
+    @staticmethod
+    # pyrefly: ignore [bad-override]
+    def indirect_indexing(*args: Any, **kwargs: Any) -> sympy.Expr:
+        return sympy.S.Zero
+
+    def _default(self, name: str, args: tuple[Any, ...], kwargs: dict[str, Any]) -> Any:
+        out_dtype = getattr(self.dtype_prop, name)(*args, **kwargs)
+        out = DTypeContainer(out_dtype, is_scalar=(name == "constant"))
+        if name == "constant":
+            return DTypeContainer(torch.float, is_scalar=True)
+
+        uses_low_prec = any(
+            isinstance(dtype_cont, DTypeContainer)
+            and dtype_cont.dtype is not None
+            and low_prec_float(dtype_cont.dtype)
+            for dtype_cont in itertools.chain((out,), args, kwargs.values())
+        )
+
+        if uses_low_prec and name not in self.non_numeric_ops:
+            self.low_precision_numeric_op = True
+
+        if (
+            self.disallow_fp32_ops
+            and out.dtype in (torch.float32, torch.float64)
+            and not out.is_scalar
+        ):
+            self.low_precision_numeric_op = True
+
+        return out
+
+
+def low_prec_float(dtype: torch.dtype) -> bool:
+    return dtype.is_floating_point and dtype.itemsize < 4
+
+
+def can_codegen_without_upcasts(
+    prologue: "SchedulerNode",
+    disallow_fp32_ops: bool = False,
+) -> bool:
+    """
+    Can this prologue be run without `upcast_to_fp32` while preserving numerics.
+
+    This is only true if the node only contains dtype conversions, indexing, and other non-arithmetic operators.
+
+    If disallow_fp32_ops is True, then we also disallow ops that are explicitly computed in fp32 or fp64.
+    """
+    if prologue.get_operation_names() <= V.graph.low_precision_codegen_ops:
+        return True
+
+    low_prec_analysis = RecordLowPrecisionOps(disallow_fp32_ops)
+
+    # Need to turn off upcasting to do analysis of whether we can turn it off
+    with (
+        config.patch("triton.codegen_upcast_to_fp32", False),
+        V.set_ops_handler(low_prec_analysis),
+    ):
+        prologue._body(*prologue.get_ranges())
+
+    return not low_prec_analysis.low_precision_numeric_op
+
+```
+
+
+
+## High-Level Overview
+
+"""    For prologue kernels where the loads are masked, does the final store of this kernel preserve    the zeros.
+
+This Python file contains 3 class(es) and 15 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `PreservesZeros`, `DTypeContainer`, `RecordLowPrecisionOps`
+
+**Functions defined**: `construct_symbol`, `__init__`, `load`, `store`, `indirect_indexing`, `_default`, `prologue_preserves_zero_mask`, `__init__`, `load`, `store`, `check_bounds`, `indirect_indexing`, `_default`, `low_prec_float`, `can_codegen_without_upcasts`
+
+**Key imports**: dataclasses, itertools, Any, Optional, TYPE_CHECKING, sympy, torch, config, DtypePropagationOpsHandler, SymPyOps, TypedExpr, DefaultHandler, StoreMode, V
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/_inductor`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `dataclasses`
+- `itertools`
+- `typing`: Any, Optional, TYPE_CHECKING
+- `sympy`
+- `torch`
+- `torch._inductor`: config
+- `torch._inductor.dtype_propagation`: DtypePropagationOpsHandler
+- `torch._inductor.index_propagation`: SymPyOps, TypedExpr
+- `.ops_handler`: DefaultHandler
+- `.virtualized`: StoreMode, V
+- `torch._inductor.scheduler`: SchedulerNode
+- `torch._inductor.codegen.common`: OpDecompositions
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/_inductor`):
+
+- [`freezing_utils.py_docs.md`](./freezing_utils.py_docs.md)
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`mkldnn_ir.py_docs.md`](./mkldnn_ir.py_docs.md)
+- [`async_compile.py_docs.md`](./async_compile.py_docs.md)
+- [`invert_expr_analysis.py_docs.md`](./invert_expr_analysis.py_docs.md)
+- [`extern_node_serializer.py_docs.md`](./extern_node_serializer.py_docs.md)
+- [`loop_body.py_docs.md`](./loop_body.py_docs.md)
+- [`debug.py_docs.md`](./debug.py_docs.md)
+- [`freezing.py_docs.md`](./freezing.py_docs.md)
+- [`optimize_indexing.py_docs.md`](./optimize_indexing.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `analyze_preserves_zero_mask.py_docs.md`
+- **Keyword Index**: `analyze_preserves_zero_mask.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/_inductor`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/_inductor`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/_inductor`):
+
+- [`freezing.py_docs.md_docs.md`](./freezing.py_docs.md_docs.md)
+- [`lowering.py_kw.md_docs.md`](./lowering.py_kw.md_docs.md)
+- [`quantized_lowerings.py_docs.md_docs.md`](./quantized_lowerings.py_docs.md_docs.md)
+- [`select_algorithm.py_docs.md_docs.md`](./select_algorithm.py_docs.md_docs.md)
+- [`kernel_inputs.py_kw.md_docs.md`](./kernel_inputs.py_kw.md_docs.md)
+- [`compile_fx_ext.py_kw.md_docs.md`](./compile_fx_ext.py_kw.md_docs.md)
+- [`extern_node_serializer.py_docs.md_docs.md`](./extern_node_serializer.py_docs.md_docs.md)
+- [`mkldnn_lowerings.py_kw.md_docs.md`](./mkldnn_lowerings.py_kw.md_docs.md)
+- [`ops_handler.py_docs.md_docs.md`](./ops_handler.py_docs.md_docs.md)
+- [`test_operators.py_docs.md_docs.md`](./test_operators.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `analyze_preserves_zero_mask.py_docs.md_docs.md`
+- **Keyword Index**: `analyze_preserves_zero_mask.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

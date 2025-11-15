@@ -1,0 +1,78 @@
+# Keyword Index: `tools/stats/upload_utilization_stats/upload_utilization_stats.py`
+
+## File Information
+
+- **Original File**: [tools/stats/upload_utilization_stats/upload_utilization_stats.py](../../../../tools/stats/upload_utilization_stats/upload_utilization_stats.py)
+- **Documentation**: [`upload_utilization_stats.py_docs.md`](./upload_utilization_stats.py_docs.md)
+- **Folder**: `tools/stats/upload_utilization_stats`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`SegmentGenerator`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+- **`UploadUtilizationData`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+- **`UtilizationDbConverter`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+- **`to`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+
+### Functions
+
+- **`__init__`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+- **`_find_continuous_windows`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+- **`_process_raw_record`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+- **`_process_utilization_records`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+- **`_to_oss_ci_metadata`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+- **`_to_oss_ci_time_series`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+- **`_to_oss_ci_timeseries_list`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+- **`_upload_utilization_data_to_s3`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+- **`convert`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+- **`convert_to_log_models`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+- **`generate`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+- **`get_log_data_from_local`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+- **`get_log_data_from_s3`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+- **`handle_file`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+- **`parse_args`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+- **`read_file`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+- **`start`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+- **`unzip_file`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+
+### Imports
+
+- **`Any`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+- **`Path`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+- **`Union`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+- **`argparse`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+- **`asdict`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+- **`dataclasses`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+- **`download_s3_artifacts`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+- **`json`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+- **`os`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+- **`pandas`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+- **`pathlib`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+- **`sys`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+- **`tools.stats.upload_stats_lib`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+- **`tools.stats.utilization_stats_lib`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+- **`typing`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+- **`zipfile`**: [upload_utilization_stats.py_docs.md](./upload_utilization_stats.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

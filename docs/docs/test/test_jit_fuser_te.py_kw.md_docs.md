@@ -1,0 +1,383 @@
+# Documentation: `docs/test/test_jit_fuser_te.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/test/test_jit_fuser_te.py_kw.md`
+- **Size**: 20,755 bytes (20.27 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `test/test_jit_fuser_te.py`
+
+## File Information
+
+- **Original File**: [test/test_jit_fuser_te.py](../../test/test_jit_fuser_te.py)
+- **Documentation**: [`test_jit_fuser_te.py_docs.md`](./test_jit_fuser_te.py_docs.md)
+- **Folder**: `test`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`M`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`MyMod`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`TestLoopnestRandomization`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`TestLoopnestRandomizationParent`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`TestNNCOpInfo`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`TestNNCOpInfoParent`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`TestTEFuser`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`TestTEFuserDynamic`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`TestTEFuserStatic`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`is`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+
+### Functions
+
+- **`__init__`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`_test_fwd_bwd`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`apply`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`apply_with_scalar`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`assertAllFused`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`assertLastGraphAllFused`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`autodiff_guard`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`bn`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`bn_neither`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`bn_no_bias`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`bn_no_weight`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`cell`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`chunk_4_0`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`chunk_4_1`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`chunk_4_last`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`clamp_double`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`clamp_int`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`create`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`data_for`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`decode`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`doit`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`eager`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`eager_st`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`eager_ts`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`eager_tt`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`f`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`fi`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`findFusionGroups`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`fn`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`fn_test_comparison_gt_lt`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`fn_test_diamond`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`fn_test_erf`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`fn_test_exp`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`fn_test_rand`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`fn_test_rand2`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`fn_test_relu`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`fn_test_scalar_arg`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`fn_test_scalar_arg_requires_grad`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`fn_test_small_constant`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`foo`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`foo1`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`foo2`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`foo_weight_scalar`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`foo_weight_tensor`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`forward`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`fum`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`func`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`func1`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`func2`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`funcInf`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`funcNegInf`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`funcOptMax`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`funcOptMin`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`func_neg`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`fused_kernel`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`get_name`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`inline_fusion_groups`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`is_guard`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`not_fusible`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`repro`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`scaleshift`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`setUp`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`should_fuse`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`should_fuse_scalar`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`strip_profiling_nodes`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`success`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`te_compile`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`tearDown`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_abs`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_adaptive_avg_pool2d`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_add_bool`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_addcmul`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_arg_configurations_smoke`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_autocast_down`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_autocast_up`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_autodiff`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_batch_norm`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_binary_div_ops`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_binary_ops`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_binary_pow`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_binary_scalar_ops`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_binary_tensor_scalar_ops`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_bitwise_ops`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_broadcast`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_cat_2k_args`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_cat_graph_opt`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_channels_last_dims_dynamic`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_checks_cat_inputs`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_chunk`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_chunk_correctness`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_chunk_distributes`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_chunk_motion_deduplicates_inputs`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_chunk_mul_one`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_chunk_multiple`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_clamp`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_clamp_double`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_clamp_int`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_comparison_eq_ne`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_comparison_ge_le`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_comparison_gt_lt`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_concat`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_concat_invariant`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_constant_chunk_shapes`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_conv2d`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_conv2d_depthwise`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_cuda_half`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_dims`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_disabled`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_div_bool`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_dynamic_cat`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_dynamic_shapes`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_eq_unsqueeze_type_as`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_erf`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_exhaust_specializations`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_exp`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_failures`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_fuse`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_fusion_reuse_multi_gpu`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_gelu`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_hardsigmoid_fwd_bwd`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_hardswish_fwd_bwd`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_inlined_optimized_graph`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_isnan`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_kernel_cache_multi_gpu`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_lerp`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_list_ops`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_lstm`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_lstm_concat`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_lstm_gates_permutations`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_lstm_traced`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_masked_fill`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_matmul`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_milstm`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_minmax`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_minmax_int_ops`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_mul_bool`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_neg_pow`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_nnc_correctness`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_nonzero_device_cuda`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_nop`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_pow_multiple_dtype`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_profiler`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_rand_broadcast_cuda`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_rand_cuda`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_rand_diamond`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_relu`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_relu_fwd_bwd`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_remove_output_used_only_in_size`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_scalar`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_scalar_arg`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_scalar_only_inputs`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_separate_fusions`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_skip_grad_in_check`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_small_constant`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_sub_gt_and`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_sum_dim`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_sum_keepdim_cast`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_sum_simple`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_superslomo`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_tensor_scalar_ops`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_ternary_norm_ops`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_ternary_ops`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_threshold`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_to_device`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_to_dtype`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_torch_to`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_type_as_cat`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_typecheck`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_unary_ops`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_unrolled_cat`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_unsqueeze_size_calculation`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_unsqueeze_var_dim`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_unsupported`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_unsupported_dtypes`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_where_and_typing`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_where_ops`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_with_strict_fusion`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_working`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_zero_element_tensors`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`texpr_enable_strategy`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`texpr_reductions_enabled`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`tmax`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`tmin`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`warmup_forward`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+
+### Imports
+
+- **`FileCheck`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`JitCommonTestCase`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`TestFuserCommon`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`combinations`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`contextlib`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`create_traced_fn`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`dedent`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`functools`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`itertools`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`jit.test_fuser_common`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`math`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`op_db`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`operator`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`os`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`parse_cmd_line_args`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`partial`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`sys`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`test_jit`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`textwrap`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`torch`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`torch.nn.functional`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`torch.testing`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`torch.testing._internal.common_device_type`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`torch.testing._internal.common_jit`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`torch.testing._internal.common_methods_invocations`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`torch.testing._internal.jit_metaprogramming_utils`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`torch.testing._internal.jit_utils`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`unittest`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+- **`warnings`**: [test_jit_fuser_te.py_docs.md](./test_jit_fuser_te.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Implements or uses **caching** mechanisms.
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/test_jit_fuser_te.py_kw.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test`):
+
+- [`test_ops.py_docs.md_docs.md`](./test_ops.py_docs.md_docs.md)
+- [`test_tensorexpr.py_docs.md_docs.md`](./test_tensorexpr.py_docs.md_docs.md)
+- [`pytest_shard_custom.py_docs.md_docs.md`](./pytest_shard_custom.py_docs.md_docs.md)
+- [`test_weak.py_kw.md_docs.md`](./test_weak.py_kw.md_docs.md)
+- [`test_view_ops.py_kw.md_docs.md`](./test_view_ops.py_kw.md_docs.md)
+- [`test_varlen_attention.py_kw.md_docs.md`](./test_varlen_attention.py_kw.md_docs.md)
+- [`test_namedtensor.py_docs.md_docs.md`](./test_namedtensor.py_docs.md_docs.md)
+- [`test_binary_ufuncs.py_docs.md_docs.md`](./test_binary_ufuncs.py_docs.md_docs.md)
+- [`test_ops_gradients.py_kw.md_docs.md`](./test_ops_gradients.py_kw.md_docs.md)
+- [`test_torchfuzz_repros.py_docs.md_docs.md`](./test_torchfuzz_repros.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_jit_fuser_te.py_kw.md_docs.md`
+- **Keyword Index**: `test_jit_fuser_te.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

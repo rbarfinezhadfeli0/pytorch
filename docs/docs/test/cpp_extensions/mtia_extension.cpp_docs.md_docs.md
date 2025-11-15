@@ -1,0 +1,465 @@
+# Documentation: `docs/test/cpp_extensions/mtia_extension.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/cpp_extensions/mtia_extension.cpp_docs.md`
+- **Size**: 8,983 bytes (8.77 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/cpp_extensions/mtia_extension.cpp`
+
+## File Metadata
+
+- **Path**: `test/cpp_extensions/mtia_extension.cpp`
+- **Size**: 6,264 bytes (6.12 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**.
+
+## Original Source
+
+```cpp
+#include <ATen/detail/MTIAHooksInterface.h>
+#include <c10/core/Device.h>
+#include <c10/core/Stream.h>
+#include <c10/core/impl/DeviceGuardImplInterface.h>
+#include <c10/util/Logging.h>
+#include <torch/csrc/utils/device_lazy_init.h>
+#include <thread>
+namespace torch::mtia {
+
+constexpr c10::DeviceType kMTIADeviceType = c10::DeviceType::MTIA;
+constexpr c10::DeviceIndex kMTIADeviceCount = 2;
+static thread_local c10::DeviceIndex current_device = 0;
+static thread_local std::array<c10::Stream, kMTIADeviceCount> current_streams =
+    {c10::Stream::unpack3(0, 0, c10::DeviceType::MTIA),
+     c10::Stream::unpack3(0, 1, c10::DeviceType::MTIA)};
+static int64_t stream_id_gen = 1;
+static int64_t event_id_gen = 1;
+static std::array<c10::Stream, kMTIADeviceCount> default_streams = {
+    c10::Stream::unpack3(0, 0, c10::DeviceType::MTIA),
+    c10::Stream::unpack3(0, 1, c10::DeviceType::MTIA)};
+struct MTIAGuardImpl final : public c10::impl::DeviceGuardImplInterface {
+  MTIAGuardImpl() = default;
+  explicit MTIAGuardImpl(c10::DeviceType t) {
+    TORCH_INTERNAL_ASSERT(t == kMTIADeviceType);
+  }
+  c10::DeviceType type() const override {
+    return kMTIADeviceType;
+  }
+  c10::Device exchangeDevice(c10::Device d) const override {
+    c10::Device old_device = getDevice();
+    if (old_device.index() != d.index()) {
+      setDevice(d);
+    }
+    return old_device;
+  }
+  c10::Device getDevice() const override {
+    return c10::Device(kMTIADeviceType, current_device);
+  }
+
+  void setDevice(c10::Device d) const override {
+    if (getDevice().index() != d.index()) {
+      current_device = d.index();
+    }
+  }
+  void uncheckedSetDevice(c10::Device d) const noexcept override {
+    (void)d;
+  }
+  c10::Stream getStream(c10::Device d) const noexcept override {
+    return current_streams[d.index()];
+  }
+  c10::Stream getNewStream(c10::Device d, int priority = 0) const override {
+    (void)priority;
+    return c10::Stream::unpack3(stream_id_gen++, d.index(), d.type());
+  }
+  c10::Stream getDefaultStream(c10::Device d) const override {
+    return default_streams[d.index()];
+  }
+  c10::Stream getStreamFromGlobalPool(
+      c10::Device d,
+      bool isHighPriority = false) const override {
+    return c10::Stream::unpack3(stream_id_gen++, d.index(), d.type());
+  }
+  // NB: These do NOT set the current device
+  c10::Stream exchangeStream(c10::Stream s) const noexcept override {
+    c10::Stream old_stream = getStream(s.device());
+    return old_stream;
+  }
+  c10::DeviceIndex deviceCount() const noexcept override {
+    return kMTIADeviceCount;
+  }
+
+  void destroyEvent(void* event, const c10::DeviceIndex device_index)
+      const noexcept override {
+    (void)device_index;
+  }
+
+  void record(
+      void** event,
+      const c10::Stream& stream,
+      const c10::DeviceIndex device_index,
+      const c10::EventFlag flag) const override {
+    TORCH_CHECK(
+        device_index == -1 || device_index == stream.device_index(),
+        "Event device index ",
+        device_index,
+        " does not match recording stream's device index ",
+        stream.device_index(),
+        ".");
+
+    const auto orig_device = getDevice();
+
+    setDevice(stream.device());
+
+    if (*event == nullptr) {
+      *event = reinterpret_cast<void*>(event_id_gen++);
+    }
+    setDevice(orig_device);
+  }
+
+  void block(void* event, const c10::Stream& stream) const override {
+    (void)event;
+    (void)stream;
+  }
+
+  // May be called from any device
+  bool queryEvent(void* event) const override {
+    (void)event;
+    return true;
+  }
+
+  // Stream-related functions
+  bool queryStream(const c10::Stream& stream) const override {
+    (void)stream;
+    return true;
+  }
+
+  void synchronizeStream(const c10::Stream& stream) const override {
+    (void)stream;
+  }
+
+  void recordDataPtrOnStream(
+      const c10::DataPtr& data_ptr,
+      const c10::Stream& stream) const override {
+    (void)data_ptr;
+    (void)stream;
+  }
+
+  double elapsedTime(void* event1, void* event2, const c10::DeviceIndex device_index) const override {
+    (void)device_index;
+    uint64_t elapsed_time = 1e6;
+    return (double)(elapsed_time / 1e6);
+  }
+
+  void synchronizeEvent(void* event) const override {
+    (void)event;
+  }
+};
+
+struct MTIAHooks : public at::MTIAHooksInterface {
+  explicit MTIAHooks(at::MTIAHooksArgs) {}
+  void init() const override {}
+
+  bool hasMTIA() const override {
+    return true;
+  }
+
+  c10::DeviceIndex deviceCount() const override {
+    torch::utils::device_lazy_init(at::kMTIA);
+    return c10::DeviceIndex(2);
+  }
+
+  void deviceSynchronize(c10::DeviceIndex device_index) const override {
+    torch::utils::device_lazy_init(at::kMTIA);
+    (void)device_index;
+  }
+
+  std::string showConfig() const override {
+    return "None config";
+  }
+
+  c10::DeviceIndex exchangeDevice(c10::DeviceIndex device) const override {
+    torch::utils::device_lazy_init(at::kMTIA);
+    auto orig_device = current_device;
+    if (current_device != device) {
+      current_device = device;
+    }
+    return orig_device;
+  }
+
+  c10::DeviceIndex maybeExchangeDevice(c10::DeviceIndex device) const override {
+    torch::utils::device_lazy_init(at::kMTIA);
+
+    auto orig_device = current_device;
+    if (current_device != device) {
+      current_device = device;
+    }
+    return orig_device;
+  }
+
+  c10::Stream getDefaultStream(c10::DeviceIndex device) const override {
+    torch::utils::device_lazy_init(at::kMTIA);
+
+    return default_streams[device];
+  }
+
+  c10::Stream getCurrentStream(c10::DeviceIndex device) const override {
+    torch::utils::device_lazy_init(at::kMTIA);
+
+    return current_streams[device];
+  }
+
+  void setCurrentStream(const c10::Stream& stream) const override {
+    torch::utils::device_lazy_init(at::kMTIA);
+
+    current_streams[stream.device_index()] = stream;
+  }
+
+  c10::DeviceIndex getCurrentDevice() const override {
+    torch::utils::device_lazy_init(at::kMTIA);
+
+    return current_device;
+  }
+
+  void setCurrentDevice(c10::DeviceIndex device) const override {
+    torch::utils::device_lazy_init(at::kMTIA);
+
+    if (current_device != device) {
+      current_device = device;
+    }
+  }
+};
+
+using at::MTIAHooksRegistry;
+using at::RegistererMTIAHooksRegistry;
+
+REGISTER_MTIA_HOOKS(MTIAHooks);
+C10_REGISTER_GUARD_IMPL(MTIA, MTIAGuardImpl);
+
+} // namespace torch::mtia
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 34 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`
+
+**Classes/Structs**: `MTIAGuardImpl`, `MTIAHooks`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/cpp_extensions`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/detail/MTIAHooksInterface.h`
+- `c10/core/Device.h`
+- `c10/core/Stream.h`
+- `c10/core/impl/DeviceGuardImplInterface.h`
+- `c10/util/Logging.h`
+- `torch/csrc/utils/device_lazy_init.h`
+- `thread`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/cpp_extensions/mtia_extension.cpp
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/cpp_extensions`):
+
+- [`cpp_frontend_extension.cpp_docs.md`](./cpp_frontend_extension.cpp_docs.md)
+- [`extension.cpp_docs.md`](./extension.cpp_docs.md)
+- [`identity.cpp_docs.md`](./identity.cpp_docs.md)
+- [`doubler.h_docs.md`](./doubler.h_docs.md)
+- [`open_registration_extension.cpp_docs.md`](./open_registration_extension.cpp_docs.md)
+- [`setup.py_docs.md`](./setup.py_docs.md)
+- [`rng_extension.cpp_docs.md`](./rng_extension.cpp_docs.md)
+- [`cusolver_extension.cpp_docs.md`](./cusolver_extension.cpp_docs.md)
+- [`cuda_dlink_extension.cpp_docs.md`](./cuda_dlink_extension.cpp_docs.md)
+- [`cuda_dlink_extension_add.cu_docs.md`](./cuda_dlink_extension_add.cu_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `mtia_extension.cpp_docs.md`
+- **Keyword Index**: `mtia_extension.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/cpp_extensions`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/cpp_extensions`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/cpp_extensions/mtia_extension.cpp_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/cpp_extensions`):
+
+- [`cpp_frontend_extension.cpp_docs.md_docs.md`](./cpp_frontend_extension.cpp_docs.md_docs.md)
+- [`cuda_dlink_extension_add.cu_docs.md_docs.md`](./cuda_dlink_extension_add.cu_docs.md_docs.md)
+- [`cpp_c10d_extension.cpp_docs.md_docs.md`](./cpp_c10d_extension.cpp_docs.md_docs.md)
+- [`setup.py_kw.md_docs.md`](./setup.py_kw.md_docs.md)
+- [`extension.cpp_kw.md_docs.md`](./extension.cpp_kw.md_docs.md)
+- [`jit_extension.cpp_docs.md_docs.md`](./jit_extension.cpp_docs.md_docs.md)
+- [`cuda_dlink_extension_kernel.cu_kw.md_docs.md`](./cuda_dlink_extension_kernel.cu_kw.md_docs.md)
+- [`cuda_extension_kernel2.cu_kw.md_docs.md`](./cuda_extension_kernel2.cu_kw.md_docs.md)
+- [`mtia_extension.cpp_kw.md_docs.md`](./mtia_extension.cpp_kw.md_docs.md)
+- [`setup.py_docs.md_docs.md`](./setup.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `mtia_extension.cpp_docs.md_docs.md`
+- **Keyword Index**: `mtia_extension.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

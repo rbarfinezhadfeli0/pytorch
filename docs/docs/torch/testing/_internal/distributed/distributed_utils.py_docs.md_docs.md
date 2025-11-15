@@ -1,0 +1,313 @@
+# Documentation: `docs/torch/testing/_internal/distributed/distributed_utils.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/testing/_internal/distributed/distributed_utils.py_docs.md`
+- **Size**: 4,791 bytes (4.68 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/testing/_internal/distributed/distributed_utils.py`
+
+## File Metadata
+
+- **Path**: `torch/testing/_internal/distributed/distributed_utils.py`
+- **Size**: 1,947 bytes (1.90 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**.
+
+## Original Source
+
+```python
+# mypy: allow-untyped-defs
+
+from contextlib import contextmanager
+from datetime import timedelta
+from functools import partial, wraps
+
+import torch.distributed as dist
+import torch.distributed.distributed_c10d as c10d
+
+
+class MockProcessGroup(dist.ProcessGroup):
+    def __init__(self, rank, world):
+        super().__init__(rank, world)
+
+    def getBackendName(self):
+        return "mock_process_group"
+
+
+def create_mock_pg(prefix_store, rank, world_size, timeout):
+    return MockProcessGroup(rank, world_size)
+
+
+dist.Backend.register_backend("mock_process_group", create_mock_pg)
+
+
+def mock_init_dist(rank, world_size):
+    # !!! WARNING !!!
+    # Kids don't try this at home, this is a cute pile of hacks that
+    # depends on a small mountain of c10d internals
+    assert not dist.is_initialized()
+    store = dist.HashStore()
+    # Trick _store_based_barrier into believing everyone else already checked-in
+    # Zero is the group index
+    store.add(f"{c10d.STORE_BASED_BARRIER_PREFIX}:0", world_size - 1)
+    dist.init_process_group(
+        backend="mock_process_group",
+        rank=rank,
+        world_size=world_size,
+        store=store,
+        group_name="fake",
+        timeout=timedelta(seconds=1),
+    )
+
+
+@contextmanager
+def with_dist(rank=0, world_size=2):
+    """
+    Context manager that initializer c10d with a fake process group.
+    """
+    mock_init_dist(rank=rank, world_size=world_size)
+    try:
+        yield
+    finally:
+        dist.destroy_process_group()
+
+
+def with_fake_comms(func=None, rank=0, world_size=2):
+    """
+    Function wrapper that inits a fake process group designed for testing.
+    Right now only querying for world size is available
+    """
+    if func is None:
+        return partial(with_fake_comms, rank=rank, world_size=world_size)
+
+    @wraps(func)
+    def wrapper(self, *args, **kwargs):
+        with with_dist(rank, world_size):
+            func(self, *args, **kwargs)
+
+    return wrapper
+
+```
+
+
+
+## High-Level Overview
+
+"""    Context manager that initializer c10d with a fake process group.
+
+This Python file contains 1 class(es) and 7 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `MockProcessGroup`
+
+**Functions defined**: `__init__`, `getBackendName`, `create_mock_pg`, `mock_init_dist`, `with_dist`, `with_fake_comms`, `wrapper`
+
+**Key imports**: contextmanager, timedelta, partial, wraps, torch.distributed as dist, torch.distributed.distributed_c10d as c10d
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/testing/_internal/distributed`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `contextlib`: contextmanager
+- `datetime`: timedelta
+- `functools`: partial, wraps
+- `torch.distributed as dist`
+- `torch.distributed.distributed_c10d as c10d`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python torch/testing/_internal/distributed/distributed_utils.py
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/testing/_internal/distributed`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`ddp_under_dist_autograd_test.py_docs.md`](./ddp_under_dist_autograd_test.py_docs.md)
+- [`checkpoint_utils.py_docs.md`](./checkpoint_utils.py_docs.md)
+- [`fake_pg.py_docs.md`](./fake_pg.py_docs.md)
+- [`multi_threaded_pg.py_docs.md`](./multi_threaded_pg.py_docs.md)
+- [`common_state_dict.py_docs.md`](./common_state_dict.py_docs.md)
+- [`rpc_utils.py_docs.md`](./rpc_utils.py_docs.md)
+- [`distributed_test.py_docs.md`](./distributed_test.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `distributed_utils.py_docs.md`
+- **Keyword Index**: `distributed_utils.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/testing/_internal/distributed`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/testing/_internal/distributed`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/torch/testing/_internal/distributed/distributed_utils.py_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/testing/_internal/distributed`):
+
+- [`ddp_under_dist_autograd_test.py_kw.md_docs.md`](./ddp_under_dist_autograd_test.py_kw.md_docs.md)
+- [`ddp_under_dist_autograd_test.py_docs.md_docs.md`](./ddp_under_dist_autograd_test.py_docs.md_docs.md)
+- [`multi_threaded_pg.py_docs.md_docs.md`](./multi_threaded_pg.py_docs.md_docs.md)
+- [`distributed_utils.py_kw.md_docs.md`](./distributed_utils.py_kw.md_docs.md)
+- [`distributed_test.py_docs.md_docs.md`](./distributed_test.py_docs.md_docs.md)
+- [`checkpoint_utils.py_docs.md_docs.md`](./checkpoint_utils.py_docs.md_docs.md)
+- [`common_state_dict.py_docs.md_docs.md`](./common_state_dict.py_docs.md_docs.md)
+- [`common_state_dict.py_kw.md_docs.md`](./common_state_dict.py_kw.md_docs.md)
+- [`rpc_utils.py_docs.md_docs.md`](./rpc_utils.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `distributed_utils.py_docs.md_docs.md`
+- **Keyword Index**: `distributed_utils.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

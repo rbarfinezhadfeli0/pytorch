@@ -1,0 +1,83 @@
+# Keyword Index: `docs/aten/src/ATen/WrapDimUtils.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/WrapDimUtils.h_kw.md](../../../../../docs/aten/src/ATen/WrapDimUtils.h_kw.md)
+- **Documentation**: [`WrapDimUtils.h_kw.md_docs.md`](./WrapDimUtils.h_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Analysis`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Architecture`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Basic`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Complete`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Considerations`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Dependencies`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Design`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Detailed`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Documentation`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Efficiency`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Extracted`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`File`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Folder`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Functions`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Generated`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`High`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`How`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`IListRef`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`In`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Includes`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Index`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Information`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Keyword`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Keywords`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Level`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Map`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Metadata`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Namespaces`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Original`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Overview`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Performance`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Purpose`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`PyTorch`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Related`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Repository`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Safety`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Section`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Security`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Source`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`System`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Tensor`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`TensorImpl`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Testing`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`The`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`This`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`Usage`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`WrapDimMinimal`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+- **`WrapDimUtils`**: [WrapDimUtils.h_kw.md_docs.md](./WrapDimUtils.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

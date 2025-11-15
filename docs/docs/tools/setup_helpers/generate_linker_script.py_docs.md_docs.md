@@ -1,0 +1,296 @@
+# Documentation: `docs/tools/setup_helpers/generate_linker_script.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/tools/setup_helpers/generate_linker_script.py_docs.md`
+- **Size**: 4,512 bytes (4.41 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**. This file is a **utility or tool script**.
+
+## Original Source
+
+```markdown
+# Documentation: `tools/setup_helpers/generate_linker_script.py`
+
+## File Metadata
+
+- **Path**: `tools/setup_helpers/generate_linker_script.py`
+- **Size**: 2,114 bytes (2.06 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is a **utility or tool script**. Can be **executed as a standalone script**.
+
+## Original Source
+
+```python
+import argparse
+import os
+import subprocess
+from pathlib import Path
+
+
+def gen_linker_script(
+    filein: str = "cmake/prioritized_text.txt", fout: str = "cmake/linker_script.ld"
+) -> None:
+    with open(filein) as f:
+        prioritized_text = f.readlines()
+        prioritized_text = [
+            line.replace("\n", "") for line in prioritized_text if line != "\n"
+        ]
+    ld = os.environ.get("LD", "ld")
+    linker_script_lines = subprocess.check_output([ld, "-verbose"], text=True).split(
+        "\n"
+    )
+
+    indices = [
+        i
+        for i, x in enumerate(linker_script_lines)
+        if x == "=================================================="
+    ]
+    linker_script_lines = linker_script_lines[indices[0] + 1 : indices[1]]
+
+    text_line_start = [
+        i for i, line in enumerate(linker_script_lines) if ".text           :" in line
+    ]
+    assert len(text_line_start) == 1, "The linker script has multiple text sections!"
+    text_line_start = text_line_start[0]
+
+    # ensure that parent directory exists before writing
+    # pyrefly: ignore [bad-assignment]
+    fout = Path(fout)
+    # pyrefly: ignore [missing-attribute]
+    fout.parent.mkdir(parents=True, exist_ok=True)
+
+    with open(fout, "w") as f:
+        for lineid, line in enumerate(linker_script_lines):
+            if lineid == text_line_start + 2:
+                f.write("    *(\n")
+                for plines in prioritized_text:
+                    f.write(f"      .text.{plines}\n")
+                f.write("    )\n")
+            f.write(f"{line}\n")
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description="Generate linker file based on prioritized symbols. Used for link-time optimization.",
+    )
+    parser.add_argument(
+        "--filein",
+        help="Path to prioritized_text.txt input file",
+        default=argparse.SUPPRESS,
+    )
+    parser.add_argument(
+        "--fout", help="Output path for linker ld file", default=argparse.SUPPRESS
+    )
+    # convert args to a dict to pass to gen_linker_script
+    kwargs = vars(parser.parse_args())
+    gen_linker_script(**kwargs)
+
+```
+
+
+
+## High-Level Overview
+
+
+This Python file contains 0 class(es) and 1 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Functions defined**: `gen_linker_script`
+
+**Key imports**: argparse, os, subprocess, Path
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `tools/setup_helpers`, which contains **development tools and scripts**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `argparse`
+- `os`
+- `subprocess`
+- `pathlib`: Path
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- **Command Execution**: Executes system commands - validate inputs
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`tools/setup_helpers`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`generate_code.py_docs.md`](./generate_code.py_docs.md)
+- [`build.bzl_docs.md`](./build.bzl_docs.md)
+- [`gen_version_header.py_docs.md`](./gen_version_header.py_docs.md)
+- [`gen_unboxing.py_docs.md`](./gen_unboxing.py_docs.md)
+- [`env.py_docs.md`](./env.py_docs.md)
+- [`BUILD.bazel_docs.md`](./BUILD.bazel_docs.md)
+- [`cmake_utils.py_docs.md`](./cmake_utils.py_docs.md)
+- [`cmake.py_docs.md`](./cmake.py_docs.md)
+- [`gen.py_docs.md`](./gen.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `generate_linker_script.py_docs.md`
+- **Keyword Index**: `generate_linker_script.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/tools/setup_helpers`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/tools/setup_helpers`, which contains **development tools and scripts**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- **Command Execution**: Executes system commands - validate inputs
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/tools/setup_helpers`):
+
+- [`BUILD.bazel_docs.md_docs.md`](./BUILD.bazel_docs.md_docs.md)
+- [`gen_version_header.py_kw.md_docs.md`](./gen_version_header.py_kw.md_docs.md)
+- [`cmake_utils.py_docs.md_docs.md`](./cmake_utils.py_docs.md_docs.md)
+- [`gen.py_kw.md_docs.md`](./gen.py_kw.md_docs.md)
+- [`generate_code.py_kw.md_docs.md`](./generate_code.py_kw.md_docs.md)
+- [`build.bzl_kw.md_docs.md`](./build.bzl_kw.md_docs.md)
+- [`cmake_utils.py_kw.md_docs.md`](./cmake_utils.py_kw.md_docs.md)
+- [`gen_unboxing.py_kw.md_docs.md`](./gen_unboxing.py_kw.md_docs.md)
+- [`env.py_docs.md_docs.md`](./env.py_docs.md_docs.md)
+- [`env.py_kw.md_docs.md`](./env.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `generate_linker_script.py_docs.md_docs.md`
+- **Keyword Index**: `generate_linker_script.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

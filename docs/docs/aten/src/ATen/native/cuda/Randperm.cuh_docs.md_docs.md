@@ -1,0 +1,291 @@
+# Documentation: `docs/aten/src/ATen/native/cuda/Randperm.cuh_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/cuda/Randperm.cuh_docs.md`
+- **Size**: 4,741 bytes (4.63 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/native/cuda/Randperm.cuh`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/cuda/Randperm.cuh`
+- **Size**: 2,108 bytes (2.06 KB)
+- **Type**: CUDA Header File
+- **Extension**: `.cuh`
+
+## File Purpose
+
+This is a cuda header file that is part of the PyTorch project.
+
+## Original Source
+
+```
+#include <ATen/cuda/CUDAGeneratorImpl.h>
+#include <ATen/cuda/CUDAGraphsUtils.cuh>
+#include <ATen/Utils.h>
+
+#include <curand.h>
+#include <curand_kernel.h>
+#include <curand_philox4x32_x.h>
+
+namespace {
+
+// See note [Algorithm of randperm]
+template<typename T, typename scalar_t>
+__global__ void randperm_handle_duplicate_keys_kernel(T *keys, scalar_t *data, T mask, int n, at::PhiloxCudaState philox_args) {
+  int tid = threadIdx.x + blockDim.x * blockIdx.x;
+
+  // find the beginning of islands
+  if (tid >= n - 1) return;  // out of range
+  if ((keys[tid] & mask) != (keys[tid + 1] & mask)) return;  // not in an island
+  if (tid != 0 && (keys[tid] & mask) == (keys[tid - 1] & mask)) return;  // not the beginning of an island
+
+  // find the size of islands
+  int island_size = 0;
+  do { island_size++; }
+  while ((tid + island_size < n) && (keys[tid + island_size] & mask) == (keys[tid] & mask));
+
+  // do random permutation inside each island.
+  data += tid;
+  const auto [seed, offset] = at::cuda::philox::unpack(philox_args);
+  curandStatePhilox4_32_10_t state;
+  curand_init(seed, tid, offset, &state);
+  for (int i = island_size - 1; i > 0; i--) {
+    unsigned int r = curand(&state) % (i + 1);
+    if (i != r) {
+      scalar_t tmp = data[i];
+      data[i] = data[r];
+      data[r] = tmp;
+    }
+  }
+}
+
+// See note [Algorithm of randperm]
+template<typename T, typename scalar_t>
+void randperm_handle_duplicate_keys(T *keys, scalar_t *data, int bits, int64_t n, std::optional<at::Generator> &gen_) {
+  auto gen = at::get_generator_or_default<at::CUDAGeneratorImpl>(gen_, at::cuda::detail::getDefaultCUDAGenerator());
+  int64_t counter_offset = n;
+  at::PhiloxCudaState rng_engine_inputs;
+  {
+    // See Note [Acquire lock when using random generators]
+    std::lock_guard<std::mutex> lock(gen->mutex_);
+    rng_engine_inputs = gen->philox_cuda_state(counter_offset);
+  }
+  T mask = static_cast<T>((1UL << bits) - 1);
+  randperm_handle_duplicate_keys_kernel<<<(n + 511) / 512, 512, 0, at::cuda::getCurrentCUDAStream()>>>(
+    keys, data, mask, n, rng_engine_inputs);
+  C10_CUDA_KERNEL_LAUNCH_CHECK();
+}
+
+}
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `aten/src/ATen/native/cuda`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native/cuda`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/cuda/CUDAGeneratorImpl.h`
+- `ATen/cuda/CUDAGraphsUtils.cuh`
+- `ATen/Utils.h`
+- `curand.h`
+- `curand_kernel.h`
+- `curand_philox4x32_x.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native/cuda`):
+
+- [`LogcumsumexpKernel.cu_docs.md`](./LogcumsumexpKernel.cu_docs.md)
+- [`WeightNorm.cu_docs.md`](./WeightNorm.cu_docs.md)
+- [`SparseBinaryOpIntersectionKernel.cu_docs.md`](./SparseBinaryOpIntersectionKernel.cu_docs.md)
+- [`jit_utils.cpp_docs.md`](./jit_utils.cpp_docs.md)
+- [`ReduceNormKernel.cu_docs.md`](./ReduceNormKernel.cu_docs.md)
+- [`BinaryMiscOpsKernels.cu_docs.md`](./BinaryMiscOpsKernels.cu_docs.md)
+- [`RowwiseScaledMM.h_docs.md`](./RowwiseScaledMM.h_docs.md)
+- [`fused_adamw_amsgrad_impl.cuh_docs.md`](./fused_adamw_amsgrad_impl.cuh_docs.md)
+- [`Col2Im.cu_docs.md`](./Col2Im.cu_docs.md)
+- [`DistributionRandomKernel.cu_docs.md`](./DistributionRandomKernel.cu_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `Randperm.cuh_docs.md`
+- **Keyword Index**: `Randperm.cuh_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native/cuda`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native/cuda`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native/cuda`):
+
+- [`DeviceSqrt.cuh_kw.md_docs.md`](./DeviceSqrt.cuh_kw.md_docs.md)
+- [`UnaryGeometricAsinKernel.cu_kw.md_docs.md`](./UnaryGeometricAsinKernel.cu_kw.md_docs.md)
+- [`Distributions.cpp_docs.md_docs.md`](./Distributions.cpp_docs.md_docs.md)
+- [`fused_adamw_impl.cu_docs.md_docs.md`](./fused_adamw_impl.cu_docs.md_docs.md)
+- [`TensorTopK.h_kw.md_docs.md`](./TensorTopK.h_kw.md_docs.md)
+- [`ReduceOps.cpp_kw.md_docs.md`](./ReduceOps.cpp_kw.md_docs.md)
+- [`FusedSgdKernel.cu_docs.md_docs.md`](./FusedSgdKernel.cu_docs.md_docs.md)
+- [`Distributions.cu_kw.md_docs.md`](./Distributions.cu_kw.md_docs.md)
+- [`block_reduce.cuh_docs.md_docs.md`](./block_reduce.cuh_docs.md_docs.md)
+- [`fused_adagrad_impl.cuh_kw.md_docs.md`](./fused_adagrad_impl.cuh_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `Randperm.cuh_docs.md_docs.md`
+- **Keyword Index**: `Randperm.cuh_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

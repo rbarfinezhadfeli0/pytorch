@@ -1,0 +1,328 @@
+# Documentation: `docs/test/cpp/api/operations.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/cpp/api/operations.cpp_docs.md`
+- **Size**: 5,248 bytes (5.12 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/cpp/api/operations.cpp`
+
+## File Metadata
+
+- **Path**: `test/cpp/api/operations.cpp`
+- **Size**: 2,960 bytes (2.89 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**.
+
+## Original Source
+
+```cpp
+#include <gtest/gtest.h>
+
+#include <c10/util/irange.h>
+#include <torch/torch.h>
+
+#include <test/cpp/api/support.h>
+struct OperationTest : torch::test::SeedingFixture {
+ protected:
+  void SetUp() override {}
+
+  const int TEST_AMOUNT = 10;
+};
+
+TEST_F(OperationTest, Lerp) {
+  for ([[maybe_unused]] const auto i : c10::irange(TEST_AMOUNT)) {
+    // test lerp_kernel_scalar
+    auto start = torch::rand({3, 5});
+    auto end = torch::rand({3, 5});
+    auto scalar = 0.5;
+    // expected and actual
+    auto scalar_expected = start + scalar * (end - start);
+    auto out = torch::lerp(start, end, scalar);
+    // compare
+    ASSERT_EQ(out.dtype(), scalar_expected.dtype());
+    ASSERT_TRUE(out.allclose(scalar_expected));
+
+    // test lerp_kernel_tensor
+    auto weight = torch::rand({3, 5});
+    // expected and actual
+    auto tensor_expected = start + weight * (end - start);
+    out = torch::lerp(start, end, weight);
+    // compare
+    ASSERT_EQ(out.dtype(), tensor_expected.dtype());
+    ASSERT_TRUE(out.allclose(tensor_expected));
+  }
+}
+
+TEST_F(OperationTest, Cross) {
+  for ([[maybe_unused]] const auto i : c10::irange(TEST_AMOUNT)) {
+    // input
+    auto a = torch::rand({10, 3});
+    auto b = torch::rand({10, 3});
+    // expected
+    auto exp = torch::empty({10, 3});
+    for (const auto j : c10::irange(10)) {
+      auto u1 = a[j][0], u2 = a[j][1], u3 = a[j][2];
+      auto v1 = b[j][0], v2 = b[j][1], v3 = b[j][2];
+      exp[j][0] = u2 * v3 - v2 * u3;
+      exp[j][1] = v1 * u3 - u1 * v3;
+      exp[j][2] = u1 * v2 - v1 * u2;
+    }
+    // actual
+    auto out = torch::cross(a, b);
+    // compare
+    ASSERT_EQ(out.dtype(), exp.dtype());
+    ASSERT_TRUE(out.allclose(exp));
+  }
+}
+
+TEST_F(OperationTest, Linear_out) {
+  {
+    const auto x = torch::arange(100., 118).resize_({3, 3, 2});
+    const auto w = torch::arange(200., 206).resize_({3, 2});
+    const auto b = torch::arange(300., 303);
+    auto y = torch::empty({3, 3, 3});
+    at::linear_out(y, x, w, b);
+    const auto y_exp = torch::tensor(
+        {{{40601, 41004, 41407}, {41403, 41814, 42225}, {42205, 42624, 43043}},
+         {{43007, 43434, 43861}, {43809, 44244, 44679}, {44611, 45054, 45497}},
+         {{45413, 45864, 46315}, {46215, 46674, 47133}, {47017, 47484, 47951}}},
+        torch::kFloat);
+    ASSERT_TRUE(torch::allclose(y, y_exp));
+  }
+  {
+    const auto x = torch::arange(100., 118).resize_({3, 3, 2});
+    const auto w = torch::arange(200., 206).resize_({3, 2});
+    auto y = torch::empty({3, 3, 3});
+    at::linear_out(y, x, w);
+    ASSERT_EQ(y.ndimension(), 3);
+    ASSERT_EQ(y.sizes(), torch::IntArrayRef({3, 3, 3}));
+    const auto y_exp = torch::tensor(
+        {{{40301, 40703, 41105}, {41103, 41513, 41923}, {41905, 42323, 42741}},
+         {{42707, 43133, 43559}, {43509, 43943, 44377}, {44311, 44753, 45195}},
+         {{45113, 45563, 46013}, {45915, 46373, 46831}, {46717, 47183, 47649}}},
+        torch::kFloat);
+    ASSERT_TRUE(torch::allclose(y, y_exp));
+  }
+}
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 4 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes/Structs**: `OperationTest`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/cpp/api`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `gtest/gtest.h`
+- `c10/util/irange.h`
+- `torch/torch.h`
+- `test/cpp/api/support.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/cpp/api/operations.cpp
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/cpp/api`):
+
+- [`fft.cpp_docs.md`](./fft.cpp_docs.md)
+- [`tensor_options.cpp_docs.md`](./tensor_options.cpp_docs.md)
+- [`any.cpp_docs.md`](./any.cpp_docs.md)
+- [`torch_include.cpp_docs.md`](./torch_include.cpp_docs.md)
+- [`rnn.cpp_docs.md`](./rnn.cpp_docs.md)
+- [`jit.cpp_docs.md`](./jit.cpp_docs.md)
+- [`nn_utils.cpp_docs.md`](./nn_utils.cpp_docs.md)
+- [`nested.cpp_docs.md`](./nested.cpp_docs.md)
+- [`meta_tensor.cpp_docs.md`](./meta_tensor.cpp_docs.md)
+- [`nested_int.cpp_docs.md`](./nested_int.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `operations.cpp_docs.md`
+- **Keyword Index**: `operations.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/cpp/api`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/cpp/api`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/cpp/api/operations.cpp_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/cpp/api`):
+
+- [`init_baseline.py_kw.md_docs.md`](./init_baseline.py_kw.md_docs.md)
+- [`support.cpp_kw.md_docs.md`](./support.cpp_kw.md_docs.md)
+- [`memory.cpp_docs.md_docs.md`](./memory.cpp_docs.md_docs.md)
+- [`parallel_benchmark.cpp_docs.md_docs.md`](./parallel_benchmark.cpp_docs.md_docs.md)
+- [`dataloader.cpp_docs.md_docs.md`](./dataloader.cpp_docs.md_docs.md)
+- [`moduledict.cpp_kw.md_docs.md`](./moduledict.cpp_kw.md_docs.md)
+- [`support.h_kw.md_docs.md`](./support.h_kw.md_docs.md)
+- [`ordered_dict.cpp_docs.md_docs.md`](./ordered_dict.cpp_docs.md_docs.md)
+- [`functional.cpp_docs.md_docs.md`](./functional.cpp_docs.md_docs.md)
+- [`CMakeLists.txt_docs.md_docs.md`](./CMakeLists.txt_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `operations.cpp_docs.md_docs.md`
+- **Keyword Index**: `operations.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

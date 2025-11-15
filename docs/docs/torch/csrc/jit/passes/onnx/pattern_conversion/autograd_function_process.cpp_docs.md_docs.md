@@ -1,0 +1,288 @@
+# Documentation: `docs/torch/csrc/jit/passes/onnx/pattern_conversion/autograd_function_process.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/jit/passes/onnx/pattern_conversion/autograd_function_process.cpp_docs.md`
+- **Size**: 4,605 bytes (4.50 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/csrc/jit/passes/onnx/pattern_conversion/autograd_function_process.cpp`
+
+## File Metadata
+
+- **Path**: `torch/csrc/jit/passes/onnx/pattern_conversion/autograd_function_process.cpp`
+- **Size**: 1,975 bytes (1.93 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#include <torch/csrc/jit/passes/onnx/pattern_conversion/autograd_function_process.h>
+
+#include <torch/csrc/jit/jit_log.h>
+#include <torch/csrc/jit/passes/onnx/helper.h>
+#include <torch/csrc/jit/passes/utils/subgraph_utils.h>
+
+namespace torch::jit {
+
+static void convertSubgraphToSubBlock(Block* block) {
+  for (auto it = block->nodes().begin(), end = block->nodes().end();
+       it != end;) {
+    Node* node = *it++;
+    if (node->kind() == prim::PythonOp) {
+      // Construct subblock
+      auto subblock = node->addBlock();
+      auto graph = subblock->owningGraph();
+
+      std::unordered_map<Value*, Value*> env;
+      // Populate subblock with subgraph nodes
+      auto subgraph = node->g(attr::Subgraph);
+      for (const auto i : c10::irange(subgraph->inputs().size())) {
+        subblock->addInput()->copyMetadata(subgraph->inputs()[i]);
+        env[subgraph->inputs()[i]] = subblock->inputs()[i];
+      }
+      for (auto* n : subgraph->nodes()) {
+        auto cloned_n =
+            subblock->appendNode(graph->createClone(n, [&](Value* v) {
+              return env.find(v) != env.end() ? env[v] : v;
+            }));
+        for (size_t i = 0; i < n->outputs().size(); ++i) {
+          env[n->outputs().at(i)] = cloned_n->outputs().at(i);
+          auto it = std::find(
+              subgraph->outputs().begin(),
+              subgraph->outputs().end(),
+              n->outputs()[i]);
+          if (it != subgraph->outputs().end()) {
+            subblock->registerOutput(cloned_n->outputs()[i]);
+          }
+        }
+      }
+      // Remove subgraph attribute from the pythonOp node and recurse through
+      // sub-blocks
+      node->removeAttribute(attr::Subgraph);
+    }
+    for (auto block : node->blocks()) {
+      convertSubgraphToSubBlock(block);
+    }
+  }
+}
+
+// This pass is to be used for ONNX conversion only.
+void ONNXAutogradFunctionProcess(std::shared_ptr<Graph>& graph) {
+  convertSubgraphToSubBlock(graph->block());
+}
+
+} // namespace torch::jit
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 2 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`
+
+**Classes/Structs**: `subblock`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/jit/passes/onnx/pattern_conversion`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `torch/csrc/jit/passes/onnx/pattern_conversion/autograd_function_process.h`
+- `torch/csrc/jit/jit_log.h`
+- `torch/csrc/jit/passes/onnx/helper.h`
+- `torch/csrc/jit/passes/utils/subgraph_utils.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/jit/passes/onnx/pattern_conversion`):
+
+- [`common.h_docs.md`](./common.h_docs.md)
+- [`pattern_encapsulation.cpp_docs.md`](./pattern_encapsulation.cpp_docs.md)
+- [`autograd_function_process.h_docs.md`](./autograd_function_process.h_docs.md)
+- [`common.cpp_docs.md`](./common.cpp_docs.md)
+- [`pattern_conversion.h_docs.md`](./pattern_conversion.h_docs.md)
+- [`pattern_encapsulation.h_docs.md`](./pattern_encapsulation.h_docs.md)
+- [`pattern_conversion.cpp_docs.md`](./pattern_conversion.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `autograd_function_process.cpp_docs.md`
+- **Keyword Index**: `autograd_function_process.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/jit/passes/onnx/pattern_conversion`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/jit/passes/onnx/pattern_conversion`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/jit/passes/onnx/pattern_conversion`):
+
+- [`common.cpp_kw.md_docs.md`](./common.cpp_kw.md_docs.md)
+- [`pattern_conversion.h_docs.md_docs.md`](./pattern_conversion.h_docs.md_docs.md)
+- [`pattern_encapsulation.h_docs.md_docs.md`](./pattern_encapsulation.h_docs.md_docs.md)
+- [`pattern_encapsulation.cpp_docs.md_docs.md`](./pattern_encapsulation.cpp_docs.md_docs.md)
+- [`pattern_encapsulation.cpp_kw.md_docs.md`](./pattern_encapsulation.cpp_kw.md_docs.md)
+- [`pattern_conversion.cpp_docs.md_docs.md`](./pattern_conversion.cpp_docs.md_docs.md)
+- [`common.h_kw.md_docs.md`](./common.h_kw.md_docs.md)
+- [`pattern_conversion.h_kw.md_docs.md`](./pattern_conversion.h_kw.md_docs.md)
+- [`common.cpp_docs.md_docs.md`](./common.cpp_docs.md_docs.md)
+- [`pattern_conversion.cpp_kw.md_docs.md`](./pattern_conversion.cpp_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `autograd_function_process.cpp_docs.md_docs.md`
+- **Keyword Index**: `autograd_function_process.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

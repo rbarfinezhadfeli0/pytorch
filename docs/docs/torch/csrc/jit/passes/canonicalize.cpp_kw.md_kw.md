@@ -1,0 +1,80 @@
+# Keyword Index: `docs/torch/csrc/jit/passes/canonicalize.cpp_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/csrc/jit/passes/canonicalize.cpp_kw.md](../../../../../../docs/torch/csrc/jit/passes/canonicalize.cpp_kw.md)
+- **Documentation**: [`canonicalize.cpp_kw.md_docs.md`](./canonicalize.cpp_kw.md_docs.md)
+- **Folder**: `docs/torch/csrc/jit/passes`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`Architecture`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`Basic`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`CanonicalizeIfOutputs`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`CanonicalizeLoopOutputs`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`CanonicalizeOutputs`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`Complete`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`Considerations`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`Dependencies`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`Design`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`Detailed`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`Documentation`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`Efficiency`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`Extracted`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`File`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`Folder`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`Functions`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`Generated`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`High`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`How`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`In`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`Includes`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`Index`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`Information`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`Keyword`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`Keywords`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`Level`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`Map`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`Metadata`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`Namespaces`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`Original`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`Overview`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`Performance`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`Purpose`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`PyTorch`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`Related`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`Repository`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`Safety`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`Section`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`Security`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`Source`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`System`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`Testing`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`The`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`This`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+- **`Usage`**: [canonicalize.cpp_kw.md_docs.md](./canonicalize.cpp_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

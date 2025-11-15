@@ -1,0 +1,299 @@
+# Documentation: `docs/test/mobile/model_test/torchvision_models.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/mobile/model_test/torchvision_models.py_docs.md`
+- **Size**: 4,546 bytes (4.44 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/mobile/model_test/torchvision_models.py`
+
+## File Metadata
+
+- **Path**: `test/mobile/model_test/torchvision_models.py`
+- **Size**: 1,824 bytes (1.78 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**.
+
+## Original Source
+
+```python
+from torchvision import models
+
+import torch
+from torch.utils.bundled_inputs import augment_model_with_bundled_inputs
+from torch.utils.mobile_optimizer import optimize_for_mobile
+
+
+class MobileNetV2Module:
+    def getModule(self):
+        model = models.mobilenet_v2(weights=models.MobileNet_V2_Weights.IMAGENET1K_V1)
+        model.eval()
+        example = torch.zeros(1, 3, 224, 224)
+        traced_script_module = torch.jit.trace(model, example)
+        optimized_module = optimize_for_mobile(traced_script_module)
+        augment_model_with_bundled_inputs(
+            optimized_module,
+            [
+                (example,),
+            ],
+        )
+        optimized_module(example)
+        return optimized_module
+
+
+class MobileNetV2VulkanModule:
+    def getModule(self):
+        model = models.mobilenet_v2(weights=models.MobileNet_V2_Weights.IMAGENET1K_V1)
+        model.eval()
+        example = torch.zeros(1, 3, 224, 224)
+        traced_script_module = torch.jit.trace(model, example)
+        optimized_module = optimize_for_mobile(traced_script_module, backend="vulkan")
+        augment_model_with_bundled_inputs(
+            optimized_module,
+            [
+                (example,),
+            ],
+        )
+        optimized_module(example)
+        return optimized_module
+
+
+class Resnet18Module:
+    def getModule(self):
+        model = models.resnet18(weights=models.ResNet18_Weights.IMAGENET1K_V1)
+        model.eval()
+        example = torch.zeros(1, 3, 224, 224)
+        traced_script_module = torch.jit.trace(model, example)
+        optimized_module = optimize_for_mobile(traced_script_module)
+        augment_model_with_bundled_inputs(
+            optimized_module,
+            [
+                (example,),
+            ],
+        )
+        optimized_module(example)
+        return optimized_module
+
+```
+
+
+
+## High-Level Overview
+
+
+This Python file contains 3 class(es) and 3 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `MobileNetV2Module`, `MobileNetV2VulkanModule`, `Resnet18Module`
+
+**Functions defined**: `getModule`, `getModule`, `getModule`
+
+**Key imports**: models, torch, augment_model_with_bundled_inputs, optimize_for_mobile
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/mobile/model_test`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `torchvision`: models
+- `torch`
+- `torch.utils.bundled_inputs`: augment_model_with_bundled_inputs
+- `torch.utils.mobile_optimizer`: optimize_for_mobile
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- **Code Execution**: Uses `eval()` or `exec()` - ensure input is sanitized
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/mobile/model_test/torchvision_models.py
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/mobile/model_test`):
+
+- [`gen_test_model.py_docs.md`](./gen_test_model.py_docs.md)
+- [`update_production_ops.py_docs.md`](./update_production_ops.py_docs.md)
+- [`math_ops.py_docs.md`](./math_ops.py_docs.md)
+- [`builtin_ops.py_docs.md`](./builtin_ops.py_docs.md)
+- [`README.md_docs.md`](./README.md_docs.md)
+- [`nn_ops.py_docs.md`](./nn_ops.py_docs.md)
+- [`model_ops.yaml_docs.md`](./model_ops.yaml_docs.md)
+- [`quantization_ops.py_docs.md`](./quantization_ops.py_docs.md)
+- [`android_api_module.py_docs.md`](./android_api_module.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `torchvision_models.py_docs.md`
+- **Keyword Index**: `torchvision_models.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/mobile/model_test`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/mobile/model_test`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- **Code Execution**: Uses `eval()` or `exec()` - ensure input is sanitized
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/mobile/model_test/torchvision_models.py_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/mobile/model_test`):
+
+- [`tensor_ops.py_kw.md_docs.md`](./tensor_ops.py_kw.md_docs.md)
+- [`builtin_ops.py_docs.md_docs.md`](./builtin_ops.py_docs.md_docs.md)
+- [`README.md_docs.md_docs.md`](./README.md_docs.md_docs.md)
+- [`sampling_ops.py_docs.md_docs.md`](./sampling_ops.py_docs.md_docs.md)
+- [`android_api_module.py_kw.md_docs.md`](./android_api_module.py_kw.md_docs.md)
+- [`android_api_module.py_docs.md_docs.md`](./android_api_module.py_docs.md_docs.md)
+- [`torchvision_models.py_kw.md_docs.md`](./torchvision_models.py_kw.md_docs.md)
+- [`tensor_ops.py_docs.md_docs.md`](./tensor_ops.py_docs.md_docs.md)
+- [`math_ops.py_kw.md_docs.md`](./math_ops.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `torchvision_models.py_docs.md_docs.md`
+- **Keyword Index**: `torchvision_models.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

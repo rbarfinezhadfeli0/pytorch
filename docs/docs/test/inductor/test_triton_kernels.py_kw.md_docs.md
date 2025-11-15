@@ -1,0 +1,385 @@
+# Documentation: `docs/test/inductor/test_triton_kernels.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/test/inductor/test_triton_kernels.py_kw.md`
+- **Size**: 23,554 bytes (23.00 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `test/inductor/test_triton_kernels.py`
+
+## File Information
+
+- **Original File**: [test/inductor/test_triton_kernels.py](../../../test/inductor/test_triton_kernels.py)
+- **Documentation**: [`test_triton_kernels.py_docs.md`](./test_triton_kernels.py_docs.md)
+- **Folder**: `test/inductor`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`AddOne`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`C`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`CustomOpTests`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`D`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`KernelTests`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`MutationTests`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`_CustomPass`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+
+### Functions
+
+- **`_`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`__call__`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`__init__`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`_kernel_launched_in_code`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`_mul2`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`_triton_get_ast_equal_to_str`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`_triton_kernel`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`add`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`add_1_time_kernel`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`add_4_times_kernel`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`add_in_loop`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`add_kernel`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`add_kernel_half_n_elements`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`add_kernel_out_of_order`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`add_kernel_out_of_order_fn1`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`add_kernel_with_dtype`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`add_kernel_with_fn_call`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`add_kernel_with_imported_symbol`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`add_noise`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`add_one`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`add_one_kernel`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`add_triton`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`arange_out`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`argmax_kernel`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`as`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`backward`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`branch_with_multiple_yield_args`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`call_triton`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`call_triton_add`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`call_triton_return_view`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`call_triton_take_view`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`cumsum_kernel`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`decomp`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`early_config_prune`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`f`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`fn`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`foo`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`forward`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`fwd_kernel`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`get_op_configs`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`grid`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`grid_fn`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`helper_add_and_out`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`helper_id`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`heuristics_kernel`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`impl`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`impl2`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`impl_out`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`import`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`increment_kernel`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`init_to_zero`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`kernel`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`kernel_with_label`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`log2`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`make_mutation_test`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`meta`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`mul2_and_add_and_zero_negatives_kernel`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`mulC_kernel`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`nested_cond_op_kernel`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`ones_kernel`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`op_zeros`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`pass_kernel`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`perf_model`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`pow2_kernel`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`prep`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`prune_by_kernel`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`reduce_sum_kernel`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`sin_kernel`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`sin_triton`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`special_params_kernel`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`square`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_add_for_loop`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_add_for_loop2`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_add_kernel`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_add_kernel_on_device_tma_new_api`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_add_kernel_on_device_tma_old_api`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_add_nested_for_loop`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_add_nested_for_loop_multi_return`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_argmax`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_autotune_no_pre_or_post_hook_user_defined`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_autotune_unbacked`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_branch_with_multiple_yield_args`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_capture_triton_meta`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_capture_triton_special_kwargs`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_constexpr_dynamic_shapes`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_cumsum`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_fn`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_fn_call_multi_return`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_fn_call_one_return`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_for_loop_arg`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_for_loop_arg_2`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_get_tma_stores`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_i64_input`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_kernel_inline_asm`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_kernel_with_docstring`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_labels`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_layout_constraint_needs_fixed_stride_order`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_nested_cond_op_kernel`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_no_nan_kernels`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_on_device_tma`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_out_of_order_kernel`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_out_of_order_kernel_call`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_preserves_strides`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_reduce_sum`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_subclass`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_tma_capture_and_functionalize`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_tma_descriptor_1d`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_tma_descriptor_2d`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_tma_descriptor_dedup`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_tma_graph_breaks`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_attrs_dict_equal_1_None_format`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_dynamic_grid_no_recompile`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_2d_autotune`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_autotune`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_autotune_with_unsupported_args`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_caching`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_caching_duplicate`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_constants`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_dependancies`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_different_shapes`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_dtype_view`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_empty_autotune_config_dict`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_emulate_precision_mm_kernels_do_not_change`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_emulate_precision_unaffected`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_equal_to_1_arg`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_equal_to_1_float_arg`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_fallback`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_float64_constant`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_functionalize`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_global_constexpr`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_heuristic`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_higher_order_func`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_inference_mode`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_inner_triton_function`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_inputs_buffer_reuse`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_matmul_tracking`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_multi_kernel`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_multiple_outputs`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_mutation_not_mark_dirty`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_mutation_type`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_native`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_no_clones`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_none_args`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_num_ctas`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_out_of_order`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_prune_configs_by`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_prune_configs_by_recompile`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_reinplace_inplaceable_pass`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_reset_to_zero`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_restore_value`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_slice_and_view_input`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_special_kwargs_with_autotune`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_special_kwargs_without_autotune`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_special_params`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_strided_input`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_strided_input_nonzero_offset`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_tracing`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_triton_dtype`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_unbacked_shape_tensor`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_various_args`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_with_constexpr_function`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_with_grad_option`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_with_imported_symbol`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_with_imported_symbol_with_custom_name`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_with_kernel_param`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_kernel_with_views`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_triton_single_autotune`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_while_loop`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`test_wrap_triton_disabled_in_triton_op`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`triton_`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`triton_add_noise_`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`triton_kernel_impl`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`weird_op_with_lowering`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+
+### Imports
+
+- **`AttrsDescriptor`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`Autotuner`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`FakeTensorMode`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`FileCheck`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`TwoTensor`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`capture_triton`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`common_utils`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`config`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`empty_strided`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`functools`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`functorch`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`identify_mutated_tensors`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`kernel_side_table`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`language`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`log_settings`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`logging`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`make_fx`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`os`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`run_and_get_code`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`run_tests`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`torch`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`torch._dynamo`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`torch._dynamo.testing`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`torch._higher_order_ops.triton_kernel_wrap`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`torch._inductor`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`torch._inductor.lowering`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`torch._inductor.pattern_matcher`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`torch._inductor.test_case`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`torch._inductor.utils`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`torch._library`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`torch._subclasses.fake_tensor`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`torch._subclasses.functional_tensor`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`torch.testing`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`torch.testing._internal`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`torch.testing._internal.inductor_utils`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`torch.testing._internal.logging_utils`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`torch.testing._internal.triton_utils`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`torch.testing._internal.two_tensor`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`torch.utils._pytree`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`torch.utils._triton`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`triton`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`triton.backends.compiler`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`triton.language`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`triton.language.extra.cuda.libdevice`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`triton.language.extra.intel.libdevice`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`triton.language.extra.libdevice`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+- **`triton.runtime.autotuner`**: [test_triton_kernels.py_docs.md](./test_triton_kernels.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/inductor`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/inductor`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/inductor/test_triton_kernels.py_kw.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/inductor`):
+
+- [`test_snode_runtime.py_kw.md_docs.md`](./test_snode_runtime.py_kw.md_docs.md)
+- [`test_metrics.py_docs.md_docs.md`](./test_metrics.py_docs.md_docs.md)
+- [`test_flex_attention.py_kw.md_docs.md`](./test_flex_attention.py_kw.md_docs.md)
+- [`test_cuda_repro.py_kw.md_docs.md`](./test_cuda_repro.py_kw.md_docs.md)
+- [`test_fxir_backend.py_kw.md_docs.md`](./test_fxir_backend.py_kw.md_docs.md)
+- [`test_split_cat_fx_passes.py_kw.md_docs.md`](./test_split_cat_fx_passes.py_kw.md_docs.md)
+- [`test_mmdecomp.py_kw.md_docs.md`](./test_mmdecomp.py_kw.md_docs.md)
+- [`test_torchinductor_codegen_config_overrides.py_kw.md_docs.md`](./test_torchinductor_codegen_config_overrides.py_kw.md_docs.md)
+- [`test_aot_inductor_custom_ops.py_kw.md_docs.md`](./test_aot_inductor_custom_ops.py_kw.md_docs.md)
+- [`test_minifier.py_kw.md_docs.md`](./test_minifier.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_triton_kernels.py_kw.md_docs.md`
+- **Keyword Index**: `test_triton_kernels.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

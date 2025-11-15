@@ -1,0 +1,84 @@
+# Keyword Index: `docs/torch/csrc/jit/tensorexpr/lowerings.cpp_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/csrc/jit/tensorexpr/lowerings.cpp_kw.md](../../../../../../docs/torch/csrc/jit/tensorexpr/lowerings.cpp_kw.md)
+- **Documentation**: [`lowerings.cpp_kw.md_docs.md`](./lowerings.cpp_kw.md_docs.md)
+- **Folder**: `docs/torch/csrc/jit/tensorexpr`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Activation`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Analysis`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Architecture`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Basic`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Class`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Common`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Complete`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Compute`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Considerations`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Dependencies`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Design`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Detailed`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Documentation`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Efficiency`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Extracted`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`File`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Folder`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Functions`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Generated`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`High`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`How`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`In`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Includes`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Index`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Information`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Keyword`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Keywords`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Level`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Map`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Metadata`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`NNCLoweringFunction`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Namespaces`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Original`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Overview`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Performance`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Purpose`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`PyTorch`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Related`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Repository`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Safety`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Section`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Security`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Source`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Structs`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`System`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Testing`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`The`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`This`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+- **`Usage`**: [lowerings.cpp_kw.md_docs.md](./lowerings.cpp_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

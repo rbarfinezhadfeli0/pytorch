@@ -1,0 +1,72 @@
+# Keyword Index: `docs/aten/src/ATen/native/SobolEngineOpsUtils.cpp_docs.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/native/SobolEngineOpsUtils.cpp_docs.md](../../../../../../docs/aten/src/ATen/native/SobolEngineOpsUtils.cpp_docs.md)
+- **Documentation**: [`SobolEngineOpsUtils.cpp_docs.md_docs.md`](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/native`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ACM`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`ATen`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`All`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`C`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`Code`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`DataFrame`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`Documentation`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`Extension`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`F`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`File`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`For`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`Implementing`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`Joe`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`KB`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`Kuo`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`Mar`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`Math`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`Metadata`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`NOLINTNEXTLINE`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`Original`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`Path`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`Purpose`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`PyTorch`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`Remark`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`S`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`Section`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`Size`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`SobolEngineOpsUtils`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`SoboleEngine`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`Softw`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`Source`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`TORCH_ASSERT_ONLY_METHOD_OPERATORS`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`The`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`These`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`This`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`Trans`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`Type`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+- **`Y`**: [SobolEngineOpsUtils.cpp_docs.md_docs.md](./SobolEngineOpsUtils.cpp_docs.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

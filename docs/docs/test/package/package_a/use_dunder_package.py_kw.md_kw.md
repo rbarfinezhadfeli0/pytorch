@@ -1,0 +1,75 @@
+# Keyword Index: `docs/test/package/package_a/use_dunder_package.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/test/package/package_a/use_dunder_package.py_kw.md](../../../../../docs/test/package/package_a/use_dunder_package.py_kw.md)
+- **Documentation**: [`use_dunder_package.py_kw.md_docs.md`](./use_dunder_package.py_kw.md_docs.md)
+- **Folder**: `docs/test/package/package_a`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`Architecture`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`Basic`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`Complete`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`Considerations`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`Dependencies`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`Design`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`Detailed`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`Documentation`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`Efficiency`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`Extracted`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`File`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`Folder`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`Functions`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`Generated`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`High`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`How`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`In`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`Index`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`Information`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`Keyword`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`Keywords`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`Level`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`Map`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`Metadata`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`Original`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`Overview`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`Performance`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`Purpose`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`PyTorch`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`Related`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`Repository`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`Safety`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`Section`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`Security`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`Source`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`System`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`Testing`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`The`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`This`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+- **`Usage`**: [use_dunder_package.py_kw.md_docs.md](./use_dunder_package.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

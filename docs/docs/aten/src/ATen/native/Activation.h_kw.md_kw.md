@@ -1,0 +1,87 @@
+# Keyword Index: `docs/aten/src/ATen/native/Activation.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/native/Activation.h_kw.md](../../../../../../docs/aten/src/ATen/native/Activation.h_kw.md)
+- **Documentation**: [`Activation.h_kw.md_docs.md`](./Activation.h_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/native`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Activation`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Analysis`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Architecture`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Basic`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Class`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Complete`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Considerations`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Dependencies`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Design`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Detailed`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`DispatchStub`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Documentation`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Efficiency`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Exception`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Extracted`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`File`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Folder`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Gelu`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Generated`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`High`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`How`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`In`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Includes`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Index`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Information`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Keyword`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Keywords`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Level`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Map`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Metadata`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Namespaces`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Original`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Overview`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Performance`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Purpose`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`PyTorch`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Related`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Repository`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Safety`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Scalar`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Section`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Security`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Source`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Structs`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`System`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`TensorBase`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`TensorIterator`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`TensorIteratorBase`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Testing`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`The`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`This`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+- **`Usage`**: [Activation.h_kw.md_docs.md](./Activation.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

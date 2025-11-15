@@ -1,0 +1,314 @@
+# Documentation: `docs/torch/nativert/executor/memory/LayoutPlannerSettings.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/nativert/executor/memory/LayoutPlannerSettings.h_docs.md`
+- **Size**: 4,456 bytes (4.35 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/nativert/executor/memory/LayoutPlannerSettings.h`
+
+## File Metadata
+
+- **Path**: `torch/nativert/executor/memory/LayoutPlannerSettings.h`
+- **Size**: 1,914 bytes (1.87 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#pragma once
+
+#include <chrono>
+
+namespace torch::nativert {
+
+enum class LayoutPlannerAlgorithmType {
+  Bump,
+  GreedyBySize,
+  DisjointStorageGroups,
+};
+
+class LayoutManagerSettings {
+ public:
+  LayoutManagerSettings() = default;
+
+  bool deallocateBetweenRequests() const {
+    return deallocateBetweenRequests_;
+  }
+
+  LayoutManagerSettings& setDeallocateBetweenRequests(
+      bool deallocateBetweenRequests) {
+    deallocateBetweenRequests_ = deallocateBetweenRequests;
+    return *this;
+  }
+
+ private:
+  friend class LayoutManager;
+  bool deallocateBetweenRequests_{true};
+};
+
+class LayoutPlannerSettings {
+ public:
+  LayoutPlannerSettings() = default;
+
+  bool enabled() const {
+    return enabled_;
+  }
+
+  LayoutPlannerAlgorithmType algorithmType() const {
+    return layoutPlannerAlgorithmType_;
+  }
+
+  std::chrono::seconds planningInterval() const {
+    return planningInterval_;
+  }
+
+  const LayoutManagerSettings& layoutManagerSettings() const {
+    return layoutManagerSettings_;
+  }
+
+  LayoutPlannerSettings& setEnabled(bool enabled) {
+    enabled_ = enabled;
+    return *this;
+  }
+
+  LayoutPlannerSettings& setAlgorithmType(
+      LayoutPlannerAlgorithmType layoutPlannerAlgorithmType) {
+    layoutPlannerAlgorithmType_ = layoutPlannerAlgorithmType;
+    return *this;
+  }
+
+  LayoutPlannerSettings& setPlanningInterval(
+      std::chrono::seconds planningInterval) {
+    planningInterval_ = planningInterval;
+    return *this;
+  }
+
+  LayoutPlannerSettings& setLayoutManagerSettings(
+      LayoutManagerSettings layoutManagerSettings) {
+    layoutManagerSettings_ = layoutManagerSettings;
+    return *this;
+  }
+
+ private:
+  friend class LayoutPlanner;
+  bool enabled_{false};
+  LayoutPlannerAlgorithmType layoutPlannerAlgorithmType_{
+      LayoutPlannerAlgorithmType::Bump};
+  std::chrono::seconds planningInterval_{5};
+  LayoutManagerSettings layoutManagerSettings_;
+};
+
+} // namespace torch::nativert
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 5 class(es)/struct(s) and 4 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`
+
+**Classes/Structs**: `LayoutPlannerAlgorithmType`, `LayoutManagerSettings`, `LayoutManager`, `LayoutPlannerSettings`, `LayoutPlanner`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/nativert/executor/memory`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `chrono`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/nativert/executor/memory`):
+
+- [`Bump.h_docs.md`](./Bump.h_docs.md)
+- [`AliasAnalyzer.cpp_docs.md`](./AliasAnalyzer.cpp_docs.md)
+- [`LayoutPlanner.h_docs.md`](./LayoutPlanner.h_docs.md)
+- [`LayoutManager.cpp_docs.md`](./LayoutManager.cpp_docs.md)
+- [`DisjointStorageGroups.h_docs.md`](./DisjointStorageGroups.h_docs.md)
+- [`LayoutPlanner.cpp_docs.md`](./LayoutPlanner.cpp_docs.md)
+- [`GreedyBySize.h_docs.md`](./GreedyBySize.h_docs.md)
+- [`Bump.cpp_docs.md`](./Bump.cpp_docs.md)
+- [`DisjointStorageGroups.cpp_docs.md`](./DisjointStorageGroups.cpp_docs.md)
+- [`LayoutPlannerAlgorithm.h_docs.md`](./LayoutPlannerAlgorithm.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `LayoutPlannerSettings.h_docs.md`
+- **Keyword Index**: `LayoutPlannerSettings.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/nativert/executor/memory`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/nativert/executor/memory`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/nativert/executor/memory`):
+
+- [`LayoutPlannerSettings.h_kw.md_docs.md`](./LayoutPlannerSettings.h_kw.md_docs.md)
+- [`LayoutManager.h_kw.md_docs.md`](./LayoutManager.h_kw.md_docs.md)
+- [`AliasAnalyzer.h_kw.md_docs.md`](./AliasAnalyzer.h_kw.md_docs.md)
+- [`FunctionSchema.cpp_docs.md_docs.md`](./FunctionSchema.cpp_docs.md_docs.md)
+- [`LayoutPlanner.h_docs.md_docs.md`](./LayoutPlanner.h_docs.md_docs.md)
+- [`LayoutPlanner.cpp_kw.md_docs.md`](./LayoutPlanner.cpp_kw.md_docs.md)
+- [`DisjointStorageGroups.cpp_docs.md_docs.md`](./DisjointStorageGroups.cpp_docs.md_docs.md)
+- [`DisjointStorageGroups.h_kw.md_docs.md`](./DisjointStorageGroups.h_kw.md_docs.md)
+- [`GreedyBySize.cpp_docs.md_docs.md`](./GreedyBySize.cpp_docs.md_docs.md)
+- [`FunctionSchema.cpp_kw.md_docs.md`](./FunctionSchema.cpp_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `LayoutPlannerSettings.h_docs.md_docs.md`
+- **Keyword Index**: `LayoutPlannerSettings.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

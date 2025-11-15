@@ -1,0 +1,53 @@
+# Index: `docs/aten/src/ATen/native/quantized/cpu/qnnpack/scripts/`
+
+## Overview
+
+This folder contains source code, configurations, or documentation for the PyTorch project.
+
+**Location**: `docs/aten/src/ATen/native/quantized/cpu/qnnpack/scripts/`
+
+## Subfolders
+
+*No subfolders.*
+
+## Files
+
+| File | Description | Documentation | Keywords |
+|------|-------------|---------------|----------|
+| [`build-android-arm64.sh_docs.md`](../../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/scripts/build-android-arm64.sh_docs.md) | Documentation | [docs](./build-android-arm64.sh_docs.md_docs.md) | [keywords](./build-android-arm64.sh_docs.md_kw.md) |
+| [`build-android-arm64.sh_kw.md`](../../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/scripts/build-android-arm64.sh_kw.md) | Documentation | [docs](./build-android-arm64.sh_kw.md_docs.md) | [keywords](./build-android-arm64.sh_kw.md_kw.md) |
+| [`build-android-armv7.sh_docs.md`](../../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/scripts/build-android-armv7.sh_docs.md) | Documentation | [docs](./build-android-armv7.sh_docs.md_docs.md) | [keywords](./build-android-armv7.sh_docs.md_kw.md) |
+| [`build-android-armv7.sh_kw.md`](../../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/scripts/build-android-armv7.sh_kw.md) | Documentation | [docs](./build-android-armv7.sh_kw.md_docs.md) | [keywords](./build-android-armv7.sh_kw.md_kw.md) |
+| [`build-android-x86.sh_docs.md`](../../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/scripts/build-android-x86.sh_docs.md) | Documentation | [docs](./build-android-x86.sh_docs.md_docs.md) | [keywords](./build-android-x86.sh_docs.md_kw.md) |
+| [`build-android-x86.sh_kw.md`](../../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/scripts/build-android-x86.sh_kw.md) | Documentation | [docs](./build-android-x86.sh_kw.md_docs.md) | [keywords](./build-android-x86.sh_kw.md_kw.md) |
+| [`build-ios-arm64.sh_docs.md`](../../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/scripts/build-ios-arm64.sh_docs.md) | Documentation | [docs](./build-ios-arm64.sh_docs.md_docs.md) | [keywords](./build-ios-arm64.sh_docs.md_kw.md) |
+| [`build-ios-arm64.sh_kw.md`](../../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/scripts/build-ios-arm64.sh_kw.md) | Documentation | [docs](./build-ios-arm64.sh_kw.md_docs.md) | [keywords](./build-ios-arm64.sh_kw.md_kw.md) |
+| [`build-ios-arm64e.sh_docs.md`](../../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/scripts/build-ios-arm64e.sh_docs.md) | Documentation | [docs](./build-ios-arm64e.sh_docs.md_docs.md) | [keywords](./build-ios-arm64e.sh_docs.md_kw.md) |
+| [`build-ios-arm64e.sh_kw.md`](../../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/scripts/build-ios-arm64e.sh_kw.md) | Documentation | [docs](./build-ios-arm64e.sh_kw.md_docs.md) | [keywords](./build-ios-arm64e.sh_kw.md_kw.md) |
+| [`build-ios-armv7.sh_docs.md`](../../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/scripts/build-ios-armv7.sh_docs.md) | Documentation | [docs](./build-ios-armv7.sh_docs.md_docs.md) | [keywords](./build-ios-armv7.sh_docs.md_kw.md) |
+| [`build-ios-armv7.sh_kw.md`](../../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/scripts/build-ios-armv7.sh_kw.md) | Documentation | [docs](./build-ios-armv7.sh_kw.md_docs.md) | [keywords](./build-ios-armv7.sh_kw.md_kw.md) |
+| [`build-ios-armv7s.sh_docs.md`](../../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/scripts/build-ios-armv7s.sh_docs.md) | Documentation | [docs](./build-ios-armv7s.sh_docs.md_docs.md) | [keywords](./build-ios-armv7s.sh_docs.md_kw.md) |
+| [`build-ios-armv7s.sh_kw.md`](../../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/scripts/build-ios-armv7s.sh_kw.md) | Documentation | [docs](./build-ios-armv7s.sh_kw.md_docs.md) | [keywords](./build-ios-armv7s.sh_kw.md_kw.md) |
+| [`build-ios-i386.sh_docs.md`](../../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/scripts/build-ios-i386.sh_docs.md) | Documentation | [docs](./build-ios-i386.sh_docs.md_docs.md) | [keywords](./build-ios-i386.sh_docs.md_kw.md) |
+| [`build-ios-i386.sh_kw.md`](../../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/scripts/build-ios-i386.sh_kw.md) | Documentation | [docs](./build-ios-i386.sh_kw.md_docs.md) | [keywords](./build-ios-i386.sh_kw.md_kw.md) |
+| [`build-ios-x86_64.sh_docs.md`](../../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/scripts/build-ios-x86_64.sh_docs.md) | Documentation | [docs](./build-ios-x86_64.sh_docs.md_docs.md) | [keywords](./build-ios-x86_64.sh_docs.md_kw.md) |
+| [`build-ios-x86_64.sh_kw.md`](../../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/scripts/build-ios-x86_64.sh_kw.md) | Documentation | [docs](./build-ios-x86_64.sh_kw.md_docs.md) | [keywords](./build-ios-x86_64.sh_kw.md_kw.md) |
+| [`build-local.sh_docs.md`](../../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/scripts/build-local.sh_docs.md) | Documentation | [docs](./build-local.sh_docs.md_docs.md) | [keywords](./build-local.sh_docs.md_kw.md) |
+| [`build-local.sh_kw.md`](../../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/scripts/build-local.sh_kw.md) | Documentation | [docs](./build-local.sh_kw.md_docs.md) | [keywords](./build-local.sh_kw.md_kw.md) |
+| [`test-android-arm64.sh_docs.md`](../../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/scripts/test-android-arm64.sh_docs.md) | Documentation | [docs](./test-android-arm64.sh_docs.md_docs.md) | [keywords](./test-android-arm64.sh_docs.md_kw.md) |
+| [`test-android-arm64.sh_kw.md`](../../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/scripts/test-android-arm64.sh_kw.md) | Documentation | [docs](./test-android-arm64.sh_kw.md_docs.md) | [keywords](./test-android-arm64.sh_kw.md_kw.md) |
+| [`test-android-armv7.sh_docs.md`](../../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/scripts/test-android-armv7.sh_docs.md) | Documentation | [docs](./test-android-armv7.sh_docs.md_docs.md) | [keywords](./test-android-armv7.sh_docs.md_kw.md) |
+| [`test-android-armv7.sh_kw.md`](../../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/scripts/test-android-armv7.sh_kw.md) | Documentation | [docs](./test-android-armv7.sh_kw.md_docs.md) | [keywords](./test-android-armv7.sh_kw.md_kw.md) |
+| [`test-android-x86.sh_docs.md`](../../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/scripts/test-android-x86.sh_docs.md) | Documentation | [docs](./test-android-x86.sh_docs.md_docs.md) | [keywords](./test-android-x86.sh_docs.md_kw.md) |
+| [`test-android-x86.sh_kw.md`](../../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/scripts/test-android-x86.sh_kw.md) | Documentation | [docs](./test-android-x86.sh_kw.md_docs.md) | [keywords](./test-android-x86.sh_kw.md_kw.md) |
+
+
+## Navigation
+
+- **Parent Folder**: [..](../index.md)
+- **Folder Documentation**: [doc.md](./doc.md)
+- **Keyword Index**: [sub.md](./sub.md)
+
+---
+
+*Generated by PyTorch Repository Documentation System*

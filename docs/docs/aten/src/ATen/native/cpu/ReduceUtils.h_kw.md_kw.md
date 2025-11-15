@@ -1,0 +1,84 @@
+# Keyword Index: `docs/aten/src/ATen/native/cpu/ReduceUtils.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/native/cpu/ReduceUtils.h_kw.md](../../../../../../../docs/aten/src/ATen/native/cpu/ReduceUtils.h_kw.md)
+- **Documentation**: [`ReduceUtils.h_kw.md_docs.md`](./ReduceUtils.h_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/native/cpu`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Analysis`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Architecture`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Basic`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`CPU_CAPABILITY`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Complete`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Considerations`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Dependencies`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Design`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Detailed`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Documentation`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Efficiency`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Extracted`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`File`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Folder`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Functions`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Generated`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`High`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`How`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`In`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Includes`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Index`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Information`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Keyword`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Keywords`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Level`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Map`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Metadata`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Namespaces`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`NumericUtils`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`OpMathType`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Original`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Overview`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Parallel`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Performance`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Purpose`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`PyTorch`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`ReduceUtils`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`ReductionType`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Related`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Repository`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Safety`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Section`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Security`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Source`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`System`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Testing`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`The`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`This`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+- **`Usage`**: [ReduceUtils.h_kw.md_docs.md](./ReduceUtils.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

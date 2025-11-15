@@ -1,0 +1,96 @@
+# Subtree Keyword Index: `docs/test/package/package_a/`
+
+## Scope
+
+This index covers all files within `docs/test/package/package_a/` and all its subdirectories (recursively).
+
+## Keywords
+
+
+### __init__
+
+- [`docs/test/package/package_a/__init__.py_docs.md`](./__init__.py_docs.md_docs.md)
+- [`docs/test/package/package_a/__init__.py_kw.md`](./__init__.py_kw.md_docs.md)
+
+### fake_interface
+
+- [`docs/test/package/package_a/fake_interface.py_kw.md`](./fake_interface.py_kw.md_docs.md)
+- [`docs/test/package/package_a/fake_interface.py_docs.md`](./fake_interface.py_docs.md_docs.md)
+
+### fake_script_class
+
+- [`docs/test/package/package_a/fake_script_class.py_docs.md`](./fake_script_class.py_docs.md_docs.md)
+- [`docs/test/package/package_a/fake_script_class.py_kw.md`](./fake_script_class.py_kw.md_docs.md)
+
+### files-.md
+
+- [`docs/test/package/package_a/test_nn_module.py_kw.md`](./test_nn_module.py_kw.md_docs.md)
+- [`docs/test/package/package_a/long_name.py_docs.md`](./long_name.py_docs.md_docs.md)
+- [`docs/test/package/package_a/std_sys_module_hacks_3_13.py_docs.md`](./std_sys_module_hacks_3_13.py_docs.md_docs.md)
+- [`docs/test/package/package_a/fake_script_class.py_docs.md`](./fake_script_class.py_docs.md_docs.md)
+- [`docs/test/package/package_a/test_module.py_kw.md`](./test_module.py_kw.md_docs.md)
+- [`docs/test/package/package_a/use_dunder_package.py_kw.md`](./use_dunder_package.py_kw.md_docs.md)
+- [`docs/test/package/package_a/fake_interface.py_kw.md`](./fake_interface.py_kw.md_docs.md)
+- [`docs/test/package/package_a/subpackage.py_docs.md`](./subpackage.py_docs.md_docs.md)
+- [`docs/test/package/package_a/use_torch_package_importer.py_kw.md`](./use_torch_package_importer.py_kw.md_docs.md)
+- [`docs/test/package/package_a/test_all_leaf_modules_tracer.py_kw.md`](./test_all_leaf_modules_tracer.py_kw.md_docs.md)
+- [`docs/test/package/package_a/test_nn_module.py_docs.md`](./test_nn_module.py_docs.md_docs.md)
+- [`docs/test/package/package_a/std_sys_module_hacks.py_kw.md`](./std_sys_module_hacks.py_kw.md_docs.md)
+- [`docs/test/package/package_a/fake_script_class.py_kw.md`](./fake_script_class.py_kw.md_docs.md)
+- [`docs/test/package/package_a/subpackage.py_kw.md`](./subpackage.py_kw.md_docs.md)
+- [`docs/test/package/package_a/__init__.py_docs.md`](./__init__.py_docs.md_docs.md)
+- [`docs/test/package/package_a/use_dunder_package.py_docs.md`](./use_dunder_package.py_docs.md_docs.md)
+- [`docs/test/package/package_a/use_torch_package_importer.py_docs.md`](./use_torch_package_importer.py_docs.md_docs.md)
+- [`docs/test/package/package_a/fake_interface.py_docs.md`](./fake_interface.py_docs.md_docs.md)
+- [`docs/test/package/package_a/__init__.py_kw.md`](./__init__.py_kw.md_docs.md)
+- [`docs/test/package/package_a/test_module.py_docs.md`](./test_module.py_docs.md_docs.md)
+
+### long_name
+
+- [`docs/test/package/package_a/long_name.py_docs.md`](./long_name.py_docs.md_docs.md)
+- [`docs/test/package/package_a/long_name.py_kw.md`](./long_name.py_kw.md_docs.md)
+
+### std_sys_module_hacks
+
+- [`docs/test/package/package_a/std_sys_module_hacks.py_kw.md`](./std_sys_module_hacks.py_kw.md_docs.md)
+- [`docs/test/package/package_a/std_sys_module_hacks.py_docs.md`](./std_sys_module_hacks.py_docs.md_docs.md)
+
+### std_sys_module_hacks_3_13
+
+- [`docs/test/package/package_a/std_sys_module_hacks_3_13.py_docs.md`](./std_sys_module_hacks_3_13.py_docs.md_docs.md)
+- [`docs/test/package/package_a/std_sys_module_hacks_3_13.py_kw.md`](./std_sys_module_hacks_3_13.py_kw.md_docs.md)
+
+### subpackage
+
+- [`docs/test/package/package_a/subpackage.py_docs.md`](./subpackage.py_docs.md_docs.md)
+- [`docs/test/package/package_a/subpackage.py_kw.md`](./subpackage.py_kw.md_docs.md)
+
+### test_all_leaf_modules_tracer
+
+- [`docs/test/package/package_a/test_all_leaf_modules_tracer.py_kw.md`](./test_all_leaf_modules_tracer.py_kw.md_docs.md)
+- [`docs/test/package/package_a/test_all_leaf_modules_tracer.py_docs.md`](./test_all_leaf_modules_tracer.py_docs.md_docs.md)
+
+### test_module
+
+- [`docs/test/package/package_a/test_module.py_kw.md`](./test_module.py_kw.md_docs.md)
+- [`docs/test/package/package_a/test_module.py_docs.md`](./test_module.py_docs.md_docs.md)
+
+### test_nn_module
+
+- [`docs/test/package/package_a/test_nn_module.py_kw.md`](./test_nn_module.py_kw.md_docs.md)
+- [`docs/test/package/package_a/test_nn_module.py_docs.md`](./test_nn_module.py_docs.md_docs.md)
+
+### use_dunder_package
+
+- [`docs/test/package/package_a/use_dunder_package.py_kw.md`](./use_dunder_package.py_kw.md_docs.md)
+- [`docs/test/package/package_a/use_dunder_package.py_docs.md`](./use_dunder_package.py_docs.md_docs.md)
+
+### use_torch_package_importer
+
+- [`docs/test/package/package_a/use_torch_package_importer.py_kw.md`](./use_torch_package_importer.py_kw.md_docs.md)
+- [`docs/test/package/package_a/use_torch_package_importer.py_docs.md`](./use_torch_package_importer.py_docs.md_docs.md)
+
+
+---
+
+*Generated by PyTorch Repository Documentation System*

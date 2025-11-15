@@ -1,0 +1,294 @@
+# Documentation: `docs/test/export/test_tree_utils.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/export/test_tree_utils.py_docs.md`
+- **Size**: 4,680 bytes (4.57 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/export/test_tree_utils.py`
+
+## File Metadata
+
+- **Path**: `test/export/test_tree_utils.py`
+- **Size**: 1,863 bytes (1.82 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**. Can be **executed as a standalone script**.
+
+## Original Source
+
+```python
+# Owner(s): ["oncall: export"]
+from collections import OrderedDict
+
+import torch
+from torch._dynamo.test_case import TestCase
+from torch.export._tree_utils import is_equivalent, reorder_kwargs
+from torch.testing._internal.common_utils import run_tests
+from torch.utils._pytree import tree_structure
+
+
+class TestTreeUtils(TestCase):
+    def test_reorder_kwargs(self):
+        original_kwargs = {"a": torch.tensor(0), "b": torch.tensor(1)}
+        user_kwargs = {"b": torch.tensor(2), "a": torch.tensor(3)}
+        orig_spec = tree_structure(((), original_kwargs))
+
+        reordered_kwargs = reorder_kwargs(user_kwargs, orig_spec)
+
+        # Key ordering should be the same
+        self.assertEqual(reordered_kwargs.popitem()[0], original_kwargs.popitem()[0])
+        self.assertEqual(reordered_kwargs.popitem()[0], original_kwargs.popitem()[0])
+
+    def test_equivalence_check(self):
+        tree1 = {"a": torch.tensor(0), "b": torch.tensor(1), "c": None}
+        tree2 = OrderedDict(a=torch.tensor(0), b=torch.tensor(1), c=None)
+        spec1 = tree_structure(tree1)
+        spec2 = tree_structure(tree2)
+
+        def dict_ordered_dict_eq(type1, context1, type2, context2):
+            if type1 is None or type2 is None:
+                return type1 is type2 and context1 == context2
+
+            if issubclass(type1, (dict, OrderedDict)) and issubclass(
+                type2, (dict, OrderedDict)
+            ):
+                return context1 == context2
+
+            return type1 is type2 and context1 == context2
+
+        self.assertTrue(is_equivalent(spec1, spec2, dict_ordered_dict_eq))
+
+        # Wrong ordering should still fail
+        tree3 = OrderedDict(b=torch.tensor(1), a=torch.tensor(0))
+        spec3 = tree_structure(tree3)
+        self.assertFalse(is_equivalent(spec1, spec3, dict_ordered_dict_eq))
+
+
+if __name__ == "__main__":
+    run_tests()
+
+```
+
+
+
+## High-Level Overview
+
+
+This Python file contains 1 class(es) and 3 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `TestTreeUtils`
+
+**Functions defined**: `test_reorder_kwargs`, `test_equivalence_check`, `dict_ordered_dict_eq`
+
+**Key imports**: OrderedDict, torch, TestCase, is_equivalent, reorder_kwargs, run_tests, tree_structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/export`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `collections`: OrderedDict
+- `torch`
+- `torch._dynamo.test_case`: TestCase
+- `torch.export._tree_utils`: is_equivalent, reorder_kwargs
+- `torch.testing._internal.common_utils`: run_tests
+- `torch.utils._pytree`: tree_structure
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/export/test_tree_utils.py
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/export`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`test_schema.py_docs.md`](./test_schema.py_docs.md)
+- [`test_package.py_docs.md`](./test_package.py_docs.md)
+- [`test_cpp_serdes.py_docs.md`](./test_cpp_serdes.py_docs.md)
+- [`test_export_opinfo.py_docs.md`](./test_export_opinfo.py_docs.md)
+- [`test_lift_unlift.py_docs.md`](./test_lift_unlift.py_docs.md)
+- [`test_retraceability.py_docs.md`](./test_retraceability.py_docs.md)
+- [`test_converter.py_docs.md`](./test_converter.py_docs.md)
+- [`test_nativert.py_docs.md`](./test_nativert.py_docs.md)
+- [`test_export.py_docs.md`](./test_export.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_tree_utils.py_docs.md`
+- **Keyword Index**: `test_tree_utils.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/export`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/export`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/export/test_tree_utils.py_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/export`):
+
+- [`test_serialize.py_docs.md_docs.md`](./test_serialize.py_docs.md_docs.md)
+- [`test_verifier.py_kw.md_docs.md`](./test_verifier.py_kw.md_docs.md)
+- [`test_upgrader.py_kw.md_docs.md`](./test_upgrader.py_kw.md_docs.md)
+- [`test_db.py_docs.md_docs.md`](./test_db.py_docs.md_docs.md)
+- [`test_export.py_docs.md_docs.md`](./test_export.py_docs.md_docs.md)
+- [`test_dynamic_shapes.py_kw.md_docs.md`](./test_dynamic_shapes.py_kw.md_docs.md)
+- [`test_passes.py_kw.md_docs.md`](./test_passes.py_kw.md_docs.md)
+- [`test_unflatten.py_docs.md_docs.md`](./test_unflatten.py_docs.md_docs.md)
+- [`test_pass_infra.py_kw.md_docs.md`](./test_pass_infra.py_kw.md_docs.md)
+- [`test_functionalized_assertions.py_kw.md_docs.md`](./test_functionalized_assertions.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_tree_utils.py_docs.md_docs.md`
+- **Keyword Index**: `test_tree_utils.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

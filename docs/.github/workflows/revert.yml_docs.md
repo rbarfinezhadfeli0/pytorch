@@ -1,0 +1,180 @@
+# Documentation: `.github/workflows/revert.yml`
+
+## File Metadata
+
+- **Path**: `.github/workflows/revert.yml`
+- **Size**: 2,327 bytes (2.27 KB)
+- **Type**: YAML Configuration
+- **Extension**: `.yml`
+
+## File Purpose
+
+This is a yaml configuration that is part of the PyTorch project.
+
+## Original Source
+
+```yaml
+name: Revert merged PR
+
+on:
+  repository_dispatch:
+    types: [try-revert]
+
+jobs:
+  do_revert:
+    name: try_revert_pr_${{ github.event.client_payload.pr_num }}
+    runs-on: linux.24_04.4x
+    environment: mergebot
+    env:
+        GH_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        id: checkout
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.MERGEBOT_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: '3.9'
+          architecture: x64
+          check-latest: false
+          cache: pip
+      - run: pip install pyyaml==6.0.2
+
+      - name: Setup committer id
+        run: |
+          git config --global user.email "pytorchmergebot@users.noreply.github.com"
+          git config --global user.name "PyTorch MergeBot"
+      - name: Revert PR
+        env:
+          GITHUB_TOKEN: ${{ secrets.MERGEBOT_TOKEN }}
+          PR_NUM: ${{ github.event.client_payload.pr_num }}
+          COMMENT_ID: ${{ github.event.client_payload.comment_id }}
+          REASON: ${{ github.event.client_payload.reason }}
+        run: |
+          set -ex
+          if [ -n "${COMMENT_ID}" ]; then
+            if [ -n "${REASON}" ]; then
+              python3 .github/scripts/trymerge.py --revert --comment-id "${COMMENT_ID}" --reason "${REASON}" "${PR_NUM}"
+            else
+              python3 .github/scripts/trymerge.py --revert --comment-id "${COMMENT_ID}" "${PR_NUM}"
+            fi
+          else
+            if [ -n "${REASON}" ]; then
+              python3 .github/scripts/trymerge.py --revert --reason "${REASON}" "${PR_NUM}"
+            else
+              python3 .github/scripts/trymerge.py --revert "${PR_NUM}"
+            fi
+          fi
+      - name: Comment on Canceled
+        if: ${{ cancelled() && steps.checkout.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.MERGEBOT_TOKEN }}
+          PR_NUM: ${{ github.event.client_payload.pr_num }}
+        run: |
+          set -ex
+          python3 .github/scripts/comment_on_pr.py "${PR_NUM}" "revert"
+
+concurrency: try-revert
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `.github/workflows`.
+
+## Detailed Analysis
+
+### Code Structure
+
+This is a configuration file. See the original source for structure.
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `.github/workflows`, which is part of the PyTorch project infrastructure.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Implements or uses **caching** mechanisms.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`.github/workflows`):
+
+- [`unstable-periodic.yml_docs.md`](./unstable-periodic.yml_docs.md)
+- [`runner_determinator_script_sync.yaml_docs.md`](./runner_determinator_script_sync.yaml_docs.md)
+- [`auto_request_review.yml_docs.md`](./auto_request_review.yml_docs.md)
+- [`attention_op_microbenchmark.yml_docs.md`](./attention_op_microbenchmark.yml_docs.md)
+- [`inductor-nightly.yml_docs.md`](./inductor-nightly.yml_docs.md)
+- [`lint-autoformat.yml_docs.md`](./lint-autoformat.yml_docs.md)
+- [`inductor-perf-test-b200.yml_docs.md`](./inductor-perf-test-b200.yml_docs.md)
+- [`inductor-unittest.yml_docs.md`](./inductor-unittest.yml_docs.md)
+- [`_linux-build.yml_docs.md`](./_linux-build.yml_docs.md)
+- [`inductor-perf-test-nightly.yml_docs.md`](./inductor-perf-test-nightly.yml_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `revert.yml_docs.md`
+- **Keyword Index**: `revert.yml_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

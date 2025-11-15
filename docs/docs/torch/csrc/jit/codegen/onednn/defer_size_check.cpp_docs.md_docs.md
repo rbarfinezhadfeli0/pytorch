@@ -1,0 +1,316 @@
+# Documentation: `docs/torch/csrc/jit/codegen/onednn/defer_size_check.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/jit/codegen/onednn/defer_size_check.cpp_docs.md`
+- **Size**: 4,941 bytes (4.83 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/csrc/jit/codegen/onednn/defer_size_check.cpp`
+
+## File Metadata
+
+- **Path**: `torch/csrc/jit/codegen/onednn/defer_size_check.cpp`
+- **Size**: 2,332 bytes (2.28 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#include <torch/csrc/jit/codegen/onednn/defer_size_check.h>
+#include <torch/csrc/jit/ir/alias_analysis.h>
+#include <torch/csrc/jit/runtime/symbolic_shape_registry_util.h>
+
+namespace torch::jit::fuser::onednn {
+
+class SizeCheckMover {
+ private:
+  Block* block_;
+  std::shared_ptr<Graph> graph_;
+
+ public:
+  SizeCheckMover(Block* block, std::shared_ptr<Graph> graph)
+      : block_(block), graph_(std::move(graph)) {}
+
+  bool analyzeNode(Node* node, AliasDb& aliasDb) {
+    //
+    // %b = addmm(%a)
+    // %sz = aten::size(%b)
+    // %c = relu(%b)
+    //  =>
+    // %b = addmm(%a)
+    // %c = relu(%b)
+    // %sz = aten::size(%c)
+    //       ^-- move size check after relu as it preserves input shape
+    //
+    if (!node->matches("aten::size(Tensor self) -> int[]"))
+      return false;
+
+    auto* input = node->input(0);
+    auto& uses = input->uses();
+    bool onlyUsedByShapePreserveOp =
+        uses.size() > 1 && std::all_of(uses.begin(), uses.end(), [&](auto& u) {
+          if (u.user == node) {
+            return true;
+          }
+          // match with shape-preserving unary ops in
+          // tensorexpr_elementwise_set that's defined in
+          // torch/csrc/jit/runtime/symbolic_shape_registry_util.cpp
+          OperatorMap<std::string> schemaMap = get_tensorexpr_elementwise_set();
+          std::optional<std::string> mapping =
+              schemaMap.find(u.user->getOperator());
+          return mapping == "unary";
+        });
+
+    if (!onlyUsedByShapePreserveOp)
+      return false;
+
+    for (const auto& use : uses) {
+      if (use.user == node)
+        continue;
+      auto shapePreserveOp = use.user;
+      if (aliasDb.moveAfterTopologicallyValid(node, shapePreserveOp)) {
+        node->replaceInputWith(input, shapePreserveOp->output(0));
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  void run() {
+    bool changed = true;
+    while (changed) {
+      changed = false;
+      AliasDb aliasDb(graph_);
+      for (Node* node : block_->nodes()) {
+        changed |= analyzeNode(node, aliasDb);
+      }
+    }
+
+    for (Node* node : block_->nodes())
+      for (Block* subBlock : node->blocks())
+        SizeCheckMover(subBlock, graph_).run();
+  }
+};
+
+void DeferSizeCheck(std::shared_ptr<Graph>& graph) {
+  SizeCheckMover(graph->block(), graph).run();
+}
+
+} // namespace torch::jit::fuser::onednn
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 1 class(es)/struct(s) and 4 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`
+
+**Classes/Structs**: `SizeCheckMover`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/jit/codegen/onednn`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `torch/csrc/jit/codegen/onednn/defer_size_check.h`
+- `torch/csrc/jit/ir/alias_analysis.h`
+- `torch/csrc/jit/runtime/symbolic_shape_registry_util.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/jit/codegen/onednn`):
+
+- [`graph_rewriter.cpp_docs.md`](./graph_rewriter.cpp_docs.md)
+- [`guard_shape.cpp_docs.md`](./guard_shape.cpp_docs.md)
+- [`prepare_binary.h_docs.md`](./prepare_binary.h_docs.md)
+- [`kernel.cpp_docs.md`](./kernel.cpp_docs.md)
+- [`graph_fuser.h_docs.md`](./graph_fuser.h_docs.md)
+- [`kernel.h_docs.md`](./kernel.h_docs.md)
+- [`decompose_silu.cpp_docs.md`](./decompose_silu.cpp_docs.md)
+- [`prepare_binary.cpp_docs.md`](./prepare_binary.cpp_docs.md)
+- [`graph_helper.cpp_docs.md`](./graph_helper.cpp_docs.md)
+- [`register_interface.cpp_docs.md`](./register_interface.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `defer_size_check.cpp_docs.md`
+- **Keyword Index**: `defer_size_check.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/jit/codegen/onednn`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/jit/codegen/onednn`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/jit/codegen/onednn`):
+
+- [`graph_rewriter.cpp_docs.md_docs.md`](./graph_rewriter.cpp_docs.md_docs.md)
+- [`kernel.cpp_docs.md_docs.md`](./kernel.cpp_docs.md_docs.md)
+- [`decompose_silu.cpp_kw.md_docs.md`](./decompose_silu.cpp_kw.md_docs.md)
+- [`defer_size_check.h_kw.md_docs.md`](./defer_size_check.h_kw.md_docs.md)
+- [`graph_fuser.h_kw.md_docs.md`](./graph_fuser.h_kw.md_docs.md)
+- [`README.md_docs.md_docs.md`](./README.md_docs.md_docs.md)
+- [`graph_fuser.h_docs.md_docs.md`](./graph_fuser.h_docs.md_docs.md)
+- [`interface.h_docs.md_docs.md`](./interface.h_docs.md_docs.md)
+- [`layout_propagation.h_kw.md_docs.md`](./layout_propagation.h_kw.md_docs.md)
+- [`graph_helper.cpp_kw.md_docs.md`](./graph_helper.cpp_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `defer_size_check.cpp_docs.md_docs.md`
+- **Keyword Index**: `defer_size_check.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

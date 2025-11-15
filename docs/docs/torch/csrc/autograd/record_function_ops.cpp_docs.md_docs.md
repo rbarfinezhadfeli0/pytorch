@@ -1,0 +1,405 @@
+# Documentation: `docs/torch/csrc/autograd/record_function_ops.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/autograd/record_function_ops.cpp_docs.md`
+- **Size**: 9,093 bytes (8.88 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/csrc/autograd/record_function_ops.cpp`
+
+## File Metadata
+
+- **Path**: `torch/csrc/autograd/record_function_ops.cpp`
+- **Size**: 6,350 bytes (6.20 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#include <ATen/ThreadLocalState.h>
+#include <ATen/cpp_custom_type_hack.h>
+#include <ATen/record_function.h>
+#include <torch/csrc/autograd/record_function_ops.h>
+
+#include <torch/csrc/jit/runtime/operator.h>
+#include <torch/library.h>
+
+namespace caffe2 {
+// Required for cpp_custom_type_hack to work
+// NOLINTNEXTLINE(bugprone-exception-escape)
+CAFFE_KNOWN_TYPE(at::RecordFunction)
+} // namespace caffe2
+
+namespace torch::autograd::profiler {
+
+// Creates a new profiling scope using RecordFunction and invokes its starting
+// callbacks.
+static void record_function_enter(
+    const std::string& name,
+    const std::optional<std::string>& args,
+    at::RecordFunction& rec) {
+  if (rec.isActive()) {
+    if (rec.needsInputs() && args.has_value()) {
+      rec.before(
+          name, c10::ArrayRef<const c10::IValue>{c10::IValue{args.value()}});
+    } else {
+      rec.before(name);
+    }
+  }
+}
+
+// Legacy signature using cpp_custom_type_hack
+static at::Tensor record_function_enter_legacy(
+    const std::string& name,
+    const std::optional<std::string>& args) {
+  auto rec = std::make_unique<at::RecordFunction>(at::RecordScope::USER_SCOPE);
+  record_function_enter(name, args, *rec);
+  return at::cpp_custom_type_hack::create(std::move(rec), at::TensorOptions());
+}
+
+// New signature using custom_class
+c10::intrusive_ptr<PythonRecordFunction> record_function_enter_new(
+    const std::string& name,
+    const std::optional<std::string>& args) {
+  auto rec =
+      c10::make_intrusive<PythonRecordFunction>(at::RecordScope::USER_SCOPE);
+  record_function_enter(name, args, rec->record);
+  return rec;
+}
+
+static at::RecordFunction& getRecordFunctionFromTensor(
+    const at::Tensor& handle) {
+  auto& rec = at::cpp_custom_type_hack::cast<at::RecordFunction>(handle);
+  return rec;
+}
+
+// Ends the profiling scope created with record_function_enter.
+static void record_function_exit(at::RecordFunction& rec) {
+  rec.end();
+}
+
+// Legacy signature using cpp_custom_type_hack
+static void record_function_exit_legacy(const at::Tensor& handle) {
+  // We don't actually need to do anything with handle just need to persist the
+  // lifetime until now.
+  auto& rec = getRecordFunctionFromTensor(handle);
+  record_function_exit(rec);
+}
+
+// New signature using custom_class
+static void record_function_exit_new(
+    const c10::intrusive_ptr<PythonRecordFunction>& record) {
+  record_function_exit(record->record);
+}
+
+template <typename Func>
+static c10::intrusive_ptr<c10::ivalue::Future> _call_end_callbacks_on_fut(
+    Func get_record,
+    const c10::intrusive_ptr<c10::ivalue::Future>& fut) {
+  // Profiling callback that ends the associated record_function
+  // and returns the value of the passed in future.
+  auto futureProfilingFunc =
+      [get_record = std::move(get_record)](c10::ivalue::Future& fut) {
+        auto& rec = get_record();
+        rec.end();
+        // Note: this future is returned to the user to ensure that a call to
+        // wait() ensures that profiling callbacks have ran. To ensure that this
+        // is transparent, we must make this future propagate the value of the
+        // RPC future. Use value() here instead of constValue() to ensure we
+        // propagate errors.
+        return fut.value();
+      };
+  // Define a future that completes after the profiling callbacks are run.
+  auto profiledFut = fut->then(
+      at::wrapPropagateTLSState(std::move(futureProfilingFunc)),
+      fut->elementType());
+  return profiledFut;
+}
+
+// Legacy signature using cpp_custom_type_hack
+static c10::intrusive_ptr<c10::ivalue::Future> _call_end_callbacks_on_fut_legacy(
+    const at::Tensor& handle,
+    const c10::intrusive_ptr<c10::ivalue::Future>& fut) {
+  return _call_end_callbacks_on_fut(
+      [handle]() -> at::RecordFunction& {
+        TORCH_INTERNAL_ASSERT(
+            handle.defined(),
+            "Undefined RecordFunction handle. This can happen if the handle is "
+            "not correctly persisted and is destroyed before the future is "
+            "realized.");
+
+        return getRecordFunctionFromTensor(handle);
+      },
+      fut);
+}
+
+// New signature using custom_class
+c10::intrusive_ptr<c10::ivalue::Future> _call_end_callbacks_on_fut_new(
+    const c10::intrusive_ptr<PythonRecordFunction>& record,
+    const c10::intrusive_ptr<c10::ivalue::Future>& fut) {
+  return _call_end_callbacks_on_fut(
+      [record]() -> at::RecordFunction& { return record->record; }, fut);
+}
+
+// Internal only, do not use directly, use Python's record_function()
+TORCH_LIBRARY_FRAGMENT(profiler, m) {
+  m.class_<PythonRecordFunction>("_RecordFunction");
+
+  m.def(
+      "_record_function_enter(str name, str? args=None) -> Tensor",
+      &record_function_enter_legacy);
+  m.def(
+      "_record_function_enter_new(str name, str? args=None) -> "
+      "__torch__.torch.classes.profiler._RecordFunction",
+      &record_function_enter_new);
+  m.def("_record_function_exit", &record_function_exit_legacy);
+  m.def("_record_function_exit._RecordFunction", &record_function_exit_new);
+
+  torch::jit::registerOperator(torch::jit::Operator(
+      "profiler::_call_end_callbacks_on_jit_fut(Tensor x, Future(t) y) -> Future(t)",
+      [](jit::Stack& stack) {
+        // Pop inputs, which should be a future and a tensor
+        auto fut = jit::pop(stack).toFuture();
+        auto tensor = jit::pop(stack).toTensor();
+        auto profiledFut = _call_end_callbacks_on_fut_legacy(tensor, fut);
+        // return future that completes when profiling callbacks have run.
+        jit::push(stack, std::move(profiledFut));
+      },
+      c10::AliasAnalysisKind::FROM_SCHEMA));
+  torch::jit::registerOperator(torch::jit::Operator(
+      "profiler::_call_end_callbacks_on_jit_fut._RecordFunction("
+      "__torch__.torch.classes.profiler._RecordFunction x, Future(t) y) -> Future(t)",
+      [](c10::Stack& stack) {
+        // Pop inputs, which should be a future and a PythonRecordFunction
+        auto fut = torch::jit::pop(stack).toFuture();
+        auto tensor =
+            torch::jit::pop(stack).toCustomClass<PythonRecordFunction>();
+        auto profiledFut = _call_end_callbacks_on_fut_new(tensor, fut);
+        // return future that completes when profiling callbacks have run.
+        torch::jit::push(stack, std::move(profiledFut));
+      },
+      c10::AliasAnalysisKind::FROM_SCHEMA));
+}
+
+} // namespace torch::autograd::profiler
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 3 class(es)/struct(s) and 11 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `caffe2`, `torch`
+
+**Classes/Structs**: `c10`, `static`, `c10`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/autograd`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/ThreadLocalState.h`
+- `ATen/cpp_custom_type_hack.h`
+- `ATen/record_function.h`
+- `torch/csrc/autograd/record_function_ops.h`
+- `torch/csrc/jit/runtime/operator.h`
+- `torch/library.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/autograd`):
+
+- [`graph_task.h_docs.md`](./graph_task.h_docs.md)
+- [`python_function.cpp_docs.md`](./python_function.cpp_docs.md)
+- [`profiler.h_docs.md`](./profiler.h_docs.md)
+- [`TraceTypeManual.cpp_docs.md`](./TraceTypeManual.cpp_docs.md)
+- [`python_autograd.h_docs.md`](./python_autograd.h_docs.md)
+- [`variable_info.cpp_docs.md`](./variable_info.cpp_docs.md)
+- [`jit_decomp_interface.h_docs.md`](./jit_decomp_interface.h_docs.md)
+- [`input_buffer.cpp_docs.md`](./input_buffer.cpp_docs.md)
+- [`python_variable.h_docs.md`](./python_variable.h_docs.md)
+- [`python_nn_functions.h_docs.md`](./python_nn_functions.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `record_function_ops.cpp_docs.md`
+- **Keyword Index**: `record_function_ops.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/autograd`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/autograd`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/autograd`):
+
+- [`python_cpp_function.h_kw.md_docs.md`](./python_cpp_function.h_kw.md_docs.md)
+- [`anomaly_mode.cpp_kw.md_docs.md`](./anomaly_mode.cpp_kw.md_docs.md)
+- [`python_nested_functions_manual.cpp_kw.md_docs.md`](./python_nested_functions_manual.cpp_kw.md_docs.md)
+- [`variable_info.h_docs.md_docs.md`](./variable_info.h_docs.md_docs.md)
+- [`python_nn_functions.h_docs.md_docs.md`](./python_nn_functions.h_docs.md_docs.md)
+- [`python_cpp_function.h_docs.md_docs.md`](./python_cpp_function.h_docs.md_docs.md)
+- [`profiler_legacy.cpp_kw.md_docs.md`](./profiler_legacy.cpp_kw.md_docs.md)
+- [`saved_variable.cpp_docs.md_docs.md`](./saved_variable.cpp_docs.md_docs.md)
+- [`python_fft_functions.h_docs.md_docs.md`](./python_fft_functions.h_docs.md_docs.md)
+- [`python_autograd.h_kw.md_docs.md`](./python_autograd.h_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `record_function_ops.cpp_docs.md_docs.md`
+- **Keyword Index**: `record_function_ops.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

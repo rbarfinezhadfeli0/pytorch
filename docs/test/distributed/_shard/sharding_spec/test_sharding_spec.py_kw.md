@@ -1,0 +1,79 @@
+# Keyword Index: `test/distributed/_shard/sharding_spec/test_sharding_spec.py`
+
+## File Information
+
+- **Original File**: [test/distributed/_shard/sharding_spec/test_sharding_spec.py](../../../../../test/distributed/_shard/sharding_spec/test_sharding_spec.py)
+- **Documentation**: [`test_sharding_spec.py_docs.md`](./test_sharding_spec.py_docs.md)
+- **Folder**: `test/distributed/_shard/sharding_spec`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`TestCustomShardingSpec`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`TestShardingSpec`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`class`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`from`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+
+### Functions
+
+- **`__post_init__`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`_infer_chunk_sharding_spec_case`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`_infer_enum_sharding_spec_case`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`build_metadata`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`chunk_num`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`shard`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`test_check_overlapping`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`test_chunked_sharding_spec`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`test_custom_sharding_spec`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`test_custom_sharding_spec_shard_tensor`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`test_custom_sharding_spec_tensor_ctor`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`test_device_placement`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`test_enumerable_sharding_spec`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`test_get_chunk_sharding_params`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`test_get_chunked_dim_size`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`test_get_split_size`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`test_infer_sharding_spec_from_shards_metadata`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+
+### Imports
+
+- **`TEST_MULTIGPU`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`Union`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`_shard_tensor`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`copy`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`dataclass`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`dataclasses`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`requires_nccl`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`torch`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`torch.distributed._shard`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`torch.distributed._shard.sharded_tensor`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`torch.distributed._shard.sharding_spec`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`torch.distributed._shard.sharding_spec._internals`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`torch.testing._internal.common_cuda`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`torch.testing._internal.common_distributed`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`torch.testing._internal.distributed._shard.sharded_tensor`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`torch.testing._internal.distributed._shard.sharded_tensor._test_st_common`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+- **`typing`**: [test_sharding_spec.py_docs.md](./test_sharding_spec.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

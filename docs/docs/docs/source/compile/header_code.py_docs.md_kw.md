@@ -1,0 +1,91 @@
+# Keyword Index: `docs/docs/source/compile/header_code.py_docs.md`
+
+## File Information
+
+- **Original File**: [docs/docs/source/compile/header_code.py_docs.md](../../../../../docs/docs/source/compile/header_code.py_docs.md)
+- **Documentation**: [`header_code.py_docs.md_docs.md`](./header_code.py_docs.md_docs.md)
+- **Folder**: `docs/docs/source/compile`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Architecture`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Code`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Common`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Considerations`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Cross`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`DEFAULT_FORMATTER`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Dependencies`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Design`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Detailed`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Documentation`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Examples`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Extension`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`File`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Files`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Folder`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`For`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Generated`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`High`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Idioms`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Import`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Index`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`JIT`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`KB`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Key`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Keyword`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Level`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Manual`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`May`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Metadata`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`No`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Notes`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Original`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Overview`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Path`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Patterns`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Performance`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Purpose`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`PyTorch`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Python`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`References`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Related`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Repository`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Role`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Safety`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Security`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`See`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Size`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Source`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Structure`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`System`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`TORCH_LOGS_FORMAT`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Test`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Testing`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`This`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Type`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+- **`Usage`**: [header_code.py_docs.md_docs.md](./header_code.py_docs.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

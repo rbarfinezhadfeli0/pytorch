@@ -1,0 +1,211 @@
+# Keyword Index: `c10/cuda/CUDACachingAllocator.cpp`
+
+## File Information
+
+- **Original File**: [c10/cuda/CUDACachingAllocator.cpp](../../../c10/cuda/CUDACachingAllocator.cpp)
+- **Documentation**: [`CUDACachingAllocator.cpp_docs.md`](./CUDACachingAllocator.cpp_docs.md)
+- **Folder**: `c10/cuda`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Class/Structs
+
+- **`AllocParams`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`BackendStaticInitializer`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`Block`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`BlockPool`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`BlockState`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`CUmemFabricHandle_st`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`CaptureInfo`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`DeviceCachingAllocator`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`EventPool`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`ExpandableSegment`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`GraphReuseContext`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`Handle`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`MemHandleCacheEntry`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`NativeCachingAllocator`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`PerDevicePool`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`PrivatePool`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`PrivatePoolState`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`RestoreResult`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`RingBuffer`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`SegmentRange`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`SegmentState`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`ShareHeader`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`T`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`a`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`alignas`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`expects`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`typed`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+
+### Functions
+
+- **`BlockComparatorAddress`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`BlockComparatorSize`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`addPeer`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`addPeerAccess`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`add_allocated_block`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`allocPrimitive`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`alloc_block`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`assertValidDevice`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`attachAllocatorTraceTracker`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`attachOutOfMemoryObserver`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`cacheInfo`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`cache_info_aux`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`checkPoolLiveAllocations`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`clear`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`createOrIncrefPool`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`create_event_internal`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`create_or_incref_pool`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`cudaMallocMaybeCapturing`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`decrease_stat_array`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`device`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`emptyCache`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`empty_cache`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`endAllocateToPool`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`for`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`for_each_selected_stat_type`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`forceUncachedAllocator`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`free`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`freeBlocksAllocatedToPool`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`free_block`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`free_safe_blocks_in_capture`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`garbage_collect_cached_blocks`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`gc_count`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`get`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`getEntries`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`getMappedSize`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`getMemoryFraction`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`getPoolUseCount`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`getSegmentSize`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`getStats`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`getStream`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`getUserMetadata`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`get_allocation_size`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`get_free_block`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`get_mutex_shard_id`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`get_stat_types_for_pool`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`hasAllocatedExpandableSegments`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`if`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`insertEntries`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`insert_events`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`insert_events_deferred_until_no_capture`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`isHistoryEnabled`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`is_split`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`local_raw_delete`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`malloc`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`map`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`mapAndSetAccess`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`map_block`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`numSegments`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`popCompileContext`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`process_events`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`pushCompileContext`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`rangeFromHandles`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`recordHistory`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`recordStream`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`record_trace`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`releasePool`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`release_available_cached_blocks`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`release_block`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`release_blocks`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`release_cached_blocks`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`release_expandable_segment`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`remove_cudagraph_stream_uses`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`reportProcessMemoryInfo`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`resetAccumulatedStats`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`resetPeakStats`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`round_size`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`roundup_power2_next_division`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`segmentLeft`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`segmentRight`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`setAccess`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`setCheckpointPoolState`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`setMaxEntries`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`setMemoryFraction`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`setSegmentStateToCheckpoint`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`setUseOnOOM`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`setUserMetadata`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`share`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`shareIpcHandle`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`should_split`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`size`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`splice`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`stream`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`stream_get_capture_info`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`synchronize_and_free_events`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`trigger_free_memory_callbacks`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`trimHandles`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`try_merge_blocks`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`uncached_delete`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`unmap`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`unmapHandles`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`unmap_block`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`update_visited`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+
+### Includes
+
+- **`algorithm`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`c10/core/impl/GPUTrace.h`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`c10/cuda/CUDAAllocatorConfig.h`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`c10/cuda/CUDACachingAllocator.h`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`c10/cuda/CUDAException.h`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`c10/cuda/CUDAFunctions.h`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`c10/cuda/CUDAGuard.h`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`c10/cuda/driver_api.h`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`c10/util/Exception.h`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`c10/util/Gauge.h`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`c10/util/Logging.h`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`c10/util/ScopeExit.h`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`c10/util/UniqueVoidPtr.h`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`c10/util/env.h`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`c10/util/error.h`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`c10/util/flat_hash_map.h`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`c10/util/hash.h`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`c10/util/llvmMathExtras.h`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`c10/util/static_tracepoint.h`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`cstddef`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`cstdint`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`cuda_runtime_api.h`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`deque`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`memory`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`mutex`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`new`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`regex`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`set`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`stack`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`sys/syscall.h`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`sys/types.h`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`thread`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`unistd.h`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`utility`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`vector`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+
+### Namespaces
+
+- **`CudaMallocAsync`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`Native`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`c10`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+- **`cuda`**: [CUDACachingAllocator.cpp_docs.md](./CUDACachingAllocator.cpp_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

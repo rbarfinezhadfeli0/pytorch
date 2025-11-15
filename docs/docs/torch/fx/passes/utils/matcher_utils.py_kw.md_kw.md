@@ -1,0 +1,80 @@
+# Keyword Index: `docs/torch/fx/passes/utils/matcher_utils.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/fx/passes/utils/matcher_utils.py_kw.md](../../../../../../docs/torch/fx/passes/utils/matcher_utils.py_kw.md)
+- **Documentation**: [`matcher_utils.py_kw.md_docs.md`](./matcher_utils.py_kw.md_docs.md)
+- **Folder**: `docs/torch/fx/passes/utils`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Any`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Architecture`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Basic`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Classs`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Complete`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Considerations`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Dependencies`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Design`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Detailed`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Documentation`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Efficiency`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Extracted`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`File`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Folder`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Functions`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Generated`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Graph`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`High`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`How`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Imports`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`In`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Index`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Information`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Keyword`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Keywords`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Level`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Map`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Metadata`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Original`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Overview`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Performance`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Purpose`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`PyTorch`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Related`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Repository`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Safety`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Section`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Security`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Source`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`SubgraphMatcher`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`System`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Testing`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`The`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`This`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+- **`Usage`**: [matcher_utils.py_kw.md_docs.md](./matcher_utils.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

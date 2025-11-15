@@ -1,0 +1,305 @@
+# Documentation: `docs/aten/src/ATen/mps/MPSHooks.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/mps/MPSHooks.h_docs.md`
+- **Size**: 4,694 bytes (4.58 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/mps/MPSHooks.h`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/mps/MPSHooks.h`
+- **Size**: 2,302 bytes (2.25 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+//  Copyright © 2022 Apple Inc.
+
+#pragma once
+
+#include <ATen/Generator.h>
+#include <ATen/detail/MPSHooksInterface.h>
+#include <ATen/mps/MPSEvent.h>
+#include <optional>
+
+namespace at::mps {
+
+// The real implementation of MPSHooksInterface
+struct MPSHooks : public at::MPSHooksInterface {
+  MPSHooks(at::MPSHooksArgs) {}
+  void init() const override;
+
+  // MPSDevice interface
+  bool hasMPS() const override;
+  bool isOnMacOSorNewer(unsigned major, unsigned minor) const override;
+
+  Device getDeviceFromPtr(void* data) const override;
+
+  // MPSGeneratorImpl interface
+  const Generator& getDefaultGenerator(
+      DeviceIndex device_index = -1) const override;
+  Generator getNewGenerator(DeviceIndex device_index = -1) const override;
+
+  // MPSStream interface
+  void deviceSynchronize() const override;
+  void commitStream() const override;
+  void* getCommandBuffer() const override;
+  void* getDispatchQueue() const override;
+
+  // MPSAllocator interface
+  Allocator* getMPSDeviceAllocator() const override;
+  void emptyCache() const override;
+  size_t getCurrentAllocatedMemory() const override;
+  size_t getDriverAllocatedMemory() const override;
+  size_t getRecommendedMaxMemory() const override;
+  void setMemoryFraction(double ratio) const override;
+  bool isPinnedPtr(const void* data) const override;
+  Allocator* getPinnedMemoryAllocator() const override;
+
+  // MPSProfiler interface
+  void profilerStartTrace(const std::string& mode, bool waitUntilCompleted)
+      const override;
+  void profilerStopTrace() const override;
+
+  // MPSEvent interface
+  uint32_t acquireEvent(bool enable_timing) const override;
+  void releaseEvent(uint32_t event_id) const override;
+  void recordEvent(uint32_t event_id) const override;
+  void waitForEvent(uint32_t event_id) const override;
+  void synchronizeEvent(uint32_t event_id) const override;
+  bool queryEvent(uint32_t event_id) const override;
+  double elapsedTimeOfEvents(uint32_t start_event_id, uint32_t end_event_id)
+      const override;
+
+  bool isBuilt() const override {
+    return true;
+  }
+  bool isAvailable() const override {
+    return hasMPS();
+  }
+  bool hasPrimaryContext(DeviceIndex device_index) const override {
+    // When MPS is available, it is always in use for the one device.
+    return true;
+  }
+};
+
+} // namespace at::mps
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 26 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `at`
+
+**Classes/Structs**: `MPSHooks`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/mps`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/Generator.h`
+- `ATen/detail/MPSHooksInterface.h`
+- `ATen/mps/MPSEvent.h`
+- `optional`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Implements or uses **caching** mechanisms.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/mps`):
+
+- [`MPSProfiler.h_docs.md`](./MPSProfiler.h_docs.md)
+- [`MPSAllocator.h_docs.md`](./MPSAllocator.h_docs.md)
+- [`MPSDevice.h_docs.md`](./MPSDevice.h_docs.md)
+- [`MPSAllocatorInterface.h_docs.md`](./MPSAllocatorInterface.h_docs.md)
+- [`MPSEvent.h_docs.md`](./MPSEvent.h_docs.md)
+- [`MPSGuardImpl.h_docs.md`](./MPSGuardImpl.h_docs.md)
+- [`EmptyTensor.h_docs.md`](./EmptyTensor.h_docs.md)
+- [`IndexKernels.h_docs.md`](./IndexKernels.h_docs.md)
+- [`MPSGeneratorImpl.h_docs.md`](./MPSGeneratorImpl.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `MPSHooks.h_docs.md`
+- **Keyword Index**: `MPSHooks.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/mps`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/mps`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Implements or uses **caching** mechanisms.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/mps`):
+
+- [`MPSAllocatorInterface.h_kw.md_docs.md`](./MPSAllocatorInterface.h_kw.md_docs.md)
+- [`MPSAllocatorInterface.h_docs.md_docs.md`](./MPSAllocatorInterface.h_docs.md_docs.md)
+- [`MPSHooks.h_kw.md_docs.md`](./MPSHooks.h_kw.md_docs.md)
+- [`MPSDevice.h_kw.md_docs.md`](./MPSDevice.h_kw.md_docs.md)
+- [`IndexKernels.h_kw.md_docs.md`](./IndexKernels.h_kw.md_docs.md)
+- [`MPSProfiler.h_docs.md_docs.md`](./MPSProfiler.h_docs.md_docs.md)
+- [`MPSGuardImpl.h_kw.md_docs.md`](./MPSGuardImpl.h_kw.md_docs.md)
+- [`EmptyTensor.cpp_docs.md_docs.md`](./EmptyTensor.cpp_docs.md_docs.md)
+- [`MPSEvent.h_docs.md_docs.md`](./MPSEvent.h_docs.md_docs.md)
+- [`MPSAllocator.h_kw.md_docs.md`](./MPSAllocator.h_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `MPSHooks.h_docs.md_docs.md`
+- **Keyword Index**: `MPSHooks.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

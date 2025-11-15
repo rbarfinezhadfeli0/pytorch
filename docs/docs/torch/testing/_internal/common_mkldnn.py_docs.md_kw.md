@@ -1,0 +1,93 @@
+# Keyword Index: `docs/torch/testing/_internal/common_mkldnn.py_docs.md`
+
+## File Information
+
+- **Original File**: [docs/torch/testing/_internal/common_mkldnn.py_docs.md](../../../../../docs/torch/testing/_internal/common_mkldnn.py_docs.md)
+- **Documentation**: [`common_mkldnn.py_docs.md_docs.md`](./common_mkldnn.py_docs.md_docs.md)
+- **Folder**: `docs/torch/testing/_internal`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Architecture`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Code`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Common`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Considerations`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Cross`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Dependencies`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Design`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Detailed`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Documentation`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Examples`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Extension`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`False`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`File`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Files`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Folder`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`For`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Functions`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Generated`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`High`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Idioms`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Import`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Index`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`KB`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Key`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Keyword`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Level`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Manual`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Metadata`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`No`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Notes`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`OFF`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`ON`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Original`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Overview`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Path`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Patterns`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Performance`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Purpose`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`PyTorch`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Python`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`References`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Related`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Repository`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Role`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Run`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Safety`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Security`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`See`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Size`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Source`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Structure`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`System`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Testing`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`This`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`True`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Type`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`Usage`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+- **`When`**: [common_mkldnn.py_docs.md_docs.md](./common_mkldnn.py_docs.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

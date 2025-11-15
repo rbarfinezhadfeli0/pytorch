@@ -1,0 +1,77 @@
+# Keyword Index: `aten/src/ATen/native/quantized/cpu/qnnpack/test/max-pooling-operator-tester.h`
+
+## File Information
+
+- **Original File**: [aten/src/ATen/native/quantized/cpu/qnnpack/test/max-pooling-operator-tester.h](../../../../../../../../../aten/src/ATen/native/quantized/cpu/qnnpack/test/max-pooling-operator-tester.h)
+- **Documentation**: [`max-pooling-operator-tester.h_docs.md`](./max-pooling-operator-tester.h_docs.md)
+- **Folder**: `aten/src/ATen/native/quantized/cpu/qnnpack/test`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Class/Structs
+
+- **`MaxPoolingOperatorTester`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+
+### Functions
+
+- **`batchSize`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+- **`channels`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+- **`dilatedPoolingHeight`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+- **`dilatedPoolingWidth`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+- **`dilationHeight`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+- **`dilationWidth`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+- **`inputHeight`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+- **`inputPixelStride`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+- **`inputWidth`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+- **`iterations`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+- **`nextBatchSize`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+- **`nextInputHeight`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+- **`nextInputWidth`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+- **`nextOutputHeight`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+- **`nextOutputWidth`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+- **`outputHeight`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+- **`outputPixelStride`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+- **`outputWidth`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+- **`paddingHeight`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+- **`paddingWidth`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+- **`poolingHeight`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+- **`poolingWidth`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+- **`qmax`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+- **`qmin`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+- **`strideHeight`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+- **`strideWidth`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+- **`testSetupU8`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+- **`testU8`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+
+### Includes
+
+- **`algorithm`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+- **`cassert`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+- **`cstddef`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+- **`cstdlib`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+- **`functional`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+- **`pytorch_qnnpack.h`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+- **`random`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+- **`vector`**: [max-pooling-operator-tester.h_docs.md](./max-pooling-operator-tester.h_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

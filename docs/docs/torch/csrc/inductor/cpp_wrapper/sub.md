@@ -1,0 +1,74 @@
+# Subtree Keyword Index: `docs/torch/csrc/inductor/cpp_wrapper/`
+
+## Scope
+
+This index covers all files within `docs/torch/csrc/inductor/cpp_wrapper/` and all its subdirectories (recursively).
+
+## Keywords
+
+
+### array_ref
+
+- [`docs/torch/csrc/inductor/cpp_wrapper/array_ref.h_docs.md`](./array_ref.h_docs.md_docs.md)
+- [`docs/torch/csrc/inductor/cpp_wrapper/array_ref.h_kw.md`](./array_ref.h_kw.md_docs.md)
+
+### common
+
+- [`docs/torch/csrc/inductor/cpp_wrapper/common.h_kw.md`](./common.h_kw.md_docs.md)
+- [`docs/torch/csrc/inductor/cpp_wrapper/common.h_docs.md`](./common.h_docs.md_docs.md)
+
+### cpu
+
+- [`docs/torch/csrc/inductor/cpp_wrapper/cpu.h_docs.md`](./cpu.h_docs.md_docs.md)
+- [`docs/torch/csrc/inductor/cpp_wrapper/cpu.h_kw.md`](./cpu.h_kw.md_docs.md)
+- [`docs/torch/csrc/inductor/cpp_wrapper/device_internal/cpu.h_docs.md`](../../../../../docs/torch/csrc/inductor/cpp_wrapper/device_internal/cpu.h_docs.md_docs.md)
+- [`docs/torch/csrc/inductor/cpp_wrapper/device_internal/cpu.h_kw.md`](../../../../../docs/torch/csrc/inductor/cpp_wrapper/device_internal/cpu.h_kw.md_docs.md)
+
+### cuda
+
+- [`docs/torch/csrc/inductor/cpp_wrapper/cuda.h_kw.md`](./cuda.h_kw.md_docs.md)
+- [`docs/torch/csrc/inductor/cpp_wrapper/cuda.h_docs.md`](./cuda.h_docs.md_docs.md)
+- [`docs/torch/csrc/inductor/cpp_wrapper/device_internal/cuda.h_kw.md`](../../../../../docs/torch/csrc/inductor/cpp_wrapper/device_internal/cuda.h_kw.md_docs.md)
+- [`docs/torch/csrc/inductor/cpp_wrapper/device_internal/cuda.h_docs.md`](../../../../../docs/torch/csrc/inductor/cpp_wrapper/device_internal/cuda.h_docs.md_docs.md)
+
+### files-.md
+
+- [`docs/torch/csrc/inductor/cpp_wrapper/cpu.h_docs.md`](./cpu.h_docs.md_docs.md)
+- [`docs/torch/csrc/inductor/cpp_wrapper/array_ref.h_docs.md`](./array_ref.h_docs.md_docs.md)
+- [`docs/torch/csrc/inductor/cpp_wrapper/cpu.h_kw.md`](./cpu.h_kw.md_docs.md)
+- [`docs/torch/csrc/inductor/cpp_wrapper/array_ref.h_kw.md`](./array_ref.h_kw.md_docs.md)
+- [`docs/torch/csrc/inductor/cpp_wrapper/common.h_kw.md`](./common.h_kw.md_docs.md)
+- [`docs/torch/csrc/inductor/cpp_wrapper/mps.h_docs.md`](./mps.h_docs.md_docs.md)
+- [`docs/torch/csrc/inductor/cpp_wrapper/common.h_docs.md`](./common.h_docs.md_docs.md)
+- [`docs/torch/csrc/inductor/cpp_wrapper/mps.h_kw.md`](./mps.h_kw.md_docs.md)
+- [`docs/torch/csrc/inductor/cpp_wrapper/xpu.h_docs.md`](./xpu.h_docs.md_docs.md)
+- [`docs/torch/csrc/inductor/cpp_wrapper/cuda.h_kw.md`](./cuda.h_kw.md_docs.md)
+- [`docs/torch/csrc/inductor/cpp_wrapper/cuda.h_docs.md`](./cuda.h_docs.md_docs.md)
+- [`docs/torch/csrc/inductor/cpp_wrapper/xpu.h_kw.md`](./xpu.h_kw.md_docs.md)
+- [`docs/torch/csrc/inductor/cpp_wrapper/device_internal/cpu.h_docs.md`](../../../../../docs/torch/csrc/inductor/cpp_wrapper/device_internal/cpu.h_docs.md_docs.md)
+- [`docs/torch/csrc/inductor/cpp_wrapper/device_internal/cpu.h_kw.md`](../../../../../docs/torch/csrc/inductor/cpp_wrapper/device_internal/cpu.h_kw.md_docs.md)
+- [`docs/torch/csrc/inductor/cpp_wrapper/device_internal/mps.h_docs.md`](../../../../../docs/torch/csrc/inductor/cpp_wrapper/device_internal/mps.h_docs.md_docs.md)
+- [`docs/torch/csrc/inductor/cpp_wrapper/device_internal/mps.h_kw.md`](../../../../../docs/torch/csrc/inductor/cpp_wrapper/device_internal/mps.h_kw.md_docs.md)
+- [`docs/torch/csrc/inductor/cpp_wrapper/device_internal/xpu.h_docs.md`](../../../../../docs/torch/csrc/inductor/cpp_wrapper/device_internal/xpu.h_docs.md_docs.md)
+- [`docs/torch/csrc/inductor/cpp_wrapper/device_internal/cuda.h_kw.md`](../../../../../docs/torch/csrc/inductor/cpp_wrapper/device_internal/cuda.h_kw.md_docs.md)
+- [`docs/torch/csrc/inductor/cpp_wrapper/device_internal/cuda.h_docs.md`](../../../../../docs/torch/csrc/inductor/cpp_wrapper/device_internal/cuda.h_docs.md_docs.md)
+- [`docs/torch/csrc/inductor/cpp_wrapper/device_internal/xpu.h_kw.md`](../../../../../docs/torch/csrc/inductor/cpp_wrapper/device_internal/xpu.h_kw.md_docs.md)
+
+### mps
+
+- [`docs/torch/csrc/inductor/cpp_wrapper/mps.h_docs.md`](./mps.h_docs.md_docs.md)
+- [`docs/torch/csrc/inductor/cpp_wrapper/mps.h_kw.md`](./mps.h_kw.md_docs.md)
+- [`docs/torch/csrc/inductor/cpp_wrapper/device_internal/mps.h_docs.md`](../../../../../docs/torch/csrc/inductor/cpp_wrapper/device_internal/mps.h_docs.md_docs.md)
+- [`docs/torch/csrc/inductor/cpp_wrapper/device_internal/mps.h_kw.md`](../../../../../docs/torch/csrc/inductor/cpp_wrapper/device_internal/mps.h_kw.md_docs.md)
+
+### xpu
+
+- [`docs/torch/csrc/inductor/cpp_wrapper/xpu.h_docs.md`](./xpu.h_docs.md_docs.md)
+- [`docs/torch/csrc/inductor/cpp_wrapper/xpu.h_kw.md`](./xpu.h_kw.md_docs.md)
+- [`docs/torch/csrc/inductor/cpp_wrapper/device_internal/xpu.h_docs.md`](../../../../../docs/torch/csrc/inductor/cpp_wrapper/device_internal/xpu.h_docs.md_docs.md)
+- [`docs/torch/csrc/inductor/cpp_wrapper/device_internal/xpu.h_kw.md`](../../../../../docs/torch/csrc/inductor/cpp_wrapper/device_internal/xpu.h_kw.md_docs.md)
+
+
+---
+
+*Generated by PyTorch Repository Documentation System*

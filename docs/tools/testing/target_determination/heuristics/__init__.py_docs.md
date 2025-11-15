@@ -1,0 +1,174 @@
+# Documentation: `tools/testing/target_determination/heuristics/__init__.py`
+
+## File Metadata
+
+- **Path**: `tools/testing/target_determination/heuristics/__init__.py`
+- **Size**: 1,786 bytes (1.74 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is a **utility or tool script**. This is a **Python package initialization file**.
+
+## Original Source
+
+```python
+from __future__ import annotations
+
+from typing import TYPE_CHECKING
+
+from tools.testing.target_determination.heuristics.correlated_with_historical_failures import (
+    CorrelatedWithHistoricalFailures,
+)
+from tools.testing.target_determination.heuristics.edited_by_pr import EditedByPR
+from tools.testing.target_determination.heuristics.filepath import Filepath
+from tools.testing.target_determination.heuristics.historical_class_failure_correlation import (
+    HistoricalClassFailurCorrelation,
+)
+from tools.testing.target_determination.heuristics.historical_edited_files import (
+    HistorialEditedFiles,
+)
+from tools.testing.target_determination.heuristics.interface import (
+    AggregatedHeuristics as AggregatedHeuristics,
+    TestPrioritizations as TestPrioritizations,
+)
+from tools.testing.target_determination.heuristics.llm import LLM
+from tools.testing.target_determination.heuristics.mentioned_in_pr import MentionedInPR
+from tools.testing.target_determination.heuristics.previously_failed_in_pr import (
+    PreviouslyFailedInPR,
+)
+from tools.testing.target_determination.heuristics.profiling import Profiling
+from tools.testing.target_determination.heuristics.public_bindings import PublicBindings
+
+
+if TYPE_CHECKING:
+    from tools.testing.target_determination.heuristics.interface import (
+        HeuristicInterface as HeuristicInterface,
+    )
+
+
+# All currently running heuristics.
+# To add a heurstic in trial mode, specify the keyword argument `trial_mode=True`.
+HEURISTICS: list[HeuristicInterface] = [
+    PreviouslyFailedInPR(),
+    EditedByPR(),
+    MentionedInPR(),
+    HistoricalClassFailurCorrelation(trial_mode=True),
+    CorrelatedWithHistoricalFailures(),
+    HistorialEditedFiles(),
+    Profiling(),
+    LLM(),
+    Filepath(),
+    PublicBindings(),
+]
+
+```
+
+
+
+## High-Level Overview
+
+
+This Python file contains 0 class(es) and 0 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Key imports**: annotations, TYPE_CHECKING, EditedByPR, Filepath, LLM, MentionedInPR, Profiling, PublicBindings
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `tools/testing/target_determination/heuristics`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `__future__`: annotations
+- `typing`: TYPE_CHECKING
+- `tools.testing.target_determination.heuristics.edited_by_pr`: EditedByPR
+- `tools.testing.target_determination.heuristics.filepath`: Filepath
+- `tools.testing.target_determination.heuristics.llm`: LLM
+- `tools.testing.target_determination.heuristics.mentioned_in_pr`: MentionedInPR
+- `tools.testing.target_determination.heuristics.profiling`: Profiling
+- `tools.testing.target_determination.heuristics.public_bindings`: PublicBindings
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python tools/testing/target_determination/heuristics/__init__.py
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`tools/testing/target_determination/heuristics`):
+
+- [`previously_failed_in_pr.py_docs.md`](./previously_failed_in_pr.py_docs.md)
+- [`mentioned_in_pr.py_docs.md`](./mentioned_in_pr.py_docs.md)
+- [`historical_class_failure_correlation.py_docs.md`](./historical_class_failure_correlation.py_docs.md)
+- [`utils.py_docs.md`](./utils.py_docs.md)
+- [`llm.py_docs.md`](./llm.py_docs.md)
+- [`correlated_with_historical_failures.py_docs.md`](./correlated_with_historical_failures.py_docs.md)
+- [`public_bindings.py_docs.md`](./public_bindings.py_docs.md)
+- [`interface.py_docs.md`](./interface.py_docs.md)
+- [`historical_edited_files.py_docs.md`](./historical_edited_files.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `__init__.py_docs.md`
+- **Keyword Index**: `__init__.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

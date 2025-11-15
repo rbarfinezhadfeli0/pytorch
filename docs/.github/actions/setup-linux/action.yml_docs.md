@@ -1,0 +1,216 @@
+# Documentation: `.github/actions/setup-linux/action.yml`
+
+## File Metadata
+
+- **Path**: `.github/actions/setup-linux/action.yml`
+- **Size**: 4,382 bytes (4.28 KB)
+- **Type**: YAML Configuration
+- **Extension**: `.yml`
+
+## File Purpose
+
+This is a yaml configuration that is part of the PyTorch project.
+
+## Original Source
+
+```yaml
+name: Setup Linux
+
+description: Set up Docker workspace on EC2
+
+runs:
+  using: composite
+  steps:
+    - name: Display EC2 information
+      shell: bash
+      run: |
+        set -euo pipefail
+        function get_ec2_metadata() {
+          # Pulled from instance metadata endpoint for EC2
+          # see https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-retrieval.html
+          category=$1
+          # If it is GCP runner (runner name contains gcp), do not run this
+          runner_name_str=${{ runner.name }}
+          if [[ -f /.inarc ]]; then
+            echo "ARC Runner, no info on ec2 metadata"
+          elif [[ $runner_name_str == *"gcp"* ]]; then
+            echo "Runner is from Google Cloud Platform, No info on ec2 metadata"
+          else
+            curl -H "X-aws-ec2-metadata-token: $(curl -s -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 30")" -fsSL "http://169.254.169.254/latest/meta-data/${category}"
+          fi
+        }
+        echo "ami-id: $(get_ec2_metadata ami-id)"
+        echo "instance-id: $(get_ec2_metadata instance-id)"
+        echo "instance-type: $(get_ec2_metadata instance-type)"
+        echo "system info $(uname -a)"
+
+    - name: Print GPU info (if present)
+      shell: bash
+      run: if [ -f /usr/bin/nvidia-smi ]; then nvidia-smi; fi
+
+    - name: Check if in a container runner
+      shell: bash
+      id: check_container_runner
+      run: echo "IN_CONTAINER_RUNNER=$(if [ -f /.inarc ] || [ -f /.incontainer ]; then echo true ; else echo false; fi)" >> "$GITHUB_OUTPUT"
+
+    - name: Start docker if docker daemon is not running
+      shell: bash
+      if: ${{ steps.check_container_runner.outputs.IN_CONTAINER_RUNNER == 'false' }}
+      run: |
+        if systemctl is-active --quiet docker; then
+            echo "Docker daemon is running...";
+        else
+            echo "Starting docker daemon..." && sudo systemctl start docker;
+        fi
+
+    - name: Log in to ECR
+      uses: nick-fields/retry@v3.0.0
+      env:
+        AWS_RETRY_MODE: standard
+        AWS_MAX_ATTEMPTS: "5"
+        AWS_DEFAULT_REGION: us-east-1
+      with:
+        shell: bash
+        timeout_minutes: 5
+        max_attempts: 3
+        retry_wait_seconds: 30
+        command: |
+          AWS_ACCOUNT_ID=$(aws sts get-caller-identity|grep Account|cut -f4 -d\")
+          aws ecr get-login-password --region "$AWS_DEFAULT_REGION" | docker login --username AWS \
+              --password-stdin "$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com"
+
+          # For LF Runners we need to make sure we also login to Meta's ECR docker registry too.
+          META_AWS_ACCOUNT_ID=308535385114
+          if [ "$AWS_ACCOUNT_ID" != "$META_AWS_ACCOUNT_ID" ] ; then
+              aws ecr get-login-password --region "$AWS_DEFAULT_REGION" | docker login --username AWS \
+                  --password-stdin "$META_AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com"
+          fi
+
+    - name: Preserve github env variables for use in docker
+      shell: bash
+      run: |
+        env | grep '^GITHUB' >> "/tmp/github_env_${GITHUB_RUN_ID}"
+        env | grep '^CI' >> "/tmp/github_env_${GITHUB_RUN_ID}"
+
+    - name: Kill any existing containers, clean up images
+      if: ${{ steps.check_container_runner.outputs.IN_CONTAINER_RUNNER == 'false' }}
+      shell: bash
+      run: |
+        # ignore expansion of "docker ps -q" since it could be empty
+        # shellcheck disable=SC2046
+        docker stop $(docker ps -q) || true
+        # Prune all of the docker images
+        docker system prune -af
+
+    - name: Check that the docker daemon is running
+      shell: bash
+      continue-on-error: true
+      if: ${{ steps.check_container_runner.outputs.IN_CONTAINER_RUNNER == 'true' }}
+      run: |
+        set +x
+
+        max_attempts=30
+        delay=10
+        attempt=1
+
+        for attempt in $(seq 1 $max_attempts); do
+          echo "Attempt $attempt of $max_attempts: Checking if Docker daemon is running..."
+          if docker info > /dev/null 2>&1; then
+            echo "Docker is running. Proceeding with the next steps"
+            exit 0
+          else
+            echo "Docker is not running yet."
+            echo "Retrying in $delay seconds..."
+            sleep $delay
+          fi
+        done
+        echo "Reached maximum attempts to connect to Docker. Exiting."
+        exit 1
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `.github/actions/setup-linux`.
+
+## Detailed Analysis
+
+### Code Structure
+
+This is a configuration file. See the original source for structure.
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `.github/actions/setup-linux`, which is part of the PyTorch project infrastructure.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`.github/actions/setup-linux`):
+
+
+
+## Cross-References
+
+- **File Documentation**: `action.yml_docs.md`
+- **Keyword Index**: `action.yml_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,505 @@
+# Documentation: `docs/test/cpp/jit/test_custom_operators.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/cpp/jit/test_custom_operators.cpp_docs.md`
+- **Size**: 11,463 bytes (11.19 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/cpp/jit/test_custom_operators.cpp`
+
+## File Metadata
+
+- **Path**: `test/cpp/jit/test_custom_operators.cpp`
+- **Size**: 8,619 bytes (8.42 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**.
+
+## Original Source
+
+```cpp
+#include <gtest/gtest.h>
+
+#include <test/cpp/jit/test_utils.h>
+
+#include <torch/csrc/jit/ir/alias_analysis.h>
+#include <torch/csrc/jit/ir/irparser.h>
+#include <torch/csrc/jit/passes/dead_code_elimination.h>
+#include <torch/csrc/jit/runtime/custom_operator.h>
+#include <torch/csrc/jit/runtime/register_ops_utils.h>
+#include <torch/jit.h>
+
+namespace torch {
+namespace jit {
+
+TEST(CustomOperatorTest, InferredSchema) {
+  torch::RegisterOperators reg(
+      "foo::bar", [](double a, at::Tensor b) { return a + b; });
+  auto& ops = getAllOperatorsFor(Symbol::fromQualString("foo::bar"));
+  ASSERT_EQ(ops.size(), 1);
+
+  auto& op = ops.front();
+  ASSERT_EQ(op->schema().name(), "foo::bar");
+
+  ASSERT_EQ(op->schema().arguments().size(), 2);
+  ASSERT_EQ(op->schema().arguments()[0].name(), "_0");
+  ASSERT_EQ(op->schema().arguments()[0].type()->kind(), TypeKind::FloatType);
+  ASSERT_EQ(op->schema().arguments()[1].name(), "_1");
+  ASSERT_EQ(op->schema().arguments()[1].type()->kind(), TypeKind::TensorType);
+
+  ASSERT_EQ(op->schema().returns()[0].type()->kind(), TypeKind::TensorType);
+
+  Stack stack;
+  push(stack, 2.0f, at::ones(5));
+  op->getOperation()(stack);
+  at::Tensor output;
+  pop(stack, output);
+
+  ASSERT_TRUE(output.allclose(at::full(5, 3.0f)));
+}
+
+TEST(CustomOperatorTest, ExplicitSchema) {
+  torch::RegisterOperators reg(
+      "foo::bar_with_schema(float a, Tensor b) -> Tensor",
+      [](double a, at::Tensor b) { return a + b; });
+
+  auto& ops =
+      getAllOperatorsFor(Symbol::fromQualString("foo::bar_with_schema"));
+  ASSERT_EQ(ops.size(), 1);
+
+  auto& op = ops.front();
+  ASSERT_EQ(op->schema().name(), "foo::bar_with_schema");
+
+  ASSERT_EQ(op->schema().arguments().size(), 2);
+  ASSERT_EQ(op->schema().arguments()[0].name(), "a");
+  ASSERT_EQ(op->schema().arguments()[0].type()->kind(), TypeKind::FloatType);
+  ASSERT_EQ(op->schema().arguments()[1].name(), "b");
+  ASSERT_EQ(op->schema().arguments()[1].type()->kind(), TypeKind::TensorType);
+
+  ASSERT_EQ(op->schema().returns().size(), 1);
+  ASSERT_EQ(op->schema().returns()[0].type()->kind(), TypeKind::TensorType);
+
+  Stack stack;
+  push(stack, 2.0f, at::ones(5));
+  op->getOperation()(stack);
+  at::Tensor output;
+  pop(stack, output);
+
+  ASSERT_TRUE(output.allclose(at::full(5, 3.0f)));
+}
+
+TEST(CustomOperatorTest, ListParameters) {
+  // Check that lists work well.
+  torch::RegisterOperators reg(
+      "foo::lists(int[] ints, float[] floats, complex[] complexdoubles, Tensor[] tensors) -> float[]",
+      [](torch::List<int64_t> ints,
+         torch::List<double> floats,
+         torch::List<c10::complex<double>> complexdoubles,
+         torch::List<at::Tensor> tensors) { return floats; });
+
+  auto& ops = getAllOperatorsFor(Symbol::fromQualString("foo::lists"));
+  ASSERT_EQ(ops.size(), 1);
+
+  auto& op = ops.front();
+  ASSERT_EQ(op->schema().name(), "foo::lists");
+
+  ASSERT_EQ(op->schema().arguments().size(), 4);
+  ASSERT_EQ(op->schema().arguments()[0].name(), "ints");
+  ASSERT_TRUE(
+      op->schema().arguments()[0].type()->isSubtypeOf(*ListType::ofInts()));
+  ASSERT_EQ(op->schema().arguments()[1].name(), "floats");
+  ASSERT_TRUE(
+      op->schema().arguments()[1].type()->isSubtypeOf(*ListType::ofFloats()));
+  ASSERT_EQ(op->schema().arguments()[2].name(), "complexdoubles");
+  ASSERT_TRUE(op->schema().arguments()[2].type()->isSubtypeOf(
+      *ListType::ofComplexDoubles()));
+  ASSERT_EQ(op->schema().arguments()[3].name(), "tensors");
+  ASSERT_TRUE(
+      op->schema().arguments()[3].type()->isSubtypeOf(*ListType::ofTensors()));
+
+  ASSERT_EQ(op->schema().returns().size(), 1);
+  ASSERT_TRUE(
+      op->schema().returns()[0].type()->isSubtypeOf(*ListType::ofFloats()));
+
+  Stack stack;
+  push(stack, c10::List<int64_t>({1, 2}));
+  push(stack, c10::List<double>({1.0, 2.0}));
+  push(
+      stack,
+      c10::List<c10::complex<double>>(
+          {c10::complex<double>(2.4, -5.5), c10::complex<double>(-1.3, 2)}));
+  push(stack, c10::List<at::Tensor>({at::ones(5)}));
+  op->getOperation()(stack);
+  c10::List<double> output;
+  pop(stack, output);
+
+  ASSERT_EQ(output.size(), 2);
+  ASSERT_EQ(output.get(0), 1.0);
+  ASSERT_EQ(output.get(1), 2.0);
+}
+
+TEST(CustomOperatorTest, ListParameters2) {
+  torch::RegisterOperators reg(
+      "foo::lists2(Tensor[] tensors) -> Tensor[]",
+      [](torch::List<at::Tensor> tensors) { return tensors; });
+
+  auto& ops = getAllOperatorsFor(Symbol::fromQualString("foo::lists2"));
+  ASSERT_EQ(ops.size(), 1);
+
+  auto& op = ops.front();
+  ASSERT_EQ(op->schema().name(), "foo::lists2");
+
+  ASSERT_EQ(op->schema().arguments().size(), 1);
+  ASSERT_EQ(op->schema().arguments()[0].name(), "tensors");
+  ASSERT_TRUE(
+      op->schema().arguments()[0].type()->isSubtypeOf(*ListType::ofTensors()));
+
+  ASSERT_EQ(op->schema().returns().size(), 1);
+  ASSERT_TRUE(
+      op->schema().returns()[0].type()->isSubtypeOf(*ListType::ofTensors()));
+
+  Stack stack;
+  push(stack, c10::List<at::Tensor>({at::ones(5)}));
+  op->getOperation()(stack);
+  c10::List<at::Tensor> output;
+  pop(stack, output);
+
+  ASSERT_EQ(output.size(), 1);
+  ASSERT_TRUE(output.get(0).allclose(at::ones(5)));
+}
+
+TEST(CustomOperatorTest, Aliasing) {
+  torch::RegisterOperators reg(
+      "foo::aliasing", [](at::Tensor a, at::Tensor b) -> at::Tensor {
+        a.add_(b);
+        return a;
+      });
+  getAllOperatorsFor(Symbol::fromQualString("foo::aliasing"));
+
+  {
+    auto graph = std::make_shared<Graph>();
+    parseIR(
+        R"IR(
+graph(%x: Tensor, %y: Tensor):
+  %ret : Tensor = foo::aliasing(%x, %y)
+  return (%ret)
+  )IR",
+        graph.get());
+
+    auto opNode = *graph->block()->nodes().begin();
+
+    AliasDb aliasDb(graph);
+    for (const auto input : opNode->inputs()) {
+      // The custom op writes to all its inputs
+      ASSERT_TRUE(aliasDb.writesToAlias(opNode, {input}));
+      // The output should be a wildcard and thus alias all inputs
+      ASSERT_TRUE(aliasDb.mayAlias(opNode->output(), input));
+    }
+  }
+  {
+    // DCE should not remove a custom op
+    auto graph = std::make_shared<Graph>();
+    const auto text = R"IR(
+graph(%x: Tensor, %y: Tensor):
+  # CHECK: foo::aliasing
+  %ret : Tensor = foo::aliasing(%x, %y)
+  return (%x)
+  )IR";
+    parseIR(text, graph.get());
+    EliminateDeadCode(graph);
+
+    testing::FileCheck().run(text, *graph);
+  }
+}
+
+// NOLINTNEXTLINE(modernize-avoid-c-arrays,cppcoreguidelines-avoid-c-arrays)
+static constexpr char op_list[] = "foofoo::bar.template;foo::another";
+#define TORCH_SELECTIVE_NAME_IN_SCHEMA(l, n)                                   \
+  torch::detail::SelectiveStr<c10::impl::op_allowlist_contains_name_in_schema( \
+      l, n)>(n)
+
+TEST(TestCustomOperator, OperatorGeneratorUndeclared) {
+  // Try to register an op name that does not exist in op_list.
+  // Expected: the op name is not registered.
+  torch::jit::RegisterOperators reg({OperatorGenerator(
+      TORCH_SELECTIVE_NAME_IN_SCHEMA(
+          op_list, "foofoo::not_exist(float a, Tensor b) -> Tensor"),
+      [](Stack& stack) {
+        // NOLINTNEXTLINE(cppcoreguidelines-init-variables)
+        double a;
+        at::Tensor b;
+        pop(stack, a, b);
+        push(stack, a + b);
+      },
+      aliasAnalysisFromSchema())});
+
+  auto& ops = getAllOperatorsFor(Symbol::fromQualString("foofoo::not_exist"));
+  ASSERT_EQ(ops.size(), 0);
+}
+
+TEST(TestCustomOperator, OperatorGeneratorBasic) {
+  // The operator should be successfully registered since its name is in the
+  // whitelist.
+  torch::jit::RegisterOperators reg({OperatorGenerator(
+      TORCH_SELECTIVE_NAME_IN_SCHEMA(
+          op_list, "foofoo::bar.template(float a, Tensor b) -> Tensor"),
+      [](Stack& stack) {
+        // NOLINTNEXTLINE(cppcoreguidelines-init-variables)
+        double a;
+        at::Tensor b;
+        pop(stack, a, b);
+        push(stack, a + b);
+      },
+      aliasAnalysisFromSchema())});
+
+  auto& ops = getAllOperatorsFor(Symbol::fromQualString("foofoo::bar"));
+  ASSERT_EQ(ops.size(), 1);
+
+  auto& op = ops.front();
+  ASSERT_EQ(op->schema().name(), "foofoo::bar");
+
+  ASSERT_EQ(op->schema().arguments().size(), 2);
+  ASSERT_EQ(op->schema().arguments()[0].name(), "a");
+  ASSERT_EQ(op->schema().arguments()[0].type()->kind(), TypeKind::FloatType);
+  ASSERT_EQ(op->schema().arguments()[1].name(), "b");
+  ASSERT_EQ(op->schema().arguments()[1].type()->kind(), TypeKind::TensorType);
+
+  ASSERT_EQ(op->schema().returns().size(), 1);
+  ASSERT_EQ(op->schema().returns()[0].type()->kind(), TypeKind::TensorType);
+
+  Stack stack;
+  push(stack, 2.0f, at::ones(5));
+  op->getOperation()(stack);
+  at::Tensor output;
+  pop(stack, output);
+
+  ASSERT_TRUE(output.allclose(at::full(5, 3.0f)));
+}
+
+} // namespace jit
+} // namespace torch
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 11 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `jit`, `torch`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/cpp/jit`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `gtest/gtest.h`
+- `test/cpp/jit/test_utils.h`
+- `torch/csrc/jit/ir/alias_analysis.h`
+- `torch/csrc/jit/ir/irparser.h`
+- `torch/csrc/jit/passes/dead_code_elimination.h`
+- `torch/csrc/jit/runtime/custom_operator.h`
+- `torch/csrc/jit/runtime/register_ops_utils.h`
+- `torch/jit.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/cpp/jit/test_custom_operators.cpp
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/cpp/jit`):
+
+- [`test_code_template.cpp_docs.md`](./test_code_template.cpp_docs.md)
+- [`test_memory_dag.cpp_docs.md`](./test_memory_dag.cpp_docs.md)
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`test_cleanup_passes.cpp_docs.md`](./test_cleanup_passes.cpp_docs.md)
+- [`test_union.cpp_docs.md`](./test_union.cpp_docs.md)
+- [`test_subgraph_rewriter.cpp_docs.md`](./test_subgraph_rewriter.cpp_docs.md)
+- [`test_backend_compiler_preprocess.cpp_docs.md`](./test_backend_compiler_preprocess.cpp_docs.md)
+- [`test_lite_interpreter_direct.cpp_docs.md`](./test_lite_interpreter_direct.cpp_docs.md)
+- [`test_save_load.cpp_docs.md`](./test_save_load.cpp_docs.md)
+- [`test_module_api.cpp_docs.md`](./test_module_api.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_custom_operators.cpp_docs.md`
+- **Keyword Index**: `test_custom_operators.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/cpp/jit`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/cpp/jit`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/cpp/jit/test_custom_operators.cpp_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/cpp/jit`):
+
+- [`test_graph_iterator.cpp_kw.md_docs.md`](./test_graph_iterator.cpp_kw.md_docs.md)
+- [`test_qualified_name.cpp_docs.md_docs.md`](./test_qualified_name.cpp_docs.md_docs.md)
+- [`test_fuser.cpp_kw.md_docs.md`](./test_fuser.cpp_kw.md_docs.md)
+- [`test_utils.cpp_docs.md_docs.md`](./test_utils.cpp_docs.md_docs.md)
+- [`test_custom_class_registrations.h_docs.md_docs.md`](./test_custom_class_registrations.h_docs.md_docs.md)
+- [`tests_setup.py_docs.md_docs.md`](./tests_setup.py_docs.md_docs.md)
+- [`test_exception.cpp_kw.md_docs.md`](./test_exception.cpp_kw.md_docs.md)
+- [`test_cs_debug_info_serialization.cpp_docs.md_docs.md`](./test_cs_debug_info_serialization.cpp_docs.md_docs.md)
+- [`torch_python_test.cpp_docs.md_docs.md`](./torch_python_test.cpp_docs.md_docs.md)
+- [`test_backend_compiler_preprocess.cpp_docs.md_docs.md`](./test_backend_compiler_preprocess.cpp_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_custom_operators.cpp_docs.md_docs.md`
+- **Keyword Index**: `test_custom_operators.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

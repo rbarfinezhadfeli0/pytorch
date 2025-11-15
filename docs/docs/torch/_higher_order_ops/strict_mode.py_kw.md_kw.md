@@ -1,0 +1,83 @@
+# Keyword Index: `docs/torch/_higher_order_ops/strict_mode.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/_higher_order_ops/strict_mode.py_kw.md](../../../../docs/torch/_higher_order_ops/strict_mode.py_kw.md)
+- **Documentation**: [`strict_mode.py_kw.md_docs.md`](./strict_mode.py_kw.md_docs.md)
+- **Folder**: `docs/torch/_higher_order_ops`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Any`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Architecture`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Basic`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Callable`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Classs`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Complete`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Considerations`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Dependencies`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Design`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Detailed`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`DispatchKey`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Documentation`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Efficiency`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Extracted`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`FakeTensorMode`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`File`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Folder`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Functions`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Generated`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`High`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`HigherOrderOperator`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`How`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Imports`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`In`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Index`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Information`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Keyword`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Keywords`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Level`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Map`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Metadata`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Original`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Overview`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Performance`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Purpose`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`PyTorch`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Related`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Repository`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Safety`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Section`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Security`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Source`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`StrictMode`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`System`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Testing`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`The`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`This`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+- **`Usage`**: [strict_mode.py_kw.md_docs.md](./strict_mode.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

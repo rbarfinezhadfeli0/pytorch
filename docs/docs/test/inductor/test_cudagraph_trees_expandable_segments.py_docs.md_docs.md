@@ -1,0 +1,293 @@
+# Documentation: `docs/test/inductor/test_cudagraph_trees_expandable_segments.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/inductor/test_cudagraph_trees_expandable_segments.py_docs.md`
+- **Size**: 4,442 bytes (4.34 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/inductor/test_cudagraph_trees_expandable_segments.py`
+
+## File Metadata
+
+- **Path**: `test/inductor/test_cudagraph_trees_expandable_segments.py`
+- **Size**: 1,307 bytes (1.28 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**. Can be **executed as a standalone script**.
+
+## Original Source
+
+```python
+# Owner(s): ["module: cuda"]
+# run time cuda tests, but with the allocator using expandable segments
+
+import os
+import pathlib
+import sys
+
+import torch
+from torch.testing._internal.common_cuda import IS_JETSON, IS_WINDOWS
+from torch.testing._internal.common_utils import run_tests
+from torch.testing._internal.inductor_utils import HAS_CUDA_AND_TRITON
+
+
+pytorch_test_dir = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+sys.path.append(pytorch_test_dir)
+
+if HAS_CUDA_AND_TRITON:
+    try:
+        from .test_cudagraph_trees import CudaGraphTreeTests
+    except ImportError:
+        from test_cudagraph_trees import (  # noqa: F401  # @manual=fbcode//caffe2/test/inductor:cudagraph_trees-library
+            CudaGraphTreeTests,
+        )
+
+REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
+
+sys.path.insert(0, str(REPO_ROOT))
+from tools.stats.import_test_stats import get_disabled_tests  # @manual
+
+
+# Make sure to remove REPO_ROOT after import is done
+sys.path.remove(str(REPO_ROOT))
+
+if __name__ == "__main__":
+    if (
+        torch.cuda.is_available()
+        and not IS_JETSON
+        and not IS_WINDOWS
+        and HAS_CUDA_AND_TRITON
+    ):
+        get_disabled_tests(".")
+
+        torch.cuda.memory._set_allocator_settings("expandable_segments:True")
+
+        run_tests()
+
+```
+
+
+
+## High-Level Overview
+
+
+This Python file contains 0 class(es) and 0 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Key imports**: os, pathlib, sys, torch, IS_JETSON, IS_WINDOWS, run_tests, HAS_CUDA_AND_TRITON, CudaGraphTreeTests, get_disabled_tests  , is done
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/inductor`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `os`
+- `pathlib`
+- `sys`
+- `torch`
+- `torch.testing._internal.common_cuda`: IS_JETSON, IS_WINDOWS
+- `torch.testing._internal.common_utils`: run_tests
+- `torch.testing._internal.inductor_utils`: HAS_CUDA_AND_TRITON
+- `.test_cudagraph_trees`: CudaGraphTreeTests
+- `tools.stats.import_test_stats`: get_disabled_tests  
+- `is done`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Error Handling**: Includes exception handling
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/inductor/test_cudagraph_trees_expandable_segments.py
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/inductor`):
+
+- [`test_benchmark_fusion.py_docs.md`](./test_benchmark_fusion.py_docs.md)
+- [`test_op_dtype_prop.py_docs.md`](./test_op_dtype_prop.py_docs.md)
+- [`test_custom_op_autotune.py_docs.md`](./test_custom_op_autotune.py_docs.md)
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`test_inductor_freezing.py_docs.md`](./test_inductor_freezing.py_docs.md)
+- [`test_b2b_gemm.py_docs.md`](./test_b2b_gemm.py_docs.md)
+- [`test_minifier_isolate.py_docs.md`](./test_minifier_isolate.py_docs.md)
+- [`test_move_constructors_to_cuda.py_docs.md`](./test_move_constructors_to_cuda.py_docs.md)
+- [`test_cutlass_backend.py_docs.md`](./test_cutlass_backend.py_docs.md)
+- [`test_cache.py_docs.md`](./test_cache.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_cudagraph_trees_expandable_segments.py_docs.md`
+- **Keyword Index**: `test_cudagraph_trees_expandable_segments.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/inductor`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/inductor`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Error Handling**: Includes exception handling
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Implements or uses **caching** mechanisms.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/inductor/test_cudagraph_trees_expandable_segments.py_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/inductor`):
+
+- [`test_snode_runtime.py_kw.md_docs.md`](./test_snode_runtime.py_kw.md_docs.md)
+- [`test_metrics.py_docs.md_docs.md`](./test_metrics.py_docs.md_docs.md)
+- [`test_flex_attention.py_kw.md_docs.md`](./test_flex_attention.py_kw.md_docs.md)
+- [`test_cuda_repro.py_kw.md_docs.md`](./test_cuda_repro.py_kw.md_docs.md)
+- [`test_fxir_backend.py_kw.md_docs.md`](./test_fxir_backend.py_kw.md_docs.md)
+- [`test_split_cat_fx_passes.py_kw.md_docs.md`](./test_split_cat_fx_passes.py_kw.md_docs.md)
+- [`test_mmdecomp.py_kw.md_docs.md`](./test_mmdecomp.py_kw.md_docs.md)
+- [`test_torchinductor_codegen_config_overrides.py_kw.md_docs.md`](./test_torchinductor_codegen_config_overrides.py_kw.md_docs.md)
+- [`test_aot_inductor_custom_ops.py_kw.md_docs.md`](./test_aot_inductor_custom_ops.py_kw.md_docs.md)
+- [`test_minifier.py_kw.md_docs.md`](./test_minifier.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_cudagraph_trees_expandable_segments.py_docs.md_docs.md`
+- **Keyword Index**: `test_cudagraph_trees_expandable_segments.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

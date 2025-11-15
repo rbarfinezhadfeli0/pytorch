@@ -1,0 +1,87 @@
+# Keyword Index: `docs/aten/src/ATen/native/mkldnn/xpu/detail/Attention.cpp_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/native/mkldnn/xpu/detail/Attention.cpp_kw.md](../../../../../../../../../docs/aten/src/ATen/native/mkldnn/xpu/detail/Attention.cpp_kw.md)
+- **Documentation**: [`Attention.cpp_kw.md_docs.md`](./Attention.cpp_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/native/mkldnn/xpu/detail`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Analysis`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Architecture`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Attention`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Attr`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Basic`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Class`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Complete`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Considerations`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Dependencies`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Design`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Detailed`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Documentation`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Efficiency`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Extracted`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`File`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Folder`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Functions`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Generated`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`High`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`How`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`In`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Includes`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Index`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Information`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Keyword`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Keywords`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Level`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Map`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Metadata`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Namespaces`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`OpMathType`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Original`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Overview`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Performance`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Purpose`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`PyTorch`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Related`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Repository`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`SDPABackwardLogicalParams`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`SDPALogicalParams`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Safety`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Section`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Security`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Source`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Structs`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`System`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`TensorID`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Testing`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`The`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`This`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Usage`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+- **`Utils`**: [Attention.cpp_kw.md_docs.md](./Attention.cpp_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

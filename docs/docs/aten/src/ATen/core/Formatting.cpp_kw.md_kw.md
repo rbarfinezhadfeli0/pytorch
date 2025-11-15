@@ -1,0 +1,83 @@
+# Keyword Index: `docs/aten/src/ATen/core/Formatting.cpp_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/core/Formatting.cpp_kw.md](../../../../../../docs/aten/src/ATen/core/Formatting.cpp_kw.md)
+- **Documentation**: [`Formatting.cpp_kw.md_docs.md`](./Formatting.cpp_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/core`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Analysis`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Architecture`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Basic`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Class`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Complete`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Considerations`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Dependencies`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Design`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Detailed`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Documentation`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Efficiency`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Extracted`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`File`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Folder`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`FormatType`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Formatting`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Functions`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Generated`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`High`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`How`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`In`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Includes`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Index`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Information`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Keyword`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Keywords`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Level`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Map`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Metadata`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Namespaces`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Original`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Overview`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Performance`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`PrintFormat`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Purpose`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`PyTorch`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Related`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Repository`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Safety`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Section`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Security`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Source`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Structs`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`System`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Testing`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`The`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`This`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+- **`Usage`**: [Formatting.cpp_kw.md_docs.md](./Formatting.cpp_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

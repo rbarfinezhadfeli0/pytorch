@@ -1,0 +1,377 @@
+# Documentation: `docs/torch/fx/experimental/proxy_tensor.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/fx/experimental/proxy_tensor.py_kw.md`
+- **Size**: 18,600 bytes (18.16 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `torch/fx/experimental/proxy_tensor.py`
+
+## File Information
+
+- **Original File**: [torch/fx/experimental/proxy_tensor.py](../../../../torch/fx/experimental/proxy_tensor.py)
+- **Documentation**: [`proxy_tensor.py_docs.md`](./proxy_tensor.py_docs.md)
+- **Folder**: `torch/fx/experimental`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`AttrProxy`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`DecompositionInterpreter`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`PreDispatchTorchFunctionMode`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`ProxyTorchDispatchMode`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`PythonKeyTracer`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`TorchFunctionMetadataMode`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_AttrProxy`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_DisableUpdateTensorTracker`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_GraphAppendingTracerEx`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_HasMeta`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_MakefxTracer`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_ModuleNotInstalledAsSubmoduleError`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_ModuleStackTracer`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_NoDefault`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_SelectiveDecomposeInterpreter`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_SymNodeDict`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`class`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`for`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`from`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`is`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`of`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+
+### Functions
+
+- **`__contains__`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`__enter__`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`__exit__`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`__getattr__`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`__getitem__`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`__init__`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`__iter__`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`__len__`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`__setitem__`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`__sym_dispatch__`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`__torch_dispatch__`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`__torch_function__`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_build_proxy_for_sym_expr`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_checkpoint_modes`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_compute_proxy`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_construct_modes_with_fx_tracer`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_create_sub_fx_tracer`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_delete_proxy_attr`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_enable_thunkify`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_fetch_proxies_and_all_constant_flag`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_init_modes_from_inputs`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_init_modes_from_parent`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_is_proxy_tensor_update_tensor_tracker_disabled`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_make_temp_remove_mode_context_manager`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_maybe_record_pointwise_barrier`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_modules`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_proxy_tensor_disable_update_tensor_tracker`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_restore_modes`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_set_make_fx_tracer`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_set_unbacked_bindings`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_should_save_eager_input_vals`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_sym_register`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_sympy_handlers`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_trace_inner`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_wrap_fake`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_wrap_func`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`call_module`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`can_handle_tensor`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`context_manager_fn`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`create_arg`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`create_node`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`decompose`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`disable_autocast_cache`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`disable_proxy_modes_tracing`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`dispatch_trace`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`enable_tracing`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`extract_val`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`f`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`f_graph`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`f_graph_2`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`fake_signature`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`fetch_object_proxy`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`fetch_sym_proxy`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`get`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`get_attr`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`get_base`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`get_constant`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`get_innermost_proxy_mode`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`get_isolated_graphmodule`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`get_proxy_mode`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`get_proxy_node`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`get_proxy_slot`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`get_sym_proxy_slot`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`get_tensor_proxy_slot`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`get_torch_dispatch_modes`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`getattr`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`handle_sym_dispatch`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`has_proxy_slot`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`impure_pred`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`inner`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`inner_wrap_fake`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`is_hop_subgraph_tracer`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`is_infra_mode`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`is_leaf_module`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`is_sym_node`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`make_fx`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`map_fn`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`maybe_disable_thunkify`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`maybe_enable_thunkify`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`maybe_handle_decomp`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`output`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`path_of_module`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`placeholder`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`proxy_call`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`recursive_wrap`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`reset_proxy_mapping`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`run`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`run_node`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`selective_decompose`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`set_meta`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`set_original_aten_op`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`set_proxy_slot`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`snapshot_fake`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`tensor_numel_in_limit`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`thunkify`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`trace`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`trace_subgraph`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`track_tensor`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`track_tensor_tree`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`try_set_proxy_slot`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`unwrap`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`unwrap_proxy`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`wrap_fn`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`wrap_key`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`wrap_with_proxy`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`wrapped`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`wrapper_and_args_for_make_fx`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+
+### Imports
+
+- **`._backward_state`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`.sym_node`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`.symbolic_shapes`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`BackwardState`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`BoolLikeType`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`Callable`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`CompilerBisector`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`ConstantSource`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`FakeScriptObject`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`GraphModule`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`HigherOrderOperator`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`InvokeSubgraphHOP`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`Module`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`MutableMapping`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`OpOverload`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`OptimizedModule`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`PHBase`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`ParamSpec`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`ShapeEnv`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`SymBool`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`SymNode`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`Thunk`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`TorchFunctionMode`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`WeakKeyDictionary`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_GeneratorContextManager`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_WeakHashRef`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`__future__`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_assign_attr`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_extract_tensor_metadata`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`_len_torch_function_stack`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`annotations`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`collections`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`collections.abc`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`compute_unbacked_bindings`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`config`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`contextlib`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`count`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`dataclass`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`dataclasses`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`dedupe_symints`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`defaultdict`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`detect_fake_mode`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`enable_python_dispatcher`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`fast_detach`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`functools`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`get_layout_constraint_tag`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`insert_deferred_runtime_asserts`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`inspect`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`is_accessor_node`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`is_opaque_type`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`is_sparse_any`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`logging`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`of`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`operator`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`py_sym_types`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`sympy`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`threading`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`torch`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`torch._dispatch.python`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`torch._dynamo`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`torch._dynamo.source`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`torch._functorch.config`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`torch._guards`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`torch._higher_order_ops.invoke_subgraph`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`torch._inductor`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`torch._inductor.compiler_bisector`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`torch._inductor.fx_passes.dedupe_symint_uses`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`torch._library.fake_class_registry`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`torch._library.opaque_object`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`torch._library.utils`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`torch._logging`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`torch._ops`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`torch._subclasses.fake_impls`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`torch._subclasses.fake_tensor`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`torch._subclasses.meta_utils`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`torch.fx`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`torch.fx._symbolic_trace`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`torch.fx.graph_module`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`torch.fx.node`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`torch.fx.passes.runtime_assert`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`torch.fx.passes.shape_prop`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`torch.fx.traceback`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`torch.nn`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`torch.overrides`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`torch.types`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`torch.utils._python_dispatch`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`torch.utils._pytree`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`torch.utils._stats`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`torch.utils._sympy.interp`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`torch.utils._thunk`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`torch.utils.weak`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`trace_structured`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`types`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`typing`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`typing_extensions`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+- **`weakref`**: [proxy_tensor.py_docs.md](./proxy_tensor.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/fx/experimental`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/fx/experimental`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Implements or uses **caching** mechanisms.
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/fx/experimental`):
+
+- [`schema_type_annotation.py_kw.md_docs.md`](./schema_type_annotation.py_kw.md_docs.md)
+- [`partitioner_utils.py_docs.md_docs.md`](./partitioner_utils.py_docs.md_docs.md)
+- [`recording.py_docs.md_docs.md`](./recording.py_docs.md_docs.md)
+- [`validator.py_kw.md_docs.md`](./validator.py_kw.md_docs.md)
+- [`recording.py_kw.md_docs.md`](./recording.py_kw.md_docs.md)
+- [`accelerator_partitioner.py_kw.md_docs.md`](./accelerator_partitioner.py_kw.md_docs.md)
+- [`optimization.py_kw.md_docs.md`](./optimization.py_kw.md_docs.md)
+- [`graph_gradual_typechecker.py_docs.md_docs.md`](./graph_gradual_typechecker.py_docs.md_docs.md)
+- [`_dynamism.py_kw.md_docs.md`](./_dynamism.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `proxy_tensor.py_kw.md_docs.md`
+- **Keyword Index**: `proxy_tensor.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

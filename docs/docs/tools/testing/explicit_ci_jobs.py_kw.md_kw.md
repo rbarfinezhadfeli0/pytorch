@@ -1,0 +1,78 @@
+# Keyword Index: `docs/tools/testing/explicit_ci_jobs.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/tools/testing/explicit_ci_jobs.py_kw.md](../../../../docs/tools/testing/explicit_ci_jobs.py_kw.md)
+- **Documentation**: [`explicit_ci_jobs.py_kw.md_docs.md`](./explicit_ci_jobs.py_kw.md_docs.md)
+- **Folder**: `docs/tools/testing`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`Any`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`Architecture`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`Basic`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`Complete`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`Considerations`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`Dependencies`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`Design`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`Detailed`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`Documentation`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`Efficiency`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`Extracted`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`File`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`Folder`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`Functions`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`Generated`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`High`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`How`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`Imports`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`In`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`Index`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`Information`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`Keyword`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`Keywords`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`Level`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`Map`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`Metadata`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`Original`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`Overview`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`Path`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`Performance`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`Purpose`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`PyTorch`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`Related`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`Repository`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`Safety`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`Section`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`Security`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`Source`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`System`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`Testing`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`The`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`This`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+- **`Usage`**: [explicit_ci_jobs.py_kw.md_docs.md](./explicit_ci_jobs.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

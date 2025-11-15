@@ -1,0 +1,87 @@
+# Keyword Index: `docs/aten/src/ATen/native/sparse/SparseBlas.cpp_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/native/sparse/SparseBlas.cpp_kw.md](../../../../../../../docs/aten/src/ATen/native/sparse/SparseBlas.cpp_kw.md)
+- **Documentation**: [`SparseBlas.cpp_kw.md_docs.md`](./SparseBlas.cpp_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/native/sparse`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Analysis`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Architecture`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Basic`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Complete`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Considerations`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Dependencies`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Design`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Detailed`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Documentation`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Efficiency`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`ExpandUtils`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Extracted`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`File`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Folder`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Functions`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Generated`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`High`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`How`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`In`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Includes`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Index`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Information`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Keyword`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Keywords`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Level`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Map`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`MaybeOwned`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Metadata`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Namespaces`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`NativeFunctions`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Original`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Overview`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Performance`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Purpose`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`PyTorch`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Related`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Repository`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Resize`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Safety`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`SampledAddmmKernel`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Section`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Security`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Source`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`SparseBlas`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`SparseBlasImpl`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`SparseCsrTensorUtils`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`System`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Tensor`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Testing`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`The`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`This`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+- **`Usage`**: [SparseBlas.cpp_kw.md_docs.md](./SparseBlas.cpp_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

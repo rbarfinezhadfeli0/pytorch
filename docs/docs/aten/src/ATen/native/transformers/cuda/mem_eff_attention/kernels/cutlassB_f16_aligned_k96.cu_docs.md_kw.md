@@ -1,0 +1,105 @@
+# Keyword Index: `docs/aten/src/ATen/native/transformers/cuda/mem_eff_attention/kernels/cutlassB_f16_aligned_k96.cu_docs.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/native/transformers/cuda/mem_eff_attention/kernels/cutlassB_f16_aligned_k96.cu_docs.md](../../../../../../../../../../docs/aten/src/ATen/native/transformers/cuda/mem_eff_attention/kernels/cutlassB_f16_aligned_k96.cu_docs.md)
+- **Documentation**: [`cutlassB_f16_aligned_k96.cu_docs.md_docs.md`](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/native/transformers/cuda/mem_eff_attention/kernels`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`A`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`ATen`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`All`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Analysis`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Architecture`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`AttentionBackwardKernel`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`BSD`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`C`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`CUDA`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Code`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Common`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Considerations`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Copyright`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Cross`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Dependencies`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Design`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Detailed`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Documentation`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Examples`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Extension`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`FATAL`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`File`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Files`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Folder`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`For`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`GPU`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Generated`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`High`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Idioms`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Import`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Inc`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Index`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`KB`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Keyword`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`LICENSE`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Level`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Library`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Manual`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Meta`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Metadata`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Namespaces`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`No`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Notes`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Original`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Overview`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Params`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Path`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Patterns`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Performance`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Platforms`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Purpose`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`PyTorch`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`PyTorchMemEffAttention`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`References`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Related`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Repository`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Role`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Safety`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Security`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`See`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Size`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Sm80`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Source`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Structure`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`System`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Tensor`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Test`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Testing`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`This`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Type`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+- **`Usage`**: [cutlassB_f16_aligned_k96.cu_docs.md_docs.md](./cutlassB_f16_aligned_k96.cu_docs.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

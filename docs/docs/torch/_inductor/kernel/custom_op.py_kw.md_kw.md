@@ -1,0 +1,85 @@
+# Keyword Index: `docs/torch/_inductor/kernel/custom_op.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/_inductor/kernel/custom_op.py_kw.md](../../../../../docs/torch/_inductor/kernel/custom_op.py_kw.md)
+- **Documentation**: [`custom_op.py_kw.md_docs.md`](./custom_op.py_kw.md_docs.md)
+- **Folder**: `docs/torch/_inductor/kernel`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Any`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Architecture`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Basic`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Buffer`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Callable`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Classs`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Complete`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Considerations`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`CustomOpConfig`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`CustomOpDef`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Dependencies`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Design`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Detailed`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Documentation`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Efficiency`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Extracted`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`File`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Folder`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Functions`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Generated`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`High`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`How`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Imports`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`In`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Index`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Information`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Keyword`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Keywords`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Level`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Map`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Metadata`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`OrderedSet`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Original`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Overview`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Performance`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Purpose`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`PyTorch`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Related`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Repository`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Safety`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Section`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Security`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Source`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`SubgraphTemplate`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`System`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Testing`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`The`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`This`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`Usage`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+- **`V`**: [custom_op.py_kw.md_docs.md](./custom_op.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

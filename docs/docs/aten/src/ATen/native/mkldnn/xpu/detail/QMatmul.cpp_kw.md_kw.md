@@ -1,0 +1,86 @@
+# Keyword Index: `docs/aten/src/ATen/native/mkldnn/xpu/detail/QMatmul.cpp_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/native/mkldnn/xpu/detail/QMatmul.cpp_kw.md](../../../../../../../../../docs/aten/src/ATen/native/mkldnn/xpu/detail/QMatmul.cpp_kw.md)
+- **Documentation**: [`QMatmul.cpp_kw.md_docs.md`](./QMatmul.cpp_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/native/mkldnn/xpu/detail`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Analysis`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Architecture`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Attr`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Basic`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`BlasBackend`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Class`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Complete`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Considerations`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Dependencies`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Design`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Detailed`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Documentation`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Efficiency`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Extracted`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`File`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Folder`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Functions`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Generated`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`High`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`How`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`In`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Includes`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Index`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Information`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Keyword`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Keywords`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Level`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Map`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Metadata`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Namespaces`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Original`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Overview`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Performance`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Purpose`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`PyTorch`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`QMatmul`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Related`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Repository`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Safety`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`ScalarType`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`ScaleSpec`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Section`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Security`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Source`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Structs`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`System`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Tensor`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Testing`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`The`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`This`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+- **`Usage`**: [QMatmul.cpp_kw.md_docs.md](./QMatmul.cpp_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

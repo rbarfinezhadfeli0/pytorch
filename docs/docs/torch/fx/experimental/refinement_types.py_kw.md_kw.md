@@ -1,0 +1,77 @@
+# Keyword Index: `docs/torch/fx/experimental/refinement_types.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/fx/experimental/refinement_types.py_kw.md](../../../../../docs/torch/fx/experimental/refinement_types.py_kw.md)
+- **Documentation**: [`refinement_types.py_kw.md_docs.md`](./refinement_types.py_kw.md_docs.md)
+- **Folder**: `docs/torch/fx/experimental`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`Architecture`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`Basic`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`Classs`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`Complete`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`Considerations`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`Dependencies`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`Design`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`Detailed`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`Documentation`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`Efficiency`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`Equality`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`Extracted`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`File`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`Folder`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`Functions`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`Generated`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`High`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`How`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`In`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`Index`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`Information`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`Keyword`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`Keywords`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`Level`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`Map`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`Metadata`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`Original`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`Overview`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`Performance`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`Purpose`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`PyTorch`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`Related`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`Repository`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`Safety`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`Section`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`Security`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`Source`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`System`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`Testing`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`The`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`This`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+- **`Usage`**: [refinement_types.py_kw.md_docs.md](./refinement_types.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

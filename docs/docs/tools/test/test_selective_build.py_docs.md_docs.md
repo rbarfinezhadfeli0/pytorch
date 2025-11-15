@@ -1,0 +1,545 @@
+# Documentation: `docs/tools/test/test_selective_build.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/tools/test/test_selective_build.py_docs.md`
+- **Size**: 13,717 bytes (13.40 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This file is a **utility or tool script**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Documentation: `tools/test/test_selective_build.py`
+
+## File Metadata
+
+- **Path**: `tools/test/test_selective_build.py`
+- **Size**: 10,421 bytes (10.18 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is a **utility or tool script**. This appears to be a **test file**. Contains **unit tests** using Python testing frameworks.
+
+## Original Source
+
+```python
+import unittest
+
+from torchgen.model import Location, NativeFunction
+from torchgen.selective_build.operator import *  # noqa: F403
+from torchgen.selective_build.selector import (
+    combine_selective_builders,
+    SelectiveBuilder,
+)
+
+
+class TestSelectiveBuild(unittest.TestCase):
+    def test_selective_build_operator(self) -> None:
+        op = SelectiveBuildOperator(
+            "aten::add.int",
+            is_root_operator=True,
+            is_used_for_training=False,
+            include_all_overloads=False,
+            _debug_info=None,
+        )
+        self.assertTrue(op.is_root_operator)
+        self.assertFalse(op.is_used_for_training)
+        self.assertFalse(op.include_all_overloads)
+
+    def test_selector_factory(self) -> None:
+        yaml_config_v1 = """
+debug_info:
+  - model1@v100
+  - model2@v51
+operators:
+  aten::add:
+    is_used_for_training: No
+    is_root_operator: Yes
+    include_all_overloads: Yes
+  aten::add.int:
+    is_used_for_training: Yes
+    is_root_operator: No
+    include_all_overloads: No
+  aten::mul.int:
+    is_used_for_training: Yes
+    is_root_operator: No
+    include_all_overloads: No
+"""
+
+        yaml_config_v2 = """
+debug_info:
+  - model1@v100
+  - model2@v51
+operators:
+  aten::sub:
+    is_used_for_training: No
+    is_root_operator: Yes
+    include_all_overloads: No
+    debug_info:
+      - model1@v100
+  aten::sub.int:
+    is_used_for_training: Yes
+    is_root_operator: No
+    include_all_overloads: No
+"""
+
+        yaml_config_all = "include_all_operators: Yes"
+
+        yaml_config_invalid = "invalid:"
+
+        selector1 = SelectiveBuilder.from_yaml_str(yaml_config_v1)
+
+        self.assertTrue(selector1.is_operator_selected("aten::add"))
+        self.assertTrue(selector1.is_operator_selected("aten::add.int"))
+        # Overload name is not used for checking in v1.
+        self.assertTrue(selector1.is_operator_selected("aten::add.float"))
+
+        def gen():
+            return SelectiveBuilder.from_yaml_str(yaml_config_invalid)
+
+        self.assertRaises(Exception, gen)
+
+        selector_all = SelectiveBuilder.from_yaml_str(yaml_config_all)
+
+        self.assertTrue(selector_all.is_operator_selected("aten::add"))
+        self.assertTrue(selector_all.is_operator_selected("aten::sub"))
+        self.assertTrue(selector_all.is_operator_selected("aten::sub.int"))
+        self.assertTrue(selector_all.is_kernel_dtype_selected("add_kernel", "int32"))
+
+        selector2 = SelectiveBuilder.from_yaml_str(yaml_config_v2)
+
+        self.assertFalse(selector2.is_operator_selected("aten::add"))
+        self.assertTrue(selector2.is_operator_selected("aten::sub"))
+        self.assertTrue(selector2.is_operator_selected("aten::sub.int"))
+
+        selector_legacy_v1 = SelectiveBuilder.from_legacy_op_registration_allow_list(
+            # pyrefly: ignore [bad-argument-type]
+            ["aten::add", "aten::add.int", "aten::mul.int"],
+            False,
+            False,
+        )
+        self.assertTrue(selector_legacy_v1.is_operator_selected("aten::add.float"))
+        self.assertTrue(selector_legacy_v1.is_operator_selected("aten::add"))
+        self.assertTrue(selector_legacy_v1.is_operator_selected("aten::add.int"))
+        self.assertFalse(selector_legacy_v1.is_operator_selected("aten::sub"))
+
+        self.assertFalse(selector_legacy_v1.is_root_operator("aten::add"))
+        self.assertFalse(
+            selector_legacy_v1.is_operator_selected_for_training("aten::add")
+        )
+
+        selector_legacy_v1 = SelectiveBuilder.from_legacy_op_registration_allow_list(
+            # pyrefly: ignore [bad-argument-type]
+            ["aten::add", "aten::add.int", "aten::mul.int"],
+            True,
+            False,
+        )
+
+        self.assertTrue(selector_legacy_v1.is_root_operator("aten::add"))
+        self.assertFalse(
+            selector_legacy_v1.is_operator_selected_for_training("aten::add")
+        )
+        self.assertTrue(selector_legacy_v1.is_root_operator("aten::add.float"))
+        self.assertFalse(
+            selector_legacy_v1.is_operator_selected_for_training("aten::add.float")
+        )
+
+        selector_legacy_v1 = SelectiveBuilder.from_legacy_op_registration_allow_list(
+            # pyrefly: ignore [bad-argument-type]
+            ["aten::add", "aten::add.int", "aten::mul.int"],
+            False,
+            True,
+        )
+
+        self.assertFalse(selector_legacy_v1.is_root_operator("aten::add"))
+        self.assertTrue(
+            selector_legacy_v1.is_operator_selected_for_training("aten::add")
+        )
+        self.assertFalse(selector_legacy_v1.is_root_operator("aten::add.float"))
+        self.assertTrue(
+            selector_legacy_v1.is_operator_selected_for_training("aten::add.float")
+        )
+
+    def test_operator_combine(self) -> None:
+        op1 = SelectiveBuildOperator(
+            "aten::add.int",
+            is_root_operator=True,
+            is_used_for_training=False,
+            include_all_overloads=False,
+            _debug_info=None,
+        )
+        op2 = SelectiveBuildOperator(
+            "aten::add.int",
+            is_root_operator=False,
+            is_used_for_training=False,
+            include_all_overloads=False,
+            _debug_info=None,
+        )
+        op3 = SelectiveBuildOperator(
+            "aten::add",
+            is_root_operator=True,
+            is_used_for_training=False,
+            include_all_overloads=False,
+            _debug_info=None,
+        )
+        op4 = SelectiveBuildOperator(
+            "aten::add.int",
+            is_root_operator=True,
+            is_used_for_training=True,
+            include_all_overloads=False,
+            _debug_info=None,
+        )
+
+        op5 = combine_operators(op1, op2)
+
+        self.assertTrue(op5.is_root_operator)
+        self.assertFalse(op5.is_used_for_training)
+
+        op6 = combine_operators(op1, op4)
+
+        self.assertTrue(op6.is_root_operator)
+        self.assertTrue(op6.is_used_for_training)
+
+        def gen_new_op():
+            return combine_operators(op1, op3)
+
+        self.assertRaises(Exception, gen_new_op)
+
+    def test_training_op_fetch(self) -> None:
+        yaml_config = """
+operators:
+  aten::add.int:
+    is_used_for_training: No
+    is_root_operator: Yes
+    include_all_overloads: No
+  aten::add:
+    is_used_for_training: Yes
+    is_root_operator: No
+    include_all_overloads: Yes
+"""
+
+        selector = SelectiveBuilder.from_yaml_str(yaml_config)
+        self.assertTrue(selector.is_operator_selected_for_training("aten::add.int"))
+        self.assertTrue(selector.is_operator_selected_for_training("aten::add"))
+
+    def test_kernel_dtypes(self) -> None:
+        yaml_config = """
+kernel_metadata:
+  add_kernel:
+    - int8
+    - int32
+  sub_kernel:
+    - int16
+    - int32
+  add/sub_kernel:
+    - float
+    - complex
+"""
+
+        selector = SelectiveBuilder.from_yaml_str(yaml_config)
+
+        self.assertTrue(selector.is_kernel_dtype_selected("add_kernel", "int32"))
+        self.assertTrue(selector.is_kernel_dtype_selected("add_kernel", "int8"))
+        self.assertFalse(selector.is_kernel_dtype_selected("add_kernel", "int16"))
+        self.assertFalse(selector.is_kernel_dtype_selected("add1_kernel", "int32"))
+        self.assertFalse(selector.is_kernel_dtype_selected("add_kernel", "float"))
+
+        self.assertTrue(selector.is_kernel_dtype_selected("add/sub_kernel", "float"))
+        self.assertTrue(selector.is_kernel_dtype_selected("add/sub_kernel", "complex"))
+        self.assertFalse(selector.is_kernel_dtype_selected("add/sub_kernel", "int16"))
+        self.assertFalse(selector.is_kernel_dtype_selected("add/sub_kernel", "int32"))
+
+    def test_merge_kernel_dtypes(self) -> None:
+        yaml_config1 = """
+kernel_metadata:
+  add_kernel:
+    - int8
+  add/sub_kernel:
+    - float
+    - complex
+    - none
+  mul_kernel:
+    - int8
+"""
+
+        yaml_config2 = """
+kernel_metadata:
+  add_kernel:
+    - int32
+  sub_kernel:
+    - int16
+    - int32
+  add/sub_kernel:
+    - float
+    - complex
+"""
+
+        selector1 = SelectiveBuilder.from_yaml_str(yaml_config1)
+        selector2 = SelectiveBuilder.from_yaml_str(yaml_config2)
+
+        selector = combine_selective_builders(selector1, selector2)
+
+        self.assertTrue(selector.is_kernel_dtype_selected("add_kernel", "int32"))
+        self.assertTrue(selector.is_kernel_dtype_selected("add_kernel", "int8"))
+        self.assertFalse(selector.is_kernel_dtype_selected("add_kernel", "int16"))
+        self.assertFalse(selector.is_kernel_dtype_selected("add1_kernel", "int32"))
+        self.assertFalse(selector.is_kernel_dtype_selected("add_kernel", "float"))
+
+        self.assertTrue(selector.is_kernel_dtype_selected("add/sub_kernel", "float"))
+        self.assertTrue(selector.is_kernel_dtype_selected("add/sub_kernel", "complex"))
+        self.assertTrue(selector.is_kernel_dtype_selected("add/sub_kernel", "none"))
+        self.assertFalse(selector.is_kernel_dtype_selected("add/sub_kernel", "int16"))
+        self.assertFalse(selector.is_kernel_dtype_selected("add/sub_kernel", "int32"))
+
+        self.assertTrue(selector.is_kernel_dtype_selected("mul_kernel", "int8"))
+        self.assertFalse(selector.is_kernel_dtype_selected("mul_kernel", "int32"))
+
+    def test_all_kernel_dtypes_selected(self) -> None:
+        yaml_config = """
+include_all_non_op_selectives: True
+"""
+
+        selector = SelectiveBuilder.from_yaml_str(yaml_config)
+
+        self.assertTrue(selector.is_kernel_dtype_selected("add_kernel", "int32"))
+        self.assertTrue(selector.is_kernel_dtype_selected("add_kernel", "int8"))
+        self.assertTrue(selector.is_kernel_dtype_selected("add_kernel", "int16"))
+        self.assertTrue(selector.is_kernel_dtype_selected("add1_kernel", "int32"))
+        self.assertTrue(selector.is_kernel_dtype_selected("add_kernel", "float"))
+
+    def test_custom_namespace_selected_correctly(self) -> None:
+        yaml_config = """
+operators:
+  aten::add.int:
+    is_used_for_training: No
+    is_root_operator: Yes
+    include_all_overloads: No
+  custom::add:
+    is_used_for_training: Yes
+    is_root_operator: No
+    include_all_overloads: Yes
+"""
+        selector = SelectiveBuilder.from_yaml_str(yaml_config)
+        native_function, _ = NativeFunction.from_yaml(
+            {"func": "custom::add() -> Tensor"},
+            loc=Location(__file__, 1),
+            valid_tags=set(),
+        )
+        self.assertTrue(selector.is_native_function_selected(native_function))
+
+```
+
+
+
+## High-Level Overview
+
+yaml_config_v1 = """debug_info:  - model1@v100  - model2@v51operators:  aten::add:    is_used_for_training: No    is_root_operator: Yes    include_all_overloads: Yes  aten::add.int:    is_used_for_training: Yes    is_root_operator: No    include_all_overloads: No  aten::mul.int:    is_used_for_training: Yes    is_root_operator: No    include_all_overloads: No
+
+This Python file contains 1 class(es) and 10 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `TestSelectiveBuild`
+
+**Functions defined**: `test_selective_build_operator`, `test_selector_factory`, `gen`, `test_operator_combine`, `gen_new_op`, `test_training_op_fetch`, `test_kernel_dtypes`, `test_merge_kernel_dtypes`, `test_all_kernel_dtypes_selected`, `test_custom_namespace_selected_correctly`
+
+**Key imports**: unittest, Location, NativeFunction
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `tools/test`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `unittest`
+- `torchgen.model`: Location, NativeFunction
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python tools/test/test_selective_build.py
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`tools/test`):
+
+- [`test_upload_stats_lib.py_docs.md`](./test_upload_stats_lib.py_docs.md)
+- [`test_codegen.py_docs.md`](./test_codegen.py_docs.md)
+- [`linter_test_case.py_docs.md`](./linter_test_case.py_docs.md)
+- [`test_upload_gate.py_docs.md`](./test_upload_gate.py_docs.md)
+- [`test_gen_backend_stubs.py_docs.md`](./test_gen_backend_stubs.py_docs.md)
+- [`test_gb_registry_linter.py_docs.md`](./test_gb_registry_linter.py_docs.md)
+- [`test_utils.py_docs.md`](./test_utils.py_docs.md)
+- [`test_set_linter.py_docs.md`](./test_set_linter.py_docs.md)
+- [`gen_oplist_test.py_docs.md`](./gen_oplist_test.py_docs.md)
+- [`test_upload_test_stats.py_docs.md`](./test_upload_test_stats.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_selective_build.py_docs.md`
+- **Keyword Index**: `test_selective_build.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/tools/test`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/tools/test`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/tools/test/test_selective_build.py_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/tools/test`):
+
+- [`test_gen_backend_stubs.py_kw.md_docs.md`](./test_gen_backend_stubs.py_kw.md_docs.md)
+- [`test_upload_stats_lib.py_kw.md_docs.md`](./test_upload_stats_lib.py_kw.md_docs.md)
+- [`test_cmake.py_kw.md_docs.md`](./test_cmake.py_kw.md_docs.md)
+- [`test_upload_test_stats.py_docs.md_docs.md`](./test_upload_test_stats.py_docs.md_docs.md)
+- [`test_codegen_model.py_docs.md_docs.md`](./test_codegen_model.py_docs.md_docs.md)
+- [`test_codegen.py_docs.md_docs.md`](./test_codegen.py_docs.md_docs.md)
+- [`test_vulkan_codegen.py_kw.md_docs.md`](./test_vulkan_codegen.py_kw.md_docs.md)
+- [`test_set_linter.py_docs.md_docs.md`](./test_set_linter.py_docs.md_docs.md)
+- [`test_gb_registry_linter.py_kw.md_docs.md`](./test_gb_registry_linter.py_kw.md_docs.md)
+- [`test_upload_test_stats.py_kw.md_docs.md`](./test_upload_test_stats.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_selective_build.py_docs.md_docs.md`
+- **Keyword Index**: `test_selective_build.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

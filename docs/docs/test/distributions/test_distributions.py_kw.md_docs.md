@@ -1,0 +1,412 @@
+# Documentation: `docs/test/distributions/test_distributions.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/test/distributions/test_distributions.py_kw.md`
+- **Size**: 25,921 bytes (25.31 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `test/distributions/test_distributions.py`
+
+## File Information
+
+- **Original File**: [test/distributions/test_distributions.py](../../../test/distributions/test_distributions.py)
+- **Documentation**: [`test_distributions.py_docs.md`](./test_distributions.py_docs.md)
+- **Folder**: `test/distributions`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`ArgMax`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`Binomial30`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`Delta`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`DistributionsTestCase`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`Dummy`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`Rounded`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`ScipyCategorical`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`ScipyMixtureNormal`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`SubClass`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`TestAgainstScipy`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`TestConstraints`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`TestDistributionShapes`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`TestDistributions`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`TestFunctors`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`TestJit`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`TestKL`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`TestLazyLogitsInitialization`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`TestNumericalStability`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`TestRsample`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`TestValidation`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+
+### Functions
+
+- **`__init__`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`_check_enumerate_support`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`_check_forward_ad`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`_check_log_prob`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`_check_sampler_discrete`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`_check_sampler_sampler`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`_examples`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`_get_bad_examples`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`_get_examples`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`_get_logistic_normal_ref_sampler`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`_gradcheck_log_prob`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`_perturb`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`_perturb_tensor`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`_sampler`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`_test_continuous_distribution_mode`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`_test_discrete_distribution_mode`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`_test_pdf_score`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`apply_fn`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`compute_v`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`expec_grad`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`expec_val`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`f`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`gradcheck_func`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`is_all_nan`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`log_prob`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`mean_var`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`multivariate_normal_log_prob_gradcheck`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`pairwise`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`pmf`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`ref_log_prob`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`rvs`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`sample`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`setUp`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_argmax_relaxed_categorical`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_bernoulli`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_bernoulli_3d`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_bernoulli_enumerate_support`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_bernoulli_gradient`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_bernoulli_shape_scalar_params`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_bernoulli_shape_tensor_params`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_bernoulli_with_logits_overflow`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_bernoulli_with_logits_underflow`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_beta_log_prob`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_beta_sample`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_beta_shape`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_beta_shape_scalar_params`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_beta_shape_tensor_params`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_beta_underflow`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_beta_underflow_gpu`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_beta_wrt_alpha`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_beta_wrt_beta`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_binomial`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_binomial_enumerate_support`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_binomial_extreme_vals`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_binomial_log_prob_and_entropy`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_binomial_log_prob_vectorized_count`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_binomial_sample`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_binomial_shape`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_binomial_shape_vectorized_n`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_binomial_stable`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_binomial_vectorized_count`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_cat_event_dim`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_cat_transform`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_cat_transform_non_uniform`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_categorical_1d`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_categorical_2d`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_categorical_enumerate_support`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_categorical_log_prob`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_categorical_log_prob_with_logits`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_categorical_shape`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_cauchy`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_cauchy_shape_scalar_params`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_cauchy_shape_tensor_params`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_cdf`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_cdf_icdf_inverse`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_cdf_log_prob`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_chi2`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_chi2_sample`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_chi2_shape`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_chi2_shape_scalar_params`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_chi2_shape_tensor_params`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_continuous_bernoulli`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_continuous_bernoulli_3d`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_continuous_bernoulli_gradient`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_continuous_bernoulli_shape_scalar_params`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_continuous_bernoulli_shape_tensor_params`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_continuous_bernoulli_with_logits_overflow`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_continuous_bernoulli_with_logits_underflow`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_dirichlet_log_prob`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_dirichlet_log_prob_zero`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_dirichlet_mode`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_dirichlet_multivariate`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_dirichlet_on_diagonal`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_dirichlet_sample`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_dirichlet_shape`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_dirichlet_tangent_field`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_distribution_expand`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_distribution_subclass_expand`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_entropy`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_entropy_exponential_family`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_entropy_monte_carlo`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_entropy_shape`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_enumerate_support`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_enumerate_support_type`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_exponential`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_exponential_sample`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_exponential_shape_scalar_param`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_exponential_shape_tensor_param`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_fishersnedecor`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_fishersnedecor_sample`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_gamma`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_gamma_gpu_sample`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_gamma_gpu_shape`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_gamma_log_prob_at_boundary`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_gamma_sample`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_gamma_shape`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_gamma_shape_scalar_params`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_gamma_shape_tensor_params`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_generalized_pareto`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_generalized_pareto_sample`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_geometric`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_geometric_log_prob_and_entropy`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_geometric_sample`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_geometric_shape_scalar_params`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_geometric_shape_tensor_params`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_gumbel`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_gumbel_sample`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_gumbel_shape_scalar_params`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_halfcauchy`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_halfcauchy_shape_scalar_params`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_halfcauchy_shape_tensor_params`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_halfnormal`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_halfnormal_logprob`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_halfnormal_sample`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_has_examples`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_icdf`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_independent_expand`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_independent_shape`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_invalid`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_invalid_log_probs_arg`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_invalid_parameter_broadcasting`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_inversegamma`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_inversegamma_sample`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_kl_edgecases`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_kl_exponential_family`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_kl_infinite`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_kl_lowrank_multivariate_normal`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_kl_lowrank_multivariate_normal_batched`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_kl_monte_carlo`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_kl_multivariate_normal`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_kl_multivariate_normal_batched`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_kl_multivariate_normal_batched_broadcasted`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_kl_shape`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_kl_transformed`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_kumaraswamy_mean_variance`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_kumaraswamy_shape`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_kumaraswamy_shape_scalar_params`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_laplace`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_laplace_sample`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_laplace_shape_scalar_params`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_laplace_shape_tensor_params`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_lazy_logits_initialization`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_lazy_probs_initialization`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_lazy_property_grad`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_lkj_cholesky_log_prob`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_log_prob`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_logisticnormal`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_logisticnormal_logprob`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_logisticnormal_sample`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_lognormal`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_lognormal_logprob`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_lognormal_sample`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_lowrank_multivariate_normal_log_prob`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_lowrank_multivariate_normal_moments`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_lowrank_multivariate_normal_properties`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_lowrank_multivariate_normal_sample`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_lowrank_multivariate_normal_shape`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_mean`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_mixture_same_family_binomial_log_prob`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_mixture_same_family_mean_shape`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_mixture_same_family_normal_log_prob`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_mixture_same_family_sample`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_mixture_same_family_shape`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_mode`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_multinomial_1d`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_multinomial_1d_log_prob_and_entropy`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_multinomial_2d`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_multinomial_log_prob`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_multinomial_log_prob_with_logits`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_multinomial_sequential_draw`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_multinomial_shape`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_multivariate_normal_log_prob`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_multivariate_normal_moments`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_multivariate_normal_properties`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_multivariate_normal_sample`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_multivariate_normal_shape`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_multivariate_normal_stable_with_precision_matrix`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_negative_binomial`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`test_negative_binomial_log_prob`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+
+### Imports
+
+- **`Constraint`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`TEST_CUDA`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`_Dirichlet_backward`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`_kl_expfamily_expfamily`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`collections`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`grad`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`inf`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`itertools`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`jacobian`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`math`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`namedtuple`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`numbers`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`numpy`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`packaging`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`product`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`random`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`scipy.special`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`scipy.stats`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`shuffle`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`softmax`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`torch`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`torch.autograd`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`torch.autograd.forward_ad`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`torch.autograd.functional`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`torch.distributions`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`torch.distributions.constraint_registry`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`torch.distributions.constraints`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`torch.distributions.dirichlet`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`torch.distributions.kl`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`torch.distributions.transforms`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`torch.distributions.utils`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`torch.nn.functional`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`torch.testing._internal.common_cuda`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`transform_to`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`unittest`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+- **`version`**: [test_distributions.py_docs.md](./test_distributions.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/distributions`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/distributions`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Neural Network**: Defines or uses PyTorch neural network components
+- **Automatic Differentiation**: Uses autograd for gradient computation
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/distributions/test_distributions.py_kw.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/distributions`):
+
+- [`test_transforms.py_docs.md_docs.md`](./test_transforms.py_docs.md_docs.md)
+- [`test_constraints.py_kw.md_docs.md`](./test_constraints.py_kw.md_docs.md)
+- [`test_transforms.py_kw.md_docs.md`](./test_transforms.py_kw.md_docs.md)
+- [`test_utils.py_kw.md_docs.md`](./test_utils.py_kw.md_docs.md)
+- [`test_distributions.py_docs.md_docs.md`](./test_distributions.py_docs.md_docs.md)
+- [`test_utils.py_docs.md_docs.md`](./test_utils.py_docs.md_docs.md)
+- [`test_constraints.py_docs.md_docs.md`](./test_constraints.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_distributions.py_kw.md_docs.md`
+- **Keyword Index**: `test_distributions.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

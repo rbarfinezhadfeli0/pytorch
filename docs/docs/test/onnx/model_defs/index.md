@@ -1,0 +1,49 @@
+# Index: `docs/test/onnx/model_defs/`
+
+## Overview
+
+This folder contains source code, configurations, or documentation for the PyTorch project.
+
+**Location**: `docs/test/onnx/model_defs/`
+
+## Subfolders
+
+*No subfolders.*
+
+## Files
+
+| File | Description | Documentation | Keywords |
+|------|-------------|---------------|----------|
+| [`__init__.py_docs.md`](../../../../../docs/test/onnx/model_defs/__init__.py_docs.md) | Package initialization | [docs](./__init__.py_docs.md_docs.md) | [keywords](./__init__.py_docs.md_kw.md) |
+| [`__init__.py_kw.md`](../../../../../docs/test/onnx/model_defs/__init__.py_kw.md) | Package initialization | [docs](./__init__.py_kw.md_docs.md) | [keywords](./__init__.py_kw.md_kw.md) |
+| [`dcgan.py_docs.md`](../../../../../docs/test/onnx/model_defs/dcgan.py_docs.md) | Documentation | [docs](./dcgan.py_docs.md_docs.md) | [keywords](./dcgan.py_docs.md_kw.md) |
+| [`dcgan.py_kw.md`](../../../../../docs/test/onnx/model_defs/dcgan.py_kw.md) | Documentation | [docs](./dcgan.py_kw.md_docs.md) | [keywords](./dcgan.py_kw.md_kw.md) |
+| [`emb_seq.py_docs.md`](../../../../../docs/test/onnx/model_defs/emb_seq.py_docs.md) | Documentation | [docs](./emb_seq.py_docs.md_docs.md) | [keywords](./emb_seq.py_docs.md_kw.md) |
+| [`emb_seq.py_kw.md`](../../../../../docs/test/onnx/model_defs/emb_seq.py_kw.md) | Documentation | [docs](./emb_seq.py_kw.md_docs.md) | [keywords](./emb_seq.py_kw.md_kw.md) |
+| [`lstm_flattening_result.py_docs.md`](../../../../../docs/test/onnx/model_defs/lstm_flattening_result.py_docs.md) | Documentation | [docs](./lstm_flattening_result.py_docs.md_docs.md) | [keywords](./lstm_flattening_result.py_docs.md_kw.md) |
+| [`lstm_flattening_result.py_kw.md`](../../../../../docs/test/onnx/model_defs/lstm_flattening_result.py_kw.md) | Documentation | [docs](./lstm_flattening_result.py_kw.md_docs.md) | [keywords](./lstm_flattening_result.py_kw.md_kw.md) |
+| [`mnist.py_docs.md`](../../../../../docs/test/onnx/model_defs/mnist.py_docs.md) | Documentation | [docs](./mnist.py_docs.md_docs.md) | [keywords](./mnist.py_docs.md_kw.md) |
+| [`mnist.py_kw.md`](../../../../../docs/test/onnx/model_defs/mnist.py_kw.md) | Documentation | [docs](./mnist.py_kw.md_docs.md) | [keywords](./mnist.py_kw.md_kw.md) |
+| [`op_test.py_docs.md`](../../../../../docs/test/onnx/model_defs/op_test.py_docs.md) | Documentation | [docs](./op_test.py_docs.md_docs.md) | [keywords](./op_test.py_docs.md_kw.md) |
+| [`op_test.py_kw.md`](../../../../../docs/test/onnx/model_defs/op_test.py_kw.md) | Documentation | [docs](./op_test.py_kw.md_docs.md) | [keywords](./op_test.py_kw.md_kw.md) |
+| [`rnn_model_with_packed_sequence.py_docs.md`](../../../../../docs/test/onnx/model_defs/rnn_model_with_packed_sequence.py_docs.md) | Documentation | [docs](./rnn_model_with_packed_sequence.py_docs.md_docs.md) | [keywords](./rnn_model_with_packed_sequence.py_docs.md_kw.md) |
+| [`rnn_model_with_packed_sequence.py_kw.md`](../../../../../docs/test/onnx/model_defs/rnn_model_with_packed_sequence.py_kw.md) | Documentation | [docs](./rnn_model_with_packed_sequence.py_kw.md_docs.md) | [keywords](./rnn_model_with_packed_sequence.py_kw.md_kw.md) |
+| [`squeezenet.py_docs.md`](../../../../../docs/test/onnx/model_defs/squeezenet.py_docs.md) | Documentation | [docs](./squeezenet.py_docs.md_docs.md) | [keywords](./squeezenet.py_docs.md_kw.md) |
+| [`squeezenet.py_kw.md`](../../../../../docs/test/onnx/model_defs/squeezenet.py_kw.md) | Documentation | [docs](./squeezenet.py_kw.md_docs.md) | [keywords](./squeezenet.py_kw.md_kw.md) |
+| [`srresnet.py_docs.md`](../../../../../docs/test/onnx/model_defs/srresnet.py_docs.md) | Documentation | [docs](./srresnet.py_docs.md_docs.md) | [keywords](./srresnet.py_docs.md_kw.md) |
+| [`srresnet.py_kw.md`](../../../../../docs/test/onnx/model_defs/srresnet.py_kw.md) | Documentation | [docs](./srresnet.py_kw.md_docs.md) | [keywords](./srresnet.py_kw.md_kw.md) |
+| [`super_resolution.py_docs.md`](../../../../../docs/test/onnx/model_defs/super_resolution.py_docs.md) | Documentation | [docs](./super_resolution.py_docs.md_docs.md) | [keywords](./super_resolution.py_docs.md_kw.md) |
+| [`super_resolution.py_kw.md`](../../../../../docs/test/onnx/model_defs/super_resolution.py_kw.md) | Documentation | [docs](./super_resolution.py_kw.md_docs.md) | [keywords](./super_resolution.py_kw.md_kw.md) |
+| [`word_language_model.py_docs.md`](../../../../../docs/test/onnx/model_defs/word_language_model.py_docs.md) | Documentation | [docs](./word_language_model.py_docs.md_docs.md) | [keywords](./word_language_model.py_docs.md_kw.md) |
+| [`word_language_model.py_kw.md`](../../../../../docs/test/onnx/model_defs/word_language_model.py_kw.md) | Documentation | [docs](./word_language_model.py_kw.md_docs.md) | [keywords](./word_language_model.py_kw.md_kw.md) |
+
+
+## Navigation
+
+- **Parent Folder**: [..](../index.md)
+- **Folder Documentation**: [doc.md](./doc.md)
+- **Keyword Index**: [sub.md](./sub.md)
+
+---
+
+*Generated by PyTorch Repository Documentation System*

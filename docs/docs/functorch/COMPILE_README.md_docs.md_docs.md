@@ -1,0 +1,290 @@
+# Documentation: `docs/functorch/COMPILE_README.md_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/functorch/COMPILE_README.md_docs.md`
+- **Size**: 4,908 bytes (4.79 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `functorch/COMPILE_README.md`
+
+## File Metadata
+
+- **Path**: `functorch/COMPILE_README.md`
+- **Size**: 2,957 bytes (2.89 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This is a markdown documentation that is part of the PyTorch project.
+
+## Original Source
+
+```markdown
+# AOT Autograd - Introduction to an experimental compilation feature in Functorch
+
+The primary compilation API we provide is something called AOTAutograd. AOT
+Autograd is an experimental feature that allows ahead of time capture of forward
+and backward graphs, and allows easy integration with compilers. This creates an
+easy to hack Python-based development environment to speedup training of PyTorch
+models. AOT Autograd currently lives inside functorch.compile namespace.
+
+AOT Autograd is experimental and the APIs are likely to change. We are looking
+for feedback. If you are interested in using AOT Autograd and need help or have
+suggestions, please feel free to open an issue. We will be happy to help.
+
+For example, here are some examples of how to use it.
+```python
+from functorch.compile import aot_function, aot_module, draw_graph
+import torch.fx as fx
+import torch
+
+# This simply prints out the FX graph of the forwards and the backwards
+def print_graph(name):
+    def f(fx_g: fx.GraphModule, inps):
+        print(name)
+        print(fx_g.code)
+        return fx_g
+    return f
+
+def f(x):
+    return x.cos().cos()
+
+nf = aot_function(f, fw_compiler=print_graph("forward"), bw_compiler=print_graph("backward"))
+nf(torch.randn(3, requires_grad=True))
+
+# You can do whatever you want before and after, and you can still backprop through the function.
+inp = torch.randn(3, requires_grad=True)
+inp = inp.cos()
+out = nf(inp)
+out = out.sin().sum().backward()
+
+def f(x):
+    return x.cos().cos()
+
+# This draws out the forwards and the backwards graphs as svg files
+def graph_drawer(name):
+    def f(fx_g: fx.GraphModule, inps):
+        draw_graph(fx_g, name)
+        return fx_g
+    return f
+
+aot_function(f, fw_compiler=graph_drawer("forward"), bw_compiler=graph_drawer("backward"))(torch.randn(3, requires_grad=True))
+
+# We also have a convenience API for applying AOTAutograd to modules
+from torchvision.models import resnet18
+aot_module(resnet18(), print_graph("forward"), print_graph("backward"))(torch.randn(1,3,200,200))
+# output elided since it's very long
+
+# In practice, you might want to speed it up by sending it to Torchscript. You might also lower it to Torchscript before passing it to another compiler
+
+def f(x):
+    return x.cos().cos()
+
+def ts_compiler(fx_g: fx.GraphModule, inps):
+    f = torch.jit.script(fx_g)
+    print(f.graph)
+    f = torch.jit.freeze(f.eval()) # Note: This eval() works fine *even* though we're using this for training
+    return f
+
+aot_function(f, ts_compiler, ts_compiler)(torch.randn(3, requires_grad=True))
+```
+
+## Documentation
+* AOT Autograd [documentation](https://pytorch.org/functorch/nightly/)
+* Min-cut [recomputation](https://dev-discuss.pytorch.org/t/min-cut-optimal-recomputation-i-e-activation-checkpointing-with-aotautograd/467) with AOT Autograd.
+
+## Tutorials
+You can use this [tutorial](https://pytorch.org/functorch/nightly/tutorials/aot_autograd_optimizations.html) to play with AOT Autograd.
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `functorch`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `functorch`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- **Code Execution**: Uses `eval()` or `exec()` - ensure input is sanitized
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`functorch`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`writing_batching_rules.md_docs.md`](./writing_batching_rules.md_docs.md)
+- [`README.md_docs.md`](./README.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `COMPILE_README.md_docs.md`
+- **Keyword Index**: `COMPILE_README.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/functorch`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/functorch`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- **Code Execution**: Uses `eval()` or `exec()` - ensure input is sanitized
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/functorch`):
+
+- [`README.md_docs.md_docs.md`](./README.md_docs.md_docs.md)
+- [`writing_batching_rules.md_kw.md_docs.md`](./writing_batching_rules.md_kw.md_docs.md)
+- [`__init__.py_docs.md_docs.md`](./__init__.py_docs.md_docs.md)
+- [`writing_batching_rules.md_docs.md_docs.md`](./writing_batching_rules.md_docs.md_docs.md)
+- [`__init__.py_kw.md_docs.md`](./__init__.py_kw.md_docs.md)
+- [`README.md_kw.md_docs.md`](./README.md_kw.md_docs.md)
+- [`COMPILE_README.md_kw.md_docs.md`](./COMPILE_README.md_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `COMPILE_README.md_docs.md_docs.md`
+- **Keyword Index**: `COMPILE_README.md_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

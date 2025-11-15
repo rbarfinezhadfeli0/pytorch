@@ -1,0 +1,182 @@
+# Documentation: `cmake/External/nccl.cmake`
+
+## File Metadata
+
+- **Path**: `cmake/External/nccl.cmake`
+- **Size**: 2,871 bytes (2.80 KB)
+- **Type**: CMake Build Script
+- **Extension**: `.cmake`
+
+## File Purpose
+
+This is a cmake build script that is part of the PyTorch project.
+
+## Original Source
+
+```cmake
+if(NOT __NCCL_INCLUDED)
+  set(__NCCL_INCLUDED TRUE)
+
+  if(USE_SYSTEM_NCCL)
+    # NCCL_ROOT, NCCL_LIB_DIR, NCCL_INCLUDE_DIR will be accounted in the following line.
+    find_package(NCCL REQUIRED)
+    if(NCCL_FOUND)
+      add_library(__caffe2_nccl INTERFACE)
+      target_link_libraries(__caffe2_nccl INTERFACE ${NCCL_LIBRARIES})
+      target_include_directories(__caffe2_nccl INTERFACE ${NCCL_INCLUDE_DIRS})
+    endif()
+  else()
+    torch_cuda_get_nvcc_gencode_flag(NVCC_GENCODE)
+    string(REPLACE "-gencode;" "-gencode=" NVCC_GENCODE "${NVCC_GENCODE}")
+    # this second replacement is needed when there are multiple archs
+    string(REPLACE ";-gencode" " -gencode" NVCC_GENCODE "${NVCC_GENCODE}")
+
+    if(DEFINED ENV{MAX_JOBS})
+      set(MAX_JOBS "$ENV{MAX_JOBS}")
+    else()
+      include(ProcessorCount)
+      ProcessorCount(NUM_HARDWARE_THREADS)
+      # Assume 2 hardware threads per cpu core
+      math(EXPR MAX_JOBS "${NUM_HARDWARE_THREADS} / 2")
+      # ProcessorCount might return 0, set to a positive number
+      if(MAX_JOBS LESS 2)
+        set(MAX_JOBS 2)
+      endif()
+    endif()
+
+    if("${CMAKE_GENERATOR}" MATCHES "Make")
+      # Recursive make with jobserver for parallelism, and also put a load limit
+      # here to avoid flaky OOM, https://www.gnu.org/software/make/manual/html_node/Parallel.html
+      set(MAKE_COMMAND "$(MAKE)" "-l${MAX_JOBS}")
+    else()
+      # Parallel build with CPU load limit to avoid oversubscription
+      set(MAKE_COMMAND "make" "-j${MAX_JOBS}" "-l${MAX_JOBS}")
+    endif()
+
+    set(__NCCL_BUILD_DIR "${CMAKE_CURRENT_BINARY_DIR}/nccl")
+    ExternalProject_Add(nccl_external
+      SOURCE_DIR ${PROJECT_SOURCE_DIR}/third_party/nccl
+      BUILD_IN_SOURCE 1
+      CONFIGURE_COMMAND ""
+      BUILD_COMMAND
+        ${MAKE_COMMAND}
+        "CXX=${CMAKE_CXX_COMPILER}"
+        "CUDA_HOME=${CUDA_TOOLKIT_ROOT_DIR}"
+        "NVCC=${CUDA_NVCC_EXECUTABLE}"
+        "NVCC_GENCODE=${NVCC_GENCODE}"
+        "BUILDDIR=${__NCCL_BUILD_DIR}"
+        "VERBOSE=0"
+        "DEBUG=0"
+      BUILD_BYPRODUCTS "${__NCCL_BUILD_DIR}/lib/libnccl_static.a"
+      INSTALL_COMMAND ""
+      )
+
+    set(__NCCL_LIBRARY_DEP nccl_external)
+    set(NCCL_LIBRARIES ${__NCCL_BUILD_DIR}/lib/libnccl_static.a)
+
+    set(NCCL_FOUND TRUE)
+    add_library(__caffe2_nccl INTERFACE)
+    # The following old-style variables are set so that other libs, such as Gloo,
+    # can still use it.
+    set(NCCL_INCLUDE_DIRS ${__NCCL_BUILD_DIR}/include)
+    add_dependencies(__caffe2_nccl ${__NCCL_LIBRARY_DEP})
+    target_link_libraries(__caffe2_nccl INTERFACE ${NCCL_LIBRARIES})
+    target_include_directories(__caffe2_nccl INTERFACE ${NCCL_INCLUDE_DIRS})
+    # nccl includes calls to shm_open/shm_close and therefore must depend on librt on Linux
+    if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+      target_link_libraries(__caffe2_nccl INTERFACE rt)
+    endif()
+  endif()
+endif()
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `cmake/External`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `cmake/External`, which is part of the PyTorch project infrastructure.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`cmake/External`):
+
+- [`rccl.cmake_docs.md`](./rccl.cmake_docs.md)
+- [`nnpack.cmake_docs.md`](./nnpack.cmake_docs.md)
+- [`EigenBLAS.cmake_docs.md`](./EigenBLAS.cmake_docs.md)
+- [`ucc.cmake_docs.md`](./ucc.cmake_docs.md)
+- [`aotriton.cmake_docs.md`](./aotriton.cmake_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `nccl.cmake_docs.md`
+- **Keyword Index**: `nccl.cmake_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

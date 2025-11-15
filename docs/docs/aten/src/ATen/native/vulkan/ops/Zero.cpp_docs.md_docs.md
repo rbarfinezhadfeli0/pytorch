@@ -1,0 +1,328 @@
+# Documentation: `docs/aten/src/ATen/native/vulkan/ops/Zero.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/vulkan/ops/Zero.cpp_docs.md`
+- **Size**: 4,896 bytes (4.78 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/native/vulkan/ops/Zero.cpp`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/vulkan/ops/Zero.cpp`
+- **Size**: 2,537 bytes (2.48 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#include <ATen/native/vulkan/ops/Common.h>
+#include <ATen/native/vulkan/ops/Utils.h>
+#include <torch/library.h>
+
+namespace at {
+namespace native {
+namespace vulkan {
+namespace ops {
+namespace {
+
+using namespace api::utils;
+
+Tensor& zero_(at::Tensor& self) {
+  TORCH_CHECK(self.dim() <= 4, "Vulkan zero_ supports up to 4d tensors");
+
+  vTensor& v_self = convert(self);
+
+  // Get the global Vulkan context
+  api::Context* const context = api::context();
+
+  // Required to determine how to insert memory barriers in the command buffer
+  api::PipelineBarrier pipeline_barrier{};
+
+  context->submit_compute_job(
+      // shader descriptor
+      VK_KERNEL(zero),
+      // pipeline barrier
+      pipeline_barrier,
+      // global work group size
+      v_self.extents(),
+      // local work group size
+      adaptive_work_group_size(v_self.extents()),
+      // fence handle
+      VK_NULL_HANDLE,
+      // shader arguments
+      v_self.image(
+          pipeline_barrier,
+          api::PipelineStage::COMPUTE,
+          api::MemoryAccessType::READ | api::MemoryAccessType::WRITE));
+
+  return self;
+}
+
+Tensor zeros(
+    const IntArrayRef size,
+    std::optional<ScalarType> dtype,
+    std::optional<c10::Layout> layout,
+    std::optional<Device> device,
+    std::optional<bool> pin_memory) {
+  TORCH_CHECK(size.size() <= 4, "Vulkan zeros supports up to 4d tensors");
+
+  // Get the global Vulkan context
+  api::Context* const context = api::context();
+
+  // Create the output texture
+  vTensor v_output{
+      context,
+      size.vec(),
+      api::ScalarType::Float,
+  };
+
+  // Required to determine how to insert memory barriers in the command buffer
+  api::PipelineBarrier pipeline_barrier{};
+
+  context->submit_compute_job(
+      // shader descriptor
+      VK_KERNEL(zero),
+      // pipeline barrier
+      pipeline_barrier,
+      // global work group size
+      v_output.extents(),
+      // local work group size
+      adaptive_work_group_size(v_output.extents()),
+      // fence handle
+      VK_NULL_HANDLE,
+      // shader arguments
+      v_output.image(
+          pipeline_barrier,
+          api::PipelineStage::COMPUTE,
+          api::MemoryAccessType::READ | api::MemoryAccessType::WRITE));
+
+  return convert(v_output);
+}
+
+#ifdef USE_VULKAN_API
+
+TORCH_LIBRARY_IMPL(aten, Vulkan, m) {
+  m.impl(TORCH_SELECTIVE_NAME("aten::zero_"), TORCH_FN(zero_));
+  m.impl(TORCH_SELECTIVE_NAME("aten::zeros"), TORCH_FN(zeros));
+}
+
+#endif /* USE_VULKAN_API */
+
+} // namespace
+} // namespace ops
+} // namespace vulkan
+} // namespace native
+} // namespace at
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 7 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `vulkan`, `ops`, `api`, `native`, `at`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native/vulkan/ops`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/native/vulkan/ops/Common.h`
+- `ATen/native/vulkan/ops/Utils.h`
+- `torch/library.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native/vulkan/ops`):
+
+- [`Convert.h_docs.md`](./Convert.h_docs.md)
+- [`Batchnorm.cpp_docs.md`](./Batchnorm.cpp_docs.md)
+- [`Slice.cpp_docs.md`](./Slice.cpp_docs.md)
+- [`Lerp.cpp_docs.md`](./Lerp.cpp_docs.md)
+- [`Shape.cpp_docs.md`](./Shape.cpp_docs.md)
+- [`Mean.cpp_docs.md`](./Mean.cpp_docs.md)
+- [`UnaryOp.cpp_docs.md`](./UnaryOp.cpp_docs.md)
+- [`Permute.cpp_docs.md`](./Permute.cpp_docs.md)
+- [`Unsqueeze.cpp_docs.md`](./Unsqueeze.cpp_docs.md)
+- [`Stack.cpp_docs.md`](./Stack.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `Zero.cpp_docs.md`
+- **Keyword Index**: `Zero.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native/vulkan/ops`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native/vulkan/ops`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native/vulkan/ops`):
+
+- [`Lerp.cpp_kw.md_docs.md`](./Lerp.cpp_kw.md_docs.md)
+- [`Select.cpp_docs.md_docs.md`](./Select.cpp_docs.md_docs.md)
+- [`Batchnorm.h_docs.md_docs.md`](./Batchnorm.h_docs.md_docs.md)
+- [`Lstm.cpp_kw.md_docs.md`](./Lstm.cpp_kw.md_docs.md)
+- [`Concat.cpp_kw.md_docs.md`](./Concat.cpp_kw.md_docs.md)
+- [`Convolution.cpp_docs.md_docs.md`](./Convolution.cpp_docs.md_docs.md)
+- [`Zero.cpp_kw.md_docs.md`](./Zero.cpp_kw.md_docs.md)
+- [`Gru.h_kw.md_docs.md`](./Gru.h_kw.md_docs.md)
+- [`Repeat.cpp_kw.md_docs.md`](./Repeat.cpp_kw.md_docs.md)
+- [`Register.cpp_docs.md_docs.md`](./Register.cpp_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `Zero.cpp_docs.md_docs.md`
+- **Keyword Index**: `Zero.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

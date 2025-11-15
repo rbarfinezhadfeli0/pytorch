@@ -1,0 +1,421 @@
+# Documentation: `docs/torch/distributed/fsdp/_fsdp_extensions.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/distributed/fsdp/_fsdp_extensions.py_docs.md`
+- **Size**: 8,436 bytes (8.24 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/distributed/fsdp/_fsdp_extensions.py`
+
+## File Metadata
+
+- **Path**: `torch/distributed/fsdp/_fsdp_extensions.py`
+- **Size**: 5,033 bytes (4.92 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This is a python source code that is part of the PyTorch project.
+
+## Original Source
+
+```python
+from abc import ABC, abstractmethod
+from typing import Any, Optional
+
+import torch
+import torch.distributed as dist
+from torch.distributed._shard.sharded_tensor.api import ShardedTensor
+from torch.distributed._shard.sharded_tensor.shard import Shard
+from torch.distributed.fsdp._shard_utils import (
+    _all_gather_dtensor,
+    _create_chunk_dtensor,
+    _create_chunk_sharded_tensor,
+)
+from torch.distributed.tensor import DeviceMesh, DTensor
+
+
+class FSDPExtensions(ABC):
+    """
+    This enables some customizable hooks to enable composability with tensor
+    parallelism. To activate these hooks, use :func:`_set_fsdp_extensions` to
+    set a custom :class:`FSDPExtensions` that implements the hooks.
+    """
+
+    @abstractmethod
+    def pre_flatten_transform(
+        self,
+        tensor: torch.Tensor,
+    ) -> tuple[torch.Tensor, Optional[Any]]:
+        """E.g. converting ``DistributedTensor`` to local tensor."""
+        ...
+
+    @abstractmethod
+    def post_unflatten_transform(
+        self,
+        tensor: torch.Tensor,
+        param_extension: Any,
+    ) -> torch.Tensor:
+        """E.g. converting local tensor to ``DistributedTensor``."""
+        ...
+
+    @abstractmethod
+    def chunk_tensor(
+        self,
+        tensor: torch.Tensor,
+        rank: int,
+        world_size: int,
+        num_devices_per_node: int,
+        pg: dist.ProcessGroup,
+        device: Optional[torch.device] = None,
+    ) -> torch.Tensor:
+        """Shards a tensor to chunks and returns the local chunk."""
+        ...
+
+    @abstractmethod
+    def chunk_dtensor(
+        self,
+        tensor: torch.Tensor,
+        rank: int,
+        device_mesh: DeviceMesh,
+    ) -> torch.Tensor:
+        """Shards a tensor/DTensor to DTensor and returns the local DTensor."""
+        ...
+
+    @abstractmethod
+    def pre_load_state_dict_transform(
+        self,
+        tensor: torch.Tensor,
+    ) -> tuple[torch.Tensor, list[Shard]]:
+        """
+        This is to be called before loading a *sharded* model state dict and
+        should return the tensor and list of shards from which to load data.
+        """
+        ...
+
+    @abstractmethod
+    def all_gather_dtensor(
+        self,
+        tensor: DTensor,
+        parent_mesh: Optional[DeviceMesh],
+    ) -> torch.Tensor:
+        """
+        This is to be called before loading a *sharded* DTensor state dict.
+        This gathers tensor in FSDP dimension and returns local tensor of
+        TP DTensor.
+        """
+        ...
+
+
+_extensions: Optional[FSDPExtensions] = None
+
+
+def _set_fsdp_extensions(flattener: FSDPExtensions) -> None:
+    global _extensions
+    _extensions = flattener
+
+
+def _ext_pre_flatten_transform(
+    tensor: torch.Tensor,
+    fsdp_extension: Optional[FSDPExtensions] = None,
+) -> tuple[torch.Tensor, Optional[Any]]:
+    if fsdp_extension is not None:
+        new_tensor, param_extension = fsdp_extension.pre_flatten_transform(tensor)
+        if param_extension is not None:
+            return new_tensor, param_extension
+    return tensor, None
+
+
+def _ext_post_unflatten_transform(
+    tensor: torch.Tensor,
+    param_extension: Any,
+    fsdp_extension: Optional[FSDPExtensions] = None,
+) -> torch.Tensor:
+    if fsdp_extension is not None and param_extension is not None:
+        return fsdp_extension.post_unflatten_transform(tensor, param_extension)
+    return tensor
+
+
+def _ext_chunk_tensor(
+    tensor: torch.Tensor,
+    rank: int,
+    world_size: int,
+    num_devices_per_node: int,
+    pg: dist.ProcessGroup,
+    fsdp_extension: Optional[FSDPExtensions] = None,
+) -> torch.Tensor:
+    chunk_tensor_fn = (
+        fsdp_extension.chunk_tensor
+        if fsdp_extension is not None
+        else _create_chunk_sharded_tensor
+    )
+    return chunk_tensor_fn(
+        tensor,
+        rank,
+        world_size,
+        num_devices_per_node,
+        pg,
+    )
+
+
+def _ext_chunk_dtensor(
+    tensor: torch.Tensor,
+    rank: int,
+    device_mesh: DeviceMesh,
+    fsdp_extension: Optional[FSDPExtensions] = None,
+) -> torch.Tensor:
+    chunk_dtensor_fn = (
+        fsdp_extension.chunk_dtensor
+        if fsdp_extension is not None
+        else _create_chunk_dtensor
+    )
+    return chunk_dtensor_fn(
+        tensor,
+        rank,
+        device_mesh,
+    )
+
+
+def _ext_pre_load_state_dict_transform(
+    tensor: torch.Tensor,
+    fsdp_extension: Optional[FSDPExtensions] = None,
+) -> tuple[torch.Tensor, list[Shard]]:
+    if fsdp_extension is not None:
+        return fsdp_extension.pre_load_state_dict_transform(tensor)
+
+    if type(tensor) is not ShardedTensor:
+        raise AssertionError(f"Expected ShardedTensor, got {type(tensor)}")
+    shards = tensor.local_shards()
+    return (tensor, shards)
+
+
+def _ext_all_gather_dtensor(
+    tensor: DTensor,
+    parent_mesh: Optional[DeviceMesh],
+    fsdp_extension: Optional[FSDPExtensions] = None,
+) -> torch.Tensor:
+    all_gather_dtensor_fn = (
+        fsdp_extension.all_gather_dtensor
+        if fsdp_extension is not None
+        else _all_gather_dtensor
+    )
+    return all_gather_dtensor_fn(tensor, parent_mesh)
+
+```
+
+
+
+## High-Level Overview
+
+"""    This enables some customizable hooks to enable composability with tensor    parallelism. To activate these hooks, use :func:`_set_fsdp_extensions` to    set a custom :class:`FSDPExtensions` that implements the hooks.
+
+This Python file contains 1 class(es) and 13 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `FSDPExtensions`
+
+**Functions defined**: `pre_flatten_transform`, `post_unflatten_transform`, `chunk_tensor`, `chunk_dtensor`, `pre_load_state_dict_transform`, `all_gather_dtensor`, `_set_fsdp_extensions`, `_ext_pre_flatten_transform`, `_ext_post_unflatten_transform`, `_ext_chunk_tensor`, `_ext_chunk_dtensor`, `_ext_pre_load_state_dict_transform`, `_ext_all_gather_dtensor`
+
+**Key imports**: ABC, abstractmethod, Any, Optional, torch, torch.distributed as dist, ShardedTensor, Shard, DeviceMesh, DTensor
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/distributed/fsdp`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `abc`: ABC, abstractmethod
+- `typing`: Any, Optional
+- `torch`
+- `torch.distributed as dist`
+- `torch.distributed._shard.sharded_tensor.api`: ShardedTensor
+- `torch.distributed._shard.sharded_tensor.shard`: Shard
+- `torch.distributed.tensor`: DeviceMesh, DTensor
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Abstract Base Classes**: Defines abstract interfaces
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/distributed/fsdp`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`_limiter_utils.py_docs.md`](./_limiter_utils.py_docs.md)
+- [`_traversal_utils.py_docs.md`](./_traversal_utils.py_docs.md)
+- [`_runtime_utils.py_docs.md`](./_runtime_utils.py_docs.md)
+- [`_common_utils.py_docs.md`](./_common_utils.py_docs.md)
+- [`_wrap_utils.py_docs.md`](./_wrap_utils.py_docs.md)
+- [`_exec_order_utils.py_docs.md`](./_exec_order_utils.py_docs.md)
+- [`sharded_grad_scaler.py_docs.md`](./sharded_grad_scaler.py_docs.md)
+- [`_state_dict_utils.py_docs.md`](./_state_dict_utils.py_docs.md)
+- [`wrap.py_docs.md`](./wrap.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `_fsdp_extensions.py_docs.md`
+- **Keyword Index**: `_fsdp_extensions.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/distributed/fsdp`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/distributed/fsdp`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Abstract Base Classes**: Defines abstract interfaces
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/distributed/fsdp`):
+
+- [`api.py_kw.md_docs.md`](./api.py_kw.md_docs.md)
+- [`_limiter_utils.py_kw.md_docs.md`](./_limiter_utils.py_kw.md_docs.md)
+- [`_optim_utils.py_kw.md_docs.md`](./_optim_utils.py_kw.md_docs.md)
+- [`fully_sharded_data_parallel.py_kw.md_docs.md`](./fully_sharded_data_parallel.py_kw.md_docs.md)
+- [`_state_dict_utils.py_kw.md_docs.md`](./_state_dict_utils.py_kw.md_docs.md)
+- [`wrap.py_docs.md_docs.md`](./wrap.py_docs.md_docs.md)
+- [`_exec_order_utils.py_docs.md_docs.md`](./_exec_order_utils.py_docs.md_docs.md)
+- [`_flat_param.py_docs.md_docs.md`](./_flat_param.py_docs.md_docs.md)
+- [`_wrap_utils.py_kw.md_docs.md`](./_wrap_utils.py_kw.md_docs.md)
+- [`sharded_grad_scaler.py_docs.md_docs.md`](./sharded_grad_scaler.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `_fsdp_extensions.py_docs.md_docs.md`
+- **Keyword Index**: `_fsdp_extensions.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

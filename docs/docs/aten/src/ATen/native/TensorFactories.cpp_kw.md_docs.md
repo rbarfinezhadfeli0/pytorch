@@ -1,0 +1,312 @@
+# Documentation: `docs/aten/src/ATen/native/TensorFactories.cpp_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/TensorFactories.cpp_kw.md`
+- **Size**: 15,502 bytes (15.14 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `aten/src/ATen/native/TensorFactories.cpp`
+
+## File Information
+
+- **Original File**: [aten/src/ATen/native/TensorFactories.cpp](../../../../../aten/src/ATen/native/TensorFactories.cpp)
+- **Documentation**: [`TensorFactories.cpp_docs.md`](./TensorFactories.cpp_docs.md)
+- **Folder**: `aten/src/ATen/native`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Functions
+
+- **`_dim_arange`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`_efficientzerotensor`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`_efficientzerotensor_meta_symint`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`arange`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`bartlett_window`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`blackman_window`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`clone`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`complex`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`complex_check_dtype`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`complex_check_floating`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`empty_cpu`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`empty_like`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`empty_like_quantized`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`empty_names`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`empty_permuted_symint`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`empty_strided_cpu`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`eye`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`for`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`from_file`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`full`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`full_like`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`hamming_window`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`hann_window`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`if`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`infer_full_options`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`kaiser_window`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`linspace`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`linspace_logspace_infer_options`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`logspace`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`new_empty_strided_symint`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`new_empty_symint`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`new_full`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`new_ones`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`new_zeros`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`normal`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ones`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ones_like`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`polar`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`rand`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`rand_like`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`randint`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`randint_like`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`randn`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`randn_like`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`randperm`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`randperm_cpu`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`range`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`scalar_tensor`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`tensor_backend`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`tensor_complex_backend`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`tensor_complex_cpu`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`tensor_cpu`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`tril_indices_cpu`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`triu_indices_cpu`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`vander`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`window_function_checks`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`zeros`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`zeros_like`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`zeros_sparse_compressed_symint`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`zeros_symint`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+
+### Includes
+
+- **`ATen/CPUGeneratorImpl.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/Dispatch.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/EmptyTensor.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ExpandUtils.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/Functions.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/MapAllocator.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/NamedTensorUtils.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/NativeFunctions.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/Parallel.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/SparseCsrTensorUtils.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/TensorOperators.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/TracerMode.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/core/Generator.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/core/Tensor.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/native/TensorFactories.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/native/UnaryOps.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/_cast_Byte_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/_cast_Char_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/_cast_Double_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/_cast_Float_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/_cast_Half_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/_cast_Int_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/_cast_Long_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/_cast_Short_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/_dim_arange_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/_efficientzerotensor_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/_empty_affine_quantized.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/_empty_per_channel_affine_quantized.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/_sparse_compressed_tensor_with_dims_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/arange.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/arange_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/bartlett_window_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/blackman_window_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/clone_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/complex.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/complex_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/cumprod.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/empty.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/empty_like.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/empty_like_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/empty_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/empty_permuted_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/empty_strided.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/empty_strided_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/eye.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/eye_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/fill_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/flip.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/from_file_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/full_like_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/full_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/hamming_window_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/hann_window_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/kaiser_window_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/linspace.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/linspace_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/logspace.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/logspace_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/new_empty_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/new_empty_strided_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/new_full_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/new_ones_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/new_zeros_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/normal_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/ones.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/ones_like_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/ones_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/polar.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/polar_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/promote_types.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/rand_like_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/rand_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/randint_like_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/randint_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/randn_like_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/randn_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/randperm.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/randperm_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/range.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/range_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/scalar_tensor_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/tril_indices_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/triu_indices_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/vander_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/zeros_like_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/zeros_like_ops.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`ATen/ops/zeros_native.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`algorithm`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`c10/core/ScalarType.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`c10/core/SymIntArrayRef.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`c10/core/TensorOptions.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`c10/util/Exception.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`c10/util/MathConstants.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`c10/util/irange.h`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`cstddef`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`string`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`utility`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+
+### Namespaces
+
+- **`DEFINE_DISPATCH`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`Tensor`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+- **`at`**: [TensorFactories.cpp_docs.md](./TensorFactories.cpp_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native`):
+
+- [`AdaptiveMaxPooling2d.cpp_docs.md_docs.md`](./AdaptiveMaxPooling2d.cpp_docs.md_docs.md)
+- [`Distributions.cpp_docs.md_docs.md`](./Distributions.cpp_docs.md_docs.md)
+- [`im2col_shape_check.h_docs.md_docs.md`](./im2col_shape_check.h_docs.md_docs.md)
+- [`ReduceOps.cpp_kw.md_docs.md`](./ReduceOps.cpp_kw.md_docs.md)
+- [`Lerp.cpp_kw.md_docs.md`](./Lerp.cpp_kw.md_docs.md)
+- [`CPUFallback.h_docs.md_docs.md`](./CPUFallback.h_docs.md_docs.md)
+- [`MetaTensor.cpp_docs.md_docs.md`](./MetaTensor.cpp_docs.md_docs.md)
+- [`Correlation.cpp_kw.md_docs.md`](./Correlation.cpp_kw.md_docs.md)
+- [`im2col_shape_check.h_kw.md_docs.md`](./im2col_shape_check.h_kw.md_docs.md)
+- [`UpSampleNearest2d.cpp_kw.md_docs.md`](./UpSampleNearest2d.cpp_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `TensorFactories.cpp_kw.md_docs.md`
+- **Keyword Index**: `TensorFactories.cpp_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

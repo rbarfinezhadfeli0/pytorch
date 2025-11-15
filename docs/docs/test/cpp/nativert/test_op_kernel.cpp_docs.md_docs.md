@@ -1,0 +1,296 @@
+# Documentation: `docs/test/cpp/nativert/test_op_kernel.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/cpp/nativert/test_op_kernel.cpp_docs.md`
+- **Size**: 4,428 bytes (4.32 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/cpp/nativert/test_op_kernel.cpp`
+
+## File Metadata
+
+- **Path**: `test/cpp/nativert/test_op_kernel.cpp`
+- **Size**: 1,724 bytes (1.68 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**.
+
+## Original Source
+
+```cpp
+#include <ATen/core/dispatch/Dispatcher.h>
+#include <ATen/core/op_registration/op_registration.h>
+#include <ATen/ops/tensor.h>
+#include <gtest/gtest.h>
+#include <torch/nativert/executor/OpKernel.h>
+
+namespace torch::nativert {
+
+int64_t increment_kernel(const at::Tensor& tensor, int64_t input) {
+  return input + 1;
+}
+
+TEST(OpKernelTest, GetOperatorForTargetValid) {
+  auto registrar = c10::RegisterOperators().op(
+      "test::foo(Tensor dummy, int input) -> int", &increment_kernel);
+  std::string target = "test.foo.default";
+  EXPECT_NO_THROW({
+    c10::OperatorHandle handle = getOperatorForTarget(target);
+    EXPECT_TRUE(handle.hasSchema());
+    EXPECT_EQ(handle.operator_name().name, "test::foo");
+    EXPECT_EQ(handle.operator_name().overload_name, "");
+  });
+}
+
+TEST(OpKernelTest, GetOperatorForTargetInvalid) {
+  std::string target = "invalid.target";
+  EXPECT_THROW(getOperatorForTarget(target), c10::Error);
+}
+
+TEST(OpKernelTest, GetReadableArgs) {
+  c10::FunctionSchema schema = c10::FunctionSchema(
+      "test_op",
+      "",
+      {c10::Argument("tensor_arg"),
+       c10::Argument("tensor_list_arg"),
+       c10::Argument("int_arg"),
+       c10::Argument("none_arg")},
+      {});
+  std::vector<c10::IValue> stack = {
+      at::tensor({1, 2, 3}),
+      c10::IValue(
+          std::vector<at::Tensor>{at::tensor({1, 2}), at::tensor({3, 4})}),
+      c10::IValue(1),
+      c10::IValue(),
+  };
+  std::string expected =
+      "arg0 tensor_arg: Tensor int[3]cpu\n"
+      "arg1 tensor_list_arg: GenericList [int[2]cpu, int[2]cpu, ]\n"
+      "arg2 int_arg: Int 1\n"
+      "arg3 none_arg: None \n";
+
+  std::string result = readableArgs(schema, stack);
+  EXPECT_EQ(result, expected);
+}
+
+} // namespace torch::nativert
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 1 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/cpp/nativert`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/core/dispatch/Dispatcher.h`
+- `ATen/core/op_registration/op_registration.h`
+- `ATen/ops/tensor.h`
+- `gtest/gtest.h`
+- `torch/nativert/executor/OpKernel.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/cpp/nativert/test_op_kernel.cpp
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/cpp/nativert`):
+
+- [`test_alias_analyzer.cpp_docs.md`](./test_alias_analyzer.cpp_docs.md)
+- [`test_placement.cpp_docs.md`](./test_placement.cpp_docs.md)
+- [`test_static_kernel_ops.cpp_docs.md`](./test_static_kernel_ops.cpp_docs.md)
+- [`test_static_dispatch_kernel_registration.cpp_docs.md`](./test_static_dispatch_kernel_registration.cpp_docs.md)
+- [`test_graph.cpp_docs.md`](./test_graph.cpp_docs.md)
+- [`test_c10_kernel.cpp_docs.md`](./test_c10_kernel.cpp_docs.md)
+- [`test_function_schema.cpp_docs.md`](./test_function_schema.cpp_docs.md)
+- [`test_execution_frame.cpp_docs.md`](./test_execution_frame.cpp_docs.md)
+- [`test_triton_kernel_manager_registration.cpp_docs.md`](./test_triton_kernel_manager_registration.cpp_docs.md)
+- [`CMakeLists.txt_docs.md`](./CMakeLists.txt_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_op_kernel.cpp_docs.md`
+- **Keyword Index**: `test_op_kernel.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/cpp/nativert`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/cpp/nativert`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/cpp/nativert/test_op_kernel.cpp_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/cpp/nativert`):
+
+- [`test_execution_frame.cpp_kw.md_docs.md`](./test_execution_frame.cpp_kw.md_docs.md)
+- [`test_tensor_meta.cpp_kw.md_docs.md`](./test_tensor_meta.cpp_kw.md_docs.md)
+- [`test_graph_signature.cpp_kw.md_docs.md`](./test_graph_signature.cpp_kw.md_docs.md)
+- [`CMakeLists.txt_docs.md_docs.md`](./CMakeLists.txt_docs.md_docs.md)
+- [`test_static_kernel_ops.cpp_kw.md_docs.md`](./test_static_kernel_ops.cpp_kw.md_docs.md)
+- [`test_layout_planner_algorithm.cpp_docs.md_docs.md`](./test_layout_planner_algorithm.cpp_docs.md_docs.md)
+- [`test_pass_manager.cpp_docs.md_docs.md`](./test_pass_manager.cpp_docs.md_docs.md)
+- [`test_static_dispatch_kernel_registration.cpp_kw.md_docs.md`](./test_static_dispatch_kernel_registration.cpp_kw.md_docs.md)
+- [`test_placement.cpp_kw.md_docs.md`](./test_placement.cpp_kw.md_docs.md)
+- [`test_static_kernel_ops.cpp_docs.md_docs.md`](./test_static_kernel_ops.cpp_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_op_kernel.cpp_docs.md_docs.md`
+- **Keyword Index**: `test_op_kernel.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

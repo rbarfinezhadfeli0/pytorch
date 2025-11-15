@@ -1,0 +1,189 @@
+# Documentation: `docs/aten/src/ATen/native/cpu/TensorCompareKernel.cpp_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/cpu/TensorCompareKernel.cpp_kw.md`
+- **Size**: 4,665 bytes (4.56 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `aten/src/ATen/native/cpu/TensorCompareKernel.cpp`
+
+## File Information
+
+- **Original File**: [aten/src/ATen/native/cpu/TensorCompareKernel.cpp](../../../../../../aten/src/ATen/native/cpu/TensorCompareKernel.cpp)
+- **Documentation**: [`TensorCompareKernel.cpp_docs.md`](./TensorCompareKernel.cpp_docs.md)
+- **Folder**: `aten/src/ATen/native/cpu`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Functions
+
+- **`aminmax_kernel`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+- **`clamp_kernel_impl`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+- **`clamp_max_scalar_kernel_impl`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+- **`clamp_min_scalar_kernel_impl`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+- **`clamp_scalar_kernel_impl`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+- **`compare_base_kernel`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+- **`compare_base_kernel_core`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+- **`if`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+- **`isin_default_kernel_cpu`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+- **`isneginf_kernel_impl`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+- **`isposinf_kernel_impl`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+- **`max_kernel_impl`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+- **`min_kernel_impl`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+- **`mode_kernel_impl`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+- **`where_kernel_impl`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+
+### Includes
+
+- **`ATen/Dispatch.h`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+- **`ATen/Functions.h`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+- **`ATen/NumericUtils.h`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+- **`ATen/Parallel.h`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+- **`ATen/TensorIterator.h`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+- **`ATen/WrapDimUtils.h`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+- **`ATen/core/Tensor.h`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+- **`ATen/native/ReduceOps.h`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+- **`ATen/native/ReduceOpsUtils.h`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+- **`ATen/native/Resize.h`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+- **`ATen/native/TensorCompare.h`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+- **`ATen/native/cpu/Loops.h`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+- **`ATen/ops/result_type.h`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+- **`algorithm`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+- **`c10/core/ScalarType.h`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+- **`c10/util/irange.h`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+- **`iterator`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+- **`numeric`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+- **`utility`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+- **`vector`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+
+### Namespaces
+
+- **`REGISTER_DISPATCH`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+- **`at`**: [TensorCompareKernel.cpp_docs.md](./TensorCompareKernel.cpp_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native/cpu`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native/cpu`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native/cpu`):
+
+- [`BinaryOpsKernel.cpp_docs.md_docs.md`](./BinaryOpsKernel.cpp_docs.md_docs.md)
+- [`MultinomialKernel.cpp_kw.md_docs.md`](./MultinomialKernel.cpp_kw.md_docs.md)
+- [`AmpGradScalerKernels.cpp_docs.md_docs.md`](./AmpGradScalerKernels.cpp_docs.md_docs.md)
+- [`FusedSGDKernel.cpp_docs.md_docs.md`](./FusedSGDKernel.cpp_docs.md_docs.md)
+- [`scaled_modified_bessel_k1.cpp_docs.md_docs.md`](./scaled_modified_bessel_k1.cpp_docs.md_docs.md)
+- [`int_mm_kernel.h_docs.md_docs.md`](./int_mm_kernel.h_docs.md_docs.md)
+- [`IsContiguous.h_docs.md_docs.md`](./IsContiguous.h_docs.md_docs.md)
+- [`MaxPooling.cpp_docs.md_docs.md`](./MaxPooling.cpp_docs.md_docs.md)
+- [`WeightNormKernel.cpp_kw.md_docs.md`](./WeightNormKernel.cpp_kw.md_docs.md)
+- [`FusedAdamKernel.cpp_docs.md_docs.md`](./FusedAdamKernel.cpp_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `TensorCompareKernel.cpp_kw.md_docs.md`
+- **Keyword Index**: `TensorCompareKernel.cpp_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

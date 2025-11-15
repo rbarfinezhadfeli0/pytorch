@@ -1,0 +1,420 @@
+# Documentation: `docs/torch/testing/_internal/common_methods_invocations.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/testing/_internal/common_methods_invocations.py_kw.md`
+- **Size**: 30,565 bytes (29.85 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `torch/testing/_internal/common_methods_invocations.py`
+
+## File Information
+
+- **Original File**: [torch/testing/_internal/common_methods_invocations.py](../../../../torch/testing/_internal/common_methods_invocations.py)
+- **Documentation**: [`common_methods_invocations.py_docs.md`](./common_methods_invocations.py_docs.md)
+- **Folder**: `torch/testing/_internal`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`ForeachRightmostArgType`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`ForeachSampleInput`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`_TestParamsMaxPool1d`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`_TestParamsMaxPool2d`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`_TestParamsMaxPool3d`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`_TestParamsMaxPoolBase`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`foreach_inputs_sample_func`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`foreach_max_sample_func`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`foreach_norm_sample_func`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`foreach_pointwise_sample_func`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`is`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+
+### Functions
+
+- **`__call__`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`__init__`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`_cat_np`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`_clamp_max_numpy`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`_clamp_min_numpy`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`_clamp_numpy`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`_elementwise_type_promo_np`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`_fill_indices`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`_fill_np`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`_fill_sample_kwargs`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`_floor_divide_np`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`_gather`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`_gen_kwargs`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`_gen_shape`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`_generate_correlation_inputs`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`_generate_nan_reduction_inputs`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`_generate_sample_inputs_nn_loss`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`_generate_sample_shape_reduction`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`_make_tensor_helper`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`_maybe_torch`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`_numpy_ref_transpose`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`_sample_kwargs`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`_sample_rightmost_arg`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`_set_rightmost_arg_types`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`_should_disable_fastpath`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`_squeeze_ref`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`_tensor`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`apply_grad`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`c`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`chunk_iter`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`close_to_int`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`complex_conv`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`compute_min_val`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`conv_transpose_ref`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`convert_to_float_mask`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`drop_mode_argument`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_T`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_adaptive_avg_pool1d`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_adaptive_avg_pool2d`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_adaptive_avg_pool3d`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_adaptive_max_pool1d`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_adaptive_max_pool2d`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_adaptive_max_pool3d`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_aminmax_amax_amin`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_arange`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_as_strided_scatter`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_avg_pool1d`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_avg_pool2d`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_avg_pool3d`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_bernoulli`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_bucketize`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_cat`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_cauchy`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_chunk_cat`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_complex`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_conv1d`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_conv2d`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_conv3d`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_cov`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_diag`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_diff`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_dot_vdot`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_dsplit`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_embedding`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_empty_permuted`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_exponential`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_eye`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_fliplr`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_flipud`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_gather`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_gaussian_nll_loss`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_gelu`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_geometric`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_gradient`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_group_norm`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_hardtanh`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_hinge_embedding_loss`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_histogramdd`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_hsplit`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_hstack_dstack_vstack`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_huber_loss`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_index_add`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_index_select`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_isclose`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_item`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_kthvalue`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_l1_loss`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_linspace`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_log_normal`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_logcumsumexp`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_margin_ranking_loss`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_masked_fill`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_masked_scatter`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_masked_select`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_max_pool1d`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_max_pool2d`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_max_pool3d`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_median`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_multi_margin_loss`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_multilabel_margin_loss`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_multinomial`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_narrow_narrow_copy`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_native_layer_norm`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_neg`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_normal`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_ormqr`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_poisson_nll_loss`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_prelu`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_renorm`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_rms_norm`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_roll`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_rot90`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_rrelu`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_scatter_and_scatter_add`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_soft_margin_loss`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_softshrink`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_sum_to_size`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_t`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_take`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_trace`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_tril_triu`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_triplet_margin_loss`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_unbind`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_uniform`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_view_reshape`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_vsplit`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_inputs_where`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`error_movedim_moveaxis`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`fn`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`gen_input_params`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`gen_shape`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`gen_shape_kwargs`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`generate_input_from_mask`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`get_independent_tensor`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`get_tensor_input`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`get_val`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`get_value_or_make_tensor`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`large_1d_unique`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`make_arg`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`make_arg_conj`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`make_bool_mask`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`make_idx`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`make_input`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`make_inputs`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`make_log`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`make_log_probs`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`make_long_input`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`make_mvlgamma_opinfo`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`make_per_sample_weight`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`make_prob`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`make_target`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`make_weight_shape_kwargs`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`mask_two_rows`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`max_pool2d_backward`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`mt`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`np_sinc_with_fp16_as_fp32`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`out_fn`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`prod_single_zero`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`prod_zeros`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`random_index`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`reference_inputs_addcmul_addcdiv`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`reference_inputs_broadcast_tensors`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`reference_inputs_cat`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`reference_inputs_chunk`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`reference_inputs_clone_contiguous`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`reference_inputs_diagonal_diag_embed`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`reference_inputs_elementwise_ternary`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`reference_inputs_flatten`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`reference_inputs_grid_sample`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`reference_inputs_group_norm`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`reference_inputs_hinge_embedding_loss`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`reference_inputs_interpolate`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`reference_inputs_like_fns`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`reference_inputs_logsumexp`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`reference_inputs_margin_ranking_loss`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`reference_inputs_multi_margin_loss`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`reference_inputs_multilabel_margin_loss`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`reference_inputs_narrow_narrow_copy`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`reference_inputs_permute`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`reference_inputs_prelu`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`reference_inputs_upsample`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`reference_inputs_view_reshape`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`reference_inputs_where`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`reference_movedim_moveaxis`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`reference_pdist`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`reference_unbind`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`round_up`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`sample_cumulative_trapezoid`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`sample_float`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`sample_inputs_T`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`sample_inputs__batch_norm_with_update`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`sample_inputs__native_batch_norm_legit`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`sample_inputs__unsafe_masked_index`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`sample_inputs__unsafe_masked_index_put_accumulate`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`sample_inputs_adaptive_avg_pool1d`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`sample_inputs_adaptive_avg_pool2d`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`sample_inputs_adaptive_avg_pool3d`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`sample_inputs_adaptive_max_pool1d`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`sample_inputs_adaptive_max_pool2d`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`sample_inputs_adaptive_max_pool3d`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+
+### Imports
+
+- **`Any`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`ScalingType`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`Sequence`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`_pytree`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`collections.abc`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`copy`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`dtype_to_type`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`enum`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`functools`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`inf`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`itertools`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`make_tensor`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`math`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`numpy`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`numpy.typing`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`operator`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`opinfo`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`product`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`random`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`scipy`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`scipy.spatial`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`scipy.special`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`stats`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`torch`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`torch._prims`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`torch._prims_common`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`torch._refs`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`torch._refs.linalg`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`torch._refs.nn.functional`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`torch._refs.special`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`torch._vendor.packaging`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`torch.nn.functional`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`torch.testing`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`torch.testing._internal`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`torch.testing._internal.common_cuda`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`torch.testing._internal.common_device_type`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`torch.testing._internal.common_dtype`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`torch.testing._internal.common_quantized`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`torch.testing._internal.opinfo.core`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`torch.testing._internal.opinfo.definitions._masked`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`torch.testing._internal.opinfo.definitions.linalg`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`torch.testing._internal.opinfo.definitions.sparse`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`torch.testing._internal.opinfo.definitions.special`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`torch.testing._internal.opinfo.refs`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`torch.testing._internal.opinfo.utils`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`torch.testing._utils`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`torch.utils`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`typing`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`unittest`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`version`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`wrapper_set_seed`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+- **`wraps`**: [common_methods_invocations.py_docs.md](./common_methods_invocations.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/testing/_internal`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/testing/_internal`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/torch/testing/_internal/common_methods_invocations.py_kw.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/testing/_internal`):
+
+- [`hypothesis_utils.py_kw.md_docs.md`](./hypothesis_utils.py_kw.md_docs.md)
+- [`fake_config_module2.py_kw.md_docs.md`](./fake_config_module2.py_kw.md_docs.md)
+- [`static_module.py_kw.md_docs.md`](./static_module.py_kw.md_docs.md)
+- [`common_pruning.py_kw.md_docs.md`](./common_pruning.py_kw.md_docs.md)
+- [`composite_compliance.py_kw.md_docs.md`](./composite_compliance.py_kw.md_docs.md)
+- [`common_mkldnn.py_docs.md_docs.md`](./common_mkldnn.py_docs.md_docs.md)
+- [`triton_utils.py_docs.md_docs.md`](./triton_utils.py_docs.md_docs.md)
+- [`common_dtype.py_docs.md_docs.md`](./common_dtype.py_docs.md_docs.md)
+- [`common_methods_invocations.py_docs.md_docs.md`](./common_methods_invocations.py_docs.md_docs.md)
+- [`hypothesis_utils.py_docs.md_docs.md`](./hypothesis_utils.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `common_methods_invocations.py_kw.md_docs.md`
+- **Keyword Index**: `common_methods_invocations.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

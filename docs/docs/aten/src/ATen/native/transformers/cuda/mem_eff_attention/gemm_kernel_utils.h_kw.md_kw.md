@@ -1,0 +1,81 @@
+# Keyword Index: `docs/aten/src/ATen/native/transformers/cuda/mem_eff_attention/gemm_kernel_utils.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/native/transformers/cuda/mem_eff_attention/gemm_kernel_utils.h_kw.md](../../../../../../../../../docs/aten/src/ATen/native/transformers/cuda/mem_eff_attention/gemm_kernel_utils.h_kw.md)
+- **Documentation**: [`gemm_kernel_utils.h_kw.md_docs.md`](./gemm_kernel_utils.h_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/native/transformers/cuda/mem_eff_attention`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Analysis`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Architecture`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Basic`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Class`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Complete`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Considerations`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`DefaultGemmType`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Dependencies`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Design`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Detailed`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Documentation`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Efficiency`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Extracted`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`File`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Folder`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Functions`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Generated`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`High`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`How`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`In`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Includes`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Index`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Information`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Keyword`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Keywords`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Level`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Map`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Metadata`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Namespaces`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Original`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Overview`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Performance`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Purpose`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`PyTorch`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Related`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Repository`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Safety`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Section`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Security`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Source`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Structs`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`System`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Testing`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`The`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`This`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+- **`Usage`**: [gemm_kernel_utils.h_kw.md_docs.md](./gemm_kernel_utils.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

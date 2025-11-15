@@ -1,0 +1,193 @@
+# Documentation: `docs/torchgen/gen_aoti_c_shim.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/torchgen/gen_aoti_c_shim.py_kw.md`
+- **Size**: 4,643 bytes (4.53 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `torchgen/gen_aoti_c_shim.py`
+
+## File Information
+
+- **Original File**: [torchgen/gen_aoti_c_shim.py](../../torchgen/gen_aoti_c_shim.py)
+- **Documentation**: [`gen_aoti_c_shim.py_docs.md`](./gen_aoti_c_shim.py_docs.md)
+- **Folder**: `torchgen`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`ShimGenerator`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`from`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+
+### Functions
+
+- **`AT_PER_OPERATOR_HEADERS`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`__call__`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`__cplusplus`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`convert_arg_type_and_name`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`convert_return`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`gen_aoti_c_shim`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`gen_aoti_c_shim_files`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`gen_arguments`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`gen_c_shim`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`gen_declaration_and_definition`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`gen_returns`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`gen_static_dispatch_backend_call`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`gen_static_dispatch_backend_call_signature`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`get_backend_index_for_aoti`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`get_fallback_op_name`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`get_header_for_aoti`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`headers_for_aoti`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`zip_type_and_name`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+
+### Imports
+
+- **`CppSignature`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`DispatcherSignature`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`FileManager`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`Optional`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`Sequence`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`TYPE_CHECKING`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`__future__`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`annotations`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`aten_shimified_ops`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`collections.abc`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`dataclass`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`dataclasses`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`difflib`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`method_with_native_function`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`os`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`textwrap`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`torchgen.aoti.fallback_ops`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`torchgen.api.types`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`torchgen.api.types.signatures`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`torchgen.context`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`torchgen.model`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`torchgen.utils`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+- **`typing`**: [gen_aoti_c_shim.py_docs.md](./gen_aoti_c_shim.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torchgen`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torchgen`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torchgen`):
+
+- [`gen_functionalization_type.py_docs.md_docs.md`](./gen_functionalization_type.py_docs.md_docs.md)
+- [`BUILD.bazel_docs.md_docs.md`](./BUILD.bazel_docs.md_docs.md)
+- [`context.py_kw.md_docs.md`](./context.py_kw.md_docs.md)
+- [`native_function_generation.py_kw.md_docs.md`](./native_function_generation.py_kw.md_docs.md)
+- [`gen_schema_utils.py_docs.md_docs.md`](./gen_schema_utils.py_docs.md_docs.md)
+- [`utils.py_docs.md_docs.md`](./utils.py_docs.md_docs.md)
+- [`gen_aoti_c_shim.py_docs.md_docs.md`](./gen_aoti_c_shim.py_docs.md_docs.md)
+- [`local.py_docs.md_docs.md`](./local.py_docs.md_docs.md)
+- [`gen.py_kw.md_docs.md`](./gen.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `gen_aoti_c_shim.py_kw.md_docs.md`
+- **Keyword Index**: `gen_aoti_c_shim.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

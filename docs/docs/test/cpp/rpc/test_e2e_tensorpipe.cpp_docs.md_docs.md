@@ -1,0 +1,302 @@
+# Documentation: `docs/test/cpp/rpc/test_e2e_tensorpipe.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/cpp/rpc/test_e2e_tensorpipe.cpp_docs.md`
+- **Size**: 4,420 bytes (4.32 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/cpp/rpc/test_e2e_tensorpipe.cpp`
+
+## File Metadata
+
+- **Path**: `test/cpp/rpc/test_e2e_tensorpipe.cpp`
+- **Size**: 1,945 bytes (1.90 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**.
+
+## Original Source
+
+```cpp
+#include <gtest/gtest.h>
+
+#include "e2e_test_base.h"
+
+#include <torch/csrc/distributed/c10d/ProcessGroupGloo.hpp>
+#include <torch/csrc/distributed/rpc/request_callback_no_python.h>
+#include <torch/csrc/distributed/rpc/tensorpipe_agent.h>
+#include <torch/torch.h>
+
+namespace torch {
+namespace distributed {
+namespace rpc {
+
+#ifdef USE_TENSORPIPE
+
+class TestE2ETensorPipe : public TestE2EBase {
+ protected:
+  void buildRpcAgent() override {
+    auto options = c10d::ProcessGroupGloo::Options::create();
+    options->devices.push_back(
+        ::c10d::ProcessGroupGloo::createDeviceForHostname(serverAddress));
+    float rpcTimeout = 30;
+
+    TensorPipeRpcBackendOptions opts(
+        /*numWorkerThreads=*/std::max(16U, std::thread::hardware_concurrency()),
+        /*transports=*/std::nullopt,
+        /*channels=*/std::nullopt,
+        /*rpc_timeout=*/rpcTimeout,
+        /*init_method=*/"unused");
+
+    rpcAgent = std::make_shared<TensorPipeAgent>(
+        store,
+        "worker",
+        0,
+        numWorkers,
+        opts,
+        std::unordered_map<std::string, DeviceMap>{},
+        std::vector<c10::Device>{},
+        std::make_unique<RequestCallbackNoPython>());
+  }
+};
+
+// End to end training loop test in C++ so that we can run LSAN on this test to
+// catch memory leaks. Enabling LSAN with python multiprocessing has been
+// challenging and we don't have a good solution yet.
+TEST_F(TestE2ETensorPipe, TestTrainingLoop) {
+  runTrainingLoop();
+  // Ensure the tensorpipe internal state is cleared up.
+  auto tensorpipeAgent = std::static_pointer_cast<TensorPipeAgent>(rpcAgent);
+
+  // Shutdown RPC agent for all RPCs to clean up.
+  tensorpipeAgent->join();
+  tensorpipeAgent->shutdown();
+  ASSERT_EQ(0, tensorpipeAgent->numPendingResponses());
+  ASSERT_EQ(0, tensorpipeAgent->timeoutMapSize());
+  ASSERT_EQ(0, tensorpipeAgent->messageIdToTimeoutMapSize());
+}
+
+#endif
+
+} // namespace rpc
+} // namespace distributed
+} // namespace torch
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 1 class(es)/struct(s) and 2 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `distributed`, `torch`, `rpc`
+
+**Classes/Structs**: `TestE2ETensorPipe`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/cpp/rpc`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `gtest/gtest.h`
+- `e2e_test_base.h`
+- `torch/csrc/distributed/c10d/ProcessGroupGloo.hpp`
+- `torch/csrc/distributed/rpc/request_callback_no_python.h`
+- `torch/csrc/distributed/rpc/tensorpipe_agent.h`
+- `torch/torch.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/cpp/rpc/test_e2e_tensorpipe.cpp
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/cpp/rpc`):
+
+- [`test_wire_serialization.cpp_docs.md`](./test_wire_serialization.cpp_docs.md)
+- [`CMakeLists.txt_docs.md`](./CMakeLists.txt_docs.md)
+- [`e2e_test_base.h_docs.md`](./e2e_test_base.h_docs.md)
+- [`test_tensorpipe_serialization.cpp_docs.md`](./test_tensorpipe_serialization.cpp_docs.md)
+- [`e2e_test_base.cpp_docs.md`](./e2e_test_base.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_e2e_tensorpipe.cpp_docs.md`
+- **Keyword Index**: `test_e2e_tensorpipe.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/cpp/rpc`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/cpp/rpc`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/cpp/rpc/test_e2e_tensorpipe.cpp_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/cpp/rpc`):
+
+- [`test_e2e_tensorpipe.cpp_kw.md_docs.md`](./test_e2e_tensorpipe.cpp_kw.md_docs.md)
+- [`CMakeLists.txt_docs.md_docs.md`](./CMakeLists.txt_docs.md_docs.md)
+- [`e2e_test_base.cpp_kw.md_docs.md`](./e2e_test_base.cpp_kw.md_docs.md)
+- [`e2e_test_base.h_docs.md_docs.md`](./e2e_test_base.h_docs.md_docs.md)
+- [`test_wire_serialization.cpp_docs.md_docs.md`](./test_wire_serialization.cpp_docs.md_docs.md)
+- [`test_tensorpipe_serialization.cpp_kw.md_docs.md`](./test_tensorpipe_serialization.cpp_kw.md_docs.md)
+- [`test_tensorpipe_serialization.cpp_docs.md_docs.md`](./test_tensorpipe_serialization.cpp_docs.md_docs.md)
+- [`e2e_test_base.cpp_docs.md_docs.md`](./e2e_test_base.cpp_docs.md_docs.md)
+- [`test_wire_serialization.cpp_kw.md_docs.md`](./test_wire_serialization.cpp_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_e2e_tensorpipe.cpp_docs.md_docs.md`
+- **Keyword Index**: `test_e2e_tensorpipe.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,87 @@
+# Keyword Index: `torch/ao/quantization/backend_config/backend_config.py`
+
+## File Information
+
+- **Original File**: [torch/ao/quantization/backend_config/backend_config.py](../../../../../torch/ao/quantization/backend_config/backend_config.py)
+- **Documentation**: [`backend_config.py_docs.md`](./backend_config.py_docs.md)
+- **Folder**: `torch/ao/quantization/backend_config`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`BackendConfig`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`BackendPatternConfig`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`ObservationType`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`class`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`from`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+
+### Functions
+
+- **`__init__`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`__repr__`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`_get_dtype_config`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`_set_extra_inputs_getter`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`_set_input_type_to_index`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`_set_num_tensor_args_to_observation_type`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`_set_pattern_complex_format`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`_set_root_node_getter`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`add_dtype_config`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`configs`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`from_dict`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`fuse_conv2d_relu`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`fuse_linear_relu`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`input_dtype`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`output_dtype`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`set_backend_pattern_config`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`set_backend_pattern_configs`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`set_dtype_configs`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`set_fused_module`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`set_fuser_method`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`set_name`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`set_observation_type`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`set_pattern`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`set_qat_module`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`set_reference_quantized_module`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`set_root_module`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`to_dict`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`weight_dtype`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+
+### Imports
+
+- **`Any`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`Callable`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`Enum`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`Pattern`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`__future__`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`annotations`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`collections.abc`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`dataclass`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`dataclasses`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`enum`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`torch`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`torch.ao.quantization.backend_config`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`torch.ao.quantization.utils`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+- **`typing`**: [backend_config.py_docs.md](./backend_config.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

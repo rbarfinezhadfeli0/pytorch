@@ -1,0 +1,312 @@
+# Documentation: `docs/torch/_numpy/_funcs.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/_numpy/_funcs.py_docs.md`
+- **Size**: 4,582 bytes (4.47 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/_numpy/_funcs.py`
+
+## File Metadata
+
+- **Path**: `torch/_numpy/_funcs.py`
+- **Size**: 2,097 bytes (2.05 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This is a python source code that is part of the PyTorch project.
+
+## Original Source
+
+```python
+# mypy: ignore-errors
+
+import inspect
+import itertools
+
+from . import _funcs_impl, _reductions_impl
+from ._normalizations import normalizer
+
+
+# _funcs_impl.py contains functions which mimic NumPy's eponymous equivalents,
+# and consume/return PyTorch tensors/dtypes.
+# They are also type annotated.
+# Pull these functions from _funcs_impl and decorate them with @normalizer, which
+# - Converts any input `np.ndarray`, `torch._numpy.ndarray`, list of lists, Python scalars, etc into a `torch.Tensor`.
+# - Maps NumPy dtypes to PyTorch dtypes
+# - If the input to the `axis` kwarg is an ndarray, it maps it into a tuple
+# - Implements the semantics for the `out=` arg
+# - Wraps back the outputs into `torch._numpy.ndarrays`
+
+
+def _public_functions(mod):
+    def is_public_function(f):
+        return inspect.isfunction(f) and not f.__name__.startswith("_")
+
+    return inspect.getmembers(mod, is_public_function)
+
+
+# We fill in __all__ in the loop below
+__all__ = []
+
+# decorate implementer functions with argument normalizers and export to the top namespace
+for name, func in itertools.chain(
+    _public_functions(_funcs_impl), _public_functions(_reductions_impl)
+):
+    if name in ["percentile", "quantile", "median"]:
+        decorated = normalizer(func, promote_scalar_result=True)
+    elif name == "einsum":
+        # normalized manually
+        decorated = func
+    else:
+        decorated = normalizer(func)
+
+    decorated.__qualname__ = name
+    decorated.__name__ = name
+    vars()[name] = decorated
+    __all__.append(name)
+
+
+"""
+Vendored objects from numpy.lib.index_tricks
+"""
+
+
+class IndexExpression:
+    """
+    Written by Konrad Hinsen <hinsen@cnrs-orleans.fr>
+    last revision: 1999-7-23
+
+    Cosmetic changes by T. Oliphant 2001
+    """
+
+    def __init__(self, maketuple):
+        self.maketuple = maketuple
+
+    def __getitem__(self, item):
+        if self.maketuple and not isinstance(item, tuple):
+            return (item,)
+        else:
+            return item
+
+
+index_exp = IndexExpression(maketuple=True)
+s_ = IndexExpression(maketuple=False)
+
+
+__all__ += ["index_exp", "s_"]
+
+```
+
+
+
+## High-Level Overview
+
+"""Vendored objects from numpy.lib.index_tricks
+
+This Python file contains 1 class(es) and 4 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `IndexExpression`
+
+**Functions defined**: `_public_functions`, `is_public_function`, `__init__`, `__getitem__`
+
+**Key imports**: inspect, itertools, _funcs_impl, _reductions_impl, normalizer
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/_numpy`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `inspect`
+- `itertools`
+- `.`: _funcs_impl, _reductions_impl
+- `._normalizations`: normalizer
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/_numpy`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`_util.py_docs.md`](./_util.py_docs.md)
+- [`_funcs_impl.py_docs.md`](./_funcs_impl.py_docs.md)
+- [`_ufuncs.py_docs.md`](./_ufuncs.py_docs.md)
+- [`linalg.py_docs.md`](./linalg.py_docs.md)
+- [`fft.py_docs.md`](./fft.py_docs.md)
+- [`_binary_ufuncs_impl.py_docs.md`](./_binary_ufuncs_impl.py_docs.md)
+- [`README.md_docs.md`](./README.md_docs.md)
+- [`_ndarray.py_docs.md`](./_ndarray.py_docs.md)
+- [`random.py_docs.md`](./random.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `_funcs.py_docs.md`
+- **Keyword Index**: `_funcs.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/_numpy`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/_numpy`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/_numpy`):
+
+- [`_funcs_impl.py_kw.md_docs.md`](./_funcs_impl.py_kw.md_docs.md)
+- [`_ndarray.py_docs.md_docs.md`](./_ndarray.py_docs.md_docs.md)
+- [`_dtypes.py_kw.md_docs.md`](./_dtypes.py_kw.md_docs.md)
+- [`_reductions_impl.py_kw.md_docs.md`](./_reductions_impl.py_kw.md_docs.md)
+- [`_ufuncs.py_docs.md_docs.md`](./_ufuncs.py_docs.md_docs.md)
+- [`fft.py_kw.md_docs.md`](./fft.py_kw.md_docs.md)
+- [`README.md_docs.md_docs.md`](./README.md_docs.md_docs.md)
+- [`random.py_docs.md_docs.md`](./random.py_docs.md_docs.md)
+- [`_dtypes_impl.py_docs.md_docs.md`](./_dtypes_impl.py_docs.md_docs.md)
+- [`_unary_ufuncs_impl.py_docs.md_docs.md`](./_unary_ufuncs_impl.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `_funcs.py_docs.md_docs.md`
+- **Keyword Index**: `_funcs.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

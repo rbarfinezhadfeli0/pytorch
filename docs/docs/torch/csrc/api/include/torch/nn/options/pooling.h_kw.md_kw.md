@@ -1,0 +1,88 @@
+# Keyword Index: `docs/torch/csrc/api/include/torch/nn/options/pooling.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/csrc/api/include/torch/nn/options/pooling.h_kw.md](../../../../../../../../../docs/torch/csrc/api/include/torch/nn/options/pooling.h_kw.md)
+- **Documentation**: [`pooling.h_kw.md_docs.md`](./pooling.h_kw.md_docs.md)
+- **Folder**: `docs/torch/csrc/api/include/torch/nn/options`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`AdaptiveAvgPoolOptions`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`AdaptiveMaxPoolOptions`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Analysis`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Architecture`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`AvgPoolOptions`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Basic`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Class`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Complete`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Considerations`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Dependencies`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Design`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Detailed`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Documentation`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Efficiency`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Export`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Extracted`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`F`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`File`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Folder`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`FractionalMaxPoolOptions`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Generated`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`High`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`How`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`In`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Includes`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Index`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Information`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Keyword`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Keywords`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`LPPoolOptions`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Level`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Map`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`MaxPoolOptions`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`MaxUnpoolFuncOptions`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`MaxUnpoolOptions`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Metadata`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Namespaces`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Original`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Overview`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Performance`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Purpose`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`PyTorch`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Related`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Repository`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Safety`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Section`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Security`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Source`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Structs`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`System`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Testing`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`The`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`This`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+- **`Usage`**: [pooling.h_kw.md_docs.md](./pooling.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

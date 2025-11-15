@@ -1,0 +1,91 @@
+# Keyword Index: `docs/docs/source/size.md_docs.md`
+
+## File Information
+
+- **Original File**: [docs/docs/source/size.md_docs.md](../../../../docs/docs/source/size.md_docs.md)
+- **Documentation**: [`size.md_docs.md_docs.md`](./size.md_docs.md_docs.md)
+- **Folder**: `docs/docs/source`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Architecture`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`As`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Code`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Common`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Considerations`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Cross`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Dependencies`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Dependency`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Design`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Detailed`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Documentation`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Example`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Examples`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Extension`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`File`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Files`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Folder`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`For`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Generated`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`High`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Idioms`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Import`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Index`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`It`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`KB`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Keyword`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Level`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Manual`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Markdown`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Metadata`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`No`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Notes`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Original`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Overview`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Path`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Patterns`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Performance`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Purpose`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`PyTorch`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`References`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Related`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Repository`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Role`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Safety`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Security`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`See`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Size`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Source`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Structure`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`System`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Tensor`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Test`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Testing`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`This`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Type`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+- **`Usage`**: [size.md_docs.md_docs.md](./size.md_docs.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

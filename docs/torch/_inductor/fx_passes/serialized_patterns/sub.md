@@ -1,0 +1,148 @@
+# Subtree Keyword Index: `torch/_inductor/fx_passes/serialized_patterns/`
+
+## Scope
+
+This index covers all files within `torch/_inductor/fx_passes/serialized_patterns/` and all its subdirectories (recursively).
+
+## Keywords
+
+
+### __init__
+
+- [`torch/_inductor/fx_passes/serialized_patterns/__init__.py`](./__init__.py_docs.md)
+
+### _sfdp_pattern_1
+
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_1.py`](./_sfdp_pattern_1.py_docs.md)
+
+### _sfdp_pattern_10
+
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_10.py`](./_sfdp_pattern_10.py_docs.md)
+
+### _sfdp_pattern_11
+
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_11.py`](./_sfdp_pattern_11.py_docs.md)
+
+### _sfdp_pattern_12
+
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_12.py`](./_sfdp_pattern_12.py_docs.md)
+
+### _sfdp_pattern_13
+
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_13.py`](./_sfdp_pattern_13.py_docs.md)
+
+### _sfdp_pattern_14
+
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_14.py`](./_sfdp_pattern_14.py_docs.md)
+
+### _sfdp_pattern_15
+
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_15.py`](./_sfdp_pattern_15.py_docs.md)
+
+### _sfdp_pattern_16
+
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_16.py`](./_sfdp_pattern_16.py_docs.md)
+
+### _sfdp_pattern_17
+
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_17.py`](./_sfdp_pattern_17.py_docs.md)
+
+### _sfdp_pattern_18
+
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_18.py`](./_sfdp_pattern_18.py_docs.md)
+
+### _sfdp_pattern_19
+
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_19.py`](./_sfdp_pattern_19.py_docs.md)
+
+### _sfdp_pattern_2
+
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_2.py`](./_sfdp_pattern_2.py_docs.md)
+
+### _sfdp_pattern_20
+
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_20.py`](./_sfdp_pattern_20.py_docs.md)
+
+### _sfdp_pattern_21
+
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_21.py`](./_sfdp_pattern_21.py_docs.md)
+
+### _sfdp_pattern_22
+
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_22.py`](./_sfdp_pattern_22.py_docs.md)
+
+### _sfdp_pattern_23
+
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_23.py`](./_sfdp_pattern_23.py_docs.md)
+
+### _sfdp_pattern_24
+
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_24.py`](./_sfdp_pattern_24.py_docs.md)
+
+### _sfdp_pattern_3
+
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_3.py`](./_sfdp_pattern_3.py_docs.md)
+
+### _sfdp_pattern_4
+
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_4.py`](./_sfdp_pattern_4.py_docs.md)
+
+### _sfdp_pattern_5
+
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_5.py`](./_sfdp_pattern_5.py_docs.md)
+
+### _sfdp_pattern_6
+
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_6.py`](./_sfdp_pattern_6.py_docs.md)
+
+### _sfdp_pattern_7
+
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_7.py`](./_sfdp_pattern_7.py_docs.md)
+
+### _sfdp_pattern_8
+
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_8.py`](./_sfdp_pattern_8.py_docs.md)
+
+### _sfdp_pattern_9
+
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_9.py`](./_sfdp_pattern_9.py_docs.md)
+
+### addmm_pattern
+
+- [`torch/_inductor/fx_passes/serialized_patterns/addmm_pattern.py`](./addmm_pattern.py_docs.md)
+
+### bmm_pattern
+
+- [`torch/_inductor/fx_passes/serialized_patterns/bmm_pattern.py`](./bmm_pattern.py_docs.md)
+
+### files-.py
+
+- [`torch/_inductor/fx_passes/serialized_patterns/__init__.py`](./__init__.py_docs.md)
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_21.py`](./_sfdp_pattern_21.py_docs.md)
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_4.py`](./_sfdp_pattern_4.py_docs.md)
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_18.py`](./_sfdp_pattern_18.py_docs.md)
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_12.py`](./_sfdp_pattern_12.py_docs.md)
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_16.py`](./_sfdp_pattern_16.py_docs.md)
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_14.py`](./_sfdp_pattern_14.py_docs.md)
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_8.py`](./_sfdp_pattern_8.py_docs.md)
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_10.py`](./_sfdp_pattern_10.py_docs.md)
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_1.py`](./_sfdp_pattern_1.py_docs.md)
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_20.py`](./_sfdp_pattern_20.py_docs.md)
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_24.py`](./_sfdp_pattern_24.py_docs.md)
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_3.py`](./_sfdp_pattern_3.py_docs.md)
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_17.py`](./_sfdp_pattern_17.py_docs.md)
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_11.py`](./_sfdp_pattern_11.py_docs.md)
+- [`torch/_inductor/fx_passes/serialized_patterns/mm_pattern.py`](./mm_pattern.py_docs.md)
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_2.py`](./_sfdp_pattern_2.py_docs.md)
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_19.py`](./_sfdp_pattern_19.py_docs.md)
+- [`torch/_inductor/fx_passes/serialized_patterns/_sfdp_pattern_22.py`](./_sfdp_pattern_22.py_docs.md)
+- [`torch/_inductor/fx_passes/serialized_patterns/bmm_pattern.py`](./bmm_pattern.py_docs.md)
+
+### mm_pattern
+
+- [`torch/_inductor/fx_passes/serialized_patterns/mm_pattern.py`](./mm_pattern.py_docs.md)
+
+
+---
+
+*Generated by PyTorch Repository Documentation System*

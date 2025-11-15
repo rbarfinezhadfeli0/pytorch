@@ -1,0 +1,76 @@
+# Keyword Index: `docs/torch/_numpy/_unary_ufuncs_impl.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/_numpy/_unary_ufuncs_impl.py_kw.md](../../../../docs/torch/_numpy/_unary_ufuncs_impl.py_kw.md)
+- **Documentation**: [`_unary_ufuncs_impl.py_kw.md_docs.md`](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **Folder**: `docs/torch/_numpy`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`Architecture`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`Basic`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`Complete`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`Considerations`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`Dependencies`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`Design`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`Detailed`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`Documentation`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`Efficiency`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`Extracted`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`File`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`Folder`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`Functions`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`Generated`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`High`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`How`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`Imports`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`In`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`Index`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`Information`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`Keyword`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`Keywords`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`Level`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`Map`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`Metadata`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`Original`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`Overview`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`Performance`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`Purpose`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`PyTorch`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`Related`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`Repository`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`Safety`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`Section`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`Security`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`Source`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`System`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`Testing`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`The`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`This`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+- **`Usage`**: [_unary_ufuncs_impl.py_kw.md_docs.md](./_unary_ufuncs_impl.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

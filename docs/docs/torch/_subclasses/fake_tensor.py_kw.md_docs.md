@@ -1,0 +1,371 @@
+# Documentation: `docs/torch/_subclasses/fake_tensor.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/_subclasses/fake_tensor.py_kw.md`
+- **Size**: 17,914 bytes (17.49 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `torch/_subclasses/fake_tensor.py`
+
+## File Information
+
+- **Original File**: [torch/_subclasses/fake_tensor.py](../../../torch/_subclasses/fake_tensor.py)
+- **Documentation**: [`fake_tensor.py_docs.md`](./fake_tensor.py_docs.md)
+- **Folder**: `torch/_subclasses`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`DispatchCacheInfo`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`FakeCopyMode`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`FakeTensor`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`FakeTensorConfig`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`FakeTensorConverter`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`FakeTensorMode`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`FakeTensorTLS`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`IncrementRecursionCount`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`SingletonConstant`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`SymNumberMemoDescriptor`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`TensorMetadata`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_BypassDispatchCache`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_DispatchCacheBypassEntry`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_DispatchCacheEntryOutputInfo`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_DispatchCacheKey`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_DispatchCacheValidEntry`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`a`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`and`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`class`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`for`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`from`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`inputs`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`is`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`maybe_cur_fake_mode`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`tensor`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`that`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+
+### Functions
+
+- **`__del__`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`__enter__`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`__eq__`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`__exit__`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`__get__`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`__hash__`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`__init__`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`__new__`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`__set__`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`__set_name__`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`__torch_dispatch__`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`__torch_function__`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_cache_key`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_cached_dispatch_impl`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_check_fake_real_vals`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_check_for_subclass`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_check_for_subclass_arg`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_clear_pending_unbacked`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_crosscheck_cache_output`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_device_handler`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_dispatch_impl`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_find_common_device`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_flatten_into`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_get_memo`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_get_output_info_for_cache_entry`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_get_output_tensor_from_cache_entry`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_infer_fake_from_real_tensor`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_is_plain_tensor`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_make_cache_entry`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_maybe_infer_fake`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_maybe_infer_fake_kernel_from_pytree_out`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_memo`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_memo_epoch`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_memo_vc`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_output_from_cache_entry`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_prep_args_for_hash`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_set_cache_key`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_set_cache_key_for_shape_env`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_validate_cache_key`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_validate_output_for_cache_entry`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_validate_symbolic_output_for_caching`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`add_constant_storage_mapping`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`assert_helper`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`avoid_device_init`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`cache_clear`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`cache_info`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`can_run_unsafe_fallback`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`check_cpu_device`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`check_value`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`cpp_meta_supports_symint`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`cpu_zero_dim`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`create_symbolic_nested_int`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`device`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`disable_fake_tensor_cache`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`dispatch`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`dump_cache_stats`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`evict_fake_tensor_cache_key`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`extract_tensor_metadata`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`from_meta_and_device`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`from_real_tensor`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`from_tensor`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`get_nested_int`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`get_plain_tensors`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`get_schema_info`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`go`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`in_kernel_invocation_manager`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`inferred_fake_kernel_from_real_out`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`init_gpu_context`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`invalidate_constant_aliases`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`invalidate_written_to_constants`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`is_fake`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`is_infra_mode`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`is_our_fake`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`map_out`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`may_turn_const`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`maybe_get_fake_mode`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`maybe_propagate_real_tensors`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`maybe_run_unsafe_fallback`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`maybe_to_real_tensor`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`merge_devices`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`mk_fake_tensor`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`names`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`ordered_set`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`reset_nt_tensor_id_counter`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`run_fallback_kernel`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`set_tensor_memo`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`should_allow_numbers_as_tensors`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`stack`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`strip_shape_env`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`tensor_memo`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`to_real_tensor`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`tolist`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`torch_decomp_decompositions`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`tree_flatten_only`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`unset_fake_temporarily`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`unsupported`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`validate`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`validate_and_convert_non_fake_tensors`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`wrap`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`wrap_meta_outputs_with_default_device_logic`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+
+### Imports
+
+- **`._fake_tensor_utils`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`CallMethodItemSource`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`Callable`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`CapturedTraceback`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`DimDynamic`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`FakeScriptObject`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`FunctionalTensor`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`FunctionalizeCtxWrapper`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`GuardOnDataDependentSymNode`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`IntLikeType`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`KeyPath`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`MissingOpProfile`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`NestedIntNode`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`OpOverload`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`RandomValueSource`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`ReferenceType`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`Self`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`ShapeEnv`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`Source`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`StorageWeakRef`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`SymBool`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`TorchFunctionMode`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`TracebackType`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_CacheKeyState`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`__future__`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_check_alias_info`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_check_fake_real_tensors`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`_iterate_exprs`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`annotations`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`atexit`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`collections`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`collections.abc`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`contextlib`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`count`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`dataclass`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`dataclasses`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`decomposition_table`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`defaultdict`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`dtrace_structured`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`functools`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`has_free_unbacked_symbols`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`immutable_dict`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`is_functorch_wrapped_tensor`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`logging`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`math`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`meta_table`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`no_dispatch`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`normalize_function`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`os`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`registered_hop_fake_fns`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`render_call`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`suggest_memory_format`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`sympy`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`threading`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`torch`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`torch._C._functorch`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`torch._decomp`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`torch._dynamo.config`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`torch._dynamo.source`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`torch._functorch.config`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`torch._guards`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`torch._higher_order_ops.auto_functionalize`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`torch._higher_order_ops.utils`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`torch._library.fake_class_registry`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`torch._library.fake_profile`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`torch._library.utils`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`torch._logging`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`torch._ops`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`torch._prims_common`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`torch._subclasses.fake_impls`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`torch._subclasses.fake_utils`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`torch._subclasses.functional_tensor`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`torch._subclasses.meta_utils`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`torch._utils`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`torch.fx.experimental.symbolic_shapes`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`torch.fx.immutable_collections`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`torch.fx.operator_schemas`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`torch.multiprocessing.reductions`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`torch.nested._internal.nested_int`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`torch.nested._internal.nested_tensor`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`torch.overrides`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`torch.types`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`torch.utils._mode_utils`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`torch.utils._python_dispatch`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`torch.utils._pytree`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`torch.utils._stats`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`torch.utils._traceback`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`traceback`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`types`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`typing`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`typing_extensions`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+- **`weakref`**: [fake_tensor.py_docs.md](./fake_tensor.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/_subclasses`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/_subclasses`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Implements or uses **caching** mechanisms.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/_subclasses`):
+
+- [`fake_impls.py_docs.md_docs.md`](./fake_impls.py_docs.md_docs.md)
+- [`functional_tensor.py_kw.md_docs.md`](./functional_tensor.py_kw.md_docs.md)
+- [`fake_utils.py_docs.md_docs.md`](./fake_utils.py_docs.md_docs.md)
+- [`fake_tensor.py_docs.md_docs.md`](./fake_tensor.py_docs.md_docs.md)
+- [`meta_utils.py_docs.md_docs.md`](./meta_utils.py_docs.md_docs.md)
+- [`meta_utils.py_kw.md_docs.md`](./meta_utils.py_kw.md_docs.md)
+- [`schema_check_mode.py_docs.md_docs.md`](./schema_check_mode.py_docs.md_docs.md)
+- [`__init__.py_docs.md_docs.md`](./__init__.py_docs.md_docs.md)
+- [`_fake_tensor_utils.py_kw.md_docs.md`](./_fake_tensor_utils.py_kw.md_docs.md)
+- [`__init__.py_kw.md_docs.md`](./__init__.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `fake_tensor.py_kw.md_docs.md`
+- **Keyword Index**: `fake_tensor.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

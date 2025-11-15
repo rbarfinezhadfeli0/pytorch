@@ -1,0 +1,190 @@
+# Documentation: `docs/tools/autograd/load_derivatives.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/tools/autograd/load_derivatives.py_kw.md`
+- **Size**: 4,625 bytes (4.52 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**. This file is a **utility or tool script**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `tools/autograd/load_derivatives.py`
+
+## File Information
+
+- **Original File**: [tools/autograd/load_derivatives.py](../../../tools/autograd/load_derivatives.py)
+- **Documentation**: [`load_derivatives.py_docs.md`](./load_derivatives.py_docs.md)
+- **Folder**: `tools/autograd`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Functions
+
+- **`_create_op_prefix`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`add_view_copy_derivatives`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`canonical_function`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`check_grad_usage`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`cpp_arguments`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`create_derivative`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`create_differentiability_info`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`create_forward_derivative`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`dedup_vars`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`find_required_inputs`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`is_forward_derivative_definition`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`load_derivatives`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`postprocess_forward_derivatives`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`repl`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`saved_variables`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`set_up_derivatives`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`split_names`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`stride_expr`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`used_gradient_indices`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+
+### Imports
+
+- **`Any`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`Counter`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`Sequence`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`YamlLoader`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`__future__`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`annotations`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`collections`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`collections.abc`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`concatMap`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`cpp`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`get_grouped_by_view_native_functions`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`re`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`torchgen.api`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`torchgen.api.autograd`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`torchgen.api.types`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`torchgen.context`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`torchgen.gen`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`torchgen.model`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`torchgen.utils`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`torchgen.yaml_utils`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`typing`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`with_native_function`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+- **`yaml`**: [load_derivatives.py_docs.md](./load_derivatives.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/tools/autograd`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/tools/autograd`, which contains **development tools and scripts**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/tools/autograd`):
+
+- [`gen_trace_type.py_kw.md_docs.md`](./gen_trace_type.py_kw.md_docs.md)
+- [`deprecated.yaml_docs.md_docs.md`](./deprecated.yaml_docs.md_docs.md)
+- [`BUILD.bazel_docs.md_docs.md`](./BUILD.bazel_docs.md_docs.md)
+- [`gen_python_functions.py_kw.md_docs.md`](./gen_python_functions.py_kw.md_docs.md)
+- [`deprecated.yaml_kw.md_docs.md`](./deprecated.yaml_kw.md_docs.md)
+- [`context.py_kw.md_docs.md`](./context.py_kw.md_docs.md)
+- [`load_derivatives.py_docs.md_docs.md`](./load_derivatives.py_docs.md_docs.md)
+- [`gen_annotated_fn_args.py_kw.md_docs.md`](./gen_annotated_fn_args.py_kw.md_docs.md)
+- [`README.md_docs.md_docs.md`](./README.md_docs.md_docs.md)
+- [`gen_autograd_functions.py_docs.md_docs.md`](./gen_autograd_functions.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `load_derivatives.py_kw.md_docs.md`
+- **Keyword Index**: `load_derivatives.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

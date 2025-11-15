@@ -1,0 +1,82 @@
+# Keyword Index: `docs/torch/ao/nn/quantized/modules/embedding_ops.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/ao/nn/quantized/modules/embedding_ops.py_kw.md](../../../../../../../docs/torch/ao/nn/quantized/modules/embedding_ops.py_kw.md)
+- **Documentation**: [`embedding_ops.py_kw.md_docs.md`](./embedding_ops.py_kw.md_docs.md)
+- **Folder**: `docs/torch/ao/nn/quantized/modules`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Architecture`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Basic`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Classs`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Complete`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Considerations`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Dependencies`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Design`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Detailed`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Documentation`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Efficiency`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Embedding`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`EmbeddingBag`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`EmbeddingPackedParams`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Extracted`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`File`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Folder`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Functions`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Generated`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`High`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`How`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Imports`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`In`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Index`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Information`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Keyword`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Keywords`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Level`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`List`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Map`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Metadata`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Original`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Overview`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Performance`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Purpose`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`PyTorch`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Related`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Repository`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Safety`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Section`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Security`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Source`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`System`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Tensor`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Testing`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`The`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`This`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+- **`Usage`**: [embedding_ops.py_kw.md_docs.md](./embedding_ops.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

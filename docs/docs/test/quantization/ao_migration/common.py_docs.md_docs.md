@@ -1,0 +1,289 @@
+# Documentation: `docs/test/quantization/ao_migration/common.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/quantization/ao_migration/common.py_docs.md`
+- **Size**: 4,552 bytes (4.45 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/quantization/ao_migration/common.py`
+
+## File Metadata
+
+- **Path**: `test/quantization/ao_migration/common.py`
+- **Size**: 2,178 bytes (2.13 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**.
+
+## Original Source
+
+```python
+import importlib
+from typing import Optional
+
+from torch.testing._internal.common_utils import TestCase
+
+
+class AOMigrationTestCase(TestCase):
+    def _test_function_import(
+        self,
+        package_name: str,
+        function_list: list[str],
+        base: Optional[str] = None,
+        new_package_name: Optional[str] = None,
+    ):
+        r"""Tests individual function list import by comparing the functions
+        and their hashes."""
+        if base is None:
+            base = "quantization"
+        old_base = "torch." + base
+        new_base = "torch.ao." + base
+        if new_package_name is None:
+            new_package_name = package_name
+        old_location = importlib.import_module(f"{old_base}.{package_name}")
+        new_location = importlib.import_module(f"{new_base}.{new_package_name}")
+        for fn_name in function_list:
+            old_function = getattr(old_location, fn_name)
+            new_function = getattr(new_location, fn_name)
+            assert old_function == new_function, f"Functions don't match: {fn_name}"
+            assert hash(old_function) == hash(new_function), (
+                f"Hashes don't match: {old_function}({hash(old_function)}) vs. "
+                f"{new_function}({hash(new_function)})"
+            )
+
+    def _test_dict_import(
+        self, package_name: str, dict_list: list[str], base: Optional[str] = None
+    ):
+        r"""Tests individual function list import by comparing the functions
+        and their hashes."""
+        if base is None:
+            base = "quantization"
+        old_base = "torch." + base
+        new_base = "torch.ao." + base
+        old_location = importlib.import_module(f"{old_base}.{package_name}")
+        new_location = importlib.import_module(f"{new_base}.{package_name}")
+        for dict_name in dict_list:
+            old_dict = getattr(old_location, dict_name)
+            new_dict = getattr(new_location, dict_name)
+            assert old_dict == new_dict, f"Dicts don't match: {dict_name}"
+            for key in new_dict:
+                assert old_dict[key] == new_dict[key], (
+                    f"Dicts don't match: {dict_name} for key {key}"
+                )
+
+```
+
+
+
+## High-Level Overview
+
+r"""Tests individual function list import by comparing the functions
+
+This Python file contains 1 class(es) and 2 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `AOMigrationTestCase`
+
+**Functions defined**: `_test_function_import`, `_test_dict_import`
+
+**Key imports**: importlib, Optional, TestCase, by comparing the functions, by comparing the functions
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/quantization/ao_migration`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `importlib`
+- `typing`: Optional
+- `torch.testing._internal.common_utils`: TestCase
+- `by comparing the functions`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/quantization/ao_migration/common.py
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/quantization/ao_migration`):
+
+- [`test_ao_migration.py_docs.md`](./test_ao_migration.py_docs.md)
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`test_quantization_fx.py_docs.md`](./test_quantization_fx.py_docs.md)
+- [`test_quantization.py_docs.md`](./test_quantization.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `common.py_docs.md`
+- **Keyword Index**: `common.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/quantization/ao_migration`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/quantization/ao_migration`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/quantization/ao_migration/common.py_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/quantization/ao_migration`):
+
+- [`test_quantization_fx.py_kw.md_docs.md`](./test_quantization_fx.py_kw.md_docs.md)
+- [`common.py_kw.md_docs.md`](./common.py_kw.md_docs.md)
+- [`__init__.py_docs.md_docs.md`](./__init__.py_docs.md_docs.md)
+- [`test_ao_migration.py_kw.md_docs.md`](./test_ao_migration.py_kw.md_docs.md)
+- [`test_quantization_fx.py_docs.md_docs.md`](./test_quantization_fx.py_docs.md_docs.md)
+- [`__init__.py_kw.md_docs.md`](./__init__.py_kw.md_docs.md)
+- [`test_quantization.py_kw.md_docs.md`](./test_quantization.py_kw.md_docs.md)
+- [`test_quantization.py_docs.md_docs.md`](./test_quantization.py_docs.md_docs.md)
+- [`test_ao_migration.py_docs.md_docs.md`](./test_ao_migration.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `common.py_docs.md_docs.md`
+- **Keyword Index**: `common.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

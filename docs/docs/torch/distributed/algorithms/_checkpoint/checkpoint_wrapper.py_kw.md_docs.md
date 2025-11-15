@@ -1,0 +1,185 @@
+# Documentation: `docs/torch/distributed/algorithms/_checkpoint/checkpoint_wrapper.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/distributed/algorithms/_checkpoint/checkpoint_wrapper.py_kw.md`
+- **Size**: 4,574 bytes (4.47 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `torch/distributed/algorithms/_checkpoint/checkpoint_wrapper.py`
+
+## File Information
+
+- **Original File**: [torch/distributed/algorithms/_checkpoint/checkpoint_wrapper.py](../../../../../torch/distributed/algorithms/_checkpoint/checkpoint_wrapper.py)
+- **Documentation**: [`checkpoint_wrapper.py_docs.md`](./checkpoint_wrapper.py_docs.md)
+- **Folder**: `torch/distributed/algorithms/_checkpoint`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`ActivationWrapper`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`CheckpointImpl`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`CheckpointWrapper`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`OffloadWrapper`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`for`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+
+### Functions
+
+- **`__getattr__`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`__getitem__`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`__init__`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`_post_state_dict_hook`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`_pre_load_state_dict_hook`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`apply_activation_checkpointing`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`checkpoint_wrapper`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`forward`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`my_function`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`named_parameters`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`offload_wrapper`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+
+### Imports
+
+- **`ABC`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`Any`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`Callable`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`_construct_wrap_fn`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`_pack_kwargs`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`abc`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`auto`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`checkpoint`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`collections.abc`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`enum`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`functools`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`issue`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`partial`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`save_on_cpu`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`torch`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`torch.autograd.graph`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`torch.distributed.fsdp._wrap_utils`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`torch.distributed.fsdp.wrap`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`torch.distributed.utils`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`torch.nn`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`torch.utils.checkpoint`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`typing`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+- **`warnings`**: [checkpoint_wrapper.py_docs.md](./checkpoint_wrapper.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/distributed/algorithms/_checkpoint`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/distributed/algorithms/_checkpoint`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Abstract Base Classes**: Defines abstract interfaces
+- **Neural Network**: Defines or uses PyTorch neural network components
+- **Automatic Differentiation**: Uses autograd for gradient computation
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/distributed/algorithms/_checkpoint`):
+
+- [`__init__.py_docs.md_docs.md`](./__init__.py_docs.md_docs.md)
+- [`__init__.py_kw.md_docs.md`](./__init__.py_kw.md_docs.md)
+- [`checkpoint_wrapper.py_docs.md_docs.md`](./checkpoint_wrapper.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `checkpoint_wrapper.py_kw.md_docs.md`
+- **Keyword Index**: `checkpoint_wrapper.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

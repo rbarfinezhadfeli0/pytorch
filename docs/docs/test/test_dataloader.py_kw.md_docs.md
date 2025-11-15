@@ -1,0 +1,418 @@
+# Documentation: `docs/test/test_dataloader.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/test/test_dataloader.py_kw.md`
+- **Size**: 24,272 bytes (23.70 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `test/test_dataloader.py`
+
+## File Information
+
+- **Original File**: [test/test_dataloader.py](../../test/test_dataloader.py)
+- **Documentation**: [`test_dataloader.py_docs.md`](./test_dataloader.py_docs.md)
+- **Folder**: `test`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`BulkLoadingDataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`BulkLoadingSampler`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`CUDACountingDataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`ConvDataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`CountingDataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`CountingIterableDataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`CustomDataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`CustomDict`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`CustomList`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`DictDataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`DummyDataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`EmptyTensorDataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`ErrorDataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`ErrorIterableDataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`ErrorTrackingProcess`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`GetItemsDataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`IntegrationTestDataLoaderDataPipe`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`IterableDataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`NamedTupleDataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`RandomDataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`ScalarDataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`SeedDataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`SegfaultDataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`SetAffinityDataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`SimpleCustomBatch`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`SleepDataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`SomeDatasetClass`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`StringDataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`SynchronizedDataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`SynchronizedSeedDataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`TestConcatDataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`TestConvAfterFork`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`TestCustomPinFn`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`TestDataLoader`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`TestDataLoaderDeviceType`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`TestDataLoaderPersistentWorkers`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`TestDataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`TestDatasetRandomSplit`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`TestDictDataLoader`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`TestIndividualWorkerQueue`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`TestMultiEpochDataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`TestNamedTupleDataLoader`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`TestOutOfOrderDataLoader`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`TestProperExitDataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`TestProperExitIterableDataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`TestSetAffinity`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`TestSlowIndexDataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`TestSlowIterableDataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`TestStackDataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`TestStringDataLoader`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`TestTensorDataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`TestWorkerInfoDataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`TestWorkerQueueDataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`WorkerSpecificIterableDataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+
+### Functions
+
+- **`__getitem__`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`__getitems__`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`__init__`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`__iter__`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`__len__`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`__next__`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`_clone_collate`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`_create_dataloader`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`_create_dp`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`_get_data_loader`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`_run_ind_worker_queue_test`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`_sparse_coo_collate`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`_test_batch_sampler`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`_test_error`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`_test_get_worker_info`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`_test_large_sampler_indices`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`_test_multiprocessing_iterdatapipe`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`_test_no_segfault`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`_test_proper_exit`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`_test_sampler`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`_test_segfault`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`_test_sequential`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`_test_shuffle`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`_test_timeout`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`_test_timeout_pin_memory`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`_test_worker_info_init_fn`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`check_len`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`collate_into_packed_sequence`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`collate_into_packed_sequence_batch_first`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`collate_wrapper`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`disable_stderr`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`error_worker_init_fn`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`exception`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`fail`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`filter_len`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`fn`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`get_dataloader`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`give_data`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`init_fn`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`is_pinned`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`kill_pid`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`local_init_fn`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`pin_memory`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`print_traces_of_all_threads`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`row_processor`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`run`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`sample_stat`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`send_signal`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`setUp`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`set_faulthander_if_available`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`sync_once`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_add_dataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_batch_sampler`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_builtin_collection_conversion`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_bulk_loading_nobatch`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_chain_iterable_style_dataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_concat_raises_index_error`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_concat_two_non_singletons`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_concat_two_non_singletons_with_empty`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_concat_two_singletons`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_conv_after_fork`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_custom_batch_pin`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_custom_batch_pin_worker`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_dataloader_with_namedtuple`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_dataset_not_reset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_default_collate_bad_numpy_types`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_default_collate_bad_sequence_type`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_default_collate_dtype`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_default_collate_mapping_keep_type`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_default_collate_numpy_memmap`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_default_collate_sequence_dont_keep_type`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_default_collate_sequence_keep_type`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_default_collate_shared_tensor`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_default_convert_mapping_keep_type`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_default_convert_sequence_dont_keep_type`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_default_convert_sequence_keep_type`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_distributed_sampler_invalid_rank`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_duplicating_data_with_drop_last`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_early_exit`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_empty`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_error`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_error_in_init`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_error_workers`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_excessive_thread_creation_warning`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_fd_limit_exceeded`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_get_worker_info`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_getitem`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_getitem_1d`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_getitems`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_getitems_raises_index_error`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_getitems_value_error`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_growing_dataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_in_order_index_ds`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_in_order_iterable_ds`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_incomplete_fractional_splits`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_ind_worker_queue`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_invalid_assign_after_init`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_invalid_ctor_args_combinations`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_iterable_dataset_err`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_iterable_style_dataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_iterabledataset_len`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_large_sampler_indices`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_len`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_lengths_must_equal_dataset_size`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_many_tensors`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_mixed`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_multi_epochs_reproducibility`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_multiple_dataloaders`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_multiprocessing_contexts`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_multiprocessing_iterdatapipe`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_multiprocessing_iterdatapipe_with_dill`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_nested_tensor_multiprocessing`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_no_segfault`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_numpy`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_numpy_gen_state`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_numpy_scalars`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_out_of_order_index_ds`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_out_of_order_iterable_ds`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_partial_workers`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_pin_memory`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_pin_memory_device`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_pin_memory_no_cuda`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_pin_memory_with_only_device`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_proper_exit`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_random_sampler`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_random_sampler_len_with_replacement`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_random_sampler_len_without_replacement`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_sampler`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_sampler_reproducibility`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_segfault`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_seqential_batch_workers`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_seqential_batch_workers_prefetch`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_sequential_batch`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_sequential_nonbatch`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_sequential_pin_memory`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_sequential_workers`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_set_affinity_in_worker_init`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_shuffle`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_shuffle_batch`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_shuffle_batch_none`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_shuffle_batch_workers`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_shuffle_batch_workers_prefetch`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_shuffle_pin_memory`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_shuffle_reproducibility`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_shuffle_workers`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_shuffler_iterdatapipe`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_single`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_single_tensor`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_size_mismatch`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_slicing_of_subset_of_dataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_slicing_of_subset_of_subset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_sparse_tensor_multiprocessing`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_splits_are_mutually_exclusive`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_splits_generator`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_splits_have_correct_size`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_splits_indexing_type`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_splits_reproducibility`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_timeout`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_typing`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_worker_init_fn`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_worker_init_fn_forkserver`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_worker_seed`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`test_worker_seed_reproducibility`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`worker_init_fn`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`worker_set_affinity`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+
+### Imports
+
+- **`Counter`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`DataLoader`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`DistributedSampler`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`ExceptionWrapper`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`IterableWrapper`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`MP_STATUS_CHECK_INTERVAL`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`RandomSampler`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`_generate_state`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`collections`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`ctypes`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`errno`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`faulthandler`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`functools`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`gc`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`instantiate_device_type_tests`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`itertools`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`math`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`multiprocessing`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`namedtuple`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`numpy`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`operator`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`os`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`psutil`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`random_split`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`resource`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`signal`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`subprocess`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`sys`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`tempfile`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`time`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`torch`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`torch._utils`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`torch.testing._internal.common_device_type`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`torch.utils.data`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`torch.utils.data._utils`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`torch.utils.data._utils.worker`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`torch.utils.data.datapipes`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`torch.utils.data.datapipes.iter`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`torch.utils.data.dataset`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`torch.utils.data.distributed`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`unittest`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+- **`warnings`**: [test_dataloader.py_docs.md](./test_dataloader.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- **Command Execution**: Executes system commands - validate inputs
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/test_dataloader.py_kw.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test`):
+
+- [`test_ops.py_docs.md_docs.md`](./test_ops.py_docs.md_docs.md)
+- [`test_tensorexpr.py_docs.md_docs.md`](./test_tensorexpr.py_docs.md_docs.md)
+- [`pytest_shard_custom.py_docs.md_docs.md`](./pytest_shard_custom.py_docs.md_docs.md)
+- [`test_weak.py_kw.md_docs.md`](./test_weak.py_kw.md_docs.md)
+- [`test_view_ops.py_kw.md_docs.md`](./test_view_ops.py_kw.md_docs.md)
+- [`test_varlen_attention.py_kw.md_docs.md`](./test_varlen_attention.py_kw.md_docs.md)
+- [`test_namedtensor.py_docs.md_docs.md`](./test_namedtensor.py_docs.md_docs.md)
+- [`test_binary_ufuncs.py_docs.md_docs.md`](./test_binary_ufuncs.py_docs.md_docs.md)
+- [`test_ops_gradients.py_kw.md_docs.md`](./test_ops_gradients.py_kw.md_docs.md)
+- [`test_torchfuzz_repros.py_docs.md_docs.md`](./test_torchfuzz_repros.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_dataloader.py_kw.md_docs.md`
+- **Keyword Index**: `test_dataloader.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

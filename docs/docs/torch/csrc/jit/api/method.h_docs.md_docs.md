@@ -1,0 +1,321 @@
+# Documentation: `docs/torch/csrc/jit/api/method.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/jit/api/method.h_docs.md`
+- **Size**: 4,872 bytes (4.76 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/csrc/jit/api/method.h`
+
+## File Metadata
+
+- **Path**: `torch/csrc/jit/api/method.h`
+- **Size**: 2,422 bytes (2.37 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#pragma once
+
+#include <ATen/core/function.h>
+#include <ATen/core/ivalue.h>
+#include <ATen/core/stack.h>
+#include <torch/csrc/api/include/torch/imethod.h>
+#include <torch/csrc/jit/api/function_impl.h>
+
+namespace torch::jit {
+
+using ObjectPtr = c10::intrusive_ptr<c10::ivalue::Object>;
+
+// A method in a module, e.g. f in:
+//
+// class M(ScriptModule):
+//   @script_method
+//   def f(self, x):
+//     ...
+// Note: because Method/Module are exposed to python these
+// classes use python method naming conventions
+struct TORCH_API Method : public torch::IMethod {
+  Method(ObjectPtr owner, Function* function);
+
+  // the module that contains this method.
+  Module owner() const;
+  // the raw objectptr that owns this method, for when the method is owned by a
+  // torchbind object.
+  ObjectPtr raw_owner() const;
+  void run(Stack& stack);
+  void run(Stack&& stack) {
+    run(stack);
+  }
+
+  c10::IValue operator()(
+      std::vector<c10::IValue> stack,
+      const Kwargs& kwargs = Kwargs()) const override;
+
+  // Run method async. Invocation on this function would invokes a JIT
+  // interpreter that executes ops inline, one by one, on caller's thread. A
+  // model can utilize async op, i.e. `fork`, to launch an asynchronous task
+  // which will be launched on provided `taskLauncher`.
+  c10::intrusive_ptr<c10::ivalue::Future> run_async(
+      std::vector<c10::IValue> stack,
+      const Kwargs& kwargs = Kwargs(),
+      TaskLauncher taskLauncher = at::launch);
+
+  std::shared_ptr<Graph> graph() const {
+    return toGraphFunction(*function_).graph();
+  }
+
+  const std::string& name() const override {
+    return function_->name();
+  }
+
+  size_t num_inputs() const {
+    return function_->num_inputs();
+  }
+
+  GraphExecutor& get_executor() {
+    return toGraphFunction(*function_).get_executor();
+  }
+
+  Function& function() const {
+    return *function_;
+  }
+
+ private:
+  void setArgumentNames(
+      std::vector<std::string>& /*argumentNames*/ /*argumentNamesOut*/)
+      const override;
+
+  // Methods are uniqued owned by a single module. This raw pointer allows
+  // looking up the module.
+  ObjectPtr owner_;
+
+  // Underlying unbound function
+  Function* function_;
+};
+
+namespace script {
+// We once had a `script::` namespace that was deleted. This is for backcompat
+// of the public API; new code should not use this type alias.
+using Method = ::torch::jit::Method;
+} // namespace script
+
+} // namespace torch::jit
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 1 class(es)/struct(s) and 11 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `script`, `torch`, `that`
+
+**Classes/Structs**: `M`, `TORCH_API`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/jit/api`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/core/function.h`
+- `ATen/core/ivalue.h`
+- `ATen/core/stack.h`
+- `torch/csrc/api/include/torch/imethod.h`
+- `torch/csrc/jit/api/function_impl.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/jit/api`):
+
+- [`function_impl.h_docs.md`](./function_impl.h_docs.md)
+- [`module.h_docs.md`](./module.h_docs.md)
+- [`module.cpp_docs.md`](./module.cpp_docs.md)
+- [`module_save.cpp_docs.md`](./module_save.cpp_docs.md)
+- [`compilation_unit.h_docs.md`](./compilation_unit.h_docs.md)
+- [`object.h_docs.md`](./object.h_docs.md)
+- [`object.cpp_docs.md`](./object.cpp_docs.md)
+- [`function_impl.cpp_docs.md`](./function_impl.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `method.h_docs.md`
+- **Keyword Index**: `method.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/jit/api`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/jit/api`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/jit/api`):
+
+- [`compilation_unit.h_docs.md_docs.md`](./compilation_unit.h_docs.md_docs.md)
+- [`object.cpp_docs.md_docs.md`](./object.cpp_docs.md_docs.md)
+- [`compilation_unit.h_kw.md_docs.md`](./compilation_unit.h_kw.md_docs.md)
+- [`function_impl.cpp_docs.md_docs.md`](./function_impl.cpp_docs.md_docs.md)
+- [`object.h_kw.md_docs.md`](./object.h_kw.md_docs.md)
+- [`module_save.cpp_kw.md_docs.md`](./module_save.cpp_kw.md_docs.md)
+- [`module.h_kw.md_docs.md`](./module.h_kw.md_docs.md)
+- [`method.h_kw.md_docs.md`](./method.h_kw.md_docs.md)
+- [`module.h_docs.md_docs.md`](./module.h_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `method.h_docs.md_docs.md`
+- **Keyword Index**: `method.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

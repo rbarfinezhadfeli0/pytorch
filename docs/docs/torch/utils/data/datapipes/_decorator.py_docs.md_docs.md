@@ -1,0 +1,448 @@
+# Documentation: `docs/torch/utils/data/datapipes/_decorator.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/utils/data/datapipes/_decorator.py_docs.md`
+- **Size**: 10,696 bytes (10.45 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/utils/data/datapipes/_decorator.py`
+
+## File Metadata
+
+- **Path**: `torch/utils/data/datapipes/_decorator.py`
+- **Size**: 7,757 bytes (7.58 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This is a python source code that is part of the PyTorch project.
+
+## Original Source
+
+```python
+# mypy: allow-untyped-defs
+import inspect
+from collections.abc import Callable
+from functools import wraps
+from typing import Any, get_type_hints
+
+from torch.utils.data.datapipes._typing import _DataPipeMeta
+from torch.utils.data.datapipes.datapipe import IterDataPipe, MapDataPipe
+
+
+######################################################
+# Functional API
+######################################################
+class functional_datapipe:
+    name: str
+
+    def __init__(self, name: str, enable_df_api_tracing=False) -> None:
+        """
+        Define a functional datapipe.
+
+        Args:
+            enable_df_api_tracing - if set, any returned DataPipe would accept
+            DataFrames API in tracing mode.
+        """
+        self.name = name
+        self.enable_df_api_tracing = enable_df_api_tracing
+
+    def __call__(self, cls):
+        if issubclass(cls, IterDataPipe):
+            if isinstance(cls, type):  # type: ignore[arg-type]
+                if not isinstance(cls, _DataPipeMeta):
+                    raise TypeError(
+                        "`functional_datapipe` can only decorate IterDataPipe"
+                    )
+            # with non_deterministic decorator
+            else:
+                if not isinstance(cls, non_deterministic) and not (
+                    hasattr(cls, "__self__")
+                    and isinstance(cls.__self__, non_deterministic)
+                ):
+                    raise TypeError(
+                        "`functional_datapipe` can only decorate IterDataPipe"
+                    )
+            IterDataPipe.register_datapipe_as_function(
+                self.name, cls, enable_df_api_tracing=self.enable_df_api_tracing
+            )
+        elif issubclass(cls, MapDataPipe):
+            MapDataPipe.register_datapipe_as_function(self.name, cls)
+
+        return cls
+
+
+######################################################
+# Determinism
+######################################################
+_determinism: bool = False
+
+
+class guaranteed_datapipes_determinism:
+    prev: bool
+
+    def __init__(self) -> None:
+        global _determinism
+        self.prev = _determinism
+        _determinism = True
+
+    def __enter__(self) -> None:
+        pass
+
+    def __exit__(self, exc_type: Any, exc_value: Any, traceback: Any) -> None:
+        global _determinism
+        _determinism = self.prev
+
+
+class non_deterministic:
+    cls: type[IterDataPipe] | None = None
+    # TODO: Lambda for picking
+    deterministic_fn: Callable[..., bool]
+
+    def __init__(self, arg: type[IterDataPipe] | Callable[..., bool]) -> None:
+        # 1. Decorator doesn't have any argument
+        if isinstance(arg, type):  # type: ignore[arg-type]
+            if not issubclass(arg, IterDataPipe):  # type: ignore[arg-type]
+                raise TypeError(
+                    "Only `IterDataPipe` can be decorated with `non_deterministic`"
+                    f", but {arg.__name__} is found"
+                )
+            self.cls = arg  # type: ignore[assignment]
+        # 2. Decorator has an argument of a function
+        #    This class should behave differently given different inputs. Use this
+        #    function to verify the determinism for each instance.
+        #    When the function returns True, the instance is non-deterministic. Otherwise,
+        #    the instance is a deterministic DataPipe.
+        elif isinstance(arg, Callable):  # type:ignore[arg-type]
+            self.deterministic_fn = arg
+        else:
+            raise TypeError(f"{arg} can not be decorated by non_deterministic")
+
+    def __call__(self, *args, **kwargs):
+        global _determinism
+        #  Decorate IterDataPipe
+        if self.cls is not None:
+            if _determinism:
+                raise TypeError(
+                    f"{self.cls.__name__} is non-deterministic, but you set 'guaranteed_datapipes_determinism'. "
+                    "You can turn off determinism for this DataPipe if that is acceptable "
+                    "for your application"
+                )
+            return self.cls(*args, **kwargs)  # type: ignore[call-arg]
+
+        # Decorate with a functional argument
+        if not (
+            isinstance(args[0], type) and issubclass(args[0], IterDataPipe)  # type: ignore[arg-type]
+        ):
+            raise TypeError(
+                f"Only `IterDataPipe` can be decorated, but {args[0].__name__} is found"
+            )
+        self.cls = args[0]
+        return self.deterministic_wrapper_fn
+
+    def deterministic_wrapper_fn(self, *args, **kwargs) -> IterDataPipe:
+        res = self.deterministic_fn(*args, **kwargs)
+        if not isinstance(res, bool):
+            raise TypeError(
+                "deterministic_fn of `non_deterministic` decorator is required "
+                f"to return a boolean value, but {type(res)} is found"
+            )
+        global _determinism
+        if _determinism and res:
+            raise TypeError(
+                f"{self.cls.__name__} is non-deterministic with the inputs, but you set "  # type: ignore[union-attr]
+                "'guaranteed_datapipes_determinism'. You can turn off determinism "
+                "for this DataPipe if that is acceptable for your application"
+            )
+        return self.cls(*args, **kwargs)  # type: ignore[call-arg, misc]
+
+
+######################################################
+# Type validation
+######################################################
+# Validate each argument of DataPipe with hint as a subtype of the hint.
+def argument_validation(f):
+    signature = inspect.signature(f)
+    hints = get_type_hints(f)
+
+    @wraps(f)
+    def wrapper(*args, **kwargs):
+        bound = signature.bind(*args, **kwargs)
+        for argument_name, value in bound.arguments.items():
+            if argument_name in hints and isinstance(
+                hints[argument_name], _DataPipeMeta
+            ):
+                hint = hints[argument_name]
+                if not isinstance(value, IterDataPipe):
+                    raise TypeError(
+                        f"Expected argument '{argument_name}' as a IterDataPipe, but found {type(value)}"
+                    )
+                if not value.type.issubtype(hint.type):
+                    raise TypeError(
+                        f"Expected type of argument '{argument_name}' as a subtype of "
+                        f"hint {hint.type}, but found {value.type}"
+                    )
+
+        return f(*args, **kwargs)
+
+    return wrapper
+
+
+# Default value is True
+_runtime_validation_enabled: bool = True
+
+
+class runtime_validation_disabled:
+    prev: bool
+
+    def __init__(self) -> None:
+        global _runtime_validation_enabled
+        self.prev = _runtime_validation_enabled
+        _runtime_validation_enabled = False
+
+    def __enter__(self) -> None:
+        pass
+
+    def __exit__(self, exc_type: Any, exc_value: Any, traceback: Any) -> None:
+        global _runtime_validation_enabled
+        _runtime_validation_enabled = self.prev
+
+
+# Runtime checking
+# Validate output data is subtype of return hint
+def runtime_validation(f):
+    # TODO:
+    # Can be extended to validate '__getitem__' and nonblocking
+    if f.__name__ != "__iter__":
+        raise TypeError(
+            f"Can not decorate function {f.__name__} with 'runtime_validation'"
+        )
+
+    @wraps(f)
+    def wrapper(self):
+        global _runtime_validation_enabled
+        if not _runtime_validation_enabled:
+            yield from f(self)
+        else:
+            it = f(self)
+            for d in it:
+                if not self.type.issubtype_of_instance(d):
+                    raise RuntimeError(
+                        f"Expected an instance as subtype of {self.type}, but found {d}({type(d)})"
+                    )
+                yield d
+
+    return wrapper
+
+```
+
+
+
+## High-Level Overview
+
+"""        Define a functional datapipe.        Args:            enable_df_api_tracing - if set, any returned DataPipe would accept            DataFrames API in tracing mode.
+
+This Python file contains 5 class(es) and 15 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `functional_datapipe`, `guaranteed_datapipes_determinism`, `non_deterministic`, `runtime_validation_disabled`
+
+**Functions defined**: `__init__`, `__call__`, `__init__`, `__enter__`, `__exit__`, `__init__`, `__call__`, `deterministic_wrapper_fn`, `argument_validation`, `wrapper`, `__init__`, `__enter__`, `__exit__`, `runtime_validation`, `wrapper`
+
+**Key imports**: inspect, Callable, wraps, Any, get_type_hints, _DataPipeMeta, IterDataPipe, MapDataPipe
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/utils/data/datapipes`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `inspect`
+- `collections.abc`: Callable
+- `functools`: wraps
+- `typing`: Any, get_type_hints
+- `torch.utils.data.datapipes._typing`: _DataPipeMeta
+- `torch.utils.data.datapipes.datapipe`: IterDataPipe, MapDataPipe
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+- **Context Manager**: Implements context manager protocol
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/utils/data/datapipes`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`datapipe.py_docs.md`](./datapipe.py_docs.md)
+- [`README.md_docs.md`](./README.md_docs.md)
+- [`_hook_iterator.py_docs.md`](./_hook_iterator.py_docs.md)
+- [`_typing.py_docs.md`](./_typing.py_docs.md)
+- [`gen_pyi.py_docs.md`](./gen_pyi.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `_decorator.py_docs.md`
+- **Keyword Index**: `_decorator.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/utils/data/datapipes`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/utils/data/datapipes`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+- **Context Manager**: Implements context manager protocol
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/utils/data/datapipes`):
+
+- [`_typing.py_docs.md_docs.md`](./_typing.py_docs.md_docs.md)
+- [`README.md_docs.md_docs.md`](./README.md_docs.md_docs.md)
+- [`_decorator.py_kw.md_docs.md`](./_decorator.py_kw.md_docs.md)
+- [`gen_pyi.py_docs.md_docs.md`](./gen_pyi.py_docs.md_docs.md)
+- [`_hook_iterator.py_docs.md_docs.md`](./_hook_iterator.py_docs.md_docs.md)
+- [`datapipe.py_docs.md_docs.md`](./datapipe.py_docs.md_docs.md)
+- [`__init__.py_docs.md_docs.md`](./__init__.py_docs.md_docs.md)
+- [`__init__.py_kw.md_docs.md`](./__init__.py_kw.md_docs.md)
+- [`gen_pyi.py_kw.md_docs.md`](./gen_pyi.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `_decorator.py_docs.md_docs.md`
+- **Keyword Index**: `_decorator.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

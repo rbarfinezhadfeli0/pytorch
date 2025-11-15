@@ -1,0 +1,80 @@
+# Keyword Index: `docs/torch/csrc/cuda/GreenContext.cpp_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/csrc/cuda/GreenContext.cpp_kw.md](../../../../../docs/torch/csrc/cuda/GreenContext.cpp_kw.md)
+- **Documentation**: [`GreenContext.cpp_kw.md_docs.md`](./GreenContext.cpp_kw.md_docs.md)
+- **Folder**: `docs/torch/csrc/cuda`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`Analysis`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`Architecture`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`Basic`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`CUDAGreenContext`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`Complete`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`Considerations`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`Dependencies`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`Design`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`Detailed`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`Documentation`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`Efficiency`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`Extracted`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`File`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`Folder`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`Functions`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`Generated`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`GreenContext`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`High`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`How`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`In`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`Includes`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`Index`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`Information`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`Keyword`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`Keywords`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`Level`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`Map`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`Metadata`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`Original`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`Overview`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`Performance`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`Purpose`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`PyTorch`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`Related`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`Repository`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`Safety`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`Section`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`Security`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`Source`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`System`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`THCPGreenContext_init`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`Testing`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`The`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`This`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+- **`Usage`**: [GreenContext.cpp_kw.md_docs.md](./GreenContext.cpp_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

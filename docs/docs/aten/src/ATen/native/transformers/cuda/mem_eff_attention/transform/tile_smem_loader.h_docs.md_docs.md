@@ -1,0 +1,285 @@
+# Documentation: `docs/aten/src/ATen/native/transformers/cuda/mem_eff_attention/transform/tile_smem_loader.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/transformers/cuda/mem_eff_attention/transform/tile_smem_loader.h_docs.md`
+- **Size**: 4,513 bytes (4.41 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/native/transformers/cuda/mem_eff_attention/transform/tile_smem_loader.h`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/transformers/cuda/mem_eff_attention/transform/tile_smem_loader.h`
+- **Size**: 2,152 bytes (2.10 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+/*
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+#pragma once
+
+#include <cutlass/cutlass.h>
+#include <cutlass/aligned_buffer.h>
+#include <cutlass/array.h>
+#include <cutlass/layout/matrix.h>
+#include <cutlass/layout/pitch_linear.h>
+#include <cutlass/numeric_types.h>
+#include <cutlass/transform/pitch_linear_thread_map.h>
+#include <cutlass/transform/threadblock/predicated_tile_iterator.h>
+#include <cutlass/transform/threadblock/regular_tile_iterator.h>
+
+template <
+    typename scalar_t, // scalar type
+    typename ThreadblockTileShape, // size of tile to load
+    int Threads, // number of participating threads
+    int ElementsPerAccess> // thread access width in elements
+class TileSmemLoader {
+ public:
+  using SmemTile =
+      cutlass::AlignedBuffer<scalar_t, ThreadblockTileShape::kCount>;
+
+  using ThreadMap = cutlass::transform::PitchLinearStripminedThreadMap<
+      cutlass::layout::PitchLinearShape<
+          ThreadblockTileShape::kColumn, // contiguous
+          ThreadblockTileShape::kRow>, // strided
+      Threads, // Threads
+      ElementsPerAccess>; // ElementsPerAccess
+
+  using GmemTileIterator =
+      cutlass::transform::threadblock::PredicatedTileIterator<
+          ThreadblockTileShape, // Shape
+          scalar_t, // Element
+          cutlass::layout::RowMajor, // Layout
+          0, // AdvanceRank
+          ThreadMap>; // ThreadMap
+
+  using SmemTileIterator = cutlass::transform::threadblock::RegularTileIterator<
+      ThreadblockTileShape, // Shape
+      scalar_t, // Element
+      cutlass::layout::RowMajor, // Layout
+      0, // AdvanceRank
+      ThreadMap>; // ThreadMap
+
+  using Fragment = typename GmemTileIterator::Fragment;
+
+  /// load a tile from global memory into shared memory
+  CUTLASS_DEVICE
+  static void load(
+      GmemTileIterator tile_load_iter,
+      SmemTileIterator tile_store_iter) {
+    Fragment tb_frag;
+    tb_frag.clear();
+    tile_load_iter.load(tb_frag);
+    tile_store_iter.store(tb_frag);
+
+    __syncthreads();
+  }
+};
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 1 class(es)/struct(s) and 1 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes/Structs**: `TileSmemLoader`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native/transformers/cuda/mem_eff_attention/transform`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `cutlass/cutlass.h`
+- `cutlass/aligned_buffer.h`
+- `cutlass/array.h`
+- `cutlass/layout/matrix.h`
+- `cutlass/layout/pitch_linear.h`
+- `cutlass/numeric_types.h`
+- `cutlass/transform/pitch_linear_thread_map.h`
+- `cutlass/transform/threadblock/predicated_tile_iterator.h`
+- `cutlass/transform/threadblock/regular_tile_iterator.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native/transformers/cuda/mem_eff_attention/transform`):
+
+
+
+## Cross-References
+
+- **File Documentation**: `tile_smem_loader.h_docs.md`
+- **Keyword Index**: `tile_smem_loader.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native/transformers/cuda/mem_eff_attention/transform`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native/transformers/cuda/mem_eff_attention/transform`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native/transformers/cuda/mem_eff_attention/transform`):
+
+- [`tile_smem_loader.h_kw.md_docs.md`](./tile_smem_loader.h_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `tile_smem_loader.h_docs.md_docs.md`
+- **Keyword Index**: `tile_smem_loader.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

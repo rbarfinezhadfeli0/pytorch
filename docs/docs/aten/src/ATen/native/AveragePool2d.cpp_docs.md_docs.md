@@ -1,0 +1,451 @@
+# Documentation: `docs/aten/src/ATen/native/AveragePool2d.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/AveragePool2d.cpp_docs.md`
+- **Size**: 9,572 bytes (9.35 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/native/AveragePool2d.cpp`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/AveragePool2d.cpp`
+- **Size**: 7,026 bytes (6.86 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#define TORCH_ASSERT_ONLY_METHOD_OPERATORS
+#include <ATen/core/Tensor.h>
+#include <ATen/ScalarOps.h>
+#include <ATen/native/Pool.h>
+
+#ifndef AT_PER_OPERATOR_HEADERS
+#include <ATen/Functions.h>
+#include <ATen/NativeFunctions.h>
+#else
+#include <ATen/ops/avg_pool2d_backward_native.h>
+#include <ATen/ops/avg_pool2d_native.h>
+#endif
+
+namespace at::meta {
+using namespace ::at::native;
+
+TORCH_PRECOMPUTE_META_FUNC(avg_pool2d)
+(const Tensor& input,
+ IntArrayRef kernel_size,
+ IntArrayRef stride,
+ IntArrayRef padding,
+ bool ceil_mode,
+ bool count_include_pad,
+ std::optional<int64_t> divisor_override) {
+  // #20866, #22032: Guarantee this for the official C++ API?
+  TORCH_CHECK(kernel_size.size() == 1 || kernel_size.size() == 2,
+    "avg_pool2d: kernel_size must either be a single int, or a tuple of two ints");
+  const int kH = safe_downcast<int, int64_t>(kernel_size[0]);
+  const int kW = kernel_size.size() == 1 ? kH : safe_downcast<int, int64_t>(kernel_size[1]);
+
+  TORCH_CHECK(stride.empty() || stride.size() == 1 || stride.size() == 2,
+    "avg_pool2d: stride must either be omitted, a single int, or a tuple of two ints");
+  const int dH = stride.empty() ? kH : safe_downcast<int, int64_t>(stride[0]);
+  const int dW = stride.empty() ? kW :
+                 stride.size() == 1 ? dH : safe_downcast<int, int64_t>(stride[1]);
+
+  TORCH_CHECK(padding.size() == 1 || padding.size() == 2,
+    "avg_pool2d: padding must either be a single int, or a tuple of two ints");
+  const int padH = safe_downcast<int, int64_t>(padding[0]);
+  const int padW = padding.size() == 1 ? padH : safe_downcast<int, int64_t>(padding[1]);
+
+  TORCH_CHECK(!divisor_override.has_value() || divisor_override.value() != 0,
+    "divisor must be not zero");
+
+  const int64_t nbatch = input.ndimension() == 4 ? input.size(-4) : 1;
+  const int64_t nInputPlane = input.size(-3);
+  const int64_t inputHeight = input.size(-2);
+  const int64_t inputWidth = input.size(-1);
+
+  const int64_t outputHeight = pooling_output_shape<int64_t>(
+      inputHeight, kH, padH, dH, 1, ceil_mode);
+  const int64_t outputWidth =
+      pooling_output_shape<int64_t>(inputWidth, kW, padW, dW, 1, ceil_mode);
+
+  auto memory_format = input.suggest_memory_format();
+  pool2d_shape_check(
+      input,
+      kH,
+      kW,
+      dH,
+      dW,
+      padH,
+      padW,
+      1,
+      1,
+      nInputPlane,
+      inputHeight,
+      inputWidth,
+      outputHeight,
+      outputWidth,
+      memory_format);
+
+  /* resize output */
+  if (input.ndimension() == 3) {
+    set_output_raw_strided(
+        0,
+        {nInputPlane,
+         outputHeight,
+         outputWidth},
+        {},
+        input.options());
+  }
+  else {
+    set_output_raw_strided(
+        0,
+        {nbatch,
+         nInputPlane,
+         outputHeight,
+         outputWidth},
+        {},
+        input.options().memory_format(memory_format));
+  }
+
+  return TORCH_PRECOMPUTE_STRUCT(avg_pool2d)().set_kH(kH).set_kW(kW).set_dH(dH).set_dW(dW).set_padH(padH).set_padW(padW);
+}
+
+TORCH_META_FUNC(avg_pool2d_backward) (
+  const Tensor& gradOutput_,
+  const Tensor& input,
+  IntArrayRef kernel_size,
+  IntArrayRef stride,
+  IntArrayRef padding,
+  bool ceil_mode,
+  bool count_include_pad,
+  std::optional<int64_t> divisor_override
+) {
+  // #20866, #22032: Guarantee this for the official C++ API?
+  TORCH_CHECK(kernel_size.size() == 1 || kernel_size.size() == 2,
+    "avg_pool2d: kernel_size must either be a single int, or a tuple of two ints");
+  const int kH = safe_downcast<int, int64_t>(kernel_size[0]);
+  const int kW = kernel_size.size() == 1 ? kH : safe_downcast<int, int64_t>(kernel_size[1]);
+
+  TORCH_CHECK(stride.empty() || stride.size() == 1 || stride.size() == 2,
+    "avg_pool2d: stride must either be omitted, a single int, or a tuple of two ints");
+  const int dH = stride.empty() ? kH : safe_downcast<int, int64_t>(stride[0]);
+  const int dW = stride.empty() ? kW :
+                 stride.size() == 1 ? dH : safe_downcast<int, int64_t>(stride[1]);
+
+  TORCH_CHECK(padding.size() == 1 || padding.size() == 2,
+    "avg_pool2d: padding must either be a single int, or a tuple of two ints");
+  const int padH = safe_downcast<int, int64_t>(padding[0]);
+  const int padW = padding.size() == 1 ? padH : safe_downcast<int, int64_t>(padding[1]);
+
+  TORCH_CHECK(!divisor_override.has_value() || divisor_override.value() != 0, "divisor must be not zero");
+
+  /* sizes */
+  const int64_t nbatch = input.ndimension() == 4 ? input.size(-4) : 1;
+  const int64_t nInputPlane = input.size(-3); // number of channels (or colors)
+  const int64_t inputHeight = input.size(-2);
+  const int64_t inputWidth = input.size(-1);
+  const int64_t outputWidth = pooling_output_shape<int64_t>(inputWidth, kW, padW, dW, 1, ceil_mode);
+  const int64_t outputHeight = pooling_output_shape<int64_t>(inputHeight, kH, padH, dH, 1, ceil_mode);
+
+  auto memory_format = input.suggest_memory_format();
+  avg_pool2d_backward_shape_check(
+    input,
+    gradOutput_,
+    nbatch,
+    kH, kW, dH, dW, padH, padW,
+    nInputPlane,
+    inputHeight, inputWidth,
+    outputHeight, outputWidth,
+    memory_format);
+
+  /* resize output */
+  set_output_raw_strided(0, input.sizes(), {}, input.options().memory_format(memory_format));
+}
+
+} // namespace at::meta
+
+namespace at::native {
+
+TORCH_IMPL_FUNC(avg_pool2d_out_cpu)
+(const Tensor& input,
+ int64_t kH,
+ int64_t kW,
+ int64_t dH,
+ int64_t dW,
+ int64_t padH,
+ int64_t padW,
+ bool ceil_mode,
+ bool count_include_pad,
+ std::optional<int64_t> divisor_override,
+ const Tensor& output) {
+  avg_pool2d_kernel(
+      kCPU,
+      output,
+      input,
+      kW,
+      kH,
+      dW,
+      dH,
+      padW,
+      padH,
+      count_include_pad,
+      divisor_override);
+}
+
+TORCH_IMPL_FUNC(avg_pool2d_backward_out_cpu) (
+  const Tensor& gradOutput,
+  const Tensor& input,
+  IntArrayRef kernel_size,
+  IntArrayRef stride,
+  IntArrayRef padding,
+  bool ceil_mode,
+  bool count_include_pad,
+  std::optional<int64_t> divisor_override,
+  const Tensor& gradInput
+) {
+  const int kH = safe_downcast<int, int64_t>(kernel_size[0]);
+  const int kW = kernel_size.size() == 1 ? kH : safe_downcast<int, int64_t>(kernel_size[1]);
+
+  const int dH = stride.empty() ? kH : safe_downcast<int, int64_t>(stride[0]);
+  const int dW = stride.empty() ? kW :
+                 stride.size() == 1 ? dH : safe_downcast<int, int64_t>(stride[1]);
+
+  const int padH = safe_downcast<int, int64_t>(padding[0]);
+  const int padW = padding.size() == 1 ? padH : safe_downcast<int, int64_t>(padding[1]);
+
+  TORCH_CHECK(!divisor_override.has_value() || divisor_override.value() != 0, "divisor must be not zero");
+
+  TORCH_CHECK(input.dtype() == gradOutput.dtype(),
+    "expected dtype ", input.dtype(), " for `gradOutput` but got dtype ", gradOutput.dtype());
+
+  /* zero the gradient */
+  gradInput.zero_();
+
+  avg_pool2d_backward_kernel(
+      kCPU, gradInput, gradOutput,
+      kW, kH, dW, dH, padW, padH,
+      count_include_pad, divisor_override);
+}
+
+DEFINE_DISPATCH(avg_pool2d_kernel);
+DEFINE_DISPATCH(avg_pool2d_backward_kernel);
+
+} // namespace at::native
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 2 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `at`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/core/Tensor.h`
+- `ATen/ScalarOps.h`
+- `ATen/native/Pool.h`
+- `ATen/Functions.h`
+- `ATen/NativeFunctions.h`
+- `ATen/ops/avg_pool2d_backward_native.h`
+- `ATen/ops/avg_pool2d_native.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native`):
+
+- [`LossMulti.h_docs.md`](./LossMulti.h_docs.md)
+- [`NaiveConvolutionTranspose3d.cpp_docs.md`](./NaiveConvolutionTranspose3d.cpp_docs.md)
+- [`UnaryOps.cpp_docs.md`](./UnaryOps.cpp_docs.md)
+- [`ResizeCommon.h_docs.md`](./ResizeCommon.h_docs.md)
+- [`FusedAdagrad.cpp_docs.md`](./FusedAdagrad.cpp_docs.md)
+- [`SharedReduceOps.h_docs.md`](./SharedReduceOps.h_docs.md)
+- [`SpectralOpsUtils.h_docs.md`](./SpectralOpsUtils.h_docs.md)
+- [`FractionalMaxPooling.h_docs.md`](./FractionalMaxPooling.h_docs.md)
+- [`TensorDimApply.h_docs.md`](./TensorDimApply.h_docs.md)
+- [`Lerp.cpp_docs.md`](./Lerp.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `AveragePool2d.cpp_docs.md`
+- **Keyword Index**: `AveragePool2d.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native`):
+
+- [`AdaptiveMaxPooling2d.cpp_docs.md_docs.md`](./AdaptiveMaxPooling2d.cpp_docs.md_docs.md)
+- [`Distributions.cpp_docs.md_docs.md`](./Distributions.cpp_docs.md_docs.md)
+- [`im2col_shape_check.h_docs.md_docs.md`](./im2col_shape_check.h_docs.md_docs.md)
+- [`ReduceOps.cpp_kw.md_docs.md`](./ReduceOps.cpp_kw.md_docs.md)
+- [`Lerp.cpp_kw.md_docs.md`](./Lerp.cpp_kw.md_docs.md)
+- [`CPUFallback.h_docs.md_docs.md`](./CPUFallback.h_docs.md_docs.md)
+- [`MetaTensor.cpp_docs.md_docs.md`](./MetaTensor.cpp_docs.md_docs.md)
+- [`Correlation.cpp_kw.md_docs.md`](./Correlation.cpp_kw.md_docs.md)
+- [`im2col_shape_check.h_kw.md_docs.md`](./im2col_shape_check.h_kw.md_docs.md)
+- [`UpSampleNearest2d.cpp_kw.md_docs.md`](./UpSampleNearest2d.cpp_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `AveragePool2d.cpp_docs.md_docs.md`
+- **Keyword Index**: `AveragePool2d.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

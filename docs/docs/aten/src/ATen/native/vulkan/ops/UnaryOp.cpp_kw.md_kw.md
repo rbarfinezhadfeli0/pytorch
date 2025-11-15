@@ -1,0 +1,86 @@
+# Keyword Index: `docs/aten/src/ATen/native/vulkan/ops/UnaryOp.cpp_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/native/vulkan/ops/UnaryOp.cpp_kw.md](../../../../../../../../docs/aten/src/ATen/native/vulkan/ops/UnaryOp.cpp_kw.md)
+- **Documentation**: [`UnaryOp.cpp_kw.md_docs.md`](./UnaryOp.cpp_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/native/vulkan/ops`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Analysis`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Architecture`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`ArrayRef`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Basic`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Block`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Class`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Common`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Complete`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Considerations`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Dependencies`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Design`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Detailed`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Documentation`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Efficiency`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Extracted`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`File`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Folder`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Functions`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Generated`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`High`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`How`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`In`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Includes`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Index`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Information`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Keyword`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Keywords`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Level`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Map`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Metadata`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Namespaces`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Original`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Overview`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Performance`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Purpose`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`PyTorch`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`QuantizedFunctions`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Related`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Repository`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Safety`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Section`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Security`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Source`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Structs`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`System`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`TORCH_LIBRARY_IMPL`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Testing`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`The`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`This`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`UnaryOp`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+- **`Usage`**: [UnaryOp.cpp_kw.md_docs.md](./UnaryOp.cpp_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

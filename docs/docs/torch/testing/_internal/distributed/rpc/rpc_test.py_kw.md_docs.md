@@ -1,0 +1,409 @@
+# Documentation: `docs/torch/testing/_internal/distributed/rpc/rpc_test.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/testing/_internal/distributed/rpc/rpc_test.py_kw.md`
+- **Size**: 19,674 bytes (19.21 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `torch/testing/_internal/distributed/rpc/rpc_test.py`
+
+## File Information
+
+- **Original File**: [torch/testing/_internal/distributed/rpc/rpc_test.py](../../../../../../torch/testing/_internal/distributed/rpc/rpc_test.py)
+- **Documentation**: [`rpc_test.py_docs.md`](./rpc_test.py_docs.md)
+- **Folder**: `torch/testing/_internal/distributed/rpc`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`AsyncExecutionClass`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`CudaRpcTest`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`CustomException`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`FooBackendOptions`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`MyClass`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`MyConvNetForMNIST`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`MyEmbeddingBagModel`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`MyModel`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`MyParameterServer`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`MyPickleClass`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`RpcTest`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`RpcTestCommon`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`SlowPickleClass`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`StubRpcAgent`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`TensorPipeAgentCudaRpcTest`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`TensorPipeAgentRpcTest`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`TensorWrapper`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`TestPickler`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`and`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`that`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+
+### Functions
+
+- **`__getstate__`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`__init__`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`__setstate__`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_add_to_gpu`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_assert_top_level_events`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_builtin_remote_ret`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_builtin_remote_self`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_call_method_on_rref`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_create_rref`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_gpu_add`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_gpu_add_given_devices`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_gpu_add_multi_gpu`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_gpu_add_return_to_gpu`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_gpu_add_wrong_gpus`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_gpu_tensor_list_arg`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_identity`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_increment_count`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_multi_args_fn`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_multi_kwargs_fn`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_multi_rpc`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_my_parameter_server`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_nested_remote`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_nested_rpc`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_nested_rref`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_nested_rref_stress`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_nested_slow_add_on_user_stream`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_profiler_test_with_rpc`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_py_rpc_rref_args`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_py_rref_args`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_py_rref_args_user_share`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_remote`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_reset_count`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_return_gpu_tensor`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_return_gpu_tensor_list`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_return_tensor_view`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_rpc_async`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_rpc_sync`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_rref_relay`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_run_func_in_mode`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_run_rpc_profiling_async_function`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_run_test_profiler_remote_events_profiled`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_run_test_profiler_with_async_rpc_builtin`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_run_test_profiler_with_async_rpc_udf`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_run_test_profiler_with_autograd_context`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_run_test_profiler_with_remote_builtin`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_run_test_profiler_with_remote_udf`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_run_test_profiler_with_script_async_rpc`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_run_test_profiler_with_script_remote_rpc`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_run_test_profiler_with_script_sync_rpc`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_run_test_profiler_with_sync_rpc_builtin`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_run_test_profiler_with_sync_rpc_udf`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_run_uneven_workload`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_self_py_udf_remote`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_self_remote_rref_as_remote_arg`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_self_remote_rref_as_rpc_arg`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_slow_add`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_slow_add_on_user_stream`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_stress_test_rpc`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_stub_construct_rpc_backend_options_handler`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_stub_init_rpc_backend_handler`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_sum`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_test_async_function`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_test_async_function_multi`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_test_async_function_raise`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_test_async_function_wrong_return_type`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_test_barrier_helper`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_test_cuda_future_extraction`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_test_custom_stream`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_test_device_maps`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_test_device_maps_gpu`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_test_device_maps_missing_config`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_test_device_maps_missing_config_response`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_test_device_maps_multi_gpu`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_test_device_maps_return_to_gpu`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_test_future_cb`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_test_multi_remote_call`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_test_owner_rref_forward_synchronization`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_test_return_future`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_test_rref_as_arg_synchronization`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_test_rref_forward_synchronization`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_test_rref_get_type_timeout`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_test_rref_leak`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_test_rref_proxy_class`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_test_rref_proxy_tensor`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_test_rref_proxy_timeout`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_test_rref_synchronization`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_test_rref_type`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_test_rref_type_owner`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_test_rref_type_with_error`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_test_stream_multi_async`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_test_stream_nested_multi_async`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_test_stream_nested_sync`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_test_stream_sync`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_test_test_async_class_rref_proxy`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_trainer_func`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_wait_all_workers`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_wait_all_workers_twice`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_world_size_one`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`add_rref_to_value`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`add_use_future_cb`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`add_use_future_nested_cb`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`add_use_future_set_result`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`async_add`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`async_add_chained`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`async_add_chained_multi`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`async_add_multi_fanout`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`async_add_nested`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`async_add_with_future_ctor`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`async_cuda_nested_add`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`async_cuda_sleep_and_set_to_one`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`async_raise_func`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`async_wrong_type`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`average`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`bound_async_add`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`build_complex_tensors`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`build_sparse_tensor`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`callback`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`cb`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`check_profiling_info`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`check_rref_confirmed`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`class_async_add`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`clear_global_rref`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`convert_remote_to_local`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`custom_raise_func`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`delayed_add`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`fail_on_fut`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`foo_add`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`forward`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`get_cpu_children`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`get_events_from_profile`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`get_gradient`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`get_name`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`get_rref_debug_info`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`get_rref_list`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`get_value`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`get_worker_infos`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`heavy_rpc`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`heavy_rpc_sparse`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`heavy_rpc_torchscript`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`identity`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`inc_and_set`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`increase`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`increment_value`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`launched_rpc`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`light_rpc`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`multi_layer_nested_async_rpc`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`my_class_method`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`my_complex_tensor_function`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`my_container_sum`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`my_function`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`my_instance_method`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`my_rref_function`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`my_script_func`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`my_sleep_func`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`my_slow_method`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`my_static_method`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`my_tensor_function`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`nested_remote`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`nested_remote_sparse`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`nested_rpc`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`nested_rpc_sparse`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`nested_rref`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`nested_rref_sparse`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`no_result`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`non_cont_test`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`raise_error`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`raise_func`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`raise_func_escape`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`raise_func_script`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`raise_or_inc`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`return_callee_id`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`return_future`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`rpc_return_rref`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`rpc_with_profiling`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`rref_error`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`rref_forward_chain`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`run_nested_pickle`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`run_profiling_workload`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`set`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`set_and_check_done`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`set_global_rref`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`set_value`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`slow_add`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`slow_async_add`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`static_async_add`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`sum`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`test_add`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`test_add_done_callback`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`test_add_with_id`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`test_all_gather`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`test_all_gather_timeout`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`test_async_add`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`test_async_class_method`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`test_async_class_method_remote`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`test_async_class_rref_proxy`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`test_async_class_rref_proxy_async`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`test_async_class_rref_proxy_remote`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`test_async_execution_nested_with_cuda_future`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`test_async_execution_with_cuda_future`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`test_async_function_chained`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+
+### Imports
+
+- **`Event`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`Future`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`_thread_local_var`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`collections`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`concurrent.futures`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`contextlib`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`datetime`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`functools`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`json`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`mock`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`namedtuple`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`operator`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`os`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`partial`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`profile`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`sys`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`threading`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`time`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`timedelta`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`torch`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`torch.autograd.profiler_legacy`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`torch.distributed`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`torch.distributed.autograd`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`torch.distributed.rpc`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`torch.distributed.rpc.api`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`torch.distributed.rpc.internal`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`torch.futures`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`torch.nn`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`torch.testing._internal.common_distributed`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`torch.testing._internal.dist_utils`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`torch.testing._internal.distributed.rpc.rpc_agent_test_fixture`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+- **`unittest`**: [rpc_test.py_docs.md](./rpc_test.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/testing/_internal/distributed/rpc`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/testing/_internal/distributed/rpc`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Neural Network**: Defines or uses PyTorch neural network components
+- **Automatic Differentiation**: Uses autograd for gradient computation
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- **Serialization**: Uses pickle - be cautious with untrusted data
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/torch/testing/_internal/distributed/rpc/rpc_test.py_kw.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/testing/_internal/distributed/rpc`):
+
+- [`dist_optimizer_test.py_docs.md_docs.md`](./dist_optimizer_test.py_docs.md_docs.md)
+- [`rpc_test.py_docs.md_docs.md`](./rpc_test.py_docs.md_docs.md)
+- [`__init__.py_docs.md_docs.md`](./__init__.py_docs.md_docs.md)
+- [`rpc_agent_test_fixture.py_kw.md_docs.md`](./rpc_agent_test_fixture.py_kw.md_docs.md)
+- [`dist_optimizer_test.py_kw.md_docs.md`](./dist_optimizer_test.py_kw.md_docs.md)
+- [`tensorpipe_rpc_agent_test_fixture.py_kw.md_docs.md`](./tensorpipe_rpc_agent_test_fixture.py_kw.md_docs.md)
+- [`faulty_agent_rpc_test.py_docs.md_docs.md`](./faulty_agent_rpc_test.py_docs.md_docs.md)
+- [`__init__.py_kw.md_docs.md`](./__init__.py_kw.md_docs.md)
+- [`dist_autograd_test.py_docs.md_docs.md`](./dist_autograd_test.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `rpc_test.py_kw.md_docs.md`
+- **Keyword Index**: `rpc_test.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

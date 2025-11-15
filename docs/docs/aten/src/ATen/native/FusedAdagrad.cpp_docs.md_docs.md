@@ -1,0 +1,316 @@
+# Documentation: `docs/aten/src/ATen/native/FusedAdagrad.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/FusedAdagrad.cpp_docs.md`
+- **Size**: 4,616 bytes (4.51 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/native/FusedAdagrad.cpp`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/FusedAdagrad.cpp`
+- **Size**: 2,123 bytes (2.07 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#define TORCH_ASSERT_ONLY_METHOD_OPERATORS
+#include <ATen/core/Tensor.h>
+#include <ATen/native/DispatchStub.h>
+#include <ATen/native/FusedAdagrad.h>
+
+#ifndef AT_PER_OPERATOR_HEADERS
+#include <ATen/Functions.h>
+#include <ATen/NativeFunctions.h>
+#else
+#include <ATen/ops/_fused_adagrad.h>
+#include <ATen/ops/_fused_adagrad_native.h>
+#endif
+
+namespace at::native {
+
+void _fused_adagrad_kernel_cpu_(
+    at::TensorList params,
+    at::TensorList grads,
+    at::TensorList state_sums,
+    at::TensorList state_steps,
+    const double lr,
+    const double lr_decay,
+    const double weight_decay,
+    const double eps,
+    const bool maximize,
+    const std::optional<at::Tensor>& grad_scale,
+    const std::optional<at::Tensor>& found_inf) {
+  const float* grad_scale_ptr =
+      grad_scale.has_value() ? grad_scale->data_ptr<float>() : nullptr;
+  const float* found_inf_ptr =
+      found_inf.has_value() ? found_inf->data_ptr<float>() : nullptr;
+  if (found_inf_ptr && *found_inf_ptr == 1.0) {
+    return;
+  }
+  size_t n_tensors = params.size();
+  TORCH_CHECK(grads.size() == n_tensors);
+  TORCH_CHECK(state_sums.size() == n_tensors);
+  TORCH_CHECK(state_steps.size() == n_tensors);
+  for (size_t i = 0; i < n_tensors; i++) {
+    fused_adagrad_stub(
+        kCPU,
+        params[i],
+        grads[i],
+        state_sums[i],
+        state_steps[i],
+        lr,
+        lr_decay,
+        weight_decay,
+        eps,
+        maximize,
+        grad_scale_ptr);
+  }
+}
+
+void _fused_adagrad_kernel_cpu_(
+    at::TensorList params,
+    at::TensorList grads,
+    at::TensorList state_sums,
+    at::TensorList state_steps,
+    const at::Tensor& lr,
+    const double lr_decay,
+    const double weight_decay,
+    const double eps,
+    const bool maximize,
+    const std::optional<at::Tensor>& grad_scale,
+    const std::optional<at::Tensor>& found_inf) {
+  _fused_adagrad_kernel_cpu_(
+      params,
+      grads,
+      state_sums,
+      state_steps,
+      lr.item<double>(),
+      lr_decay,
+      weight_decay,
+      eps,
+      maximize,
+      grad_scale,
+      found_inf);
+}
+
+DEFINE_DISPATCH(fused_adagrad_stub);
+
+} // namespace at::native
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 2 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `at`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/core/Tensor.h`
+- `ATen/native/DispatchStub.h`
+- `ATen/native/FusedAdagrad.h`
+- `ATen/Functions.h`
+- `ATen/NativeFunctions.h`
+- `ATen/ops/_fused_adagrad.h`
+- `ATen/ops/_fused_adagrad_native.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native`):
+
+- [`LossMulti.h_docs.md`](./LossMulti.h_docs.md)
+- [`NaiveConvolutionTranspose3d.cpp_docs.md`](./NaiveConvolutionTranspose3d.cpp_docs.md)
+- [`UnaryOps.cpp_docs.md`](./UnaryOps.cpp_docs.md)
+- [`ResizeCommon.h_docs.md`](./ResizeCommon.h_docs.md)
+- [`SharedReduceOps.h_docs.md`](./SharedReduceOps.h_docs.md)
+- [`SpectralOpsUtils.h_docs.md`](./SpectralOpsUtils.h_docs.md)
+- [`FractionalMaxPooling.h_docs.md`](./FractionalMaxPooling.h_docs.md)
+- [`TensorDimApply.h_docs.md`](./TensorDimApply.h_docs.md)
+- [`Lerp.cpp_docs.md`](./Lerp.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `FusedAdagrad.cpp_docs.md`
+- **Keyword Index**: `FusedAdagrad.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native`):
+
+- [`AdaptiveMaxPooling2d.cpp_docs.md_docs.md`](./AdaptiveMaxPooling2d.cpp_docs.md_docs.md)
+- [`Distributions.cpp_docs.md_docs.md`](./Distributions.cpp_docs.md_docs.md)
+- [`im2col_shape_check.h_docs.md_docs.md`](./im2col_shape_check.h_docs.md_docs.md)
+- [`ReduceOps.cpp_kw.md_docs.md`](./ReduceOps.cpp_kw.md_docs.md)
+- [`Lerp.cpp_kw.md_docs.md`](./Lerp.cpp_kw.md_docs.md)
+- [`CPUFallback.h_docs.md_docs.md`](./CPUFallback.h_docs.md_docs.md)
+- [`MetaTensor.cpp_docs.md_docs.md`](./MetaTensor.cpp_docs.md_docs.md)
+- [`Correlation.cpp_kw.md_docs.md`](./Correlation.cpp_kw.md_docs.md)
+- [`im2col_shape_check.h_kw.md_docs.md`](./im2col_shape_check.h_kw.md_docs.md)
+- [`UpSampleNearest2d.cpp_kw.md_docs.md`](./UpSampleNearest2d.cpp_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `FusedAdagrad.cpp_docs.md_docs.md`
+- **Keyword Index**: `FusedAdagrad.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

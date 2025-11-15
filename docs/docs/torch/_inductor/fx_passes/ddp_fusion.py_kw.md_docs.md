@@ -1,0 +1,199 @@
+# Documentation: `docs/torch/_inductor/fx_passes/ddp_fusion.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/_inductor/fx_passes/ddp_fusion.py_kw.md`
+- **Size**: 4,586 bytes (4.48 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `torch/_inductor/fx_passes/ddp_fusion.py`
+
+## File Information
+
+- **Original File**: [torch/_inductor/fx_passes/ddp_fusion.py](../../../../torch/_inductor/fx_passes/ddp_fusion.py)
+- **Documentation**: [`ddp_fusion.py_docs.md`](./ddp_fusion.py_docs.md)
+- **Folder**: `torch/_inductor/fx_passes`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`CommBlock`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`from`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+
+### Functions
+
+- **`_bucket_size_fusion`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`_fuse_allreduce`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`_fuse_allreduce_by_concat`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`_fuse_ddp_communication`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`_fuse_with_coalesced_op`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`_scatter_fused_allreduce_waits`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`always_true`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`call_function`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`ddp_reducer_filter`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`fuse_ddp_communication`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`fuse_ddp_with_coalesced_op`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`fuse_ddp_with_concat_op`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`get_all_comm_blocks`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`get_comm_block`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`move_block_after`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`move_block_before`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`schedule_comm_wait`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+
+### Imports
+
+- **`..fx_utils`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`..virtualized`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`Any`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`Callable`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`GraphTransformObserver`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`OrderedSet`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`V`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`_extract_tensor_metadata`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`collections`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`collections.abc`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`counters`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`dataclass`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`dataclasses`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`functools`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`get_fake_args_kwargs`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`inspect`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`logging`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`math`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`operator`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`partial`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`torch`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`torch._dynamo.utils`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`torch.fx`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`torch.fx.passes.graph_transform_observer`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`torch.fx.passes.shape_prop`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`torch.utils._ordered_set`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`torch.utils._pytree`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`tree_flatten`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+- **`typing`**: [ddp_fusion.py_docs.md](./ddp_fusion.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/_inductor/fx_passes`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/_inductor/fx_passes`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/_inductor/fx_passes`):
+
+- [`dedupe_symint_uses.py_kw.md_docs.md`](./dedupe_symint_uses.py_kw.md_docs.md)
+- [`overlap_preserving_bucketer.py_kw.md_docs.md`](./overlap_preserving_bucketer.py_kw.md_docs.md)
+- [`pre_grad.py_docs.md_docs.md`](./pre_grad.py_docs.md_docs.md)
+- [`b2b_gemm.py_docs.md_docs.md`](./b2b_gemm.py_docs.md_docs.md)
+- [`freezing_patterns.py_kw.md_docs.md`](./freezing_patterns.py_kw.md_docs.md)
+- [`fsdp.py_docs.md_docs.md`](./fsdp.py_docs.md_docs.md)
+- [`README.md_docs.md_docs.md`](./README.md_docs.md_docs.md)
+- [`replace_random.py_kw.md_docs.md`](./replace_random.py_kw.md_docs.md)
+- [`joint_graph.py_kw.md_docs.md`](./joint_graph.py_kw.md_docs.md)
+- [`numeric_utils.py_docs.md_docs.md`](./numeric_utils.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `ddp_fusion.py_kw.md_docs.md`
+- **Keyword Index**: `ddp_fusion.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

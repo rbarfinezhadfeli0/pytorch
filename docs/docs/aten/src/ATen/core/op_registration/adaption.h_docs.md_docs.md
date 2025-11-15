@@ -1,0 +1,310 @@
+# Documentation: `docs/aten/src/ATen/core/op_registration/adaption.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/core/op_registration/adaption.h_docs.md`
+- **Size**: 5,576 bytes (5.45 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/core/op_registration/adaption.h`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/core/op_registration/adaption.h`
+- **Size**: 3,216 bytes (3.14 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#pragma once
+
+#include <ATen/Tensor.h>
+#include <ATen/TensorUtils.h>
+#include <ATen/core/List.h>
+#include <c10/core/TensorOptions.h>
+
+/*
+ * [Note: hacky wrapper removal for optional tensor]
+ *
+ * The kernel implementation takes an optional tensor marked in the schema as
+ * Tensor? but the C++ function takes Tensor instead of the std::optional<Tensor>
+ * expected by the dispatcher.
+ *
+ * To remove the hacky wrapper, the C++ function is changed to take
+ * std::optional<Tensor> and unwrap the Tensor value at the beginning of
+ * the function, e.g.:
+ *   > c10::MaybeOwned<Tensor> weight_maybe_owned =
+ *   >     at::borrow_from_optional_tensor(weight_opt);
+ *   > const Tensor& weight = *weight_maybe_owned;
+ *
+ * We may want to make the kernel handle optional directly without
+ * going through the creation of a default-constructed Tensor in
+ * at::borrow_from_optional_tensor.
+ */
+
+/*
+ * [Note: hacky wrapper removal for TensorOptions]
+ *
+ * The kernel implementation takes a TensorOptions argument but the dispatcher
+ * expects separate arguments for dtype, layout, device, pin_memory.
+ *
+ * To remove the hacky wrapper, the kernel implementation is changed to take
+ * the 4 arguments (dtype, layout, device, pin_memory), and assemble the
+ * TensorOptions value at the beginning of the function, e.g.:
+ *   > TensorOptions options = TensorOptions().dtype(dtype).layout(layout)
+ *   >    .device(device).pinned_memory(pin_memory);
+ *
+ * We may want make the kernel handle these parameters directly without going
+ * through the creation of a TensorOptions value.
+ */
+
+namespace c10::impl {
+
+TORCH_API void common_device_check_failure(Device common_device, const at::Tensor& tensor, at::CheckedFrom methodName, at::CheckedFrom argName);
+
+inline void check_and_update_common_device(std::optional<Device>& common_device, const at::Tensor& tensor, at::CheckedFrom methodName, at::CheckedFrom argName) {
+  // TODO: Remove this once the following issue is addressed:
+  // https://github.com/pytorch/pytorch/issues/57380
+  if (!tensor.defined()) {
+    return;
+  }
+
+  if (!common_device.has_value()) {
+    common_device = tensor.device();
+    return;
+  }
+
+  if (C10_UNLIKELY(common_device != tensor.device())) {
+    common_device_check_failure(*common_device, tensor, methodName, argName);
+  }
+}
+
+inline void check_and_update_common_device(std::optional<Device>& common_device, const std::optional<at::Tensor>& tensor, at::CheckedFrom methodName, at::CheckedFrom argName) {
+  if (tensor.has_value()) {
+    check_and_update_common_device(common_device, tensor.value(), methodName, argName);
+  }
+}
+
+inline void check_and_update_common_device(std::optional<Device>& common_device, at::ITensorListRef tensors, at::CheckedFrom methodName, at::CheckedFrom argName) {
+  for (const auto& tensor : tensors) {
+    check_and_update_common_device(common_device, tensor, methodName, argName);
+  }
+}
+
+inline void check_and_update_common_device(std::optional<Device>& common_device, const List<std::optional<at::Tensor>>& tensors, at::CheckedFrom methodName, at::CheckedFrom argName) {
+  for (const auto& tensor : tensors) {
+    check_and_update_common_device(common_device, tensor, methodName, argName);
+  }
+}
+} // namespace c10::impl
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 7 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `c10`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/core/op_registration`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/Tensor.h`
+- `ATen/TensorUtils.h`
+- `ATen/core/List.h`
+- `c10/core/TensorOptions.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/core/op_registration`):
+
+- [`infer_schema.h_docs.md`](./infer_schema.h_docs.md)
+- [`op_registration.h_docs.md`](./op_registration.h_docs.md)
+- [`op_registration.cpp_docs.md`](./op_registration.cpp_docs.md)
+- [`infer_schema.cpp_docs.md`](./infer_schema.cpp_docs.md)
+- [`op_allowlist.h_docs.md`](./op_allowlist.h_docs.md)
+- [`op_allowlist_test.cpp_docs.md`](./op_allowlist_test.cpp_docs.md)
+- [`README.md_docs.md`](./README.md_docs.md)
+- [`op_registration_test.cpp_docs.md`](./op_registration_test.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `adaption.h_docs.md`
+- **Keyword Index**: `adaption.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/core/op_registration`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/core/op_registration`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/core/op_registration`):
+
+- [`op_registration.cpp_kw.md_docs.md`](./op_registration.cpp_kw.md_docs.md)
+- [`README.md_docs.md_docs.md`](./README.md_docs.md_docs.md)
+- [`op_registration.h_kw.md_docs.md`](./op_registration.h_kw.md_docs.md)
+- [`adaption.h_kw.md_docs.md`](./adaption.h_kw.md_docs.md)
+- [`infer_schema.h_kw.md_docs.md`](./infer_schema.h_kw.md_docs.md)
+- [`op_allowlist_test.cpp_docs.md_docs.md`](./op_allowlist_test.cpp_docs.md_docs.md)
+- [`op_registration.h_docs.md_docs.md`](./op_registration.h_docs.md_docs.md)
+- [`op_registration_test.cpp_docs.md_docs.md`](./op_registration_test.cpp_docs.md_docs.md)
+- [`infer_schema.cpp_docs.md_docs.md`](./infer_schema.cpp_docs.md_docs.md)
+- [`op_registration_test.cpp_kw.md_docs.md`](./op_registration_test.cpp_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `adaption.h_docs.md_docs.md`
+- **Keyword Index**: `adaption.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,80 @@
+# Keyword Index: `docs/aten/src/ATen/cuda/CUDASparseBlas.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/cuda/CUDASparseBlas.h_kw.md](../../../../../../docs/aten/src/ATen/cuda/CUDASparseBlas.h_kw.md)
+- **Documentation**: [`CUDASparseBlas.h_kw.md_docs.md`](./CUDASparseBlas.h_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/cuda`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`Analysis`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`Architecture`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`Basic`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`CUDAContext`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`CUDASparse`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`CUDASparseBlas`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`Complete`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`Considerations`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`Dependencies`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`Design`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`Detailed`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`Documentation`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`Efficiency`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`Extracted`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`File`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`Folder`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`Generated`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`High`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`How`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`In`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`Includes`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`Index`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`Information`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`Keyword`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`Keywords`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`Level`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`Map`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`Metadata`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`Namespaces`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`Original`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`Overview`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`Performance`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`Purpose`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`PyTorch`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`Related`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`Repository`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`Safety`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`Section`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`Security`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`Source`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`System`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`Testing`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`The`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`This`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+- **`Usage`**: [CUDASparseBlas.h_kw.md_docs.md](./CUDASparseBlas.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

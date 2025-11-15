@@ -1,0 +1,49 @@
+# Index: `docs/test/onnx/exporter/`
+
+## Overview
+
+This folder contains source code, configurations, or documentation for the PyTorch project.
+
+**Location**: `docs/test/onnx/exporter/`
+
+## Subfolders
+
+*No subfolders.*
+
+## Files
+
+| File | Description | Documentation | Keywords |
+|------|-------------|---------------|----------|
+| [`README.md_docs.md`](../../../../../docs/test/onnx/exporter/README.md_docs.md) | Documentation | [docs](./README.md_docs.md_docs.md) | [keywords](./README.md_docs.md_kw.md) |
+| [`README.md_kw.md`](../../../../../docs/test/onnx/exporter/README.md_kw.md) | Documentation | [docs](./README.md_kw.md_docs.md) | [keywords](./README.md_kw.md_kw.md) |
+| [`test_api.py_docs.md`](../../../../../docs/test/onnx/exporter/test_api.py_docs.md) | Test file | [docs](./test_api.py_docs.md_docs.md) | [keywords](./test_api.py_docs.md_kw.md) |
+| [`test_api.py_kw.md`](../../../../../docs/test/onnx/exporter/test_api.py_kw.md) | Test file | [docs](./test_api.py_kw.md_docs.md) | [keywords](./test_api.py_kw.md_kw.md) |
+| [`test_building.py_docs.md`](../../../../../docs/test/onnx/exporter/test_building.py_docs.md) | Test file | [docs](./test_building.py_docs.md_docs.md) | [keywords](./test_building.py_docs.md_kw.md) |
+| [`test_building.py_kw.md`](../../../../../docs/test/onnx/exporter/test_building.py_kw.md) | Test file | [docs](./test_building.py_kw.md_docs.md) | [keywords](./test_building.py_kw.md_kw.md) |
+| [`test_capture_strategies.py_docs.md`](../../../../../docs/test/onnx/exporter/test_capture_strategies.py_docs.md) | Test file | [docs](./test_capture_strategies.py_docs.md_docs.md) | [keywords](./test_capture_strategies.py_docs.md_kw.md) |
+| [`test_capture_strategies.py_kw.md`](../../../../../docs/test/onnx/exporter/test_capture_strategies.py_kw.md) | Test file | [docs](./test_capture_strategies.py_kw.md_docs.md) | [keywords](./test_capture_strategies.py_kw.md_kw.md) |
+| [`test_core.py_docs.md`](../../../../../docs/test/onnx/exporter/test_core.py_docs.md) | Test file | [docs](./test_core.py_docs.md_docs.md) | [keywords](./test_core.py_docs.md_kw.md) |
+| [`test_core.py_kw.md`](../../../../../docs/test/onnx/exporter/test_core.py_kw.md) | Test file | [docs](./test_core.py_kw.md_docs.md) | [keywords](./test_core.py_kw.md_kw.md) |
+| [`test_dynamic_shapes.py_docs.md`](../../../../../docs/test/onnx/exporter/test_dynamic_shapes.py_docs.md) | Test file | [docs](./test_dynamic_shapes.py_docs.md_docs.md) | [keywords](./test_dynamic_shapes.py_docs.md_kw.md) |
+| [`test_dynamic_shapes.py_kw.md`](../../../../../docs/test/onnx/exporter/test_dynamic_shapes.py_kw.md) | Test file | [docs](./test_dynamic_shapes.py_kw.md_docs.md) | [keywords](./test_dynamic_shapes.py_kw.md_kw.md) |
+| [`test_hf_models_e2e.py_docs.md`](../../../../../docs/test/onnx/exporter/test_hf_models_e2e.py_docs.md) | Test file | [docs](./test_hf_models_e2e.py_docs.md_docs.md) | [keywords](./test_hf_models_e2e.py_docs.md_kw.md) |
+| [`test_hf_models_e2e.py_kw.md`](../../../../../docs/test/onnx/exporter/test_hf_models_e2e.py_kw.md) | Test file | [docs](./test_hf_models_e2e.py_kw.md_docs.md) | [keywords](./test_hf_models_e2e.py_kw.md_kw.md) |
+| [`test_ir_passes.py_docs.md`](../../../../../docs/test/onnx/exporter/test_ir_passes.py_docs.md) | Test file | [docs](./test_ir_passes.py_docs.md_docs.md) | [keywords](./test_ir_passes.py_docs.md_kw.md) |
+| [`test_ir_passes.py_kw.md`](../../../../../docs/test/onnx/exporter/test_ir_passes.py_kw.md) | Test file | [docs](./test_ir_passes.py_kw.md_docs.md) | [keywords](./test_ir_passes.py_kw.md_kw.md) |
+| [`test_small_models_e2e.py_docs.md`](../../../../../docs/test/onnx/exporter/test_small_models_e2e.py_docs.md) | Test file | [docs](./test_small_models_e2e.py_docs.md_docs.md) | [keywords](./test_small_models_e2e.py_docs.md_kw.md) |
+| [`test_small_models_e2e.py_kw.md`](../../../../../docs/test/onnx/exporter/test_small_models_e2e.py_kw.md) | Test file | [docs](./test_small_models_e2e.py_kw.md_docs.md) | [keywords](./test_small_models_e2e.py_kw.md_kw.md) |
+| [`test_tensors.py_docs.md`](../../../../../docs/test/onnx/exporter/test_tensors.py_docs.md) | Test file | [docs](./test_tensors.py_docs.md_docs.md) | [keywords](./test_tensors.py_docs.md_kw.md) |
+| [`test_tensors.py_kw.md`](../../../../../docs/test/onnx/exporter/test_tensors.py_kw.md) | Test file | [docs](./test_tensors.py_kw.md_docs.md) | [keywords](./test_tensors.py_kw.md_kw.md) |
+| [`test_verification.py_docs.md`](../../../../../docs/test/onnx/exporter/test_verification.py_docs.md) | Test file | [docs](./test_verification.py_docs.md_docs.md) | [keywords](./test_verification.py_docs.md_kw.md) |
+| [`test_verification.py_kw.md`](../../../../../docs/test/onnx/exporter/test_verification.py_kw.md) | Test file | [docs](./test_verification.py_kw.md_docs.md) | [keywords](./test_verification.py_kw.md_kw.md) |
+
+
+## Navigation
+
+- **Parent Folder**: [..](../index.md)
+- **Folder Documentation**: [doc.md](./doc.md)
+- **Keyword Index**: [sub.md](./sub.md)
+
+---
+
+*Generated by PyTorch Repository Documentation System*

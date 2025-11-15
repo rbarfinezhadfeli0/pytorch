@@ -1,0 +1,193 @@
+# Documentation: `docs/torchgen/gen_backend_stubs.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/torchgen/gen_backend_stubs.py_kw.md`
+- **Size**: 4,646 bytes (4.54 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `torchgen/gen_backend_stubs.py`
+
+## File Information
+
+- **Original File**: [torchgen/gen_backend_stubs.py](../../torchgen/gen_backend_stubs.py)
+- **Documentation**: [`gen_backend_stubs.py_docs.md`](./gen_backend_stubs.py_docs.md)
+- **Folder**: `torchgen`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`name`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`that`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+
+### Functions
+
+- **`create_backend_index`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`create_decl`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`error_on_missing_kernels`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`gen_dispatcher_registrations`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`gen_dispatchkey_nativefunc_headers`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`main`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`make_file_manager`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`parse_backend_yaml`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`run`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+
+### Imports
+
+- **`CodeTemplate`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`Counter`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`DispatcherSignature`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`Path`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`SelectiveBuilder`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`Sequence`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`TYPE_CHECKING`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`YamlLoader`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`__future__`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`annotations`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`argparse`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`collections`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`collections.abc`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`concatMap`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`get_grouped_native_functions`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`native_function_manager`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`os`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`pathlib`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`re`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`torchgen.api.dispatcher`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`torchgen.api.types`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`torchgen.code_template`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`torchgen.context`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`torchgen.dest`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`torchgen.gen`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`torchgen.model`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`torchgen.selective_build.selector`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`torchgen.utils`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`torchgen.yaml_utils`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`typing`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+- **`yaml`**: [gen_backend_stubs.py_docs.md](./gen_backend_stubs.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torchgen`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torchgen`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torchgen`):
+
+- [`gen_functionalization_type.py_docs.md_docs.md`](./gen_functionalization_type.py_docs.md_docs.md)
+- [`BUILD.bazel_docs.md_docs.md`](./BUILD.bazel_docs.md_docs.md)
+- [`context.py_kw.md_docs.md`](./context.py_kw.md_docs.md)
+- [`native_function_generation.py_kw.md_docs.md`](./native_function_generation.py_kw.md_docs.md)
+- [`gen_schema_utils.py_docs.md_docs.md`](./gen_schema_utils.py_docs.md_docs.md)
+- [`utils.py_docs.md_docs.md`](./utils.py_docs.md_docs.md)
+- [`gen_aoti_c_shim.py_docs.md_docs.md`](./gen_aoti_c_shim.py_docs.md_docs.md)
+- [`local.py_docs.md_docs.md`](./local.py_docs.md_docs.md)
+- [`gen.py_kw.md_docs.md`](./gen.py_kw.md_docs.md)
+- [`gen_aoti_c_shim.py_kw.md_docs.md`](./gen_aoti_c_shim.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `gen_backend_stubs.py_kw.md_docs.md`
+- **Keyword Index**: `gen_backend_stubs.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

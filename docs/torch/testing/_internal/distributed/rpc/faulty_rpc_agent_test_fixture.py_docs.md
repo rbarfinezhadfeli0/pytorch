@@ -1,0 +1,187 @@
+# Documentation: `torch/testing/_internal/distributed/rpc/faulty_rpc_agent_test_fixture.py`
+
+## File Metadata
+
+- **Path**: `torch/testing/_internal/distributed/rpc/faulty_rpc_agent_test_fixture.py`
+- **Size**: 2,142 bytes (2.09 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**.
+
+## Original Source
+
+```python
+# mypy: allow-untyped-defs
+
+import torch.distributed.rpc as rpc
+import torch.distributed.rpc._testing  # noqa: F401
+from torch.testing._internal.distributed.rpc.rpc_agent_test_fixture import (
+    RpcAgentTestFixture,
+)
+
+
+# The following message types are currently retried in the RREF protocol and
+# distributed autograd. Thus only these messages should be tested with the
+# Faulty RPC Agent.
+retryable_message_types = [
+    "RREF_FORK_REQUEST",
+    "RREF_CHILD_ACCEPT",
+    "RREF_USER_DELETE",
+    "CLEANUP_AUTOGRAD_CONTEXT_REQ",
+]
+
+# The following messages incur the corresponding delay in seconds while being
+# processed in FaultyTensorPipeAgent's enqueueSend() function.
+default_messages_to_delay = {
+    "PYTHON_CALL": 1.5,  # Python UDF
+    "SCRIPT_CALL": 1.5,  # Script/Builtin
+}
+
+
+class FaultyRpcAgentTestFixture(RpcAgentTestFixture):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.messages_to_fail = retryable_message_types
+        self.messages_to_delay = default_messages_to_delay
+
+    @property
+    def rpc_backend(self):
+        return rpc.backend_registry.BackendType["FAULTY_TENSORPIPE"]
+
+    @property
+    def rpc_backend_options(self):
+        return rpc.backend_registry.construct_rpc_backend_options(
+            self.rpc_backend,
+            init_method=self.init_method,
+            num_worker_threads=8,
+            num_fail_sends=3,
+            messages_to_fail=self.messages_to_fail,
+            messages_to_delay=self.messages_to_delay,
+        )
+
+    def setup_fault_injection(self, faulty_messages, messages_to_delay):
+        if faulty_messages is not None:
+            self.messages_to_fail = faulty_messages
+        if messages_to_delay is not None:
+            self.messages_to_delay = messages_to_delay
+
+    def get_shutdown_error_regex(self):
+        error_regexes = [
+            "Exception in thread pool task",
+            "Connection reset by peer",
+            "Connection closed by peer",
+        ]
+        return "|".join([f"({error_str})" for error_str in error_regexes])
+
+    def get_timeout_error_regex(self):
+        return "RPC ran for more than"
+
+```
+
+
+
+## High-Level Overview
+
+
+This Python file contains 1 class(es) and 6 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `FaultyRpcAgentTestFixture`
+
+**Functions defined**: `__init__`, `rpc_backend`, `rpc_backend_options`, `setup_fault_injection`, `get_shutdown_error_regex`, `get_timeout_error_regex`
+
+**Key imports**: torch.distributed.rpc as rpc, torch.distributed.rpc._testing  
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/testing/_internal/distributed/rpc`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `torch.distributed.rpc as rpc`
+- `torch.distributed.rpc._testing  `
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python torch/testing/_internal/distributed/rpc/faulty_rpc_agent_test_fixture.py
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/testing/_internal/distributed/rpc`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`faulty_agent_rpc_test.py_docs.md`](./faulty_agent_rpc_test.py_docs.md)
+- [`dist_autograd_test.py_docs.md`](./dist_autograd_test.py_docs.md)
+- [`rpc_test.py_docs.md`](./rpc_test.py_docs.md)
+- [`rpc_agent_test_fixture.py_docs.md`](./rpc_agent_test_fixture.py_docs.md)
+- [`dist_optimizer_test.py_docs.md`](./dist_optimizer_test.py_docs.md)
+- [`tensorpipe_rpc_agent_test_fixture.py_docs.md`](./tensorpipe_rpc_agent_test_fixture.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `faulty_rpc_agent_test_fixture.py_docs.md`
+- **Keyword Index**: `faulty_rpc_agent_test_fixture.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,82 @@
+# Keyword Index: `docs/tools/linter/adapters/pyfmt_linter.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/tools/linter/adapters/pyfmt_linter.py_kw.md](../../../../../docs/tools/linter/adapters/pyfmt_linter.py_kw.md)
+- **Documentation**: [`pyfmt_linter.py_kw.md_docs.md`](./pyfmt_linter.py_kw.md_docs.md)
+- **Folder**: `docs/tools/linter/adapters`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Architecture`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Basic`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Classs`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Complete`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Considerations`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Dependencies`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Design`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Detailed`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Documentation`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Efficiency`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Enum`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Extracted`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`File`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Folder`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Functions`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Generated`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`High`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`How`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Imports`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`In`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Index`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Information`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Keyword`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Keywords`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Level`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`LintMessage`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`LintSeverity`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Map`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Metadata`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`NamedTuple`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Original`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Overview`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Path`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Performance`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Purpose`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`PyTorch`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Related`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Repository`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Safety`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Section`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Security`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Source`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`System`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Testing`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`The`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`This`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+- **`Usage`**: [pyfmt_linter.py_kw.md_docs.md](./pyfmt_linter.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

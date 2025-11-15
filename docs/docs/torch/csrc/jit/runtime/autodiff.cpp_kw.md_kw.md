@@ -1,0 +1,85 @@
+# Keyword Index: `docs/torch/csrc/jit/runtime/autodiff.cpp_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/csrc/jit/runtime/autodiff.cpp_kw.md](../../../../../../docs/torch/csrc/jit/runtime/autodiff.cpp_kw.md)
+- **Documentation**: [`autodiff.cpp_kw.md_docs.md`](./autodiff.cpp_kw.md_docs.md)
+- **Folder**: `docs/torch/csrc/jit/runtime`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Analysis`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Architecture`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Basic`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Class`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Complete`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Considerations`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Dependencies`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Design`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Detailed`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Documentation`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Efficiency`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Exception`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Extracted`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`File`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Folder`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Functions`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Generated`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`GradOf`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`GradientHelper`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`High`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`How`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`In`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Includes`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Index`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Information`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Keyword`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Keywords`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Level`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Map`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Metadata`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Namespaces`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Optimize`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Original`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Overview`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Performance`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Purpose`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`PyTorch`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Related`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Repository`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`ReverseDetails`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Safety`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Section`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Security`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Source`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Structs`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`System`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Testing`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`The`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`This`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+- **`Usage`**: [autodiff.cpp_kw.md_docs.md](./autodiff.cpp_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

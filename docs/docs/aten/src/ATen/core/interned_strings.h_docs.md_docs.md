@@ -1,0 +1,591 @@
+# Documentation: `docs/aten/src/ATen/core/interned_strings.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/core/interned_strings.h_docs.md`
+- **Size**: 15,969 bytes (15.59 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/core/interned_strings.h`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/core/interned_strings.h`
+- **Size**: 13,408 bytes (13.09 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#pragma once
+
+#include <c10/macros/Macros.h>
+
+#include <ATen/core/aten_interned_strings.h>
+#include <ATen/core/symbol.h>
+
+namespace c10 {
+
+#define FORALL_NS_SYMBOLS(_)         \
+  _(namespaces, prim)                \
+  _(namespaces, prims)               \
+  _(namespaces, nvprims)             \
+  _(namespaces, aten)                \
+  _(namespaces, cuda)                \
+  _(namespaces, onnx)                \
+  _(namespaces, attr)                \
+  _(namespaces, scope)               \
+  _(namespaces, user)                \
+  _(namespaces, _caffe2)             \
+  _(namespaces, dimname)             \
+  _(namespaces, namespaces)          \
+  _(prim, Assign)                    \
+  _(prim, BroadcastingChunk)         \
+  _(prim, BroadcastSizes)            \
+  _(prim, ReductionSizes)            \
+  _(prim, Constant)                  \
+  _(prim, ChunkSizes)                \
+  _(prim, ConstantMKLDNNTensor)      \
+  _(prim, BroadcastMKLDNNTensors)    \
+  _(prim, MKLDNNGroup)               \
+  _(prim, MKLDNNHardSwish)           \
+  _(prim, MKLDNNHardSigmoid)         \
+  _(prim, MKLDNNHardTanh)            \
+  _(prim, MKLDNNClamp)               \
+  _(prim, StaticRuntimeCopyOuts)     \
+  _(prim, Drop)                      \
+  _(prim, Eval)                      \
+  _(prim, Expand) /* onnx */         \
+  _(prim, FusionGroup)               \
+  _(prim, CudaFusionGroup)           \
+  _(prim, CudaFusionGuard)           \
+  _(prim, oneDNNFusionGroup)         \
+  _(prim, oneDNNFusionGuard)         \
+  _(prim, FunctionalGraph)           \
+  _(prim, add_optional)              \
+  _(prim, view_copy)                 \
+  _(prim, permute_copy)              \
+  _(prim, reshape_copy)              \
+  _(prim, squeeze_copy)              \
+  _(prim, t_copy)                    \
+  _(prim, transpose_copy)            \
+  _(prim, unsqueeze_copy)            \
+  _(prim, flatten_copy)              \
+  _(prim, expand_copy)               \
+  _(prim, expand_as_copy)            \
+  _(prim, DifferentiableGraph)       \
+  _(prim, TensorExprGroup)           \
+  _(prim, TensorExprDynamicGroup)    \
+  _(prim, StaticSubgraph)            \
+  _(prim, If)                        \
+  _(prim, Jump) /* debug */          \
+  _(prim, JumpNZ) /* debug */        \
+  _(prim, JumpZ) /* debug */         \
+  _(prim, Load)                      \
+  _(prim, Loop)                      \
+  _(prim, Param)                     \
+  _(prim, PackPadded) /* onnx */     \
+  _(prim, PadPacked) /* onnx */      \
+  _(prim, Placeholder) /* debug */   \
+  _(prim, Print)                     \
+  _(prim, EmptyListLiteral)          \
+  _(prim, LegacyTypedConstructor)    \
+  _(prim, PythonOp)                  \
+  _(prim, IgnoredPythonOp)           \
+  _(prim, Reverse)                   \
+  _(prim, Return)                    \
+  _(prim, ReturnStmt)                \
+  _(prim, BreakStmt)                 \
+  _(prim, ContinueStmt)              \
+  _(prim, ComprehensionScope)        \
+  _(prim, Store)                     \
+  _(prim, AutogradZero)              \
+  _(prim, AutogradAnyNonZero)        \
+  _(prim, AutogradAllNonZero)        \
+  _(prim, AutogradAllZero)           \
+  _(prim, Starred)                   \
+  _(prim, TupleConstruct)            \
+  _(prim, TupleUnpack)               \
+  _(prim, TupleIndex)                \
+  _(prim, TupleSlice)                \
+  _(prim, ListConstruct)             \
+  _(prim, ListUnpack)                \
+  _(prim, DictConstruct)             \
+  _(prim, ModuleContainerIndex)      \
+  _(prim, EnumName)                  \
+  _(prim, EnumValue)                 \
+  _(prim, StringIndex)               \
+  _(prim, NumToTensor)               \
+  _(prim, Uninitialized)             \
+  _(prim, VarConcat)                 \
+  _(prim, VarStack)                  \
+  _(prim, With)                      \
+  _(prim, Enter)                     \
+  _(prim, Exit)                      \
+  _(prim, IfThenElse)                \
+  _(aten, Bool)                      \
+  _(aten, Int)                       \
+  _(aten, FloatImplicit)             \
+  _(aten, ComplexImplicit)           \
+  _(aten, IntImplicit)               \
+  _(aten, ScalarImplicit)            \
+  _(aten, Float)                     \
+  _(aten, Complex)                   \
+  _(aten, str)                       \
+  _(aten, Delete)                    \
+  _(prim, device)                    \
+  _(prim, dtype)                     \
+  _(prim, layout)                    \
+  _(prim, id)                        \
+  _(prim, requires_grad)             \
+  _(prim, MakeTestTensor) /* test */ \
+  _(prim, AutogradAdd)               \
+  _(prim, GradOf)                    \
+  _(aten, grad)                      \
+  _(aten, backward)                  \
+  _(prim, Guard)                     \
+  _(prim, BailOut)                   \
+  _(prim, TypeCheck)                 \
+  _(prim, RequiresGradCheck)         \
+  _(prim, FallbackGraph)             \
+  _(prim, FusedConcat)               \
+  _(prim, ConstantChunk)             \
+  _(prim, MMTreeReduce)              \
+  _(prim, MMBatchSide)               \
+  _(prim, list)                      \
+  _(prim, dict)                      \
+  _(prim, min)                       \
+  _(prim, max)                       \
+  _(prim, abs)                       \
+  _(aten, divmod)                    \
+  _(prim, zip)                       \
+  _(prim, enumerate)                 \
+  _(prim, range)                     \
+  _(prim, rangelist)                 \
+  _(prim, isinstance)                \
+  _(prim, tolist)                    \
+  _(prim, unchecked_cast)            \
+  _(aten, _grad_sum_to_size)         \
+  _(aten, _size_if_not_equal)        \
+  _(aten, _ncf_unsqueeze)            \
+  _(aten, warn)                      \
+  _(aten, sorted)                    \
+  _(aten, floordiv)                  \
+  _(aten, __range_length)            \
+  _(aten, __derive_index)            \
+  _(aten, __round_to_zero_floordiv)  \
+  _(aten, is_scripting)              \
+  _(aten, _unwrap_optional)          \
+  _(prim, fork)                      \
+  _(prim, awaitable)                 \
+  _(prim, forkClosure)               \
+  _(prim, awaitableClosure)          \
+  _(prim, awaitable_nowait)          \
+  _(prim, awaitable_wait)            \
+  _(prim, RaiseException)            \
+  _(prim, Closure)                   \
+  _(prim, CreateObject)              \
+  _(prim, SetAttr)                   \
+  _(prim, GetAttr)                   \
+  _(prim, HasAttr)                   \
+  _(prim, profile)                   \
+  _(prim, profile_ivalue)            \
+  _(prim, AddStatValue)              \
+  _(prim, TimePoint)                 \
+  _(prim, CallFunction)              \
+  _(prim, CallMethod)                \
+  _(prim, LoopContinuation)          \
+  _(prim, annotate)                  \
+  _(prim, TracedModuleForward)       \
+  _(prim, TracedFork)                \
+  _(prim, TracedAttr)                \
+  _(prim, rpc_async)                 \
+  _(prim, rpc_sync)                  \
+  _(prim, rpc_remote)                \
+  _(prim, is_cuda)                   \
+  _(aten, append)                    \
+  _(aten, as_tensor)                 \
+  _(aten, adaptive_avg_pool2d_backward) \
+  _(aten, dim)                       \
+  _(aten, format)                    \
+  _(aten, percentFormat)             \
+  _(aten, __not__)                   \
+  _(aten, __is__)                    \
+  _(aten, __isnot__)                 \
+  _(aten, _ger)                      \
+  _(aten, __getitem__)               \
+  _(aten, _set_item)                 \
+  _(aten, manual_seed)               \
+  _(aten, device)                    \
+  _(aten, hash)                      \
+  _(aten, len)                       \
+  _(aten, list)                      \
+  _(aten, dict)                      \
+  _(aten, wait)                      \
+  _(aten, save)                      \
+  _(aten, keys)                      \
+  _(aten, ord)                       \
+  _(aten, chr)                       \
+  _(aten, hex)                       \
+  _(aten, oct)                       \
+  _(aten, clear)                     \
+  _(aten, setdefault)                \
+  _(aten, bin)                       \
+  _(aten, pop)                       \
+  _(aten, insert)                    \
+  _(aten, tensor)                    \
+  _(prim, unchecked_unwrap_optional) \
+  _(aten, __contains__)              \
+  _(prim, BailoutTemplate)           \
+  _(prim, grad)                      \
+  _(cuda, _set_device)               \
+  _(cuda, set_stream)                \
+  _(cuda, _current_device)           \
+  _(cuda, synchronize)               \
+  _(aten, has_torch_function)        \
+  _(aten, is_autocast_enabled)       \
+  _(aten, is_autocast_cpu_enabled)   \
+  _(aten, is_autocast_xla_enabled)   \
+  _(aten, get_autocast_dtype)        \
+  _(aten, is_autocast_mps_enabled)   \
+  FORALL_ATEN_BASE_SYMBOLS(_)        \
+  _(onnx, Add)                       \
+  _(onnx, Concat)                    \
+  _(onnx, Constant)                  \
+  _(onnx, ConstantFill)              \
+  _(onnx, Div)                       \
+  _(onnx, GRU)                       \
+  _(onnx, Gather)                    \
+  _(onnx, Gemm)                      \
+  _(onnx, LSTM)                      \
+  _(onnx, MatMul)                    \
+  _(onnx, Min)                       \
+  _(onnx, Max)                       \
+  _(onnx, Mul)                       \
+  _(onnx, Pow)                       \
+  _(onnx, RNN)                       \
+  _(onnx, Shape)                     \
+  _(onnx, Size)                      \
+  _(onnx, Slice)                     \
+  _(onnx, Softmax)                   \
+  _(onnx, Squeeze)                   \
+  _(onnx, Sub)                       \
+  _(onnx, Transpose)                 \
+  _(onnx, Unsqueeze)                 \
+  _(onnx, Loop)                      \
+  _(onnx, If)                        \
+  _(onnx, Reshape)                   \
+  _(onnx, Expand)                    \
+  _(onnx, Equal)                     \
+  _(onnx, Greater)                   \
+  _(onnx, GreaterOrEqual)            \
+  _(onnx, Less)                      \
+  _(onnx, LessOrEqual)               \
+  _(onnx, Not)                       \
+  _(aten, ATen)                      \
+  _(onnx, Split)                     \
+  _(onnx, ConstantOfShape)           \
+  _(onnx, Cast)                      \
+  _(onnx, Mod)                       \
+  _(onnx, Sqrt)                      \
+  _(onnx, SplitToSequence)           \
+  _(onnx, SequenceAt)                \
+  _(onnx, SequenceConstruct)         \
+  _(onnx, SequenceEmpty)             \
+  _(onnx, SequenceInsert)            \
+  _(onnx, SequenceErase)             \
+  _(onnx, ConcatFromSequence)        \
+  _(onnx, Identity)                  \
+  _(onnx, SoftmaxCrossEntropyLoss)   \
+  _(onnx, NegativeLogLikelihoodLoss) \
+  _(onnx, LogSoftmax)                \
+  _(onnx, ReduceL1)                  \
+  _(onnx, ReduceL2)                  \
+  _(onnx, Conv)                      \
+  _(onnx, BatchNormalization)        \
+  _(onnx, ReduceMean)                \
+  _(onnx, ReduceProd)                \
+  _(onnx, Relu)                      \
+  _(onnx, Neg)                       \
+  _(onnx, NonZero)                   \
+  _(onnx, Range)                     \
+  _(onnx, Tile)                      \
+  _(onnx, Where)                     \
+  _(onnx, Optional)                  \
+  _(onnx, OptionalGetElement)        \
+  _(onnx, OptionalHasElement)        \
+  FORALL_ATTR_BASE_SYMBOLS(_)        \
+  _(attr, Subgraph)                  \
+  _(attr, ReverseSubgraph)           \
+  _(attr, f_real_outputs)            \
+  _(attr, df_input_vjps)             \
+  _(attr, df_input_captured_inputs)  \
+  _(attr, df_input_captured_outputs) \
+  _(attr, df_output_vjps)            \
+  _(attr, axes)                      \
+  _(attr, symbolic_shape_inputs)     \
+  _(attr, allow_stack_outputs)       \
+  _(attr, striding_inputs_desc)      \
+  _(attr, striding_outputs_desc)     \
+  _(attr, broadcast)                 \
+  _(attr, direction)                 \
+  _(attr, ends)                      \
+  _(attr, inplace)                   \
+  _(attr, input_as_shape)            \
+  _(attr, is_zero)                   \
+  _(attr, num_none)                  \
+  _(attr, num_present)               \
+  _(attr, perm)                      \
+  _(attr, starts)                    \
+  _(attr, profiled_type)             \
+  _(attr, transA)                    \
+  _(attr, transB)                    \
+  _(attr, name)                      \
+  _(attr, module)                    \
+  _(attr, beg)                       \
+  _(attr, idx)                       \
+  _(attr, split)                     \
+  _(attr, slot)                      \
+  _(attr, kinds)                     \
+  _(attr, types)                     \
+  _(attr, scope)                     \
+  _(attr, keepdims)                  \
+  _(attr, cache_id)                  \
+  _(attr, new_axis)                  \
+  _(attr, warn_id)                   \
+  _(attr, output_layouts)            \
+  _(attr, allowzero)                 \
+  _(attr, seen_none)                 \
+  _(attr, overload_name)             \
+  _(attr, node_stack_idx)
+
+enum class _keys : unique_t {
+    #define DEFINE_KEY(ns, s) ns##_##s,
+    FORALL_NS_SYMBOLS(DEFINE_KEY)
+    #undef DEFINE_KEY
+    num_symbols
+};
+
+#define DEFINE_SYMBOL(ns, s) \
+  namespace ns { constexpr Symbol s(static_cast<unique_t>(_keys::ns##_##s)); }
+FORALL_NS_SYMBOLS(DEFINE_SYMBOL)
+#undef DEFINE_SYMBOL
+
+} // namespace c10
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 1 class(es)/struct(s) and 4 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `ns`, `c10`
+
+**Classes/Structs**: `_keys`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/core`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `c10/macros/Macros.h`
+- `ATen/core/aten_interned_strings.h`
+- `ATen/core/symbol.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Implements or uses **caching** mechanisms.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/core`):
+
+- [`DistributionsHelper.h_docs.md`](./DistributionsHelper.h_docs.md)
+- [`rref_interface.h_docs.md`](./rref_interface.h_docs.md)
+- [`Generator.h_docs.md`](./Generator.h_docs.md)
+- [`enum_type.h_docs.md`](./enum_type.h_docs.md)
+- [`QuantizerBase.h_docs.md`](./QuantizerBase.h_docs.md)
+- [`Array.h_docs.md`](./Array.h_docs.md)
+- [`MetaFallbackKernel.cpp_docs.md`](./MetaFallbackKernel.cpp_docs.md)
+- [`ATenOpList.h_docs.md`](./ATenOpList.h_docs.md)
+- [`ivalue_inl.h_docs.md`](./ivalue_inl.h_docs.md)
+- [`TransformationHelper.h_docs.md`](./TransformationHelper.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `interned_strings.h_docs.md`
+- **Keyword Index**: `interned_strings.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/core`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/core`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Implements or uses **caching** mechanisms.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/core`):
+
+- [`operator_name.cpp_docs.md_docs.md`](./operator_name.cpp_docs.md_docs.md)
+- [`builtin_function.h_kw.md_docs.md`](./builtin_function.h_kw.md_docs.md)
+- [`QuantizerBase.h_docs.md_docs.md`](./QuantizerBase.h_docs.md_docs.md)
+- [`MT19937RNGEngine.h_docs.md_docs.md`](./MT19937RNGEngine.h_docs.md_docs.md)
+- [`UndefinedTensorImpl.h_docs.md_docs.md`](./UndefinedTensorImpl.h_docs.md_docs.md)
+- [`IListRef_test.cpp_docs.md_docs.md`](./IListRef_test.cpp_docs.md_docs.md)
+- [`CheckMemoryFormat.h_docs.md_docs.md`](./CheckMemoryFormat.h_docs.md_docs.md)
+- [`Tensor.cpp_kw.md_docs.md`](./Tensor.cpp_kw.md_docs.md)
+- [`PythonFallbackKernel.cpp_docs.md_docs.md`](./PythonFallbackKernel.cpp_docs.md_docs.md)
+- [`Dict.h_kw.md_docs.md`](./Dict.h_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `interned_strings.h_docs.md_docs.md`
+- **Keyword Index**: `interned_strings.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

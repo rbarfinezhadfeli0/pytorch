@@ -1,0 +1,285 @@
+# Documentation: `docs/torch/nativert/executor/memory/FunctionSchema.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/nativert/executor/memory/FunctionSchema.cpp_docs.md`
+- **Size**: 4,499 bytes (4.39 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/nativert/executor/memory/FunctionSchema.cpp`
+
+## File Metadata
+
+- **Path**: `torch/nativert/executor/memory/FunctionSchema.cpp`
+- **Size**: 2,071 bytes (2.02 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#include <torch/nativert/executor/memory/FunctionSchema.h>
+
+namespace torch::nativert {
+
+bool FunctionSchema::alias(size_t input_idx, size_t output_idx) const {
+  // probably quicker than using a map since
+  // overridden inputs/outputs should be small
+  for (const auto& [i, o] : aliasing_spec_) {
+    if (i == input_idx && o == output_idx) {
+      return true;
+    }
+  }
+
+  VLOG(1) << "checking aliasing spec for " << c10_fn_schema_.name() << " "
+          << (c10_fn_schema_.is_varret() ? "varret" : "non-varret") << " "
+          << (c10_fn_schema_.is_vararg() ? "vararg" : "non-vararg");
+
+  if (!aliasing_spec_.empty()) {
+    VLOG(1) << "aliasing spec is not empty but no entry found for ("
+            << input_idx << "-->" << output_idx
+            << ") -- falling back to schema->may_contain_alias()";
+  }
+
+  /*
+    varret and vararg will contribute to the input/output idx's
+    but because we don't know how many inputs/outputs there are,
+    the schema will consider these indices to be out of bounds.
+
+    e.g., op(a, b, c, d) where c and d are variadic will result in
+    may_contain_alias(x, idx_of(c)) and may_contain_alias(x, idx_of(d)) to throw
+    an out-of-bounds exception
+
+    in this case, we can apply the worst-case aliasing to the varidic
+    inputs/outputs i.e., all outputs might alias all varargs and all inputs
+    might be aliased by all varrets
+  */
+
+  if (c10_fn_schema_.is_vararg() &&
+      input_idx >= c10_fn_schema_.arguments().size()) {
+    VLOG(1) << "applying worst-case aliasing for " << c10_fn_schema_.name()
+            << "'s variadic input " << input_idx;
+    return true;
+  }
+
+  if (c10_fn_schema_.is_varret() &&
+      output_idx >= c10_fn_schema_.returns().size()) {
+    VLOG(1) << "applying worst-case aliasing for " << c10_fn_schema_.name()
+            << "'s variadic output " << output_idx;
+    return true;
+  }
+
+  return c10_fn_schema_.may_contain_alias(
+      {c10::SchemaArgType::output, output_idx},
+      {c10::SchemaArgType::input, input_idx},
+      /* bidirectional = */ false);
+}
+
+} // namespace torch::nativert
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 4 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/nativert/executor/memory`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `torch/nativert/executor/memory/FunctionSchema.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/nativert/executor/memory`):
+
+- [`Bump.h_docs.md`](./Bump.h_docs.md)
+- [`AliasAnalyzer.cpp_docs.md`](./AliasAnalyzer.cpp_docs.md)
+- [`LayoutPlanner.h_docs.md`](./LayoutPlanner.h_docs.md)
+- [`LayoutManager.cpp_docs.md`](./LayoutManager.cpp_docs.md)
+- [`DisjointStorageGroups.h_docs.md`](./DisjointStorageGroups.h_docs.md)
+- [`LayoutPlanner.cpp_docs.md`](./LayoutPlanner.cpp_docs.md)
+- [`GreedyBySize.h_docs.md`](./GreedyBySize.h_docs.md)
+- [`Bump.cpp_docs.md`](./Bump.cpp_docs.md)
+- [`DisjointStorageGroups.cpp_docs.md`](./DisjointStorageGroups.cpp_docs.md)
+- [`LayoutPlannerAlgorithm.h_docs.md`](./LayoutPlannerAlgorithm.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `FunctionSchema.cpp_docs.md`
+- **Keyword Index**: `FunctionSchema.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/nativert/executor/memory`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/nativert/executor/memory`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/nativert/executor/memory`):
+
+- [`LayoutPlannerSettings.h_kw.md_docs.md`](./LayoutPlannerSettings.h_kw.md_docs.md)
+- [`LayoutManager.h_kw.md_docs.md`](./LayoutManager.h_kw.md_docs.md)
+- [`AliasAnalyzer.h_kw.md_docs.md`](./AliasAnalyzer.h_kw.md_docs.md)
+- [`LayoutPlanner.h_docs.md_docs.md`](./LayoutPlanner.h_docs.md_docs.md)
+- [`LayoutPlanner.cpp_kw.md_docs.md`](./LayoutPlanner.cpp_kw.md_docs.md)
+- [`DisjointStorageGroups.cpp_docs.md_docs.md`](./DisjointStorageGroups.cpp_docs.md_docs.md)
+- [`DisjointStorageGroups.h_kw.md_docs.md`](./DisjointStorageGroups.h_kw.md_docs.md)
+- [`GreedyBySize.cpp_docs.md_docs.md`](./GreedyBySize.cpp_docs.md_docs.md)
+- [`FunctionSchema.cpp_kw.md_docs.md`](./FunctionSchema.cpp_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `FunctionSchema.cpp_docs.md_docs.md`
+- **Keyword Index**: `FunctionSchema.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,92 @@
+# Keyword Index: `test/inductor/test_pad_mm.py`
+
+## File Information
+
+- **Original File**: [test/inductor/test_pad_mm.py](../../../test/inductor/test_pad_mm.py)
+- **Documentation**: [`test_pad_mm.py_docs.md`](./test_pad_mm.py_docs.md)
+- **Folder**: `test/inductor`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`MaskedMHA`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`Model`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`PadMMTest`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+
+### Functions
+
+- **`__init__`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`addmm`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`bmm`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`fn`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`foo`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`forward`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`make_bmm_dtype_tracker`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`mm`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`setUp`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`test_cat_pad_mm_dyn_m`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`test_exclude_cat_padding`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`test_exclude_padding`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`test_masked_mha`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`test_no_autocast_in_pad_bmm_joint_graph_pass`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`test_original_aten_preserved_pad_mm`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`test_pad_addmm_2d_bias`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`test_pad_addmm_dyn_m`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`test_pad_addmm_dyn_mn`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`test_pad_batch`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`test_pad_bmm_dyn_b`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`test_pad_bmm_dyn_bm`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`test_pad_bmm_dyn_k`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`test_pad_mm_bf16`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`test_pad_mm_dyn_k`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`test_pad_mm_dyn_m`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`test_pad_mm_dyn_mnk`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`test_pad_mm_dyn_n`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`test_pad_single_cat`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`test_zero_dim`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`track_bmm_dtype`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`triton_tem_fused_mm`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+
+### Imports
+
+- **`FileCheck`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`HAS_CUDA_AND_TRITON`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`counters`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`fresh_cache`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`rand_strided`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`run_tests`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`skipIfRocm`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`torch`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`torch._dynamo.testing`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`torch._dynamo.utils`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`torch._inductor.config`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`torch._inductor.fx_passes.pad_mm`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`torch._inductor.test_case`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`torch._inductor.utils`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`torch.testing`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`torch.testing._internal.inductor_utils`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+- **`unittest`**: [test_pad_mm.py_docs.md](./test_pad_mm.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,85 @@
+# Keyword Index: `docs/torch/csrc/distributed/c10d/TCPStore.hpp_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/csrc/distributed/c10d/TCPStore.hpp_kw.md](../../../../../../docs/torch/csrc/distributed/c10d/TCPStore.hpp_kw.md)
+- **Documentation**: [`TCPStore.hpp_kw.md_docs.md`](./TCPStore.hpp_kw.md_docs.md)
+- **Folder**: `docs/torch/csrc/distributed/c10d`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Architecture`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Basic`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Class`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Complete`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Considerations`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Dependencies`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Design`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Detailed`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Documentation`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Efficiency`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Extracted`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`File`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Folder`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Generated`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`High`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`How`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`In`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Includes`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Index`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Information`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Keyword`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Keywords`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Level`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Map`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Metadata`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Namespaces`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Original`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Overview`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Performance`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Purpose`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`PyTorch`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Related`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Repository`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Safety`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Section`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Security`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`SocketAddress`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Source`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Store`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Structs`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`System`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`TCPClient`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`TCPServer`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`TCPStore`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`TCPStoreOptions`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`TORCH_API`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Testing`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`The`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`This`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+- **`Usage`**: [TCPStore.hpp_kw.md_docs.md](./TCPStore.hpp_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

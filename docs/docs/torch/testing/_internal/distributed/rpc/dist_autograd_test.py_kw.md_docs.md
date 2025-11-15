@@ -1,0 +1,363 @@
+# Documentation: `docs/torch/testing/_internal/distributed/rpc/dist_autograd_test.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/testing/_internal/distributed/rpc/dist_autograd_test.py_kw.md`
+- **Size**: 21,804 bytes (21.29 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `torch/testing/_internal/distributed/rpc/dist_autograd_test.py`
+
+## File Information
+
+- **Original File**: [torch/testing/_internal/distributed/rpc/dist_autograd_test.py](../../../../../../torch/testing/_internal/distributed/rpc/dist_autograd_test.py)
+- **Documentation**: [`dist_autograd_test.py_docs.md`](./dist_autograd_test.py_docs.md)
+- **Folder**: `torch/testing/_internal/distributed/rpc`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`CommonDistAutogradTest`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`CudaDistAutogradTest`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`DistAutogradTest`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`ExecMode`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`FaultyAgentDistAutogradTest`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`MyBackwardFunc`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`MyFunc`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`MyFuncSingleGrad`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`MyLocalCompute`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`MyRemoteCompute`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`NonContGradFunc`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`SimulateBackwardError`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`TensorPipeAgentDistAutogradTest`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`TensorPipeCudaDistAutogradTest`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`TestDebugInfoFunc`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`WrapperModule`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`static`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+
+### Functions
+
+- **`__init__`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_all_contexts_cleaned_up`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_backward_different_dtypes`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_backward_multiple_round_trips`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_backward_no_grad_on_tensor`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_backward_rref`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_backward_simple`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_backward_simple_python_udf`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_backward_simple_script_call`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_backwards_nested_python_udf`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_call_remote_embedding`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_check_rpc_done`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_compare_owner_value`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_complex_python_udf`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_exec_func`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_exec_func_with_dst`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_get_grad`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_mixed_requires_grad`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_mixed_requires_grad_operaton`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_multiple_backward`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_nested_backward_accumulate_grads`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_nested_python_udf`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_nested_rpc_call_backward_error`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_next_rank`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_python_udf_with_backward_error`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_run_test_backward_unused_send_function_in_thread`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_run_trainer`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_run_trainer_torchscript`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_set_rpc_done`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_slow_add`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_test_grad_only_on_return_value`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_test_graph`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_test_graph_for_py_nested_call`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_test_graph_for_py_nested_call_itself`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_test_nested_backward_accumulate_grads`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_test_no_graph_with_tensors_not_require_grad`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_test_rpc_complex_args`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_test_trainer_ps`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_torch_ones`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_verify_backwards`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_verify_backwards_remote`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_verify_graph_for_first_rpc_call`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_verify_graph_for_nested_rpc_call`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_verify_graph_for_rpc_call_exec`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`_workload_thread`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`backward`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`build_sparse_tensor`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`context_cleanup_test_helper`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`create_tensor`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`create_torchscript_tensor`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`forward`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`get_event`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`gradients`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`my_nested_rref_add`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`my_py_add`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`my_py_nested_call`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`my_rref_add`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`my_scalar_add`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`my_script_add`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`my_script_ref_add`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`post_hook_add_one`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`post_hook_add_two`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`ret_requires_grad`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_async_dist_autograd`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_autograd_context`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backward_accumulate_grads`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backward_autograd_engine_error`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backward_complex_python_udf`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backward_different_dtypes`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backward_different_dtypes_sparse`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backward_different_tensor_dims`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backward_invalid_args`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backward_multiple_output_tensors`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backward_multiple_roots`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backward_multiple_round_trips`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backward_multiple_round_trips_sparse`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backward_no_grad_on_tensor`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backward_no_grad_on_tensor_sparse`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backward_node_failure`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backward_node_failure_python_udf`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backward_python_udf_error`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backward_rref`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backward_rref_multi`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backward_rref_multi_sparse`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backward_rref_nested`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backward_rref_nested_sparse`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backward_rref_sparse`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backward_simple`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backward_simple_python_udf`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backward_simple_python_udf_sparse`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backward_simple_script_call`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backward_simple_script_call_sparse`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backward_simple_self`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backward_simple_self_sparse`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backward_simple_sparse`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backward_unused_send_function`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backward_unused_tensors`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backward_verify_hooks`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backward_without_context`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backward_without_rpc`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backwards_nested_python_udf`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_backwards_nested_python_udf_sparse`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_clean_context_during_backward`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_context_cleanup_nested_rpc`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_context_cleanup_nested_rpc_sparse`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_context_cleanup_no_tensors`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_context_cleanup_tensor_no_grad`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_context_cleanup_tensor_no_grad_sparse`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_context_cleanup_tensor_with_grad`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_context_cleanup_tensor_with_grad_sparse`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_debug_info`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_device_maps_backward_pass`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_dist_autograd_profiling`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_dist_autograd_sync_streams`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_embedding_bag_with_no_grad_tensors`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_error_in_context`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_gpu_simple`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_gpu_to_cpu_continuation`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_gpu_to_cpu_continuation_gpu_root`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_grad_copy_sparse_indices_extra_ref`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_grad_only_on_return_value`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_grad_only_on_return_value_remote`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_gradients_synchronizations`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_graph_for_builtin_call`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_graph_for_builtin_call_sparse`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_graph_for_builtin_remote_call`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_graph_for_builtin_remote_call_sparse`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_graph_for_py_nested_call`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_graph_for_py_nested_call_itself`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_graph_for_py_nested_call_itself_sparse`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_graph_for_py_nested_call_sparse`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_graph_for_py_nested_remote_call`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_graph_for_py_nested_remote_call_itself`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_graph_for_py_nested_remote_call_itself_sparse`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_graph_for_py_nested_remote_call_sparse`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_graph_for_python_call`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_graph_for_python_call_sparse`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_graph_for_python_remote_call`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_graph_for_python_remote_call_sparse`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_mixed_requires_grad`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_mixed_requires_grad_sparse`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_multiple_backward`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_multiple_backward_sparse`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_multiple_backward_with_errors`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_nested_backward_accumulate_grads`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_nested_backward_accumulate_grads_sparse`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_nested_context`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_no_grad_copy`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_no_grad_copy_sparse`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_no_graph_with_tensors_not_require_grad`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_no_graph_with_tensors_not_require_grad_remote`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_no_graph_with_tensors_not_require_grad_remote_sparse`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_no_graph_with_tensors_not_require_grad_sparse`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_post_hooks`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_remote_complex_args`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_remote_complex_args_sparse`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_rpc_complex_args`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_rpc_complex_args_sparse`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_thread_local_context_id`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_trainer_ps`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_trainer_ps_sparse`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_trainer_ps_torchscript_functions`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_verify_backend_options`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`test_worker_ids_recorded`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+
+### Imports
+
+- **`Enum`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`Function`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`RRef`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`datetime`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`enum`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`once_differentiable`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`random`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`skip_if_lt_x_gpu`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`sys`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`threading`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`time`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`timedelta`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`torch`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`torch.autograd`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`torch.autograd.function`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`torch.distributed`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`torch.distributed.autograd`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`torch.distributed.rpc`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`torch.distributed.rpc.api`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`torch.nn`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`torch.nn.functional`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`torch.testing._internal.common_distributed`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`torch.testing._internal.dist_utils`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+- **`torch.testing._internal.distributed.rpc.rpc_agent_test_fixture`**: [dist_autograd_test.py_docs.md](./dist_autograd_test.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/testing/_internal/distributed/rpc`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/testing/_internal/distributed/rpc`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Neural Network**: Defines or uses PyTorch neural network components
+- **Automatic Differentiation**: Uses autograd for gradient computation
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/torch/testing/_internal/distributed/rpc/dist_autograd_test.py_kw.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/testing/_internal/distributed/rpc`):
+
+- [`rpc_test.py_kw.md_docs.md`](./rpc_test.py_kw.md_docs.md)
+- [`dist_optimizer_test.py_docs.md_docs.md`](./dist_optimizer_test.py_docs.md_docs.md)
+- [`rpc_test.py_docs.md_docs.md`](./rpc_test.py_docs.md_docs.md)
+- [`__init__.py_docs.md_docs.md`](./__init__.py_docs.md_docs.md)
+- [`rpc_agent_test_fixture.py_kw.md_docs.md`](./rpc_agent_test_fixture.py_kw.md_docs.md)
+- [`dist_optimizer_test.py_kw.md_docs.md`](./dist_optimizer_test.py_kw.md_docs.md)
+- [`tensorpipe_rpc_agent_test_fixture.py_kw.md_docs.md`](./tensorpipe_rpc_agent_test_fixture.py_kw.md_docs.md)
+- [`faulty_agent_rpc_test.py_docs.md_docs.md`](./faulty_agent_rpc_test.py_docs.md_docs.md)
+- [`__init__.py_kw.md_docs.md`](./__init__.py_kw.md_docs.md)
+- [`dist_autograd_test.py_docs.md_docs.md`](./dist_autograd_test.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `dist_autograd_test.py_kw.md_docs.md`
+- **Keyword Index**: `dist_autograd_test.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

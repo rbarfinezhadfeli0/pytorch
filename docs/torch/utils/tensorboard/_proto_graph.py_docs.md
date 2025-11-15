@@ -1,0 +1,180 @@
+# Documentation: `torch/utils/tensorboard/_proto_graph.py`
+
+## File Metadata
+
+- **Path**: `torch/utils/tensorboard/_proto_graph.py`
+- **Size**: 2,146 bytes (2.10 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This is a python source code that is part of the PyTorch project.
+
+## Original Source
+
+```python
+import torch
+
+from collections.abc import Sequence
+from tensorboard.compat.proto.node_def_pb2 import NodeDef
+from tensorboard.compat.proto.attr_value_pb2 import AttrValue
+from tensorboard.compat.proto.tensor_shape_pb2 import TensorShapeProto
+
+
+# pyrefly: ignore [not-a-type]
+def attr_value_proto(dtype: object, shape: Sequence[int] | None, s: str | None) -> dict[str, AttrValue]:
+    """Create a dict of objects matching a NodeDef's attr field.
+
+    Follows https://github.com/tensorflow/tensorboard/blob/master/tensorboard/compat/proto/attr_value.proto
+    specifically designed for a NodeDef. The values have been reverse engineered from
+    standard TensorBoard logged data.
+    """
+    attr = {}
+    if s is not None:
+        attr["attr"] = AttrValue(s=s.encode(encoding="utf_8"))
+    if shape is not None:
+        shapeproto = tensor_shape_proto(shape)
+        # pyrefly: ignore [missing-attribute]
+        attr["_output_shapes"] = AttrValue(list=AttrValue.ListValue(shape=[shapeproto]))
+    return attr
+
+
+# pyrefly: ignore [not-a-type]
+def tensor_shape_proto(outputsize: Sequence[int]) -> TensorShapeProto:
+    """Create an object matching a tensor_shape field.
+
+    Follows https://github.com/tensorflow/tensorboard/blob/master/tensorboard/compat/proto/tensor_shape.proto .
+    """
+    # pyrefly: ignore [missing-attribute]
+    return TensorShapeProto(dim=[TensorShapeProto.Dim(size=d) for d in outputsize])
+
+
+def node_proto(
+    name: str,
+    op: str = "UnSpecified",
+    input: list[str] | str | None = None,
+    dtype: torch.dtype | None = None,
+    shape: tuple[int, ...] | None = None,
+    outputsize: Sequence[int] | None = None,
+    attributes: str = "",
+) -> NodeDef:  # pyrefly: ignore [not-a-type]
+    """Create an object matching a NodeDef.
+
+    Follows https://github.com/tensorflow/tensorboard/blob/master/tensorboard/compat/proto/node_def.proto .
+    """
+    if input is None:
+        input = []
+    if not isinstance(input, list):
+        input = [input]
+    return NodeDef(
+        name=name.encode(encoding="utf_8"),
+        op=op,
+        input=input,
+        attr=attr_value_proto(dtype, outputsize, attributes),
+    )
+
+```
+
+
+
+## High-Level Overview
+
+"""Create a dict of objects matching a NodeDef's attr field.    Follows https://github.com/tensorflow/tensorboard/blob/master/tensorboard/compat/proto/attr_value.proto    specifically designed for a NodeDef. The values have been reverse engineered from    standard TensorBoard logged data.
+
+This Python file contains 0 class(es) and 3 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Functions defined**: `attr_value_proto`, `tensor_shape_proto`, `node_proto`
+
+**Key imports**: torch, Sequence, NodeDef, AttrValue, TensorShapeProto
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/utils/tensorboard`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `torch`
+- `collections.abc`: Sequence
+- `tensorboard.compat.proto.node_def_pb2`: NodeDef
+- `tensorboard.compat.proto.attr_value_pb2`: AttrValue
+- `tensorboard.compat.proto.tensor_shape_pb2`: TensorShapeProto
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/utils/tensorboard`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`summary.py_docs.md`](./summary.py_docs.md)
+- [`_embedding.py_docs.md`](./_embedding.py_docs.md)
+- [`_pytorch_graph.py_docs.md`](./_pytorch_graph.py_docs.md)
+- [`_onnx_graph.py_docs.md`](./_onnx_graph.py_docs.md)
+- [`_convert_np.py_docs.md`](./_convert_np.py_docs.md)
+- [`writer.py_docs.md`](./writer.py_docs.md)
+- [`_utils.py_docs.md`](./_utils.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `_proto_graph.py_docs.md`
+- **Keyword Index**: `_proto_graph.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

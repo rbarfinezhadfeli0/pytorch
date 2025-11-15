@@ -1,0 +1,196 @@
+# Keyword Index: `test/dynamo/test_aot_autograd_cache.py`
+
+## File Information
+
+- **Original File**: [test/dynamo/test_aot_autograd_cache.py](../../../test/dynamo/test_aot_autograd_cache.py)
+- **Documentation**: [`test_aot_autograd_cache.py_docs.md`](./test_aot_autograd_cache.py_docs.md)
+- **Folder**: `test/dynamo`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`AOTAutogradCacheBundledTests`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`AOTAutogradCachePicklerTests`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`AOTAutogradCacheTests`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`AllowInGraphFunc`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`MyAutogradFunction`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`MyMod`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+
+### Functions
+
+- **`__init__`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`_clear_all_caches`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`_clear_dynamo_and_codecache`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`_get_dynamo_output`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`_pack_fp8_with_scale_wrap`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`_unpack_fp8_with_scale_wrap`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`amax_to_scale`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`aot_eager_regional_inductor`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`backward`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`compiler`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`default_config`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`device_type`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`expect_guard_miss`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`expect_hit`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`expect_miss`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`f`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`fn`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`fn1`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`fn2`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`forward`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`gen_cache_key`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`gn`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`inp_fn`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`my_jit`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`my_jit2`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`my_private_fun`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`my_triton_op`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`my_triton_op2`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`pack_cpu`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`pack_cpu2`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`pack_fp8_with_scale`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`pack_mul2`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`run_and_check`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`saved_tensors_hooks_to_gm`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`setUp`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`set_manual_hash`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_aot_runtime_trace_joint`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_autograd_function`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_autograd_guard_single_entry`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_autograd_inductor_guards`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_autograd_lazy_backward`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_autograd_no_dynamo_trace_backward`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_basic`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_basic_hash_key`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_cache_hot_load`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_cache_lazy_backward_for_compiled_autograd`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_clear_fx_graph_cache`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_compiled_autograd_bypass`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_constant_tensor_device_guards`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_custom_autograd_function`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_custom_autograd_function_miss`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_custom_autograd_function_with_custom_triton_kernel`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_custom_autograd_function_with_custom_triton_kernel_cache_invalidation`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_different_configs`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_different_global_configs`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_different_graphs`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_different_inputs`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_dynamic_shapes_different_sizes`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_freezing`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_fx_graph_cache_off`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_identical_graphs_and_configs`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_incompatible_function`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_inference_graph_cache_hit_with_compiled_autograd_enabled`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_invoke_subgraph`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_multi_graph_specialization`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_multiple_compile_triton_kernels`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_nn_module_with_params`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_nn_module_with_params_global_constant`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_non_bundled_to_bundled_config_change`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_normal_torch_function`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_private_builtin`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_private_namespace`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_regional_inductor_basic`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_regional_inductor_cache_miss_on_change`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_regional_inductor_with_backward`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_safe_torchfunction`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_sanitize_gm_for_cache`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_saved_tensors_hooks_autograd_cache`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_saved_tensors_hooks_autograd_cache_symbolic`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_symbol_specialization`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_triton_op_cache_invalidation`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_triton_op_cache_multiple_ops_invalidation`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_unsafe_mark_cacheable`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_view_replay`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`test_vmap`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`unpack_cpu`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`unpack_cpu2`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`unpack_fp8_with_scale`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`unpack_mul2`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+
+### Imports
+
+- **`AOTConfig`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`CacheArtifactManager`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`CompiledTritonKernels`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`FakeTensorMode`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`GPU_TYPE`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`SM80OrLater`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`ShapeEnv`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`TestCase`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`TracingContext`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`TwoTensor`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`aot_autograd`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`cache_dir`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`capture_triton`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`checkpoint`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`config`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`copy`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`counters`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`fresh_cache`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`functorch`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`largeTensorTest`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`make_fx`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`mark_compile_region`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`os`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`patch`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`regional_inductor`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`requires_cuda_and_triton`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`run_tests`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`shutil`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`tl`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`torch`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`torch._dynamo`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`torch._dynamo.backends.common`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`torch._dynamo.test_case`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`torch._dynamo.utils`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`torch._functorch`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`torch._functorch._aot_autograd`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`torch._functorch._aot_autograd.autograd_cache`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`torch._functorch._aot_autograd.schemas`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`torch._guards`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`torch._higher_order_ops.invoke_subgraph`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`torch._inductor`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`torch._inductor.async_compile`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`torch._inductor.runtime.runtime_utils`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`torch._inductor.runtime.triton_compat`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`torch._inductor.test_case`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`torch._inductor.utils`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`torch._library`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`torch._subclasses`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`torch.compiler._cache`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`torch.fx.experimental.symbolic_shapes`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`torch.fx.passes.regional_inductor`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`torch.fx.traceback`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`torch.testing._internal.common_cuda`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`torch.testing._internal.common_device_type`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`torch.testing._internal.inductor_utils`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`torch.testing._internal.triton_utils`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`torch.testing._internal.two_tensor`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`torch.utils.checkpoint`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`unittest`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+- **`unittest.mock`**: [test_aot_autograd_cache.py_docs.md](./test_aot_autograd_cache.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

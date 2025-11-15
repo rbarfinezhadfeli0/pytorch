@@ -1,0 +1,82 @@
+# Keyword Index: `docs/tools/linter/adapters/bazel_linter.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/tools/linter/adapters/bazel_linter.py_kw.md](../../../../../docs/tools/linter/adapters/bazel_linter.py_kw.md)
+- **Documentation**: [`bazel_linter.py_kw.md_docs.md`](./bazel_linter.py_kw.md_docs.md)
+- **Folder**: `docs/tools/linter/adapters`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`Architecture`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`Basic`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`Classs`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`Complete`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`Considerations`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`Dependencies`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`Design`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`Detailed`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`Documentation`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`Efficiency`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`ElementTree`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`Enum`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`Extracted`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`File`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`Folder`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`Functions`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`Generated`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`High`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`How`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`Imports`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`In`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`Index`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`Information`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`Keyword`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`Keywords`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`Level`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`LintMessage`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`LintSeverity`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`Map`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`Metadata`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`NamedTuple`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`Original`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`Overview`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`Performance`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`Purpose`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`PyTorch`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`Related`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`Repository`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`Safety`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`Section`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`Security`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`Source`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`System`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`Testing`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`The`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`This`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+- **`Usage`**: [bazel_linter.py_kw.md_docs.md](./bazel_linter.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

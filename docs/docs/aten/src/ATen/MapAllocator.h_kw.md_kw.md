@@ -1,0 +1,83 @@
+# Keyword Index: `docs/aten/src/ATen/MapAllocator.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/MapAllocator.h_kw.md](../../../../../docs/aten/src/ATen/MapAllocator.h_kw.md)
+- **Documentation**: [`MapAllocator.h_kw.md_docs.md`](./MapAllocator.h_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Allocator`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Analysis`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Architecture`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Basic`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Class`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Complete`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Considerations`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Dependencies`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Design`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Detailed`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Documentation`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Efficiency`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Extracted`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`File`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Folder`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Functions`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Generated`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`High`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`How`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`In`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Includes`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Index`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Information`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Keyword`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Keywords`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Level`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Map`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`MapAllocator`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Metadata`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Namespaces`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Original`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Overview`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Performance`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Purpose`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`PyTorch`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Related`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Repository`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Safety`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Section`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Security`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Source`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Structs`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`System`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`TORCH_API`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Testing`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`The`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`This`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+- **`Usage`**: [MapAllocator.h_kw.md_docs.md](./MapAllocator.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

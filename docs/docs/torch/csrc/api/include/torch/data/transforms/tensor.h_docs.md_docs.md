@@ -1,0 +1,300 @@
+# Documentation: `docs/torch/csrc/api/include/torch/data/transforms/tensor.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/api/include/torch/data/transforms/tensor.h_docs.md`
+- **Size**: 4,553 bytes (4.45 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/csrc/api/include/torch/data/transforms/tensor.h`
+
+## File Metadata
+
+- **Path**: `torch/csrc/api/include/torch/data/transforms/tensor.h`
+- **Size**: 2,423 bytes (2.37 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#pragma once
+
+#include <torch/data/example.h>
+#include <torch/data/transforms/base.h>
+#include <torch/types.h>
+
+#include <functional>
+#include <utility>
+
+namespace torch::data::transforms {
+
+/// A `Transform` that is specialized for the typical `Example<Tensor, Tensor>`
+/// combination. It exposes a single `operator()` interface hook (for
+/// subclasses), and calls this function on input `Example` objects.
+template <typename Target = Tensor>
+class TensorTransform
+    : public Transform<Example<Tensor, Target>, Example<Tensor, Target>> {
+ public:
+  using E = Example<Tensor, Target>;
+  using typename Transform<E, E>::InputType;
+  using typename Transform<E, E>::OutputType;
+
+  /// Transforms a single input tensor to an output tensor.
+  virtual Tensor operator()(Tensor input) = 0;
+
+  /// Implementation of `Transform::apply` that calls `operator()`.
+  OutputType apply(InputType input) override {
+    input.data = (*this)(std::move(input.data));
+    return input;
+  }
+};
+
+/// A `Lambda` specialized for the typical `Example<Tensor, Tensor>` input type.
+template <typename Target = Tensor>
+class TensorLambda : public TensorTransform<Target> {
+ public:
+  using FunctionType = std::function<Tensor(Tensor)>;
+
+  /// Creates a `TensorLambda` from the given `function`.
+  explicit TensorLambda(FunctionType function)
+      : function_(std::move(function)) {}
+
+  /// Applies the user-provided functor to the input tensor.
+  Tensor operator()(Tensor input) override {
+    return function_(std::move(input));
+  }
+
+ private:
+  FunctionType function_;
+};
+
+/// Normalizes input tensors by subtracting the supplied mean and dividing by
+/// the given standard deviation.
+template <typename Target = Tensor>
+struct Normalize : public TensorTransform<Target> {
+  /// Constructs a `Normalize` transform. The mean and standard deviation can be
+  /// anything that is broadcastable over the input tensors (like single
+  /// scalars).
+  Normalize(ArrayRef<double> mean, ArrayRef<double> stddev)
+      : mean(torch::tensor(mean, torch::kFloat32)
+                 .unsqueeze(/*dim=*/1)
+                 .unsqueeze(/*dim=*/2)),
+        stddev(torch::tensor(stddev, torch::kFloat32)
+                   .unsqueeze(/*dim=*/1)
+                   .unsqueeze(/*dim=*/2)) {}
+
+  torch::Tensor operator()(Tensor input) override {
+    return input.sub(mean).div(stddev);
+  }
+
+  torch::Tensor mean, stddev;
+};
+} // namespace torch::data::transforms
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 2 class(es)/struct(s) and 8 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`
+
+**Classes/Structs**: `TensorTransform`, `TensorLambda`, `Normalize`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/api/include/torch/data/transforms`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `torch/data/example.h`
+- `torch/data/transforms/base.h`
+- `torch/types.h`
+- `functional`
+- `utility`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/api/include/torch/data/transforms`):
+
+- [`lambda.h_docs.md`](./lambda.h_docs.md)
+- [`base.h_docs.md`](./base.h_docs.md)
+- [`collate.h_docs.md`](./collate.h_docs.md)
+- [`stack.h_docs.md`](./stack.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `tensor.h_docs.md`
+- **Keyword Index**: `tensor.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/api/include/torch/data/transforms`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/api/include/torch/data/transforms`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/api/include/torch/data/transforms`):
+
+- [`lambda.h_kw.md_docs.md`](./lambda.h_kw.md_docs.md)
+- [`collate.h_kw.md_docs.md`](./collate.h_kw.md_docs.md)
+- [`lambda.h_docs.md_docs.md`](./lambda.h_docs.md_docs.md)
+- [`collate.h_docs.md_docs.md`](./collate.h_docs.md_docs.md)
+- [`tensor.h_kw.md_docs.md`](./tensor.h_kw.md_docs.md)
+- [`stack.h_docs.md_docs.md`](./stack.h_docs.md_docs.md)
+- [`base.h_kw.md_docs.md`](./base.h_kw.md_docs.md)
+- [`base.h_docs.md_docs.md`](./base.h_docs.md_docs.md)
+- [`stack.h_kw.md_docs.md`](./stack.h_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `tensor.h_docs.md_docs.md`
+- **Keyword Index**: `tensor.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

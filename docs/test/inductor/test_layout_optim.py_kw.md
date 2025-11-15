@@ -1,0 +1,84 @@
+# Keyword Index: `test/inductor/test_layout_optim.py`
+
+## File Information
+
+- **Original File**: [test/inductor/test_layout_optim.py](../../../test/inductor/test_layout_optim.py)
+- **Documentation**: [`test_layout_optim.py_docs.md`](./test_layout_optim.py_docs.md)
+- **Folder**: `test/inductor`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`Model`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`Model2Conv`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`MyModel`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`TestLayoutOptim`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+
+### Functions
+
+- **`__init__`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`f`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`forward`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`get_example_inputs`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`setUpClass`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`test_2conv_with_graph_break`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`test_3conv_with_graph_break`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`test_dynamic_shape_specialization`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`test_keep_output_layout_infer`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`test_keep_output_layout_with_freezing`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`test_mutate_base`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`test_mutate_base_for_conv_output`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`test_mutate_view`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`test_mutate_view_for_conv_output`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`test_nll_loss_backward`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`test_training_acc`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`verify_accuracy`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`verify_accuracy_for_infer`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`verify_accuracy_for_train`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`wrap_mod`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+
+### Imports
+
+- **`DistributedDataParallel`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`GPU_TYPE`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`config`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`copy`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`nn`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`os`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`random`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`run_tests`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`same`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`skipIfXpu`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`tf32_off`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`torch`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`torch._dynamo.utils`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`torch._inductor`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`torch._inductor.test_case`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`torch.distributed`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`torch.nn.parallel`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`torch.testing._internal.common_cuda`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+- **`torch.testing._internal.inductor_utils`**: [test_layout_optim.py_docs.md](./test_layout_optim.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,77 @@
+# Keyword Index: `docs/aten/src/ATen/native/mkldnn/IDeepRegistration.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/native/mkldnn/IDeepRegistration.h_kw.md](../../../../../../../docs/aten/src/ATen/native/mkldnn/IDeepRegistration.h_kw.md)
+- **Documentation**: [`IDeepRegistration.h_kw.md_docs.md`](./IDeepRegistration.h_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/native/mkldnn`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`Analysis`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`Architecture`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`Basic`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`Complete`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`Considerations`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`Dependencies`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`Design`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`Detailed`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`Documentation`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`Efficiency`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`Extracted`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`File`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`Folder`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`Generated`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`High`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`How`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`IDeepRegistration`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`In`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`Index`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`Information`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`Keyword`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`Keywords`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`Level`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`Map`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`Metadata`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`Namespaces`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`Original`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`Overview`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`Performance`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`Purpose`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`PyTorch`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`Related`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`Repository`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`Safety`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`Section`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`Security`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`Source`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`System`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`Testing`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`The`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`This`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+- **`Usage`**: [IDeepRegistration.h_kw.md_docs.md](./IDeepRegistration.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

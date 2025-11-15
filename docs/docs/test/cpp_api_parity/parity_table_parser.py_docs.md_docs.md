@@ -1,0 +1,302 @@
+# Documentation: `docs/test/cpp_api_parity/parity_table_parser.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/cpp_api_parity/parity_table_parser.py_docs.md`
+- **Size**: 4,636 bytes (4.53 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/cpp_api_parity/parity_table_parser.py`
+
+## File Metadata
+
+- **Path**: `test/cpp_api_parity/parity_table_parser.py`
+- **Size**: 1,916 bytes (1.87 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**.
+
+## Original Source
+
+```python
+from collections import namedtuple
+
+
+ParityStatus = namedtuple("ParityStatus", ["has_impl_parity", "has_doc_parity"])
+
+"""
+This function expects the parity tracker Markdown file to have the following format:
+
+```
+## package1_name
+
+API | Implementation Parity | Doc Parity
+------------- | ------------- | -------------
+API_Name|No|No
+...
+
+## package2_name
+
+API | Implementation Parity | Doc Parity
+------------- | ------------- | -------------
+API_Name|No|No
+...
+```
+
+The returned dict has the following format:
+
+```
+Dict[package_name]
+    -> Dict[api_name]
+        -> ParityStatus
+```
+"""
+
+
+def parse_parity_tracker_table(file_path):
+    def parse_parity_choice(str):
+        if str in ["Yes", "No"]:
+            return str == "Yes"
+        else:
+            raise RuntimeError(
+                f'{str} is not a supported parity choice. The valid choices are "Yes" and "No".'
+            )
+
+    parity_tracker_dict = {}
+
+    with open(file_path) as f:
+        all_text = f.read()
+        packages = all_text.split("##")
+        for package in packages[1:]:
+            lines = [line.strip() for line in package.split("\n") if line.strip() != ""]
+            package_name = lines[0]
+            if package_name in parity_tracker_dict:
+                raise RuntimeError(
+                    f"Duplicated package name `{package_name}` found in {file_path}"
+                )
+            else:
+                parity_tracker_dict[package_name] = {}
+            for api_status in lines[3:]:
+                api_name, has_impl_parity_str, has_doc_parity_str = (
+                    x.strip() for x in api_status.split("|")
+                )
+                parity_tracker_dict[package_name][api_name] = ParityStatus(
+                    has_impl_parity=parse_parity_choice(has_impl_parity_str),
+                    has_doc_parity=parse_parity_choice(has_doc_parity_str),
+                )
+
+    return parity_tracker_dict
+
+```
+
+
+
+## High-Level Overview
+
+"""This function expects the parity tracker Markdown file to have the following format:```## package1_nameAPI | Implementation Parity | Doc Parity------------- | ------------- | -------------API_Name|No|No...## package2_nameAPI | Implementation Parity | Doc Parity------------- | ------------- | -------------API_Name|No|No...```The returned dict has the following format:```Dict[package_name]    -> Dict[api_name]        -> ParityStatus```
+
+This Python file contains 0 class(es) and 2 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Functions defined**: `parse_parity_tracker_table`, `parse_parity_choice`
+
+**Key imports**: namedtuple
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/cpp_api_parity`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `collections`: namedtuple
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/cpp_api_parity/parity_table_parser.py
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/cpp_api_parity`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`sample_functional.py_docs.md`](./sample_functional.py_docs.md)
+- [`module_impl_check.py_docs.md`](./module_impl_check.py_docs.md)
+- [`sample_module.py_docs.md`](./sample_module.py_docs.md)
+- [`utils.py_docs.md`](./utils.py_docs.md)
+- [`parity-tracker.md_docs.md`](./parity-tracker.md_docs.md)
+- [`functional_impl_check.py_docs.md`](./functional_impl_check.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `parity_table_parser.py_docs.md`
+- **Keyword Index**: `parity_table_parser.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/cpp_api_parity`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/cpp_api_parity`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/cpp_api_parity/parity_table_parser.py_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/cpp_api_parity`):
+
+- [`module_impl_check.py_docs.md_docs.md`](./module_impl_check.py_docs.md_docs.md)
+- [`module_impl_check.py_kw.md_docs.md`](./module_impl_check.py_kw.md_docs.md)
+- [`parity-tracker.md_kw.md_docs.md`](./parity-tracker.md_kw.md_docs.md)
+- [`sample_module.py_kw.md_docs.md`](./sample_module.py_kw.md_docs.md)
+- [`parity_table_parser.py_kw.md_docs.md`](./parity_table_parser.py_kw.md_docs.md)
+- [`utils.py_docs.md_docs.md`](./utils.py_docs.md_docs.md)
+- [`functional_impl_check.py_docs.md_docs.md`](./functional_impl_check.py_docs.md_docs.md)
+- [`sample_module.py_docs.md_docs.md`](./sample_module.py_docs.md_docs.md)
+- [`sample_functional.py_docs.md_docs.md`](./sample_functional.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `parity_table_parser.py_docs.md_docs.md`
+- **Keyword Index**: `parity_table_parser.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

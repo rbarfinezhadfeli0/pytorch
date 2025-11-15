@@ -1,0 +1,486 @@
+# Documentation: `docs/aten/src/ATen/native/cuda/jit_utils.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/cuda/jit_utils.h_docs.md`
+- **Size**: 9,864 bytes (9.63 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/native/cuda/jit_utils.h`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/cuda/jit_utils.h`
+- **Size**: 7,111 bytes (6.94 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#pragma once
+
+#include <string>
+
+#include <c10/util/irange.h>
+#include <ATen/jit_macros.h>
+#include <ATen/cuda/detail/LazyNVRTC.h>
+
+namespace at::cuda::jit {
+
+enum class BinaryFuncVariant {NoScalar, RhsScalar, LhsScalar};
+
+struct NvrtcFunction {
+  CUmodule module = CUmodule();
+  CUfunction function = nullptr;
+};
+
+struct KernelDescriptor {
+  std::string name;
+  std::string f;
+  c10::ScalarType f_inputs_type;
+  c10::ScalarType result_type;
+  c10::SmallVector<c10::ScalarType> extra_args_types;
+  int nInputs, nOutputs;
+};
+
+// Helper function to return a vector<string>
+// corresponding to the type of the arguments in parameter pack.
+template <typename... Args>
+c10::SmallVector<at::ScalarType> get_extra_args_types() {
+  return {c10::CppTypeToScalarType<Args>::value ...};
+}
+
+template <
+  typename result_type,
+  typename f_inputs_type,
+  typename... ExtraArgs>
+KernelDescriptor make_kernel_descriptor(
+    std::string name,
+    std::string f,
+    int nInputs,
+    int nOutputs) {
+  KernelDescriptor ret;
+  ret.name = std::move(name);
+  ret.f = std::move(f);
+  ret.f_inputs_type = c10::CppTypeToScalarType<f_inputs_type>::value;
+  ret.result_type = c10::CppTypeToScalarType<result_type>::value;
+  ret.extra_args_types = get_extra_args_types<ExtraArgs...>();
+  ret.nInputs = nInputs;
+  ret.nOutputs = nOutputs;
+  return ret;
+}
+
+inline int can_vectorize_up_to(size_t default_alignment, void *pointer) {
+  auto ip = reinterpret_cast<uintptr_t>(pointer);
+#ifdef USE_ROCM
+  if ((default_alignment == 1) && (ip % (16 * default_alignment) == 0)) {
+    return 16;
+  }
+  if ((default_alignment <= 2) && (ip % (8 * default_alignment) == 0)) {
+    return 8;
+  }
+#else
+  if (ip % (8 * default_alignment) == 0) {
+    return 8;
+  }
+#endif
+  if (ip % (4 * default_alignment) == 0) {
+    return 4;
+  }
+  if (ip % (2 * default_alignment) == 0) {
+    return 2;
+  }
+  return 1;
+}
+
+inline int can_vectorize_up_to(const KernelDescriptor &desc, c10::ArrayRef<char*> pointers) {
+  TORCH_INTERNAL_ASSERT(desc.nOutputs == 1);
+  TORCH_INTERNAL_ASSERT(static_cast<int64_t>(pointers.size()) == 1 + desc.nInputs);
+
+  // Deals with output
+  auto result_size = c10::scalarTypeToTypeMeta(desc.result_type).itemsize();
+  auto result = can_vectorize_up_to(result_size, pointers[0]);
+
+  // Incorporates input(s)
+  auto input_size = c10::scalarTypeToTypeMeta(desc.f_inputs_type).itemsize();
+  for (auto i : c10::irange(1, pointers.size())) {
+    result = std::min(result, can_vectorize_up_to(input_size, pointers[i]));
+  }
+
+  return result;
+}
+
+//FIXME - this are defined in Loops.cuh, but including Loops.cuh here would lead to circular includes Loops.cuh -> CUDALoops.cuh -> jit_utils.h -> Loops.cuh
+#ifdef USE_ROCM
+#define JIT_THREAD_WORK_SIZE 4
+#else
+#define JIT_THREAD_WORK_SIZE 8
+#endif
+
+int calc_io_size(
+    const int nInputs,
+    const int nOutputs,
+    const c10::ScalarType& inputs_type,
+    const c10::ScalarType& result_type);
+
+int calc_thread_work_size(
+    const int nInputs,
+    const int nOutputs,
+    const c10::ScalarType& inputs_type,
+    const c10::ScalarType& result_type);
+
+std::string generate_code(
+    int nInputs,
+    int nOutputs,
+    const std::string& func,
+    const std::string& name,
+    const std::string& f_inputs_type,
+    const std::string& compute_type,
+    const std::string& result_type,
+    bool contiguous,
+    bool dynamic_casting,
+    BinaryFuncVariant scalar_pos,
+    c10::SmallVector<std::string>& extra_args_typenames,
+    int thread_work_size=JIT_THREAD_WORK_SIZE,
+    bool vectorized=false,
+    int vec_size=0,
+    bool return_by_ref=false);
+
+std::string generate_code(
+    const KernelDescriptor &desc,
+    bool contiguous,
+    bool dynamic_casting,
+    BinaryFuncVariant scalar_pos,
+    int thread_work_size=JIT_THREAD_WORK_SIZE,
+    bool vectorized=false,
+    int vec_size=0,
+    bool return_by_ref=false);
+
+std::string generate_reduction_code(
+    int nOutputs,
+    const std::string& func,
+    const std::string& name,
+    const int vt0,
+    const std::string& f_inputs_type,
+    const std::string& reduction_accum_type,
+    const std::string& result_type,
+    bool contiguous,
+    bool vectorized,
+    int vec_size,
+    int max_threads_codegen);
+
+std::string generate_reduction_code(
+    const KernelDescriptor &desc,
+    const int vt0,
+    bool contiguous,
+    bool vectorized,
+    int vec_size,
+    int max_threads_codegen);
+
+NvrtcFunction jit_pwise_function(
+    const std::string& code,
+    const std::string& kernel_name);
+
+void launch_jitted_pwise_function(
+    NvrtcFunction function,
+    const void* args[],
+    const dim3 nBlocks,
+    const dim3 kBlockSize,
+    const int smem=0);
+
+template <typename T>
+struct delayed_false : std::false_type {
+};
+
+// Defines type names
+// NOTE: General case is instantiated only for invalid types.
+// All the valid types have specialization using the TYPE_NAME_FN
+// macro below.
+template <typename T>
+inline std::string typeName() {
+  // we can't use static_assert(false) directly as the
+  // program will be not compiled even if the template is not
+  // instantiated, so we use `delayed_false`
+  // to make sure compiler doesn't eagerly raise
+  // fail this assertion.
+  static_assert(delayed_false<T>::value, "invalid type for jiterator");
+  return "void";
+}
+
+#define TYPE_NAME_FN(ctype, name) \
+template <> inline std::string typeName<ctype>(){ \
+    return std::string(#ctype);    \
+}
+
+AT_FORALL_SCALAR_TYPES(TYPE_NAME_FN)
+#undef TYPE_NAME_FN
+// JIT uses std::complex directly, because nvRTC compile programs
+// with -default-device, so there is no such issue like:
+//   "std::sin(complex) is __host__ only"
+template <> inline std::string typeName<bool>(){
+    return "bool";
+}
+template <> inline std::string typeName<c10::complex<at::Half>>(){
+    return "std::complex<at::Half>";
+}
+template <> inline std::string typeName<c10::complex<float>>(){
+    return "std::complex<float>";
+}
+template <> inline std::string typeName<c10::complex<double>>(){
+    return "std::complex<double>";
+}
+template <> inline std::string typeName<at::Half>(){
+    return "at::Half";
+}
+template <> inline std::string typeName<at::BFloat16>(){
+    return "at::BFloat16";
+}
+template <> inline std::string typeName<at::Float8_e5m2>(){
+    return "at::Float8_e5m2";
+}
+template <> inline std::string typeName<at::Float8_e4m3fn>(){
+    return "at::Float8_e4m3fn";
+}
+template <> inline std::string typeName<at::Float8_e5m2fnuz>() {
+    return "at::Float8_e5m2fnuz";
+}
+template <> inline std::string typeName<at::Float8_e4m3fnuz>() {
+    return "at::Float8_e4m3fnuz";
+}
+template <> inline std::string typeName<at::Float8_e8m0fnu>() {
+    // TODO(#146647): Can the code here be made generic for any scalartype?
+    return "at::Float8_e8m0fnu";
+}
+
+#define TYPE_NAME_CASE(ctype, scalartype)                    \
+  case ScalarType::scalartype:  return typeName<ctype>();
+inline std::string typeName(ScalarType t) {
+    switch (t) {
+      AT_FORALL_SCALAR_TYPES_WITH_COMPLEX(TYPE_NAME_CASE)
+      default:
+          TORCH_CHECK(false, "invalid type for jiterator");
+    }
+}
+#undef TYPE_NAME_CASE
+
+TORCH_CUDA_CPP_API void initializeCudaContext();
+
+} // namespace at::cuda::jit
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 1 class(es)/struct(s) and 21 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `at`
+
+**Classes/Structs**: `BinaryFuncVariant`, `NvrtcFunction`, `KernelDescriptor`, `delayed_false`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native/cuda`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `string`
+- `c10/util/irange.h`
+- `ATen/jit_macros.h`
+- `ATen/cuda/detail/LazyNVRTC.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native/cuda`):
+
+- [`LogcumsumexpKernel.cu_docs.md`](./LogcumsumexpKernel.cu_docs.md)
+- [`WeightNorm.cu_docs.md`](./WeightNorm.cu_docs.md)
+- [`SparseBinaryOpIntersectionKernel.cu_docs.md`](./SparseBinaryOpIntersectionKernel.cu_docs.md)
+- [`jit_utils.cpp_docs.md`](./jit_utils.cpp_docs.md)
+- [`ReduceNormKernel.cu_docs.md`](./ReduceNormKernel.cu_docs.md)
+- [`BinaryMiscOpsKernels.cu_docs.md`](./BinaryMiscOpsKernels.cu_docs.md)
+- [`RowwiseScaledMM.h_docs.md`](./RowwiseScaledMM.h_docs.md)
+- [`fused_adamw_amsgrad_impl.cuh_docs.md`](./fused_adamw_amsgrad_impl.cuh_docs.md)
+- [`Col2Im.cu_docs.md`](./Col2Im.cu_docs.md)
+- [`DistributionRandomKernel.cu_docs.md`](./DistributionRandomKernel.cu_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `jit_utils.h_docs.md`
+- **Keyword Index**: `jit_utils.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native/cuda`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native/cuda`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native/cuda`):
+
+- [`DeviceSqrt.cuh_kw.md_docs.md`](./DeviceSqrt.cuh_kw.md_docs.md)
+- [`UnaryGeometricAsinKernel.cu_kw.md_docs.md`](./UnaryGeometricAsinKernel.cu_kw.md_docs.md)
+- [`Distributions.cpp_docs.md_docs.md`](./Distributions.cpp_docs.md_docs.md)
+- [`fused_adamw_impl.cu_docs.md_docs.md`](./fused_adamw_impl.cu_docs.md_docs.md)
+- [`TensorTopK.h_kw.md_docs.md`](./TensorTopK.h_kw.md_docs.md)
+- [`ReduceOps.cpp_kw.md_docs.md`](./ReduceOps.cpp_kw.md_docs.md)
+- [`FusedSgdKernel.cu_docs.md_docs.md`](./FusedSgdKernel.cu_docs.md_docs.md)
+- [`Distributions.cu_kw.md_docs.md`](./Distributions.cu_kw.md_docs.md)
+- [`block_reduce.cuh_docs.md_docs.md`](./block_reduce.cuh_docs.md_docs.md)
+- [`fused_adagrad_impl.cuh_kw.md_docs.md`](./fused_adagrad_impl.cuh_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `jit_utils.h_docs.md_docs.md`
+- **Keyword Index**: `jit_utils.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

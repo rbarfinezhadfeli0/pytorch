@@ -1,0 +1,85 @@
+# Keyword Index: `docs/aten/src/ATen/native/cudnn/ConvShared.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/native/cudnn/ConvShared.h_kw.md](../../../../../../../docs/aten/src/ATen/native/cudnn/ConvShared.h_kw.md)
+- **Documentation**: [`ConvShared.h_kw.md_docs.md`](./ConvShared.h_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/native/cudnn`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Analysis`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Architecture`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Basic`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Class`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Complete`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Considerations`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`ConvShared`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`ConvUtils`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`ConvolutionParams`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Dependencies`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Descriptors`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Design`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Detailed`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Documentation`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Efficiency`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Extracted`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`File`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Folder`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Generated`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`High`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`How`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`In`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Includes`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Index`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Information`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Keyword`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Keywords`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Level`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Map`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Metadata`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Namespaces`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Original`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Overview`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Performance`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Purpose`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`PyTorch`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Related`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Repository`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Safety`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Section`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Security`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Source`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Structs`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`System`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Tensor`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Testing`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`The`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`This`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Types`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+- **`Usage`**: [ConvShared.h_kw.md_docs.md](./ConvShared.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

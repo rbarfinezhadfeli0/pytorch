@@ -1,0 +1,83 @@
+# Keyword Index: `docs/torch/_inductor/await_utils.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/_inductor/await_utils.py_kw.md](../../../../docs/torch/_inductor/await_utils.py_kw.md)
+- **Documentation**: [`await_utils.py_kw.md_docs.md`](./await_utils.py_kw.md_docs.md)
+- **Folder**: `docs/torch/_inductor`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`AbstractEventLoop`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Analysis`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Any`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Architecture`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Awaitable`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Basic`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Classs`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Complete`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Considerations`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Context`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Dependencies`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Design`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Detailed`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Documentation`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Efficiency`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Extracted`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`File`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Folder`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Functions`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Generated`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`High`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`How`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Imports`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`In`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Index`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Information`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Keyword`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Keywords`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Level`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Map`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Metadata`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`OrderedSet`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Original`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Overview`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Performance`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Purpose`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`PyTorch`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Related`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Repository`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Safety`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Section`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Security`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Source`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`System`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`TaskFactory`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Testing`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`The`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`This`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+- **`Usage`**: [await_utils.py_kw.md_docs.md](./await_utils.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

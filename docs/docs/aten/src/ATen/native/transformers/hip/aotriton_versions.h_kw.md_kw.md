@@ -1,0 +1,77 @@
+# Keyword Index: `docs/aten/src/ATen/native/transformers/hip/aotriton_versions.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/native/transformers/hip/aotriton_versions.h_kw.md](../../../../../../../../docs/aten/src/ATen/native/transformers/hip/aotriton_versions.h_kw.md)
+- **Documentation**: [`aotriton_versions.h_kw.md_docs.md`](./aotriton_versions.h_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/native/transformers/hip`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`Analysis`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`Architecture`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`Basic`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`Complete`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`Considerations`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`Dependencies`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`Design`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`Detailed`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`Documentation`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`Efficiency`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`Extracted`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`File`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`Folder`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`Generated`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`High`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`How`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`In`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`Index`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`Information`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`Keyword`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`Keywords`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`Level`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`Map`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`Metadata`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`No`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`Original`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`Overview`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`Performance`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`Purpose`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`PyTorch`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`Related`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`Repository`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`Safety`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`Section`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`Security`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`See`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`Source`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`System`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`Testing`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`The`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`This`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+- **`Usage`**: [aotriton_versions.h_kw.md_docs.md](./aotriton_versions.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,106 @@
+# Keyword Index: `docs/test/inductor/test_flex_attention.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/test/inductor/test_flex_attention.py_kw.md](../../../../docs/test/inductor/test_flex_attention.py_kw.md)
+- **Documentation**: [`test_flex_attention.py_kw.md_docs.md`](./test_flex_attention.py_kw.md_docs.md)
+- **Folder**: `docs/test/inductor`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`ApplyMask`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Architecture`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`AsStridedErrorTensor`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Attention`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Basic`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Callable`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Classs`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`CompileCounterWithBackend`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Complete`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Considerations`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Dependencies`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Design`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Detailed`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Documentation`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`DummyAttentionModule`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`EagerAndRecordGraphs`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Efficiency`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Extracted`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`File`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`FileCheck`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`FlexAttentionCPB`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`FlexAttentionModule`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Folder`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Functions`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Generated`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`GetAttrKey`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`GraphModule`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`HAS_GPU`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`HAS_WARP_SPEC`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`High`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`How`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Imports`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`In`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Index`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Information`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Keyword`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Keywords`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Level`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Map`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Metadata`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Model`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Optional`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Original`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Overview`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`PLATFORM_SUPPORTS_BF16`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`PagedAttention`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Performance`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Purpose`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`PyTorch`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Related`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Repository`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Repro`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`SDPBackend`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`SacModule`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Safety`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Section`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Security`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`SimpleAttention`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Source`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`SubstringSet`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`System`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`TestBlockMask`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`TestCase`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`TestFlexAttention`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`TestLearnableBiases`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`TestModule`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`TestPagedAttention`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Testing`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`The`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`This`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+- **`Usage`**: [test_flex_attention.py_kw.md_docs.md](./test_flex_attention.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,83 @@
+# Keyword Index: `docs/torch/distributed/device_mesh.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/distributed/device_mesh.py_kw.md](../../../../docs/torch/distributed/device_mesh.py_kw.md)
+- **Documentation**: [`device_mesh.py_kw.md_docs.md`](./device_mesh.py_kw.md_docs.md)
+- **Folder**: `docs/torch/distributed`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Architecture`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`ArrayLike`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Backend`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Basic`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Classs`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Complete`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Considerations`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Dependencies`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Design`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Detailed`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`DeviceMesh`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Documentation`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Efficiency`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Extracted`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`File`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Folder`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Functions`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Generated`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`High`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`How`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Imports`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`In`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Index`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Information`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`IntTuple`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Iterator`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Keyword`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Keywords`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Level`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Map`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Metadata`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Optional`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Original`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Overview`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Performance`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Purpose`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`PyTorch`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Related`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Repository`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Safety`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Section`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Security`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Source`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`System`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Testing`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`The`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`This`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+- **`Usage`**: [device_mesh.py_kw.md_docs.md](./device_mesh.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

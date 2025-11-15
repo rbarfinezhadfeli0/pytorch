@@ -1,0 +1,506 @@
+# Documentation: `docs/test/test_autograd.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/test/test_autograd.py_kw.md`
+- **Size**: 29,781 bytes (29.08 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `test/test_autograd.py`
+
+## File Information
+
+- **Original File**: [test/test_autograd.py](../../test/test_autograd.py)
+- **Documentation**: [`test_autograd.py_docs.md`](./test_autograd.py_docs.md)
+- **Folder**: `test`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`Alias`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`BadBw`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`BadBw2`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`BadFw`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`BadJvp`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`Clone`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`CollectOnDelete`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`ComplexView`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`Custom`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`DeepReentrant`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`Double`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`Double2`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`DoubleDuplicate`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`DoubleInplace`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`DoubleMul`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`DoubleMul2`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`F1`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`F2`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`Fn`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`Foo`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`Foo2`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`Func`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`FuncWrong`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`Function`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`HookFunction`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`Id`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`IdOneOutput`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`IdTwoOutput`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`Identity`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`IncrementOnDelete`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`Inplace`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`InplaceFn`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`InplaceMul`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`LinearModule`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`Matmul`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`MismatchedGradientFunction`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`Mul2`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`Mult`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`MultiOutputFn`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`MyAdder`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`MyAdderBad`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`MyBadAdder`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`MyFn`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`MyFunc`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`MyFunc2`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`MyFunction`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`MyHookClass`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`MyMode`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`MyModel`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`MyModule`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`MyOp`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`MyOutPlaceAdder`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`MyReentrantFunc`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`MyReshape`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`MyReshapeRef`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`MySquare`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`NoGradModule`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`NonContGradFunc`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`NonDetFunc`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`NoneGradientFunction`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`RecoverableException`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`Reenter`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`Reentrant`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`ReentrantFunc`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`RegisterPostNodeHook`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`SecondaryException`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`SimulateBackwardError`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`StdErrDiverter`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`Test`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`TestAutograd`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`TestCls`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`TestFn`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`UnrecoverableException`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`UserFn`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`VerboseTorchDispatchMode`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`ViewFn`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`ViewOfTemp`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`are`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`foo`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`for`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`is`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`of`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`static`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+
+### Functions
+
+- **`__call__`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`__del__`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`__enter__`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`__exit__`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`__init__`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`__torch_dispatch__`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`__torch_function__`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`_do_test_autograd_simple_views_python`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`_function_test`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`_get_mul2`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`_test_checkpointing_non_reentrant_autocast`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`_test_grad_tensor`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`_test_reentrant_with_callbacks`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`_test_setitem`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`_test_setitem_tensor`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`_test_sparse_gather`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`_test_type_conversion_backward`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`acc_grad_node_post_hook`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`acc_grad_node_pre_hook`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`add_gradient_penalty_to_grad`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`adder`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`assert_only_first_requires_grad`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`assert_strict_equal`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`backward`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`bad_fn`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`bad_hook`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`bar`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`basic_mul`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`bw_hook`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`bw_hook_modify`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`call_backwards`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`callback`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`callback_adds_callback`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`callback_final`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`check`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`check_gradgrad_repeated`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`check_index`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`check_inversion_possible`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`check_matches`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`compare`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`compute_grad`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`context_fn`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`coro_enable_grad`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`coro_no_grad`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`doubler`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`enable_grad_context_manager_recursive`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`enable_grad_decorator_recursive`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`error`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`f`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`f1`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`f2`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`f3`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`fn`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`fn0`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`fn1`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`fn2`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`fn3`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`foo`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`forward`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`fun_stuff_with_hook`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`func`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`gen_enable_grad`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`gen_no_grad`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`getFn`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`get_children_ids`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`get_custom_fn`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`get_grad_fn`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`get_hook`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`get_id`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`get_non_det_fn`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`get_out_and_unrefed_cycle`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`get_ref`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`get_refs`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`grad_fns`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`graph_desc`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`group`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`hook`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`hook1`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`hook2`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`hook_with_callback`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`inc_inner_counter`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`inc_outer_counter`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`inner_func`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`inplace_double`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`inplace_fn`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`jvp`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`make_post_acc_grad_hook`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`make_post_hook`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`make_pre_hook`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`make_tensor_pre_hook`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`manual_increase_gradient`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`maybe_check_raise`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`model`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`mult1`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`my_function`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`names`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`no_grad_context_manager_recursive`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`no_grad_decorator_recursive`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`optim_step_hook`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`pack_hook`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`pack_tensor`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`post_acc_grad_hook`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`posthook`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`pre_hook`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`prehook`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`prehook1`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`prehook2`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`register_hooks_on_all_nodes`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`register_logging_hooks`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`reset_counts`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`reset_grad`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`run`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`run_fn`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`run_symeig_test`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`run_test`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`run_tests`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`save_2_tensors`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`save_2_tensors_alt`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`save_3_tensors`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`scope`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`setup_context`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`setup_optim_in_bwd`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`tearDown`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`tensor_prehook`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_access_saved_tensor_twice_without_recomputation_works`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_accumulate_grad`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_accumulate_grad_posthooks_can_observe_tensor_prehook`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_accumulate_grad_posthooks_should_not_execute`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_accumulate_grad_tensor_reference`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_accumulate_grad_with_zero_numel_grad`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_anomaly_assign_parent_cleanup`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_anomaly_detect_nan`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_anomaly_grad_warnings`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_anomaly_mode_no_check_nan`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_attribute_deletion`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_autograd_inplace_view_of_view`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_autograd_inplace_views_creation_meta`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_autograd_inplace_views_cross_dtype`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_autograd_multiple_views_python`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_autograd_node_isinstance`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_autograd_print_tensor`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_autograd_python_custom_function_inplace`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_autograd_simple_views_python`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_autograd_views_codegen`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_backward`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_backward_badcalls`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_backward_copy`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_backward_create_graph_warns`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_backward_hook_relative_ordering`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_backward_no_grad`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_backward_to_node`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_backward_twice_retained_graph_with_saved_values`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_backward_twice_retained_graph_without_saved_values`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_backward_twice_with_saved_values`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_backward_twice_without_saved_values`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_backward_with_inputs`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_backward_with_nonleaf_inputs`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_backward_with_scalar_input`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_calculate_shape_util`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_callback_adds_callback`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_callback_propagates_errors_from_device_thread`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_cant_create_saved_tensors`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_checkpoint_detects_non_determinism`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_checkpoint_graph_execution_group`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_checkpoint_sequential_warns_if_use_reentrant_not_passed_explcitly`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_checkpoint_valid_reset_on_error`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_checkpoint_warns_if_use_reentrant_not_passed_explcitly`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_checkpointing`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_checkpointing_non_reentrant_autocast_cpu`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_checkpointing_non_reentrant_autocast_gpu`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_checkpointing_without_reentrant`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_checkpointing_without_reentrant_arbitrary_input_output`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_checkpointing_without_reentrant_correct_grad`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_checkpointing_without_reentrant_custom_function_works`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_checkpointing_without_reentrant_dataparallel`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_checkpointing_without_reentrant_detached_tensor`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_checkpointing_without_reentrant_memory_savings`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_checkpointing_without_reentrant_parameter_used_in_an_out`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_checkpointing_without_reentrant_saved_object_identity`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_checkpointing_without_reentrant_with_context_fn`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_copy_slices_graph_task_updates`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_create_graph_and_full_backward_hook_cycle`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_current_graph_task_execution_order`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_current_graph_task_id`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_current_node`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_custom_autograd_ac_early_stop`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_custom_autograd_no_early_free`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_custom_autograd_repeated_grad_grad`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_custom_function_cycle`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_custom_function_error`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_custom_function_exception`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_custom_function_forward_mode_forward_is_no_op`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_custom_function_forward_mode_inplace_checks`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_custom_function_forward_mode_non_differentiable`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_custom_function_forward_mode_non_tensor_before_tensor_args`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_custom_function_forward_mode_view_checks`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_custom_function_forward_mode_wrong_formula`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_custom_function_inplace_on_non_default_view`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`test_custom_function_inplace_on_view_of_leaf`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+
+### Imports
+
+- **`FlopCounterMode`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`Function`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`GradcheckError`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`GradientEdge`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`InplaceFunction`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`OrderedDict`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`RemovableHandle`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`TEST_CUDA`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`TYPE_CHECKING`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`TorchDispatchMode`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`collections`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`contextlib`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`copy`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`deepcopy`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`emit_itt`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`floating_types_and`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`functools`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`gc`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`get_analytical_jacobian`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`get_numerical_jacobian`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`inf`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`io`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`itertools`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`make_tensor`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`mask_not_all_zeros`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`math`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`mul`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`no_dispatch`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`operator`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`os`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`partial`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`pickle`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`product`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`random`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`subprocess`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`sys`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`tempfile`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`threading`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`time`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`torch`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`torch.autograd`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`torch.autograd._functions`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`torch.autograd.forward_ad`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`torch.autograd.function`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`torch.autograd.gradcheck`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`torch.autograd.graph`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`torch.autograd.profiler`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`torch.autograd.profiler_util`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`torch.nn.functional`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`torch.testing`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`torch.testing._internal.common_cuda`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`torch.testing._internal.common_device_type`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`torch.testing._internal.common_dtype`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`torch.testing._internal.common_methods_invocations`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`torch.utils._mode_utils`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`torch.utils._python_dispatch`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`torch.utils.checkpoint`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`torch.utils.flop_counter`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`torch.utils.hooks`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`typing`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`unittest`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`uuid`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`warnings`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+- **`weakref`**: [test_autograd.py_docs.md](./test_autograd.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Neural Network**: Defines or uses PyTorch neural network components
+- **Automatic Differentiation**: Uses autograd for gradient computation
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- **Serialization**: Uses pickle - be cautious with untrusted data
+- **Command Execution**: Executes system commands - validate inputs
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/test_autograd.py_kw.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test`):
+
+- [`test_ops.py_docs.md_docs.md`](./test_ops.py_docs.md_docs.md)
+- [`test_tensorexpr.py_docs.md_docs.md`](./test_tensorexpr.py_docs.md_docs.md)
+- [`pytest_shard_custom.py_docs.md_docs.md`](./pytest_shard_custom.py_docs.md_docs.md)
+- [`test_weak.py_kw.md_docs.md`](./test_weak.py_kw.md_docs.md)
+- [`test_view_ops.py_kw.md_docs.md`](./test_view_ops.py_kw.md_docs.md)
+- [`test_varlen_attention.py_kw.md_docs.md`](./test_varlen_attention.py_kw.md_docs.md)
+- [`test_namedtensor.py_docs.md_docs.md`](./test_namedtensor.py_docs.md_docs.md)
+- [`test_binary_ufuncs.py_docs.md_docs.md`](./test_binary_ufuncs.py_docs.md_docs.md)
+- [`test_ops_gradients.py_kw.md_docs.md`](./test_ops_gradients.py_kw.md_docs.md)
+- [`test_torchfuzz_repros.py_docs.md_docs.md`](./test_torchfuzz_repros.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_autograd.py_kw.md_docs.md`
+- **Keyword Index**: `test_autograd.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

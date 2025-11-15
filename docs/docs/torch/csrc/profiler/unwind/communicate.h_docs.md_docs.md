@@ -1,0 +1,307 @@
+# Documentation: `docs/torch/csrc/profiler/unwind/communicate.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/profiler/unwind/communicate.h_docs.md`
+- **Size**: 4,620 bytes (4.51 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/csrc/profiler/unwind/communicate.h`
+
+## File Metadata
+
+- **Path**: `torch/csrc/profiler/unwind/communicate.h`
+- **Size**: 2,252 bytes (2.20 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#pragma once
+#include <ext/stdio_filebuf.h>
+#include <torch/csrc/profiler/unwind/unwind_error.h>
+#include <unistd.h>
+#include <array>
+#include <memory>
+
+namespace torch::unwind {
+// helper to open a process with stdin/stdout/stderr streams.
+struct Communicate {
+  Communicate(const char* command, const char** args) {
+    if (pipe(inpipe_.data()) < 0 || pipe(outpipe_.data()) < 0 ||
+        pipe(errpipe_.data()) < 0) {
+      throw UnwindError("pipe() failed");
+    }
+    pid_t pid = fork();
+    if (pid < 0) {
+      throw UnwindError("fork() failed");
+    } else if (pid == 0) { // child process
+      close(inpipe_[1]);
+      close(outpipe_[0]);
+      close(errpipe_[0]);
+
+      dup2(inpipe_[0], STDIN_FILENO);
+      dup2(outpipe_[1], STDOUT_FILENO);
+      dup2(errpipe_[1], STDERR_FILENO);
+      execvp(command, (char* const*)args);
+      throw UnwindError("failed execvp");
+    } else { // parent process
+      close(inpipe_[0]);
+      close(outpipe_[1]);
+      close(errpipe_[1]);
+      outbuf_ = std::make_unique<__gnu_cxx::stdio_filebuf<char>>(
+          inpipe_[1], std::ios::out);
+      inbuf_ = std::make_unique<__gnu_cxx::stdio_filebuf<char>>(
+          outpipe_[0], std::ios::in);
+      errbuf_ = std::make_unique<__gnu_cxx::stdio_filebuf<char>>(
+          errpipe_[0], std::ios::in);
+      in_ = std::make_unique<std::istream>(inbuf_.get());
+      out_ = std::make_unique<std::ostream>(outbuf_.get());
+      err_ = std::make_unique<std::ostream>(errbuf_.get());
+    }
+  }
+  Communicate(const Communicate&) = delete;
+  Communicate(Communicate&&) = delete;
+  Communicate& operator=(const Communicate&) = delete;
+  Communicate& operator=(Communicate&&) = delete;
+  ~Communicate() {
+    close(inpipe_[1]);
+    close(outpipe_[0]);
+    close(errpipe_[0]);
+  }
+  std::ostream& out() {
+    return *out_;
+  }
+  std::ostream& err() {
+    return *err_;
+  }
+  std::istream& in() {
+    return *in_;
+  }
+
+ private:
+  std::array<int, 2> inpipe_{-1, -1};
+  std::array<int, 2> outpipe_{-1, -1};
+  std::array<int, 2> errpipe_{-1, -1};
+  std::unique_ptr<__gnu_cxx::stdio_filebuf<char>> outbuf_, inbuf_, errbuf_;
+  std::unique_ptr<std::istream> in_;
+  std::unique_ptr<std::ostream> out_;
+  std::unique_ptr<std::ostream> err_;
+};
+
+} // namespace torch::unwind
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 6 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`
+
+**Classes/Structs**: `Communicate`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/profiler/unwind`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ext/stdio_filebuf.h`
+- `torch/csrc/profiler/unwind/unwind_error.h`
+- `unistd.h`
+- `array`
+- `memory`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/profiler/unwind`):
+
+- [`unwind_fb.cpp_docs.md`](./unwind_fb.cpp_docs.md)
+- [`unwind.cpp_docs.md`](./unwind.cpp_docs.md)
+- [`dwarf_symbolize_enums.h_docs.md`](./dwarf_symbolize_enums.h_docs.md)
+- [`fde.h_docs.md`](./fde.h_docs.md)
+- [`sections.h_docs.md`](./sections.h_docs.md)
+- [`unwind.h_docs.md`](./unwind.h_docs.md)
+- [`debug_info.h_docs.md`](./debug_info.h_docs.md)
+- [`action.h_docs.md`](./action.h_docs.md)
+- [`lexer.h_docs.md`](./lexer.h_docs.md)
+- [`unwind_error.h_docs.md`](./unwind_error.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `communicate.h_docs.md`
+- **Keyword Index**: `communicate.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/profiler/unwind`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/profiler/unwind`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/profiler/unwind`):
+
+- [`action.h_kw.md_docs.md`](./action.h_kw.md_docs.md)
+- [`lexer.h_kw.md_docs.md`](./lexer.h_kw.md_docs.md)
+- [`debug_info.h_docs.md_docs.md`](./debug_info.h_docs.md_docs.md)
+- [`unwinder.h_kw.md_docs.md`](./unwinder.h_kw.md_docs.md)
+- [`fde.h_docs.md_docs.md`](./fde.h_docs.md_docs.md)
+- [`mem_file.h_docs.md_docs.md`](./mem_file.h_docs.md_docs.md)
+- [`lexer.h_docs.md_docs.md`](./lexer.h_docs.md_docs.md)
+- [`unwind.cpp_docs.md_docs.md`](./unwind.cpp_docs.md_docs.md)
+- [`unwind_fb.cpp_kw.md_docs.md`](./unwind_fb.cpp_kw.md_docs.md)
+- [`unwinder.h_docs.md_docs.md`](./unwinder.h_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `communicate.h_docs.md_docs.md`
+- **Keyword Index**: `communicate.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

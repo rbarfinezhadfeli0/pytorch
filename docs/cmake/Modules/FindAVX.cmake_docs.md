@@ -1,0 +1,196 @@
+# Documentation: `cmake/Modules/FindAVX.cmake`
+
+## File Metadata
+
+- **Path**: `cmake/Modules/FindAVX.cmake`
+- **Size**: 2,460 bytes (2.40 KB)
+- **Type**: CMake Build Script
+- **Extension**: `.cmake`
+
+## File Purpose
+
+This is a cmake build script that is part of the PyTorch project.
+
+## Original Source
+
+```cmake
+INCLUDE(CheckCSourceRuns)
+INCLUDE(CheckCSourceCompiles)
+INCLUDE(CheckCXXSourceRuns)
+
+SET(AVX_CODE "
+  #include <immintrin.h>
+
+  int main()
+  {
+    __m256 a;
+    a = _mm256_set1_ps(0);
+    return 0;
+  }
+")
+
+SET(AVX512_CODE "
+  #include <immintrin.h>
+
+  int main()
+  {
+    __m512i a = _mm512_set_epi8(0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0,
+                                0, 0, 0, 0, 0, 0, 0, 0);
+    __m512i b = a;
+    __mmask64 equality_mask = _mm512_cmp_epi8_mask(a, b, _MM_CMPINT_EQ);
+    return 0;
+  }
+")
+
+SET(AVX2_CODE "
+  #include <immintrin.h>
+
+  int main()
+  {
+    __m256i a = {0};
+    a = _mm256_abs_epi16(a);
+    __m256i x;
+    _mm256_extract_epi64(x, 0); // we rely on this in our AVX2 code
+    return 0;
+  }
+")
+
+MACRO(CHECK_SSE lang type flags)
+  SET(__FLAG_I 1)
+  SET(CMAKE_REQUIRED_FLAGS_SAVE ${CMAKE_REQUIRED_FLAGS})
+  FOREACH(__FLAG ${flags})
+    IF(NOT ${lang}_${type}_FOUND)
+      SET(CMAKE_REQUIRED_FLAGS ${__FLAG})
+      IF(lang STREQUAL "CXX")
+        CHECK_CXX_SOURCE_COMPILES("${${type}_CODE}" ${lang}_HAS_${type}_${__FLAG_I})
+      ELSE()
+        CHECK_C_SOURCE_COMPILES("${${type}_CODE}" ${lang}_HAS_${type}_${__FLAG_I})
+      ENDIF()
+      IF(${lang}_HAS_${type}_${__FLAG_I})
+        SET(${lang}_${type}_FOUND TRUE CACHE BOOL "${lang} ${type} support")
+        SET(${lang}_${type}_FLAGS "${__FLAG}" CACHE STRING "${lang} ${type} flags")
+      ENDIF()
+      MATH(EXPR __FLAG_I "${__FLAG_I}+1")
+    ENDIF()
+  ENDFOREACH()
+  SET(CMAKE_REQUIRED_FLAGS ${CMAKE_REQUIRED_FLAGS_SAVE})
+
+  IF(NOT ${lang}_${type}_FOUND)
+    SET(${lang}_${type}_FOUND FALSE CACHE BOOL "${lang} ${type} support")
+    SET(${lang}_${type}_FLAGS "" CACHE STRING "${lang} ${type} flags")
+  ENDIF()
+
+  MARK_AS_ADVANCED(${lang}_${type}_FOUND ${lang}_${type}_FLAGS)
+
+ENDMACRO()
+
+CHECK_SSE(C "AVX" " ;-mavx;/arch:AVX")
+CHECK_SSE(C "AVX2" " ;-mavx2 -mfma -mf16c;/arch:AVX2")
+CHECK_SSE(C "AVX512" " ;-mavx512f -mavx512dq -mavx512vl -mavx512bw -mfma;/arch:AVX512")
+
+CHECK_SSE(CXX "AVX" " ;-mavx;/arch:AVX")
+CHECK_SSE(CXX "AVX2" " ;-mavx2 -mfma -mf16c;/arch:AVX2")
+CHECK_SSE(CXX "AVX512" " ;-mavx512f -mavx512dq -mavx512vl -mavx512bw -mfma;/arch:AVX512")
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `cmake/Modules`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `cmake/Modules`, which is part of the PyTorch project infrastructure.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Implements or uses **caching** mechanisms.
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`cmake/Modules`):
+
+- [`FindOpenTelemetryApi.cmake_docs.md`](./FindOpenTelemetryApi.cmake_docs.md)
+- [`FindSanitizer.cmake_docs.md`](./FindSanitizer.cmake_docs.md)
+- [`FindOpenMP.cmake_docs.md`](./FindOpenMP.cmake_docs.md)
+- [`FindGloo.cmake_docs.md`](./FindGloo.cmake_docs.md)
+- [`FindCUSPARSELT.cmake_docs.md`](./FindCUSPARSELT.cmake_docs.md)
+- [`FindAPL.cmake_docs.md`](./FindAPL.cmake_docs.md)
+- [`FindSYCLToolkit.cmake_docs.md`](./FindSYCLToolkit.cmake_docs.md)
+- [`FindBLIS.cmake_docs.md`](./FindBLIS.cmake_docs.md)
+- [`FindNCCL.cmake_docs.md`](./FindNCCL.cmake_docs.md)
+- [`Findpybind11.cmake_docs.md`](./Findpybind11.cmake_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `FindAVX.cmake_docs.md`
+- **Keyword Index**: `FindAVX.cmake_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

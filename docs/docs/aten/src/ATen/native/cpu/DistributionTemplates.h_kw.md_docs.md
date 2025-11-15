@@ -1,0 +1,191 @@
+# Documentation: `docs/aten/src/ATen/native/cpu/DistributionTemplates.h_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/cpu/DistributionTemplates.h_kw.md`
+- **Size**: 4,652 bytes (4.54 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `aten/src/ATen/native/cpu/DistributionTemplates.h`
+
+## File Information
+
+- **Original File**: [aten/src/ATen/native/cpu/DistributionTemplates.h](../../../../../../aten/src/ATen/native/cpu/DistributionTemplates.h)
+- **Documentation**: [`DistributionTemplates.h_docs.md`](./DistributionTemplates.h_docs.md)
+- **Folder**: `aten/src/ATen/native/cpu`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Class/Structs
+
+- **`BernoulliKernel`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+- **`CauchyKernel`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+- **`ExponentialKernel`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+- **`GeometricKernel`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+- **`LogNormalKernel`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+- **`NormalKernel`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+- **`RandomFromToKernel`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+- **`RandomKernel`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+- **`UniformKernel`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+
+### Functions
+
+- **`bernoulli_kernel`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+- **`cauchy_kernel`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+- **`constexpr`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+- **`exponential_kernel`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+- **`geometric_kernel`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+- **`log_normal_kernel`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+- **`normal_fill`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+- **`normal_fill_16`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+- **`normal_fill_16_AVX2`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+- **`normal_fill_16_VSX`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+- **`normal_fill_AVX2`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+- **`normal_fill_VSX`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+- **`normal_kernel`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+- **`random_from_to_kernel`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+- **`random_full_64_bits_range_kernel`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+- **`random_kernel`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+- **`uniform_kernel`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+
+### Includes
+
+- **`ATen/CPUApplyUtils.h`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+- **`ATen/Dispatch.h`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+- **`ATen/Dispatch_v2.h`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+- **`ATen/ExpandBase.h`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+- **`ATen/core/DistributionsHelper.h`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+- **`ATen/native/TensorIterator.h`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+- **`ATen/native/cpu/Loops.h`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+- **`ATen/native/cpu/avx_mathfun.h`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+- **`c10/util/irange.h`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+- **`mutex`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+
+### Namespaces
+
+- **`at`**: [DistributionTemplates.h_docs.md](./DistributionTemplates.h_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native/cpu`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native/cpu`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native/cpu`):
+
+- [`BinaryOpsKernel.cpp_docs.md_docs.md`](./BinaryOpsKernel.cpp_docs.md_docs.md)
+- [`MultinomialKernel.cpp_kw.md_docs.md`](./MultinomialKernel.cpp_kw.md_docs.md)
+- [`AmpGradScalerKernels.cpp_docs.md_docs.md`](./AmpGradScalerKernels.cpp_docs.md_docs.md)
+- [`FusedSGDKernel.cpp_docs.md_docs.md`](./FusedSGDKernel.cpp_docs.md_docs.md)
+- [`scaled_modified_bessel_k1.cpp_docs.md_docs.md`](./scaled_modified_bessel_k1.cpp_docs.md_docs.md)
+- [`int_mm_kernel.h_docs.md_docs.md`](./int_mm_kernel.h_docs.md_docs.md)
+- [`IsContiguous.h_docs.md_docs.md`](./IsContiguous.h_docs.md_docs.md)
+- [`MaxPooling.cpp_docs.md_docs.md`](./MaxPooling.cpp_docs.md_docs.md)
+- [`WeightNormKernel.cpp_kw.md_docs.md`](./WeightNormKernel.cpp_kw.md_docs.md)
+- [`FusedAdamKernel.cpp_docs.md_docs.md`](./FusedAdamKernel.cpp_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `DistributionTemplates.h_kw.md_docs.md`
+- **Keyword Index**: `DistributionTemplates.h_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

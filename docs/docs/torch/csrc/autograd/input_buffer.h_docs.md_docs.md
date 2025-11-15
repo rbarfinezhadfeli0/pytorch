@@ -1,0 +1,293 @@
+# Documentation: `docs/torch/csrc/autograd/input_buffer.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/autograd/input_buffer.h_docs.md`
+- **Size**: 4,552 bytes (4.45 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/csrc/autograd/input_buffer.h`
+
+## File Metadata
+
+- **Path**: `torch/csrc/autograd/input_buffer.h`
+- **Size**: 2,012 bytes (1.96 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#pragma once
+
+// The InputBuffer class accumulates a list of Variables for use by a
+// function. It implements logic to avoid modifying the passed
+// values in-place (adding an input twice will accumulate the result).
+// This behaviour is needed and used only in backward graphs.
+
+#include <utility>
+#include <vector>
+
+#include <c10/core/Stream.h>
+#include <torch/csrc/autograd/variable.h>
+#include <optional>
+
+namespace torch::autograd {
+
+struct InputBuffer {
+  explicit InputBuffer(size_t size)
+      : buffer(size),
+        opt_accum_streams(size),
+        ready_events(size),
+        ready_streams(size) {}
+  InputBuffer(const InputBuffer& other) = delete;
+  InputBuffer(InputBuffer&& other) = default;
+  explicit InputBuffer(variable_list&& inputs) : buffer(std::move(inputs)) {}
+  InputBuffer& operator=(InputBuffer&& other) = default;
+
+  // Accumulates the variable at a specified index.
+  // The optional CUDA streams determine which stream the accumulation
+  // is run on and how the addition is synchronized.
+  TORCH_API void add(
+      size_t pos,
+      Variable&& var,
+      const std::optional<c10::Stream>& opt_producer_stream,
+      const std::optional<c10::Stream>& opt_consumer_stream,
+      Node* fn);
+
+  Variable operator[](size_t pos) {
+    return buffer[pos];
+  }
+
+  // Returns the inputs as a list of variables. Destroys given InputBuffer.
+  static std::vector<Variable> variables(InputBuffer&& g);
+
+  std::vector<Variable> buffer;
+  // The stream used for accumulation when a variable is used multiple times.
+  std::vector<std::optional<c10::Stream>> opt_accum_streams;
+  // The events you need to wait for to ensure the corresponding buffers
+  // are ready. The events are updated as we accumulate into the buffer.
+  std::vector<std::optional<c10::Event>> ready_events;
+  // The streams corresponding to the events above. This is only used to
+  // check if more synchronization is needed or not.
+  std::vector<std::optional<c10::Stream>> ready_streams;
+};
+
+} // namespace torch::autograd
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 1 class(es)/struct(s) and 3 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`
+
+**Classes/Structs**: `accumulates`, `InputBuffer`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/autograd`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `utility`
+- `vector`
+- `c10/core/Stream.h`
+- `torch/csrc/autograd/variable.h`
+- `optional`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/autograd`):
+
+- [`graph_task.h_docs.md`](./graph_task.h_docs.md)
+- [`python_function.cpp_docs.md`](./python_function.cpp_docs.md)
+- [`profiler.h_docs.md`](./profiler.h_docs.md)
+- [`TraceTypeManual.cpp_docs.md`](./TraceTypeManual.cpp_docs.md)
+- [`python_autograd.h_docs.md`](./python_autograd.h_docs.md)
+- [`variable_info.cpp_docs.md`](./variable_info.cpp_docs.md)
+- [`jit_decomp_interface.h_docs.md`](./jit_decomp_interface.h_docs.md)
+- [`input_buffer.cpp_docs.md`](./input_buffer.cpp_docs.md)
+- [`python_variable.h_docs.md`](./python_variable.h_docs.md)
+- [`python_nn_functions.h_docs.md`](./python_nn_functions.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `input_buffer.h_docs.md`
+- **Keyword Index**: `input_buffer.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/autograd`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/autograd`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/autograd`):
+
+- [`python_cpp_function.h_kw.md_docs.md`](./python_cpp_function.h_kw.md_docs.md)
+- [`anomaly_mode.cpp_kw.md_docs.md`](./anomaly_mode.cpp_kw.md_docs.md)
+- [`python_nested_functions_manual.cpp_kw.md_docs.md`](./python_nested_functions_manual.cpp_kw.md_docs.md)
+- [`variable_info.h_docs.md_docs.md`](./variable_info.h_docs.md_docs.md)
+- [`python_nn_functions.h_docs.md_docs.md`](./python_nn_functions.h_docs.md_docs.md)
+- [`python_cpp_function.h_docs.md_docs.md`](./python_cpp_function.h_docs.md_docs.md)
+- [`profiler_legacy.cpp_kw.md_docs.md`](./profiler_legacy.cpp_kw.md_docs.md)
+- [`saved_variable.cpp_docs.md_docs.md`](./saved_variable.cpp_docs.md_docs.md)
+- [`python_fft_functions.h_docs.md_docs.md`](./python_fft_functions.h_docs.md_docs.md)
+- [`python_autograd.h_kw.md_docs.md`](./python_autograd.h_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `input_buffer.h_docs.md_docs.md`
+- **Keyword Index**: `input_buffer.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

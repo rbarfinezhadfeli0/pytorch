@@ -1,0 +1,298 @@
+# Documentation: `docs/docs/source/compile/programming_model.reporting_issues.md_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/docs/source/compile/programming_model.reporting_issues.md_docs.md`
+- **Size**: 7,337 bytes (7.17 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `docs/source/compile/programming_model.reporting_issues.md`
+
+## File Metadata
+
+- **Path**: `docs/source/compile/programming_model.reporting_issues.md`
+- **Size**: 4,454 bytes (4.35 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Reporting Issues
+
+If the provided workarounds were not enough to get `torch.compile` working,
+then you should consider reporting the issue to PyTorch.
+But there are a few things that you can do to make our lives significantly easier.
+
+## Ablation
+
+Check which component of the `torch.compile` stack is the one causing the issue using the `backend=` option for `torch.compile`.
+In particular, try:
+
+- `torch.compile(fn, backend="eager")`, which only runs TorchDynamo, the graph capture component of `torch.compile`.
+- `torch.compile(fn, backend="aot_eager")`, which runs TorchDynamo and AOTAutograd, which additionally generates the backward graph during compilation.
+- `torch.compile(fn, backend="aot_eager_decomp_partition")`, which runs TorchDynamo and AOTAutograd with operator decompositions/partitions.
+- `torch.compile(fn, backend="inductor")`, which runs TorchDynamo, AOTAutograd, and TorchInductor, the backend ML compiler that generates compiled kernels.
+
+If you only fail with the Inductor backend, you can additionally test various Inductor modes:
+
+- `torch.compile(fn, backend="inductor", mode="default")`
+- `torch.compile(fn, backend="inductor", mode="reduce-overhead")`
+- `torch.compile(fn, backend="inductor", mode="max-autotune")`
+
+You can also check if dynamic shapes is causing issues with any backend:
+
+- `torch.compile(fn, dynamic=True)` (always use dynamic shapes)
+- `torch.compile(fn, dynamic=False)` (never use dynamic shapes)
+- `torch.compile(fn, dynamic=None)` (automatic dynamic shapes)
+
+## Bisecting
+
+Did you try on the latest nightly? Did something work in the past but now no longer works?
+Can you bisect to determine the first nightly where your issue occurs?
+Bisecting is especially helpful for performance, accuracy, or compile time regressions,
+where it is not immediately obvious where the problem originates from.
+
+## Creating a reproducer
+
+Creating reproducers is a lot of work, and it is perfectly fine if you do not have the time to do it.
+However, if you are a motivated user unfamiliar with the internals of `torch.compile`,
+creating a standalone reproducer can have a huge impact on our ability to fix the bug.
+Without a reproducer, your bug report must contain enough information for us to identify the root cause of the problem and write a reproducer from scratch.
+
+Here's a list of useful reproducers, ranked from most to least preferred:
+
+1. **Self-contained, small reproducer:** A script with no external dependencies, under 100 lines of code, that reproduces the problem when run.
+2. **Self-contained, large reproducer:** Even if it's large, being self-contained is a huge advantage!
+3. **Non-self-contained reproducer with manageable dependencies:**
+   For example, if you can reproduce the problem by running a script after `pip install transformers`,
+   that's manageable. We can likely run it and investigate.
+4. **Non-self-contained reproducer requiring substantial setup:** This might involve downloading datasets,
+   multiple environment setup steps, or specific system library versions requiring a Docker image.
+   The more complex the setup, the harder it is for us to recreate the environment.
+
+:::{note}
+Docker simplifies setup but complicates changes to the environment, so it's not a perfect solution, though we'll use it if necessary.
+:::
+
+If possible, try to make your reproducer single-process, as those are easier to debug than a multi-process reproducer.
+
+Additionally, below is a non-exhaustive list of aspects to check in your
+issue that you can attempt to replicate in your reproducer:
+
+- **Autograd**. Did you have tensor inputs with `requires_grad=True`? Did you call `backward()` on the output?
+- **Dynamic shapes**. Did you set `dynamic=True`? Or did you run the test code multiple times with varying shapes?
+- **Custom operators**. Is there a custom operator involved in the real workflow?
+  Can you replicate some of its important characteristics using the Python custom operator API?
+- **Configuration**. Did you set all the same configuration?
+  This includes `torch._dynamo.config` and `torch._inductor.config` settings,
+  as well as arguments to `torch.compile` like `backend` / `mode`.
+- **Context managers**. Did you replicate any active context managers?
+  This could be `torch.no_grad`, automatic mixed precision, `TorchFunctionMode` / `TorchDispatchMode`,
+  activation checkpointing, compiled autograd etc.
+- **Tensor subclasses**. Is there a tensor subclass involved?
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/source/compile`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/source/compile`, which is part of the PyTorch project infrastructure.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/source/compile`):
+
+- [`dynamic_shapes_troubleshooting_guardon_errors.md_docs.md`](./dynamic_shapes_troubleshooting_guardon_errors.md_docs.md)
+- [`dynamic_shapes_core_concepts.md_docs.md`](./dynamic_shapes_core_concepts.md_docs.md)
+- [`programming_model.error_on_graph_break.md_docs.md`](./programming_model.error_on_graph_break.md_docs.md)
+- [`dynamic_shapes_troubleshooting.md_docs.md`](./dynamic_shapes_troubleshooting.md_docs.md)
+- [`programming_model.recompilation.md_docs.md`](./programming_model.recompilation.md_docs.md)
+- [`dynamic_shapes_zero_one_specialization.md_docs.md`](./dynamic_shapes_zero_one_specialization.md_docs.md)
+- [`dynamic_shapes_beyond_the_basics.md_docs.md`](./dynamic_shapes_beyond_the_basics.md_docs.md)
+- [`programming_model.graph_breaks_index.md_docs.md`](./programming_model.graph_breaks_index.md_docs.md)
+- [`programming_model.md_docs.md`](./programming_model.md_docs.md)
+- [`dynamic_shapes_debugging_tlparse_torch_logs.md_docs.md`](./dynamic_shapes_debugging_tlparse_torch_logs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `programming_model.reporting_issues.md_docs.md`
+- **Keyword Index**: `programming_model.reporting_issues.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/docs/source/compile`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/docs/source/compile`, which is part of the PyTorch project infrastructure.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/docs/source/compile`):
+
+- [`dynamic_shapes_advanced_control_options.md_docs.md_docs.md`](./dynamic_shapes_advanced_control_options.md_docs.md_docs.md)
+- [`programming_model.recompilation.md_docs.md_docs.md`](./programming_model.recompilation.md_docs.md_docs.md)
+- [`programming_model.dynamo_core_concepts.md_docs.md_docs.md`](./programming_model.dynamo_core_concepts.md_docs.md_docs.md)
+- [`programming_model.nested_graph_breaks.md_kw.md_docs.md`](./programming_model.nested_graph_breaks.md_kw.md_docs.md)
+- [`programming_model.where_to_apply_compile.md_docs.md_docs.md`](./programming_model.where_to_apply_compile.md_docs.md_docs.md)
+- [`programming_model.graph_breaks_index.md_docs.md_docs.md`](./programming_model.graph_breaks_index.md_docs.md_docs.md)
+- [`programming_model.nested_graph_breaks.md_docs.md_docs.md`](./programming_model.nested_graph_breaks.md_docs.md_docs.md)
+- [`programming_model.fullgraph_true.md_docs.md_docs.md`](./programming_model.fullgraph_true.md_docs.md_docs.md)
+- [`dynamic_shapes_zero_one_specialization.md_docs.md_docs.md`](./dynamic_shapes_zero_one_specialization.md_docs.md_docs.md)
+- [`programming_model.dynamo_nonstrict_trace.md_kw.md_docs.md`](./programming_model.dynamo_nonstrict_trace.md_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `programming_model.reporting_issues.md_docs.md_docs.md`
+- **Keyword Index**: `programming_model.reporting_issues.md_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

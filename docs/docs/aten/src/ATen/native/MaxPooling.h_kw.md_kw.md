@@ -1,0 +1,86 @@
+# Keyword Index: `docs/aten/src/ATen/native/MaxPooling.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/native/MaxPooling.h_kw.md](../../../../../../docs/aten/src/ATen/native/MaxPooling.h_kw.md)
+- **Documentation**: [`MaxPooling.h_kw.md_docs.md`](./MaxPooling.h_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/native`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Analysis`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Architecture`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Basic`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Class`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Complete`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Considerations`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Dependencies`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Design`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Detailed`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`DispatchStub`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Documentation`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Efficiency`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Extracted`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`File`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Folder`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Functions`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Generated`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`High`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`How`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`In`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Includes`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Index`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Information`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Keyword`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Keywords`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Level`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Map`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`MaxPooling`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Metadata`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Namespaces`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Original`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Overview`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Parallel`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Performance`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Pool`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`PoolingParams1D`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Purpose`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`PyTorch`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Related`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Repository`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Safety`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Section`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Security`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Source`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Structs`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`System`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Tensor`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Testing`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`The`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`This`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+- **`Usage`**: [MaxPooling.h_kw.md_docs.md](./MaxPooling.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,78 @@
+# Keyword Index: `docs/torch/package/analyze/is_from_package.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/package/analyze/is_from_package.py_kw.md](../../../../../docs/torch/package/analyze/is_from_package.py_kw.md)
+- **Documentation**: [`is_from_package.py_kw.md_docs.md`](./is_from_package.py_kw.md_docs.md)
+- **Folder**: `docs/torch/package/analyze`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`Any`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`Architecture`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`Basic`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`Complete`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`Considerations`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`Dependencies`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`Design`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`Detailed`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`Documentation`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`Efficiency`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`Extracted`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`File`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`Folder`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`Functions`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`Generated`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`High`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`How`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`Imports`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`In`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`Index`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`Information`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`Keyword`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`Keywords`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`Level`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`Map`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`Metadata`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`ModuleType`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`Original`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`Overview`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`Performance`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`Purpose`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`PyTorch`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`Related`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`Repository`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`Safety`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`Section`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`Security`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`Source`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`System`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`Testing`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`The`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`This`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+- **`Usage`**: [is_from_package.py_kw.md_docs.md](./is_from_package.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

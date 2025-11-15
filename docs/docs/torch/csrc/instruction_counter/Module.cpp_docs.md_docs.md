@@ -1,0 +1,320 @@
+# Documentation: `docs/torch/csrc/instruction_counter/Module.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/instruction_counter/Module.cpp_docs.md`
+- **Size**: 4,479 bytes (4.37 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/csrc/instruction_counter/Module.cpp`
+
+## File Metadata
+
+- **Path**: `torch/csrc/instruction_counter/Module.cpp`
+- **Size**: 2,367 bytes (2.31 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#include <c10/util/Exception.h>
+#include <c10/util/error.h>
+#include <torch/csrc/instruction_counter/Module.h>
+#include <torch/csrc/utils/pybind.h>
+#include <cerrno>
+#include <cstdint>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <stdexcept>
+
+#if defined(__linux__)
+#include <fmt/printf.h>
+#include <linux/perf_event.h>
+#include <sys/ioctl.h>
+#include <sys/syscall.h>
+#include <unistd.h>
+#endif
+
+namespace torch::instruction_counter {
+
+static long start() {
+#if !defined(__linux__)
+  TORCH_CHECK(false, "This systems seems not to be Linux");
+#else
+
+  // Construct base perf_event_attr struct
+  perf_event_attr attr{};
+  memset(&attr, 0, sizeof(attr));
+  attr.size = sizeof(attr);
+  attr.exclude_kernel = 1;
+  attr.disabled = 1;
+  attr.exclude_hv = 1;
+  attr.sample_period = 0;
+  // Enable hardware counting
+  attr.type = PERF_TYPE_HARDWARE;
+  attr.config = PERF_COUNT_HW_INSTRUCTIONS;
+
+  long fd = syscall(SYS_perf_event_open, &attr, 0, -1, -1, 0);
+  if (fd == -1) {
+    fmt::fprintf(
+        stderr,
+        "Failed to open instruction count event: %s.\n",
+        c10::utils::str_error(errno).c_str());
+    return -1;
+  }
+  ioctl((int)fd, PERF_EVENT_IOC_RESET, 0); // Reset the counter
+  ioctl((int)fd, PERF_EVENT_IOC_ENABLE, 0); // Enable the counter
+  return fd;
+#endif
+}
+
+static uint64_t end(int fd) {
+#if !defined(__linux__)
+  TORCH_CHECK(false, "This systems seems not to be Linux");
+#else
+  // Disable the event group
+  if (ioctl(fd, PERF_EVENT_IOC_DISABLE, PERF_IOC_FLAG_GROUP) == -1) {
+    fmt::fprintf(
+        stderr,
+        "Error disabling perf event (fd: %d): %s\n",
+        fd,
+        c10::utils::str_error(errno).c_str());
+    return -1;
+  }
+
+  uint64_t total_instructions = 0;
+
+  // Read results
+  long ret_val = read(fd, &total_instructions, sizeof(total_instructions));
+  if (ret_val == -1) {
+    fmt::fprintf(
+        stderr,
+        "Error reading perf event results: %s\n",
+        c10::utils::str_error(errno).c_str());
+    return -1;
+  }
+
+  close(fd);
+  return total_instructions;
+#endif
+}
+
+void initModule(PyObject* module) {
+  auto m = py::handle(module).cast<py::module>();
+  auto instruction_counter = m.def_submodule(
+      "_instruction_counter", "instruction_counter related pybind.");
+  instruction_counter.def("start", start);
+  instruction_counter.def("end", end);
+}
+
+} // namespace torch::instruction_counter
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 7 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`
+
+**Classes/Structs**: `base`, `perf_event_attr`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/instruction_counter`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `c10/util/Exception.h`
+- `c10/util/error.h`
+- `torch/csrc/instruction_counter/Module.h`
+- `torch/csrc/utils/pybind.h`
+- `cerrno`
+- `cstdint`
+- `cstdio`
+- `cstdlib`
+- `cstring`
+- `stdexcept`
+- `fmt/printf.h`
+- `linux/perf_event.h`
+- `sys/ioctl.h`
+- `sys/syscall.h`
+- `unistd.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/instruction_counter`):
+
+- [`Module.h_docs.md`](./Module.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `Module.cpp_docs.md`
+- **Keyword Index**: `Module.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/instruction_counter`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/instruction_counter`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/instruction_counter`):
+
+- [`Module.h_docs.md_docs.md`](./Module.h_docs.md_docs.md)
+- [`Module.h_kw.md_docs.md`](./Module.h_kw.md_docs.md)
+- [`Module.cpp_kw.md_docs.md`](./Module.cpp_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `Module.cpp_docs.md_docs.md`
+- **Keyword Index**: `Module.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

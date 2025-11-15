@@ -1,0 +1,170 @@
+# Documentation: `aten/src/ATen/native/RNN.h`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/RNN.h`
+- **Size**: 2,504 bytes (2.45 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#pragma once
+
+#include <ATen/core/Tensor.h>
+#include <ATen/native/DispatchStub.h>
+
+namespace at::native {
+
+using lstm_fn = void(*)(Tensor&, Tensor&, Tensor&, const Tensor&, TensorList, TensorList, bool, int64_t, double, bool, bool, bool);
+using rnn_fn = void(*)(Tensor&, Tensor&, const Tensor&, const Tensor&, TensorList, bool, int64_t, double, bool, bool, bool);
+using lstm_packed_fn = void(*)(Tensor&, Tensor&, Tensor&, const Tensor&, const Tensor&, TensorList, TensorList, bool, int64_t, double, bool, bool);
+using rnn_packed_fn = void(*)(Tensor&, Tensor&, const Tensor&, const Tensor&, const Tensor&, TensorList, bool, int64_t, double, bool, bool);
+
+DECLARE_DISPATCH(lstm_fn, lstm_cudnn_stub)
+DECLARE_DISPATCH(lstm_fn, lstm_miopen_stub)
+DECLARE_DISPATCH(lstm_fn, lstm_mkldnn_stub)
+DECLARE_DISPATCH(rnn_fn, gru_cudnn_stub)
+DECLARE_DISPATCH(rnn_fn, gru_miopen_stub)
+DECLARE_DISPATCH(rnn_fn, rnn_tanh_cudnn_stub)
+DECLARE_DISPATCH(rnn_fn, rnn_tanh_miopen_stub)
+DECLARE_DISPATCH(rnn_fn, rnn_relu_cudnn_stub)
+DECLARE_DISPATCH(rnn_fn, rnn_relu_miopen_stub)
+DECLARE_DISPATCH(lstm_packed_fn, lstm_packed_cudnn_stub)
+DECLARE_DISPATCH(lstm_packed_fn, lstm_packed_miopen_stub)
+DECLARE_DISPATCH(rnn_packed_fn, gru_packed_cudnn_stub)
+DECLARE_DISPATCH(rnn_packed_fn, gru_packed_miopen_stub)
+DECLARE_DISPATCH(rnn_packed_fn, rnn_tanh_packed_cudnn_stub)
+DECLARE_DISPATCH(rnn_packed_fn, rnn_tanh_packed_miopen_stub)
+DECLARE_DISPATCH(rnn_packed_fn, rnn_relu_packed_cudnn_stub)
+DECLARE_DISPATCH(rnn_packed_fn, rnn_relu_packed_miopen_stub)
+
+inline void check_attributes(const Tensor& input, const TensorList& params, const TensorList& hiddens, bool check_dtype=false) {
+  auto input_device = input.device();
+  auto input_dtype = input.scalar_type();
+
+  auto check_tensors = [&](const std::string& name, const Tensor& t) {
+    if (!t.defined()) return;
+    auto t_device = t.device();
+    TORCH_CHECK(input_device == t_device,
+             "Input and ", name, " tensors are not at the same device, found input tensor at ",
+             input_device, " and ", name, " tensor at ", t_device);
+    if (check_dtype) {
+      auto t_dtype = t.scalar_type();
+      TORCH_CHECK(input_dtype == t_dtype,
+               "Input and ", name, " tensors are not the same dtype, found input tensor with ",
+               input_dtype, " and ", name, " tensor with ", t_dtype);
+    }
+  };
+
+  for (const auto& h : hiddens) check_tensors("hidden", h);
+  for (const auto& p : params) check_tensors("parameter", p);
+}
+
+} // namespace at::native
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 1 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `at`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/core/Tensor.h`
+- `ATen/native/DispatchStub.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native`):
+
+- [`LossMulti.h_docs.md`](./LossMulti.h_docs.md)
+- [`NaiveConvolutionTranspose3d.cpp_docs.md`](./NaiveConvolutionTranspose3d.cpp_docs.md)
+- [`UnaryOps.cpp_docs.md`](./UnaryOps.cpp_docs.md)
+- [`ResizeCommon.h_docs.md`](./ResizeCommon.h_docs.md)
+- [`FusedAdagrad.cpp_docs.md`](./FusedAdagrad.cpp_docs.md)
+- [`SharedReduceOps.h_docs.md`](./SharedReduceOps.h_docs.md)
+- [`SpectralOpsUtils.h_docs.md`](./SpectralOpsUtils.h_docs.md)
+- [`FractionalMaxPooling.h_docs.md`](./FractionalMaxPooling.h_docs.md)
+- [`TensorDimApply.h_docs.md`](./TensorDimApply.h_docs.md)
+- [`Lerp.cpp_docs.md`](./Lerp.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `RNN.h_docs.md`
+- **Keyword Index**: `RNN.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

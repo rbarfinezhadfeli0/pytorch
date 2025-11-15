@@ -1,0 +1,121 @@
+# Keyword Index: `docs/torch/csrc/jit/python/pybind.h_docs.md`
+
+## File Information
+
+- **Original File**: [docs/torch/csrc/jit/python/pybind.h_docs.md](../../../../../../docs/torch/csrc/jit/python/pybind.h_docs.md)
+- **Documentation**: [`pybind.h_docs.md_docs.md`](./pybind.h_docs.md_docs.md)
+- **Folder**: `docs/torch/csrc/jit/python`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Analysis`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Architecture`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`AttributeKind`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Block`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`C`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`CREATE_UNWRAPPING_CASTER`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Can`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Class`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Classes`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Code`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Common`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Considerations`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Cross`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Dependencies`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Design`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Detailed`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Documentation`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`DynamicTypes`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Examples`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Extension`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`File`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Files`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Folder`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`For`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Generated`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Graph`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Header`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`High`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Holder`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`IValue`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Idioms`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Import`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Index`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Is`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`JIT`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`KB`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Keyword`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Level`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`ListCasterBase`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Manual`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`May`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Metadata`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`NOLINTNEXTLINE`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Namespaces`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`No`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Node`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Notes`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Original`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Overview`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`PYBIND11_DECLARE_HOLDER_TYPE`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`PYBIND11_TYPE_CASTER`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`PYBIND11_VERSION_MAJOR`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`PYBIND11_VERSION_MINOR`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Path`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Patterns`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Performance`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Purpose`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`PyBind11`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`PyTorch`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Python`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`References`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Related`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Repository`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Role`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Safety`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Security`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`See`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Size`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Source`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Structs`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Structure`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Symbol`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`System`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`T`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`THP`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`TODO`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Test`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Testing`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`This`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Type`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Unable`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Usage`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Value`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`We`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`When`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+- **`Wrap`**: [pybind.h_docs.md_docs.md](./pybind.h_docs.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,204 @@
+# Documentation: `docs/torch/csrc/jit/passes/quantization/helper.cpp_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/jit/passes/quantization/helper.cpp_kw.md`
+- **Size**: 4,640 bytes (4.53 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `torch/csrc/jit/passes/quantization/helper.cpp`
+
+## File Information
+
+- **Original File**: [torch/csrc/jit/passes/quantization/helper.cpp](../../../../../../torch/csrc/jit/passes/quantization/helper.cpp)
+- **Documentation**: [`helper.cpp_docs.md`](./helper.cpp_docs.md)
+- **Folder**: `torch/csrc/jit/passes/quantization`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Class/Structs
+
+- **`FuncArg`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+
+### Functions
+
+- **`alwaysRaisesException`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`aten_add_alpha_is_one`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`cloneMethod`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`findChildModule`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`getInvokedModule`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`hitGraphInput`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`isAtenFunc`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`isBiasOfConvOrLinear`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`isBinaryOpWithScalarInput`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`isClamp`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`isEmbeddingBagNonInput`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`isFunctionNode`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`isPropagateQuantBinaryOp`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`isPropagateQuantOp`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`isPropagateQuantSingleInputOp`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`isScalar`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`isSingleInputGeneralAtenFunction`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`isSingleInputGeneralCallFunction`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`isSingleInputGeneralShapeAtenFunction`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`isSingleInputGeneralValueAtenFunction`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`isTensorInfoNode`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`isWeight`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`isWeightOnlyStaticQuantOp`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`is_batchnorm2d_module`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`is_batchnorm3d_module`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`is_conv1d_module`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`is_conv2d_module`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`is_conv3d_module`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`is_conv_transpose1d_module`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`is_conv_transpose2d_module`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`is_functional`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`is_functional_relu`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`is_int_constant`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`is_linear_module`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`is_module`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`is_relu_module`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`matchArgPattern`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`matchAtenFuncToUse`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`matchCallFuncToUse`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`nodeQuantizable`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`removeTorchMangle`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`useQuantizable`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`userDefinedCallFunction`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+
+### Includes
+
+- **`torch/csrc/jit/api/function_impl.h`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`torch/csrc/jit/passes/graph_rewrite_helper.h`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`torch/csrc/jit/passes/quantization/helper.h`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+- **`utility`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+
+### Namespaces
+
+- **`torch`**: [helper.cpp_docs.md](./helper.cpp_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/jit/passes/quantization`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/jit/passes/quantization`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/jit/passes/quantization`):
+
+- [`dedup_module_uses.h_kw.md_docs.md`](./dedup_module_uses.h_kw.md_docs.md)
+- [`insert_observers.cpp_kw.md_docs.md`](./insert_observers.cpp_kw.md_docs.md)
+- [`insert_quant_dequant.cpp_kw.md_docs.md`](./insert_quant_dequant.cpp_kw.md_docs.md)
+- [`finalize.cpp_kw.md_docs.md`](./finalize.cpp_kw.md_docs.md)
+- [`register_packed_params.h_kw.md_docs.md`](./register_packed_params.h_kw.md_docs.md)
+- [`helper.cpp_docs.md_docs.md`](./helper.cpp_docs.md_docs.md)
+- [`fusion_passes.h_kw.md_docs.md`](./fusion_passes.h_kw.md_docs.md)
+- [`finalize.cpp_docs.md_docs.md`](./finalize.cpp_docs.md_docs.md)
+- [`quantization_type.h_docs.md_docs.md`](./quantization_type.h_docs.md_docs.md)
+- [`insert_observers.cpp_docs.md_docs.md`](./insert_observers.cpp_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `helper.cpp_kw.md_docs.md`
+- **Keyword Index**: `helper.cpp_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

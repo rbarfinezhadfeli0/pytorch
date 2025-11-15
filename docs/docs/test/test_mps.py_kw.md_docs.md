@@ -1,0 +1,439 @@
+# Documentation: `docs/test/test_mps.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/test/test_mps.py_kw.md`
+- **Size**: 21,628 bytes (21.12 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `test/test_mps.py`
+
+## File Information
+
+- **Original File**: [test/test_mps.py](../../test/test_mps.py)
+- **Documentation**: [`test_mps.py_docs.md`](./test_mps.py_docs.md)
+- **Folder**: `test`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`Foo`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`Layer`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`MPSLeakyReluTest`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`MPSReluTest`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`MatmulTest`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`Model`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`MpsMemoryLeakCheck`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`Net`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`TestAutocastMPS`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`TestAvgPool`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`TestCaseMPS`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`TestGatherScatter`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`TestLargeTensors`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`TestLinalgMPS`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`TestLogical`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`TestMPS`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`TestMemoryLeak`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`TestNLLLoss`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`TestNNMPS`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`TestPad`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`TestPixelShuffle`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`TestSDPA`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`TestSDPAMetaDispatchMode`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`TestSmoothL1Loss`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`TestTopK`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`TestViewOpsMPS`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`which`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`with`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+
+### Functions
+
+- **`__enter__`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`__exit__`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`__init__`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`__torch_dispatch__`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_avg_pool2d`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_avg_pool3d`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_brute_cdist`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_compare_tensors`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_create_basic_net`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_do_transpose`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_gelu_ref`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_helper`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_linear_helper`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_nll_loss_1d_helper`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_nll_loss_helper`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_npLeakyRelu`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_npRelu`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_skip_if_exceeds_total_memory`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_sum_pool2d`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_sum_pool3d`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_testLeakyRelu`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_testRelu`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_testReluInPlace`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_test_addmm_addmv`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_test_addr`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_test_euclidean_large_cdist`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_test_gelu`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_test_module_empty_input`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_test_nll_loss_invalid_target_dim`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_test_nll_loss_invalid_weights`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_test_pixel_shuffle_unshuffle_for_input_dims`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_test_pixel_shuffle_unshuffle_helper`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_test_pixel_unshuffle_error_case_helper`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_test_sdpa_mask`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_test_sdpa_no_mask`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_test_topk`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_test_unique_scalar_empty`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_test_unique_with_expects`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_verify_pixel_shuffle`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_wrap_tensor`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`assertLeaksNoMpsTensors`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`attention2`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`compare_mm`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`compute_result_and_gradient`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`convert_weight_to_int4pack`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`convert_weight_to_int8pack`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`create_sdpa_meta_test`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`dec`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`do_arange`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`ensure_tuple`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`fn`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`format_res`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`forward`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`generate_input`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`generate_qkv`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`get_mps_memory_usage`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`helper`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`helper1`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`helper2`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`helper_dtype_float32`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`helper_dtype_int32`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`helper_nans_infs`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`interp`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`is_view_of`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`is_view_of_same_base`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`leak_gpu0`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`maybe_transpose`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`new_fn`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`no_leak`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`rand_helper`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`rotate_subset`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`run_cholesky_test`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`run_det_test`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`run_fast_attention_test`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`run_linalg_solve_test`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`run_lu_factor_ex_test`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`run_test`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`run_test_main`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`run_test_numpy`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`skipMPSMemoryLeakCheckIf`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`slice_and_reshape`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`step`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`testNpLeakyRelu`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`testNpRelu`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`testNumbersCPU`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`testNumbersGPU`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_64bit_binops`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_64bit_index_select`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test__int4_mm`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test__int8_mm`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_abs`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_activation_checkpoint_does_not_error`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_adaptive_avg_pool2d_output_size_one`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_adaptive_avg_pool2d_simple`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_adaptive_max_pool2d_simple`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_add_scalars`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_add_sub`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_addbmm`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_addcdiv`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_addcdiv_transpose`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_addcmul`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_addmm`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_addr`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_all`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_amax`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_amin`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_angle`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_any`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_arange`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_arange_empty`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_argmax`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_argmin_argmax`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_as_strided`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_atan2`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_avg_pool2d_ceil_mode`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_avg_pool2d_ceil_mode_mismatch`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_avg_pool2d_count_include_pad`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_avg_pool2d_with_zero_divisor`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_baddbmm`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_batch_norm`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_batch_norm_backward`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_batch_norm_backward_weight_bias_gradients`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_batch_norm_slices`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_batched_matrix_x_batched_matrix`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_batched_matrix_x_broadcasted_matrix`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_batched_matrix_x_broadcasted_vector`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_bce_backward_with_no_reduction_and_one_in_shape`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_bce_loss_always_nonnegative`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_bce_loss_broadcasts_weights`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_bce_loss_simple`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_bce_loss_size_mismatch`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_bce_with_logits_broadcasts_pos_weights`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_bce_with_logits_broadcasts_weights`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_bce_with_logits_gives_same_result_as_sigmoid_and_bce_loss_large_tensors_with_grad`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_bce_with_logits_has_correct_grad_at_zero`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_bce_with_logits_ones_in_pos_weights_are_the_same_as_none`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_bce_with_logits_stability`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_bce_with_logits_with_pos_weight_has_correct_grad_at_zero`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_bernoulli`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_bincount`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_bincount_reduction`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_bincount_simple`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_binops_dtype_precedence`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_bmm`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_bool_expand`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_buffer_size_match`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_cast_gather_scatter`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_cast_mps_to_cpu`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_cast_mps_to_mps`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_cat1`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_cat2`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_cat_large_tensor`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_cat_non_contiguous`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_cdist_euclidean_large`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_cdist_large`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_cdist_large_batch`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_cdist_non_contiguous`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_cdist_non_contiguous_batch`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_cdist_norm`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_cdist_norm_batch`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_cdist_same_inputs`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_circular_pad`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_clamp`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_clamp_fp16_fp32`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_clamp_max`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_clamp_min`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_clamp_nan`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_col2im`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_constant_pad`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_constant_pad_4d_warning`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_constant_pad_nd_preserves_memory_format`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_constant_pad_nd_with_empty_pad`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_contiguous_slice_2d`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_contiguous_slice_3d`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_conv2d_backward_collision`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_conv2d_discontiguous_weight`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_conv2d_same_padding`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_conv2d_unit`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_conv2d_valid_padding`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_conv3d_autocast`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_conv3d_backward_collision`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_conv3d_channels_last_3d`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_conv_backcompat`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_conv_expand`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_conv_high_channel_size`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_conv_raises_error`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_conv_transpose2d`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_conv_transpose3d_autocast_fp32`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_copy_broadcasting`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_copy_cast_no_leak`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_copy_large`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_copy_non_contiguous`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_copy_storage_offset`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_count_nonzero`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_cpu_to_strided_mps_copy`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_cross`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_cross_entropy_loss`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_cumprod_all_dtypes`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_cumprod_dim_check`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`test_cumprod_minus_one_axis`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+
+### Imports
+
+- **`Buffer`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`NNTestCase`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`SourceChangeWarning`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`TorchDispatchMode`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`Uniform`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`_group_quantize_tensor`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`checkpoint`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`collections`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`copy`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`defaultdict`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`functools`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`gc`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`get_all_dtypes`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`inf`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`io`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`itertools`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`make_fullrank_matrices_with_distinct_singular_values`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`make_tensor`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`math`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`mps_ops_modifier`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`nn`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`numpy`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`operator`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`opinfo`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`ops`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`os`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`partial`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`product`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`random`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`random_hermitian_pd_matrix`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`shutil`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`subprocess`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`sys`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`tempfile`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`threading`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`torch`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`torch.backends.mps`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`torch.distributions`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`torch.nn`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`torch.nn.functional`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`torch.serialization`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`torch.testing`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`torch.testing._internal`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`torch.testing._internal.common_device_type`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`torch.testing._internal.common_dtype`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`torch.testing._internal.common_methods_invocations`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`torch.testing._internal.common_mps`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`torch.testing._internal.common_nn`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`torch.testing._internal.common_quantization`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`torch.utils._python_dispatch`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`torch.utils._pytree`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`torch.utils.checkpoint`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`unittest`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+- **`warnings`**: [test_mps.py_docs.md](./test_mps.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- **Command Execution**: Executes system commands - validate inputs
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/test_mps.py_kw.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test`):
+
+- [`test_ops.py_docs.md_docs.md`](./test_ops.py_docs.md_docs.md)
+- [`test_tensorexpr.py_docs.md_docs.md`](./test_tensorexpr.py_docs.md_docs.md)
+- [`pytest_shard_custom.py_docs.md_docs.md`](./pytest_shard_custom.py_docs.md_docs.md)
+- [`test_weak.py_kw.md_docs.md`](./test_weak.py_kw.md_docs.md)
+- [`test_view_ops.py_kw.md_docs.md`](./test_view_ops.py_kw.md_docs.md)
+- [`test_varlen_attention.py_kw.md_docs.md`](./test_varlen_attention.py_kw.md_docs.md)
+- [`test_namedtensor.py_docs.md_docs.md`](./test_namedtensor.py_docs.md_docs.md)
+- [`test_binary_ufuncs.py_docs.md_docs.md`](./test_binary_ufuncs.py_docs.md_docs.md)
+- [`test_ops_gradients.py_kw.md_docs.md`](./test_ops_gradients.py_kw.md_docs.md)
+- [`test_torchfuzz_repros.py_docs.md_docs.md`](./test_torchfuzz_repros.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_mps.py_kw.md_docs.md`
+- **Keyword Index**: `test_mps.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

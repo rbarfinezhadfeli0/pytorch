@@ -1,0 +1,296 @@
+# Documentation: `docs/torch/csrc/distributed/rpc/request_callback_impl.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/distributed/rpc/request_callback_impl.h_docs.md`
+- **Size**: 4,783 bytes (4.67 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/csrc/distributed/rpc/request_callback_impl.h`
+
+## File Metadata
+
+- **Path**: `torch/csrc/distributed/rpc/request_callback_impl.h`
+- **Size**: 2,082 bytes (2.03 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#pragma once
+
+#include <torch/csrc/distributed/rpc/message.h>
+#include <torch/csrc/distributed/rpc/request_callback_no_python.h>
+#include <torch/csrc/distributed/rpc/rpc_command_base.h>
+#include <torch/csrc/jit/python/pybind.h>
+
+namespace torch::distributed::rpc {
+
+class TORCH_API RequestCallbackImpl : public RequestCallbackNoPython {
+ public:
+  std::unique_ptr<RpcCommandBase> deserializePythonRpcCommand(
+      std::unique_ptr<RpcCommandBase> rpc,
+      const MessageType& messageType) const override;
+
+  c10::intrusive_ptr<JitFuture> processPythonCall(
+      RpcCommandBase& rpc,
+      const std::vector<c10::Stream>& streams) const override;
+
+  c10::intrusive_ptr<JitFuture> processScriptCall(
+      RpcCommandBase& rpc,
+      const std::vector<c10::Stream>& streams) const override;
+
+  c10::intrusive_ptr<JitFuture> processScriptRemoteCall(
+      RpcCommandBase& rpc,
+      const std::vector<c10::Stream>& streams) const override;
+
+  c10::intrusive_ptr<JitFuture> processPythonRemoteCall(
+      RpcCommandBase& rpc,
+      const std::vector<c10::Stream>& streams) const override;
+
+  c10::intrusive_ptr<JitFuture> processPythonRRefFetchCall(
+      RpcCommandBase& rpc) const override;
+
+  void handleRRefDelete(c10::intrusive_ptr<RRef>& rref) const override;
+
+  c10::intrusive_ptr<JitFuture> processRpcWithErrors(
+      RpcCommandBase& rpc,
+      const MessageType& messageType,
+      const std::vector<c10::Stream>& streams) const override;
+
+  bool cudaAvailable() const override;
+
+  c10::intrusive_ptr<JitFuture> processRRefBackward(
+      RpcCommandBase& rpc) const override;
+
+  // Helpers to run user-defined functions, operators and other computations.
+
+  c10::intrusive_ptr<JitFuture> runJitFunction(
+      const c10::QualifiedName& name,
+      std::vector<at::IValue>& stack,
+      const std::vector<c10::Stream>& streams,
+      bool isAsyncExecution) const;
+
+  c10::intrusive_ptr<JitFuture> runPythonFunction(
+      const py::object& function,
+      const std::vector<c10::Stream>& streams,
+      bool isAsyncExecution) const;
+};
+
+} // namespace torch::distributed::rpc
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 1 class(es)/struct(s) and 2 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`
+
+**Classes/Structs**: `TORCH_API`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/distributed/rpc`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `torch/csrc/distributed/rpc/message.h`
+- `torch/csrc/distributed/rpc/request_callback_no_python.h`
+- `torch/csrc/distributed/rpc/rpc_command_base.h`
+- `torch/csrc/jit/python/pybind.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/distributed/rpc`):
+
+- [`request_callback.cpp_docs.md`](./request_callback.cpp_docs.md)
+- [`python_rpc_handler.cpp_docs.md`](./python_rpc_handler.cpp_docs.md)
+- [`tensorpipe_agent.h_docs.md`](./tensorpipe_agent.h_docs.md)
+- [`torchscript_functions.cpp_docs.md`](./torchscript_functions.cpp_docs.md)
+- [`utils.cpp_docs.md`](./utils.cpp_docs.md)
+- [`unpickled_python_call.cpp_docs.md`](./unpickled_python_call.cpp_docs.md)
+- [`request_callback.h_docs.md`](./request_callback.h_docs.md)
+- [`rref_context.cpp_docs.md`](./rref_context.cpp_docs.md)
+- [`py_rref.h_docs.md`](./py_rref.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `request_callback_impl.h_docs.md`
+- **Keyword Index**: `request_callback_impl.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/distributed/rpc`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/distributed/rpc`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- **Serialization**: Uses pickle - be cautious with untrusted data
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/distributed/rpc`):
+
+- [`script_resp.cpp_docs.md_docs.md`](./script_resp.cpp_docs.md_docs.md)
+- [`python_rpc_handler.cpp_docs.md_docs.md`](./python_rpc_handler.cpp_docs.md_docs.md)
+- [`tensorpipe_utils.h_kw.md_docs.md`](./tensorpipe_utils.h_kw.md_docs.md)
+- [`types.cpp_docs.md_docs.md`](./types.cpp_docs.md_docs.md)
+- [`utils.cpp_docs.md_docs.md`](./utils.cpp_docs.md_docs.md)
+- [`rref_impl.h_kw.md_docs.md`](./rref_impl.h_kw.md_docs.md)
+- [`rpc_agent.cpp_kw.md_docs.md`](./rpc_agent.cpp_kw.md_docs.md)
+- [`request_callback_impl.cpp_kw.md_docs.md`](./request_callback_impl.cpp_kw.md_docs.md)
+- [`script_call.cpp_docs.md_docs.md`](./script_call.cpp_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `request_callback_impl.h_docs.md_docs.md`
+- **Keyword Index**: `request_callback_impl.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

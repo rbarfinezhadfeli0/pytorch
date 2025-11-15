@@ -1,0 +1,85 @@
+# Keyword Index: `c10/test/util/small_vector_test.cpp`
+
+## File Information
+
+- **Original File**: [c10/test/util/small_vector_test.cpp](../../../../c10/test/util/small_vector_test.cpp)
+- **Documentation**: [`small_vector_test.cpp_docs.md`](./small_vector_test.cpp_docs.md)
+- **Folder**: `c10/test/util`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Class/Structs
+
+- **`A0Ty`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`A1Ty`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`A2Ty`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`A3Ty`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`Constructable`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`DualSmallVectorsTest`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`Emplaceable`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`EmplaceableArg`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`MovedFrom`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`NonCopyable`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`SmallVectorInternalReferenceInvalidationTest`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`SmallVectorReferenceInvalidationTest`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`SmallVectorTest`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`SmallVectorTestBase`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`T`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`VectorT`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`notassignable`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`output_iterator`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`template`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`that`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`the`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`them`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+
+### Functions
+
+- **`CompileTest`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`Constructable`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`NumBuiltinElts`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`TYPED_TEST`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`assertEmpty`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`assertValuesInOrder`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`getNumAssignmentCalls`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`getNumConstructorCalls`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`getNumCopyAssignmentCalls`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`getNumCopyConstructorCalls`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`getNumDestructorCalls`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`getNumMoveAssignmentCalls`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`getNumMoveConstructorCalls`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`getValue`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`int`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`isValueType`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`makeSequence`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`reset`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+
+### Includes
+
+- **`c10/util/ArrayRef.h`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`c10/util/SmallVector.h`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`cstdarg`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`gtest/gtest.h`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+- **`list`**: [small_vector_test.cpp_docs.md](./small_vector_test.cpp_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

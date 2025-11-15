@@ -1,0 +1,82 @@
+# Keyword Index: `docs/torch/csrc/jit/codegen/onednn/prepare_binary.cpp_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/csrc/jit/codegen/onednn/prepare_binary.cpp_kw.md](../../../../../../../docs/torch/csrc/jit/codegen/onednn/prepare_binary.cpp_kw.md)
+- **Documentation**: [`prepare_binary.cpp_kw.md_docs.md`](./prepare_binary.cpp_kw.md_docs.md)
+- **Folder**: `docs/torch/csrc/jit/codegen/onednn`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`Analysis`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`Architecture`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`Basic`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`Complete`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`Considerations`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`ConvertScalarToTensor`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`DecomposeFusedAdd`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`Dependencies`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`Design`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`Detailed`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`Documentation`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`Efficiency`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`EliminateIdentityMulAdd`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`Extracted`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`File`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`Folder`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`Functions`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`Generated`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`High`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`How`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`In`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`Includes`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`Index`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`Information`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`Keyword`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`Keywords`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`Level`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`Map`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`Metadata`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`Namespaces`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`Original`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`Overview`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`Performance`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`PrepareBinaryForLLGA`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`Purpose`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`PyTorch`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`Related`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`Repository`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`Safety`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`Section`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`Security`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`Source`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`System`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`Testing`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`The`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`This`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+- **`Usage`**: [prepare_binary.cpp_kw.md_docs.md](./prepare_binary.cpp_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

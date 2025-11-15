@@ -1,0 +1,77 @@
+# Keyword Index: `docs/torch/fx/experimental/migrate_gradual_types/transform_to_z3.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/fx/experimental/migrate_gradual_types/transform_to_z3.py_kw.md](../../../../../../docs/torch/fx/experimental/migrate_gradual_types/transform_to_z3.py_kw.md)
+- **Documentation**: [`transform_to_z3.py_kw.md_docs.md`](./transform_to_z3.py_kw.md_docs.md)
+- **Folder**: `docs/torch/fx/experimental/migrate_gradual_types`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`Architecture`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`Basic`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`Complete`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`Considerations`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`Dependencies`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`Design`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`Detailed`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`Documentation`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`Dyn`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`Efficiency`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`Extracted`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`File`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`Folder`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`Functions`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`Generated`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`High`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`How`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`Imports`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`In`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`Index`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`Information`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`Keyword`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`Keywords`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`Level`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`Map`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`Metadata`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`Original`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`Overview`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`Performance`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`Purpose`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`PyTorch`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`Related`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`Repository`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`Safety`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`Section`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`Security`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`Source`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`System`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`Testing`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`The`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`This`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+- **`Usage`**: [transform_to_z3.py_kw.md_docs.md](./transform_to_z3.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

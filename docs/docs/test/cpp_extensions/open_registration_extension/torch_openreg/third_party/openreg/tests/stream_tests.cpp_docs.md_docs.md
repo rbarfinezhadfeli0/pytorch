@@ -1,0 +1,310 @@
+# Documentation: `docs/test/cpp_extensions/open_registration_extension/torch_openreg/third_party/openreg/tests/stream_tests.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/cpp_extensions/open_registration_extension/torch_openreg/third_party/openreg/tests/stream_tests.cpp_docs.md`
+- **Size**: 4,497 bytes (4.39 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/cpp_extensions/open_registration_extension/torch_openreg/third_party/openreg/tests/stream_tests.cpp`
+
+## File Metadata
+
+- **Path**: `test/cpp_extensions/open_registration_extension/torch_openreg/third_party/openreg/tests/stream_tests.cpp`
+- **Size**: 2,067 bytes (2.02 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**.
+
+## Original Source
+
+```cpp
+#include <gtest/gtest.h>
+#include <include/openreg.h>
+
+#include <atomic>
+#include <thread>
+
+namespace {
+
+class StreamTest : public ::testing::Test {
+ protected:
+  void SetUp() override {
+    orSetDevice(0);
+  }
+};
+
+TEST_F(StreamTest, StreamCreateAndDestroy) {
+  orStream_t stream = nullptr;
+  EXPECT_EQ(orStreamCreate(&stream), orSuccess);
+  EXPECT_NE(stream, nullptr);
+
+  EXPECT_EQ(orStreamDestroy(stream), orSuccess);
+}
+
+TEST_F(StreamTest, StreamCreateWithInvalidPriority) {
+  orStream_t stream = nullptr;
+  int min_p, max_p;
+  orDeviceGetStreamPriorityRange(&min_p, &max_p);
+
+  EXPECT_EQ(orStreamCreateWithPriority(&stream, 0, min_p - 1), orErrorUnknown);
+  EXPECT_EQ(orStreamCreateWithPriority(&stream, 0, max_p + 1), orErrorUnknown);
+}
+
+TEST_F(StreamTest, StreamTaskExecution) {
+  orStream_t stream = nullptr;
+  EXPECT_EQ(orStreamCreate(&stream), orSuccess);
+
+  std::atomic<int> counter{0};
+  EXPECT_EQ(openreg::addTaskToStream(stream, [&] { counter++; }), orSuccess);
+
+  EXPECT_EQ(orStreamSynchronize(stream), orSuccess);
+  EXPECT_EQ(counter.load(), 1);
+
+  EXPECT_EQ(orStreamDestroy(stream), orSuccess);
+}
+
+TEST_F(StreamTest, StreamQuery) {
+  orStream_t stream = nullptr;
+  EXPECT_EQ(orStreamCreate(&stream), orSuccess);
+
+  EXPECT_EQ(orStreamQuery(stream), orSuccess);
+
+  std::atomic<int> counter{0};
+  openreg::addTaskToStream(stream, [&] { counter++; });
+
+  EXPECT_EQ(orStreamSynchronize(stream), orSuccess);
+  EXPECT_EQ(orStreamQuery(stream), orSuccess);
+
+  EXPECT_EQ(orStreamDestroy(stream), orSuccess);
+}
+
+TEST_F(StreamTest, DeviceSynchronize) {
+  orStream_t stream1 = nullptr;
+  orStream_t stream2 = nullptr;
+
+  EXPECT_EQ(orStreamCreate(&stream1), orSuccess);
+  EXPECT_EQ(orStreamCreate(&stream2), orSuccess);
+
+  std::atomic<int> counter{0};
+  openreg::addTaskToStream(stream1, [&] { counter++; });
+  openreg::addTaskToStream(stream2, [&] { counter++; });
+
+  EXPECT_EQ(orDeviceSynchronize(), orSuccess);
+  EXPECT_EQ(counter.load(), 2);
+
+  EXPECT_EQ(orStreamDestroy(stream1), orSuccess);
+  EXPECT_EQ(orStreamDestroy(stream2), orSuccess);
+}
+
+} // namespace
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 1 class(es)/struct(s) and 1 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes/Structs**: `StreamTest`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/cpp_extensions/open_registration_extension/torch_openreg/third_party/openreg/tests`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `gtest/gtest.h`
+- `include/openreg.h`
+- `atomic`
+- `thread`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/cpp_extensions/open_registration_extension/torch_openreg/third_party/openreg/tests/stream_tests.cpp
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/cpp_extensions/open_registration_extension/torch_openreg/third_party/openreg/tests`):
+
+- [`memory_tests.cpp_docs.md`](./memory_tests.cpp_docs.md)
+- [`device_tests.cpp_docs.md`](./device_tests.cpp_docs.md)
+- [`event_tests.cpp_docs.md`](./event_tests.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `stream_tests.cpp_docs.md`
+- **Keyword Index**: `stream_tests.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/cpp_extensions/open_registration_extension/torch_openreg/third_party/openreg/tests`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/cpp_extensions/open_registration_extension/torch_openreg/third_party/openreg/tests`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/cpp_extensions/open_registration_extension/torch_openreg/third_party/openreg/tests/stream_tests.cpp_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/cpp_extensions/open_registration_extension/torch_openreg/third_party/openreg/tests`):
+
+- [`event_tests.cpp_kw.md_docs.md`](./event_tests.cpp_kw.md_docs.md)
+- [`memory_tests.cpp_kw.md_docs.md`](./memory_tests.cpp_kw.md_docs.md)
+- [`stream_tests.cpp_kw.md_docs.md`](./stream_tests.cpp_kw.md_docs.md)
+- [`memory_tests.cpp_docs.md_docs.md`](./memory_tests.cpp_docs.md_docs.md)
+- [`event_tests.cpp_docs.md_docs.md`](./event_tests.cpp_docs.md_docs.md)
+- [`device_tests.cpp_docs.md_docs.md`](./device_tests.cpp_docs.md_docs.md)
+- [`device_tests.cpp_kw.md_docs.md`](./device_tests.cpp_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `stream_tests.cpp_docs.md_docs.md`
+- **Keyword Index**: `stream_tests.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

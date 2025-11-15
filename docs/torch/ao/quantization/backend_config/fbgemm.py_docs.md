@@ -1,0 +1,247 @@
+# Documentation: `torch/ao/quantization/backend_config/fbgemm.py`
+
+## File Metadata
+
+- **Path**: `torch/ao/quantization/backend_config/fbgemm.py`
+- **Size**: 4,208 bytes (4.11 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This is a python source code that is part of the PyTorch project.
+
+## Original Source
+
+```python
+import torch
+
+from ._common_operator_config_utils import (
+    _get_binary_op_configs,
+    _get_bn_configs,
+    _get_cat_config,
+    _get_conv_configs,
+    _get_default_op_configs,
+    _get_embedding_op_configs,
+    _get_fixed_qparams_op_configs,
+    _get_linear_configs,
+    _get_rnn_op_configs,
+    _get_share_qparams_op_configs,
+    _get_tensor_info_op_configs,
+)
+from .backend_config import BackendConfig, DTypeConfig
+
+
+__all__ = [
+    "get_fbgemm_backend_config",
+]
+
+# ===================
+# |  DTYPE CONFIGS  |
+# ===================
+
+# TODO: For now, these DTypeConfigs are identical to the ones defined in native.py
+# In the future, once we support specifying quant_min/quant_max and scale_min/scale_max,
+# these will diverge. In particular, for FBGEMM, we will restrict the activation quantized
+# values to within [0, 127].
+
+fbgemm_weighted_op_quint8_dtype_config = DTypeConfig(
+    input_dtype=torch.quint8,
+    output_dtype=torch.quint8,
+    weight_dtype=torch.qint8,
+    bias_dtype=torch.float,
+)
+
+fbgemm_default_op_quint8_dtype_config = DTypeConfig(
+    input_dtype=torch.quint8,
+    output_dtype=torch.quint8,
+)
+
+fbgemm_default_op_fp16_dtype_config = DTypeConfig(
+    input_dtype=torch.float16,
+    output_dtype=torch.float16,
+    weight_dtype=torch.float16,
+    bias_dtype=torch.float16,
+)
+
+fbgemm_default_dynamic_int8_dtype_config = DTypeConfig(
+    input_dtype=torch.quint8,
+    output_dtype=torch.float,
+    weight_dtype=torch.qint8,
+    bias_dtype=torch.float,
+    is_dynamic=True,
+)
+
+fbgemm_default_dynamic_float16_dtype_config = DTypeConfig(
+    input_dtype=torch.float16,
+    output_dtype=torch.float,
+    weight_dtype=torch.float16,
+    bias_dtype=torch.float,
+    is_dynamic=True,
+)
+
+fbgemm_weight_only_quint8_dtype_config = DTypeConfig(
+    input_dtype=torch.float,
+    output_dtype=torch.float,
+    weight_dtype=torch.quint8,
+)
+
+fbgemm_weight_only_quint4x2_dtype_config = DTypeConfig(
+    input_dtype=torch.float,
+    output_dtype=torch.float,
+    weight_dtype=torch.quint4x2,
+)
+
+
+# =====================
+# |  BACKEND CONFIGS  |
+# =====================
+
+
+def get_fbgemm_backend_config() -> BackendConfig:
+    """
+    Return the `BackendConfig` for PyTorch's native FBGEMM backend.
+    """
+    conv_dtype_configs = [fbgemm_weighted_op_quint8_dtype_config]
+    linear_dtype_configs = [
+        fbgemm_weighted_op_quint8_dtype_config,
+        fbgemm_default_dynamic_int8_dtype_config,
+        fbgemm_default_dynamic_float16_dtype_config,
+    ]
+    binary_op_dtype_configs = [fbgemm_default_op_quint8_dtype_config]
+    default_op_dtype_configs = [fbgemm_default_op_quint8_dtype_config]
+    fixed_qparams_op_dtype_configs = [fbgemm_default_op_quint8_dtype_config]
+    share_qparams_op_dtype_configs = [fbgemm_default_op_quint8_dtype_config]
+    tensor_info_op_dtype_configs = [fbgemm_default_op_quint8_dtype_config]
+    rnn_op_dtype_configs = [
+        fbgemm_default_dynamic_int8_dtype_config,
+        fbgemm_default_dynamic_float16_dtype_config,
+    ]
+    embedding_op_dtype_configs = [
+        fbgemm_weight_only_quint8_dtype_config,
+        fbgemm_weight_only_quint4x2_dtype_config,
+    ]
+    return (
+        BackendConfig("fbgemm")
+        .set_backend_pattern_configs(_get_conv_configs(conv_dtype_configs))
+        .set_backend_pattern_configs(_get_linear_configs(linear_dtype_configs))
+        .set_backend_pattern_configs(_get_binary_op_configs(binary_op_dtype_configs))
+        .set_backend_pattern_config(_get_cat_config(default_op_dtype_configs))
+        .set_backend_pattern_configs(_get_default_op_configs(default_op_dtype_configs))
+        .set_backend_pattern_configs(
+            _get_fixed_qparams_op_configs(fixed_qparams_op_dtype_configs)
+        )
+        .set_backend_pattern_configs(
+            _get_share_qparams_op_configs(share_qparams_op_dtype_configs)
+        )
+        .set_backend_pattern_configs(
+            _get_tensor_info_op_configs(tensor_info_op_dtype_configs)
+        )
+        .set_backend_pattern_configs(_get_bn_configs(default_op_dtype_configs))
+        .set_backend_pattern_configs(_get_rnn_op_configs(rnn_op_dtype_configs))
+        .set_backend_pattern_configs(
+            _get_embedding_op_configs(embedding_op_dtype_configs)
+        )
+    )
+
+```
+
+
+
+## High-Level Overview
+
+
+This Python file contains 0 class(es) and 1 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Functions defined**: `get_fbgemm_backend_config`
+
+**Key imports**: torch, BackendConfig, DTypeConfig
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/ao/quantization/backend_config`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `torch`
+- `.backend_config`: BackendConfig, DTypeConfig
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/ao/quantization/backend_config`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`executorch.py_docs.md`](./executorch.py_docs.md)
+- [`utils.py_docs.md`](./utils.py_docs.md)
+- [`_common_operator_config_utils.py_docs.md`](./_common_operator_config_utils.py_docs.md)
+- [`x86.py_docs.md`](./x86.py_docs.md)
+- [`tensorrt.py_docs.md`](./tensorrt.py_docs.md)
+- [`README.md_docs.md`](./README.md_docs.md)
+- [`native.py_docs.md`](./native.py_docs.md)
+- [`onednn.py_docs.md`](./onednn.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `fbgemm.py_docs.md`
+- **Keyword Index**: `fbgemm.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

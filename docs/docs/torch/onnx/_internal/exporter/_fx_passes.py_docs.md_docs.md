@@ -1,0 +1,283 @@
+# Documentation: `docs/torch/onnx/_internal/exporter/_fx_passes.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/onnx/_internal/exporter/_fx_passes.py_docs.md`
+- **Size**: 4,652 bytes (4.54 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/onnx/_internal/exporter/_fx_passes.py`
+
+## File Metadata
+
+- **Path**: `torch/onnx/_internal/exporter/_fx_passes.py`
+- **Size**: 1,840 bytes (1.80 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This is a python source code that is part of the PyTorch project.
+
+## Original Source
+
+```python
+from __future__ import annotations
+
+import torch
+import torch.export
+import torch.fx
+from torch.onnx._internal.exporter import _decomp, _registration
+from torch.onnx._internal.fx import passes
+
+
+def decompose_with_registry(
+    exported_program: torch.export.ExportedProgram, registry: _registration.ONNXRegistry
+) -> torch.export.ExportedProgram:
+    """Decompose the exported program with the given registry.
+
+    This function is needed so it shows clearly on the profiler results.
+    """
+    onnx_registered_ops = set(_decomp.get_onnx_implemented_overloads(registry))
+    decomp_table = _decomp.create_onnx_friendly_decomposition_table(onnx_registered_ops)
+    return exported_program.run_decompositions(decomp_table)
+
+
+def insert_type_promotion_nodes(
+    graph_module: torch.fx.GraphModule,
+) -> None:
+    """Inplace pass to insert explicit type promotion nodes, recursively through nested modules."""
+    for module in graph_module.modules():
+        assert isinstance(module, torch.fx.GraphModule)
+        passes.InsertTypePromotion(module).run()
+
+
+def remove_assertion_nodes(graph_module: torch.fx.GraphModule) -> torch.fx.GraphModule:
+    """Remove all assertion and check nodes from the FX graph"""
+    aten_assertion_targets = {
+        torch.ops.aten.sym_constrain_range_for_size.default,
+        torch.ops.aten._assert_async.default,
+        torch.ops.aten._assert_async.msg,
+        torch.ops.aten._assert_scalar.default,
+        torch.ops.aten._assert_tensor_metadata.default,
+    }
+    for gm in graph_module.modules():
+        for node in gm.graph.nodes:  # type: ignore[union-attr]
+            if node.op == "call_function" and node.target in aten_assertion_targets:
+                gm.graph.erase_node(node)  # type: ignore[operator, union-attr]
+        gm.recompile()  # type: ignore[operator]
+    return graph_module
+
+```
+
+
+
+## High-Level Overview
+
+"""Decompose the exported program with the given registry.    This function is needed so it shows clearly on the profiler results.
+
+This Python file contains 0 class(es) and 3 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Functions defined**: `decompose_with_registry`, `insert_type_promotion_nodes`, `remove_assertion_nodes`
+
+**Key imports**: annotations, torch, torch.export, torch.fx, _decomp, _registration, passes
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/onnx/_internal/exporter`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `__future__`: annotations
+- `torch`
+- `torch.export`
+- `torch.fx`
+- `torch.onnx._internal.exporter`: _decomp, _registration
+- `torch.onnx._internal.fx`: passes
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/onnx/_internal/exporter`):
+
+- [`_registration.py_docs.md`](./_registration.py_docs.md)
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`_flags.py_docs.md`](./_flags.py_docs.md)
+- [`_building.py_docs.md`](./_building.py_docs.md)
+- [`_ir_passes.py_docs.md`](./_ir_passes.py_docs.md)
+- [`_analysis.py_docs.md`](./_analysis.py_docs.md)
+- [`_verification.py_docs.md`](./_verification.py_docs.md)
+- [`_capture_strategies.py_docs.md`](./_capture_strategies.py_docs.md)
+- [`_tensors.py_docs.md`](./_tensors.py_docs.md)
+- [`_dispatching.py_docs.md`](./_dispatching.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `_fx_passes.py_docs.md`
+- **Keyword Index**: `_fx_passes.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/onnx/_internal/exporter`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/onnx/_internal/exporter`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/onnx/_internal/exporter`):
+
+- [`_onnx_program.py_docs.md_docs.md`](./_onnx_program.py_docs.md_docs.md)
+- [`_decomp.py_docs.md_docs.md`](./_decomp.py_docs.md_docs.md)
+- [`_testing.py_docs.md_docs.md`](./_testing.py_docs.md_docs.md)
+- [`_flags.py_docs.md_docs.md`](./_flags.py_docs.md_docs.md)
+- [`_verification.py_docs.md_docs.md`](./_verification.py_docs.md_docs.md)
+- [`_dispatching.py_docs.md_docs.md`](./_dispatching.py_docs.md_docs.md)
+- [`_errors.py_kw.md_docs.md`](./_errors.py_kw.md_docs.md)
+- [`_schemas.py_kw.md_docs.md`](./_schemas.py_kw.md_docs.md)
+- [`_ir_passes.py_kw.md_docs.md`](./_ir_passes.py_kw.md_docs.md)
+- [`_compat.py_kw.md_docs.md`](./_compat.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `_fx_passes.py_docs.md_docs.md`
+- **Keyword Index**: `_fx_passes.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,313 @@
+# Documentation: `docs/torch/jit/unsupported_tensor_ops.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/jit/unsupported_tensor_ops.py_docs.md`
+- **Size**: 4,530 bytes (4.42 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/jit/unsupported_tensor_ops.py`
+
+## File Metadata
+
+- **Path**: `torch/jit/unsupported_tensor_ops.py`
+- **Size**: 1,995 bytes (1.95 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This is a python source code that is part of the PyTorch project.
+
+## Original Source
+
+```python
+# mypy: allow-untyped-defs
+from textwrap import dedent
+from typing import Any
+
+import torch.jit
+
+
+def execWrapper(code, glob, loc) -> None:
+    exec(code, glob, loc)
+
+
+def _gen_unsupported_methods_properties():
+    tensor_attrs = set(filter(lambda x: x[0] != "_", dir(torch.Tensor)))
+    tensor = torch.tensor([2])
+    funcs_template = dedent(
+        """
+    def func(x):
+        return x.{op}()
+    """
+    )
+
+    deprecated_apis = {
+        "volatile",
+        "resize",
+        "reinforce",
+        "new",
+        "name",
+        "map2_",
+        "has_names",
+        "grad_fn",
+        "resize_as",
+    }
+    tensor_attrs = tensor_attrs - deprecated_apis
+
+    properties = []
+    methods = []
+    sorted_tensor_attrs = sorted(tensor_attrs, key=lambda x: x.lower())
+    for attr in sorted_tensor_attrs:
+        funcs_str = funcs_template.format(op=attr)
+        scope: dict[str, Any] = {}
+        execWrapper(funcs_str, globals(), scope)
+        try:
+            torch.jit.CompilationUnit(funcs_str)
+        except Exception as e:
+            if "nonexistent attribute" not in repr(e):
+                continue
+            attr_repr = repr(getattr(tensor, attr))
+            if "bound method" in attr_repr or "built-in method" in attr_repr:
+                methods.append(attr)
+            else:
+                properties.append(attr)
+
+    mapped_methods = ("\t*  :meth:`~torch.Tensor." + x + r"`" for x in methods)
+    mapped_properties = ("\t*  :attr:`~torch.Tensor." + x + r"`" for x in properties)
+    return "\n".join(mapped_methods), "\n".join(mapped_properties)
+
+
+def _list_unsupported_tensor_ops():
+    header = """\n\n
+Unsupported Tensor Methods
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    """
+    methods, properties = _gen_unsupported_methods_properties()
+    return (
+        header
+        + "\n"
+        + methods
+        + """
+
+Unsupported Tensor Properties
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    """
+        + "\n"
+        + properties
+    )
+
+
+__doc__ = _list_unsupported_tensor_ops()
+
+```
+
+
+
+## High-Level Overview
+
+"""    def func(x):        return x.{op}()
+
+This Python file contains 0 class(es) and 4 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Functions defined**: `execWrapper`, `_gen_unsupported_methods_properties`, `func`, `_list_unsupported_tensor_ops`
+
+**Key imports**: dedent, Any, torch.jit
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/jit`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `textwrap`: dedent
+- `typing`: Any
+- `torch.jit`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Error Handling**: Includes exception handling
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- **Code Execution**: Uses `eval()` or `exec()` - ensure input is sanitized
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/jit`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`_decompositions.py_docs.md`](./_decompositions.py_docs.md)
+- [`_dataclass_impls.py_docs.md`](./_dataclass_impls.py_docs.md)
+- [`quantized.py_docs.md`](./quantized.py_docs.md)
+- [`frontend.py_docs.md`](./frontend.py_docs.md)
+- [`_builtins.py_docs.md`](./_builtins.py_docs.md)
+- [`_trace.py_docs.md`](./_trace.py_docs.md)
+- [`_serialization.py_docs.md`](./_serialization.py_docs.md)
+- [`_state.py_docs.md`](./_state.py_docs.md)
+- [`_await.py_docs.md`](./_await.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `unsupported_tensor_ops.py_docs.md`
+- **Keyword Index**: `unsupported_tensor_ops.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/jit`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/jit`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Error Handling**: Includes exception handling
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- **Code Execution**: Uses `eval()` or `exec()` - ensure input is sanitized
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/jit`):
+
+- [`_check.py_kw.md_docs.md`](./_check.py_kw.md_docs.md)
+- [`_shape_functions.py_docs.md_docs.md`](./_shape_functions.py_docs.md_docs.md)
+- [`_trace.py_kw.md_docs.md`](./_trace.py_kw.md_docs.md)
+- [`_logging.py_docs.md_docs.md`](./_logging.py_docs.md_docs.md)
+- [`_async.py_kw.md_docs.md`](./_async.py_kw.md_docs.md)
+- [`_state.py_docs.md_docs.md`](./_state.py_docs.md_docs.md)
+- [`_decomposition_utils.py_kw.md_docs.md`](./_decomposition_utils.py_kw.md_docs.md)
+- [`frontend.py_docs.md_docs.md`](./frontend.py_docs.md_docs.md)
+- [`_check.py_docs.md_docs.md`](./_check.py_docs.md_docs.md)
+- [`_script.pyi_docs.md_docs.md`](./_script.pyi_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `unsupported_tensor_ops.py_docs.md_docs.md`
+- **Keyword Index**: `unsupported_tensor_ops.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

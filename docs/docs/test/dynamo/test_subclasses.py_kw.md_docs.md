@@ -1,0 +1,414 @@
+# Documentation: `docs/test/dynamo/test_subclasses.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/test/dynamo/test_subclasses.py_kw.md`
+- **Size**: 24,931 bytes (24.35 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `test/dynamo/test_subclasses.py`
+
+## File Information
+
+- **Original File**: [test/dynamo/test_subclasses.py](../../../test/dynamo/test_subclasses.py)
+- **Documentation**: [`test_subclasses.py_docs.md`](./test_subclasses.py_docs.md)
+- **Folder**: `test/dynamo`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`AttrSubclass`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`BadNewTorchFunction`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`BaseTorchFunction`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`CtxSubclassTensor`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`CtxSubclassTensorCustomGuardFn`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`DoubleSizeMaybeAddGeThreeTensor`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`DummyNDim`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`EagerRecordGraphAndInputs`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`Foo`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`GGUFParameter`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`GraphModule`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`LocalSubclass`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`Meta`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`MockSubclass`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`Multistreamable`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`MyClass`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`MySubclass`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`MyTensor`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`NJT`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`OptionalScaledTensor`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`ScaledTensor`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`SigmoidToExpSubclass`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`SubTensor`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`SubclassTensor`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`SubclassTensorArgs`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`SubclassTests`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`TT`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`TestNestedTensor`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`TestTensor`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`WrapperSubclass`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`attributes`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`call`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`def`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`in`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`metadata`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`method`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`that`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`to`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`with`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`wrap_body_0`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+
+### Functions
+
+- **`__call__`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`__init__`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`__metadata_guard__`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`__new__`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`__repr__`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`__tensor_flatten__`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`__tensor_unflatten__`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`__torch_dispatch__`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`__torch_function__`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`_check_recompiles`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`_compile_check`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`_gen_grad_outputs`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`_get_jagged_tensor`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`_get_nc_jagged_tensor`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`_get_views`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`_input_view_test`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`_recompiles_for_inputs`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`_stack`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`_test_autograd`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`_unbind_njts`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`_validate_compile`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`aot_f_wrapper`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`append_guard_export`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`append_guard_fail`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`arg_fn`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`as_tensor`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`assertEqualIgnoringNestedInts`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`backend`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`binary`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`call_backward_fn`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`check_count_and_graph`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`check_graph`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`counter`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`f`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`f1`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`fn`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`fn1`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`forward`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`func`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`g`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`get_jagged_tensor`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`get_view_test_cases`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`inner_compile`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`mk_basic`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`mk_dense_subclass_dense_subclass`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`mk_leaf`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`mk_obscure`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`mk_subclass_dense_subclass_dense`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`ndim`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`nontraceable_subclass`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`shape`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`sigmoid`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`sin`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`tearDownClass`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_as_subclass_attr_mutation`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_automatic_dynamic`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_base_torch_function_tracing`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_basic_autograd`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_basic_autograd_inductor`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_binary_does_not_recompile`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_binary_recompiles`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_compile_higher_order_with_functionalization`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_compile_with_fake_tensor_automatic_dynamic`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_compile_with_fake_tensor_dynamic_dim`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_compile_with_functionalization`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_disable_all_torch_function`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_disable_all_torch_function_restore_values`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_disable_all_torch_function_restore_values_graph_break`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_dynamic_dim`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_has_torch_function`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_in_graph_construction_from_input`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_in_graph_construction_from_input_2`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_in_graph_construction_from_input_4`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_in_graph_construction_from_input_5`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_in_graph_construction_from_input_6`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_in_graph_construction_from_intermediate`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_in_graph_construction_from_intermediate_2`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_in_graph_construction_from_intermediate_3`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_in_graph_construction_from_intermediate_4`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_in_graph_construction_from_intermediate_5`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_in_graph_construction_mixed`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_in_graph_construction_mixed_2`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_in_graph_construction_mixed_3`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_in_graph_is_nested_call`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_inference_tensor`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_inline_nested_tensor_from_jagged`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_inputs_to_compiled_fn_are_views`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_make_subclass`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_mark_static_with_subclass_desugaring`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_newly_constructed_tensor_subclass_attr_mutation`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_njt_subclass_from_buffer`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_njt_subclass_from_cat`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_njt_subclass_simple`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_no_call_to_new`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_no_torch_function_on_size_bytecode`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_no_torch_function_recompiles`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_nontraceable_tensor_subclass`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_overridden_method_guarding`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_param_subclass_isinstance_input`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_parameter_subclass_custom_torch_func_and_dynamic_attr`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_parameter_subclass_with_old_torch_function`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_recompilation`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_recompile_with_symbool_inputs`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_recompiles_with_optional_inner_tensor`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_return_as_subclass`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_return_local_subclass`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_return_shape`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_return_subclass`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_subclass_TwoTensor_TwoTensor_TwoTensor`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_subclass_TwoTensor_nested_diff_sizes`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_subclass_constructor_proxying`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_subclass_dense_subclass_dense_view`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_subclass_dont_invoke_torch_function_on_overridden_attr`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_subclass_dont_invoke_torch_function_on_overridden_method`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_subclass_gives_static_shapes_when_dynamic_false`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_subclass_override_shape_and_to`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_subclass_parameters_are_static_under_training`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_subclass_views`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_subclass_with_disabled_torch_function`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_subclass_with_mutation_in_graph`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_support_bases`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_tensor_subclass_TwoTensor_automatic_dynamic_shapes`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_tensor_subclass_TwoTensor_clone_view`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_tensor_subclass_TwoTensor_different_shape`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_tensor_subclass_TwoTensor_mark_dynamic_shapes`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_tensor_subclass_TwoTensor_mul`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_tensor_subclass_TwoTensor_nested`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_tensor_subclass_TwoTensor_return_multiple`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_tensor_subclass_TwoTensor_return_shape`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_tensor_subclass_TwoTensor_return_tensor_and_subclass`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_tensor_subclass_TwoTensor_simple`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_tensor_subclass_TwoTensor_view`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_tensor_subclass_TwoTensor_view_mul`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_tensor_subclass_attr_codegen_tos`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_tensor_subclass_ctx_custom_guards_error_arg_num`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_tensor_subclass_ctx_custom_guards_error_not_classmethod`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_tensor_subclass_ctx_custom_guards_override`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_tensor_subclass_ctx_guards`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_tensor_subclass_ctx_recursive_guards`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_tensor_subclass_custom_attr`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_tensor_subclass_with_non_classmethod_torch_function`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_torch_dispatch_subclass_guard_recompile`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_torch_function_call_on_attr`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_torch_function_call_on_method`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_torch_function_call_on_method_arg`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_torch_function_list_args`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_torch_function_state_graph_break`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_torch_function_state_guards`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_torch_function_state_nested`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_torch_function_state_tracing`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_torch_function_subclass_survives_into_aot_autograd`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_torch_function_wrapper_class`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_torch_function_wrapper_class_with_kwargs`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_type_check`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_unary_does_not_recompile`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_unbind`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_user_overridden_attr_unsupported`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_user_overridden_method_unsupported`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_user_overridden_property_unsupported`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_wrapper_subclass_dynamo_attribute_access_on_intermediate`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_wrapper_subclass_guards_on_inner_tensor`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_wrapper_subclass_with_differently_sized_inner_tensor`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`test_wrapper_subclass_with_same_sized_inner_tensor`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`to`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`to_fun`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`wrapper`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+
+### Imports
+
+- **`Any`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`BoxedBool`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`BoxedDeviceIndex`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`Callable`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`CompileCounterWithBackend`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`MethodWrapperType`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`TwoTensor`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`_tensor_symint_registry`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`abc`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`aot_autograd`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`buffer_from_jagged`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`collections`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`collections.abc`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`compile_fx`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`dataclasses`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`functools`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`itertools`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`make_boxed_compiler`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`mark_static_address`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`min_cut_rematerialization_partition`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`namedtuple`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`partial`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`requires_cuda_and_triton`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`return_and_correct_aliasing`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`run_tests`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`torch`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`torch._dynamo.backends.common`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`torch._dynamo.decorators`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`torch._dynamo.exc`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`torch._dynamo.test_case`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`torch._dynamo.testing`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`torch._functorch._aot_autograd.utils`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`torch._functorch.compilers`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`torch._functorch.config`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`torch._higher_order_ops.wrap`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`torch._inductor.compile_fx`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`torch._inductor.cudagraph_utils`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`torch._inductor.utils`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`torch.fx._symbolic_trace`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`torch.fx.experimental.symbolic_shapes`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`torch.nested._internal.nested_tensor`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`torch.testing._internal.triton_utils`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`torch.testing._internal.two_tensor`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`torch.utils._python_dispatch`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`torch.utils._pytree`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`torch.utils.checkpoint`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`types`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`typing`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`unittest`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+- **`wrap`**: [test_subclasses.py_docs.md](./test_subclasses.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/dynamo`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/dynamo`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/dynamo/test_subclasses.py_kw.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/dynamo`):
+
+- [`test_error_messages.py_docs.md_docs.md`](./test_error_messages.py_docs.md_docs.md)
+- [`test_hooks.py_kw.md_docs.md`](./test_hooks.py_kw.md_docs.md)
+- [`test_unittest.py_docs.md_docs.md`](./test_unittest.py_docs.md_docs.md)
+- [`test_minifier.py_kw.md_docs.md`](./test_minifier.py_kw.md_docs.md)
+- [`test_aot_autograd.py_kw.md_docs.md`](./test_aot_autograd.py_kw.md_docs.md)
+- [`test_einops.py_docs.md_docs.md`](./test_einops.py_docs.md_docs.md)
+- [`test_compile.py_kw.md_docs.md`](./test_compile.py_kw.md_docs.md)
+- [`test_misc.py_docs.md_docs.md`](./test_misc.py_docs.md_docs.md)
+- [`test_buffers_override.py_kw.md_docs.md`](./test_buffers_override.py_kw.md_docs.md)
+- [`test_frame_init.py_docs.md_docs.md`](./test_frame_init.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_subclasses.py_kw.md_docs.md`
+- **Keyword Index**: `test_subclasses.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

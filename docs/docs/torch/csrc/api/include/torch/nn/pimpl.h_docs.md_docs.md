@@ -1,0 +1,440 @@
+# Documentation: `docs/torch/csrc/api/include/torch/nn/pimpl.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/api/include/torch/nn/pimpl.h_docs.md`
+- **Size**: 9,138 bytes (8.92 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/csrc/api/include/torch/nn/pimpl.h`
+
+## File Metadata
+
+- **Path**: `torch/csrc/api/include/torch/nn/pimpl.h`
+- **Size**: 6,615 bytes (6.46 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#pragma once
+
+#include <torch/arg.h>
+#include <torch/detail/static.h>
+#include <torch/serialize/archive.h>
+#include <torch/types.h>
+
+#include <torch/csrc/utils/variadic.h>
+
+#include <memory>
+#include <type_traits>
+#include <utility>
+
+namespace torch {
+namespace detail {
+// Dump all the template metaprogramming in this file.
+#include <torch/csrc/api/include/torch/nn/pimpl-inl.h>
+} // namespace detail
+
+namespace nn {
+
+/// A `ModuleHolder` is essentially a wrapper around `std::shared_ptr<M>` where
+/// `M` is an `nn::Module` subclass, with convenient constructors defined for
+/// the kind of constructions we want to allow for our modules.
+template <typename Contained>
+class ModuleHolder : torch::detail::ModuleHolderIndicator {
+ protected:
+  /// The module pointer this class wraps.
+  /// NOTE: Must be placed at the top of the class so that we can use it with
+  /// trailing return types below.
+  // NOLINTNEXTLINE(cppcoreguidelines-non-private-member-variables-in-classes)
+  std::shared_ptr<Contained> impl_;
+
+ public:
+  using ContainedType = Contained;
+
+  /// Default constructs the contained module if if has a default constructor,
+  /// else produces a static error.
+  ///
+  /// NOTE: This uses the behavior of template
+  /// classes in C++ that constructors (or any methods) are only compiled when
+  /// actually used.
+  ModuleHolder() : impl_(default_construct()) {
+    static_assert(
+        std::is_default_constructible_v<Contained>,
+        "You are trying to default construct a module which has "
+        "no default constructor. Use = nullptr to give it the empty state "
+        "(e.g. `Linear linear = nullptr;` instead of `Linear linear;`).");
+  }
+
+  /// Constructs the `ModuleHolder` with an empty contained value. Access to
+  /// the underlying module is not permitted and will throw an exception, until
+  /// a value is assigned.
+  /* implicit */ ModuleHolder(std::nullptr_t) : impl_(nullptr) {}
+
+  /// Constructs the `ModuleHolder` with a contained module, forwarding all
+  /// arguments to its constructor.
+  template <
+      typename Head,
+      typename... Tail,
+      typename = std::enable_if_t<
+          !(torch::detail::is_module_holder_of<Head, ContainedType>::value &&
+            (sizeof...(Tail) == 0))>>
+  explicit ModuleHolder(Head&& head, Tail&&... tail)
+      : impl_(new Contained(
+            std::forward<Head>(head),
+            std::forward<Tail>(tail)...)) {}
+
+  /// Constructs the `ModuleHolder` from a pointer to the contained type.
+  /// Example: `Linear(std::make_shared<LinearImpl>(...))`.
+  /* implicit */ ModuleHolder(std::shared_ptr<Contained> module)
+      : impl_(std::move(module)) {}
+
+  /// Returns true if the `ModuleHolder` contains a module, or false if it is
+  /// `nullptr`.
+  explicit operator bool() const noexcept {
+    return !is_empty();
+  }
+
+  /// Forwards to the contained module.
+  Contained* operator->() {
+    return get();
+  }
+
+  /// Forwards to the contained module.
+  const Contained* operator->() const {
+    return get();
+  }
+
+  /// Returns a reference to the contained module.
+  Contained& operator*() {
+    return *get();
+  }
+
+  /// Returns a const reference to the contained module.
+  const Contained& operator*() const {
+    return *get();
+  }
+
+  /// Returns a shared pointer to the underlying module.
+  const std::shared_ptr<Contained>& ptr() const {
+    TORCH_CHECK(!is_empty(), "Accessing empty ModuleHolder");
+    return impl_;
+  }
+
+  /// Returns a pointer to the underlying module.
+  Contained* get() {
+    TORCH_CHECK(!is_empty(), "Accessing empty ModuleHolder");
+    return impl_.get();
+  }
+
+  /// Returns a const pointer to the underlying module.
+  const Contained* get() const {
+    TORCH_CHECK(!is_empty(), "Accessing empty ModuleHolder");
+    return impl_.get();
+  }
+
+  /// Calls the `forward()` method of the contained module.
+  template <typename... Args>
+  auto operator()(Args&&... args)
+      -> torch::detail::return_type_of_forward_t<Contained, Args...> {
+    // This will not compile if the module does not have a `forward()` method
+    // (as expected).
+    // NOTE: `std::forward` is qualified to prevent VS2017 emitting
+    // error C2872: 'std': ambiguous symbol
+    return impl_->forward(::std::forward<Args>(args)...);
+  }
+
+  /// Forwards to the subscript operator of the contained module.
+  /// NOTE: std::forward is qualified to prevent VS2017 emitting
+  ///       error C2872: 'std': ambiguous symbol
+  template <typename Arg>
+  auto operator[](Arg&& arg) {
+    return (*impl_)[::std::forward<Arg>(arg)];
+  }
+
+  /// Returns true if the `ModuleHolder` does not contain a module.
+  bool is_empty() const noexcept {
+    return impl_ == nullptr;
+  }
+
+ private:
+  template <typename T = Contained>
+  std::shared_ptr<Contained> default_construct() {
+    if constexpr (std::is_default_constructible_v<T>) {
+      return std::make_shared<Contained>();
+    } else {
+      return nullptr;
+    }
+  }
+};
+
+/// Pretty prints the given `Module` into the `ostream`.
+template <typename ModuleType>
+std::ostream& operator<<(
+    std::ostream& stream,
+    const nn::ModuleHolder<ModuleType>& module) {
+  return stream << *module;
+}
+
+/// Serializes a `ModuleHolder` into an `OutputArchive`.
+template <typename ModuleType>
+serialize::OutputArchive& operator<<(
+    serialize::OutputArchive& archive,
+    const nn::ModuleHolder<ModuleType>& module) {
+  return archive << module.ptr();
+}
+
+/// Deserializes a `ModuleHolder` from an `InputArchive`.
+template <typename ModuleType>
+serialize::InputArchive& operator>>(
+    serialize::InputArchive& archive,
+    nn::ModuleHolder<ModuleType>& module) {
+  return archive >> module.ptr();
+}
+
+} // namespace nn
+} // namespace torch
+
+// Workaround for CUDA 10.2 and below not allowing attribute unused on
+// using declarations.
+#ifdef __CUDACC__
+#define TORCH_UNUSED_EXCEPT_CUDA
+#else
+#define TORCH_UNUSED_EXCEPT_CUDA [[maybe_unused]]
+#endif
+
+/// Defines a class `Name` which inherits from `nn::ModuleHolder` to provide a
+/// wrapper over a `std::shared_ptr<ImplType>`.
+/// `Impl` is a type alias for `ImplType` which provides a way to call static
+/// method of `ImplType`.
+#define TORCH_MODULE_IMPL(Name, ImplType)                              \
+  class Name : public torch::nn::ModuleHolder<ImplType> { /* NOLINT */ \
+   public:                                                             \
+    using torch::nn::ModuleHolder<ImplType>::ModuleHolder;             \
+    using Impl TORCH_UNUSED_EXCEPT_CUDA = ImplType;                    \
+  }
+
+/// Like `TORCH_MODULE_IMPL`, but defaults the `ImplType` name to `<Name>Impl`.
+#define TORCH_MODULE(Name) TORCH_MODULE_IMPL(Name, Name##Impl)
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 4 class(es)/struct(s) and 11 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`, `nn`, `detail`
+
+**Classes/Structs**: `ModuleHolder`, `wraps`, `so`, `a`, `Name`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/api/include/torch/nn`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `torch/arg.h`
+- `torch/detail/static.h`
+- `torch/serialize/archive.h`
+- `torch/types.h`
+- `torch/csrc/utils/variadic.h`
+- `memory`
+- `type_traits`
+- `utility`
+- `torch/csrc/api/include/torch/nn/pimpl-inl.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/api/include/torch/nn`):
+
+- [`cloneable.h_docs.md`](./cloneable.h_docs.md)
+- [`module.h_docs.md`](./module.h_docs.md)
+- [`utils.h_docs.md`](./utils.h_docs.md)
+- [`modules.h_docs.md`](./modules.h_docs.md)
+- [`init.h_docs.md`](./init.h_docs.md)
+- [`options.h_docs.md`](./options.h_docs.md)
+- [`functional.h_docs.md`](./functional.h_docs.md)
+- [`pimpl-inl.h_docs.md`](./pimpl-inl.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `pimpl.h_docs.md`
+- **Keyword Index**: `pimpl.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/api/include/torch/nn`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/api/include/torch/nn`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/api/include/torch/nn`):
+
+- [`cloneable.h_docs.md_docs.md`](./cloneable.h_docs.md_docs.md)
+- [`functional.h_docs.md_docs.md`](./functional.h_docs.md_docs.md)
+- [`utils.h_docs.md_docs.md`](./utils.h_docs.md_docs.md)
+- [`cloneable.h_kw.md_docs.md`](./cloneable.h_kw.md_docs.md)
+- [`options.h_docs.md_docs.md`](./options.h_docs.md_docs.md)
+- [`module.h_kw.md_docs.md`](./module.h_kw.md_docs.md)
+- [`module.h_docs.md_docs.md`](./module.h_docs.md_docs.md)
+- [`utils.h_kw.md_docs.md`](./utils.h_kw.md_docs.md)
+- [`functional.h_kw.md_docs.md`](./functional.h_kw.md_docs.md)
+- [`options.h_kw.md_docs.md`](./options.h_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `pimpl.h_docs.md_docs.md`
+- **Keyword Index**: `pimpl.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

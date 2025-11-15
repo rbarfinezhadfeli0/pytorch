@@ -1,0 +1,299 @@
+# Documentation: `docs/aten/src/ATen/native/quantized/cuda/MakePerTensorQuantizedTensor.cu_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/quantized/cuda/MakePerTensorQuantizedTensor.cu_docs.md`
+- **Size**: 4,505 bytes (4.40 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/native/quantized/cuda/MakePerTensorQuantizedTensor.cu`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/quantized/cuda/MakePerTensorQuantizedTensor.cu`
+- **Size**: 1,756 bytes (1.71 KB)
+- **Type**: CUDA Source Code
+- **Extension**: `.cu`
+
+## File Purpose
+
+This is a cuda source code that is part of the PyTorch project.
+
+## Original Source
+
+```cuda
+#define TORCH_ASSERT_ONLY_METHOD_OPERATORS
+#include <ATen/core/Tensor.h>
+#include <ATen/Dispatch.h>
+#include <ATen/TensorIterator.h>
+#include <ATen/native/cuda/Loops.cuh>
+
+#ifndef AT_PER_OPERATOR_HEADERS
+#include <ATen/Functions.h>
+#include <ATen/NativeFunctions.h>
+#else
+#include <ATen/ops/_empty_affine_quantized.h>
+#include <ATen/ops/_empty_per_channel_affine_quantized.h>
+#include <ATen/ops/_make_per_channel_quantized_tensor_native.h>
+#include <ATen/ops/_make_per_tensor_quantized_tensor_native.h>
+#include <ATen/ops/empty.h>
+#endif
+
+namespace at::native {
+
+void assign_quantized_tensor_cuda(
+  const Tensor& self, Tensor& dst) {
+  AT_DISPATCH_QINT_TYPES(
+      dst.scalar_type(), "assign_quantized_tensor_cuda", [&]() {
+        auto iter = TensorIteratorConfig()
+          .check_all_same_dtype(false)
+          .add_output(dst)
+          .add_input(self)
+          .build();
+        gpu_kernel(iter, [] GPU_LAMBDA(underlying_t value) -> scalar_t {
+          return scalar_t(value);
+        });
+      });
+}
+
+Tensor make_per_tensor_quantized_tensor_cuda(
+    const Tensor& self,
+    double scale,
+    int64_t zero_point) {
+  Tensor dst = at::_empty_affine_quantized(
+      self.sizes(),
+      self.options().dtype(toQIntType(self.scalar_type())),
+      scale,
+      zero_point);
+  assign_quantized_tensor_cuda(self, dst);
+  return dst;
+}
+
+Tensor make_per_channel_quantized_tensor_cuda(
+  const Tensor& self,
+  const Tensor& scales,
+  const Tensor& zero_points,
+  int64_t axis) {
+      Tensor dst = at::_empty_per_channel_affine_quantized(
+      self.sizes(),
+      scales,
+      zero_points,
+      axis,
+      self.options().dtype(toQIntType(self.scalar_type())));
+  assign_quantized_tensor_cuda(self, dst);
+  return dst;
+}
+
+} // namespace at::native
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `aten/src/ATen/native/quantized/cuda`.
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `at`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native/quantized/cuda`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/core/Tensor.h`
+- `ATen/Dispatch.h`
+- `ATen/TensorIterator.h`
+- `ATen/native/cuda/Loops.cuh`
+- `ATen/Functions.h`
+- `ATen/NativeFunctions.h`
+- `ATen/ops/_empty_affine_quantized.h`
+- `ATen/ops/_empty_per_channel_affine_quantized.h`
+- `ATen/ops/_make_per_channel_quantized_tensor_native.h`
+- `ATen/ops/_make_per_tensor_quantized_tensor_native.h`
+- `ATen/ops/empty.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native/quantized/cuda`):
+
+- [`FakeQuantizeCore.cu_docs.md`](./FakeQuantizeCore.cu_docs.md)
+- [`IntReprQuant.cu_docs.md`](./IntReprQuant.cu_docs.md)
+- [`AffineQuantizer.cu_docs.md`](./AffineQuantizer.cu_docs.md)
+- [`Activation.cu_docs.md`](./Activation.cu_docs.md)
+- [`Activation.cpp_docs.md`](./Activation.cpp_docs.md)
+- [`FusedObsFakeQuant.cu_docs.md`](./FusedObsFakeQuant.cu_docs.md)
+- [`EmbeddingBag.cu_docs.md`](./EmbeddingBag.cu_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `MakePerTensorQuantizedTensor.cu_docs.md`
+- **Keyword Index**: `MakePerTensorQuantizedTensor.cu_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native/quantized/cuda`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native/quantized/cuda`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native/quantized/cuda`):
+
+- [`FusedObsFakeQuant.cu_docs.md_docs.md`](./FusedObsFakeQuant.cu_docs.md_docs.md)
+- [`FakeQuantizeCore.cu_kw.md_docs.md`](./FakeQuantizeCore.cu_kw.md_docs.md)
+- [`FusedObsFakeQuant.cu_kw.md_docs.md`](./FusedObsFakeQuant.cu_kw.md_docs.md)
+- [`Activation.cu_docs.md_docs.md`](./Activation.cu_docs.md_docs.md)
+- [`AffineQuantizer.cu_kw.md_docs.md`](./AffineQuantizer.cu_kw.md_docs.md)
+- [`EmbeddingBag.cu_kw.md_docs.md`](./EmbeddingBag.cu_kw.md_docs.md)
+- [`EmbeddingBag.cu_docs.md_docs.md`](./EmbeddingBag.cu_docs.md_docs.md)
+- [`IntReprQuant.cu_kw.md_docs.md`](./IntReprQuant.cu_kw.md_docs.md)
+- [`AffineQuantizer.cu_docs.md_docs.md`](./AffineQuantizer.cu_docs.md_docs.md)
+- [`IntReprQuant.cu_docs.md_docs.md`](./IntReprQuant.cu_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `MakePerTensorQuantizedTensor.cu_docs.md_docs.md`
+- **Keyword Index**: `MakePerTensorQuantizedTensor.cu_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,89 @@
+# Keyword Index: `docs/docs/source/elastic/numa.rst_docs.md`
+
+## File Information
+
+- **Original File**: [docs/docs/source/elastic/numa.rst_docs.md](../../../../../docs/docs/source/elastic/numa.rst_docs.md)
+- **Documentation**: [`numa.rst_docs.md_docs.md`](./numa.rst_docs.md_docs.md)
+- **Folder**: `docs/docs/source/elastic`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Architecture`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Binding`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Code`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Common`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Considerations`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Cross`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Dependencies`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Dependency`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Design`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Detailed`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Documentation`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Examples`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Extension`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`File`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Files`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Folder`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`For`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Generated`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`High`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Idioms`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Import`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Index`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`KB`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Keyword`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Level`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Manual`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Metadata`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`NUMA`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`No`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Notes`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Original`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Overview`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Path`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Patterns`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Performance`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Purpose`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`PyTorch`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`References`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Related`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Repository`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Role`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Safety`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Security`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`See`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Size`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Source`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Structure`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`System`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Test`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Testing`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`This`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Type`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Usage`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+- **`Utilities`**: [numa.rst_docs.md_docs.md](./numa.rst_docs.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

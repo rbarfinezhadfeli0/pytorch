@@ -1,0 +1,294 @@
+# Documentation: `docs/torch/csrc/jit/passes/inline_fork_wait.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/jit/passes/inline_fork_wait.cpp_docs.md`
+- **Size**: 4,659 bytes (4.55 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/csrc/jit/passes/inline_fork_wait.cpp`
+
+## File Metadata
+
+- **Path**: `torch/csrc/jit/passes/inline_fork_wait.cpp`
+- **Size**: 2,035 bytes (1.99 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#include <torch/csrc/jit/jit_log.h>
+#include <torch/csrc/jit/passes/inline_fork_wait.h>
+
+namespace torch::jit {
+
+static void InlineForkWait(
+    Block* b,
+    std::unordered_map<Value*, Value*>& future_remap) {
+  auto nodes = b->nodes();
+
+  // Track the futures returned by prim::fork.
+  for (auto it = nodes.begin(); it != nodes.end(); it++) {
+    auto node = *it;
+    if (node->kind() != prim::fork) {
+      continue;
+    }
+    WithInsertPoint insert_guard(node);
+    auto graph = b->owningGraph();
+    auto subgraph = node->g(attr::Subgraph);
+
+    auto output = insertGraph(*graph, *subgraph, node->inputs());
+
+    future_remap[node->output()] = output.at(0);
+  }
+
+  // Remove aten::wait if its input future is returned by prim::fork.
+  auto reversed = b->nodes().reverse();
+  for (auto it = reversed.begin(); it != reversed.end(); it++) {
+    auto node = *it;
+    if (node->kind() == prim::fork) {
+      // Account for the case where the aten::wait call isn't present in
+      // the current graph.
+      node->output()->replaceAllUsesWith(future_remap.at(node->output()));
+      it.destroyCurrent();
+    } else if (node->kind() == aten::wait) {
+      AT_ASSERT(node->inputs().size() == 1);
+      AT_ASSERT(node->outputs().size() == 1);
+      // If the future does not map to a prim::fork, it could be
+      // returned from prim::rpc_async, which has side effect, so it shouldn't
+      // be dead code eliminated.
+      if (future_remap.count(node->input())) {
+        node->output()->replaceAllUsesWith(future_remap.at(node->input()));
+        it.destroyCurrent();
+      }
+    }
+  }
+
+  // Recursively inline fork/wait.
+  for (auto it = nodes.begin(); it != nodes.end(); it++) {
+    auto node = *it;
+    for (auto sub_b : node->blocks()) {
+      InlineForkWait(sub_b, future_remap);
+    }
+  }
+}
+
+void InlineForkWait(const std::shared_ptr<Graph>& graph) {
+  std::unordered_map<Value*, Value*> future_remap;
+  InlineForkWait(graph->block(), future_remap);
+  GRAPH_DUMP("After InlineForkWait: ", graph);
+}
+
+} // namespace torch::jit
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 4 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/jit/passes`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `torch/csrc/jit/jit_log.h`
+- `torch/csrc/jit/passes/inline_fork_wait.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/jit/passes`):
+
+- [`inline_fork_wait.h_docs.md`](./inline_fork_wait.h_docs.md)
+- [`subgraph_rewrite.cpp_docs.md`](./subgraph_rewrite.cpp_docs.md)
+- [`value_refinement_utils.cpp_docs.md`](./value_refinement_utils.cpp_docs.md)
+- [`create_autodiff_subgraphs.cpp_docs.md`](./create_autodiff_subgraphs.cpp_docs.md)
+- [`update_differentiable_graph_requires_grad.h_docs.md`](./update_differentiable_graph_requires_grad.h_docs.md)
+- [`inplace_check.h_docs.md`](./inplace_check.h_docs.md)
+- [`common_subexpression_elimination.h_docs.md`](./common_subexpression_elimination.h_docs.md)
+- [`dtype_analysis.cpp_docs.md`](./dtype_analysis.cpp_docs.md)
+- [`canonicalize.h_docs.md`](./canonicalize.h_docs.md)
+- [`add_if_then_else.h_docs.md`](./add_if_then_else.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `inline_fork_wait.cpp_docs.md`
+- **Keyword Index**: `inline_fork_wait.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/jit/passes`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/jit/passes`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/jit/passes`):
+
+- [`peephole_dict_idioms.h_docs.md_docs.md`](./peephole_dict_idioms.h_docs.md_docs.md)
+- [`remove_redundant_profiles.h_kw.md_docs.md`](./remove_redundant_profiles.h_kw.md_docs.md)
+- [`loop_unrolling.cpp_kw.md_docs.md`](./loop_unrolling.cpp_kw.md_docs.md)
+- [`onnx.h_kw.md_docs.md`](./onnx.h_kw.md_docs.md)
+- [`guard_elimination.h_docs.md_docs.md`](./guard_elimination.h_docs.md_docs.md)
+- [`frozen_conv_add_relu_fusion.cpp_docs.md_docs.md`](./frozen_conv_add_relu_fusion.cpp_docs.md_docs.md)
+- [`hoist_conv_packed_params.h_kw.md_docs.md`](./hoist_conv_packed_params.h_kw.md_docs.md)
+- [`lift_closures.h_kw.md_docs.md`](./lift_closures.h_kw.md_docs.md)
+- [`frozen_conv_folding.h_kw.md_docs.md`](./frozen_conv_folding.h_kw.md_docs.md)
+- [`frozen_graph_optimizations.h_docs.md_docs.md`](./frozen_graph_optimizations.h_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `inline_fork_wait.cpp_docs.md_docs.md`
+- **Keyword Index**: `inline_fork_wait.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

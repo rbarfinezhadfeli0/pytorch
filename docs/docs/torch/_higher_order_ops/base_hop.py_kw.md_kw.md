@@ -1,0 +1,86 @@
+# Keyword Index: `docs/torch/_higher_order_ops/base_hop.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/_higher_order_ops/base_hop.py_kw.md](../../../../docs/torch/_higher_order_ops/base_hop.py_kw.md)
+- **Documentation**: [`base_hop.py_kw.md_docs.md`](./base_hop.py_kw.md_docs.md)
+- **Folder**: `docs/torch/_higher_order_ops`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`Architecture`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`BaseHOP`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`BaseHOPFunction`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`Basic`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`Classs`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`Complete`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`Considerations`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`Dependencies`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`Design`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`Detailed`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`DispatchKey`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`Documentation`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`Efficiency`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`Extracted`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`FakeTensorMode`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`File`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`Folder`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`FunctionWithNoFreeVars`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`FunctionalCallableWithEpilogue`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`Functions`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`Generated`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`High`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`HigherOrderOperator`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`HopSchemaGenerator`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`How`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`Imports`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`In`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`Index`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`Information`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`InvokeQuant`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`Keyword`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`Keywords`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`Level`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`Map`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`Metadata`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`Original`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`Overview`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`Performance`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`Purpose`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`PyTorch`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`Related`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`Repository`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`Safety`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`Section`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`Security`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`Source`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`System`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`Testing`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`The`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`This`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+- **`Usage`**: [base_hop.py_kw.md_docs.md](./base_hop.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

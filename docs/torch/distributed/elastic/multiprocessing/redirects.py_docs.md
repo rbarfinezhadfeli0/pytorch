@@ -1,0 +1,220 @@
+# Documentation: `torch/distributed/elastic/multiprocessing/redirects.py`
+
+## File Metadata
+
+- **Path**: `torch/distributed/elastic/multiprocessing/redirects.py`
+- **Size**: 2,764 bytes (2.70 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This is a python source code that is part of the PyTorch project.
+
+## Original Source
+
+```python
+# mypy: allow-untyped-defs
+# !/usr/bin/env python3
+
+# Copyright (c) Facebook, Inc. and its affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the BSD-style license found in the
+# LICENSE file in the root directory of this source tree.
+
+# Taken and modified from original source:
+# https://eli.thegreenplace.net/2015/redirecting-all-kinds-of-stdout-in-python/
+import ctypes
+import logging
+import os
+import sys
+from contextlib import contextmanager
+from functools import partial
+
+
+IS_WINDOWS = sys.platform == "win32"
+IS_MACOS = sys.platform == "darwin"
+
+
+logger = logging.getLogger(__name__)
+
+
+def get_libc():
+    if IS_WINDOWS or IS_MACOS:
+        logger.warning(
+            "NOTE: Redirects are currently not supported in Windows or MacOs."
+        )
+        return None
+    else:
+        return ctypes.CDLL("libc.so.6")
+
+
+libc = get_libc()
+
+
+def _c_std(stream: str):
+    return ctypes.c_void_p.in_dll(libc, stream)
+
+
+def _python_std(stream: str):
+    return {"stdout": sys.stdout, "stderr": sys.stderr}[stream]
+
+
+_VALID_STD = {"stdout", "stderr"}
+
+
+@contextmanager
+def redirect(std: str, to_file: str):
+    """
+    Redirect ``std`` (one of ``"stdout"`` or ``"stderr"``) to a file in the path specified by ``to_file``.
+
+    This method redirects the underlying std file descriptor (not just python's ``sys.stdout|stderr``).
+    See usage for details.
+
+    Directory of ``dst_filename`` is assumed to exist and the destination file
+    is overwritten if it already exists.
+
+    .. note:: Due to buffering cross source writes are not guaranteed to
+              appear in wall-clock order. For instance in the example below
+              it is possible for the C-outputs to appear before the python
+              outputs in the log file.
+
+    Usage:
+
+    ::
+
+     # syntactic-sugar for redirect("stdout", "tmp/stdout.log")
+     with redirect_stdout("/tmp/stdout.log"):
+        print("python stdouts are redirected")
+        libc = ctypes.CDLL("libc.so.6")
+        libc.printf(b"c stdouts are also redirected"
+        os.system("echo system stdouts are also redirected")
+
+     print("stdout restored")
+
+    """
+    if std not in _VALID_STD:
+        raise ValueError(
+            f"unknown standard stream <{std}>, must be one of {_VALID_STD}"
+        )
+
+    c_std = _c_std(std)
+    python_std = _python_std(std)
+    std_fd = python_std.fileno()
+
+    def _redirect(dst):
+        libc.fflush(c_std)
+        python_std.flush()
+        os.dup2(dst.fileno(), std_fd)
+
+    with os.fdopen(os.dup(std_fd)) as orig_std, open(to_file, mode="w+b") as dst:
+        _redirect(dst)
+        try:
+            yield
+        finally:
+            _redirect(orig_std)
+
+
+redirect_stdout = partial(redirect, "stdout")
+redirect_stderr = partial(redirect, "stderr")
+
+```
+
+
+
+## High-Level Overview
+
+
+This Python file contains 0 class(es) and 5 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Functions defined**: `get_libc`, `_c_std`, `_python_std`, `redirect`, `_redirect`
+
+**Key imports**: ctypes, logging, os, sys, contextmanager, partial
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/distributed/elastic/multiprocessing`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `ctypes`
+- `logging`
+- `os`
+- `sys`
+- `contextlib`: contextmanager
+- `functools`: partial
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- **Command Execution**: Executes system commands - validate inputs
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/distributed/elastic/multiprocessing`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`api.py_docs.md`](./api.py_docs.md)
+- [`tail_log.py_docs.md`](./tail_log.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `redirects.py_docs.md`
+- **Keyword Index**: `redirects.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

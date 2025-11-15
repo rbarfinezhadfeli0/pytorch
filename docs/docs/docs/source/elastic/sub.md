@@ -1,0 +1,116 @@
+# Subtree Keyword Index: `docs/docs/source/elastic/`
+
+## Scope
+
+This index covers all files within `docs/docs/source/elastic/` and all its subdirectories (recursively).
+
+## Keywords
+
+
+### agent
+
+- [`docs/docs/source/elastic/agent.rst_docs.md`](./agent.rst_docs.md_docs.md)
+- [`docs/docs/source/elastic/agent.rst_kw.md`](./agent.rst_kw.md_docs.md)
+
+### control_plane
+
+- [`docs/docs/source/elastic/control_plane.rst_docs.md`](./control_plane.rst_docs.md_docs.md)
+- [`docs/docs/source/elastic/control_plane.rst_kw.md`](./control_plane.rst_kw.md_docs.md)
+
+### customization
+
+- [`docs/docs/source/elastic/customization.rst_docs.md`](./customization.rst_docs.md_docs.md)
+- [`docs/docs/source/elastic/customization.rst_kw.md`](./customization.rst_kw.md_docs.md)
+
+### errors
+
+- [`docs/docs/source/elastic/errors.rst_kw.md`](./errors.rst_kw.md_docs.md)
+- [`docs/docs/source/elastic/errors.rst_docs.md`](./errors.rst_docs.md_docs.md)
+
+### events
+
+- [`docs/docs/source/elastic/events.rst_docs.md`](./events.rst_docs.md_docs.md)
+- [`docs/docs/source/elastic/events.rst_kw.md`](./events.rst_kw.md_docs.md)
+
+### examples
+
+- [`docs/docs/source/elastic/examples.rst_kw.md`](./examples.rst_kw.md_docs.md)
+- [`docs/docs/source/elastic/examples.rst_docs.md`](./examples.rst_docs.md_docs.md)
+
+### files-.md
+
+- [`docs/docs/source/elastic/subprocess_handler.rst_kw.md`](./subprocess_handler.rst_kw.md_docs.md)
+- [`docs/docs/source/elastic/multiprocessing.rst_kw.md`](./multiprocessing.rst_kw.md_docs.md)
+- [`docs/docs/source/elastic/customization.rst_docs.md`](./customization.rst_docs.md_docs.md)
+- [`docs/docs/source/elastic/kubernetes.rst_docs.md`](./kubernetes.rst_docs.md_docs.md)
+- [`docs/docs/source/elastic/metrics.rst_kw.md`](./metrics.rst_kw.md_docs.md)
+- [`docs/docs/source/elastic/control_plane.rst_docs.md`](./control_plane.rst_docs.md_docs.md)
+- [`docs/docs/source/elastic/run.rst_docs.md`](./run.rst_docs.md_docs.md)
+- [`docs/docs/source/elastic/events.rst_docs.md`](./events.rst_docs.md_docs.md)
+- [`docs/docs/source/elastic/timer.rst_docs.md`](./timer.rst_docs.md_docs.md)
+- [`docs/docs/source/elastic/metrics.rst_docs.md`](./metrics.rst_docs.md_docs.md)
+- [`docs/docs/source/elastic/control_plane.rst_kw.md`](./control_plane.rst_kw.md_docs.md)
+- [`docs/docs/source/elastic/train_script.rst_docs.md`](./train_script.rst_docs.md_docs.md)
+- [`docs/docs/source/elastic/numa.rst_docs.md`](./numa.rst_docs.md_docs.md)
+- [`docs/docs/source/elastic/events.rst_kw.md`](./events.rst_kw.md_docs.md)
+- [`docs/docs/source/elastic/kubernetes.rst_kw.md`](./kubernetes.rst_kw.md_docs.md)
+- [`docs/docs/source/elastic/subprocess_handler.rst_docs.md`](./subprocess_handler.rst_docs.md_docs.md)
+- [`docs/docs/source/elastic/agent.rst_docs.md`](./agent.rst_docs.md_docs.md)
+- [`docs/docs/source/elastic/customization.rst_kw.md`](./customization.rst_kw.md_docs.md)
+- [`docs/docs/source/elastic/run.rst_kw.md`](./run.rst_kw.md_docs.md)
+- [`docs/docs/source/elastic/quickstart.rst_docs.md`](./quickstart.rst_docs.md_docs.md)
+
+### kubernetes
+
+- [`docs/docs/source/elastic/kubernetes.rst_docs.md`](./kubernetes.rst_docs.md_docs.md)
+- [`docs/docs/source/elastic/kubernetes.rst_kw.md`](./kubernetes.rst_kw.md_docs.md)
+
+### metrics
+
+- [`docs/docs/source/elastic/metrics.rst_kw.md`](./metrics.rst_kw.md_docs.md)
+- [`docs/docs/source/elastic/metrics.rst_docs.md`](./metrics.rst_docs.md_docs.md)
+
+### multiprocessing
+
+- [`docs/docs/source/elastic/multiprocessing.rst_kw.md`](./multiprocessing.rst_kw.md_docs.md)
+- [`docs/docs/source/elastic/multiprocessing.rst_docs.md`](./multiprocessing.rst_docs.md_docs.md)
+
+### numa
+
+- [`docs/docs/source/elastic/numa.rst_docs.md`](./numa.rst_docs.md_docs.md)
+- [`docs/docs/source/elastic/numa.rst_kw.md`](./numa.rst_kw.md_docs.md)
+
+### quickstart
+
+- [`docs/docs/source/elastic/quickstart.rst_docs.md`](./quickstart.rst_docs.md_docs.md)
+- [`docs/docs/source/elastic/quickstart.rst_kw.md`](./quickstart.rst_kw.md_docs.md)
+
+### rendezvous
+
+- [`docs/docs/source/elastic/rendezvous.rst_docs.md`](./rendezvous.rst_docs.md_docs.md)
+- [`docs/docs/source/elastic/rendezvous.rst_kw.md`](./rendezvous.rst_kw.md_docs.md)
+
+### run
+
+- [`docs/docs/source/elastic/run.rst_docs.md`](./run.rst_docs.md_docs.md)
+- [`docs/docs/source/elastic/run.rst_kw.md`](./run.rst_kw.md_docs.md)
+
+### subprocess_handler
+
+- [`docs/docs/source/elastic/subprocess_handler.rst_kw.md`](./subprocess_handler.rst_kw.md_docs.md)
+- [`docs/docs/source/elastic/subprocess_handler.rst_docs.md`](./subprocess_handler.rst_docs.md_docs.md)
+
+### timer
+
+- [`docs/docs/source/elastic/timer.rst_docs.md`](./timer.rst_docs.md_docs.md)
+- [`docs/docs/source/elastic/timer.rst_kw.md`](./timer.rst_kw.md_docs.md)
+
+### train_script
+
+- [`docs/docs/source/elastic/train_script.rst_docs.md`](./train_script.rst_docs.md_docs.md)
+- [`docs/docs/source/elastic/train_script.rst_kw.md`](./train_script.rst_kw.md_docs.md)
+
+
+---
+
+*Generated by PyTorch Repository Documentation System*

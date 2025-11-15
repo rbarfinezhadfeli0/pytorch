@@ -1,0 +1,194 @@
+# Documentation: `docs/torch/_inductor/subgraph_lowering.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/_inductor/subgraph_lowering.py_kw.md`
+- **Size**: 4,651 bytes (4.54 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `torch/_inductor/subgraph_lowering.py`
+
+## File Information
+
+- **Original File**: [torch/_inductor/subgraph_lowering.py](../../../torch/_inductor/subgraph_lowering.py)
+- **Documentation**: [`subgraph_lowering.py_docs.md`](./subgraph_lowering.py_docs.md)
+- **Folder**: `torch/_inductor`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`PointwiseSubgraphLowering`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`TracingOpsHandler`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`class`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`from`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+
+### Functions
+
+- **`__getattr__`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`__init__`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`_approved_mutator`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`_op_context`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`call_function`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`fake_inner_fn`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`inner_fn`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`lower_pointwise_subgraph`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`mark_buffer_mutated`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`output`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`placeholder`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`register_buffer`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+
+### Imports
+
+- **`.`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`.exc`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`.graph`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`.lowering`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`.ops_handler`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`.virtualized`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`Any`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`Callable`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`GraphLowering`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`OrderedSet`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`ParamSpec`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`SimpleCSEHandler`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`SubgraphLoweringException`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`collections.abc`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`contextlib`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`contextmanager`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`dataclass`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`dataclasses`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`functools`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`ir`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`lowerings`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`operator`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`ops`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`torch`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`torch.utils._ordered_set`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`typing`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+- **`typing_extensions`**: [subgraph_lowering.py_docs.md](./subgraph_lowering.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/_inductor`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/_inductor`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/_inductor`):
+
+- [`freezing.py_docs.md_docs.md`](./freezing.py_docs.md_docs.md)
+- [`lowering.py_kw.md_docs.md`](./lowering.py_kw.md_docs.md)
+- [`quantized_lowerings.py_docs.md_docs.md`](./quantized_lowerings.py_docs.md_docs.md)
+- [`select_algorithm.py_docs.md_docs.md`](./select_algorithm.py_docs.md_docs.md)
+- [`kernel_inputs.py_kw.md_docs.md`](./kernel_inputs.py_kw.md_docs.md)
+- [`compile_fx_ext.py_kw.md_docs.md`](./compile_fx_ext.py_kw.md_docs.md)
+- [`extern_node_serializer.py_docs.md_docs.md`](./extern_node_serializer.py_docs.md_docs.md)
+- [`mkldnn_lowerings.py_kw.md_docs.md`](./mkldnn_lowerings.py_kw.md_docs.md)
+- [`ops_handler.py_docs.md_docs.md`](./ops_handler.py_docs.md_docs.md)
+- [`test_operators.py_docs.md_docs.md`](./test_operators.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `subgraph_lowering.py_kw.md_docs.md`
+- **Keyword Index**: `subgraph_lowering.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

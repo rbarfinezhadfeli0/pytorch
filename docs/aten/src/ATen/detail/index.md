@@ -1,0 +1,51 @@
+# Index: `aten/src/ATen/detail/`
+
+## Overview
+
+This folder contains source code, configurations, or documentation for the PyTorch project.
+
+**Location**: `aten/src/ATen/detail/`
+
+## Subfolders
+
+*No subfolders.*
+
+## Files
+
+| File | Description | Documentation | Keywords |
+|------|-------------|---------------|----------|
+| [`AcceleratorHooksInterface.h`](../../../../../aten/src/ATen/detail/AcceleratorHooksInterface.h) | Source code | [docs](./AcceleratorHooksInterface.h_docs.md) | [keywords](./AcceleratorHooksInterface.h_kw.md) |
+| [`CPUGuardImpl.cpp`](../../../../../aten/src/ATen/detail/CPUGuardImpl.cpp) | Source code | [docs](./CPUGuardImpl.cpp_docs.md) | [keywords](./CPUGuardImpl.cpp_kw.md) |
+| [`CUDAHooksInterface.cpp`](../../../../../aten/src/ATen/detail/CUDAHooksInterface.cpp) | Source code | [docs](./CUDAHooksInterface.cpp_docs.md) | [keywords](./CUDAHooksInterface.cpp_kw.md) |
+| [`CUDAHooksInterface.h`](../../../../../aten/src/ATen/detail/CUDAHooksInterface.h) | Source code | [docs](./CUDAHooksInterface.h_docs.md) | [keywords](./CUDAHooksInterface.h_kw.md) |
+| [`FunctionTraits.h`](../../../../../aten/src/ATen/detail/FunctionTraits.h) | Source code | [docs](./FunctionTraits.h_docs.md) | [keywords](./FunctionTraits.h_kw.md) |
+| [`HIPHooksInterface.cpp`](../../../../../aten/src/ATen/detail/HIPHooksInterface.cpp) | Source code | [docs](./HIPHooksInterface.cpp_docs.md) | [keywords](./HIPHooksInterface.cpp_kw.md) |
+| [`HIPHooksInterface.h`](../../../../../aten/src/ATen/detail/HIPHooksInterface.h) | Source code | [docs](./HIPHooksInterface.h_docs.md) | [keywords](./HIPHooksInterface.h_kw.md) |
+| [`HPUHooksInterface.cpp`](../../../../../aten/src/ATen/detail/HPUHooksInterface.cpp) | Source code | [docs](./HPUHooksInterface.cpp_docs.md) | [keywords](./HPUHooksInterface.cpp_kw.md) |
+| [`HPUHooksInterface.h`](../../../../../aten/src/ATen/detail/HPUHooksInterface.h) | Source code | [docs](./HPUHooksInterface.h_docs.md) | [keywords](./HPUHooksInterface.h_kw.md) |
+| [`IPUHooksInterface.cpp`](../../../../../aten/src/ATen/detail/IPUHooksInterface.cpp) | Source code | [docs](./IPUHooksInterface.cpp_docs.md) | [keywords](./IPUHooksInterface.cpp_kw.md) |
+| [`IPUHooksInterface.h`](../../../../../aten/src/ATen/detail/IPUHooksInterface.h) | Source code | [docs](./IPUHooksInterface.h_docs.md) | [keywords](./IPUHooksInterface.h_kw.md) |
+| [`MAIAHooksInterface.cpp`](../../../../../aten/src/ATen/detail/MAIAHooksInterface.cpp) | Source code | [docs](./MAIAHooksInterface.cpp_docs.md) | [keywords](./MAIAHooksInterface.cpp_kw.md) |
+| [`MAIAHooksInterface.h`](../../../../../aten/src/ATen/detail/MAIAHooksInterface.h) | Source code | [docs](./MAIAHooksInterface.h_docs.md) | [keywords](./MAIAHooksInterface.h_kw.md) |
+| [`MPSHooksInterface.cpp`](../../../../../aten/src/ATen/detail/MPSHooksInterface.cpp) | Source code | [docs](./MPSHooksInterface.cpp_docs.md) | [keywords](./MPSHooksInterface.cpp_kw.md) |
+| [`MPSHooksInterface.h`](../../../../../aten/src/ATen/detail/MPSHooksInterface.h) | Source code | [docs](./MPSHooksInterface.h_docs.md) | [keywords](./MPSHooksInterface.h_kw.md) |
+| [`MTIAHooksInterface.cpp`](../../../../../aten/src/ATen/detail/MTIAHooksInterface.cpp) | Source code | [docs](./MTIAHooksInterface.cpp_docs.md) | [keywords](./MTIAHooksInterface.cpp_kw.md) |
+| [`MTIAHooksInterface.h`](../../../../../aten/src/ATen/detail/MTIAHooksInterface.h) | Source code | [docs](./MTIAHooksInterface.h_docs.md) | [keywords](./MTIAHooksInterface.h_kw.md) |
+| [`MetaGuardImpl.cpp`](../../../../../aten/src/ATen/detail/MetaGuardImpl.cpp) | Source code | [docs](./MetaGuardImpl.cpp_docs.md) | [keywords](./MetaGuardImpl.cpp_kw.md) |
+| [`PrivateUse1HooksInterface.cpp`](../../../../../aten/src/ATen/detail/PrivateUse1HooksInterface.cpp) | Source code | [docs](./PrivateUse1HooksInterface.cpp_docs.md) | [keywords](./PrivateUse1HooksInterface.cpp_kw.md) |
+| [`PrivateUse1HooksInterface.h`](../../../../../aten/src/ATen/detail/PrivateUse1HooksInterface.h) | Source code | [docs](./PrivateUse1HooksInterface.h_docs.md) | [keywords](./PrivateUse1HooksInterface.h_kw.md) |
+| [`XLAHooksInterface.cpp`](../../../../../aten/src/ATen/detail/XLAHooksInterface.cpp) | Source code | [docs](./XLAHooksInterface.cpp_docs.md) | [keywords](./XLAHooksInterface.cpp_kw.md) |
+| [`XLAHooksInterface.h`](../../../../../aten/src/ATen/detail/XLAHooksInterface.h) | Source code | [docs](./XLAHooksInterface.h_docs.md) | [keywords](./XLAHooksInterface.h_kw.md) |
+| [`XPUHooksInterface.cpp`](../../../../../aten/src/ATen/detail/XPUHooksInterface.cpp) | Source code | [docs](./XPUHooksInterface.cpp_docs.md) | [keywords](./XPUHooksInterface.cpp_kw.md) |
+| [`XPUHooksInterface.h`](../../../../../aten/src/ATen/detail/XPUHooksInterface.h) | Source code | [docs](./XPUHooksInterface.h_docs.md) | [keywords](./XPUHooksInterface.h_kw.md) |
+
+
+## Navigation
+
+- **Parent Folder**: [..](../index.md)
+- **Folder Documentation**: [doc.md](./doc.md)
+- **Keyword Index**: [sub.md](./sub.md)
+
+---
+
+*Generated by PyTorch Repository Documentation System*

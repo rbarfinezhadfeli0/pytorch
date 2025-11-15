@@ -1,0 +1,380 @@
+# Documentation: `docs/test/cpp/c10d/TestUtils.hpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/cpp/c10d/TestUtils.hpp_docs.md`
+- **Size**: 4,980 bytes (4.86 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/cpp/c10d/TestUtils.hpp`
+
+## File Metadata
+
+- **Path**: `test/cpp/c10d/TestUtils.hpp`
+- **Size**: 2,392 bytes (2.34 KB)
+- **Type**: C++ Header File
+- **Extension**: `.hpp`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**.
+
+## Original Source
+
+```cpp
+#pragma once
+
+#ifndef _WIN32
+#include <signal.h>
+#include <sys/wait.h>
+#include <unistd.h>
+#endif
+
+#include <sys/types.h>
+#include <cstring>
+
+#include <condition_variable>
+#include <mutex>
+#include <string>
+#include <system_error>
+#include <vector>
+
+namespace c10d {
+namespace test {
+
+class Semaphore {
+ public:
+  void post(int n = 1) {
+    std::unique_lock<std::mutex> lock(m_);
+    n_ += n;
+    cv_.notify_all();
+  }
+
+  void wait(int n = 1) {
+    std::unique_lock<std::mutex> lock(m_);
+    while (n_ < n) {
+      cv_.wait(lock);
+    }
+    n_ -= n;
+  }
+
+ protected:
+  int n_ = 0;
+  std::mutex m_;
+  std::condition_variable cv_;
+};
+
+#ifdef _WIN32
+std::string autoGenerateTmpFilePath() {
+  char tmp[L_tmpnam_s];
+  errno_t err;
+  err = tmpnam_s(tmp, L_tmpnam_s);
+  if (err != 0)
+  {
+    throw std::system_error(errno, std::system_category());
+  }
+  return std::string(tmp);
+}
+
+std::string tmppath() {
+  const char* tmpfile = getenv("TMPFILE");
+  if (tmpfile) {
+    return std::string(tmpfile);
+  }
+  else {
+    return autoGenerateTmpFilePath();
+  }
+}
+#else
+std::string tmppath() {
+  // TMPFILE is for manual test execution during which the user will specify
+  // the full temp file path using the environmental variable TMPFILE
+  const char* tmpfile = getenv("TMPFILE");
+  if (tmpfile) {
+    return std::string(tmpfile);
+  }
+
+  const char* tmpdir = getenv("TMPDIR");
+  if (tmpdir == nullptr) {
+    tmpdir = "/tmp";
+  }
+
+  // Create template
+  std::vector<char> tmp(256);
+  auto len = snprintf(tmp.data(), tmp.size(), "%s/testXXXXXX", tmpdir);
+  tmp.resize(len);
+
+  // Create temporary file
+  auto fd = mkstemp(&tmp[0]);
+  if (fd == -1) {
+    throw std::system_error(errno, std::system_category());
+  }
+  close(fd);
+  return std::string(tmp.data(), tmp.size());
+}
+#endif
+
+bool isTSANEnabled() {
+  auto s = std::getenv("PYTORCH_TEST_WITH_TSAN");
+  return s && strcmp(s, "1") == 0;
+}
+struct TemporaryFile {
+  std::string path;
+
+  TemporaryFile() {
+    path = tmppath();
+  }
+
+  ~TemporaryFile() {
+    unlink(path.c_str());
+  }
+};
+
+#ifndef _WIN32
+struct Fork {
+  pid_t pid;
+
+  Fork() {
+    pid = fork();
+    if (pid < 0) {
+      throw std::system_error(errno, std::system_category(), "fork");
+    }
+  }
+
+  ~Fork() {
+    if (pid > 0) {
+      kill(pid, SIGKILL);
+      waitpid(pid, nullptr, 0);
+    }
+  }
+
+  bool isChild() {
+    return pid == 0;
+  }
+};
+#endif
+
+} // namespace test
+} // namespace c10d
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 1 class(es)/struct(s) and 8 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `test`, `c10d`
+
+**Classes/Structs**: `Semaphore`, `TemporaryFile`, `Fork`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/cpp/c10d`, which is part of **C10** (Caffe2 Core), the core library providing fundamental abstractions.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `signal.h`
+- `sys/wait.h`
+- `unistd.h`
+- `sys/types.h`
+- `cstring`
+- `condition_variable`
+- `mutex`
+- `string`
+- `system_error`
+- `vector`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/cpp/c10d/TestUtils.hpp
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/cpp/c10d`):
+
+- [`TCPStoreTest.cpp_docs.md`](./TCPStoreTest.cpp_docs.md)
+- [`ProcessGroupUCCTest.cpp_docs.md`](./ProcessGroupUCCTest.cpp_docs.md)
+- [`CMakeLists.txt_docs.md`](./CMakeLists.txt_docs.md)
+- [`ProcessGroupNCCLErrorsTest.cpp_docs.md`](./ProcessGroupNCCLErrorsTest.cpp_docs.md)
+- [`FileStoreTest.cpp_docs.md`](./FileStoreTest.cpp_docs.md)
+- [`ProcessGroupMPITest.cpp_docs.md`](./ProcessGroupMPITest.cpp_docs.md)
+- [`ProcessGroupNCCLTest.cpp_docs.md`](./ProcessGroupNCCLTest.cpp_docs.md)
+- [`HashStoreTest.cpp_docs.md`](./HashStoreTest.cpp_docs.md)
+- [`StoreTestCommon.hpp_docs.md`](./StoreTestCommon.hpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `TestUtils.hpp_docs.md`
+- **Keyword Index**: `TestUtils.hpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/cpp/c10d`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/cpp/c10d`, which is part of **C10** (Caffe2 Core), the core library providing fundamental abstractions.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/cpp/c10d/TestUtils.hpp_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/cpp/c10d`):
+
+- [`FileStoreTest.cpp_kw.md_docs.md`](./FileStoreTest.cpp_kw.md_docs.md)
+- [`CMakeLists.txt_docs.md_docs.md`](./CMakeLists.txt_docs.md_docs.md)
+- [`ProcessGroupUCCTest.cpp_docs.md_docs.md`](./ProcessGroupUCCTest.cpp_docs.md_docs.md)
+- [`ProcessGroupNCCLTest.cpp_docs.md_docs.md`](./ProcessGroupNCCLTest.cpp_docs.md_docs.md)
+- [`HashStoreTest.cpp_kw.md_docs.md`](./HashStoreTest.cpp_kw.md_docs.md)
+- [`CUDATest.hpp_docs.md_docs.md`](./CUDATest.hpp_docs.md_docs.md)
+- [`ProcessGroupNCCLErrorsTest.cpp_kw.md_docs.md`](./ProcessGroupNCCLErrorsTest.cpp_kw.md_docs.md)
+- [`HashStoreTest.cpp_docs.md_docs.md`](./HashStoreTest.cpp_docs.md_docs.md)
+- [`CUDATest.hpp_kw.md_docs.md`](./CUDATest.hpp_kw.md_docs.md)
+- [`StoreTestCommon.hpp_docs.md_docs.md`](./StoreTestCommon.hpp_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `TestUtils.hpp_docs.md_docs.md`
+- **Keyword Index**: `TestUtils.hpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

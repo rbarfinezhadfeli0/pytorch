@@ -1,0 +1,328 @@
+# Documentation: `docs/test/cpp/api/parallel_benchmark.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/cpp/api/parallel_benchmark.cpp_docs.md`
+- **Size**: 4,456 bytes (4.35 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/cpp/api/parallel_benchmark.cpp`
+
+## File Metadata
+
+- **Path**: `test/cpp/api/parallel_benchmark.cpp`
+- **Size**: 2,138 bytes (2.09 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**.
+
+## Original Source
+
+```cpp
+#include <torch/torch.h>
+#include <chrono>
+#include <condition_variable>
+#include <mutex>
+
+class Baton {
+ public:
+  void post() {
+    std::unique_lock<std::mutex> l(lock_);
+    done_ = true;
+    cv_.notify_all();
+  }
+  void wait() {
+    std::unique_lock<std::mutex> l(lock_);
+    while (!done_) {
+      cv_.wait(l);
+    }
+  }
+
+ private:
+  std::mutex lock_;
+  std::condition_variable cv_;
+  bool done_{false};
+};
+
+void AtLaunch_Base(int32_t numIters) {
+  struct Helper {
+    explicit Helper(int32_t lim) : limit_(lim) {}
+    void operator()() {
+      if (++val_ == limit_) {
+        done.post();
+      } else {
+        at::launch([this]() { (*this)(); });
+      }
+    }
+    int val_{0};
+    int limit_;
+    Baton done;
+  };
+  Helper h(numIters);
+  auto start = std::chrono::system_clock::now();
+  h();
+  h.done.wait();
+  std::cout << "NoData "
+            << static_cast<double>(
+                   std::chrono::duration_cast<std::chrono::microseconds>(
+                       std::chrono::system_clock::now() - start)
+                       .count()) /
+          static_cast<double>(numIters)
+            << " usec/each\n";
+}
+
+void AtLaunch_WithData(int32_t numIters, int32_t vecSize) {
+  struct Helper {
+    explicit Helper(int32_t lim) : limit_(lim) {}
+    void operator()(std::vector<int32_t> v) {
+      if (++val_ == limit_) {
+        done.post();
+      } else {
+        at::launch([this, v = std::move(v)]() { (*this)(v); });
+      }
+    }
+    int val_{0};
+    int limit_;
+    Baton done;
+  };
+  Helper h(numIters);
+  std::vector<int32_t> v(vecSize, 0);
+  auto start = std::chrono::system_clock::now();
+  h(v);
+  h.done.wait();
+  std::cout << "WithData(" << vecSize << "): "
+            << static_cast<double>(
+                   std::chrono::duration_cast<std::chrono::microseconds>(
+                       std::chrono::system_clock::now() - start)
+                       .count()) /
+          static_cast<double>(numIters)
+            << " usec/each\n";
+}
+
+int main(int argc, char** argv) {
+  int32_t N = 1000000;
+  AtLaunch_Base(N);
+  AtLaunch_WithData(N, 0);
+  AtLaunch_WithData(N, 4);
+  AtLaunch_WithData(N, 256);
+  return 0;
+}
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 1 class(es)/struct(s) and 11 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes/Structs**: `Baton`, `Helper`, `Helper`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/cpp/api`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `torch/torch.h`
+- `chrono`
+- `condition_variable`
+- `mutex`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/cpp/api/parallel_benchmark.cpp
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/cpp/api`):
+
+- [`fft.cpp_docs.md`](./fft.cpp_docs.md)
+- [`tensor_options.cpp_docs.md`](./tensor_options.cpp_docs.md)
+- [`any.cpp_docs.md`](./any.cpp_docs.md)
+- [`torch_include.cpp_docs.md`](./torch_include.cpp_docs.md)
+- [`rnn.cpp_docs.md`](./rnn.cpp_docs.md)
+- [`jit.cpp_docs.md`](./jit.cpp_docs.md)
+- [`nn_utils.cpp_docs.md`](./nn_utils.cpp_docs.md)
+- [`nested.cpp_docs.md`](./nested.cpp_docs.md)
+- [`meta_tensor.cpp_docs.md`](./meta_tensor.cpp_docs.md)
+- [`nested_int.cpp_docs.md`](./nested_int.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `parallel_benchmark.cpp_docs.md`
+- **Keyword Index**: `parallel_benchmark.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/cpp/api`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/cpp/api`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/cpp/api/parallel_benchmark.cpp_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/cpp/api`):
+
+- [`init_baseline.py_kw.md_docs.md`](./init_baseline.py_kw.md_docs.md)
+- [`support.cpp_kw.md_docs.md`](./support.cpp_kw.md_docs.md)
+- [`memory.cpp_docs.md_docs.md`](./memory.cpp_docs.md_docs.md)
+- [`dataloader.cpp_docs.md_docs.md`](./dataloader.cpp_docs.md_docs.md)
+- [`moduledict.cpp_kw.md_docs.md`](./moduledict.cpp_kw.md_docs.md)
+- [`support.h_kw.md_docs.md`](./support.h_kw.md_docs.md)
+- [`ordered_dict.cpp_docs.md_docs.md`](./ordered_dict.cpp_docs.md_docs.md)
+- [`functional.cpp_docs.md_docs.md`](./functional.cpp_docs.md_docs.md)
+- [`CMakeLists.txt_docs.md_docs.md`](./CMakeLists.txt_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `parallel_benchmark.cpp_docs.md_docs.md`
+- **Keyword Index**: `parallel_benchmark.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

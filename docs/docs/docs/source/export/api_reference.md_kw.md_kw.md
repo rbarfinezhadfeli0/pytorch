@@ -1,0 +1,81 @@
+# Keyword Index: `docs/docs/source/export/api_reference.md_kw.md`
+
+## File Information
+
+- **Original File**: [docs/docs/source/export/api_reference.md_kw.md](../../../../../docs/docs/source/export/api_reference.md_kw.md)
+- **Documentation**: [`api_reference.md_kw.md_docs.md`](./api_reference.md_kw.md_docs.md)
+- **Folder**: `docs/docs/source/export`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`API`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`AdditionalInputs`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`Analysis`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`Architecture`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`Basic`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`Complete`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`Considerations`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`Dependencies`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`Design`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`Detailed`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`Dim`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`Documentation`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`Efficiency`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`ExportedProgram`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`Extracted`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`File`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`Folder`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`Generated`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`High`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`How`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`Identifiers`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`In`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`Index`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`Information`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`Keyword`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`Keywords`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`Level`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`Map`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`Metadata`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`Original`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`Overview`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`Performance`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`Purpose`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`PyTorch`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`Reference`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`Related`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`Repository`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`Safety`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`Section`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`Security`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`ShapesCollection`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`Source`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`System`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`Testing`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`The`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`This`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+- **`Usage`**: [api_reference.md_kw.md_docs.md](./api_reference.md_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

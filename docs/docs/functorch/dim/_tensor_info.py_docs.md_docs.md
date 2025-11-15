@@ -1,0 +1,304 @@
+# Documentation: `docs/functorch/dim/_tensor_info.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/functorch/dim/_tensor_info.py_docs.md`
+- **Size**: 4,586 bytes (4.48 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `functorch/dim/_tensor_info.py`
+
+## File Metadata
+
+- **Path**: `functorch/dim/_tensor_info.py`
+- **Size**: 2,039 bytes (1.99 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This is a python source code that is part of the PyTorch project.
+
+## Original Source
+
+```python
+from __future__ import annotations
+
+from dataclasses import dataclass
+from typing import Any, Optional, TYPE_CHECKING
+
+import torch
+
+
+if TYPE_CHECKING:
+    from ._dim_entry import DimEntry
+
+
+@dataclass
+class TensorInfo:
+    tensor: Optional[torch.Tensor]
+    levels: list[DimEntry]
+    has_device: bool
+    batchedtensor: Optional[torch.Tensor]
+
+    def __post_init__(self) -> None:
+        from ._dim_entry import DimEntry
+
+        assert all(isinstance(l, DimEntry) for l in self.levels)
+
+    def ndim(self) -> int:
+        from ._dim_entry import ndim_of_levels
+
+        return ndim_of_levels(self.levels)
+
+    def __bool__(self) -> bool:
+        return self.tensor is not None
+
+    @staticmethod
+    def create(
+        h: Any, ensure_batched: bool = True, ensure_present: bool = True
+    ) -> TensorInfo:
+        from . import Dim, DimEntry, Tensor
+
+        if Tensor.check_exact(h):
+            # functorch Tensor with first-class dimensions
+            return TensorInfo(
+                h._get_tensor(),
+                h._get_levels(),
+                h._get_has_device(),
+                h._get_batchtensor() if ensure_batched else None,
+            )
+        elif Dim.check_exact(h):
+            # For Dim objects, only get range/batchtensor if needed and dimension is bound
+            tensor = h._get_range() if h.is_bound else None
+            batchtensor = (
+                h._get_batchtensor() if ensure_batched and h.is_bound else None
+            )
+            return TensorInfo(
+                tensor,
+                [DimEntry(h)],
+                False,
+                batchtensor,
+            )
+        elif isinstance(h, torch.Tensor):
+            # Plain torch tensor - create positional levels
+            levels = []
+            for i in range(-h.dim(), 0):
+                levels.append(DimEntry(i))
+            return TensorInfo(h, levels, True, h)
+        else:
+            if ensure_present:
+                raise ValueError("expected a tensor object")
+            return TensorInfo(None, [], False, None)
+
+```
+
+
+
+## High-Level Overview
+
+
+This Python file contains 3 class(es) and 4 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `TensorInfo`
+
+**Functions defined**: `__post_init__`, `ndim`, `__bool__`, `create`
+
+**Key imports**: annotations, dataclass, Any, Optional, TYPE_CHECKING, torch, DimEntry, DimEntry, ndim_of_levels, Dim, DimEntry, Tensor
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `functorch/dim`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `__future__`: annotations
+- `dataclasses`: dataclass
+- `typing`: Any, Optional, TYPE_CHECKING
+- `torch`
+- `._dim_entry`: DimEntry
+- `.`: Dim, DimEntry, Tensor
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`functorch/dim`):
+
+- [`magic_trace.py_docs.md`](./magic_trace.py_docs.md)
+- [`_wrap.py_docs.md`](./_wrap.py_docs.md)
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`_dim_entry.py_docs.md`](./_dim_entry.py_docs.md)
+- [`_py_inst_decoder.py_docs.md`](./_py_inst_decoder.py_docs.md)
+- [`wrap_type.py_docs.md`](./wrap_type.py_docs.md)
+- [`_enable_all_layers.py_docs.md`](./_enable_all_layers.py_docs.md)
+- [`README.md_docs.md`](./README.md_docs.md)
+- [`op_properties.py_docs.md`](./op_properties.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `_tensor_info.py_docs.md`
+- **Keyword Index**: `_tensor_info.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/functorch/dim`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/functorch/dim`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/functorch/dim`):
+
+- [`_py_inst_decoder.py_kw.md_docs.md`](./_py_inst_decoder.py_kw.md_docs.md)
+- [`_py_inst_decoder.py_docs.md_docs.md`](./_py_inst_decoder.py_docs.md_docs.md)
+- [`_getsetitem.py_docs.md_docs.md`](./_getsetitem.py_docs.md_docs.md)
+- [`README.md_docs.md_docs.md`](./README.md_docs.md_docs.md)
+- [`_getsetitem.py_kw.md_docs.md`](./_getsetitem.py_kw.md_docs.md)
+- [`_order.py_kw.md_docs.md`](./_order.py_kw.md_docs.md)
+- [`wrap_type.py_kw.md_docs.md`](./wrap_type.py_kw.md_docs.md)
+- [`_tensor_info.py_kw.md_docs.md`](./_tensor_info.py_kw.md_docs.md)
+- [`_dim_entry.py_kw.md_docs.md`](./_dim_entry.py_kw.md_docs.md)
+- [`magic_trace.py_docs.md_docs.md`](./magic_trace.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `_tensor_info.py_docs.md_docs.md`
+- **Keyword Index**: `_tensor_info.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

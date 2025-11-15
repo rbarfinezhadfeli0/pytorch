@@ -1,0 +1,52 @@
+# Index: `docs/aten/src/ATen/native/quantized/cpu/qnnpack/`
+
+## Overview
+
+This folder contains source code, configurations, or documentation for the PyTorch project.
+
+**Location**: `docs/aten/src/ATen/native/quantized/cpu/qnnpack/`
+
+## Subfolders
+
+- [`bench/`](./bench/index.md) - bench module
+- [`cmake/`](./cmake/index.md) - cmake module
+- [`deps/`](./deps/index.md) - deps module
+- [`include/`](./include/index.md) - include module
+- [`scripts/`](./scripts/index.md) - Utility scripts
+- [`src/`](./src/index.md) - src module
+- [`test/`](./test/index.md) - Test suites
+- [`wrappers/`](./wrappers/index.md) - wrappers module
+
+## Files
+
+| File | Description | Documentation | Keywords |
+|------|-------------|---------------|----------|
+| [`CMakeLists.txt_docs.md`](../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/CMakeLists.txt_docs.md) | Documentation | [docs](./CMakeLists.txt_docs.md_docs.md) | [keywords](./CMakeLists.txt_docs.md_kw.md) |
+| [`CMakeLists.txt_kw.md`](../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/CMakeLists.txt_kw.md) | Documentation | [docs](./CMakeLists.txt_kw.md_docs.md) | [keywords](./CMakeLists.txt_kw.md_kw.md) |
+| [`CODE_OF_CONDUCT.md_docs.md`](../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/CODE_OF_CONDUCT.md_docs.md) | Documentation | [docs](./CODE_OF_CONDUCT.md_docs.md_docs.md) | [keywords](./CODE_OF_CONDUCT.md_docs.md_kw.md) |
+| [`CODE_OF_CONDUCT.md_kw.md`](../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/CODE_OF_CONDUCT.md_kw.md) | Documentation | [docs](./CODE_OF_CONDUCT.md_kw.md_docs.md) | [keywords](./CODE_OF_CONDUCT.md_kw.md_kw.md) |
+| [`CONTRIBUTING.md_docs.md`](../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/CONTRIBUTING.md_docs.md) | Documentation | [docs](./CONTRIBUTING.md_docs.md_docs.md) | [keywords](./CONTRIBUTING.md_docs.md_kw.md) |
+| [`CONTRIBUTING.md_kw.md`](../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/CONTRIBUTING.md_kw.md) | Documentation | [docs](./CONTRIBUTING.md_kw.md_docs.md) | [keywords](./CONTRIBUTING.md_kw.md_kw.md) |
+| [`LICENSE_docs.md`](../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/LICENSE_docs.md) | Documentation | [docs](./LICENSE_docs.md_docs.md) | [keywords](./LICENSE_docs.md_kw.md) |
+| [`LICENSE_kw.md`](../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/LICENSE_kw.md) | Documentation | [docs](./LICENSE_kw.md_docs.md) | [keywords](./LICENSE_kw.md_kw.md) |
+| [`README.md_docs.md`](../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/README.md_docs.md) | Documentation | [docs](./README.md_docs.md_docs.md) | [keywords](./README.md_docs.md_kw.md) |
+| [`README.md_kw.md`](../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/README.md_kw.md) | Documentation | [docs](./README.md_kw.md_docs.md) | [keywords](./README.md_kw.md_kw.md) |
+| [`buckbuild.bzl_docs.md`](../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/buckbuild.bzl_docs.md) | Documentation | [docs](./buckbuild.bzl_docs.md_docs.md) | [keywords](./buckbuild.bzl_docs.md_kw.md) |
+| [`buckbuild.bzl_kw.md`](../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/buckbuild.bzl_kw.md) | Documentation | [docs](./buckbuild.bzl_kw.md_docs.md) | [keywords](./buckbuild.bzl_kw.md_kw.md) |
+| [`configure.py_docs.md`](../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/configure.py_docs.md) | Documentation | [docs](./configure.py_docs.md_docs.md) | [keywords](./configure.py_docs.md_kw.md) |
+| [`configure.py_kw.md`](../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/configure.py_kw.md) | Documentation | [docs](./configure.py_kw.md_docs.md) | [keywords](./configure.py_kw.md_kw.md) |
+| [`confu.yaml_docs.md`](../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/confu.yaml_docs.md) | Documentation | [docs](./confu.yaml_docs.md_docs.md) | [keywords](./confu.yaml_docs.md_kw.md) |
+| [`confu.yaml_kw.md`](../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/confu.yaml_kw.md) | Documentation | [docs](./confu.yaml_kw.md_docs.md) | [keywords](./confu.yaml_kw.md_kw.md) |
+| [`generate-wrapper.py_docs.md`](../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/generate-wrapper.py_docs.md) | Documentation | [docs](./generate-wrapper.py_docs.md_docs.md) | [keywords](./generate-wrapper.py_docs.md_kw.md) |
+| [`generate-wrapper.py_kw.md`](../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/generate-wrapper.py_kw.md) | Documentation | [docs](./generate-wrapper.py_kw.md_docs.md) | [keywords](./generate-wrapper.py_kw.md_kw.md) |
+
+
+## Navigation
+
+- **Parent Folder**: [..](../index.md)
+- **Folder Documentation**: [doc.md](./doc.md)
+- **Keyword Index**: [sub.md](./sub.md)
+
+---
+
+*Generated by PyTorch Repository Documentation System*

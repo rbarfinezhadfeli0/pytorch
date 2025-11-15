@@ -1,0 +1,86 @@
+# Keyword Index: `docs/functorch/docs/source/_static/css/custom.css_docs.md`
+
+## File Information
+
+- **Original File**: [docs/functorch/docs/source/_static/css/custom.css_docs.md](../../../../../../../docs/functorch/docs/source/_static/css/custom.css_docs.md)
+- **Documentation**: [`custom.css_docs.md_docs.md`](./custom.css_docs.md_docs.md)
+- **Folder**: `docs/functorch/docs/source/_static/css`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Architecture`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Code`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Common`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Considerations`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Cross`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Dependencies`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Dependency`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Design`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Detailed`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Documentation`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Examples`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Extension`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`File`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Files`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Folder`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`For`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Generated`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`High`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Idioms`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Import`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Index`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`KB`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Keyword`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Level`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Manual`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Metadata`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`No`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Notes`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Original`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Overview`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Path`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Patterns`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Performance`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Purpose`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`PyTorch`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`References`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Related`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Repository`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Role`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Safety`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Security`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`See`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Size`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Source`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Structure`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`System`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Test`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Testing`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`This`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Type`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+- **`Usage`**: [custom.css_docs.md_docs.md](./custom.css_docs.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

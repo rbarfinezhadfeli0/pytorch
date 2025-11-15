@@ -1,0 +1,314 @@
+# Documentation: `docs/test/distributed/launcher/bin/test_script_init_method.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/distributed/launcher/bin/test_script_init_method.py_docs.md`
+- **Size**: 4,372 bytes (4.27 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/distributed/launcher/bin/test_script_init_method.py`
+
+## File Metadata
+
+- **Path**: `test/distributed/launcher/bin/test_script_init_method.py`
+- **Size**: 1,955 bytes (1.91 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**. Can be **executed as a standalone script**.
+
+## Original Source
+
+```python
+#!/usr/bin/env python3
+# Owner(s): ["oncall: r2p"]
+
+# Copyright (c) Facebook, Inc. and its affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the BSD-style license found in the
+# LICENSE file in the root directory of this source tree.
+
+import argparse
+import os
+
+import torch
+import torch.distributed as dist
+import torch.nn.functional as F
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="test script")
+
+    parser.add_argument(
+        "--init-method",
+        "--init_method",
+        type=str,
+        required=True,
+        help="init_method to pass to `dist.init_process_group()` (e.g. env://)",
+    )
+    parser.add_argument(
+        "--world-size",
+        "--world_size",
+        type=int,
+        default=os.getenv("WORLD_SIZE", -1),
+        help="world_size to pass to `dist.init_process_group()`",
+    )
+    parser.add_argument(
+        "--rank",
+        type=int,
+        default=os.getenv("RANK", -1),
+        help="rank to pass to `dist.init_process_group()`",
+    )
+
+    return parser.parse_args()
+
+
+def main():
+    args = parse_args()
+
+    dist.init_process_group(
+        backend="gloo",
+        init_method=args.init_method,
+        world_size=args.world_size,
+        rank=args.rank,
+    )
+
+    rank = dist.get_rank()
+    world_size = dist.get_world_size()
+
+    # one hot (by rank) tensor of size world_size
+    # example:
+    # rank 0, world_size 4 => [1, 0, 0, 0]
+    # rank 1, world_size 4 => [0, 1, 0, 0]
+    # ...
+    t = F.one_hot(torch.tensor(rank), num_classes=world_size)
+
+    # after all_reduce t = tensor.ones(size=world_size)
+    dist.all_reduce(t)
+
+    # adding all elements in t should equal world_size
+    derived_world_size = torch.sum(t).item()
+    if derived_world_size != world_size:
+        raise RuntimeError(
+            f"Wrong world size derived. Expected: {world_size}, Got: {derived_world_size}"
+        )
+
+    print("Done")
+
+
+if __name__ == "__main__":
+    main()
+
+```
+
+
+
+## High-Level Overview
+
+
+This Python file contains 0 class(es) and 2 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Functions defined**: `parse_args`, `main`
+
+**Key imports**: argparse, os, torch, torch.distributed as dist, torch.nn.functional as F
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/distributed/launcher/bin`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `argparse`
+- `os`
+- `torch`
+- `torch.distributed as dist`
+- `torch.nn.functional as F`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/distributed/launcher/bin/test_script_init_method.py
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/distributed/launcher/bin`):
+
+- [`test_script.sh_docs.md`](./test_script.sh_docs.md)
+- [`test_script.py_docs.md`](./test_script.py_docs.md)
+- [`test_script_local_rank.py_docs.md`](./test_script_local_rank.py_docs.md)
+- [`test_script_is_torchelastic_launched.py_docs.md`](./test_script_is_torchelastic_launched.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_script_init_method.py_docs.md`
+- **Keyword Index**: `test_script_init_method.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/distributed/launcher/bin`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/distributed/launcher/bin`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/distributed/launcher/bin/test_script_init_method.py_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/distributed/launcher/bin`):
+
+- [`test_script.py_kw.md_docs.md`](./test_script.py_kw.md_docs.md)
+- [`test_script_is_torchelastic_launched.py_kw.md_docs.md`](./test_script_is_torchelastic_launched.py_kw.md_docs.md)
+- [`test_script_local_rank.py_docs.md_docs.md`](./test_script_local_rank.py_docs.md_docs.md)
+- [`test_script_local_rank.py_kw.md_docs.md`](./test_script_local_rank.py_kw.md_docs.md)
+- [`test_script_is_torchelastic_launched.py_docs.md_docs.md`](./test_script_is_torchelastic_launched.py_docs.md_docs.md)
+- [`test_script.py_docs.md_docs.md`](./test_script.py_docs.md_docs.md)
+- [`test_script_init_method.py_kw.md_docs.md`](./test_script_init_method.py_kw.md_docs.md)
+- [`test_script.sh_kw.md_docs.md`](./test_script.sh_kw.md_docs.md)
+- [`test_script.sh_docs.md_docs.md`](./test_script.sh_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_script_init_method.py_docs.md_docs.md`
+- **Keyword Index**: `test_script_init_method.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

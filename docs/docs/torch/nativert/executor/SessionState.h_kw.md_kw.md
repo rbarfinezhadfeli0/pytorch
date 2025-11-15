@@ -1,0 +1,83 @@
+# Keyword Index: `docs/torch/nativert/executor/SessionState.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/nativert/executor/SessionState.h_kw.md](../../../../../docs/torch/nativert/executor/SessionState.h_kw.md)
+- **Documentation**: [`SessionState.h_kw.md_docs.md`](./SessionState.h_kw.md_docs.md)
+- **Folder**: `docs/torch/nativert/executor`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Architecture`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Basic`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Class`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Complete`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Considerations`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Dependencies`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Design`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Detailed`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Documentation`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Efficiency`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`ExecutionFrame`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Extracted`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`File`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Folder`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Functions`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Generated`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Graph`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`High`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`How`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`In`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Includes`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Index`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Information`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Keyword`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Keywords`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Level`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Macros`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Map`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Metadata`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Namespaces`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Original`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Overview`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Performance`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Purpose`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`PyTorch`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Related`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Repository`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Safety`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Section`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Security`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`SessionState`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Source`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Structs`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`System`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Testing`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`The`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`This`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+- **`Usage`**: [SessionState.h_kw.md_docs.md](./SessionState.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

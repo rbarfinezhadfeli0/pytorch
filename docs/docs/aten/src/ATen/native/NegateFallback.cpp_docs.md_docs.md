@@ -1,0 +1,283 @@
+# Documentation: `docs/aten/src/ATen/native/NegateFallback.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/NegateFallback.cpp_docs.md`
+- **Size**: 4,680 bytes (4.57 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/native/NegateFallback.cpp`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/NegateFallback.cpp`
+- **Size**: 2,143 bytes (2.09 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#define TORCH_ASSERT_ONLY_METHOD_OPERATORS
+#include <ATen/native/MathBitsFallback.h>
+#include <ATen/native/MathBitFallThroughLists.h>
+
+namespace at::native {
+struct NegFallback : MathOpFallback {
+  NegFallback() : MathOpFallback(DispatchKey::Negative, "negation") {}
+  bool is_bit_set(const Tensor& tensor) override {
+    return tensor.is_neg();
+  }
+};
+
+static void negationFallback(const c10::OperatorHandle& op, DispatchKeySet dispatch_keys, torch::jit::Stack* stack) {
+  NegFallback object;
+  object.fallback_impl(op, dispatch_keys, stack);
+}
+
+TORCH_LIBRARY_IMPL(_, Negative, m) {
+  m.fallback(torch::CppFunction::makeFromBoxedFunction<&negationFallback>());
+}
+
+TORCH_LIBRARY_IMPL(aten, Negative, m) {
+  m.impl("set_.source_Storage_storage_offset", torch::CppFunction::makeFallthrough());
+  m.impl("set_.source_Tensor", torch::CppFunction::makeFallthrough());
+  m.impl("set_", torch::CppFunction::makeFallthrough());
+  m.impl("copy_", torch::CppFunction::makeFallthrough());
+  m.impl("clone", torch::CppFunction::makeFallthrough());
+  m.impl("neg_", torch::CppFunction::makeFallthrough());
+  m.impl("resolve_neg", torch::CppFunction::makeFallthrough());
+  m.impl("resolve_conj", torch::CppFunction::makeFallthrough());
+  m.impl("repeat_interleave.Tensor", torch::CppFunction::makeFallthrough());
+  m.impl("repeat_interleave.self_Tensor", torch::CppFunction::makeFallthrough());
+  m.impl("repeat_interleave.self_int", torch::CppFunction::makeFallthrough());
+
+  // See test_metadata_check_when_primal_has_neg_bit in test_autograd.py
+  m.impl("_has_same_storage_numel", torch::CppFunction::makeFallthrough());
+  m.impl("_new_zeros_with_same_feature_meta", torch::CppFunction::makeFallthrough());
+
+  // linear algebra functions
+  m.impl("linalg_solve_triangular", torch::CppFunction::makeFallthrough());
+  m.impl("linalg_solve_triangular.out", torch::CppFunction::makeFallthrough());
+  m.impl("linalg_svd", torch::CppFunction::makeFallthrough());
+  m.impl("linalg_svd.U", torch::CppFunction::makeFallthrough());
+
+  TORCH_VIEW_FNS(m)
+  TENSOR_UTILITIES_AND_CONSTRUCTORS(m)
+  TORCH_VIEW_FNS_NATIVE_FN_REGISTRATION(m)
+}
+
+} // namespace at::native
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 2 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `at`
+
+**Classes/Structs**: `NegFallback`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/native/MathBitsFallback.h`
+- `ATen/native/MathBitFallThroughLists.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native`):
+
+- [`LossMulti.h_docs.md`](./LossMulti.h_docs.md)
+- [`NaiveConvolutionTranspose3d.cpp_docs.md`](./NaiveConvolutionTranspose3d.cpp_docs.md)
+- [`UnaryOps.cpp_docs.md`](./UnaryOps.cpp_docs.md)
+- [`ResizeCommon.h_docs.md`](./ResizeCommon.h_docs.md)
+- [`FusedAdagrad.cpp_docs.md`](./FusedAdagrad.cpp_docs.md)
+- [`SharedReduceOps.h_docs.md`](./SharedReduceOps.h_docs.md)
+- [`SpectralOpsUtils.h_docs.md`](./SpectralOpsUtils.h_docs.md)
+- [`FractionalMaxPooling.h_docs.md`](./FractionalMaxPooling.h_docs.md)
+- [`TensorDimApply.h_docs.md`](./TensorDimApply.h_docs.md)
+- [`Lerp.cpp_docs.md`](./Lerp.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `NegateFallback.cpp_docs.md`
+- **Keyword Index**: `NegateFallback.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native`):
+
+- [`AdaptiveMaxPooling2d.cpp_docs.md_docs.md`](./AdaptiveMaxPooling2d.cpp_docs.md_docs.md)
+- [`Distributions.cpp_docs.md_docs.md`](./Distributions.cpp_docs.md_docs.md)
+- [`im2col_shape_check.h_docs.md_docs.md`](./im2col_shape_check.h_docs.md_docs.md)
+- [`ReduceOps.cpp_kw.md_docs.md`](./ReduceOps.cpp_kw.md_docs.md)
+- [`Lerp.cpp_kw.md_docs.md`](./Lerp.cpp_kw.md_docs.md)
+- [`CPUFallback.h_docs.md_docs.md`](./CPUFallback.h_docs.md_docs.md)
+- [`MetaTensor.cpp_docs.md_docs.md`](./MetaTensor.cpp_docs.md_docs.md)
+- [`Correlation.cpp_kw.md_docs.md`](./Correlation.cpp_kw.md_docs.md)
+- [`im2col_shape_check.h_kw.md_docs.md`](./im2col_shape_check.h_kw.md_docs.md)
+- [`UpSampleNearest2d.cpp_kw.md_docs.md`](./UpSampleNearest2d.cpp_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `NegateFallback.cpp_docs.md_docs.md`
+- **Keyword Index**: `NegateFallback.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

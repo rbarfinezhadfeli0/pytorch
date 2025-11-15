@@ -1,0 +1,204 @@
+# Documentation: `aten.bzl`
+
+## File Metadata
+
+- **Path**: `aten.bzl`
+- **Size**: 2,837 bytes (2.77 KB)
+- **Type**: Source File (.bzl)
+- **Extension**: `.bzl`
+
+## File Purpose
+
+This is a source file (.bzl) that is part of the PyTorch project.
+
+## Original Source
+
+```
+load("@bazel_skylib//lib:paths.bzl", "paths")
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+CPU_CAPABILITY_NAMES = ["DEFAULT", "AVX2"]
+CAPABILITY_COMPILER_FLAGS = {
+    "AVX2": ["-mavx2", "-mfma", "-mf16c"],
+    "DEFAULT": [],
+}
+
+PREFIX = "aten/src/ATen/native/"
+EXTRA_PREFIX = "aten/src/ATen/"
+
+def intern_build_aten_ops(copts, deps, extra_impls):
+    for cpu_capability in CPU_CAPABILITY_NAMES:
+        srcs = []
+        for impl in native.glob(
+            [
+                PREFIX + "cpu/*.cpp",
+                PREFIX + "quantized/cpu/kernels/*.cpp",
+            ],
+        ):
+            name = impl.replace(PREFIX, "")
+            out = PREFIX + name + "." + cpu_capability + ".cpp"
+            native.genrule(
+                name = name + "_" + cpu_capability + "_cp",
+                srcs = [impl],
+                outs = [out],
+                cmd = "cp $< $@",
+            )
+            srcs.append(out)
+
+        for impl in extra_impls:
+            name = impl.replace(EXTRA_PREFIX, "")
+            out = EXTRA_PREFIX + name + "." + cpu_capability + ".cpp"
+            native.genrule(
+                name = name + "_" + cpu_capability + "_cp",
+                srcs = [impl],
+                outs = [out],
+                cmd = "cp $< $@",
+            )
+            srcs.append(out)
+
+        cc_library(
+            name = "ATen_CPU_" + cpu_capability,
+            srcs = srcs,
+            copts = copts + [
+                "-DCPU_CAPABILITY=" + cpu_capability,
+                "-DCPU_CAPABILITY_" + cpu_capability,
+            ] + CAPABILITY_COMPILER_FLAGS[cpu_capability],
+            deps = deps,
+            linkstatic = 1,
+        )
+    cc_library(
+        name = "ATen_CPU",
+        deps = [":ATen_CPU_" + cpu_capability for cpu_capability in CPU_CAPABILITY_NAMES],
+        linkstatic = 1,
+    )
+
+def generate_aten_impl(ctx):
+    # Declare the entire ATen/ops/ directory as an output
+    ops_dir = ctx.actions.declare_directory("aten/src/ATen/ops")
+    outputs = [ops_dir] + ctx.outputs.outs
+
+    install_dir = paths.dirname(ops_dir.path)
+    ctx.actions.run(
+        outputs = outputs,
+        inputs = ctx.files.srcs,
+        executable = ctx.executable.generator,
+        arguments = [
+            "--source-path",
+            "aten/src/ATen",
+            "--per-operator-headers",
+            "--install_dir",
+            install_dir,
+        ],
+        use_default_shell_env = True,
+        mnemonic = "GenerateAten",
+    )
+    return [DefaultInfo(files = depset(outputs))]
+
+generate_aten = rule(
+    implementation = generate_aten_impl,
+    attrs = {
+        "generator": attr.label(
+            executable = True,
+            allow_files = True,
+            mandatory = True,
+            cfg = "exec",
+        ),
+        "outs": attr.output_list(),
+        "srcs": attr.label_list(allow_files = True),
+    },
+)
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at ``.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `root`, which is part of the PyTorch project infrastructure.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`root`):
+
+- [`AGENTS.md_docs.md`](./AGENTS.md_docs.md)
+- [`pytest.ini_docs.md`](./pytest.ini_docs.md)
+- [`codex_setup.sh_docs.md`](./codex_setup.sh_docs.md)
+- [`pt_template_srcs.bzl_docs.md`](./pt_template_srcs.bzl_docs.md)
+- [`build.bzl_docs.md`](./build.bzl_docs.md)
+- [`buckbuild.bzl_docs.md`](./buckbuild.bzl_docs.md)
+- [`Dockerfile_docs.md`](./Dockerfile_docs.md)
+- [`.bc-linter.yml_docs.md`](./.bc-linter.yml_docs.md)
+- [`setup.py_docs.md`](./setup.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `aten.bzl_docs.md`
+- **Keyword Index**: `aten.bzl_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

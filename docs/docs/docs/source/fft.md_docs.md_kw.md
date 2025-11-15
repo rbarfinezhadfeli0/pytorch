@@ -1,0 +1,93 @@
+# Keyword Index: `docs/docs/source/fft.md_docs.md`
+
+## File Information
+
+- **Original File**: [docs/docs/source/fft.md_docs.md](../../../../docs/docs/source/fft.md_docs.md)
+- **Documentation**: [`fft.md_docs.md_docs.md`](./fft.md_docs.md_docs.md)
+- **Folder**: `docs/docs/source`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Architecture`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Code`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Common`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Considerations`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Cross`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Dependencies`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Dependency`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Design`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Detailed`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Discrete`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Documentation`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Examples`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Extension`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Fast`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`File`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Files`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Folder`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`For`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Fourier`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Functions`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Generated`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Helper`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`High`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Idioms`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Import`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Index`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`KB`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Keyword`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Level`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Manual`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Markdown`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Metadata`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`No`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Notes`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Original`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Overview`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Path`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Patterns`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Performance`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Purpose`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`PyTorch`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`References`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Related`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Repository`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Role`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Safety`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Security`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`See`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Size`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Source`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Structure`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`System`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Test`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Testing`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`This`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Transforms`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Type`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+- **`Usage`**: [fft.md_docs.md_docs.md](./fft.md_docs.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

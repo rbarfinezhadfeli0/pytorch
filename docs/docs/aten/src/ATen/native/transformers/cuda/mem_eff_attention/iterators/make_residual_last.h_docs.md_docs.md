@@ -1,0 +1,303 @@
+# Documentation: `docs/aten/src/ATen/native/transformers/cuda/mem_eff_attention/iterators/make_residual_last.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/transformers/cuda/mem_eff_attention/iterators/make_residual_last.h_docs.md`
+- **Size**: 4,597 bytes (4.49 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/native/transformers/cuda/mem_eff_attention/iterators/make_residual_last.h`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/transformers/cuda/mem_eff_attention/iterators/make_residual_last.h`
+- **Size**: 1,650 bytes (1.61 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+/*
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+#pragma once
+
+#include <ATen/native/transformers/cuda/mem_eff_attention/iterators/predicated_tile_access_iterator_residual_last.h>
+#include <ATen/native/transformers/cuda/mem_eff_attention/iterators/predicated_tile_iterator_residual_last.h>
+
+
+namespace cutlass {
+namespace transform {
+namespace threadblock {
+
+template <typename BaseIterator>
+struct MakeIteratorResidualLast;
+
+template <
+    typename Shape,
+    typename Element,
+    typename Layout,
+    int AdvanceRank,
+    typename ThreadMap,
+    int AccessSize,
+    bool Gather>
+struct MakeIteratorResidualLast<PredicatedTileIterator<
+    Shape,
+    Element,
+    Layout,
+    AdvanceRank,
+    ThreadMap,
+    AccessSize,
+    Gather>> {
+  using Iterator = PredicatedTileIteratorResidualLast<
+      Shape,
+      Element,
+      Layout,
+      AdvanceRank,
+      ThreadMap,
+      AccessSize,
+      Gather>;
+};
+
+template <
+    typename Shape,
+    typename Element,
+    typename Layout,
+    int AdvanceRank,
+    typename ThreadMap,
+    typename AccessType,
+    bool Gather>
+struct MakeIteratorResidualLast<PredicatedTileAccessIterator<
+    Shape,
+    Element,
+    Layout,
+    AdvanceRank,
+    ThreadMap,
+    AccessType,
+    Gather>> {
+  using Iterator = PredicatedTileAccessIteratorResidualLast<
+      Shape,
+      Element,
+      Layout,
+      AdvanceRank,
+      ThreadMap,
+      AccessType,
+      Gather>;
+};
+} // namespace threadblock
+} // namespace transform
+} // namespace cutlass
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 0 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `cutlass`, `transform`, `threadblock`
+
+**Classes/Structs**: `MakeIteratorResidualLast`, `MakeIteratorResidualLast`, `MakeIteratorResidualLast`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native/transformers/cuda/mem_eff_attention/iterators`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/native/transformers/cuda/mem_eff_attention/iterators/predicated_tile_access_iterator_residual_last.h`
+- `ATen/native/transformers/cuda/mem_eff_attention/iterators/predicated_tile_iterator_residual_last.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native/transformers/cuda/mem_eff_attention/iterators`):
+
+- [`default_warp_iterator_from_smem.h_docs.md`](./default_warp_iterator_from_smem.h_docs.md)
+- [`warp_iterator_from_smem.h_docs.md`](./warp_iterator_from_smem.h_docs.md)
+- [`epilogue_predicated_tile_iterator.h_docs.md`](./epilogue_predicated_tile_iterator.h_docs.md)
+- [`predicated_tile_iterator_residual_last.h_docs.md`](./predicated_tile_iterator_residual_last.h_docs.md)
+- [`predicated_tile_access_iterator_residual_last.h_docs.md`](./predicated_tile_access_iterator_residual_last.h_docs.md)
+- [`transpose_warp_iterator.h_docs.md`](./transpose_warp_iterator.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `make_residual_last.h_docs.md`
+- **Keyword Index**: `make_residual_last.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native/transformers/cuda/mem_eff_attention/iterators`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native/transformers/cuda/mem_eff_attention/iterators`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native/transformers/cuda/mem_eff_attention/iterators`):
+
+- [`default_warp_iterator_from_smem.h_docs.md_docs.md`](./default_warp_iterator_from_smem.h_docs.md_docs.md)
+- [`epilogue_predicated_tile_iterator.h_kw.md_docs.md`](./epilogue_predicated_tile_iterator.h_kw.md_docs.md)
+- [`predicated_tile_access_iterator_residual_last.h_docs.md_docs.md`](./predicated_tile_access_iterator_residual_last.h_docs.md_docs.md)
+- [`predicated_tile_access_iterator_residual_last.h_kw.md_docs.md`](./predicated_tile_access_iterator_residual_last.h_kw.md_docs.md)
+- [`warp_iterator_from_smem.h_kw.md_docs.md`](./warp_iterator_from_smem.h_kw.md_docs.md)
+- [`predicated_tile_iterator_residual_last.h_kw.md_docs.md`](./predicated_tile_iterator_residual_last.h_kw.md_docs.md)
+- [`epilogue_predicated_tile_iterator.h_docs.md_docs.md`](./epilogue_predicated_tile_iterator.h_docs.md_docs.md)
+- [`make_residual_last.h_kw.md_docs.md`](./make_residual_last.h_kw.md_docs.md)
+- [`transpose_warp_iterator.h_docs.md_docs.md`](./transpose_warp_iterator.h_docs.md_docs.md)
+- [`default_warp_iterator_from_smem.h_kw.md_docs.md`](./default_warp_iterator_from_smem.h_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `make_residual_last.h_docs.md_docs.md`
+- **Keyword Index**: `make_residual_last.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

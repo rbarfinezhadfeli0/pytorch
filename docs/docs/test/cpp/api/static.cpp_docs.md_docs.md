@@ -1,0 +1,334 @@
+# Documentation: `docs/test/cpp/api/static.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/cpp/api/static.cpp_docs.md`
+- **Size**: 4,662 bytes (4.55 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/cpp/api/static.cpp`
+
+## File Metadata
+
+- **Path**: `test/cpp/api/static.cpp`
+- **Size**: 2,317 bytes (2.26 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**.
+
+## Original Source
+
+```cpp
+#include <gtest/gtest.h>
+
+#include <c10/util/irange.h>
+#include <torch/csrc/utils/variadic.h>
+#include <torch/detail/static.h>
+#include <torch/torch.h>
+
+#include <string>
+#include <type_traits>
+#include <vector>
+
+template <
+    typename T,
+    typename = std::enable_if_t<!torch::detail::is_module<T>::value>>
+bool f(T&& m) {
+  return false;
+}
+
+template <typename T>
+torch::detail::enable_if_module_t<T, bool> f(T&& m) {
+  return true;
+}
+
+TEST(TestStatic, EnableIfModule) {
+  ASSERT_TRUE(f(torch::nn::LinearImpl(1, 2)));
+  ASSERT_FALSE(f(5));
+  ASSERT_TRUE(torch::detail::check_not_lvalue_references<int>());
+  ASSERT_TRUE((torch::detail::check_not_lvalue_references<float, int, char>()));
+  ASSERT_FALSE(
+      (torch::detail::check_not_lvalue_references<float, int&, char>()));
+  ASSERT_TRUE(torch::detail::check_not_lvalue_references<std::string>());
+  ASSERT_FALSE(torch::detail::check_not_lvalue_references<std::string&>());
+}
+
+namespace {
+
+struct A : torch::nn::Module {
+  int forward() {
+    return 5;
+  }
+};
+
+struct B : torch::nn::Module {
+  std::string forward(torch::Tensor tensor) {
+    return "";
+  }
+};
+
+struct C : torch::nn::Module {
+  float forward(torch::Tensor& tensor) {
+    return 5.0;
+  }
+};
+
+struct D : torch::nn::Module {
+  char forward(torch::Tensor&& tensor) {
+    return 'x';
+  }
+};
+
+struct E : torch::nn::Module {};
+
+} // anonymous namespace
+
+// Put in a function because macros don't handle the comma between arguments to
+// is_same well ...
+template <typename Module, typename ExpectedType, typename... Args>
+void assert_has_expected_type() {
+  using ReturnType =
+      typename torch::detail::return_type_of_forward<Module, Args...>::type;
+  constexpr bool is_expected_type = std::is_same_v<ReturnType, ExpectedType>;
+  ASSERT_TRUE(is_expected_type) << Module().name();
+}
+
+TEST(TestStatic, ReturnTypeOfForward) {
+  assert_has_expected_type<A, int>();
+  assert_has_expected_type<B, std::string, torch::Tensor>();
+  assert_has_expected_type<C, float, torch::Tensor&>();
+  assert_has_expected_type<D, char, torch::Tensor&&>();
+  assert_has_expected_type<E, void>();
+}
+
+TEST(TestStatic, Apply) {
+  std::vector<int> v;
+  torch::apply([&v](int x) { v.push_back(x); }, 1, 2, 3, 4, 5);
+  ASSERT_EQ(v.size(), 5);
+  for (const auto i : c10::irange(v.size())) {
+    ASSERT_EQ(v.at(i), i + 1);
+  }
+}
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 6 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes/Structs**: `A`, `B`, `C`, `D`, `E`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/cpp/api`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `gtest/gtest.h`
+- `c10/util/irange.h`
+- `torch/csrc/utils/variadic.h`
+- `torch/detail/static.h`
+- `torch/torch.h`
+- `string`
+- `type_traits`
+- `vector`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/cpp/api/static.cpp
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/cpp/api`):
+
+- [`fft.cpp_docs.md`](./fft.cpp_docs.md)
+- [`tensor_options.cpp_docs.md`](./tensor_options.cpp_docs.md)
+- [`any.cpp_docs.md`](./any.cpp_docs.md)
+- [`torch_include.cpp_docs.md`](./torch_include.cpp_docs.md)
+- [`rnn.cpp_docs.md`](./rnn.cpp_docs.md)
+- [`jit.cpp_docs.md`](./jit.cpp_docs.md)
+- [`nn_utils.cpp_docs.md`](./nn_utils.cpp_docs.md)
+- [`nested.cpp_docs.md`](./nested.cpp_docs.md)
+- [`meta_tensor.cpp_docs.md`](./meta_tensor.cpp_docs.md)
+- [`nested_int.cpp_docs.md`](./nested_int.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `static.cpp_docs.md`
+- **Keyword Index**: `static.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/cpp/api`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/cpp/api`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/cpp/api/static.cpp_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/cpp/api`):
+
+- [`init_baseline.py_kw.md_docs.md`](./init_baseline.py_kw.md_docs.md)
+- [`support.cpp_kw.md_docs.md`](./support.cpp_kw.md_docs.md)
+- [`memory.cpp_docs.md_docs.md`](./memory.cpp_docs.md_docs.md)
+- [`parallel_benchmark.cpp_docs.md_docs.md`](./parallel_benchmark.cpp_docs.md_docs.md)
+- [`dataloader.cpp_docs.md_docs.md`](./dataloader.cpp_docs.md_docs.md)
+- [`moduledict.cpp_kw.md_docs.md`](./moduledict.cpp_kw.md_docs.md)
+- [`support.h_kw.md_docs.md`](./support.h_kw.md_docs.md)
+- [`ordered_dict.cpp_docs.md_docs.md`](./ordered_dict.cpp_docs.md_docs.md)
+- [`functional.cpp_docs.md_docs.md`](./functional.cpp_docs.md_docs.md)
+- [`CMakeLists.txt_docs.md_docs.md`](./CMakeLists.txt_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `static.cpp_docs.md_docs.md`
+- **Keyword Index**: `static.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

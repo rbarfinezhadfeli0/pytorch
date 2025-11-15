@@ -1,0 +1,358 @@
+# Documentation: `docs/aten/src/ATen/native/BinaryOps.cpp_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/BinaryOps.cpp_kw.md`
+- **Size**: 17,943 bytes (17.52 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `aten/src/ATen/native/BinaryOps.cpp`
+
+## File Information
+
+- **Original File**: [aten/src/ATen/native/BinaryOps.cpp](../../../../../aten/src/ATen/native/BinaryOps.cpp)
+- **Documentation**: [`BinaryOps.cpp_docs.md`](./BinaryOps.cpp_docs.md)
+- **Folder**: `aten/src/ATen/native`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Functions
+
+- **`__and__`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`__lshift__`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`__or__`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`__rshift__`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`__xor__`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`_pow2`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`_test_serialization_subcmul`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`add`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`add_relu`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`add_zerotensor`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`arctan2`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`bitwise_and`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`bitwise_left_shift`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`bitwise_or`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`bitwise_right_shift`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`bitwise_xor`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`comparison_op`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`copysign`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`correct_out_device`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`div`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`div_zerotensor`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`divide`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`floor_divide`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`fmod`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`greater`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`greater_equal`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`if`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ldexp`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`less`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`less_equal`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`linalg_cross_zerotensor`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`logical_and`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`logical_or`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`logical_xor`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`max`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`maybe_add_maybe_sub`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`min`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`mul`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`mul_zerotensor`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`multiply`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`not_equal`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`remainder`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`rsub`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`send_to_meta`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`special_chebyshev_polynomial_t`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`special_chebyshev_polynomial_u`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`special_chebyshev_polynomial_v`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`special_chebyshev_polynomial_w`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`special_gammainc`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`special_gammaincc`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`special_hermite_polynomial_h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`special_hermite_polynomial_he`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`special_laguerre_polynomial_l`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`special_legendre_polynomial_p`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`special_shifted_chebyshev_polynomial_t`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`special_shifted_chebyshev_polynomial_u`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`special_shifted_chebyshev_polynomial_v`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`special_shifted_chebyshev_polynomial_w`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`special_xlog1py`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`special_xlogy`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`special_zeta`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`sub`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`sub_zerotensor`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`subtract`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`true_divide`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`xlogy`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+
+### Includes
+
+- **`ATen/Functions.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/NativeFunctions.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ScalarOps.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/TensorIterator.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/TensorMeta.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/TensorOperators.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/core/Tensor.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/native/BinaryOps.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/_add_relu_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/_efficientzerotensor.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/_test_serialization_subcmul_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/_to_copy.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/add.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/add_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/add_ops.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/and_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/arctan2_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/atan2.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/atan2_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/bitwise_and.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/bitwise_and_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/bitwise_left_shift.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/bitwise_left_shift_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/bitwise_or.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/bitwise_or_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/bitwise_right_shift.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/bitwise_right_shift_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/bitwise_xor.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/bitwise_xor_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/copysign.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/copysign_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/div.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/div_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/div_ops.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/divide_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/empty.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/eq_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/floor_divide.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/floor_divide_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/fmax_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/fmin_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/fmod.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/fmod_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/full.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/gcd_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/ge.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/ge_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/greater_equal_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/greater_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/gt.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/gt_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/heaviside_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/hypot_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/igamma.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/igamma_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/igammac.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/igammac_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/lcm_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/ldexp.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/ldexp_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/le.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/le_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/less_equal_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/less_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/linalg_cross_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/linalg_cross_ops.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/logaddexp2_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/logaddexp_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/logical_and.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/logical_and_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/logical_or.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/logical_or_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/logical_xor.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/logical_xor_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/logit_backward_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/lshift_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/lt.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/lt_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/max_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/maximum.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/maximum_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/min_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/minimum.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/minimum_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/mul.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/mul_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/mul_ops.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/multiply_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/ne.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/ne_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/nextafter_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/not_equal_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/or_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/pow.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/remainder.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/remainder_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/rshift_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/rsub_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/sigmoid_backward_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/special_chebyshev_polynomial_t.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/special_chebyshev_polynomial_t_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/special_chebyshev_polynomial_u.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/special_chebyshev_polynomial_u_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/special_chebyshev_polynomial_v.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/special_chebyshev_polynomial_v_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/special_chebyshev_polynomial_w.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/special_chebyshev_polynomial_w_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/special_gammainc_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/special_gammaincc_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/special_hermite_polynomial_h.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/special_hermite_polynomial_h_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/special_hermite_polynomial_he.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/special_hermite_polynomial_he_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/special_laguerre_polynomial_l.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/special_laguerre_polynomial_l_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/special_legendre_polynomial_p.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/special_legendre_polynomial_p_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/special_shifted_chebyshev_polynomial_t.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/special_shifted_chebyshev_polynomial_t_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/special_shifted_chebyshev_polynomial_u.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/special_shifted_chebyshev_polynomial_u_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/special_shifted_chebyshev_polynomial_v.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/special_shifted_chebyshev_polynomial_v_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/special_shifted_chebyshev_polynomial_w.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/special_shifted_chebyshev_polynomial_w_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/special_xlog1py.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/special_xlog1py_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/special_xlogy_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/special_zeta.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/special_zeta_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/sub.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/sub_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/subtract_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/tanh_backward_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/true_divide_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/xlogy.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/xlogy_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`ATen/ops/xor_native.h`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`type_traits`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+- **`utility`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+
+### Namespaces
+
+- **`at`**: [BinaryOps.cpp_docs.md](./BinaryOps.cpp_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native`):
+
+- [`AdaptiveMaxPooling2d.cpp_docs.md_docs.md`](./AdaptiveMaxPooling2d.cpp_docs.md_docs.md)
+- [`Distributions.cpp_docs.md_docs.md`](./Distributions.cpp_docs.md_docs.md)
+- [`im2col_shape_check.h_docs.md_docs.md`](./im2col_shape_check.h_docs.md_docs.md)
+- [`ReduceOps.cpp_kw.md_docs.md`](./ReduceOps.cpp_kw.md_docs.md)
+- [`Lerp.cpp_kw.md_docs.md`](./Lerp.cpp_kw.md_docs.md)
+- [`CPUFallback.h_docs.md_docs.md`](./CPUFallback.h_docs.md_docs.md)
+- [`MetaTensor.cpp_docs.md_docs.md`](./MetaTensor.cpp_docs.md_docs.md)
+- [`Correlation.cpp_kw.md_docs.md`](./Correlation.cpp_kw.md_docs.md)
+- [`im2col_shape_check.h_kw.md_docs.md`](./im2col_shape_check.h_kw.md_docs.md)
+- [`UpSampleNearest2d.cpp_kw.md_docs.md`](./UpSampleNearest2d.cpp_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `BinaryOps.cpp_kw.md_docs.md`
+- **Keyword Index**: `BinaryOps.cpp_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

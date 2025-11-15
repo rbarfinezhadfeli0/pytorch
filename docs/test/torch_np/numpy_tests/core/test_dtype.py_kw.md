@@ -1,0 +1,91 @@
+# Keyword Index: `test/torch_np/numpy_tests/core/test_dtype.py`
+
+## File Information
+
+- **Original File**: [test/torch_np/numpy_tests/core/test_dtype.py](../../../../../test/torch_np/numpy_tests/core/test_dtype.py)
+- **Documentation**: [`test_dtype.py_docs.md`](./test_dtype.py_docs.md)
+- **Folder**: `test/torch_np/numpy_tests/core`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`TestBuiltin`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`TestClassGetItem`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`TestDtypeAttributeDeletion`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`TestFromDTypeAttribute`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`TestMisc`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`TestPickling`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`TestPromotion`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`dt`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+
+### Functions
+
+- **`assert_dtype_equal`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`assert_dtype_not_equal`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`check_pickling`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`test_builtin`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`test_complex_other_value_based`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`test_complex_scalar_value_based`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`test_dtype`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`test_dtype_non_writable_attributes_deletion`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`test_dtype_subclass`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`test_dtype_writable_attributes_deletion`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`test_dtypes_are_true`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`test_equivalent_dtype_hashing`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`test_invalid_types`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`test_keyword_argument`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`test_numeric_style_types_are_invalid`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`test_permutations_do_not_influence_result`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`test_pickle_types`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`test_python_integer_promotion`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`test_recursion`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`test_richcompare_invalid_dtype_comparison`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`test_richcompare_invalid_dtype_equality`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`test_run`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`test_simple`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`test_subscript_scalar`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`test_subscript_tuple`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+
+### Imports
+
+- **`Any`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`assert_`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`functools`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`itertools`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`numpy`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`numpy.testing`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`operator`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`permutations`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`pickle`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`pytest`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`raises`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`skipIf`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`torch._numpy`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`torch._numpy.testing`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`types`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`typing`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+- **`unittest`**: [test_dtype.py_docs.md](./test_dtype.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,292 @@
+# Documentation: `docs/aten/src/ATen/native/RangeUtils.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/RangeUtils.h_docs.md`
+- **Size**: 4,569 bytes (4.46 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/native/RangeUtils.h`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/RangeUtils.h`
+- **Size**: 2,102 bytes (2.05 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#include <ATen/AccumulateType.h>
+#include <c10/core/Scalar.h>
+#include <limits>
+
+
+
+namespace at::native {
+
+inline void arange_check_bounds(
+    const c10::Scalar& start,
+    const c10::Scalar& end,
+    const c10::Scalar& step) {
+  // use double precision for validation to avoid precision issues
+  double dstart = start.to<double>();
+  double dend = end.to<double>();
+  double dstep = step.to<double>();
+
+  TORCH_CHECK(dstep > 0 || dstep < 0, "step must be nonzero");
+  TORCH_CHECK(
+      std::isfinite(dstart) && std::isfinite(dend),
+      "unsupported range: ",
+      dstart,
+      " -> ",
+      dend);
+  TORCH_CHECK(
+      ((dstep > 0) && (dend >= dstart)) || ((dstep < 0) && (dend <= dstart)),
+      "upper bound and lower bound inconsistent with step sign");
+}
+
+template <typename scalar_t>
+int64_t compute_arange_size(const Scalar& start, const Scalar& end, const Scalar& step) {
+  arange_check_bounds(start, end, step);
+
+  // we use double precision for (start - end) / step
+  // to compute size_d for consistency across devices.
+  // The problem with using accscalar_t is that accscalar_t might be float32 on gpu for a float32 scalar_t,
+  // but double on cpu for the same,
+  // and the effective output size starts differing on CPU vs GPU because of precision issues, which
+  // we dont want.
+  // the corner-case we do want to take into account is int64_t, which has higher precision than double
+  double size_d;
+  if constexpr (std::is_same_v<scalar_t, int64_t>) {
+    using accscalar_t = at::acc_type<scalar_t, false>;
+    auto xstart = start.to<accscalar_t>();
+    auto xend = end.to<accscalar_t>();
+    auto xstep = step.to<accscalar_t>();
+    int64_t sgn = (xstep > 0) - (xstep < 0);
+    size_d = std::ceil((xend - xstart + xstep - sgn) / xstep);
+  } else {
+    size_d = std::ceil((end.to<double>() - start.to<double>())
+                        / step.to<double>());
+  }
+
+  TORCH_CHECK(size_d >= 0 && size_d <= static_cast<double>(std::numeric_limits<int64_t>::max()),
+            "invalid size, possible overflow?");
+
+  return static_cast<int64_t>(size_d);
+}
+
+} // namespace at::native
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 4 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `at`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/AccumulateType.h`
+- `c10/core/Scalar.h`
+- `limits`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native`):
+
+- [`LossMulti.h_docs.md`](./LossMulti.h_docs.md)
+- [`NaiveConvolutionTranspose3d.cpp_docs.md`](./NaiveConvolutionTranspose3d.cpp_docs.md)
+- [`UnaryOps.cpp_docs.md`](./UnaryOps.cpp_docs.md)
+- [`ResizeCommon.h_docs.md`](./ResizeCommon.h_docs.md)
+- [`FusedAdagrad.cpp_docs.md`](./FusedAdagrad.cpp_docs.md)
+- [`SharedReduceOps.h_docs.md`](./SharedReduceOps.h_docs.md)
+- [`SpectralOpsUtils.h_docs.md`](./SpectralOpsUtils.h_docs.md)
+- [`FractionalMaxPooling.h_docs.md`](./FractionalMaxPooling.h_docs.md)
+- [`TensorDimApply.h_docs.md`](./TensorDimApply.h_docs.md)
+- [`Lerp.cpp_docs.md`](./Lerp.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `RangeUtils.h_docs.md`
+- **Keyword Index**: `RangeUtils.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native`):
+
+- [`AdaptiveMaxPooling2d.cpp_docs.md_docs.md`](./AdaptiveMaxPooling2d.cpp_docs.md_docs.md)
+- [`Distributions.cpp_docs.md_docs.md`](./Distributions.cpp_docs.md_docs.md)
+- [`im2col_shape_check.h_docs.md_docs.md`](./im2col_shape_check.h_docs.md_docs.md)
+- [`ReduceOps.cpp_kw.md_docs.md`](./ReduceOps.cpp_kw.md_docs.md)
+- [`Lerp.cpp_kw.md_docs.md`](./Lerp.cpp_kw.md_docs.md)
+- [`CPUFallback.h_docs.md_docs.md`](./CPUFallback.h_docs.md_docs.md)
+- [`MetaTensor.cpp_docs.md_docs.md`](./MetaTensor.cpp_docs.md_docs.md)
+- [`Correlation.cpp_kw.md_docs.md`](./Correlation.cpp_kw.md_docs.md)
+- [`im2col_shape_check.h_kw.md_docs.md`](./im2col_shape_check.h_kw.md_docs.md)
+- [`UpSampleNearest2d.cpp_kw.md_docs.md`](./UpSampleNearest2d.cpp_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `RangeUtils.h_docs.md_docs.md`
+- **Keyword Index**: `RangeUtils.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

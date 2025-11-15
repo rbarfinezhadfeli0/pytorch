@@ -1,0 +1,722 @@
+# Documentation: `docs/torch/csrc/jit/tensorexpr/operators/conv2d.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/jit/tensorexpr/operators/conv2d.cpp_docs.md`
+- **Size**: 16,770 bytes (16.38 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/csrc/jit/tensorexpr/operators/conv2d.cpp`
+
+## File Metadata
+
+- **Path**: `torch/csrc/jit/tensorexpr/operators/conv2d.cpp`
+- **Size**: 14,285 bytes (13.95 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#include <ATen/Config.h>
+#include <torch/csrc/jit/jit_log.h>
+#include <torch/csrc/jit/tensorexpr/loopnest.h>
+#include <torch/csrc/jit/tensorexpr/operators/conv2d.h>
+#include <torch/csrc/jit/tensorexpr/operators/misc.h>
+#include <torch/csrc/jit/tensorexpr/tensor.h>
+
+namespace torch::jit::tensorexpr {
+
+namespace {
+
+void assert_dims_constant(const BufHandle& buf) {
+  for (auto const& dim : buf.node()->dims()) {
+    TORCH_INTERNAL_ASSERT(dim->isConstant());
+  }
+}
+
+using InitFunc = std::function<ExprHandle(const std::vector<VarHandle>&)>;
+
+Tensor conv2d_depthwise_static(
+    const BufHandle& input,
+    const BufHandle& weight,
+    const InitFunc& init_func,
+    int stride,
+    int pad,
+    int groups) {
+  TORCH_INTERNAL_ASSERT(input.ndim() == 4);
+  TORCH_INTERNAL_ASSERT(weight.ndim() == 4);
+
+  assert_dims_constant(input);
+  assert_dims_constant(weight);
+
+  auto const& N = immediateAs<int>(input.dim(0));
+  auto const& C = immediateAs<int>(input.dim(1));
+  auto const& H = immediateAs<int>(input.dim(2));
+  auto const& W = immediateAs<int>(input.dim(3));
+
+  auto const& K = immediateAs<int>(weight.dim(0));
+  auto const& CperG = immediateAs<int>(weight.dim(1));
+  auto const& R = immediateAs<int>(weight.dim(2));
+  auto const& S = immediateAs<int>(weight.dim(3));
+
+  TORCH_INTERNAL_ASSERT(C == K && K == groups && CperG == 1);
+  TORCH_INTERNAL_ASSERT(R == S);
+
+  auto OH = (H - R + 2 * pad) / stride + 1;
+  auto OW = (W - S + 2 * pad) / stride + 1;
+
+  Tensor conv = Reduce(
+      "conv2d_depthwise",
+      {N, K, OH, OW},
+      std::nullopt, // TODO
+      Sum(),
+      [&](const std::vector<VarHandle>& v) { return init_func(v); },
+      [&](const std::vector<VarHandle>& v) {
+        auto const& n = v[0];
+        auto const& k = v[1];
+        auto const& oh = v[2];
+        auto const& ow = v[3];
+        auto const& c = v[4];
+        auto const& r = v[5];
+        auto const& s = v[6];
+        auto cond = CompareSelect::make(oh * stride - pad + r, 0, 1, 0, kLT);
+        cond = CompareSelect::make(ow * stride - pad + s, 0, 1, cond, kLT);
+        cond = CompareSelect::make(oh * stride - pad + r, H, 1, cond, kGE);
+        cond = CompareSelect::make(ow * stride - pad + s, W, 1, cond, kGE);
+        auto in = ifThenElse(
+            cond,
+            0.f,
+            input.load(n, k, oh * stride - pad + r, ow * stride - pad + s));
+        return in * weight.load(k, c, r, s);
+      },
+      {C / groups, R, S});
+
+  LoopNest nest({conv});
+
+  constexpr int kLoopH = 2, kLoopW = 3;
+  if (R == 3 && stride == 2 && pad == 1) {
+    ForPtr head, tail;
+    auto loops = nest.getLoopStmtsFor(conv);
+    nest.sliceHead(loops[kLoopW], 2, &head, &tail);
+    loops = nest.getLoopStmtsFor(conv);
+    nest.sliceHead(loops[kLoopH], 2, &head, &tail);
+  } else if (R == 3 && stride == 1 && pad == 1) {
+    ForPtr main, peeled;
+    auto loops = nest.getAllLoopNestsWritingToBuf(conv.buf());
+    main = loops[1][kLoopW];
+    nest.sliceHead(main, 1, &peeled, &main);
+    nest.sliceTail(main, 1, &main, &peeled);
+    main = LoopNest::getParentLoop(main);
+    nest.sliceHead(main, 1, &peeled, &main);
+    nest.sliceTail(main, 1, &main, &peeled);
+  }
+
+  return Tensor(conv.buf(), nest.root_stmt());
+}
+
+Tensor conv2d_depthwise_dynamic(
+    BufHandle input,
+    BufHandle weight,
+    const InitFunc& init_func,
+    ExprHandle N,
+    ExprHandle C,
+    ExprHandle H,
+    ExprHandle W,
+    ExprHandle K,
+    ExprHandle CperG,
+    ExprHandle R,
+    ExprHandle S,
+    ExprHandle stride,
+    ExprHandle pad,
+    ExprHandle groups) {
+  TORCH_INTERNAL_ASSERT(input.ndim() == 4);
+  TORCH_INTERNAL_ASSERT(weight.ndim() == 4);
+
+  auto OH = (H - R + pad * 2) / stride + 1;
+  auto OW = (W - S + pad * 2) / stride + 1;
+
+  return Reduce(
+      "conv2d_depthwise",
+      {N, K, OH, OW},
+      std::nullopt, // TODO
+      Sum(),
+      [&](const std::vector<VarHandle>& v) { return init_func(v); },
+      [&](const std::vector<VarHandle>& v) {
+        auto const& n = v[0];
+        auto const& k = v[1];
+        auto const& oh = v[2];
+        auto const& ow = v[3];
+        auto const& c = v[4];
+        auto const& r = v[5];
+        auto const& s = v[6];
+        auto cond = CompareSelect::make(oh * stride - pad + r, 0, 1, 0, kLT);
+        cond = CompareSelect::make(ow * stride - pad + s, 0, 1, cond, kLT);
+        cond = CompareSelect::make(oh * stride - pad + r, H, 1, cond, kGE);
+        cond = CompareSelect::make(ow * stride - pad + s, W, 1, cond, kGE);
+        auto in = ifThenElse(
+            cond,
+            0.f,
+            input.load(n, k, oh * stride - pad + r, ow * stride - pad + s));
+        return in * weight.load(k, c, r, s);
+      },
+      {C / groups, R, S});
+}
+
+} // namespace
+
+Tensor conv2d_depthwise(
+    BufHandle input,
+    BufHandle weight,
+    BufHandle bias,
+    int stride,
+    int pad,
+    int groups) {
+  assert_dims_constant(bias);
+  auto init_func = [&](const std::vector<VarHandle>& v) {
+    return bias.load(v[1]);
+  };
+  return conv2d_depthwise_static(input, weight, init_func, stride, pad, groups);
+}
+
+Tensor conv2d_depthwise(
+    BufHandle input,
+    BufHandle weight,
+    int stride,
+    int pad,
+    int groups) {
+  auto init_func = [](const std::vector<VarHandle>& v) {
+    return ExprHandle(Sum().initializer());
+  };
+  return conv2d_depthwise_static(input, weight, init_func, stride, pad, groups);
+}
+
+Tensor conv2d_depthwise(
+    BufHandle input,
+    BufHandle weight,
+    BufHandle bias,
+    ExprHandle N,
+    ExprHandle C,
+    ExprHandle H,
+    ExprHandle W,
+    ExprHandle K,
+    ExprHandle CperG,
+    ExprHandle R,
+    ExprHandle S,
+    ExprHandle stride,
+    ExprHandle pad,
+    ExprHandle groups) {
+  assert_dims_constant(bias);
+  auto init_func = [&](const std::vector<VarHandle>& v) {
+    return bias.load(v[1]);
+  };
+  return conv2d_depthwise_dynamic(
+      input,
+      weight,
+      init_func,
+      N,
+      C,
+      H,
+      W,
+      K,
+      CperG,
+      R,
+      S,
+      stride,
+      pad,
+      groups);
+}
+
+Tensor conv2d_depthwise(
+    BufHandle input,
+    BufHandle weight,
+    ExprHandle N,
+    ExprHandle C,
+    ExprHandle H,
+    ExprHandle W,
+    ExprHandle K,
+    ExprHandle CperG,
+    ExprHandle R,
+    ExprHandle S,
+    ExprHandle stride,
+    ExprHandle pad,
+    ExprHandle groups) {
+  auto init_func = [](const std::vector<VarHandle>& v) {
+    return ExprHandle(Sum().initializer());
+  };
+  return conv2d_depthwise_dynamic(
+      input,
+      weight,
+      init_func,
+      N,
+      C,
+      H,
+      W,
+      K,
+      CperG,
+      R,
+      S,
+      stride,
+      pad,
+      groups);
+}
+
+static std::vector<int64_t> _pair_int(ArgValue v) {
+  if (auto t = std::get_if<IntList>(&v)) {
+    return {(*t)[0], (*t)[1]};
+  }
+  auto i = std::get<int64_t>(v);
+  return {i, i};
+}
+
+static std::vector<int64_t> _single_int_list(ArgValue v) {
+  if (auto t = std::get_if<IntList>(&v)) {
+    return {(*t)[0]};
+  }
+  auto i = std::get<int64_t>(v);
+  return {i};
+}
+
+bool conv2dIsSupported(
+    const TensorInfo& input,
+    const TensorInfo& weight,
+    const TensorInfo& bias,
+    const std::vector<int64_t>& stride,
+    const std::vector<int64_t>& pad,
+    const std::vector<int64_t>& dilation,
+    int64_t groups) {
+  if (input.dtype != c10::ScalarType::Float ||
+      weight.dtype != c10::ScalarType::Float ||
+      bias.dtype != c10::ScalarType::Float) {
+    GRAPH_DEBUG("conv2dIsSupported: only float32 allowed");
+    return false;
+  }
+  if (input.dims.size() != 4 || weight.dims.size() != 4 ||
+      bias.dims.size() != 1) {
+    GRAPH_DEBUG("conv2dIsSupported: inputs are the wrong size");
+    return false;
+  }
+  auto Cin = input.dims[1];
+  auto Cout = weight.dims[0];
+  auto CperG = weight.dims[1];
+  if (Cin != Cout || Cin != groups || CperG != 1) {
+    GRAPH_DEBUG("conv2dIsSupported: not depthwise");
+    return false;
+  }
+  auto KH = weight.dims[2];
+  auto KW = weight.dims[3];
+  if (KH != 3 || KW != 3) {
+    GRAPH_DEBUG("conv2dIsSupported: not 3x3");
+    return false;
+  }
+  if (stride.size() != 2 || stride[0] != stride[1]) {
+    GRAPH_DEBUG("conv2dIsSupported: unsupported stride");
+    return false;
+  }
+  if (pad.size() != 2 || pad[0] != pad[1]) {
+    GRAPH_DEBUG("conv2dIsSupported: unsupported pad");
+    return false;
+  }
+  if (dilation.size() != 2 || dilation[0] != 1 || dilation[1] != 1) {
+    GRAPH_DEBUG("conv2dIsSupported: unsupported dilation");
+    return false;
+  }
+  return true;
+}
+
+bool mkldnnPrepackedConvIsSupported(
+    const TensorInfo& input,
+    const TensorInfo& weight,
+    const std::vector<int64_t>& stride,
+    const std::vector<int64_t>& pad,
+    const std::vector<int64_t>& dilation,
+    int64_t groups) {
+#if AT_MKLDNN_ENABLED()
+  if (input.dtype != c10::ScalarType::Float ||
+      weight.dtype != c10::ScalarType::Float) {
+    GRAPH_DEBUG("mkldnnPrepackedConvIsSupported: only float32 allowed");
+    return false;
+  }
+  if (input.dims.size() != 4 || weight.dims.size() != 4) {
+    GRAPH_DEBUG("mkldnnPrepackedConvIsSupported: inputs are the wrong size");
+    return false;
+  }
+  if (stride.size() != 2) {
+    GRAPH_DEBUG("mkldnnPrepackedConvIsSupported: unsupported stride");
+    return false;
+  }
+  if (pad.size() != 2) {
+    GRAPH_DEBUG("mkldnnPrepackedConvIsSupported: unsupported pad");
+    return false;
+  }
+  if (dilation.size() != 2) {
+    GRAPH_DEBUG("mkldnnPrepackedConvIsSupported: unsupported dilation");
+    return false;
+  }
+
+  // Do not rewrite for cases where native is faster than mkldnn
+  // Conditions are from: aten/src/ATen/native/Convolution.cpp:use_mkldnn
+  bool use_mkldnn = groups > 1 || (weight.dims[2] > 3 && weight.dims[3] > 3) ||
+      input.dims[0] > 1 ||
+      input.dims[0] * input.dims[1] * input.dims[2] * input.dims[3] > 20480;
+  GRAPH_DEBUG("mkldnnPrepackedConvIsSupported: ", use_mkldnn);
+  return use_mkldnn;
+#endif
+  return false;
+}
+
+Tensor computeConv2d(
+    const std::vector<ArgValue>& inputs,
+    const std::vector<ExprHandle>& outputShape,
+    const std::vector<ExprHandle>& outputStrides,
+    const std::optional<ScalarType>& outputType,
+    at::Device device) {
+  Dtype dtype = kFloat;
+  if (outputType) {
+    dtype = Dtype(*outputType);
+  }
+
+  BufHandle ResultBuf("conv", outputShape, dtype);
+  const BufHandle& inp = std::get<BufHandle>(inputs[0]);
+  const BufHandle& w = std::get<BufHandle>(inputs[1]);
+  const BufHandle& b = std::get<BufHandle>(inputs[2]);
+
+  auto strides = _pair_int(inputs[3]);
+  auto padding = _pair_int(inputs[4]);
+  auto dilation = _pair_int(inputs[5]);
+
+  int groups = std::get<int64_t>(inputs[6]);
+
+  auto inpInfo = getTensorInfo(inp);
+  auto wInfo = getTensorInfo(w);
+  auto bInfo = getTensorInfo(b);
+  // Generate TE for depthwise convolutions.
+  if (inpInfo && wInfo && bInfo &&
+      conv2dIsSupported(
+          *inpInfo, *wInfo, *bInfo, strides, padding, dilation, groups)) {
+    return conv2d_depthwise(inp, w, b, strides[0], padding[0], groups);
+  }
+
+  // Once we have a performant TE representation for conv2d, we could use it
+  // here instead of the external call!
+  StmtPtr s = ExternalCall::make(
+      ResultBuf,
+      "nnc_aten_conv2d",
+      {inp, w, b},
+      {strides[0],
+       strides[1],
+       padding[0],
+       padding[1],
+       dilation[0],
+       dilation[1],
+       groups});
+  return Tensor(ResultBuf.node(), s);
+}
+
+Tensor computeConv1d(
+    const std::vector<ArgValue>& inputs,
+    const std::vector<ExprHandle>& outputShape,
+    const std::vector<ExprHandle>& outputStrides,
+    const std::optional<ScalarType>& outputType,
+    at::Device device) {
+  Dtype dtype = kFloat;
+  if (outputType) {
+    dtype = Dtype(*outputType);
+  }
+
+  BufHandle ResultBuf("conv", outputShape, dtype);
+  const BufHandle& inp = std::get<BufHandle>(inputs[0]);
+  const BufHandle& w = std::get<BufHandle>(inputs[1]);
+  const BufHandle& b = std::get<BufHandle>(inputs[2]);
+
+  auto strides = _single_int_list(inputs[3]);
+  auto padding = _single_int_list(inputs[4]);
+  auto dilation = _single_int_list(inputs[5]);
+
+  int groups = std::get<int64_t>(inputs[6]);
+
+  auto inpInfo = getTensorInfo(inp);
+  auto wInfo = getTensorInfo(w);
+  auto bInfo = getTensorInfo(b);
+
+  StmtPtr s = ExternalCall::make(
+      ResultBuf,
+      "nnc_aten_conv1d",
+      {inp, w, b},
+      {strides[0], padding[0], dilation[0], groups});
+  return Tensor(ResultBuf.node(), s);
+}
+
+Tensor computePrepackedConv2dClampRun(
+    const std::vector<ArgValue>& inputs,
+    const std::vector<ExprHandle>& outputShape,
+    const std::vector<ExprHandle>& outputStrides,
+    const std::optional<ScalarType>& outputType,
+    at::Device device) {
+  Dtype dtype = kFloat;
+  if (outputType) {
+    dtype = Dtype(*outputType);
+  }
+
+  BufHandle ResultBuf("prepacked_conv2d_clamp_run", outputShape, dtype);
+  const BufHandle& inp = std::get<BufHandle>(inputs[0]);
+  const BufHandle& prepacked = std::get<BufHandle>(inputs[1]);
+  StmtPtr s = ExternalCall::make(
+      ResultBuf, "nnc_prepacked_conv2d_clamp_run", {inp, prepacked}, {});
+  return Tensor(ResultBuf.node(), s);
+}
+
+Tensor computePrepackedLinearClampRun(
+    const std::vector<ArgValue>& inputs,
+    const std::vector<ExprHandle>& outputShape,
+    const std::vector<ExprHandle>& outputStrides,
+    const std::optional<ScalarType>& outputType,
+    at::Device device) {
+  Dtype dtype = kFloat;
+  if (outputType) {
+    dtype = Dtype(*outputType);
+  }
+
+  BufHandle ResultBuf("prepacked_linear_clamp_run", outputShape, dtype);
+  const BufHandle& inp = std::get<BufHandle>(inputs[0]);
+  const BufHandle& prepacked = std::get<BufHandle>(inputs[1]);
+  StmtPtr s = ExternalCall::make(
+      ResultBuf, "nnc_prepacked_linear_clamp_run", {inp, prepacked}, {});
+  return Tensor(ResultBuf.node(), s);
+}
+
+Tensor computeMkldnnPrepackedConvRun(
+    const std::vector<ArgValue>& inputs,
+    const std::vector<ExprHandle>& outputShape,
+    const std::vector<ExprHandle>& outputStrides,
+    const std::optional<ScalarType>& outputType,
+    at::Device device) {
+  Dtype dtype = kFloat;
+  if (outputType) {
+    dtype = Dtype(*outputType);
+  }
+
+  BufHandle ResultBuf(
+      "mkldnn_prepacked_conv_run", outputShape, outputStrides, dtype);
+  const BufHandle& inp = std::get<BufHandle>(inputs[0]);
+  const BufHandle& prepacked = std::get<BufHandle>(inputs[1]);
+  StmtPtr s = ExternalCall::make(
+      ResultBuf, "nnc_mkldnn_prepacked_conv_run", {inp, prepacked}, {});
+  return Tensor(ResultBuf.node(), s);
+}
+
+} // namespace torch::jit::tensorexpr
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 40 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `Tensor`, `torch`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/jit/tensorexpr/operators`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/Config.h`
+- `torch/csrc/jit/jit_log.h`
+- `torch/csrc/jit/tensorexpr/loopnest.h`
+- `torch/csrc/jit/tensorexpr/operators/conv2d.h`
+- `torch/csrc/jit/tensorexpr/operators/misc.h`
+- `torch/csrc/jit/tensorexpr/tensor.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/jit/tensorexpr/operators`):
+
+- [`reduction.h_docs.md`](./reduction.h_docs.md)
+- [`conv2d.h_docs.md`](./conv2d.h_docs.md)
+- [`misc.cpp_docs.md`](./misc.cpp_docs.md)
+- [`softmax.cpp_docs.md`](./softmax.cpp_docs.md)
+- [`misc.h_docs.md`](./misc.h_docs.md)
+- [`quantization.cpp_docs.md`](./quantization.cpp_docs.md)
+- [`softmax.h_docs.md`](./softmax.h_docs.md)
+- [`pointwise.cpp_docs.md`](./pointwise.cpp_docs.md)
+- [`matmul.h_docs.md`](./matmul.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `conv2d.cpp_docs.md`
+- **Keyword Index**: `conv2d.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/jit/tensorexpr/operators`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/jit/tensorexpr/operators`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/jit/tensorexpr/operators`):
+
+- [`matmul.h_docs.md_docs.md`](./matmul.h_docs.md_docs.md)
+- [`matmul.h_kw.md_docs.md`](./matmul.h_kw.md_docs.md)
+- [`misc.cpp_docs.md_docs.md`](./misc.cpp_docs.md_docs.md)
+- [`quantization.h_docs.md_docs.md`](./quantization.h_docs.md_docs.md)
+- [`quantization.cpp_kw.md_docs.md`](./quantization.cpp_kw.md_docs.md)
+- [`quantization.cpp_docs.md_docs.md`](./quantization.cpp_docs.md_docs.md)
+- [`pointwise.h_kw.md_docs.md`](./pointwise.h_kw.md_docs.md)
+- [`norm.cpp_kw.md_docs.md`](./norm.cpp_kw.md_docs.md)
+- [`reduction.h_kw.md_docs.md`](./reduction.h_kw.md_docs.md)
+- [`operators.h_docs.md_docs.md`](./operators.h_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `conv2d.cpp_docs.md_docs.md`
+- **Keyword Index**: `conv2d.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

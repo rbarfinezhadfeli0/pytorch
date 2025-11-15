@@ -1,0 +1,318 @@
+# Documentation: `docs/.circleci/windows-jni/include/jni.h_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/.circleci/windows-jni/include/jni.h_kw.md`
+- **Size**: 11,194 bytes (10.93 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `.circleci/windows-jni/include/jni.h`
+
+## File Information
+
+- **Original File**: [.circleci/windows-jni/include/jni.h](../../../../.circleci/windows-jni/include/jni.h)
+- **Documentation**: [`jni.h_docs.md`](./jni.h_docs.md)
+- **Folder**: `.circleci/windows-jni/include`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Class/Structs
+
+- **`DefineClass`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`FindClass`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetObjectClass`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetSuperclass`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`JNIInvokeInterface`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`JNINativeInterface`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`JavaVMAttachArgs`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`JavaVMInitArgs`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`JavaVMOption`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`_JNIEnv`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`_JavaVM`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`_jarray`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`_jbooleanArray`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`_jbyteArray`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`_jcharArray`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`_jclass`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`_jdoubleArray`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`_jfieldID`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`_jfloatArray`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`_jintArray`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`_jlongArray`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`_jmethodID`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`_jobject`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`_jobjectArray`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`_jshortArray`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`_jstring`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`_jthrowable`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`clazz`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`clazz1`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`clazz2`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`cls`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`elementClass`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`whose`**: [jni.h_docs.md](./jni.h_docs.md)
+
+### Functions
+
+- **`AllocObject`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`AttachCurrentThread`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`AttachCurrentThreadAsDaemon`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`CallNonvirtualVoidMethod`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`CallNonvirtualVoidMethodA`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`CallNonvirtualVoidMethodV`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`CallStaticVoidMethod`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`CallStaticVoidMethodA`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`CallStaticVoidMethodV`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`CallVoidMethod`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`CallVoidMethodA`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`CallVoidMethodV`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`DefineClass`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`DeleteGlobalRef`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`DeleteLocalRef`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`DeleteWeakGlobalRef`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`DestroyJavaVM`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`DetachCurrentThread`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`EnsureLocalCapacity`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`ExceptionCheck`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`ExceptionClear`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`ExceptionDescribe`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`ExceptionOccurred`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`FatalError`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`FindClass`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`FromReflectedField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`FromReflectedMethod`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetArrayLength`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetBooleanArrayRegion`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetBooleanField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetByteArrayRegion`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetByteField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetCharArrayRegion`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetCharField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetDirectBufferCapacity`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetDoubleArrayRegion`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetDoubleField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetEnv`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetFieldID`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetFloatArrayRegion`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetFloatField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetIntArrayRegion`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetIntField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetJavaVM`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetLongArrayRegion`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetLongField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetMethodID`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetObjectArrayElement`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetObjectClass`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetObjectField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetObjectRefType`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetShortArrayRegion`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetShortField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetStaticBooleanField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetStaticByteField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetStaticCharField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetStaticDoubleField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetStaticFieldID`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetStaticFloatField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetStaticIntField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetStaticLongField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetStaticMethodID`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetStaticObjectField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetStaticShortField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetStringLength`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetStringRegion`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetStringUTFLength`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetStringUTFRegion`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetSuperclass`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`GetVersion`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`IsAssignableFrom`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`IsInstanceOf`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`IsSameObject`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`MonitorEnter`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`MonitorExit`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`NewBooleanArray`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`NewByteArray`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`NewCharArray`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`NewDirectByteBuffer`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`NewDoubleArray`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`NewFloatArray`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`NewGlobalRef`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`NewIntArray`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`NewLocalRef`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`NewLongArray`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`NewObject`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`NewObjectA`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`NewObjectArray`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`NewObjectV`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`NewShortArray`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`NewString`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`NewStringUTF`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`NewWeakGlobalRef`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`PopLocalFrame`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`PushLocalFrame`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`RegisterNatives`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`ReleaseBooleanArrayElements`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`ReleaseByteArrayElements`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`ReleaseCharArrayElements`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`ReleaseDoubleArrayElements`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`ReleaseFloatArrayElements`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`ReleaseIntArrayElements`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`ReleaseLongArrayElements`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`ReleasePrimitiveArrayCritical`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`ReleaseShortArrayElements`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`ReleaseStringChars`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`ReleaseStringCritical`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`ReleaseStringUTFChars`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`SetBooleanArrayRegion`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`SetBooleanField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`SetByteArrayRegion`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`SetByteField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`SetCharArrayRegion`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`SetCharField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`SetDoubleArrayRegion`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`SetDoubleField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`SetFloatArrayRegion`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`SetFloatField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`SetIntArrayRegion`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`SetIntField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`SetLongArrayRegion`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`SetLongField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`SetObjectArrayElement`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`SetObjectField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`SetShortArrayRegion`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`SetShortField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`SetStaticBooleanField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`SetStaticByteField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`SetStaticCharField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`SetStaticDoubleField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`SetStaticFloatField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`SetStaticIntField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`SetStaticLongField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`SetStaticObjectField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`SetStaticShortField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`Throw`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`ThrowNew`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`ToReflectedField`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`ToReflectedMethod`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`UnregisterNatives`**: [jni.h_docs.md](./jni.h_docs.md)
+
+### Includes
+
+- **`stdarg.h`**: [jni.h_docs.md](./jni.h_docs.md)
+- **`stdint.h`**: [jni.h_docs.md](./jni.h_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/.circleci/windows-jni/include`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/.circleci/windows-jni/include`, which is part of the PyTorch project infrastructure.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/.circleci/windows-jni/include`):
+
+- [`jni.h_docs.md_docs.md`](./jni.h_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `jni.h_kw.md_docs.md`
+- **Keyword Index**: `jni.h_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

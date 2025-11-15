@@ -1,0 +1,209 @@
+# Documentation: `test/cpp/aoti_abi_check/test_vec.cpp`
+
+## File Metadata
+
+- **Path**: `test/cpp/aoti_abi_check/test_vec.cpp`
+- **Size**: 2,468 bytes (2.41 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**.
+
+## Original Source
+
+```cpp
+#include <gtest/gtest.h>
+
+#include <ATen/cpu/vec/vec.h>
+
+namespace torch {
+namespace aot_inductor {
+
+template <typename T>
+void ExpectVecEqual(
+    const at::vec::Vectorized<T>& expected,
+    const at::vec::Vectorized<T>& actual) {
+  using Vec = at::vec::Vectorized<T>;
+  // Have to use std::vector for comparison because at::vec::Vectorized doesn't
+  // support operator[] on aarch64
+  std::vector<T> expected_data(Vec::size());
+  std::vector<T> actual_data(Vec::size());
+
+  expected.store(expected_data.data());
+  actual.store(actual_data.data());
+
+  for (int i = 0; i < Vec::size(); i++) {
+    EXPECT_EQ(expected_data[i], actual_data[i]);
+  }
+}
+
+TEST(TestVec, TestAdd) {
+  using Vec = at::vec::Vectorized<int>;
+  std::vector<int> a(1024, 1);
+  std::vector<int> b(1024, 2);
+  Vec a_vec = Vec::loadu(a.data());
+  Vec b_vec = Vec::loadu(b.data());
+  Vec actual_vec = a_vec + b_vec;
+  std::vector<int> expected(1024, 3);
+  Vec expected_vec = Vec::loadu(expected.data());
+
+  ExpectVecEqual(expected_vec, actual_vec);
+}
+
+TEST(TestVec, TestMax) {
+  using Vec = at::vec::Vectorized<int>;
+  std::vector<int> a(1024, -1);
+  std::vector<int> b(1024, 2);
+  Vec a_vec = Vec::loadu(a.data());
+  Vec b_vec = Vec::loadu(b.data());
+  Vec actual_vec = at::vec::maximum(a_vec, b_vec);
+  Vec expected_vec = b_vec;
+
+  ExpectVecEqual(expected_vec, actual_vec);
+}
+
+TEST(TestVec, TestMin) {
+  using Vec = at::vec::Vectorized<int>;
+  std::vector<int> a(1024, -1);
+  std::vector<int> b(1024, 2);
+  Vec a_vec = Vec::loadu(a.data());
+  Vec b_vec = Vec::loadu(b.data());
+  Vec actual_vec = at::vec::minimum(a_vec, b_vec);
+  Vec expected_vec = a_vec;
+
+  ExpectVecEqual(expected_vec, actual_vec);
+}
+
+TEST(TestVec, TestConvert) {
+  std::vector<int> a(1024, -1);
+  std::vector<float> b(1024, -1.0);
+  at::vec::Vectorized<int> a_vec = at::vec::Vectorized<int>::loadu(a.data());
+  at::vec::Vectorized<float> b_vec =
+      at::vec::Vectorized<float>::loadu(b.data());
+  auto actual_vec = at::vec::convert<float>(a_vec);
+  auto expected_vec = b_vec;
+
+  ExpectVecEqual(expected_vec, actual_vec);
+}
+
+TEST(TestVec, TestClampMin) {
+  using Vec = at::vec::Vectorized<float>;
+  std::vector<float> a(1024, -2.0);
+  std::vector<float> min(1024, -1.0);
+  Vec a_vec = Vec::loadu(a.data());
+  Vec min_vec = Vec::loadu(min.data());
+  Vec actual_vec = at::vec::clamp_min(a_vec, min_vec);
+  Vec expected_vec = min_vec;
+
+  ExpectVecEqual(expected_vec, actual_vec);
+}
+
+} // namespace aot_inductor
+} // namespace torch
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 1 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`, `aot_inductor`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/cpp/aoti_abi_check`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `gtest/gtest.h`
+- `ATen/cpu/vec/vec.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/cpp/aoti_abi_check/test_vec.cpp
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/cpp/aoti_abi_check`):
+
+- [`test_metaprogramming.cpp_docs.md`](./test_metaprogramming.cpp_docs.md)
+- [`test_headeronlyarrayref.cpp_docs.md`](./test_headeronlyarrayref.cpp_docs.md)
+- [`test_cast.cpp_docs.md`](./test_cast.cpp_docs.md)
+- [`test_scalartype.cpp_docs.md`](./test_scalartype.cpp_docs.md)
+- [`CMakeLists.txt_docs.md`](./CMakeLists.txt_docs.md)
+- [`test_typetraits.cpp_docs.md`](./test_typetraits.cpp_docs.md)
+- [`test_dtype.cpp_docs.md`](./test_dtype.cpp_docs.md)
+- [`test_math.cpp_docs.md`](./test_math.cpp_docs.md)
+- [`test_dispatch.cpp_docs.md`](./test_dispatch.cpp_docs.md)
+- [`test_exception.cpp_docs.md`](./test_exception.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_vec.cpp_docs.md`
+- **Keyword Index**: `test_vec.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

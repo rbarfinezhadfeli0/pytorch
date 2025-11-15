@@ -1,0 +1,294 @@
+# Documentation: `docs/torch/csrc/distributed/c10d/default_comm_hooks.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/distributed/c10d/default_comm_hooks.cpp_docs.md`
+- **Size**: 4,759 bytes (4.65 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/csrc/distributed/c10d/default_comm_hooks.cpp`
+
+## File Metadata
+
+- **Path**: `torch/csrc/distributed/c10d/default_comm_hooks.cpp`
+- **Size**: 2,258 bytes (2.21 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#include <c10/core/ScalarType.h>
+#include <c10/util/Exception.h>
+#include <torch/csrc/distributed/c10d/default_comm_hooks.hpp>
+
+#include <torch/csrc/distributed/c10d/ProcessGroup.hpp>
+#include <torch/csrc/distributed/c10d/comm.hpp>
+#include <torch/torch.h>
+
+namespace c10d {
+
+c10::intrusive_ptr<c10::ivalue::Future> AllReduceCommHook::runHook(
+    GradBucket& bucket) {
+  std::vector<at::Tensor> tensors = {bucket.getBufferRef()};
+  // Apply the division first to avoid overflow, especially for FP16.
+  tensors[0] /= state_->getSize();
+  return state_->allreduce(tensors)->getFuture();
+}
+
+c10::intrusive_ptr<c10::ivalue::Future> FP16CompressCommHook::runHook(
+    GradBucket& bucket) {
+  auto compressed_tensor = bucket.getBufferRef().to(torch::kFloat16);
+  // Apply the division first to avoid overflow.
+  compressed_tensor /= state_->getSize();
+  std::vector<at::Tensor> tensors = {compressed_tensor};
+
+  auto allreduce_fut = state_->allreduce(tensors)->getFuture();
+  auto decompressed_tensor = bucket.getBufferRef();
+  auto decompress = [decompressed_tensor](c10::ivalue::Future& allreduce_fut) {
+    auto result = allreduce_fut.value();
+    TORCH_INTERNAL_ASSERT(
+        result.isTensorList(),
+        "ProcessGroup::allreduce should return TensorList");
+
+    auto reduce_tensor = result.toTensorVector()[0];
+    TORCH_INTERNAL_ASSERT_DEBUG_ONLY(
+        reduce_tensor.scalar_type() == at::ScalarType::Half,
+        "Expected reduced tensor to be fp16 in FP16CompressHook, but got type ",
+        reduce_tensor.scalar_type());
+    decompressed_tensor.copy_(reduce_tensor);
+    return c10::IValue(decompressed_tensor);
+  };
+
+  return allreduce_fut->then(decompress, allreduce_fut->elementType());
+}
+
+c10::intrusive_ptr<c10::ivalue::Future> _AllReduceBySumCommHook::runHook(
+    GradBucket& bucket) {
+  std::vector<at::Tensor> tensors = {bucket.getBufferRef()};
+#ifdef IS_NCCLX
+  // case with sparse_metadata_ set and using indices from there
+  if (bucket.getSparseGradIndices().has_value()) {
+    AllreduceOptions opts = AllreduceOptions();
+    opts.sparseIndices = bucket.getSparseGradIndices().value();
+    return state_->allreduce(tensors, opts)->getFuture();
+  }
+#else
+  return state_->allreduce(tensors)->getFuture();
+#endif
+}
+
+} // namespace c10d
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 1 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `c10d`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/distributed/c10d`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `c10/core/ScalarType.h`
+- `c10/util/Exception.h`
+- `torch/csrc/distributed/c10d/default_comm_hooks.hpp`
+- `torch/csrc/distributed/c10d/ProcessGroup.hpp`
+- `torch/csrc/distributed/c10d/comm.hpp`
+- `torch/torch.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/distributed/c10d`):
+
+- [`Utils.hpp_docs.md`](./Utils.hpp_docs.md)
+- [`Ops.cpp_docs.md`](./Ops.cpp_docs.md)
+- [`Store.hpp_docs.md`](./Store.hpp_docs.md)
+- [`WinSockUtils.hpp_docs.md`](./WinSockUtils.hpp_docs.md)
+- [`FakeProcessGroup.hpp_docs.md`](./FakeProcessGroup.hpp_docs.md)
+- [`Work.cpp_docs.md`](./Work.cpp_docs.md)
+- [`PrefixStore.hpp_docs.md`](./PrefixStore.hpp_docs.md)
+- [`PyProcessGroup.hpp_docs.md`](./PyProcessGroup.hpp_docs.md)
+- [`debug.h_docs.md`](./debug.h_docs.md)
+- [`exception.h_docs.md`](./exception.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `default_comm_hooks.cpp_docs.md`
+- **Keyword Index**: `default_comm_hooks.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/distributed/c10d`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/distributed/c10d`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/distributed/c10d`):
+
+- [`ProcessGroupWrapper.cpp_docs.md_docs.md`](./ProcessGroupWrapper.cpp_docs.md_docs.md)
+- [`c10d.h_kw.md_docs.md`](./c10d.h_kw.md_docs.md)
+- [`TCPStoreLibUvBackend.cpp_kw.md_docs.md`](./TCPStoreLibUvBackend.cpp_kw.md_docs.md)
+- [`ProcessGroupGlooCuda.cpp_docs.md_docs.md`](./ProcessGroupGlooCuda.cpp_docs.md_docs.md)
+- [`NanCheck.cu_docs.md_docs.md`](./NanCheck.cu_docs.md_docs.md)
+- [`python_callback_work.hpp_kw.md_docs.md`](./python_callback_work.hpp_kw.md_docs.md)
+- [`sequence_num.hpp_kw.md_docs.md`](./sequence_num.hpp_kw.md_docs.md)
+- [`Functional.hpp_kw.md_docs.md`](./Functional.hpp_kw.md_docs.md)
+- [`TCPStoreBackend.cpp_kw.md_docs.md`](./TCPStoreBackend.cpp_kw.md_docs.md)
+- [`ProcessGroupUCC.cpp_kw.md_docs.md`](./ProcessGroupUCC.cpp_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `default_comm_hooks.cpp_docs.md_docs.md`
+- **Keyword Index**: `default_comm_hooks.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

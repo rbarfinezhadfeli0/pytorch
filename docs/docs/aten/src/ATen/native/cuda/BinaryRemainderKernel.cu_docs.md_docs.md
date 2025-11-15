@@ -1,0 +1,297 @@
+# Documentation: `docs/aten/src/ATen/native/cuda/BinaryRemainderKernel.cu_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/cuda/BinaryRemainderKernel.cu_docs.md`
+- **Size**: 4,765 bytes (4.65 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/native/cuda/BinaryRemainderKernel.cu`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/cuda/BinaryRemainderKernel.cu`
+- **Size**: 2,012 bytes (1.96 KB)
+- **Type**: CUDA Source Code
+- **Extension**: `.cu`
+
+## File Purpose
+
+This is a cuda source code that is part of the PyTorch project.
+
+## Original Source
+
+```cuda
+#define TORCH_ASSERT_NO_OPERATORS
+#include <ATen/Dispatch.h>
+#include <ATen/native/DispatchStub.h>
+#include <ATen/native/cuda/Loops.cuh>
+#include <ATen/native/BinaryOps.h>
+#include <ATen/native/TensorIterator.h>
+#include <c10/util/TypeSafeSignMath.h>
+
+#include <type_traits>
+
+// NOTE: CUDA on Windows requires that the enclosing function
+// of a __device__ lambda not have internal linkage.
+
+namespace at::native {
+
+void remainder_kernel_cuda(TensorIteratorBase& iter) {
+  if (isIntegralType(iter.common_dtype(), /*includeBool*/ false)) {
+    AT_DISPATCH_INTEGRAL_TYPES(iter.common_dtype(), "remainder_cuda", [&]() {
+      gpu_kernel_with_scalars(iter, []GPU_LAMBDA(scalar_t a, scalar_t b) -> scalar_t {
+        scalar_t r = a % b;
+        if (r != 0 && c10::signs_differ(r, b)) {
+          r += b;
+        }
+        return r;
+      });
+    });
+  } else {
+    AT_DISPATCH_FLOATING_TYPES_AND2(kHalf, kBFloat16, iter.common_dtype(), "remainder_cuda", [&]() {
+      gpu_kernel_with_scalars(iter,
+        []GPU_LAMBDA(scalar_t a, scalar_t b) __ubsan_ignore_float_divide_by_zero__ -> scalar_t {
+          auto mod = ::fmod(a, b);
+          if (mod != 0 && c10::signs_differ(b, mod)) {
+            mod += b;
+          }
+          return mod;
+        });
+    });
+  }
+}
+
+void fmod_kernel_cuda(TensorIteratorBase& iter) {
+  if (isIntegralType(iter.common_dtype(), /*includeBool*/ false)) {
+    AT_DISPATCH_INTEGRAL_TYPES(iter.common_dtype(), "fmod_cuda", [&]() {
+      gpu_kernel_with_scalars(iter, []GPU_LAMBDA(scalar_t a, scalar_t b) -> scalar_t {
+        return a % b;
+      });
+    });
+  } else {
+    AT_DISPATCH_FLOATING_TYPES_AND2(kHalf, kBFloat16, iter.common_dtype(), "fmod_cuda", [&]() {
+      gpu_kernel_with_scalars(iter,
+        []GPU_LAMBDA(scalar_t a, scalar_t b) __ubsan_ignore_float_divide_by_zero__ -> scalar_t {
+          return ::fmod(a, b);
+        });
+    });
+  }
+}
+
+REGISTER_DISPATCH(remainder_stub, &remainder_kernel_cuda)
+REGISTER_DISPATCH(fmod_stub, &fmod_kernel_cuda)
+
+} // namespace at::native
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `aten/src/ATen/native/cuda`.
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `at`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native/cuda`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/Dispatch.h`
+- `ATen/native/DispatchStub.h`
+- `ATen/native/cuda/Loops.cuh`
+- `ATen/native/BinaryOps.h`
+- `ATen/native/TensorIterator.h`
+- `c10/util/TypeSafeSignMath.h`
+- `type_traits`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native/cuda`):
+
+- [`LogcumsumexpKernel.cu_docs.md`](./LogcumsumexpKernel.cu_docs.md)
+- [`WeightNorm.cu_docs.md`](./WeightNorm.cu_docs.md)
+- [`SparseBinaryOpIntersectionKernel.cu_docs.md`](./SparseBinaryOpIntersectionKernel.cu_docs.md)
+- [`jit_utils.cpp_docs.md`](./jit_utils.cpp_docs.md)
+- [`ReduceNormKernel.cu_docs.md`](./ReduceNormKernel.cu_docs.md)
+- [`BinaryMiscOpsKernels.cu_docs.md`](./BinaryMiscOpsKernels.cu_docs.md)
+- [`RowwiseScaledMM.h_docs.md`](./RowwiseScaledMM.h_docs.md)
+- [`fused_adamw_amsgrad_impl.cuh_docs.md`](./fused_adamw_amsgrad_impl.cuh_docs.md)
+- [`Col2Im.cu_docs.md`](./Col2Im.cu_docs.md)
+- [`DistributionRandomKernel.cu_docs.md`](./DistributionRandomKernel.cu_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `BinaryRemainderKernel.cu_docs.md`
+- **Keyword Index**: `BinaryRemainderKernel.cu_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native/cuda`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native/cuda`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native/cuda`):
+
+- [`DeviceSqrt.cuh_kw.md_docs.md`](./DeviceSqrt.cuh_kw.md_docs.md)
+- [`UnaryGeometricAsinKernel.cu_kw.md_docs.md`](./UnaryGeometricAsinKernel.cu_kw.md_docs.md)
+- [`Distributions.cpp_docs.md_docs.md`](./Distributions.cpp_docs.md_docs.md)
+- [`fused_adamw_impl.cu_docs.md_docs.md`](./fused_adamw_impl.cu_docs.md_docs.md)
+- [`TensorTopK.h_kw.md_docs.md`](./TensorTopK.h_kw.md_docs.md)
+- [`ReduceOps.cpp_kw.md_docs.md`](./ReduceOps.cpp_kw.md_docs.md)
+- [`FusedSgdKernel.cu_docs.md_docs.md`](./FusedSgdKernel.cu_docs.md_docs.md)
+- [`Distributions.cu_kw.md_docs.md`](./Distributions.cu_kw.md_docs.md)
+- [`block_reduce.cuh_docs.md_docs.md`](./block_reduce.cuh_docs.md_docs.md)
+- [`fused_adagrad_impl.cuh_kw.md_docs.md`](./fused_adagrad_impl.cuh_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `BinaryRemainderKernel.cu_docs.md_docs.md`
+- **Keyword Index**: `BinaryRemainderKernel.cu_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

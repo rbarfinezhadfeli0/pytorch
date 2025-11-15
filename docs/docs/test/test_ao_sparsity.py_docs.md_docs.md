@@ -1,0 +1,307 @@
+# Documentation: `docs/test/test_ao_sparsity.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/test_ao_sparsity.py_docs.md`
+- **Size**: 4,443 bytes (4.34 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/test_ao_sparsity.py`
+
+## File Metadata
+
+- **Path**: `test/test_ao_sparsity.py`
+- **Size**: 1,591 bytes (1.55 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**. Can be **executed as a standalone script**.
+
+## Original Source
+
+```python
+# Owner(s): ["module: sparse"]
+import logging
+
+# Kernels
+from ao.sparsity.test_kernels import (  # noqa: F401
+    TestQuantizedSparseKernels,
+    TestQuantizedSparseLayers,
+)
+
+# Parametrizations
+from ao.sparsity.test_parametrization import TestFakeSparsity  # noqa: F401
+
+# Scheduler
+from ao.sparsity.test_scheduler import TestCubicScheduler, TestScheduler  # noqa: F401
+
+# Sparsifier
+from ao.sparsity.test_sparsifier import (  # noqa: F401
+    TestBaseSparsifier,
+    TestNearlyDiagonalSparsifier,
+    TestWeightNormSparsifier,
+)
+
+# Structured Pruning
+from ao.sparsity.test_structured_sparsifier import (  # noqa: F401
+    TestBaseStructuredSparsifier,
+    TestFPGMPruner,
+    TestSaliencyPruner,
+)
+
+from torch.testing._internal.common_utils import IS_ARM64, run_tests
+
+
+# Composability
+if not IS_ARM64:
+    from ao.sparsity.test_composability import (  # noqa: F401
+        TestComposability,
+        TestFxComposability,
+    )
+
+# Activation Sparsifier
+from ao.sparsity.test_activation_sparsifier import (  # noqa: F401
+    TestActivationSparsifier,
+)
+
+# Data Scheduler
+from ao.sparsity.test_data_scheduler import TestBaseDataScheduler  # noqa: F401
+
+# Data Sparsifier
+from ao.sparsity.test_data_sparsifier import (  # noqa: F401
+    TestBaseDataSparsifier,
+    TestNormDataSparsifiers,
+    TestQuantizationUtils,
+)
+
+# Utilities
+from ao.sparsity.test_sparsity_utils import TestSparsityUtilFunctions  # noqa: F401
+
+
+if __name__ == "__main__":
+    logging.basicConfig(
+        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+        level=logging.INFO,
+    )
+
+    run_tests()
+
+```
+
+
+
+## High-Level Overview
+
+
+This Python file contains 0 class(es) and 0 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Key imports**: logging, TestFakeSparsity  , TestCubicScheduler, TestScheduler  , IS_ARM64, run_tests, TestBaseDataScheduler  , TestSparsityUtilFunctions  
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `logging`
+- `ao.sparsity.test_parametrization`: TestFakeSparsity  
+- `ao.sparsity.test_scheduler`: TestCubicScheduler, TestScheduler  
+- `torch.testing._internal.common_utils`: IS_ARM64, run_tests
+- `ao.sparsity.test_data_scheduler`: TestBaseDataScheduler  
+- `ao.sparsity.test_sparsity_utils`: TestSparsityUtilFunctions  
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/test_ao_sparsity.py
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test`):
+
+- [`test_file_check.py_docs.md`](./test_file_check.py_docs.md)
+- [`test_jit_simple.py_docs.md`](./test_jit_simple.py_docs.md)
+- [`test_mkldnn.py_docs.md`](./test_mkldnn.py_docs.md)
+- [`test_expanded_weights.py_docs.md`](./test_expanded_weights.py_docs.md)
+- [`test_overrides.py_docs.md`](./test_overrides.py_docs.md)
+- [`test_decomp.py_docs.md`](./test_decomp.py_docs.md)
+- [`test_show_pickle.py_docs.md`](./test_show_pickle.py_docs.md)
+- [`test_utils_config_module.py_docs.md`](./test_utils_config_module.py_docs.md)
+- [`test_mobile_optimizer.py_docs.md`](./test_mobile_optimizer.py_docs.md)
+- [`test_type_info.py_docs.md`](./test_type_info.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_ao_sparsity.py_docs.md`
+- **Keyword Index**: `test_ao_sparsity.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- **Serialization**: Uses pickle - be cautious with untrusted data
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/test_ao_sparsity.py_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test`):
+
+- [`test_ops.py_docs.md_docs.md`](./test_ops.py_docs.md_docs.md)
+- [`test_tensorexpr.py_docs.md_docs.md`](./test_tensorexpr.py_docs.md_docs.md)
+- [`pytest_shard_custom.py_docs.md_docs.md`](./pytest_shard_custom.py_docs.md_docs.md)
+- [`test_weak.py_kw.md_docs.md`](./test_weak.py_kw.md_docs.md)
+- [`test_view_ops.py_kw.md_docs.md`](./test_view_ops.py_kw.md_docs.md)
+- [`test_varlen_attention.py_kw.md_docs.md`](./test_varlen_attention.py_kw.md_docs.md)
+- [`test_namedtensor.py_docs.md_docs.md`](./test_namedtensor.py_docs.md_docs.md)
+- [`test_binary_ufuncs.py_docs.md_docs.md`](./test_binary_ufuncs.py_docs.md_docs.md)
+- [`test_ops_gradients.py_kw.md_docs.md`](./test_ops_gradients.py_kw.md_docs.md)
+- [`test_torchfuzz_repros.py_docs.md_docs.md`](./test_torchfuzz_repros.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_ao_sparsity.py_docs.md_docs.md`
+- **Keyword Index**: `test_ao_sparsity.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

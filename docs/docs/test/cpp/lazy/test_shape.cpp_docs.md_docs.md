@@ -1,0 +1,322 @@
+# Documentation: `docs/test/cpp/lazy/test_shape.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/cpp/lazy/test_shape.cpp_docs.md`
+- **Size**: 4,626 bytes (4.52 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/cpp/lazy/test_shape.cpp`
+
+## File Metadata
+
+- **Path**: `test/cpp/lazy/test_shape.cpp`
+- **Size**: 2,253 bytes (2.20 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**.
+
+## Original Source
+
+```cpp
+#include <gtest/gtest.h>
+
+#include <sstream>
+
+#include <torch/csrc/lazy/core/shape.h>
+
+namespace torch {
+namespace lazy {
+
+TEST(ShapeTest, Basic1) {
+  auto shape = Shape();
+
+  EXPECT_STREQ(shape.to_string().c_str(), "UNKNOWN_SCALAR[]");
+  EXPECT_EQ(shape.scalar_type(), c10::ScalarType::Undefined);
+  EXPECT_EQ(shape.dim(), 0);
+  EXPECT_TRUE(shape.sizes().empty());
+  EXPECT_THROW(shape.size(0), std::out_of_range);
+}
+
+TEST(ShapeTest, Basic2) {
+  auto shape = Shape(c10::ScalarType::Float, {1, 2, 3});
+
+  EXPECT_EQ(shape.numel(), 6);
+  EXPECT_STREQ(shape.to_string().c_str(), "Float[1,2,3]");
+  EXPECT_EQ(shape.scalar_type(), c10::ScalarType::Float);
+  EXPECT_EQ(shape.dim(), 3);
+  EXPECT_EQ(shape.sizes().size(), 3);
+  for (int64_t i = 0; i < shape.dim(); i++) {
+    EXPECT_EQ(shape.sizes()[i], i + 1);
+    EXPECT_EQ(shape.size(i), i + 1);
+  }
+}
+
+TEST(ShapeTest, Basic3) {
+  auto shape = Shape(c10::ScalarType::Float, {});
+
+  EXPECT_STREQ(shape.to_string().c_str(), "Float[]");
+  EXPECT_EQ(shape.scalar_type(), c10::ScalarType::Float);
+  EXPECT_EQ(shape.dim(), 0);
+  // this is surprising, but it's in line with how 0-D tensors behave
+  EXPECT_EQ(shape.numel(), 1);
+  EXPECT_TRUE(shape.sizes().empty());
+  EXPECT_THROW(shape.size(0), std::out_of_range);
+}
+
+TEST(ShapeTest, SetScalarType) {
+  auto shape = Shape();
+
+  shape.set_scalar_type(c10::ScalarType::Long);
+  EXPECT_EQ(shape.scalar_type(), c10::ScalarType::Long);
+}
+
+TEST(ShapeTest, SetSize) {
+  auto shape1 = Shape();
+  EXPECT_THROW(shape1.set_size(0, 0), std::out_of_range);
+
+  auto shape2 = Shape(c10::ScalarType::Float, {1, 2, 3});
+  shape2.set_size(0, 3);
+  EXPECT_EQ(shape2.sizes()[0], 3);
+  EXPECT_EQ(shape2.size(0), 3);
+}
+
+TEST(ShapeTest, Equal) {
+  auto shape1 = Shape(c10::ScalarType::Float, {});
+  auto shape2 = Shape(c10::ScalarType::Float, {1, 2, 3});
+  auto shape3 = Shape(c10::ScalarType::Long, {1, 2, 3});
+  auto shape4 = Shape(c10::ScalarType::Float, {1, 2, 3});
+
+  EXPECT_FALSE(shape1 == shape2);
+  EXPECT_FALSE(shape2 == shape3);
+  EXPECT_FALSE(shape1 == shape3);
+  EXPECT_TRUE(shape2 == shape2);
+}
+
+TEST(ShapeTest, Ostream) {
+  auto shape = Shape();
+  std::stringstream ss;
+  ss << shape;
+
+  EXPECT_EQ(shape.to_string(), ss.str());
+}
+
+} // namespace lazy
+} // namespace torch
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 1 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `lazy`, `torch`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/cpp/lazy`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `gtest/gtest.h`
+- `sstream`
+- `torch/csrc/lazy/core/shape.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/cpp/lazy/test_shape.cpp
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/cpp/lazy`):
+
+- [`test_backend_device.cpp_docs.md`](./test_backend_device.cpp_docs.md)
+- [`test_lazy_ops_util.cpp_docs.md`](./test_lazy_ops_util.cpp_docs.md)
+- [`test_trie_cache.cpp_docs.md`](./test_trie_cache.cpp_docs.md)
+- [`CMakeLists.txt_docs.md`](./CMakeLists.txt_docs.md)
+- [`test_lazy_ops_util.h_docs.md`](./test_lazy_ops_util.h_docs.md)
+- [`test_misc.cpp_docs.md`](./test_misc.cpp_docs.md)
+- [`test_lazy_graph_executor.cpp_docs.md`](./test_lazy_graph_executor.cpp_docs.md)
+- [`test_ir.cpp_docs.md`](./test_ir.cpp_docs.md)
+- [`test_util.cpp_docs.md`](./test_util.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_shape.cpp_docs.md`
+- **Keyword Index**: `test_shape.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/cpp/lazy`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/cpp/lazy`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Implements or uses **caching** mechanisms.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/cpp/lazy/test_shape.cpp_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/cpp/lazy`):
+
+- [`CMakeLists.txt_docs.md_docs.md`](./CMakeLists.txt_docs.md_docs.md)
+- [`test_permutation_util.cpp_docs.md_docs.md`](./test_permutation_util.cpp_docs.md_docs.md)
+- [`test_lazy_ops.cpp_kw.md_docs.md`](./test_lazy_ops.cpp_kw.md_docs.md)
+- [`test_backend_device.cpp_docs.md_docs.md`](./test_backend_device.cpp_docs.md_docs.md)
+- [`test_util.cpp_docs.md_docs.md`](./test_util.cpp_docs.md_docs.md)
+- [`test_ir_util.cpp_docs.md_docs.md`](./test_ir_util.cpp_docs.md_docs.md)
+- [`test_ir.cpp_kw.md_docs.md`](./test_ir.cpp_kw.md_docs.md)
+- [`test_tensor_impl.cpp_docs.md_docs.md`](./test_tensor_impl.cpp_docs.md_docs.md)
+- [`test_trie_cache.cpp_docs.md_docs.md`](./test_trie_cache.cpp_docs.md_docs.md)
+- [`test_lazy_ops_util.h_docs.md_docs.md`](./test_lazy_ops_util.h_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_shape.cpp_docs.md_docs.md`
+- **Keyword Index**: `test_shape.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

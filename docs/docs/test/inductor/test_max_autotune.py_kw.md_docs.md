@@ -1,0 +1,389 @@
+# Documentation: `docs/test/inductor/test_max_autotune.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/test/inductor/test_max_autotune.py_kw.md`
+- **Size**: 22,779 bytes (22.25 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `test/inductor/test_max_autotune.py`
+
+## File Information
+
+- **Original File**: [test/inductor/test_max_autotune.py](../../../test/inductor/test_max_autotune.py)
+- **Documentation**: [`test_max_autotune.py_docs.md`](./test_max_autotune.py_docs.md)
+- **Folder**: `test/inductor`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`FailChoiceCaller`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`FakeChoiceCaller`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`M`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`Model`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`TestMaxAutotune`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`TestMaxAutotunePrecompile`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`TestMaxAutotuneRemoteCache`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`TestMaxAutotuneSubproc`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`TestPrologueFusion`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`TestTuningProcess`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`TestTuningProcessPool`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`ToyModel`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`_TestTritonTemplateCaller`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+
+### Functions
+
+- **`__init__`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`__str__`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`_create_buffer`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`_test_cat_max_autotune_impl`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`addmm`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`addmm_transpose`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`another_feedback_saver`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`benchmark`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`benchmark_choice`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`call_name`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`check_code`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`check_divisors`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`check_healthy`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`choice_validator`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`f`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`fake_benchmark_fn`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`feedback_saver1`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`feedback_saver2`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`fn`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`foo`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`forward`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`func_test1`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`fwd`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`generate_inputs_and_func`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`get_cache_key_and_events`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`get_scale_per_row`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`get_scale_per_tensor`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`hash_key`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`hits`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`layout_checker`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`misses`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`mm`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`mm_func`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`mm_plus_mm`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`mm_transpose`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`mm_transpose_relu`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`mmpmm`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`mock_is_big_gpu`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`mock_lookup`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`multi_use`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`next_multiple_16`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`no_lookup`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`output_node`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`precompile`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`remove_white_space`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`reset_counters`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`resolve_pending`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`scaled_mm`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`setUp`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`setUpClass`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`simple_feedback_saver`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`tearDown`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_add_feedback_saver`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_autotune_conv1x1`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_autotune_device_guard`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_autotune_gemm_choice_validation`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_autotune_layout_optimization`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_baddmm`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_benchmark_choice_fail_in_subproc`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_benchmark_choice_in_subproc`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_blackwell_max_autotune_addmm_persistent_tma`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_blackwell_max_autotune_regular_mm_persistent_tma`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_blackwell_max_autotune_scaled_mm_per_row_persistent_tma`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_blackwell_max_autotune_scaled_mm_per_tensor_persistent_tma`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_bmm_out_dtype`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_broadcast_x`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_broadcast_y`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_cat_addmm`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_cat_max_autotune_extern`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_cat_max_autotune_triton`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_clear_feedback_savers`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_conv1x1_with_free_symbols`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_conv3d`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_conv_backend`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_conv_cat`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_downcast`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_empty_conv_input`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_feedback_saver`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_feedback_saver_integration`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_filled_cache_precompile`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_func2`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_func3`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_gather_fusion`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_honor_sm_carveout_with_triton_tma`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_inf_timing`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_jit_fusion_matches_aot_fusion`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_linear_and_cel`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_low_precision`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_matmul_dropout`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_max_autotune_addmm`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_max_autotune_addmm_persistent_tma`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_max_autotune_addmm_persistent_tma_illegal_alignment`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_max_autotune_addmm_tma_dynamic_outer_dim`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_max_autotune_addmm_zero_size_input`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_max_autotune_contiguous_transform_addmm`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_max_autotune_contiguous_transform_mm`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_max_autotune_contiguous_transform_non_contiguous_second_matrix`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_max_autotune_contiguous_transform_with_epilogue`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_max_autotune_decompose_k`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_max_autotune_decompose_k_dynamic_input`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_max_autotune_decompose_k_dynamic_input_bwd`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_max_autotune_decompose_k_envvars`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_max_autotune_decompose_k_output_stride`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_max_autotune_exhaustive`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_max_autotune_mm_plus_mm`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_max_autotune_mm_plus_mm_zero_size_input`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_max_autotune_prune_choices`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_max_autotune_regular_mm`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_max_autotune_regular_mm_persistent_tma`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_max_autotune_regular_mm_persistent_tma_illegal_alignment`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_max_autotune_regular_mm_persistent_tma_illegal_output_alignment`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_max_autotune_regular_mm_persistent_tma_strided`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_max_autotune_regular_mm_tma_dynamic_outer_dim`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_max_autotune_regular_mm_zero_size_input`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_max_autotune_remote_caching`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_mismatched_prologue_group`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_mm_k_1`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_multiple_fusions`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_multiple_inputs`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_mutation_rename`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_no_valid_choices`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_non_contiguous_input_addmm`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_non_contiguous_input_bmm`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_non_contiguous_input_mm`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_non_contiguous_input_mm_plus_mm`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_pending_fusion_pro_and_epi`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_pending_fusions_multiple`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_precompilation_threads`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_precompilations`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_preserves_zero_analysis`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_prologue_masked_load`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_prologue_multiple_nodes`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_prologue_read_into_both_inputs`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_storage_offset_prologue`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_triton_template_generated_code_cache_key`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_triton_template_generated_code_cache_strategy`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_triton_template_generated_code_caching`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_triton_template_generated_code_caching_bmm`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_triton_template_generated_code_caching_mm_plus_mm`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_triton_template_with_epilogues_and_dynamic_shape`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_tuning_pool_crash`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_tuning_pool_multiple_devices`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_tuning_pool_timeout`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_tuning_subproc_crash`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_tuning_subproc_exception`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_tuning_subproc_killed`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_tuning_subproc_timeout`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_upcast`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`test_visible_devices`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`to_callable`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`triton`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`triton_poi_fused_add_cat_`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+
+### Imports
+
+- **`Any`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`BackendCompilerFailed`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`Buffer`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`Callable`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`FileCheck`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`GraphLowering`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`MI300_ARCH`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`Mock`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`Optional`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`PLATFORM_SUPPORTS_FP8`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`V`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`aten_mm_plus_mm`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`collections.abc`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`config`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`contextlib`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`counters`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`functools`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`get_algorithm_selector_cache`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`global_stats`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`inspect`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`is_big_gpu`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`json`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`logging`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`make_fx`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`math`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`mock`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`multiple_logs_to_string`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`multiprocessing`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`os`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`override_template_heuristics`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`patch`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`rand_strided`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`random`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`re`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`reset`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`run_tests`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`tempfile`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`threading`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`torch`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`torch._dynamo`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`torch._dynamo.exc`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`torch._dynamo.testing`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`torch._dynamo.utils`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`torch._inductor`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`torch._inductor.autotune_process`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`torch._inductor.graph`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`torch._inductor.ir`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`torch._inductor.kernel.mm_plus_mm`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`torch._inductor.mock_cache`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`torch._inductor.select_algorithm`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`torch._inductor.template_heuristics.registry`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`torch._inductor.template_heuristics.triton`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`torch._inductor.test_case`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`torch._inductor.utils`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`torch._inductor.virtualized`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`torch.fx.experimental.proxy_tensor`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`torch.testing`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`torch.testing._internal.common_cuda`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`torch.testing._internal.inductor_utils`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`torch.testing._internal.logging_utils`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`torch.utils._triton`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`typing`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`unittest`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+- **`unittest.mock`**: [test_max_autotune.py_docs.md](./test_max_autotune.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/inductor`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/inductor`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Implements or uses **caching** mechanisms.
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/inductor/test_max_autotune.py_kw.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/inductor`):
+
+- [`test_snode_runtime.py_kw.md_docs.md`](./test_snode_runtime.py_kw.md_docs.md)
+- [`test_metrics.py_docs.md_docs.md`](./test_metrics.py_docs.md_docs.md)
+- [`test_flex_attention.py_kw.md_docs.md`](./test_flex_attention.py_kw.md_docs.md)
+- [`test_cuda_repro.py_kw.md_docs.md`](./test_cuda_repro.py_kw.md_docs.md)
+- [`test_fxir_backend.py_kw.md_docs.md`](./test_fxir_backend.py_kw.md_docs.md)
+- [`test_split_cat_fx_passes.py_kw.md_docs.md`](./test_split_cat_fx_passes.py_kw.md_docs.md)
+- [`test_mmdecomp.py_kw.md_docs.md`](./test_mmdecomp.py_kw.md_docs.md)
+- [`test_torchinductor_codegen_config_overrides.py_kw.md_docs.md`](./test_torchinductor_codegen_config_overrides.py_kw.md_docs.md)
+- [`test_aot_inductor_custom_ops.py_kw.md_docs.md`](./test_aot_inductor_custom_ops.py_kw.md_docs.md)
+- [`test_minifier.py_kw.md_docs.md`](./test_minifier.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_max_autotune.py_kw.md_docs.md`
+- **Keyword Index**: `test_max_autotune.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

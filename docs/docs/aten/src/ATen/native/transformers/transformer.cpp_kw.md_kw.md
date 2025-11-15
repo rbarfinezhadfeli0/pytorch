@@ -1,0 +1,83 @@
+# Keyword Index: `docs/aten/src/ATen/native/transformers/transformer.cpp_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/native/transformers/transformer.cpp_kw.md](../../../../../../../docs/aten/src/ATen/native/transformers/transformer.cpp_kw.md)
+- **Documentation**: [`transformer.cpp_kw.md_docs.md`](./transformer.cpp_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/native/transformers`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Analysis`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Architecture`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Basic`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Complete`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Considerations`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Dependencies`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Design`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Detailed`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Dispatch`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Documentation`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Efficiency`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Extracted`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`File`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Folder`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Functions`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Generated`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`High`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`How`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`In`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Includes`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Index`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Information`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Keyword`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Keywords`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Level`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Map`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Metadata`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Namespaces`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`NativeFunctions`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`NestedTensorImpl`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`NestedTensorTransformerFunctions`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Original`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Overview`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Performance`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Purpose`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`PyTorch`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Related`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Repository`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Safety`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Section`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Security`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Source`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`System`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Tensor`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Testing`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`The`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`This`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+- **`Usage`**: [transformer.cpp_kw.md_docs.md](./transformer.cpp_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,350 @@
+# Documentation: `docs/test/test_legacy_vmap.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/test/test_legacy_vmap.py_kw.md`
+- **Size**: 18,228 bytes (17.80 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `test/test_legacy_vmap.py`
+
+## File Information
+
+- **Original File**: [test/test_legacy_vmap.py](../../test/test_legacy_vmap.py)
+- **Documentation**: [`test_legacy_vmap.py_docs.md`](./test_legacy_vmap.py_docs.md)
+- **Folder**: `test`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`EnableVmapFallbackWarnings`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`Namespace`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`TensorFactory`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`TestVmapAPILegacy`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`TestVmapBaseLegacy`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`TestVmapBatchedGradientLegacy`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`TestVmapOperatorsLegacy`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`of`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+
+### Functions
+
+- **`__enter__`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`__exit__`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`__init__`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`_assert_uses_vmap_fallback`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`_batched_grad_grad_test`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`_batched_grad_test`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`_get_rand_no_zeros`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`_test`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`_test_arithmetic`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`_test_complex_views`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`_test_double_vmap`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`_test_single_vmap`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`_test_unary`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`_vmap_test`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`_vmap_view_test`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`_wrap_method_with_vmap_fallback_check`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`allowVmapFallbackUsage`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`as_tuple`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`backward_on_vmapped_tensor`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`backward_with_vmapped_grad`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`bar`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`baz`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`clone_contiguous`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`completely_unrelated_backward`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`construct_v`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`differentiable`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`foo`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`func`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`get`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`get_number`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`get_op`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`get_vjp`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`input_to_grad_is_vmapped`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`make_case`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`multiple_outputs`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`no_fallback`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`op`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`out_op`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`output_to_grad_is_vmapped`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`rand`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`randn`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`randp1`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`reference_vmap`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`returns_list_of_one_tensor`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`returns_list_of_two_tensors`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`returns_tuple_of_tensors`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`run_test`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`scalar_tensor_with_dtype`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`should_allow_vmap_fallback_usage`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`slice_inputs`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`square`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_T_numpy`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_accepts_nested_inputs`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_add`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_as_strided`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_backward_unsupported_interaction`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_batched_gradient_basic`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_binary_cross_entropy`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_binary_pointwise_ops`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_bmm`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_cat`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_chunk`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_clamp`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_clone`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_comparison_ops`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_conj`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_constant_function`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_contiguous`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_diagonal`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_different_map_dim_size_raises`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_div`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_dot`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_expand`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_expand_as`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_fallback_atan2`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_fallback_does_not_warn_by_default`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_fallback_masked_fill`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_fallback_multiple_returns`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_fallback_warns_when_warnings_are_enabled`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_fallback_with_undefined_grad`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_fallback_zero_dim`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_fill_and_zero_inplace`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_func_with_no_inputs`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_functools_partial`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_grad_unsupported_interaction`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_imag`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_in_dim_not_in_tensor_err_msg`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_in_dims_wrong_type_err_msg`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_index`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_inplace_fallback_nary_different_levels`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_inplace_fallback_nary_same_levels`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_inplace_fallback_unary`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_inplace_manyview`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_inplace_on_view`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_integer_in_dim_but_not_tensor_input_err_msg`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_is_complex`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_is_contiguous`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_is_floating_point`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_lgamma`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_log`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_log1p`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_logsumexp`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_max`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_median`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_min`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_mm`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_movedim`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_mul`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_multiple_inputs`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_multiple_out_dims`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_multiple_outputs`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_multiple_outputs_error_cases`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_mv`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_narrow`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_nested_non_default_in_dims`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_nested_out_dims`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_nested_with_different_map_dim`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_nested_with_same_map_dim`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_new_empty`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_new_empty_strided`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_new_zeros`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_nn_module`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_no_random_op_support`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_non_default_in_dims_out_dims`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_non_tensor_output_raises`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_non_zero_in_dims`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_none_in_dims`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_nonzero_out_dims`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_noop_in_inner_vmap`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_not_enough_in_dims_err_msg`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_out_dim_out_of_bounds_err_msg`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_out_dims_and_num_outputs_mismatch_err_msg`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_out_dims_edge_case`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_out_dims_must_be_int_or_tuple_of_int_err_msg`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_permute`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_real`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_reshape`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_reshape_as`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_result_type`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_select`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_sigmoid`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_single_input`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_slice`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_split`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_squeeze`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_stack`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_stride`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_sub`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_sum_dim`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_t`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_tensor_split`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_threshold`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_to`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_trace`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_transpose`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_unary_pointwise_ops`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_unbind`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_unfold`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_unrelated_output`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_unrelated_output_multiple_grad`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_unsupported_op_err_msg`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_view`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_view_as`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_view_as_complex`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_view_as_real`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_vmap_fallback_check`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`test_vmap_fallback_check_ok`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`uses_fallback`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`vector_hessian_product`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`vector_jacobian_product`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`vjp`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`vjp_mul`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`wrapped`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`wrapper`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+
+### Imports
+
+- **`Tensor`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`functools`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`instantiate_device_type_tests`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`itertools`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`run_tests`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`torch`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`torch._vmap_internals`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`torch.nn.functional`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`torch.testing._internal.common_device_type`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`types`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`vmap`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+- **`warnings`**: [test_legacy_vmap.py_docs.md](./test_legacy_vmap.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/test_legacy_vmap.py_kw.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test`):
+
+- [`test_ops.py_docs.md_docs.md`](./test_ops.py_docs.md_docs.md)
+- [`test_tensorexpr.py_docs.md_docs.md`](./test_tensorexpr.py_docs.md_docs.md)
+- [`pytest_shard_custom.py_docs.md_docs.md`](./pytest_shard_custom.py_docs.md_docs.md)
+- [`test_weak.py_kw.md_docs.md`](./test_weak.py_kw.md_docs.md)
+- [`test_view_ops.py_kw.md_docs.md`](./test_view_ops.py_kw.md_docs.md)
+- [`test_varlen_attention.py_kw.md_docs.md`](./test_varlen_attention.py_kw.md_docs.md)
+- [`test_namedtensor.py_docs.md_docs.md`](./test_namedtensor.py_docs.md_docs.md)
+- [`test_binary_ufuncs.py_docs.md_docs.md`](./test_binary_ufuncs.py_docs.md_docs.md)
+- [`test_ops_gradients.py_kw.md_docs.md`](./test_ops_gradients.py_kw.md_docs.md)
+- [`test_torchfuzz_repros.py_docs.md_docs.md`](./test_torchfuzz_repros.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_legacy_vmap.py_kw.md_docs.md`
+- **Keyword Index**: `test_legacy_vmap.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

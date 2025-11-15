@@ -1,0 +1,83 @@
+# Keyword Index: `docs/torch/fx/passes/infra/partitioner.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/fx/passes/infra/partitioner.py_kw.md](../../../../../../docs/torch/fx/passes/infra/partitioner.py_kw.md)
+- **Documentation**: [`partitioner.py_kw.md_docs.md`](./partitioner.py_kw.md_docs.md)
+- **Folder**: `docs/torch/fx/passes/infra`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Architecture`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Basic`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`CapabilityBasedPartitioner`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Classs`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Complete`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Considerations`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Dependencies`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Design`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Detailed`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Documentation`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Efficiency`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Extracted`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`File`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Folder`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Functions`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Generated`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`GraphModule`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`High`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`How`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Imports`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`In`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Index`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Information`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Iterable`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Keyword`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Keywords`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Level`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Map`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Metadata`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`OperatorSupportBase`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Optional`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Original`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Overview`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Partition`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Performance`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Purpose`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`PyTorch`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Related`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Repository`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Safety`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Section`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Security`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Source`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`System`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Testing`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`The`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`This`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+- **`Usage`**: [partitioner.py_kw.md_docs.md](./partitioner.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,644 @@
+# Documentation: `docs/test/jit/test_await.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/jit/test_await.py_docs.md`
+- **Size**: 15,397 bytes (15.04 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/jit/test_await.py`
+
+## File Metadata
+
+- **Path**: `test/jit/test_await.py`
+- **Size**: 12,260 bytes (11.97 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**. Can be **executed as a standalone script**.
+
+## Original Source
+
+```python
+# Owner(s): ["oncall: jit"]
+
+import io
+from typing import List, Optional, Tuple
+
+import torch
+from torch import Tensor
+from torch._awaits import _Await as Await
+from torch.testing._internal.common_utils import raise_on_run_directly
+from torch.testing._internal.jit_utils import JitTestCase, make_global
+
+
+class TestAwait(JitTestCase):
+    def test_await_python(self):
+        def foo(x: int) -> int:
+            return x + 13
+
+        aw: Await[int] = torch.jit._awaitable(foo, 13)
+        self.assertTrue(aw.fn()(*aw.args()) == torch.jit._awaitable_wait(aw))
+        nw = torch.jit._awaitable_nowait(33)
+        self.assertTrue(nw.is_nowait())
+        self.assertTrue(nw.args() == (33,))
+
+    def test_await_type_python(self):
+        def foo() -> Tensor:
+            return torch.randn()
+
+        awaits = torch.jit.annotate(List[Await[Tensor]], [])
+        awaits.append(torch.jit._awaitable(foo))
+
+    def test_script(self):
+        def delayed(z: int) -> int:
+            return z + 3
+
+        def fn(x: Tensor):
+            aw: Await[int] = torch.jit._awaitable(delayed, 99)
+            a = torch.eye(2)
+            b = torch.jit._awaitable_wait(aw)
+            return a + b + x
+
+        inp = torch.zeros(2)
+
+        sm = torch.jit.script(fn)
+        out = fn(inp)
+        script_out = sm(inp)
+        self.assertTrue(torch.allclose(torch.eye(2) + 102, script_out))
+        self.assertTrue(torch.allclose(script_out, out))
+
+    def test_nowait(self):
+        def fn(x: Tensor):
+            aw = torch.jit._awaitable_nowait(13)
+            a = torch.eye(2)
+            b = torch.jit._awaitable_wait(aw)
+            return a + b + x
+
+        inp = torch.zeros(2)
+
+        sm = torch.jit.script(fn)
+        out = fn(inp)
+        script_out = sm(inp)
+        self.assertTrue(torch.allclose(torch.eye(2) + 13, script_out))
+        self.assertTrue(torch.allclose(script_out, out))
+
+    def test_nowait_class(self):
+        class C:
+            def __init__(self, a: Tensor, b: Tensor):
+                self._a = a
+                self._b = b
+
+            def a(self) -> Tensor:
+                return self._a
+
+        def fn(x: Tensor):
+            aw = torch.jit._awaitable_nowait(C(torch.zeros(2), torch.ones(2)))
+            _a = torch.eye(2)
+            c = torch.jit._awaitable_wait(aw)
+            return _a + c.a() + x
+
+        make_global(C)
+        inp = torch.zeros(2)
+
+        sm = torch.jit.script(fn)
+        out = fn(inp)
+        script_out = sm(inp)
+        self.assertTrue(torch.allclose(torch.eye(2), script_out))
+        self.assertTrue(torch.allclose(script_out, out))
+
+    def test_await_class_arg(self):
+        class C:
+            def __init__(self, a: Tensor, b: Tensor):
+                self.__a = a
+                self.__b = b
+
+            def a(self) -> Tensor:
+                return self.__a
+
+        make_global(C)
+
+        def delayed(c: C) -> Tensor:
+            return c.a()
+
+        def fn(x: Tensor):
+            c = C(torch.zeros(2), torch.ones(2))
+            aw = torch.jit._awaitable(delayed, c)
+            _a = torch.eye(2)
+            c2_t = torch.jit._awaitable_wait(aw)
+            return _a + c2_t + x
+
+        inp = torch.zeros(2)
+
+        sm = torch.jit.script(fn)
+        out = fn(inp)
+        script_out = sm(inp)
+        self.assertTrue(torch.allclose(torch.eye(2), script_out))
+        self.assertTrue(torch.allclose(script_out, out))
+
+    def test_awaitable_to_await(self):
+        class C:
+            __slots__ = ["_a", "_b"]
+
+            def __init__(self, a: Tensor, b: Tensor):
+                self._a = a
+                self._b = b
+
+        make_global(C)
+
+        # Can not stay in the class as Jit does not support Recursive annotations
+        # (self in wait_impl can not be annotated as C as C is not defined by this time)
+        def C_wait_impl(self: C):
+            return self._a + self._b
+
+        def fn(x: Tensor):
+            aw = torch.jit._awaitable(C_wait_impl, C(torch.zeros(2), torch.ones(2)))
+            _a = torch.eye(2)
+            c_wait_impl_res = torch.jit._awaitable_wait(aw)
+            return _a + c_wait_impl_res + x
+
+        inp = torch.ones(2)
+
+        sm = torch.jit.script(fn)
+        out = fn(inp)
+        script_out = sm(inp)
+        self.assertTrue(torch.allclose(torch.eye(2) + 2 * torch.ones(2), script_out))
+        self.assertTrue(torch.allclose(script_out, out))
+
+    def test_await_class_return(self):
+        class C:
+            __slots__ = ["a", "b"]
+
+            def __init__(self, a: Tensor, b: Tensor):
+                self.a = a
+                self.b = b
+
+        make_global(C)
+
+        # Can not stay in the class as Jit does not support Recursive annotations
+        # (self in wait_impl can not be annotated as C as C is not defined by this time)
+        def C_wait_impl(self: C) -> C:
+            return C(self.a * 2, self.b * 3)
+
+        def fn_arg_C(x: C) -> Tensor:
+            return x.a + x.b
+
+        def fn(x: Tensor):
+            aw: Await[C] = torch.jit._awaitable(C_wait_impl, C(x, x))
+            _a = torch.eye(2)
+            y = fn_arg_C(torch.jit._awaitable_wait(aw))
+            return _a + y + x
+
+        inp = torch.ones(2)
+
+        sm = torch.jit.script(fn)
+        out = fn(inp)
+        script_out = sm(inp)
+        self.assertTrue(torch.allclose(torch.eye(2) + 6 * torch.ones(2), script_out))
+        self.assertTrue(torch.allclose(script_out, out))
+        self.assertGraphContainsExactly(
+            sm.graph, kind="prim::awaitable_wait", num_kind_nodes=1
+        )
+
+    def test_await_getattr_implicit_convertion(self):
+        class C:
+            def __init__(self, a: Tensor, b: Tensor):
+                self._a = a
+                self._b = b
+
+            def b(self):
+                return self._b
+
+        make_global(C)
+
+        # Can not stay in the class as Jit does not support Recursive annotations
+        # (self in wait_impl can not be annotated as C as C is not defined by this time)
+        def C_wait_impl(self: C) -> C:
+            return C(self._a * 2, self._b * 3)
+
+        def fn_arg_C(x: C) -> Tensor:  # noqa: F841
+            return x._a + x._b
+
+        def fn(x: Tensor):
+            aw: Await[C] = torch.jit._awaitable(C_wait_impl, C(x, x))
+            _a = torch.eye(2)
+            ai = aw._a
+            awb = aw.b()  # noqa: F841
+            c = C(2 * x, 2 * x)
+            return _a + ai + x + c._a + c.b()
+
+        inp = torch.ones(2)
+
+        sm = torch.jit.script(fn)
+        out = fn(inp)
+        script_out = sm(inp)
+        self.assertTrue(torch.allclose(torch.eye(2) + 7 * torch.ones(2), script_out))
+        self.assertTrue(torch.allclose(script_out, out))
+        self.assertGraphContainsExactly(
+            sm.graph, kind="prim::awaitable_wait", num_kind_nodes=2
+        )
+
+    def test_await_nested(self):
+        class C:
+            def __init__(self, a: Tensor, b: Tensor):
+                self.__a = a
+                self.__b = b
+
+            def a(self) -> Tensor:
+                return self.__a
+
+        make_global(C)
+
+        def delayed(c: C) -> Await[Tensor]:
+            return torch.jit._awaitable_nowait(3 * c.a())
+
+        def fn(x: Tensor) -> Await[Await[Tensor]]:
+            return torch.jit._awaitable(delayed, C(2 * x, x))
+
+        def main(x: Tensor) -> Tensor:
+            awaw = fn(x)
+            return torch.jit._awaitable_wait(torch.jit._awaitable_wait(awaw))
+
+        inp = torch.eye(2)
+
+        sm = torch.jit.script(main)
+        out = main(inp)
+        script_out = sm(inp)
+        self.assertTrue(torch.allclose(6 * torch.eye(2), script_out))
+        self.assertTrue(torch.allclose(script_out, out))
+
+    def test_eager_await_non_scriptable(self):
+        # Tree type can not be compiled (Recursive type)
+        class Tree:
+            def __init__(self, v):
+                self.parent = torch.jit.annotate(Optional[Tree], None)
+                self.v = v
+
+        make_global(Tree)
+
+        def delayed(t: Tree):
+            t.v = t.v + 1
+            return t
+
+        aw = torch.jit._awaitable(delayed, Tree(2))
+        t = torch.jit._awaitable_wait(aw)
+        self.assertTrue(t.v == 3)
+
+    def test_await_isinstance(self):
+        def delayed(x: Tensor) -> Tensor:
+            return 2 * (x + 1)
+
+        def main(x: Tensor) -> Tensor:
+            aw = torch.jit._awaitable(delayed, x)
+            if torch.jit.is_scripting():
+                assert isinstance(aw, torch.jit._Await)
+            return torch.jit._awaitable_wait(aw)
+
+        inp = torch.eye(2)
+
+        sm = torch.jit.script(main)
+        out = main(inp)
+        script_out = sm(inp)
+        self.assertTrue(
+            torch.allclose(2 * torch.eye(2) + 2 * torch.ones(2), script_out)
+        )
+        self.assertTrue(torch.allclose(script_out, out))
+
+    def test_await_eager_lazy(self):
+        def delayed(x: Tensor) -> Tensor:
+            return 2 * (x + 1)
+
+        t = torch.ones(2, dtype=torch.int64)
+        aw = torch.jit._awaitable(delayed, t)
+        self.assertTrue(isinstance(aw, torch._C._Await))
+        self.assertTrue(t.dtype == aw.dtype)
+
+    def test_await_out_of_interpreter(self):
+        def delayed(x: Tensor) -> Tensor:
+            return 2 * (x + 1)
+
+        def main(x: Tensor) -> Await[Tensor]:
+            aw = torch.jit._awaitable(delayed, x)
+            return aw
+
+        inp = torch.eye(2)
+
+        sm = torch.jit.script(main)
+        out_aw = main(inp)
+        out = torch.jit._awaitable_wait(out_aw)
+
+        script_out_aw = sm(inp)
+        script_out = torch.jit._awaitable_wait(script_out_aw)
+        self.assertTrue(
+            torch.allclose(2 * torch.eye(2) + 2 * torch.ones(2), script_out)
+        )
+        self.assertTrue(torch.allclose(script_out, out))
+
+    def test_jit_trace(self):
+        def gap(x: Tensor):
+            return torch.relu(x) + torch.sin(x)
+
+        def delayed(x: Tensor) -> Tensor:
+            return 2 * (torch.cos(x) + 1)
+
+        def main(x: Tensor, y: Tensor) -> Tensor:
+            aw = torch.jit._awaitable(delayed, x)
+            z = gap(y)  # noqa: F841
+            k = torch.jit._awaitable_wait(aw)
+            return y + k
+
+        inp = torch.randn(2)
+        tm = torch.jit.trace(main, (inp, inp))
+        inp_check = torch.ones(2)
+        self.assertEqual(main(inp_check, inp_check), tm(inp_check, inp_check))
+
+    def test_await_multiout_save(self):
+        def gap(x: Tensor):
+            return torch.relu(x) + torch.sin(x)
+
+        def delayed(x: Tensor) -> Tuple[Tensor, List[Tensor]]:
+            l = [x * i for i in range(5)]
+            return (100 * x, l)
+
+        def main(x: Tensor) -> Tensor:
+            aw = torch.jit._awaitable(delayed, x)
+            z = gap(x)
+            (_, l) = torch.jit._awaitable_wait(aw)
+            return l[3] + z
+
+        inp = torch.eye(2)
+
+        sm = torch.jit.script(main)
+        out = main(inp)
+        script_out = sm(inp)
+        expected = 4.8415 * torch.eye(2)
+        self.assertTrue(torch.allclose(expected, script_out))
+        self.assertTrue(torch.allclose(script_out, out))
+
+        iofile = io.BytesIO()
+        torch.jit.save(sm, iofile)
+        iofile.seek(0)
+        sm = torch.jit.load(iofile)
+        script_out_load = sm(inp)
+        self.assertTrue(torch.allclose(expected, script_out_load))
+
+    def test_await_func_arg(self):
+        def gap(x: Tensor):
+            return torch.relu(x) + torch.sin(x)
+
+        def delayed(x: Tensor) -> Tensor:
+            return -1 * x
+
+        def fn(aw: Await[Tensor]) -> Tensor:
+            return 3 * torch.jit._awaitable_wait(aw)
+
+        def main(x: Tensor) -> Tensor:
+            aw = torch.jit._awaitable(delayed, x)
+            z = gap(x)  # noqa: F841
+            y = fn(aw)
+            return y + x
+
+        inp = torch.eye(2)
+
+        sm = torch.jit.script(main)
+        out = main(inp)
+        script_out = sm(inp)
+        expected = -2 * torch.eye(2)
+        self.assertTrue(torch.allclose(expected, script_out))
+        self.assertTrue(torch.allclose(script_out, out))
+
+        iofile = io.BytesIO()
+        torch.jit.save(sm, iofile)
+        iofile.seek(0)
+        sm = torch.jit.load(iofile)
+        script_out_load = sm(inp)
+        self.assertTrue(torch.allclose(expected, script_out_load))
+
+
+if __name__ == "__main__":
+    raise_on_run_directly("test/test_jit.py")
+
+```
+
+
+
+## High-Level Overview
+
+
+This Python file contains 11 class(es) and 63 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `TestAwait`, `C`, `C`, `C`, `C`, `C`, `C`, `Tree`
+
+**Functions defined**: `test_await_python`, `foo`, `test_await_type_python`, `foo`, `test_script`, `delayed`, `fn`, `test_nowait`, `fn`, `test_nowait_class`, `__init__`, `a`, `fn`, `test_await_class_arg`, `__init__`, `a`, `delayed`, `fn`, `test_awaitable_to_await`, `__init__`
+
+**Key imports**: io, List, Optional, Tuple, torch, Tensor, _Await as Await, raise_on_run_directly, JitTestCase, make_global
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/jit`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `io`
+- `typing`: List, Optional, Tuple
+- `torch`
+- `torch._awaits`: _Await as Await
+- `torch.testing._internal.common_utils`: raise_on_run_directly
+- `torch.testing._internal.jit_utils`: JitTestCase, make_global
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/jit/test_await.py
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/jit`):
+
+- [`test_dataclasses.py_docs.md`](./test_dataclasses.py_docs.md)
+- [`test_recursive_script.py_docs.md`](./test_recursive_script.py_docs.md)
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`test_python_builtins.py_docs.md`](./test_python_builtins.py_docs.md)
+- [`test_functional_blocks.py_docs.md`](./test_functional_blocks.py_docs.md)
+- [`test_hooks_modules.py_docs.md`](./test_hooks_modules.py_docs.md)
+- [`mydecorator.py_docs.md`](./mydecorator.py_docs.md)
+- [`test_union.py_docs.md`](./test_union.py_docs.md)
+- [`test_python_bindings.py_docs.md`](./test_python_bindings.py_docs.md)
+- [`test_parametrization.py_docs.md`](./test_parametrization.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_await.py_docs.md`
+- **Keyword Index**: `test_await.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/jit`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/jit`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/jit/test_await.py_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/jit`):
+
+- [`test_attr.py_kw.md_docs.md`](./test_attr.py_kw.md_docs.md)
+- [`test_parametrization.py_kw.md_docs.md`](./test_parametrization.py_kw.md_docs.md)
+- [`test_hooks.py_kw.md_docs.md`](./test_hooks.py_kw.md_docs.md)
+- [`test_dataclasses.py_docs.md_docs.md`](./test_dataclasses.py_docs.md_docs.md)
+- [`test_aten_pow.py_kw.md_docs.md`](./test_aten_pow.py_kw.md_docs.md)
+- [`test_misc.py_docs.md_docs.md`](./test_misc.py_docs.md_docs.md)
+- [`test_graph_rewrite_passes.py_kw.md_docs.md`](./test_graph_rewrite_passes.py_kw.md_docs.md)
+- [`test_module_containers.py_kw.md_docs.md`](./test_module_containers.py_kw.md_docs.md)
+- [`test_complex.py_kw.md_docs.md`](./test_complex.py_kw.md_docs.md)
+- [`test_types.py_kw.md_docs.md`](./test_types.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_await.py_docs.md_docs.md`
+- **Keyword Index**: `test_await.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

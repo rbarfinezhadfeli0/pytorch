@@ -1,0 +1,314 @@
+# Documentation: `docs/caffe2/serialize/file_adapter.cc_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/caffe2/serialize/file_adapter.cc_docs.md`
+- **Size**: 4,769 bytes (4.66 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `caffe2/serialize/file_adapter.cc`
+
+## File Metadata
+
+- **Path**: `caffe2/serialize/file_adapter.cc`
+- **Size**: 2,364 bytes (2.31 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cc`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#include "caffe2/serialize/file_adapter.h"
+#include <c10/util/Exception.h>
+#include <cerrno>
+#include <cstdio>
+#include <string>
+#include "caffe2/core/common.h"
+
+namespace caffe2 {
+namespace serialize {
+
+FileAdapter::RAIIFile::RAIIFile(const std::string& file_name) {
+  fp_ = fopen(file_name.c_str(), "rb");
+  if (fp_ == nullptr) {
+    auto old_errno = errno;
+#if defined(_WIN32) && (defined(__MINGW32__) || defined(_MSC_VER))
+    char buf[1024];
+    buf[0] = '\0';
+    char* error_msg = buf;
+    strerror_s(buf, sizeof(buf), old_errno);
+#else
+    auto error_msg =
+        std::system_category().default_error_condition(old_errno).message();
+#endif
+    TORCH_CHECK(
+        false,
+        "open file failed because of errno ",
+        old_errno,
+        " on fopen: ",
+        error_msg,
+        ", file path: ",
+        file_name);
+  }
+}
+
+FileAdapter::RAIIFile::~RAIIFile() {
+  if (fp_ != nullptr) {
+    fclose(fp_);
+  }
+}
+
+// FileAdapter directly calls C file API.
+FileAdapter::FileAdapter(const std::string& file_name) : file_(file_name) {
+  const int fseek_ret = fseek(file_.fp_, 0L, SEEK_END);
+  TORCH_CHECK(fseek_ret == 0, "fseek returned ", fseek_ret);
+#if defined(_MSC_VER)
+  const int64_t ftell_ret = _ftelli64(file_.fp_);
+#else
+  const off_t ftell_ret = ftello(file_.fp_);
+#endif
+  TORCH_CHECK(ftell_ret != -1L, "ftell returned ", ftell_ret);
+  size_ = ftell_ret;
+  rewind(file_.fp_);
+}
+
+size_t FileAdapter::size() const {
+  return size_;
+}
+
+size_t FileAdapter::read(uint64_t pos, void* buf, size_t n, const char* what)
+    const {
+  // Ensure that pos doesn't exceed size_.
+  pos = std::min(pos, size_);
+  // If pos doesn't exceed size_, then size_ - pos can never be negative (in
+  // signed math) or since these are unsigned values, a very large value.
+  // Clamp 'n' to the smaller of 'size_ - pos' and 'n' itself. i.e. if the
+  // user requested to read beyond the end of the file, we clamp to just the
+  // end of the file.
+  n = std::min(static_cast<size_t>(size_ - pos), n);
+#if defined(_MSC_VER)
+  const int fseek_ret = _fseeki64(file_.fp_, pos, SEEK_SET);
+#else
+  const int fseek_ret = fseeko(file_.fp_, pos, SEEK_SET);
+#endif
+  TORCH_CHECK(
+      fseek_ret == 0, "fseek returned ", fseek_ret, ", context: ", what);
+  return fread(buf, 1, n, file_.fp_);
+}
+
+FileAdapter::~FileAdapter() = default;
+
+} // namespace serialize
+} // namespace caffe2
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 8 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `serialize`, `caffe2`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `caffe2/serialize`, which is part of the **Caffe2** deep learning framework.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `caffe2/serialize/file_adapter.h`
+- `c10/util/Exception.h`
+- `cerrno`
+- `cstdio`
+- `string`
+- `caffe2/core/common.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`caffe2/serialize`):
+
+- [`in_memory_adapter.h_docs.md`](./in_memory_adapter.h_docs.md)
+- [`file_adapter.h_docs.md`](./file_adapter.h_docs.md)
+- [`inline_container.cc_docs.md`](./inline_container.cc_docs.md)
+- [`read_adapter_interface.h_docs.md`](./read_adapter_interface.h_docs.md)
+- [`istream_adapter.cc_docs.md`](./istream_adapter.cc_docs.md)
+- [`read_adapter_interface.cc_docs.md`](./read_adapter_interface.cc_docs.md)
+- [`CMakeLists.txt_docs.md`](./CMakeLists.txt_docs.md)
+- [`crc.cc_docs.md`](./crc.cc_docs.md)
+- [`inline_container.h_docs.md`](./inline_container.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `file_adapter.cc_docs.md`
+- **Keyword Index**: `file_adapter.cc_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/caffe2/serialize`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/caffe2/serialize`, which is part of the **Caffe2** deep learning framework.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/caffe2/serialize`):
+
+- [`read_adapter_interface.cc_docs.md_docs.md`](./read_adapter_interface.cc_docs.md_docs.md)
+- [`CMakeLists.txt_docs.md_docs.md`](./CMakeLists.txt_docs.md_docs.md)
+- [`inline_container_test.cc_docs.md_docs.md`](./inline_container_test.cc_docs.md_docs.md)
+- [`istream_adapter.cc_docs.md_docs.md`](./istream_adapter.cc_docs.md_docs.md)
+- [`file_adapter.h_docs.md_docs.md`](./file_adapter.h_docs.md_docs.md)
+- [`crc.cc_docs.md_docs.md`](./crc.cc_docs.md_docs.md)
+- [`crc_alt.h_docs.md_docs.md`](./crc_alt.h_docs.md_docs.md)
+- [`file_adapter.cc_kw.md_docs.md`](./file_adapter.cc_kw.md_docs.md)
+- [`in_memory_adapter.h_docs.md_docs.md`](./in_memory_adapter.h_docs.md_docs.md)
+- [`versions.h_docs.md_docs.md`](./versions.h_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `file_adapter.cc_docs.md_docs.md`
+- **Keyword Index**: `file_adapter.cc_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

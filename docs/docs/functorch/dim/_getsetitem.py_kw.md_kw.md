@@ -1,0 +1,83 @@
+# Keyword Index: `docs/functorch/dim/_getsetitem.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/functorch/dim/_getsetitem.py_kw.md](../../../../docs/functorch/dim/_getsetitem.py_kw.md)
+- **Documentation**: [`_getsetitem.py_kw.md_docs.md`](./_getsetitem.py_kw.md_docs.md)
+- **Folder**: `docs/functorch/dim`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Any`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Architecture`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Basic`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Classs`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Complete`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Considerations`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Dependencies`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Design`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Detailed`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Dim`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`DimList`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`DimensionBindError`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Documentation`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Efficiency`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Extracted`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`File`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Folder`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Functions`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Generated`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`High`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`How`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Imports`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`In`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Index`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Information`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Keyword`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Keywords`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Level`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Map`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Metadata`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Original`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Overview`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Performance`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Purpose`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`PyTorch`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Related`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Repository`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Safety`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Section`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Security`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Source`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`System`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Tensor`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`TensorInfo`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Testing`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`The`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`This`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+- **`Usage`**: [_getsetitem.py_kw.md_docs.md](./_getsetitem.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

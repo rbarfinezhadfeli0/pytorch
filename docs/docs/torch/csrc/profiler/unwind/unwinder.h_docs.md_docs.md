@@ -1,0 +1,313 @@
+# Documentation: `docs/torch/csrc/profiler/unwind/unwinder.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/profiler/unwind/unwinder.h_docs.md`
+- **Size**: 4,666 bytes (4.56 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/csrc/profiler/unwind/unwinder.h`
+
+## File Metadata
+
+- **Path**: `torch/csrc/profiler/unwind/unwinder.h`
+- **Size**: 2,293 bytes (2.24 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#pragma once
+#include <torch/csrc/profiler/unwind/action.h>
+#include <torch/csrc/profiler/unwind/unwind_error.h>
+#include <cstdint>
+#include <limits>
+
+namespace torch::unwind {
+
+struct UnwindState {
+  int64_t rip, rbp, rsp;
+};
+
+struct Unwinder {
+  Unwinder(Action rsp, Action rip, Action rbp)
+      : kind_(rip.kind == A_UNDEFINED ? END : STANDARD),
+        reg_(rsp.reg),
+        off_(rsp.data),
+        rip_off_(rip.data),
+        rbp_off_(
+            rbp.kind == A_UNDEFINED ? std::numeric_limits<int64_t>::max()
+                                    : rbp.data),
+        deref_(rsp.kind == A_REG_PLUS_DATA_DEREF) {
+    check(rsp.reg == D_RSP || rsp.reg == D_RBP);
+    check(rip.kind == A_UNDEFINED || rip.kind == A_LOAD_CFA_OFFSET);
+    if (rsp.kind == A_REG_PLUS_DATA) {
+      check(rbp.kind == A_LOAD_CFA_OFFSET || rbp.kind == A_UNDEFINED);
+    } else if (rsp.kind == A_REG_PLUS_DATA_DEREF) {
+      if (rbp.kind == A_REG_PLUS_DATA_DEREF) {
+        check(rbp.reg == rsp.reg);
+        rbp_off_ -= rsp.data;
+      } else {
+        check(rbp.kind == A_UNDEFINED);
+      }
+    } else {
+      check(false);
+    }
+  }
+  void check(bool cond) {
+    if (!cond) {
+      throw UnwindError("Unwinding actions do not follow supported patterns");
+    }
+  }
+  bool terminator() const {
+    return kind_ != STANDARD;
+  }
+  bool isUnknown() const {
+    return kind_ == UNKNOWN;
+  }
+  // unwinder representing some pattern unsupported in
+  // current implementation
+  static Unwinder unknown() {
+    return Unwinder();
+  }
+  UnwindState run(const UnwindState& cur) const {
+    UnwindState r = cur;
+    r.rsp = (reg_ == D_RSP ? cur.rsp : cur.rbp) + off_;
+    r.rbp = rbp_off_ == std::numeric_limits<int64_t>::max()
+        ? cur.rbp
+        // NOLINTNEXTLINE(performance-no-int-to-ptr)
+        : *(int64_t*)(r.rsp + rbp_off_);
+    if (deref_) {
+      // NOLINTNEXTLINE(performance-no-int-to-ptr)
+      r.rsp = *(int64_t*)r.rsp;
+    }
+    // NOLINTNEXTLINE(performance-no-int-to-ptr)
+    r.rip = *(int64_t*)(r.rsp + rip_off_);
+
+    return r;
+  }
+
+ private:
+  Unwinder() : kind_(UNKNOWN), reg_(0), off_(0), rip_off_(0), rbp_off_(0) {}
+  enum Kind { STANDARD, END, UNKNOWN } kind_;
+  uint32_t reg_;
+  int64_t off_;
+  int64_t rip_off_;
+  int64_t rbp_off_;
+  bool deref_{false};
+};
+
+} // namespace torch::unwind
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 8 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`
+
+**Classes/Structs**: `UnwindState`, `Unwinder`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/profiler/unwind`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `torch/csrc/profiler/unwind/action.h`
+- `torch/csrc/profiler/unwind/unwind_error.h`
+- `cstdint`
+- `limits`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/profiler/unwind`):
+
+- [`unwind_fb.cpp_docs.md`](./unwind_fb.cpp_docs.md)
+- [`unwind.cpp_docs.md`](./unwind.cpp_docs.md)
+- [`dwarf_symbolize_enums.h_docs.md`](./dwarf_symbolize_enums.h_docs.md)
+- [`fde.h_docs.md`](./fde.h_docs.md)
+- [`sections.h_docs.md`](./sections.h_docs.md)
+- [`unwind.h_docs.md`](./unwind.h_docs.md)
+- [`debug_info.h_docs.md`](./debug_info.h_docs.md)
+- [`action.h_docs.md`](./action.h_docs.md)
+- [`lexer.h_docs.md`](./lexer.h_docs.md)
+- [`unwind_error.h_docs.md`](./unwind_error.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `unwinder.h_docs.md`
+- **Keyword Index**: `unwinder.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/profiler/unwind`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/profiler/unwind`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/profiler/unwind`):
+
+- [`action.h_kw.md_docs.md`](./action.h_kw.md_docs.md)
+- [`lexer.h_kw.md_docs.md`](./lexer.h_kw.md_docs.md)
+- [`debug_info.h_docs.md_docs.md`](./debug_info.h_docs.md_docs.md)
+- [`unwinder.h_kw.md_docs.md`](./unwinder.h_kw.md_docs.md)
+- [`fde.h_docs.md_docs.md`](./fde.h_docs.md_docs.md)
+- [`mem_file.h_docs.md_docs.md`](./mem_file.h_docs.md_docs.md)
+- [`lexer.h_docs.md_docs.md`](./lexer.h_docs.md_docs.md)
+- [`unwind.cpp_docs.md_docs.md`](./unwind.cpp_docs.md_docs.md)
+- [`unwind_fb.cpp_kw.md_docs.md`](./unwind_fb.cpp_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `unwinder.h_docs.md_docs.md`
+- **Keyword Index**: `unwinder.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

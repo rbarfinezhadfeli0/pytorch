@@ -1,0 +1,82 @@
+# Keyword Index: `docs/aten/src/ATen/native/cpu/SoftmaxKernel.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/native/cpu/SoftmaxKernel.h_kw.md](../../../../../../../docs/aten/src/ATen/native/cpu/SoftmaxKernel.h_kw.md)
+- **Documentation**: [`SoftmaxKernel.h_kw.md_docs.md`](./SoftmaxKernel.h_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/native/cpu`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Analysis`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Architecture`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Basic`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Class`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Complete`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Considerations`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Dependencies`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Design`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Detailed`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`DispatchStub`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Documentation`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Efficiency`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Extracted`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`File`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Folder`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Generated`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`High`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`How`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`In`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Includes`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Index`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Information`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Keyword`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Keywords`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Level`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Map`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Metadata`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Namespaces`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Original`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Overview`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Performance`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Purpose`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`PyTorch`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Related`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Repository`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Safety`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Section`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Security`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`SoftmaxKernel`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Source`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Structs`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`System`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Tensor`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Testing`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`The`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`This`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+- **`Usage`**: [SoftmaxKernel.h_kw.md_docs.md](./SoftmaxKernel.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

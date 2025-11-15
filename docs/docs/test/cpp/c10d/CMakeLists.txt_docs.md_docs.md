@@ -1,0 +1,327 @@
+# Documentation: `docs/test/cpp/c10d/CMakeLists.txt_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/cpp/c10d/CMakeLists.txt_docs.md`
+- **Size**: 6,556 bytes (6.40 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/cpp/c10d/CMakeLists.txt`
+
+## File Metadata
+
+- **Path**: `test/cpp/c10d/CMakeLists.txt`
+- **Size**: 4,133 bytes (4.04 KB)
+- **Type**: Source File (.txt)
+- **Extension**: `.txt`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**.
+
+## Original Source
+
+```
+if(USE_CUDA)
+  add_library(c10d_cuda_test CUDATest.cu)
+  target_include_directories(c10d_cuda_test PRIVATE $<BUILD_INTERFACE:${TORCH_SRC_DIR}/csrc/distributed>)
+  target_link_libraries(c10d_cuda_test torch_cuda)
+  add_dependencies(c10d_cuda_test torch_cuda)
+endif()
+
+function(c10d_add_test test_src)
+  set(prefix ARG)
+  set(noValues)
+  set(singleValues INSTALL_TEST)
+  set(multiValues LINK_LIBRARIES)
+
+  include(CMakeParseArguments)
+  cmake_parse_arguments(${prefix} "${noValues}" "${singleValues}" "${multiValues}" ${ARGN})
+
+  get_filename_component(test_name ${test_src} NAME_WE)
+  add_executable(${test_name} "${test_src}")
+  target_include_directories(${test_name} PRIVATE
+      $<BUILD_INTERFACE:${TORCH_SRC_DIR}/csrc/distributed>
+      $<TARGET_PROPERTY:fmt::fmt-header-only,INTERFACE_INCLUDE_DIRECTORIES>
+  )
+  target_link_libraries(${test_name} PRIVATE
+    fmt::fmt-header-only
+    ${ARG_LINK_LIBRARIES}
+  )
+  add_test(NAME ${test_name} COMMAND $<TARGET_FILE:${test_name}>)
+
+  if(ARG_INSTALL_TEST)
+    set_target_properties(${test_name} PROPERTIES INSTALL_RPATH "${CMAKE_INSTALL_RPATH}:${_rpath_portable_origin}/../lib")
+    install(TARGETS ${test_name} DESTINATION bin)
+  endif()
+endfunction()
+
+c10d_add_test(BackoffTest.cpp LINK_LIBRARIES torch_cpu gtest_main INSTALL_TEST OFF)
+c10d_add_test(FileStoreTest.cpp LINK_LIBRARIES torch_cpu gtest_main INSTALL_TEST ${INSTALL_TEST})
+c10d_add_test(TCPStoreTest.cpp LINK_LIBRARIES torch_cpu gtest_main INSTALL_TEST ${INSTALL_TEST})
+if(NOT WIN32)
+  c10d_add_test(HashStoreTest.cpp LINK_LIBRARIES torch_cpu gtest_main INSTALL_TEST ${INSTALL_TEST})
+endif()
+
+if(USE_CUDA)
+  if(USE_GLOO AND USE_C10D_GLOO)
+    c10d_add_test(ProcessGroupGlooTest.cpp LINK_LIBRARIES torch_cpu c10d_cuda_test gtest_main INSTALL_TEST ${INSTALL_TEST})
+    c10d_add_test(ProcessGroupGlooAsyncTest.cpp LINK_LIBRARIES torch_cpu c10d_cuda_test gtest_main INSTALL_TEST ${INSTALL_TEST})
+  endif()
+  if(USE_NCCL AND USE_C10D_NCCL)
+    # NCCL is a private dependency of libtorch, but the tests include some
+    # private headers of libtorch, which in turn include NCCL. As a hacky
+    # alternative to making NCCL a public dependency of libtorch, we make it
+    # a private dependency of the tests as well.
+    c10d_add_test(
+      ProcessGroupNCCLTest.cpp
+      LINK_LIBRARIES torch_cpu c10d_cuda_test gtest_main __caffe2_nccl INSTALL_TEST ${INSTALL_TEST})
+    c10d_add_test(
+      ProcessGroupNCCLErrorsTest.cpp
+      LINK_LIBRARIES torch_cpu c10d_cuda_test gtest_main __caffe2_nccl INSTALL_TEST ${INSTALL_TEST})
+    if(INSTALL_TEST)
+      install(TARGETS c10d_cuda_test DESTINATION lib)
+    endif()
+  endif()
+  if(USE_UCC AND USE_C10D_UCC)
+    # UCC is a private dependency of libtorch, but the tests include some
+    # private headers of libtorch, which in turn include UCC. As a hacky
+    # alternative to making UCC a public dependency of libtorch, we make it
+    # a private dependency of the tests as well.
+    c10d_add_test(
+      ProcessGroupUCCTest.cpp
+      LINK_LIBRARIES torch_cpu c10d_cuda_test gtest_main __caffe2_ucc INSTALL_TEST ${INSTALL_TEST})
+    if(INSTALL_TEST)
+      install(TARGETS c10d_cuda_test DESTINATION lib)
+    endif()
+  endif()
+else()
+  if(USE_GLOO AND USE_C10D_GLOO)
+    c10d_add_test(ProcessGroupGlooTest.cpp LINK_LIBRARIES torch_cpu gtest_main INSTALL_TEST OFF)
+  endif()
+endif()
+
+if(USE_MPI AND USE_C10D_MPI)
+  add_definitions(-DMPIEXEC=${MPIEXEC})
+  # MPI is a private dependency of libtorch, but the tests include some
+  # private headers of libtorch, which in turn include MPI. As a hacky
+  # alternative to making MPI a public dependency of libtorch, we make it
+  # a private dependency of the tests as well.
+  c10d_add_test(ProcessGroupMPITest.cpp LINK_LIBRARIES torch_cpu MPI::MPI_CXX INSTALL_TEST ${INSTALL_TEST})
+endif()
+
+if(LINUX AND USE_GLOO AND USE_C10D_GLOO)
+  add_executable(example_allreduce example/allreduce.cpp)
+  target_include_directories(example_allreduce PRIVATE $<BUILD_INTERFACE:${TORCH_SRC_DIR}/csrc/distributed>)
+  target_link_libraries(example_allreduce torch_cpu)
+  if(USE_CUDA)
+    target_link_libraries(example_allreduce torch_cuda)
+  endif()
+endif()
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `test/cpp/c10d`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/cpp/c10d`, which is part of **C10** (Caffe2 Core), the core library providing fundamental abstractions.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/cpp/c10d/CMakeLists.txt
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/cpp/c10d`):
+
+- [`TCPStoreTest.cpp_docs.md`](./TCPStoreTest.cpp_docs.md)
+- [`ProcessGroupUCCTest.cpp_docs.md`](./ProcessGroupUCCTest.cpp_docs.md)
+- [`ProcessGroupNCCLErrorsTest.cpp_docs.md`](./ProcessGroupNCCLErrorsTest.cpp_docs.md)
+- [`FileStoreTest.cpp_docs.md`](./FileStoreTest.cpp_docs.md)
+- [`ProcessGroupMPITest.cpp_docs.md`](./ProcessGroupMPITest.cpp_docs.md)
+- [`ProcessGroupNCCLTest.cpp_docs.md`](./ProcessGroupNCCLTest.cpp_docs.md)
+- [`HashStoreTest.cpp_docs.md`](./HashStoreTest.cpp_docs.md)
+- [`TestUtils.hpp_docs.md`](./TestUtils.hpp_docs.md)
+- [`StoreTestCommon.hpp_docs.md`](./StoreTestCommon.hpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `CMakeLists.txt_docs.md`
+- **Keyword Index**: `CMakeLists.txt_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/cpp/c10d`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/cpp/c10d`, which is part of **C10** (Caffe2 Core), the core library providing fundamental abstractions.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/cpp/c10d/CMakeLists.txt_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/cpp/c10d`):
+
+- [`FileStoreTest.cpp_kw.md_docs.md`](./FileStoreTest.cpp_kw.md_docs.md)
+- [`ProcessGroupUCCTest.cpp_docs.md_docs.md`](./ProcessGroupUCCTest.cpp_docs.md_docs.md)
+- [`ProcessGroupNCCLTest.cpp_docs.md_docs.md`](./ProcessGroupNCCLTest.cpp_docs.md_docs.md)
+- [`HashStoreTest.cpp_kw.md_docs.md`](./HashStoreTest.cpp_kw.md_docs.md)
+- [`CUDATest.hpp_docs.md_docs.md`](./CUDATest.hpp_docs.md_docs.md)
+- [`ProcessGroupNCCLErrorsTest.cpp_kw.md_docs.md`](./ProcessGroupNCCLErrorsTest.cpp_kw.md_docs.md)
+- [`HashStoreTest.cpp_docs.md_docs.md`](./HashStoreTest.cpp_docs.md_docs.md)
+- [`CUDATest.hpp_kw.md_docs.md`](./CUDATest.hpp_kw.md_docs.md)
+- [`StoreTestCommon.hpp_docs.md_docs.md`](./StoreTestCommon.hpp_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `CMakeLists.txt_docs.md_docs.md`
+- **Keyword Index**: `CMakeLists.txt_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

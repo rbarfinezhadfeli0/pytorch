@@ -1,0 +1,81 @@
+# Keyword Index: `docs/torch/csrc/profiler/kineto_shim.cpp_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/csrc/profiler/kineto_shim.cpp_kw.md](../../../../../docs/torch/csrc/profiler/kineto_shim.cpp_kw.md)
+- **Documentation**: [`kineto_shim.cpp_kw.md_docs.md`](./kineto_shim.cpp_kw.md_docs.md)
+- **Folder**: `docs/torch/csrc/profiler`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Architecture`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Basic`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Class`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Complete`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Considerations`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Dependencies`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Design`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Detailed`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Documentation`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Efficiency`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Exception`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`ExperimentalConfigWrapper`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Extracted`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`File`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Folder`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Functions`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Generated`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`High`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`How`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`In`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Includes`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Index`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Information`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Keyword`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Keywords`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Level`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Map`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Metadata`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Namespaces`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Original`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Overview`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Performance`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Purpose`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`PyTorch`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Related`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Repository`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Safety`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Section`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Security`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Source`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Structs`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`System`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Testing`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`The`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`This`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+- **`Usage`**: [kineto_shim.cpp_kw.md_docs.md](./kineto_shim.cpp_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

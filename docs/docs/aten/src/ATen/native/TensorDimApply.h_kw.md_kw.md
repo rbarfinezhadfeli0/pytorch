@@ -1,0 +1,80 @@
+# Keyword Index: `docs/aten/src/ATen/native/TensorDimApply.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/native/TensorDimApply.h_kw.md](../../../../../../docs/aten/src/ATen/native/TensorDimApply.h_kw.md)
+- **Documentation**: [`TensorDimApply.h_kw.md_docs.md`](./TensorDimApply.h_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/native`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Analysis`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Architecture`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Basic`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Complete`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Considerations`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Dependencies`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Design`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Detailed`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Documentation`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Efficiency`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Extracted`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`File`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Folder`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Functions`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Generated`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`High`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`How`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`In`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Includes`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Index`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Information`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Keyword`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Keywords`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Level`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Map`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Metadata`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Namespaces`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Original`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Overview`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Performance`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Purpose`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`PyTorch`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Related`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Repository`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Safety`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Section`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Security`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Source`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`System`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Tensor`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`TensorDimApply`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Testing`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`The`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`This`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+- **`Usage`**: [TensorDimApply.h_kw.md_docs.md](./TensorDimApply.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

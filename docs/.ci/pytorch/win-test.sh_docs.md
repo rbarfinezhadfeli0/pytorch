@@ -1,0 +1,190 @@
+# Documentation: `.ci/pytorch/win-test.sh`
+
+## File Metadata
+
+- **Path**: `.ci/pytorch/win-test.sh`
+- **Size**: 2,449 bytes (2.39 KB)
+- **Type**: Shell Script
+- **Extension**: `.sh`
+
+## File Purpose
+
+This appears to be a **test file**.
+
+## Original Source
+
+```bash
+#!/bin/bash
+set -ex -o pipefail
+
+SCRIPT_PARENT_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+# shellcheck source=./common.sh
+source "$SCRIPT_PARENT_DIR/common.sh"
+
+export TMP_DIR="${PWD}/build/win_tmp"
+TMP_DIR_WIN=$(cygpath -w "${TMP_DIR}")
+export TMP_DIR_WIN
+export PROJECT_DIR="${PWD}"
+PROJECT_DIR_WIN=$(cygpath -w "${PROJECT_DIR}")
+export PROJECT_DIR_WIN
+export TEST_DIR="${PWD}/test"
+TEST_DIR_WIN=$(cygpath -w "${TEST_DIR}")
+export TEST_DIR_WIN
+export PYTORCH_FINAL_PACKAGE_DIR="${PYTORCH_FINAL_PACKAGE_DIR:-/c/w/build-results}"
+PYTORCH_FINAL_PACKAGE_DIR_WIN=$(cygpath -w "${PYTORCH_FINAL_PACKAGE_DIR}")
+export PYTORCH_FINAL_PACKAGE_DIR_WIN
+
+# enable debug asserts in serialization
+export TORCH_SERIALIZATION_DEBUG=1
+
+mkdir -p "$TMP_DIR"/build/torch
+
+export SCRIPT_HELPERS_DIR=$SCRIPT_PARENT_DIR/win-test-helpers
+
+if [[ "$TEST_CONFIG" = "force_on_cpu" ]]; then
+  # run the full test suite for force_on_cpu test
+  export USE_CUDA=0
+fi
+
+if [[ "$BUILD_ENVIRONMENT" == *cuda* ]]; then
+  # Used so that only cuda/rocm specific versions of tests are generated
+  # mainly used so that we're not spending extra cycles testing cpu
+  # devices on expensive gpu machines
+  export PYTORCH_TESTING_DEVICE_ONLY_FOR="cuda"
+fi
+
+# TODO: Move this to .ci/docker/requirements-ci.txt
+python -m pip install "psutil==5.9.1" nvidia-ml-py "pytest-shard==0.1.2"
+
+run_tests() {
+    # Run nvidia-smi if available
+    for path in '/c/Program Files/NVIDIA Corporation/NVSMI/nvidia-smi.exe' /c/Windows/System32/nvidia-smi.exe; do
+        if [[ -x "$path" ]]; then
+            "$path" || echo "true";
+            break
+        fi
+    done
+
+    if [[ $NUM_TEST_SHARDS -eq 1 ]]; then
+        "$SCRIPT_HELPERS_DIR"/test_python_shard.bat
+        "$SCRIPT_HELPERS_DIR"/test_custom_script_ops.bat
+        "$SCRIPT_HELPERS_DIR"/test_custom_backend.bat
+        "$SCRIPT_HELPERS_DIR"/test_libtorch.bat
+    else
+        "$SCRIPT_HELPERS_DIR"/test_python_shard.bat
+        if [[ "${SHARD_NUMBER}" == 1 && $NUM_TEST_SHARDS -gt 1 ]]; then
+            "$SCRIPT_HELPERS_DIR"/test_libtorch.bat
+            if [[ "${USE_CUDA}" == "1" ]]; then
+              "$SCRIPT_HELPERS_DIR"/test_python_jit_legacy.bat
+            fi
+        elif [[ "${SHARD_NUMBER}" == 2 && $NUM_TEST_SHARDS -gt 1 ]]; then
+            "$SCRIPT_HELPERS_DIR"/test_custom_backend.bat
+            "$SCRIPT_HELPERS_DIR"/test_custom_script_ops.bat
+        fi
+    fi
+}
+
+run_tests
+assert_git_not_dirty
+echo "TEST PASSED"
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `.ci/pytorch`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `.ci/pytorch`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python .ci/pytorch/win-test.sh
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`.ci/pytorch`):
+
+- [`codegen-test.sh_docs.md`](./codegen-test.sh_docs.md)
+- [`common_utils.sh_docs.md`](./common_utils.sh_docs.md)
+- [`python_doc_push_script.sh_docs.md`](./python_doc_push_script.sh_docs.md)
+- [`build.sh_docs.md`](./build.sh_docs.md)
+- [`install_cache_xla.sh_docs.md`](./install_cache_xla.sh_docs.md)
+- [`common-build.sh_docs.md`](./common-build.sh_docs.md)
+- [`docs-test.sh_docs.md`](./docs-test.sh_docs.md)
+- [`multigpu-test.sh_docs.md`](./multigpu-test.sh_docs.md)
+- [`docker-build-test.sh_docs.md`](./docker-build-test.sh_docs.md)
+- [`macos-build-test.sh_docs.md`](./macos-build-test.sh_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `win-test.sh_docs.md`
+- **Keyword Index**: `win-test.sh_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

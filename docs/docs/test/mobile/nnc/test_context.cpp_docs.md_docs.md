@@ -1,0 +1,388 @@
+# Documentation: `docs/test/mobile/nnc/test_context.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/mobile/nnc/test_context.cpp_docs.md`
+- **Size**: 6,778 bytes (6.62 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/mobile/nnc/test_context.cpp`
+
+## File Metadata
+
+- **Path**: `test/mobile/nnc/test_context.cpp`
+- **Size**: 4,508 bytes (4.40 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**.
+
+## Original Source
+
+```cpp
+#include <gtest/gtest.h>
+#include <torch/csrc/jit/mobile/nnc/context.h>
+#include <torch/csrc/jit/mobile/nnc/registry.h>
+#include <ATen/Functions.h>
+
+namespace torch {
+namespace jit {
+namespace mobile {
+namespace nnc {
+
+extern "C" {
+
+// out = a * n (doing calculation in the `tmp` buffer)
+int slow_mul_kernel(void** args) {
+  const int size = 128;
+  at::Tensor a = at::from_blob(args[0], {size}, at::kFloat);
+  at::Tensor out = at::from_blob(args[1], {size}, at::kFloat);
+  at::Tensor n = at::from_blob(args[2], {1}, at::kInt);
+  at::Tensor tmp = at::from_blob(args[3], {size}, at::kFloat);
+
+  tmp.zero_();
+  for (int i = n.item().toInt(); i > 0; i--) {
+    tmp.add_(a);
+  }
+  out.copy_(tmp);
+  return 0;
+}
+
+int dummy_kernel(void** /* args */) {
+  return 0;
+}
+
+} // extern "C"
+
+REGISTER_NNC_KERNEL("slow_mul", slow_mul_kernel)
+REGISTER_NNC_KERNEL("dummy", dummy_kernel)
+
+InputSpec create_test_input_spec(const std::vector<int64_t>& sizes) {
+  InputSpec input_spec;
+  input_spec.sizes_ = sizes;
+  input_spec.dtype_ = at::kFloat;
+  return input_spec;
+}
+
+OutputSpec create_test_output_spec(const std::vector<int64_t>& sizes) {
+  OutputSpec output_spec;
+  output_spec.sizes_ = sizes;
+  output_spec.dtype_ = at::kFloat;
+  return output_spec;
+}
+
+MemoryPlan create_test_memory_plan(const std::vector<int64_t>& buffer_sizes) {
+  MemoryPlan memory_plan;
+  memory_plan.buffer_sizes_ = buffer_sizes;
+  return memory_plan;
+}
+
+TEST(Function, ExecuteSlowMul) {
+  const int a = 999;
+  const int n = 100;
+  const int size = 128;
+  Function f;
+
+  f.set_nnc_kernel_id("slow_mul");
+  f.set_input_specs({create_test_input_spec({size})});
+  f.set_output_specs({create_test_output_spec({size})});
+  f.set_parameters(c10::impl::toList(c10::List<at::Tensor>({
+      at::ones({1}, at::kInt).mul(n)
+  })));
+  f.set_memory_plan(create_test_memory_plan({sizeof(float) * size}));
+
+  c10::List<at::Tensor> input({
+      at::ones({size}, at::kFloat).mul(a)
+  });
+  auto outputs = f.run(c10::impl::toList(input));
+  auto output = ((const c10::IValue&) outputs[0]).toTensor();
+  auto expected_output = at::ones({size}, at::kFloat).mul(a * n);
+  EXPECT_TRUE(output.equal(expected_output));
+}
+
+TEST(Function, Serialization) {
+  Function f;
+  f.set_name("test_function");
+  f.set_nnc_kernel_id("test_kernel");
+  f.set_input_specs({create_test_input_spec({1, 3, 224, 224})});
+  f.set_output_specs({create_test_output_spec({1000})});
+
+  f.set_parameters(c10::impl::toList(c10::List<at::Tensor>({
+      at::ones({1, 16, 3, 3}, at::kFloat),
+      at::ones({16, 32, 1, 1}, at::kFloat),
+      at::ones({32, 1, 3, 3}, at::kFloat)
+  })));
+  f.set_memory_plan(create_test_memory_plan({
+      sizeof(float) * 1024,
+      sizeof(float) * 2048,
+  }));
+
+  auto serialized = f.serialize();
+  Function f2(serialized);
+  EXPECT_EQ(f2.name(), "test_function");
+  EXPECT_EQ(f2.nnc_kernel_id(), "test_kernel");
+  EXPECT_EQ(f2.input_specs().size(), 1);
+  EXPECT_EQ(f2.input_specs()[0].sizes_, std::vector<int64_t>({1, 3, 224, 224}));
+  EXPECT_EQ(f2.input_specs()[0].dtype_, at::kFloat);
+
+  EXPECT_EQ(f2.output_specs().size(), 1);
+  EXPECT_EQ(f2.output_specs()[0].sizes_, std::vector<int64_t>({1000}));
+  EXPECT_EQ(f2.output_specs()[0].dtype_, at::kFloat);
+
+  EXPECT_EQ(f2.parameters().size(), 3);
+  EXPECT_EQ(f2.parameters()[0].toTensor().sizes(), at::IntArrayRef({1, 16, 3, 3}));
+  EXPECT_EQ(f2.parameters()[1].toTensor().sizes(), at::IntArrayRef({16, 32, 1, 1}));
+  EXPECT_EQ(f2.parameters()[2].toTensor().sizes(), at::IntArrayRef({32, 1, 3, 3}));
+
+  EXPECT_EQ(f2.memory_plan().buffer_sizes_.size(), 2);
+  EXPECT_EQ(f2.memory_plan().buffer_sizes_[0], sizeof(float) * 1024);
+  EXPECT_EQ(f2.memory_plan().buffer_sizes_[1], sizeof(float) * 2048);
+}
+
+TEST(Function, ValidInput) {
+  const int size = 128;
+  Function f;
+  f.set_nnc_kernel_id("dummy");
+  f.set_input_specs({create_test_input_spec({size})});
+
+  c10::List<at::Tensor> input({
+      at::ones({size}, at::kFloat)
+  });
+  // NOLINTNEXTLINE(cppcoreguidelines-avoid-goto,hicpp-avoid-goto)
+  EXPECT_NO_THROW(
+      f.run(c10::impl::toList(input)));
+}
+
+TEST(Function, InvalidInput) {
+  const int size = 128;
+  Function f;
+  f.set_nnc_kernel_id("dummy");
+  f.set_input_specs({create_test_input_spec({size})});
+
+  c10::List<at::Tensor> input({
+      at::ones({size * 2}, at::kFloat)
+  });
+  // NOLINTNEXTLINE(cppcoreguidelines-avoid-goto,hicpp-avoid-goto)
+  EXPECT_THROW(
+      f.run(c10::impl::toList(input)),
+      c10::Error);
+}
+
+} // namespace nnc
+} // namespace mobile
+} // namespace jit
+} // namespace torch
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 6 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `nnc`, `jit`, `mobile`, `torch`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/mobile/nnc`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `gtest/gtest.h`
+- `torch/csrc/jit/mobile/nnc/context.h`
+- `torch/csrc/jit/mobile/nnc/registry.h`
+- `ATen/Functions.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/mobile/nnc/test_context.cpp
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/mobile/nnc`):
+
+- [`test_nnc_backend.cpp_docs.md`](./test_nnc_backend.cpp_docs.md)
+- [`CMakeLists.txt_docs.md`](./CMakeLists.txt_docs.md)
+- [`test_registry.cpp_docs.md`](./test_registry.cpp_docs.md)
+- [`test_aot_compile.sh_docs.md`](./test_aot_compile.sh_docs.md)
+- [`aot_test_model.py_docs.md`](./aot_test_model.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_context.cpp_docs.md`
+- **Keyword Index**: `test_context.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/mobile/nnc`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/mobile/nnc`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/mobile/nnc/test_context.cpp_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/mobile/nnc`):
+
+- [`test_nnc_backend.cpp_docs.md_docs.md`](./test_nnc_backend.cpp_docs.md_docs.md)
+- [`test_registry.cpp_docs.md_docs.md`](./test_registry.cpp_docs.md_docs.md)
+- [`CMakeLists.txt_docs.md_docs.md`](./CMakeLists.txt_docs.md_docs.md)
+- [`test_aot_compile.sh_docs.md_docs.md`](./test_aot_compile.sh_docs.md_docs.md)
+- [`test_registry.cpp_kw.md_docs.md`](./test_registry.cpp_kw.md_docs.md)
+- [`aot_test_model.py_docs.md_docs.md`](./aot_test_model.py_docs.md_docs.md)
+- [`test_context.cpp_kw.md_docs.md`](./test_context.cpp_kw.md_docs.md)
+- [`CMakeLists.txt_kw.md_docs.md`](./CMakeLists.txt_kw.md_docs.md)
+- [`test_nnc_backend.cpp_kw.md_docs.md`](./test_nnc_backend.cpp_kw.md_docs.md)
+- [`aot_test_model.py_kw.md_docs.md`](./aot_test_model.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_context.cpp_docs.md_docs.md`
+- **Keyword Index**: `test_context.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

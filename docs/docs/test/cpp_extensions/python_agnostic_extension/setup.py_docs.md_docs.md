@@ -1,0 +1,305 @@
+# Documentation: `docs/test/cpp_extensions/python_agnostic_extension/setup.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/cpp_extensions/python_agnostic_extension/setup.py_docs.md`
+- **Size**: 4,432 bytes (4.33 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This file handles **configuration or setup**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/cpp_extensions/python_agnostic_extension/setup.py`
+
+## File Metadata
+
+- **Path**: `test/cpp_extensions/python_agnostic_extension/setup.py`
+- **Size**: 2,107 bytes (2.06 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file handles **configuration or setup**.
+
+## Original Source
+
+```python
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+import distutils.command.clean
+import shutil
+from pathlib import Path
+
+from setuptools import setup
+
+import torch
+from torch.utils.cpp_extension import BuildExtension, CUDAExtension, SyclExtension
+
+
+ROOT_DIR = Path(__file__).parent
+CSRC_DIR = ROOT_DIR / "python_agnostic" / "csrc"
+
+
+class clean(distutils.command.clean.clean):
+    def run(self):
+        # Run default behavior first
+        distutils.command.clean.clean.run(self)
+
+        # Remove extension
+        for path in (ROOT_DIR / "python_agnostic").glob("**/*.so"):
+            path.unlink()
+        # Remove build and dist and egg-info directories
+        dirs = [
+            ROOT_DIR / "build",
+            ROOT_DIR / "dist",
+            ROOT_DIR / "python_agnostic.egg-info",
+        ]
+        for path in dirs:
+            if path.exists():
+                shutil.rmtree(str(path), ignore_errors=True)
+
+
+def get_extension():
+    extra_compile_args = {
+        "cxx": ["-fdiagnostics-color=always"],
+    }
+
+    if torch.cuda.is_available():
+        sources = list(CSRC_DIR.glob("**/*.cu"))
+        extension = CUDAExtension
+    elif torch.xpu.is_available():
+        sources = list(CSRC_DIR.glob("**/*.sycl"))
+        extension = SyclExtension
+    else:
+        raise AssertionError("Expected CUDA or XPU device backend, found none")
+
+    return [
+        extension(
+            "python_agnostic._C",
+            sources=sorted(str(s) for s in sources),
+            py_limited_api=True,
+            extra_compile_args=extra_compile_args,
+            extra_link_args=[],
+        )
+    ]
+
+
+setup(
+    name="python_agnostic",
+    version="0.0",
+    author="PyTorch Core Team",
+    description="Example of python agnostic extension",
+    ext_modules=get_extension(),
+    cmdclass={
+        "build_ext": BuildExtension.with_options(no_python_abi_suffix=True),
+        "clean": clean,
+    },
+    options={"bdist_wheel": {"py_limited_api": "cp39"}},
+)
+
+```
+
+
+
+## High-Level Overview
+
+
+This Python file contains 1 class(es) and 2 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `clean`
+
+**Functions defined**: `run`, `get_extension`
+
+**Key imports**: distutils.command.clean, shutil, Path, setup, torch, BuildExtension, CUDAExtension, SyclExtension
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/cpp_extensions/python_agnostic_extension`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `distutils.command.clean`
+- `shutil`
+- `pathlib`: Path
+- `setuptools`: setup
+- `torch`
+- `torch.utils.cpp_extension`: BuildExtension, CUDAExtension, SyclExtension
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/cpp_extensions/python_agnostic_extension/setup.py
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/cpp_extensions/python_agnostic_extension`):
+
+
+
+## Cross-References
+
+- **File Documentation**: `setup.py_docs.md`
+- **Keyword Index**: `setup.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/cpp_extensions/python_agnostic_extension`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/cpp_extensions/python_agnostic_extension`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/cpp_extensions/python_agnostic_extension/setup.py_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/cpp_extensions/python_agnostic_extension`):
+
+- [`setup.py_kw.md_docs.md`](./setup.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `setup.py_docs.md_docs.md`
+- **Keyword Index**: `setup.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

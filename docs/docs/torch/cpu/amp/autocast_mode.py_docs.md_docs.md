@@ -1,0 +1,300 @@
+# Documentation: `docs/torch/cpu/amp/autocast_mode.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/cpu/amp/autocast_mode.py_docs.md`
+- **Size**: 4,525 bytes (4.42 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/cpu/amp/autocast_mode.py`
+
+## File Metadata
+
+- **Path**: `torch/cpu/amp/autocast_mode.py`
+- **Size**: 2,180 bytes (2.13 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This is a python source code that is part of the PyTorch project.
+
+## Original Source
+
+```python
+# mypy: allow-untyped-defs
+import sys
+from typing import Any
+from typing_extensions import deprecated
+
+import torch
+
+
+__all__ = ["autocast"]
+
+
+@deprecated(
+    "`torch.cpu.amp.autocast(args...)` is deprecated. "
+    "Please use `torch.amp.autocast('cpu', args...)` instead.",
+    category=FutureWarning,
+)
+class autocast(torch.amp.autocast_mode.autocast):
+    r"""
+    See :class:`torch.autocast`.
+    ``torch.cpu.amp.autocast(args...)`` is deprecated. Please use ``torch.amp.autocast("cpu", args...)`` instead.
+    """
+
+    # TODO: remove this conditional once we stop supporting Python < 3.13
+    # Prior to Python 3.13, inspect.signature could not retrieve the correct
+    # signature information for classes decorated with @deprecated (unless
+    # the __new__ static method was explicitly defined);
+    #
+    # However, this issue has been fixed in Python 3.13 and later versions.
+    if sys.version_info < (3, 13):
+
+        def __new__(
+            cls,
+            enabled: bool = True,
+            dtype: torch.dtype = torch.bfloat16,
+            cache_enabled: bool = True,
+        ):
+            return super().__new__(cls)
+
+        def __init_subclass__(cls):
+            pass
+
+    def __init__(
+        self,
+        enabled: bool = True,
+        dtype: torch.dtype = torch.bfloat16,
+        cache_enabled: bool = True,
+    ):
+        if torch._jit_internal.is_scripting():
+            self._enabled = enabled
+            self.device = "cpu"
+            self.fast_dtype = dtype
+            return
+        super().__init__(
+            "cpu", enabled=enabled, dtype=dtype, cache_enabled=cache_enabled
+        )
+
+    def __enter__(self):
+        if torch._jit_internal.is_scripting():
+            return self
+        return super().__enter__()
+
+    # TODO: discuss a unified TorchScript-friendly API for autocast
+    def __exit__(self, exc_type: Any, exc_val: Any, exc_tb: Any):  # type: ignore[override]
+        if torch._jit_internal.is_scripting():
+            return
+        return super().__exit__(exc_type, exc_val, exc_tb)
+
+    def __call__(self, func):
+        if torch._jit_internal.is_scripting():
+            return func
+        return super().__call__(func)
+
+```
+
+
+
+## High-Level Overview
+
+r"""    See :class:`torch.autocast`.    ``torch.cpu.amp.autocast(args...)`` is deprecated. Please use ``torch.amp.autocast("cpu", args...)`` instead.
+
+This Python file contains 1 class(es) and 6 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `autocast`
+
+**Functions defined**: `__new__`, `__init_subclass__`, `__init__`, `__enter__`, `__exit__`, `__call__`
+
+**Key imports**: sys, Any, deprecated, torch
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/cpu/amp`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `sys`
+- `typing`: Any
+- `typing_extensions`: deprecated
+- `torch`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+- **Context Manager**: Implements context manager protocol
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Implements or uses **caching** mechanisms.
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/cpu/amp`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`grad_scaler.py_docs.md`](./grad_scaler.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `autocast_mode.py_docs.md`
+- **Keyword Index**: `autocast_mode.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/cpu/amp`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/cpu/amp`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+- **Context Manager**: Implements context manager protocol
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Implements or uses **caching** mechanisms.
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/cpu/amp`):
+
+- [`grad_scaler.py_docs.md_docs.md`](./grad_scaler.py_docs.md_docs.md)
+- [`autocast_mode.py_kw.md_docs.md`](./autocast_mode.py_kw.md_docs.md)
+- [`__init__.py_docs.md_docs.md`](./__init__.py_docs.md_docs.md)
+- [`__init__.py_kw.md_docs.md`](./__init__.py_kw.md_docs.md)
+- [`grad_scaler.py_kw.md_docs.md`](./grad_scaler.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `autocast_mode.py_docs.md_docs.md`
+- **Keyword Index**: `autocast_mode.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

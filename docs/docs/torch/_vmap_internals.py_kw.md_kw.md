@@ -1,0 +1,79 @@
+# Keyword Index: `docs/torch/_vmap_internals.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/_vmap_internals.py_kw.md](../../../docs/torch/_vmap_internals.py_kw.md)
+- **Documentation**: [`_vmap_internals.py_kw.md_docs.md`](./_vmap_internals.py_kw.md_docs.md)
+- **Folder**: `docs/torch`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Any`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Architecture`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Basic`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Callable`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Complete`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Considerations`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Dependencies`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Design`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Detailed`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Documentation`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Efficiency`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Extracted`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`File`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Folder`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Functions`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Generated`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`High`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`How`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Imports`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`In`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Index`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Information`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Keyword`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Keywords`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Level`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Map`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Metadata`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Original`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Overview`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Performance`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Purpose`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`PyTorch`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Related`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Repository`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Safety`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Section`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Security`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Source`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`System`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Tensor`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Testing`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`The`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`This`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+- **`Usage`**: [_vmap_internals.py_kw.md_docs.md](./_vmap_internals.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

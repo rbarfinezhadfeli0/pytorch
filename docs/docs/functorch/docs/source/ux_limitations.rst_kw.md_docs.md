@@ -1,0 +1,194 @@
+# Documentation: `docs/functorch/docs/source/ux_limitations.rst_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/functorch/docs/source/ux_limitations.rst_kw.md`
+- **Size**: 4,674 bytes (4.56 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `functorch/docs/source/ux_limitations.rst`
+
+## File Information
+
+- **Original File**: [functorch/docs/source/ux_limitations.rst](../../../../functorch/docs/source/ux_limitations.rst)
+- **Documentation**: [`ux_limitations.rst_docs.md`](./ux_limitations.rst_docs.md)
+- **Folder**: `functorch/docs/source`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`AD`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`API`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`APIs`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`All`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`Arbitrary`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`BatchedTensor`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`BatchedTensors`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`Data`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`Does`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`Don`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`Dynamic`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`Finally`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`For`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`General`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`GitHub`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`Here`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`However`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`If`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`In`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`Instead`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`It`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`JAX`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`Like`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`Limitations`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`Multiple`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`Mutation`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`None`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`On`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`Operations`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`Our`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`PRNG`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`Please`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`PyTorch`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`Python`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`Raises`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`Randomness`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`So`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`Specifically`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`Tensor`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`The`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`There`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`This`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`To`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`True`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`UX`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`Under`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`Unsupported`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`We`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+- **`You`**: [ux_limitations.rst_docs.md](./ux_limitations.rst_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/functorch/docs/source`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/functorch/docs/source`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/functorch/docs/source`):
+
+- [`index.rst_docs.md_docs.md`](./index.rst_docs.md_docs.md)
+- [`conf.py_docs.md_docs.md`](./conf.py_docs.md_docs.md)
+- [`conf.py_kw.md_docs.md`](./conf.py_kw.md_docs.md)
+- [`experimental.rst_kw.md_docs.md`](./experimental.rst_kw.md_docs.md)
+- [`install.rst_docs.md_docs.md`](./install.rst_docs.md_docs.md)
+- [`experimental.rst_docs.md_docs.md`](./experimental.rst_docs.md_docs.md)
+- [`install.rst_kw.md_docs.md`](./install.rst_kw.md_docs.md)
+- [`ux_limitations.rst_docs.md_docs.md`](./ux_limitations.rst_docs.md_docs.md)
+- [`index.rst_kw.md_docs.md`](./index.rst_kw.md_docs.md)
+- [`batch_norm.rst_docs.md_docs.md`](./batch_norm.rst_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `ux_limitations.rst_kw.md_docs.md`
+- **Keyword Index**: `ux_limitations.rst_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,411 @@
+# Documentation: `docs/test/distributed/checkpoint/_experimental/test_builder.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/distributed/checkpoint/_experimental/test_builder.py_docs.md`
+- **Size**: 9,808 bytes (9.58 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/distributed/checkpoint/_experimental/test_builder.py`
+
+## File Metadata
+
+- **Path**: `test/distributed/checkpoint/_experimental/test_builder.py`
+- **Size**: 6,507 bytes (6.35 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**. Can be **executed as a standalone script**.
+
+## Original Source
+
+```python
+# Owner(s): ["oncall: distributed checkpointing"]
+
+import os
+import shutil
+import tempfile
+
+import torch
+from torch.distributed.checkpoint._experimental.barriers import BarrierConfig
+from torch.distributed.checkpoint._experimental.builder import (
+    make_async_checkpointer,
+    make_sync_checkpointer,
+)
+from torch.distributed.checkpoint._experimental.checkpointer import (
+    AsyncCheckpointer,
+    SyncCheckpointer,
+)
+from torch.distributed.checkpoint._experimental.config import CheckpointerConfig
+from torch.distributed.checkpoint._experimental.staging import CheckpointStagerConfig
+from torch.distributed.checkpoint._experimental.types import RankInfo
+from torch.testing._internal.common_utils import run_tests, TestCase
+
+
+class TestMakeCheckpointer(TestCase):
+    def setUp(self) -> None:
+        super().setUp()
+        # Create a temporary directory for checkpoints
+        self.temp_dir = tempfile.mkdtemp()
+
+        # Create real objects for testing
+        self.rank_info = RankInfo(
+            global_world_size=1,
+            global_rank=0,
+        )
+
+        # Create a test state dictionary
+        self.state_dict = {
+            "model": torch.nn.Linear(10, 5).state_dict(),
+            "optimizer": {"param_groups": [{"lr": 0.01}]},
+            "epoch": 5,
+            "step": 1000,
+        }
+
+    def tearDown(self) -> None:
+        # Clean up the temporary directory
+        shutil.rmtree(self.temp_dir)
+
+    def test_make_sync_checkpointer(self) -> None:
+        """Test creating a synchronous checkpointer using make_sync_checkpointer."""
+
+        # Create sync checkpointer using factory function with no barrier
+        config = CheckpointerConfig(barrier_config=BarrierConfig(barrier_type=None))
+        checkpointer = make_sync_checkpointer(config=config, rank_info=self.rank_info)
+
+        # Verify it's a SyncCheckpointer instance
+        self.assertIsInstance(checkpointer, SyncCheckpointer)
+
+        # Test that it works for sync operations
+        checkpoint_path = os.path.join(self.temp_dir, "checkpoint_factory_sync")
+        result = checkpointer.save(checkpoint_path, self.state_dict)
+        self.assertIsNone(result)  # Sync mode returns None
+
+        # Verify checkpoint was created
+        checkpoint_file = os.path.join(
+            checkpoint_path, f"checkpoint_{self.rank_info.global_rank}.pt"
+        )
+        self.assertTrue(os.path.exists(checkpoint_file))
+
+        # Test loading
+        loaded_state_dict = checkpointer.load(checkpoint_path)
+        self.assertEqual(loaded_state_dict["epoch"], 5)
+
+    def test_make_sync_checkpointer_with_config_first(self) -> None:
+        """Test creating a synchronous checkpointer with config as first parameter."""
+        # Create sync checkpointer with config as first parameter
+        config = CheckpointerConfig(barrier_config=BarrierConfig(barrier_type=None))
+        checkpointer = make_sync_checkpointer(config=config, rank_info=self.rank_info)
+
+        # Verify it's a SyncCheckpointer instance
+        self.assertIsInstance(checkpointer, SyncCheckpointer)
+
+        # Test that it works for sync operations
+        checkpoint_path = os.path.join(
+            self.temp_dir, "checkpoint_factory_sync_config_first"
+        )
+        result = checkpointer.save(checkpoint_path, self.state_dict)
+        self.assertIsNone(result)  # Sync mode returns None
+
+        # Verify checkpoint was created
+        checkpoint_file = os.path.join(
+            checkpoint_path, f"checkpoint_{self.rank_info.global_rank}.pt"
+        )
+        self.assertTrue(os.path.exists(checkpoint_file))
+
+    def test_make_sync_checkpointer_with_custom_config(self) -> None:
+        """Test creating a synchronous checkpointer with a custom config."""
+        # Create a custom config with no barrier
+        config = CheckpointerConfig(barrier_config=BarrierConfig(barrier_type=None))
+
+        # Create sync checkpointer with the custom config
+        checkpointer = make_sync_checkpointer(rank_info=self.rank_info, config=config)
+
+        # Verify it's a SyncCheckpointer instance
+        self.assertIsInstance(checkpointer, SyncCheckpointer)
+
+        # Test that it works for sync operations
+        checkpoint_path = os.path.join(
+            self.temp_dir, "checkpoint_factory_sync_custom_config"
+        )
+        result = checkpointer.save(checkpoint_path, self.state_dict)
+        self.assertIsNone(result)  # Sync mode returns None
+
+        # Verify checkpoint was created
+        checkpoint_file = os.path.join(
+            checkpoint_path, f"checkpoint_{self.rank_info.global_rank}.pt"
+        )
+        self.assertTrue(os.path.exists(checkpoint_file))
+
+        # Test loading
+        loaded_state_dict = checkpointer.load(checkpoint_path)
+        self.assertEqual(loaded_state_dict["epoch"], 5)
+
+    def test_make_async_checkpointer(self) -> None:
+        """Test creating an asynchronous checkpointer using make_async_checkpointer."""
+        # Create async checkpointer using factory function with default parameters
+        config: CheckpointerConfig = CheckpointerConfig()
+        config.staging_config = CheckpointStagerConfig(
+            use_non_blocking_copy=torch.accelerator.is_available(),
+            use_pinned_memory=torch.accelerator.is_available(),
+        )
+        checkpointer = make_async_checkpointer(config=config, rank_info=self.rank_info)
+
+        try:
+            # Verify it's an AsyncCheckpointer instance
+            self.assertIsInstance(checkpointer, AsyncCheckpointer)
+
+            # Test that it works for async operations
+            checkpoint_path = os.path.join(self.temp_dir, "checkpoint_factory_async")
+            stage_future, write_future = checkpointer.save(
+                checkpoint_path, self.state_dict
+            )
+
+            # Verify futures are returned
+            self.assertIsNotNone(stage_future)
+            self.assertIsNotNone(write_future)
+
+            # Wait for completion
+            stage_future.result()
+            write_future.result()
+
+            # Verify checkpoint was created
+            checkpoint_file = os.path.join(
+                checkpoint_path, f"checkpoint_{self.rank_info.global_rank}.pt"
+            )
+            self.assertTrue(os.path.exists(checkpoint_file))
+
+            # Test loading
+            loaded_state_dict = checkpointer.load(checkpoint_path)
+            self.assertEqual(loaded_state_dict["epoch"], 5)
+
+        finally:
+            # Clean up
+            checkpointer.close()
+
+
+if __name__ == "__main__":
+    run_tests()
+
+```
+
+
+
+## High-Level Overview
+
+"""Test creating a synchronous checkpointer using make_sync_checkpointer."""        # Create sync checkpointer using factory function with no barrier
+
+This Python file contains 1 class(es) and 6 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `TestMakeCheckpointer`
+
+**Functions defined**: `setUp`, `tearDown`, `test_make_sync_checkpointer`, `test_make_sync_checkpointer_with_config_first`, `test_make_sync_checkpointer_with_custom_config`, `test_make_async_checkpointer`
+
+**Key imports**: os, shutil, tempfile, torch, BarrierConfig, CheckpointerConfig, CheckpointStagerConfig, RankInfo, run_tests, TestCase
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/distributed/checkpoint/_experimental`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `os`
+- `shutil`
+- `tempfile`
+- `torch`
+- `torch.distributed.checkpoint._experimental.barriers`: BarrierConfig
+- `torch.distributed.checkpoint._experimental.config`: CheckpointerConfig
+- `torch.distributed.checkpoint._experimental.staging`: CheckpointStagerConfig
+- `torch.distributed.checkpoint._experimental.types`: RankInfo
+- `torch.testing._internal.common_utils`: run_tests, TestCase
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/distributed/checkpoint/_experimental/test_builder.py
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/distributed/checkpoint/_experimental`):
+
+- [`test_staging.py_docs.md`](./test_staging.py_docs.md)
+- [`test_barriers.py_docs.md`](./test_barriers.py_docs.md)
+- [`test_checkpoint_process.py_docs.md`](./test_checkpoint_process.py_docs.md)
+- [`test_checkpoint_writer.py_docs.md`](./test_checkpoint_writer.py_docs.md)
+- [`test_checkpoint_reader.py_docs.md`](./test_checkpoint_reader.py_docs.md)
+- [`test_checkpointer.py_docs.md`](./test_checkpointer.py_docs.md)
+- [`test_types.py_docs.md`](./test_types.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_builder.py_docs.md`
+- **Keyword Index**: `test_builder.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/distributed/checkpoint/_experimental`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/distributed/checkpoint/_experimental`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/distributed/checkpoint/_experimental/test_builder.py_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/distributed/checkpoint/_experimental`):
+
+- [`test_staging.py_docs.md_docs.md`](./test_staging.py_docs.md_docs.md)
+- [`test_staging.py_kw.md_docs.md`](./test_staging.py_kw.md_docs.md)
+- [`test_types.py_kw.md_docs.md`](./test_types.py_kw.md_docs.md)
+- [`test_checkpointer.py_docs.md_docs.md`](./test_checkpointer.py_docs.md_docs.md)
+- [`test_checkpoint_process.py_kw.md_docs.md`](./test_checkpoint_process.py_kw.md_docs.md)
+- [`test_checkpointer.py_kw.md_docs.md`](./test_checkpointer.py_kw.md_docs.md)
+- [`test_checkpoint_process.py_docs.md_docs.md`](./test_checkpoint_process.py_docs.md_docs.md)
+- [`test_checkpoint_writer.py_docs.md_docs.md`](./test_checkpoint_writer.py_docs.md_docs.md)
+- [`test_checkpoint_writer.py_kw.md_docs.md`](./test_checkpoint_writer.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_builder.py_docs.md_docs.md`
+- **Keyword Index**: `test_builder.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

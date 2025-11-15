@@ -1,0 +1,81 @@
+# Keyword Index: `docs/torch/_inductor/template_heuristics/triton_addmm.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/_inductor/template_heuristics/triton_addmm.py_kw.md](../../../../../docs/torch/_inductor/template_heuristics/triton_addmm.py_kw.md)
+- **Documentation**: [`triton_addmm.py_kw.md_docs.md`](./triton_addmm.py_kw.md_docs.md)
+- **Folder**: `docs/torch/_inductor/template_heuristics`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`AddMMConfigMixin`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Analysis`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Any`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Architecture`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Basic`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Classs`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Complete`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Considerations`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Dependencies`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Design`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Detailed`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Documentation`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Efficiency`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Extracted`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`File`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Folder`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Functions`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Generated`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`High`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`How`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Imports`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`In`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Index`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Information`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`KernelInputs`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Keyword`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Keywords`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Level`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Map`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Metadata`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Original`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Overview`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Performance`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Purpose`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`PyTorch`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Related`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Repository`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Safety`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Section`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Security`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Source`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`System`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`TemplateConfigHeuristics`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Testing`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`The`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`This`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+- **`Usage`**: [triton_addmm.py_kw.md_docs.md](./triton_addmm.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

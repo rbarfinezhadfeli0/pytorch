@@ -1,0 +1,299 @@
+# Documentation: `docs/torch/csrc/distributed/rpc/python_functions.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/distributed/rpc/python_functions.h_docs.md`
+- **Size**: 4,878 bytes (4.76 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/csrc/distributed/rpc/python_functions.h`
+
+## File Metadata
+
+- **Path**: `torch/csrc/distributed/rpc/python_functions.h`
+- **Size**: 2,257 bytes (2.20 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#pragma once
+
+#include <torch/csrc/distributed/rpc/py_rref.h>
+#include <torch/csrc/distributed/rpc/rpc_agent.h>
+#include <torch/csrc/jit/python/pybind_utils.h>
+#include <torch/csrc/utils/pybind.h>
+
+namespace torch::distributed::rpc {
+
+// Converts an internal ivalue::Future of Message into a user-facing
+// ivalue::Future of py::object type by creating a new ivalue::Future and call
+// its  markCompleted as a callback in the given ivalue::Future.
+// If hasValue is true, the Message will be converted into a py::object and then
+// wrap it with an IValue. If hasValue is false, this ivalue::Future is only
+// used for signaling and launching callbacks. In this case, the message will be
+// discarded and then set the ivalue::Future using an empty IValue or the given
+// FutureError if there is an error.
+c10::intrusive_ptr<JitFuture> toPyJitFuture(
+    const c10::intrusive_ptr<JitFuture>& messageJitFuture,
+    bool hasValue = true);
+
+c10::intrusive_ptr<JitFuture> pyRpcBuiltin(
+    const WorkerInfo& dst,
+    const std::string& opName,
+    const py::args& args,
+    const py::kwargs& kwargs,
+    const float rpcTimeoutSeconds);
+
+c10::intrusive_ptr<JitFuture> pyRpcPythonUdf(
+    const WorkerInfo& dst,
+    std::string& pickledPythonUDF,
+    std::vector<torch::Tensor>& tensors,
+    const float rpcTimeoutSeconds,
+    const bool isAsyncExecution);
+
+c10::intrusive_ptr<JitFuture> pyRpcTorchscript(
+    const std::string& dstWorkerName,
+    const std::string& qualifiedNameStr,
+    const py::tuple& argsTuple,
+    const py::dict& kwargsDict,
+    const float rpcTimeoutSeconds,
+    const bool isAsyncExecution);
+
+PyRRef pyRemoteBuiltin(
+    const WorkerInfo& dst,
+    const std::string& opName,
+    const float rpcTimeoutSeconds,
+    const py::args& args,
+    const py::kwargs& kwargs);
+
+PyRRef pyRemotePythonUdf(
+    const WorkerInfo& dst,
+    std::string& pickledPythonUDF,
+    std::vector<torch::Tensor>& tensors,
+    const float rpcTimeoutSeconds,
+    const bool isAsyncExecution);
+
+PyRRef pyRemoteTorchscript(
+    const std::string& dstWorkerName,
+    const std::string& qualifiedNameStr,
+    const float rpcTimeoutSeconds,
+    const bool isAsyncExecution,
+    const py::args& args,
+    const py::kwargs& kwargs);
+
+} // namespace torch::distributed::rpc
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 3 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/distributed/rpc`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `torch/csrc/distributed/rpc/py_rref.h`
+- `torch/csrc/distributed/rpc/rpc_agent.h`
+- `torch/csrc/jit/python/pybind_utils.h`
+- `torch/csrc/utils/pybind.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- **Serialization**: Uses pickle - be cautious with untrusted data
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/distributed/rpc`):
+
+- [`request_callback.cpp_docs.md`](./request_callback.cpp_docs.md)
+- [`python_rpc_handler.cpp_docs.md`](./python_rpc_handler.cpp_docs.md)
+- [`tensorpipe_agent.h_docs.md`](./tensorpipe_agent.h_docs.md)
+- [`torchscript_functions.cpp_docs.md`](./torchscript_functions.cpp_docs.md)
+- [`utils.cpp_docs.md`](./utils.cpp_docs.md)
+- [`unpickled_python_call.cpp_docs.md`](./unpickled_python_call.cpp_docs.md)
+- [`request_callback.h_docs.md`](./request_callback.h_docs.md)
+- [`rref_context.cpp_docs.md`](./rref_context.cpp_docs.md)
+- [`request_callback_impl.h_docs.md`](./request_callback_impl.h_docs.md)
+- [`py_rref.h_docs.md`](./py_rref.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `python_functions.h_docs.md`
+- **Keyword Index**: `python_functions.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/distributed/rpc`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/distributed/rpc`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- **Serialization**: Uses pickle - be cautious with untrusted data
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/distributed/rpc`):
+
+- [`script_resp.cpp_docs.md_docs.md`](./script_resp.cpp_docs.md_docs.md)
+- [`python_rpc_handler.cpp_docs.md_docs.md`](./python_rpc_handler.cpp_docs.md_docs.md)
+- [`tensorpipe_utils.h_kw.md_docs.md`](./tensorpipe_utils.h_kw.md_docs.md)
+- [`request_callback_impl.h_docs.md_docs.md`](./request_callback_impl.h_docs.md_docs.md)
+- [`types.cpp_docs.md_docs.md`](./types.cpp_docs.md_docs.md)
+- [`utils.cpp_docs.md_docs.md`](./utils.cpp_docs.md_docs.md)
+- [`rref_impl.h_kw.md_docs.md`](./rref_impl.h_kw.md_docs.md)
+- [`rpc_agent.cpp_kw.md_docs.md`](./rpc_agent.cpp_kw.md_docs.md)
+- [`request_callback_impl.cpp_kw.md_docs.md`](./request_callback_impl.cpp_kw.md_docs.md)
+- [`script_call.cpp_docs.md_docs.md`](./script_call.cpp_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `python_functions.h_docs.md_docs.md`
+- **Keyword Index**: `python_functions.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

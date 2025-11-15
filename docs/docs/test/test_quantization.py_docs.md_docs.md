@@ -1,0 +1,425 @@
+# Documentation: `docs/test/test_quantization.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/test_quantization.py_docs.md`
+- **Size**: 13,129 bytes (12.82 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/test_quantization.py`
+
+## File Metadata
+
+- **Path**: `test/test_quantization.py`
+- **Size**: 9,724 bytes (9.50 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**.
+
+## Original Source
+
+```python
+# Owner(s): ["oncall: quantization"]
+
+import logging
+from torch.testing._internal.common_utils import run_tests
+
+# Quantization core tests. These include tests for
+# - quantized kernels
+# - quantized functional operators
+# - quantized workflow modules
+# - quantized workflow operators
+# - quantized tensor
+
+# 1. Quantized Kernels
+# TODO: merge the different quantized op tests into one test class
+from quantization.core.test_quantized_op import TestQuantizedOps  # noqa: F401
+from quantization.core.test_quantized_op import TestQNNPackOps  # noqa: F401
+from quantization.core.test_quantized_op import TestQuantizedLinear  # noqa: F401
+from quantization.core.test_quantized_op import TestQuantizedConv  # noqa: F401
+from quantization.core.test_quantized_op import TestDynamicQuantizedOps  # noqa: F401
+from quantization.core.test_quantized_op import TestComparatorOps  # noqa: F401
+from quantization.core.test_quantized_op import TestPadding  # noqa: F401
+from quantization.core.test_quantized_op import TestQuantizedEmbeddingOps  # noqa: F401
+# 2. Quantized Functional/Workflow Ops
+from quantization.core.test_quantized_functional import TestQuantizedFunctionalOps  # noqa: F401
+from quantization.core.test_workflow_ops import TestFakeQuantizeOps  # noqa: F401
+from quantization.core.test_workflow_ops import TestFusedObsFakeQuant  # noqa: F401
+# 3. Quantized Tensor
+from quantization.core.test_quantized_tensor import TestQuantizedTensor  # noqa: F401
+# 4. Modules
+from quantization.core.test_workflow_module import TestFakeQuantize  # noqa: F401
+from quantization.core.test_workflow_module import TestObserver  # noqa: F401
+from quantization.core.test_quantized_module import TestStaticQuantizedModule  # noqa: F401
+from quantization.core.test_quantized_module import TestDynamicQuantizedModule  # noqa: F401
+from quantization.core.test_quantized_module import TestReferenceQuantizedModule  # noqa: F401
+from quantization.core.test_workflow_module import TestRecordHistogramObserver  # noqa: F401
+from quantization.core.test_workflow_module import TestHistogramObserver  # noqa: F401
+from quantization.core.test_workflow_module import TestDistributed  # noqa: F401
+from quantization.core.test_workflow_module import TestFusedObsFakeQuantModule  # noqa: F401
+from quantization.core.test_backend_config import TestBackendConfig  # noqa: F401
+from quantization.core.test_utils import TestUtils  # noqa: F401
+
+# Eager Mode Workflow. Tests for the functionality of APIs and different features implemented
+# using eager mode.
+
+# 1. Eager mode post training quantization
+from quantization.eager.test_quantize_eager_ptq import TestQuantizeEagerPTQStatic  # noqa: F401
+from quantization.eager.test_quantize_eager_ptq import TestQuantizeEagerPTQDynamic  # noqa: F401
+from quantization.eager.test_quantize_eager_ptq import TestQuantizeEagerOps  # noqa: F401
+# 2. Eager mode quantization aware training
+from quantization.eager.test_quantize_eager_qat import TestQuantizeEagerQAT  # noqa: F401
+from quantization.eager.test_quantize_eager_qat import TestQuantizeEagerQATNumerics  # noqa: F401
+# 3. Eager mode fusion passes
+from quantization.eager.test_fuse_eager import TestFuseEager  # noqa: F401
+# 4. Testing model numerics between quantized and FP32 models
+from quantization.eager.test_model_numerics import TestModelNumericsEager  # noqa: F401
+# 5. Tooling: numeric_suite
+from quantization.eager.test_numeric_suite_eager import TestNumericSuiteEager  # noqa: F401
+# 6. Equalization and Bias Correction
+from quantization.eager.test_equalize_eager import TestEqualizeEager  # noqa: F401
+from quantization.eager.test_bias_correction_eager import TestBiasCorrectionEager  # noqa: F401
+
+
+log = logging.getLogger(__name__)
+# FX GraphModule Graph Mode Quantization. Tests for the functionality of APIs and different features implemented
+# using fx quantization.
+try:
+    from quantization.fx.test_quantize_fx import TestFuseFx  # noqa: F401
+    from quantization.fx.test_quantize_fx import TestQuantizeFx  # noqa: F401
+    from quantization.fx.test_quantize_fx import TestQuantizeFxOps  # noqa: F401
+    from quantization.fx.test_quantize_fx import TestQuantizeFxModels  # noqa: F401
+    from quantization.fx.test_subgraph_rewriter import TestSubgraphRewriter  # noqa: F401
+except ImportError as e:
+    # In FBCode we separate FX out into a separate target for the sake of dev
+    # velocity. These are covered by a separate test target `quantization_fx`
+    log.warning(e)  # noqa:G200
+
+# PyTorch 2 Export Quantization
+try:
+    # To be moved to compiler side later
+    from quantization.pt2e.test_graph_utils import TestGraphUtils  # noqa: F401
+    from quantization.pt2e.test_duplicate_dq import TestDuplicateDQPass  # noqa: F401
+    from quantization.pt2e.test_metadata_porting import TestMetaDataPorting  # noqa: F401
+    from quantization.pt2e.test_numeric_debugger import TestNumericDebugger  # noqa: F401
+    from quantization.pt2e.test_quantize_pt2e import TestQuantizePT2E  # noqa: F401
+    from quantization.pt2e.test_quantize_pt2e import TestQuantizePT2EAffineQuantization  # noqa: F401
+    from quantization.pt2e.test_representation import TestPT2ERepresentation  # noqa: F401
+    from quantization.pt2e.test_xnnpack_quantizer import TestXNNPACKQuantizer  # noqa: F401
+    from quantization.pt2e.test_xnnpack_quantizer import TestXNNPACKQuantizerModels  # noqa: F401
+    from quantization.pt2e.test_x86inductor_quantizer import TestQuantizePT2EX86Inductor  # noqa: F401
+    # TODO: Figure out a way to merge all QAT tests in one TestCase
+    from quantization.pt2e.test_quantize_pt2e_qat import TestQuantizePT2EQAT_ConvBn1d  # noqa: F401
+    from quantization.pt2e.test_quantize_pt2e_qat import TestQuantizePT2EQAT_ConvBn2d  # noqa: F401
+    from quantization.pt2e.test_quantize_pt2e_qat import TestQuantizePT2EQATModels  # noqa: F401
+except ImportError as e:
+    # In FBCode we separate PT2 out into a separate target for the sake of dev
+    # velocity. These are covered by a separate test target `quantization_pt2e`
+    log.warning(e)  # noqa:G200
+
+try:
+    from quantization.fx.test_numeric_suite_fx import TestFXGraphMatcher  # noqa: F401
+    from quantization.fx.test_numeric_suite_fx import TestFXGraphMatcherModels  # noqa: F401
+    from quantization.fx.test_numeric_suite_fx import TestFXNumericSuiteCoreAPIs  # noqa: F401
+    from quantization.fx.test_numeric_suite_fx import TestFXNumericSuiteNShadows  # noqa: F401
+    from quantization.fx.test_numeric_suite_fx import TestFXNumericSuiteCoreAPIsModels  # noqa: F401
+except ImportError as e:
+    log.warning(e)  # noqa:G200
+
+# Test the model report module
+try:
+    from quantization.fx.test_model_report_fx import TestFxModelReportDetector  # noqa: F401
+    from quantization.fx.test_model_report_fx import TestFxModelReportObserver      # noqa: F401
+    from quantization.fx.test_model_report_fx import TestFxModelReportDetectDynamicStatic  # noqa: F401
+    from quantization.fx.test_model_report_fx import TestFxModelReportClass  # noqa: F401
+    from quantization.fx.test_model_report_fx import TestFxDetectInputWeightEqualization  # noqa: F401
+    from quantization.fx.test_model_report_fx import TestFxDetectOutliers  # noqa: F401
+    from quantization.fx.test_model_report_fx import TestFxModelReportVisualizer  # noqa: F401
+except ImportError as e:
+    log.warning(e)  # noqa:G200
+
+# Equalization for FX mode
+try:
+    from quantization.fx.test_equalize_fx import TestEqualizeFx  # noqa: F401
+except ImportError as e:
+    log.warning(e)  # noqa:G200
+
+# Backward Compatibility. Tests serialization and BC for quantized modules.
+try:
+    from quantization.bc.test_backward_compatibility import TestSerialization  # noqa: F401
+except ImportError as e:
+    log.warning(e)  # noqa:G200
+
+# JIT Graph Mode Quantization
+from quantization.jit.test_quantize_jit import TestQuantizeJit  # noqa: F401
+from quantization.jit.test_quantize_jit import TestQuantizeJitPasses  # noqa: F401
+from quantization.jit.test_quantize_jit import TestQuantizeJitOps  # noqa: F401
+from quantization.jit.test_quantize_jit import TestQuantizeDynamicJitPasses  # noqa: F401
+from quantization.jit.test_quantize_jit import TestQuantizeDynamicJitOps  # noqa: F401
+# Quantization specific fusion passes
+from quantization.jit.test_fusion_passes import TestFusionPasses  # noqa: F401
+from quantization.jit.test_deprecated_jit_quant import TestDeprecatedJitQuantized  # noqa: F401
+
+# AO Migration tests
+from quantization.ao_migration.test_quantization import TestAOMigrationQuantization  # noqa: F401
+from quantization.ao_migration.test_ao_migration import TestAOMigrationNNQuantized  # noqa: F401
+from quantization.ao_migration.test_ao_migration import TestAOMigrationNNIntrinsic  # noqa: F401
+try:
+    from quantization.ao_migration.test_quantization_fx import TestAOMigrationQuantizationFx  # noqa: F401
+except ImportError as e:
+    log.warning(e)  # noqa:G200
+
+# Experimental functionality
+try:
+    from quantization.core.experimental.test_bits import TestBitsCPU  # noqa: F401
+except ImportError as e:
+    log.warning(e)  # noqa:G200
+try:
+    from quantization.core.experimental.test_bits import TestBitsCUDA  # noqa: F401
+except ImportError as e:
+    log.warning(e)  # noqa:G200
+try:
+    from quantization.core.experimental.test_floatx import TestFloat8DtypeCPU  # noqa: F401
+except ImportError as e:
+    log.warning(e)  # noqa:G200
+try:
+    from quantization.core.experimental.test_floatx import TestFloat8DtypeCUDA  # noqa: F401
+except ImportError as e:
+    log.warning(e)  # noqa:G200
+try:
+    from quantization.core.experimental.test_floatx import TestFloat8DtypeCPUOnlyCPU  # noqa: F401
+except ImportError as e:
+    log.warning(e)  # noqa:G200
+
+if __name__ == '__main__':
+    run_tests()
+
+```
+
+
+
+## High-Level Overview
+
+
+This Python file contains 1 class(es) and 0 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Key imports**: logging, run_tests, TestQuantizedOps  , TestQNNPackOps  , TestQuantizedLinear  , TestQuantizedConv  , TestDynamicQuantizedOps  , TestComparatorOps  , TestPadding  , TestQuantizedEmbeddingOps  
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `logging`
+- `torch.testing._internal.common_utils`: run_tests
+- `quantization.core.test_quantized_op`: TestQuantizedOps  
+- `quantization.core.test_quantized_functional`: TestQuantizedFunctionalOps  
+- `quantization.core.test_workflow_ops`: TestFakeQuantizeOps  
+- `quantization.core.test_quantized_tensor`: TestQuantizedTensor  
+- `quantization.core.test_workflow_module`: TestFakeQuantize  
+- `quantization.core.test_quantized_module`: TestStaticQuantizedModule  
+- `quantization.core.test_backend_config`: TestBackendConfig  
+- `quantization.core.test_utils`: TestUtils  
+- `quantization.eager.test_quantize_eager_ptq`: TestQuantizeEagerPTQStatic  
+- `quantization.eager.test_quantize_eager_qat`: TestQuantizeEagerQAT  
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Error Handling**: Includes exception handling
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/test_quantization.py
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test`):
+
+- [`test_file_check.py_docs.md`](./test_file_check.py_docs.md)
+- [`test_jit_simple.py_docs.md`](./test_jit_simple.py_docs.md)
+- [`test_mkldnn.py_docs.md`](./test_mkldnn.py_docs.md)
+- [`test_expanded_weights.py_docs.md`](./test_expanded_weights.py_docs.md)
+- [`test_overrides.py_docs.md`](./test_overrides.py_docs.md)
+- [`test_decomp.py_docs.md`](./test_decomp.py_docs.md)
+- [`test_show_pickle.py_docs.md`](./test_show_pickle.py_docs.md)
+- [`test_utils_config_module.py_docs.md`](./test_utils_config_module.py_docs.md)
+- [`test_mobile_optimizer.py_docs.md`](./test_mobile_optimizer.py_docs.md)
+- [`test_type_info.py_docs.md`](./test_type_info.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_quantization.py_docs.md`
+- **Keyword Index**: `test_quantization.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Error Handling**: Includes exception handling
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- **Serialization**: Uses pickle - be cautious with untrusted data
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/test_quantization.py_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test`):
+
+- [`test_ops.py_docs.md_docs.md`](./test_ops.py_docs.md_docs.md)
+- [`test_tensorexpr.py_docs.md_docs.md`](./test_tensorexpr.py_docs.md_docs.md)
+- [`pytest_shard_custom.py_docs.md_docs.md`](./pytest_shard_custom.py_docs.md_docs.md)
+- [`test_weak.py_kw.md_docs.md`](./test_weak.py_kw.md_docs.md)
+- [`test_view_ops.py_kw.md_docs.md`](./test_view_ops.py_kw.md_docs.md)
+- [`test_varlen_attention.py_kw.md_docs.md`](./test_varlen_attention.py_kw.md_docs.md)
+- [`test_namedtensor.py_docs.md_docs.md`](./test_namedtensor.py_docs.md_docs.md)
+- [`test_binary_ufuncs.py_docs.md_docs.md`](./test_binary_ufuncs.py_docs.md_docs.md)
+- [`test_ops_gradients.py_kw.md_docs.md`](./test_ops_gradients.py_kw.md_docs.md)
+- [`test_torchfuzz_repros.py_docs.md_docs.md`](./test_torchfuzz_repros.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_quantization.py_docs.md_docs.md`
+- **Keyword Index**: `test_quantization.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

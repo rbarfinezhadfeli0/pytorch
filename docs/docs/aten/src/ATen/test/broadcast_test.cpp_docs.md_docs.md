@@ -1,0 +1,432 @@
+# Documentation: `docs/aten/src/ATen/test/broadcast_test.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/test/broadcast_test.cpp_docs.md`
+- **Size**: 8,154 bytes (7.96 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/test/broadcast_test.cpp`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/test/broadcast_test.cpp`
+- **Size**: 5,631 bytes (5.50 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**.
+
+## Original Source
+
+```cpp
+
+#include <gtest/gtest.h>
+
+#include <ATen/ATen.h>
+
+using namespace at;
+
+// can't expand empty tensor
+void TestEmptyTensor(DeprecatedTypeProperties& T) {
+  auto empty = randn({0}, T);
+  // NOLINTNEXTLINE(hicpp-avoid-goto,cppcoreguidelines-avoid-goto)
+  ASSERT_ANY_THROW(empty.expand({3}));
+}
+
+// out-place function with 2 args
+void TestOut2Basic(DeprecatedTypeProperties& T) {
+  auto a = randn({3, 1}, T);
+  auto b = randn({5}, T);
+  std::vector<int64_t> expanded_sizes = {3, 5};
+  ASSERT_TRUE(
+      (a + b).equal(a.expand(expanded_sizes) + b.expand(expanded_sizes)));
+}
+
+// with scalar
+void TestOut2WithScalar(DeprecatedTypeProperties& T) {
+  auto aScalar = ones({}, T);
+  auto b = randn({3, 5}, T);
+  ASSERT_TRUE(
+      (aScalar + b).equal(aScalar.expand(b.sizes()) + b.expand(b.sizes())));
+}
+
+// old fallback behavior yields error
+void TestOut2OldFallback(DeprecatedTypeProperties& T) {
+  auto a = randn({3, 5}, T);
+  auto b = randn({5, 3}, T);
+  // NOLINTNEXTLINE(hicpp-avoid-goto,cppcoreguidelines-avoid-goto)
+  ASSERT_ANY_THROW(a + b);
+}
+
+// with mismatched sizes
+void TestOut2MismatchedSizes(DeprecatedTypeProperties& T) {
+  auto a = randn({3, 5}, T);
+  auto b = randn({7, 5}, T);
+  // NOLINTNEXTLINE(hicpp-avoid-goto,cppcoreguidelines-avoid-goto)
+  ASSERT_ANY_THROW(a + b);
+}
+
+// out-place function with 3 args
+void TestOut3Basic(DeprecatedTypeProperties& T) {
+  auto a = randn({3, 1, 1}, T);
+  auto b = randn({1, 2, 1}, T);
+  auto c = randn({1, 1, 5}, T);
+  std::vector<int64_t> expanded_sizes = {3, 2, 5};
+  ASSERT_TRUE((a + b + c).equal(
+      a.expand(expanded_sizes) + b.expand(expanded_sizes) +
+      c.expand(expanded_sizes)));
+}
+
+// with scalar
+void TestOut3WithScalar(DeprecatedTypeProperties& T) {
+  auto aTensorScalar = ones({}, T);
+  auto b = randn({3, 2, 1}, T);
+  auto c = randn({1, 2, 5}, T);
+  std::vector<int64_t> expanded_sizes = {3, 2, 5};
+  ASSERT_TRUE(aTensorScalar.addcmul(b, c).equal(
+      aTensorScalar.expand(expanded_sizes)
+          .addcmul(b.expand(expanded_sizes), c.expand(expanded_sizes))));
+}
+
+// old fallback behavior yields error
+void TestOut3OldFallback(DeprecatedTypeProperties& T) {
+  auto a = randn({3, 2, 5}, T);
+  auto b = randn({2, 3, 5}, T);
+  auto c = randn({5, 3, 2}, T);
+  // NOLINTNEXTLINE(hicpp-avoid-goto,cppcoreguidelines-avoid-goto)
+  ASSERT_ANY_THROW(a.addcmul(b, c));
+}
+
+// with mismatched sizes
+void TestOut3MismatchedSizes(DeprecatedTypeProperties& T) {
+  auto a = randn({3, 2, 5}, T);
+  auto b = randn({2, 3, 5}, T);
+  auto c = randn({5, 5, 5}, T);
+  // NOLINTNEXTLINE(hicpp-avoid-goto,cppcoreguidelines-avoid-goto)
+  ASSERT_ANY_THROW(a.addcmul(b, c));
+}
+
+// in-place function with 2 args
+void TestIn2Basic(DeprecatedTypeProperties& T) {
+  auto a = randn({3, 5}, T);
+  auto b = randn({3, 1}, T);
+  ASSERT_TRUE((a + b).equal(a + b.expand({3, 5})));
+}
+
+// with scalar
+void TestIn2WithScalar(DeprecatedTypeProperties& T) {
+  auto a = randn({3, 5}, T);
+  auto bScalar = ones({}, T);
+  ASSERT_TRUE((a + bScalar).equal(a + bScalar.expand(a.sizes())));
+}
+
+// error: would have to expand inplace arg
+void TestIn2ExpandError(DeprecatedTypeProperties& T) {
+  auto a = randn({1, 5}, T);
+  auto b = randn({3, 1}, T);
+  // NOLINTNEXTLINE(hicpp-avoid-goto,cppcoreguidelines-avoid-goto)
+  ASSERT_ANY_THROW(a.add_(b));
+}
+
+// in-place function with 3 args
+void TestIn3Basic(DeprecatedTypeProperties& T) {
+  auto a = randn({3, 5, 2}, T);
+  auto b = randn({3, 1, 2}, T);
+  auto c = randn({1, 5, 1}, T);
+  auto aClone = a.clone();
+  ASSERT_TRUE(a.addcmul_(b, c).equal(
+      aClone.addcmul_(b.expand(a.sizes()), c.expand(a.sizes()))));
+}
+
+// with scalar
+void TestIn3WithScalar(DeprecatedTypeProperties& T) {
+  auto a = randn({3, 5, 2}, T);
+  auto b = randn({3, 1, 2}, T);
+  auto c = randn({1, 5, 1}, T);
+  auto aClone = a.clone();
+  auto bScalar = ones({}, T);
+  ASSERT_TRUE(a.addcmul_(bScalar, c)
+                  .equal(aClone.addcmul_(
+                      bScalar.expand(a.sizes()), c.expand(a.sizes()))));
+}
+
+// error: would have to expand inplace arg
+void TestIn3ExpandError(DeprecatedTypeProperties& T) {
+  auto a = randn({1, 3, 5}, T);
+  auto b = randn({4, 1, 1}, T);
+  auto c = randn({1, 3, 1}, T);
+  // NOLINTNEXTLINE(hicpp-avoid-goto,cppcoreguidelines-avoid-goto)
+  ASSERT_ANY_THROW(a.addcmul_(b, c));
+}
+
+// explicit dim specification
+void TestExplicitDimBasic(DeprecatedTypeProperties& T) {
+  auto a = randn({1}, T);
+  auto b = randn({5, 3}, T);
+  auto c = randn({3, 7}, T);
+  ASSERT_TRUE(a.addmm(b, c).equal(a.expand({5, 7}).addmm(b, c)));
+}
+
+// with scalar
+void TestExplicitDimWithScalar(DeprecatedTypeProperties& T) {
+  auto a = randn({1}, T);
+  auto b = randn({5, 3}, T);
+  auto c = randn({3, 7}, T);
+  Tensor aScalar = ones({}, T);
+  ASSERT_TRUE(aScalar.addmm(b, c).equal(aScalar.expand({5, 7}).addmm(b, c)));
+}
+
+// with mismatched sizes
+void TestExplicitDimWithMismatchedSizes(DeprecatedTypeProperties& T) {
+  auto b = randn({5, 3}, T);
+  auto c = randn({3, 7}, T);
+  auto a = randn({3, 3}, T);
+  // NOLINTNEXTLINE(hicpp-avoid-goto,cppcoreguidelines-avoid-goto)
+  ASSERT_ANY_THROW(a.addmm(b, c));
+}
+
+TEST(BroadcastTest, Broadcast) {
+  manual_seed(123);
+  DeprecatedTypeProperties& T = CPU(kFloat);
+
+  TestEmptyTensor(T);
+
+  TestOut2Basic(T);
+  TestOut2WithScalar(T);
+  TestOut2OldFallback(T);
+  TestOut2MismatchedSizes(T);
+
+  TestOut3Basic(T);
+  TestOut3WithScalar(T);
+  TestOut3OldFallback(T);
+  TestOut3MismatchedSizes(T);
+
+  TestIn2Basic(T);
+  TestIn2WithScalar(T);
+  TestIn2ExpandError(T);
+
+  TestIn3Basic(T);
+  TestIn3WithScalar(T);
+  TestIn3ExpandError(T);
+
+  TestExplicitDimBasic(T);
+  TestExplicitDimWithScalar(T);
+  TestExplicitDimWithMismatchedSizes(T);
+}
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 18 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `at`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/test`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `gtest/gtest.h`
+- `ATen/ATen.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python aten/src/ATen/test/broadcast_test.cpp
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/test`):
+
+- [`operators_test.cpp_docs.md`](./operators_test.cpp_docs.md)
+- [`xpu_generator_test.cpp_docs.md`](./xpu_generator_test.cpp_docs.md)
+- [`native_test.cpp_docs.md`](./native_test.cpp_docs.md)
+- [`reportMemoryUsage.h_docs.md`](./reportMemoryUsage.h_docs.md)
+- [`tensor_iterator_test.cpp_docs.md`](./tensor_iterator_test.cpp_docs.md)
+- [`memory_overlapping_test.cpp_docs.md`](./memory_overlapping_test.cpp_docs.md)
+- [`operator_name_test.cpp_docs.md`](./operator_name_test.cpp_docs.md)
+- [`cuda_distributions_test.cu_docs.md`](./cuda_distributions_test.cu_docs.md)
+- [`type_test.cpp_docs.md`](./type_test.cpp_docs.md)
+- [`allocator_clone_test.h_docs.md`](./allocator_clone_test.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `broadcast_test.cpp_docs.md`
+- **Keyword Index**: `broadcast_test.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/test`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/test`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/aten/src/ATen/test/broadcast_test.cpp_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/test`):
+
+- [`cuda_dlconvertor_test.cpp_kw.md_docs.md`](./cuda_dlconvertor_test.cpp_kw.md_docs.md)
+- [`cuda_atomic_ops_test.cu_kw.md_docs.md`](./cuda_atomic_ops_test.cu_kw.md_docs.md)
+- [`ivalue_test.cpp_kw.md_docs.md`](./ivalue_test.cpp_kw.md_docs.md)
+- [`mobile_memory_cleanup.cpp_kw.md_docs.md`](./mobile_memory_cleanup.cpp_kw.md_docs.md)
+- [`reportMemoryUsage_test.cpp_docs.md_docs.md`](./reportMemoryUsage_test.cpp_docs.md_docs.md)
+- [`cpu_rng_test.cpp_kw.md_docs.md`](./cpu_rng_test.cpp_kw.md_docs.md)
+- [`lazy_tensor_test.cpp_kw.md_docs.md`](./lazy_tensor_test.cpp_kw.md_docs.md)
+- [`cuda_allocator_test.cpp_docs.md_docs.md`](./cuda_allocator_test.cpp_docs.md_docs.md)
+- [`MaybeOwned_test.cpp_docs.md_docs.md`](./MaybeOwned_test.cpp_docs.md_docs.md)
+- [`dlconvertor_test.cpp_kw.md_docs.md`](./dlconvertor_test.cpp_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `broadcast_test.cpp_docs.md_docs.md`
+- **Keyword Index**: `broadcast_test.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

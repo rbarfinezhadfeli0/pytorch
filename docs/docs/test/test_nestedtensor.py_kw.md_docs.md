@@ -1,0 +1,414 @@
+# Documentation: `docs/test/test_nestedtensor.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/test/test_nestedtensor.py_kw.md`
+- **Size**: 25,213 bytes (24.62 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `test/test_nestedtensor.py`
+
+## File Information
+
+- **Original File**: [test/test_nestedtensor.py](../../test/test_nestedtensor.py)
+- **Documentation**: [`test_nestedtensor.py_docs.md`](./test_nestedtensor.py_docs.md)
+- **Folder**: `test`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`CustomDispatchMode`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`MyFunction`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`TestNestedInt`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`TestNestedTensor`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`TestNestedTensorAutograd`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`TestNestedTensorDeviceType`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`TestNestedTensorOpInfo`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`TestNestedTensorSubclass`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`as`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`mha`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`view`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+
+### Functions
+
+- **`__init__`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`__torch_dispatch__`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`_check_grad`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`_compare_to_ref`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`_create_leaf_nested_tensor_from_list`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`_create_nested_tensor_from_list`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`_create_nested_tensor_from_mask`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`_create_nt`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`_g`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`_gen_grad_outputs`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`_get_example_tensor_lists`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`_get_list_for_jagged_tensor`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`_inp`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`_iter_constructors`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`_make_tensor`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`_rand_nt`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`_rand_qkv`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`_recompiles_for_inputs`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`_test`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`_test_add_mul`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`_test_bmm`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`_test_fn`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`_test_unbind_case`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`_validate_nt`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`backward`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`check`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`check_forward_backward`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`check_nt_equality`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`check_results`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`check_size`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`compare_metadata`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`convert_dense_to_nested_tensor`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`convert_dense_to_nested_tensor_legacy`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`convert_jagged_to_nested_tensor`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`convert_jagged_to_nested_tensor_legacy`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`convert_nt_to_jagged`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`convert_nt_to_jagged_legacy`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`counter`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`f`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`fn`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`fn_dense`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`fn_nt`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`forward`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`g`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`generate_inp`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`get_3_tensors`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`get_atol`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`get_flops`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`get_op_name`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`get_rtol`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`get_tolerances`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`get_values`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`grad_test_func`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`in_f`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`in_proj`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`layout_name`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`noncontiguous_to_padded_tensor`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`rand_mask`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`rand_tensor`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`random_nt`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`random_nt_from_dims`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`random_nt_from_similar`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`random_nt_noncontiguous_pair`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`random_nt_pair`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_2d_nested_tensor`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_3d_nested_tensor`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_3d_nested_tensor_float`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_abs_backward`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_accumulate_grad_different_strides`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_apply_`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_as_nested_tensor_from_tensor`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_as_nested_tensor_propagates_gradients`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_autograd_function_with_None_grad`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_backward`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_backward_add_strided`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_backward_for_add_op`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_backward_for_sub_op`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_backward_sub_strided`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_binary_ops_with_scalar`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_binary_pointwise`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_binary_pointwise_broadcasting`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_binary_pointwise_transposed`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_binary_pointwise_with_nested_int_second_arg`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_bmm_cpu`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_bmm_cuda`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_bmm_noncontiguous`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_broadcast_shapes_on_in_graph_constructed_njt`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_cat`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_chunk`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_clone`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_comparisons`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_compile_backward`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_compile_forward`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_compile_padded_dense_conversion_preserves_metadata_cache`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_compile_preserves_metadata_cache`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_compile_with_dynamic_max_seq_len`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_compile_with_dynamic_min_seq_len`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_compile_with_propagated_dynamic_max_seq_len`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_composite_op_in_inference_mode`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_composite_op_with_custom_mode`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_construction_from_list`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_contiguous`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_copy_`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_copy_behavior`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_data_ptr`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_default_nested_tensor`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_detach`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_device_checks`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_device_dtype_transfer_updates_offsets`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_dim`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_dropout`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_dropout_backward`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_dropout_inference_mode`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_dropout_noncontiguous`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_dummy_mha_with_nt`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_embedding`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_empty_like`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_fill_`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_flatten_decomp`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_forward`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_gelu_backward`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_index_put_error`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_indexing_backward`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_is_all_true_jagged`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_is_any_true_jagged`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_is_contiguous`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_is_same_size`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_jagged_amax_dtypes`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_jagged_amin_dtypes`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_jagged_argmax_dtypes`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_jagged_argmin_dtypes`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_jagged_layout_construction_as_nested_tensor`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_jagged_layout_construction_nested_tensor`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_jagged_layout_construction_with_pinned_memory`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_jagged_max_dtypes`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_jagged_min_dtypes`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_jagged_op_different_output_shape_dim`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_jagged_padded_dense_conversion_kernels`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_jagged_view_from_values_offsets`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_jagged_with_dim_error`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_layer_norm`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_layer_norm_2d_input`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_layer_norm_backward`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_layer_norm_backward_5d`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_layer_norm_backward_edge_case`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_layer_norm_breaking`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_layer_norm_operate_on_batch_dim`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_layer_norm_reduce_ragged_idx_1`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_layer_norm_with_lengths`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_layout_under_torch_dispatch_mode`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_like_functions`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_like_shape`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_like_value`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_linear`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_linear_backward_memory_usage`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_linear_noncontiguous`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_masked_fill`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_masked_fill_backward`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_matmul`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_matmul_noncontiguous`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_matmul_nt_with_broadcasted_t`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_matmul_with_bmm_path`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_narrow`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_masked_select`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_namespace`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_tensor`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_tensor_activation_checkpoint`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_tensor_add`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_tensor_add_in_place`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_tensor_bmm_backward`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_tensor_bmm_gradcheck`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_tensor_chunk`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_tensor_dense_elementwise`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_tensor_div`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_tensor_from_jagged`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_tensor_from_jagged_fx_trace`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_tensor_from_list`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_tensor_from_mask_and_to_padded`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_tensor_from_padded`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_tensor_from_padded_fused`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_tensor_generates_leaf`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_tensor_indexing`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_tensor_indexing_noncontiguous`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_tensor_input_mutation_backward`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_tensor_linear`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_tensor_linear_backward`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_tensor_linear_plus_transpose`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_tensor_matching_dim`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_tensor_matmul_backward`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_tensor_matmul_gradcheck`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_tensor_mul`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_tensor_mul_in_place`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_tensor_non_contiguous_mutation`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_tensor_reshape_backward`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_tensor_reshape_gradcheck`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_tensor_softmax`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_tensor_split_with_sizes`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_tensor_squeeze_backward`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_tensor_squeeze_gradcheck`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`test_nested_tensor_sub`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+
+### Imports
+
+- **`FlopCounterMode`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`NestedIntNode`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`Optional`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`TorchDispatchMode`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`_sample_njts`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`ast`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`checkpoint`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`floating_types_and_half`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`functools`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`io`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`is_nested_int`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`itertools`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`math`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`nested_from_padded`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`numpy`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`os`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`partial`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`random`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`run_and_get_code`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`subprocess`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`sys`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`tempfile`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`torch`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`torch._dynamo`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`torch._dynamo.testing`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`torch._inductor.utils`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`torch.fx.experimental.symbolic_shapes`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`torch.nested._internal.nested_int`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`torch.nested._internal.nested_tensor`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`torch.nn`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`torch.nn.functional`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`torch.testing._internal.common_cuda`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`torch.testing._internal.common_device_type`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`torch.testing._internal.common_dtype`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`torch.testing._internal.logging_tensor`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`torch.testing._internal.opinfo.core`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`torch.testing._internal.opinfo.definitions.nested`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`torch.utils._python_dispatch`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`torch.utils._pytree`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`torch.utils.checkpoint`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`torch.utils.flop_counter`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`tree_flatten`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`typing`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+- **`unittest`**: [test_nestedtensor.py_docs.md](./test_nestedtensor.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Implements or uses **caching** mechanisms.
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- **Command Execution**: Executes system commands - validate inputs
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/test_nestedtensor.py_kw.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test`):
+
+- [`test_ops.py_docs.md_docs.md`](./test_ops.py_docs.md_docs.md)
+- [`test_tensorexpr.py_docs.md_docs.md`](./test_tensorexpr.py_docs.md_docs.md)
+- [`pytest_shard_custom.py_docs.md_docs.md`](./pytest_shard_custom.py_docs.md_docs.md)
+- [`test_weak.py_kw.md_docs.md`](./test_weak.py_kw.md_docs.md)
+- [`test_view_ops.py_kw.md_docs.md`](./test_view_ops.py_kw.md_docs.md)
+- [`test_varlen_attention.py_kw.md_docs.md`](./test_varlen_attention.py_kw.md_docs.md)
+- [`test_namedtensor.py_docs.md_docs.md`](./test_namedtensor.py_docs.md_docs.md)
+- [`test_binary_ufuncs.py_docs.md_docs.md`](./test_binary_ufuncs.py_docs.md_docs.md)
+- [`test_ops_gradients.py_kw.md_docs.md`](./test_ops_gradients.py_kw.md_docs.md)
+- [`test_torchfuzz_repros.py_docs.md_docs.md`](./test_torchfuzz_repros.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_nestedtensor.py_kw.md_docs.md`
+- **Keyword Index**: `test_nestedtensor.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

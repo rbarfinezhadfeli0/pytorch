@@ -1,0 +1,372 @@
+# Documentation: `docs/test/dynamo/cpython/3_13/test_baseexception.diff_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/dynamo/cpython/3_13/test_baseexception.diff_docs.md`
+- **Size**: 7,105 bytes (6.94 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/dynamo/cpython/3_13/test_baseexception.diff`
+
+## File Metadata
+
+- **Path**: `test/dynamo/cpython/3_13/test_baseexception.diff`
+- **Size**: 4,649 bytes (4.54 KB)
+- **Type**: Source File (.diff)
+- **Extension**: `.diff`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**.
+
+## Original Source
+
+```
+diff --git a/test/dynamo/cpython/3_13/test_baseexception.py b/test/dynamo/cpython/3_13/test_baseexception.py
+index e599b02c17d..057b6ec01b9 100644
+--- a/test/dynamo/cpython/3_13/test_baseexception.py
++++ b/test/dynamo/cpython/3_13/test_baseexception.py
+@@ -1,10 +1,64 @@
++# ======= BEGIN Dynamo patch =======
++# Owner(s): ["module: dynamo"]
++
++# ruff: noqa
++# flake8: noqa
++
++# Test copied from
++# https://raw.githubusercontent.com/python/cpython/refs/tags/v3.13.5/Lib/test/test_baseexception.py
++
++import sys
++import torch
++import torch._dynamo.test_case
++import unittest
++from torch._dynamo.test_case import CPythonTestCase
++from torch.testing._internal.common_utils import run_tests
++
++__TestCase = CPythonTestCase
++
++
++# redirect import statements
++import sys
++import importlib.abc
++
++redirect_imports = (
++    "test.mapping_tests",
++    "test.typinganndata",
++    "test.test_grammar",
++    "test.test_math",
++    "test.test_iter",
++    "test.typinganndata.ann_module",
++)
++
++class RedirectImportFinder(importlib.abc.MetaPathFinder):
++    def find_spec(self, fullname, path, target=None):
++        # Check if the import is the problematic one
++        if fullname in redirect_imports:
++            try:
++                # Attempt to import the standalone module
++                name = fullname.removeprefix("test.")
++                r = importlib.import_module(name)
++                # Redirect the module in sys.modules
++                sys.modules[fullname] = r
++                # Return a module spec from the found module
++                return importlib.util.find_spec(name)
++            except ImportError:
++                return None
++        return None
++
++# Add the custom finder to sys.meta_path
++sys.meta_path.insert(0, RedirectImportFinder())
++
++
++# ======= END DYNAMO PATCH =======
++
+ import unittest
+ import builtins
+ import os
+ from platform import system as platform_system
+ 
+ 
+-class ExceptionClassTests(unittest.TestCase):
++class ExceptionClassTests(__TestCase):
+ 
+     """Tests for anything relating to exception objects themselves (e.g.,
+     inheritance hierarchy)"""
+@@ -78,9 +132,6 @@ class ExceptionClassTests(unittest.TestCase):
+                 last_depth = depth
+         finally:
+             inheritance_tree.close()
+-
+-        # Underscore-prefixed (private) exceptions don't need to be documented
+-        exc_set = set(e for e in exc_set if not e.startswith('_'))
+         self.assertEqual(len(exc_set), 0, "%s not accounted for" % exc_set)
+ 
+     interface_tests = ("length", "args", "str", "repr")
+@@ -122,12 +173,13 @@ class ExceptionClassTests(unittest.TestCase):
+         # in PyObject_SetAttr.
+         import gc
+         d = {}
+-        class HashThisKeyWillClearTheDict(str):
+-            def __hash__(self) -> int:
+-                d.clear()
+-                return super().__hash__()
+-        class Value(str):
+-            pass
++        with torch._dynamo.error_on_graph_break(False):
++            class HashThisKeyWillClearTheDict(str):
++                def __hash__(self) -> int:
++                    d.clear()
++                    return super().__hash__()
++            class Value(str):
++                pass
+         exc = Exception()
+ 
+         d[HashThisKeyWillClearTheDict()] = Value()  # refcount of Value() is 1 now
+@@ -142,7 +194,7 @@ class ExceptionClassTests(unittest.TestCase):
+         gc.collect()
+ 
+ 
+-class UsageTests(unittest.TestCase):
++class UsageTests(__TestCase):
+ 
+     """Test usage of exceptions"""
+ 
+@@ -182,8 +234,9 @@ class UsageTests(unittest.TestCase):
+         # BaseException; the ability was not possible until BaseException's
+         # introduction so no need to support new-style objects that do not
+         # inherit from it.
+-        class NewStyleClass(object):
+-            pass
++        with torch._dynamo.error_on_graph_break(False):
++            class NewStyleClass(object):
++                pass
+         self.raise_fails(NewStyleClass)
+         self.raise_fails(NewStyleClass())
+ 
+@@ -194,8 +247,9 @@ class UsageTests(unittest.TestCase):
+     def test_catch_non_BaseException(self):
+         # Trying to catch an object that does not inherit from BaseException
+         # is not allowed.
+-        class NonBaseException(object):
+-            pass
++        with torch._dynamo.error_on_graph_break(False):
++            class NonBaseException(object):
++                pass
+         self.catch_fails(NonBaseException)
+         self.catch_fails(NonBaseException())
+ 
+@@ -208,5 +262,5 @@ class UsageTests(unittest.TestCase):
+         self.catch_fails("spam")
+ 
+ 
+-if __name__ == '__main__':
+-    unittest.main()
++if __name__ == "__main__":
++    run_tests()
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `test/dynamo/cpython/3_13`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/dynamo/cpython/3_13`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Error Handling**: Includes exception handling
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/dynamo/cpython/3_13/test_baseexception.diff
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/dynamo/cpython/3_13`):
+
+- [`mapping_tests.diff_docs.md`](./mapping_tests.diff_docs.md)
+- [`test_float.py_docs.md`](./test_float.py_docs.md)
+- [`test_generators.py_docs.md`](./test_generators.py_docs.md)
+- [`test_dict.py_docs.md`](./test_dict.py_docs.md)
+- [`test_generator_stop.diff_docs.md`](./test_generator_stop.diff_docs.md)
+- [`test_sort.diff_docs.md`](./test_sort.diff_docs.md)
+- [`test_list.diff_docs.md`](./test_list.diff_docs.md)
+- [`test_userdict.diff_docs.md`](./test_userdict.diff_docs.md)
+- [`test_generators.diff_docs.md`](./test_generators.diff_docs.md)
+- [`test_userlist.py_docs.md`](./test_userlist.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_baseexception.diff_docs.md`
+- **Keyword Index**: `test_baseexception.diff_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/dynamo/cpython/3_13`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/dynamo/cpython/3_13`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Error Handling**: Includes exception handling
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/dynamo/cpython/3_13/test_baseexception.diff_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/dynamo/cpython/3_13`):
+
+- [`seq_tests.py_kw.md_docs.md`](./seq_tests.py_kw.md_docs.md)
+- [`test_tuple.diff_kw.md_docs.md`](./test_tuple.diff_kw.md_docs.md)
+- [`test_userdict.py_docs.md_docs.md`](./test_userdict.py_docs.md_docs.md)
+- [`test_bool.diff_docs.md_docs.md`](./test_bool.diff_docs.md_docs.md)
+- [`test_operator.py_docs.md_docs.md`](./test_operator.py_docs.md_docs.md)
+- [`seq_tests.diff_docs.md_docs.md`](./seq_tests.diff_docs.md_docs.md)
+- [`test_list.diff_kw.md_docs.md`](./test_list.diff_kw.md_docs.md)
+- [`test_bool.py_docs.md_docs.md`](./test_bool.py_docs.md_docs.md)
+- [`test_raise.py_docs.md_docs.md`](./test_raise.py_docs.md_docs.md)
+- [`test_itertools.diff_kw.md_docs.md`](./test_itertools.diff_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_baseexception.diff_docs.md_docs.md`
+- **Keyword Index**: `test_baseexception.diff_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

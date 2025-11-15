@@ -1,0 +1,527 @@
+# Documentation: `docs/test/distributed/algorithms/quantization/test_quantization.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/distributed/algorithms/quantization/test_quantization.py_docs.md`
+- **Size**: 13,628 bytes (13.31 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/distributed/algorithms/quantization/test_quantization.py`
+
+## File Metadata
+
+- **Path**: `test/distributed/algorithms/quantization/test_quantization.py`
+- **Size**: 10,922 bytes (10.67 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**. Can be **executed as a standalone script**.
+
+## Original Source
+
+```python
+# Owner(s): ["oncall: distributed"]
+
+import os
+import sys
+
+import torch
+import torch.cuda
+import torch.distributed as dist
+import torch.distributed.algorithms._quantization.quantization as quant
+from torch.distributed.algorithms._quantization.quantization import DQuantType
+from torch.testing._internal.common_distributed import (
+    init_multigpu_helper,
+    MultiProcessTestCase,
+    requires_gloo,
+    requires_nccl,
+    skip_if_lt_x_gpu,
+    skip_if_rocm_multiprocess,
+)
+from torch.testing._internal.common_utils import (
+    run_tests,
+    skip_but_pass_in_sandcastle_if,
+    TEST_WITH_DEV_DBG_ASAN,
+)
+
+
+torch.backends.cuda.matmul.allow_tf32 = False
+
+if not dist.is_available():
+    print("Distributed not available, skipping tests", file=sys.stderr)
+    sys.exit(0)
+
+
+def _build_tensor(size, value=None, dtype=torch.float, device_id=None):
+    if value is None:
+        value = size
+    if device_id is None:
+        return torch.empty(size, dtype=dtype).fill_(value)
+    else:
+        return torch.empty(size, dtype=dtype).fill_(value).cuda(device_id)
+
+
+if TEST_WITH_DEV_DBG_ASAN:
+    print(
+        "Skip dev-asan as torch + multiprocessing spawn have known issues",
+        file=sys.stderr,
+    )
+    sys.exit(0)
+
+BACKEND = os.environ["BACKEND"]
+if BACKEND == "gloo" or BACKEND == "nccl":
+
+    class DistQuantizationTests(MultiProcessTestCase):
+        def setUp(self):
+            super().setUp()
+            self._spawn_processes()
+            torch.backends.cudnn.flags(enabled=True, allow_tf32=False).__enter__()
+
+        def tearDown(self):
+            super().tearDown()
+            try:
+                os.remove(self.file_name)
+            except OSError:
+                pass
+
+        @property
+        def op_timeout_sec(self):
+            return 1
+
+        @property
+        def world_size(self):
+            return int(os.environ["WORLD_SIZE"])
+
+        @requires_gloo()
+        @skip_but_pass_in_sandcastle_if(
+            BACKEND != "gloo", "Only gloo backend supports all_gather_fp16"
+        )
+        def test_all_gather_fp16(self):
+            store = dist.FileStore(self.file_name, self.world_size)
+            dist.init_process_group(
+                store=store, rank=self.rank, world_size=self.world_size, backend="gloo"
+            )
+            group = list(range(self.world_size))
+            group_id = dist.group.WORLD
+            self._test_all_gather(
+                group, group_id, self.rank, dtype=torch.float32, qtype=DQuantType.FP16
+            )
+
+        @requires_gloo()
+        @skip_but_pass_in_sandcastle_if(
+            BACKEND != "gloo", "Only gloo backend supports all_gather_fp16"
+        )
+        def test_all_gather_bfp16(self):
+            store = dist.FileStore(self.file_name, self.world_size)
+            dist.init_process_group(
+                store=store, rank=self.rank, world_size=self.world_size, backend="gloo"
+            )
+            group = list(range(self.world_size))
+            group_id = dist.group.WORLD
+            self._test_all_gather(
+                group, group_id, self.rank, dtype=torch.float32, qtype=DQuantType.BFP16
+            )
+
+        @requires_nccl()
+        @skip_but_pass_in_sandcastle_if(
+            BACKEND != "nccl", "Only nccl backend supports all_to_all_fp16"
+        )
+        @skip_if_lt_x_gpu(int(os.environ["WORLD_SIZE"]))
+        @skip_if_rocm_multiprocess
+        def test_all_to_all_fp16(self):
+            store = dist.FileStore(self.file_name, self.world_size)
+            dist.init_process_group(
+                store=store, rank=self.rank, world_size=self.world_size, backend="nccl"
+            )
+            group = list(range(self.world_size))
+            group_id = dist.new_group(range(self.world_size))
+            rank_to_GPU = init_multigpu_helper(self.world_size, BACKEND)
+            self._test_all_to_all(
+                group,
+                group_id,
+                self.rank,
+                cuda=True,
+                rank_to_GPU=rank_to_GPU,
+                dtype=torch.float32,
+                qtype=DQuantType.FP16,
+            )
+
+        @requires_nccl()
+        @skip_but_pass_in_sandcastle_if(
+            BACKEND != "nccl", "Only nccl backend supports all_to_all_fp16"
+        )
+        @skip_if_lt_x_gpu(int(os.environ["WORLD_SIZE"]))
+        @skip_if_rocm_multiprocess
+        def test_all_to_all_bfp16(self):
+            store = dist.FileStore(self.file_name, self.world_size)
+            dist.init_process_group(
+                store=store, rank=self.rank, world_size=self.world_size, backend="nccl"
+            )
+            group = list(range(self.world_size))
+            group_id = dist.new_group(range(self.world_size))
+            rank_to_GPU = init_multigpu_helper(self.world_size, BACKEND)
+            self._test_all_to_all(
+                group,
+                group_id,
+                self.rank,
+                cuda=True,
+                rank_to_GPU=rank_to_GPU,
+                dtype=torch.float32,
+                qtype=DQuantType.BFP16,
+            )
+
+        @requires_nccl()
+        @skip_but_pass_in_sandcastle_if(
+            BACKEND != "nccl", "Only nccl backend supports all_to_all_single_fp16"
+        )
+        @skip_if_lt_x_gpu(int(os.environ["WORLD_SIZE"]))
+        def test_all_to_all_single_fp16(self):
+            store = dist.FileStore(self.file_name, self.world_size)
+            dist.init_process_group(
+                store=store, rank=self.rank, world_size=self.world_size, backend="nccl"
+            )
+            group = list(range(self.world_size))
+            group_id = dist.new_group(range(self.world_size))
+            rank_to_GPU = init_multigpu_helper(self.world_size, BACKEND)
+            self._test_all_to_all_single(
+                group,
+                group_id,
+                self.rank,
+                cuda=True,
+                rank_to_GPU=rank_to_GPU,
+                dtype=torch.float32,
+                qtype=DQuantType.FP16,
+            )
+
+        @requires_nccl()
+        @skip_but_pass_in_sandcastle_if(
+            BACKEND != "nccl", "Only nccl backend supports all_to_all_single_bfp16"
+        )
+        @skip_if_lt_x_gpu(int(os.environ["WORLD_SIZE"]))
+        def test_all_to_all_single_bfp16(self):
+            store = dist.FileStore(self.file_name, self.world_size)
+            dist.init_process_group(
+                store=store, rank=self.rank, world_size=self.world_size, backend="nccl"
+            )
+            group = list(range(self.world_size))
+            group_id = dist.new_group(range(self.world_size))
+            rank_to_GPU = init_multigpu_helper(self.world_size, BACKEND)
+            self._test_all_to_all_single(
+                group,
+                group_id,
+                self.rank,
+                cuda=True,
+                rank_to_GPU=rank_to_GPU,
+                dtype=torch.float32,
+                qtype=DQuantType.BFP16,
+            )
+
+        def _test_all_gather(
+            self,
+            group,
+            group_id,
+            rank,
+            cuda=False,
+            rank_to_GPU=None,
+            dtype=torch.float,
+            qtype=None,
+        ):
+            for dest in group:
+                tensor = _build_tensor([dest + 1, dest + 1], rank, dtype=dtype)
+                tensors = [
+                    _build_tensor([dest + 1, dest + 1], -1, dtype=dtype) for i in group
+                ]
+                expected_tensors = [
+                    _build_tensor([dest + 1, dest + 1], i, dtype=dtype) for i in group
+                ]
+                if cuda:
+                    tensor = tensor.cuda(rank_to_GPU[rank][0])
+                    tensors = [t.cuda(rank_to_GPU[rank][0]) for t in tensors]
+                allgather = quant.auto_quantize(dist.all_gather, qtype, quant_loss=None)
+                allgather(tensors, tensor, group=group_id, async_op=False)
+
+                for t1, t2 in zip(tensors, expected_tensors):
+                    self.assertEqual(t1, t2)
+
+        def _test_all_to_all(
+            self,
+            group,
+            group_id,
+            rank,
+            cuda=False,
+            rank_to_GPU=None,
+            dtype=torch.float,
+            qtype=None,
+        ):
+            if group_id is not None:
+                size = len(group)
+                in_splits = [i + 1 for i in group]
+                in_tensors = [
+                    torch.ones([in_splits[i], size], dtype=dtype) * rank
+                    for i, _ in enumerate(group)
+                ]
+                out_tensors = [
+                    torch.ones([(rank + 1), size], dtype=dtype) for _ in group
+                ]
+                expected_tensors = [
+                    torch.ones([rank + 1, size], dtype=dtype) * i for i in group
+                ]
+                if cuda:
+                    in_tensors = [t.cuda(rank_to_GPU[rank][0]) for t in in_tensors]
+                    expected_tensors = [
+                        t.cuda(rank_to_GPU[rank][0]) for t in expected_tensors
+                    ]
+                    out_tensors = [t.cuda(rank_to_GPU[rank][0]) for t in out_tensors]
+                quantize_alltoall = quant.auto_quantize(
+                    dist.all_to_all, qtype, quant_loss=None
+                )
+                quantize_alltoall(out_tensors, in_tensors, group=group_id)
+                for t1, t2 in zip(out_tensors, expected_tensors):
+                    self.assertEqual(t1, t2)
+
+        def _test_all_to_all_single(
+            self,
+            group,
+            group_id,
+            rank,
+            cuda=False,
+            rank_to_GPU=None,
+            dtype=torch.float,
+            qtype=DQuantType.FP16,
+        ):
+            if group_id is not None:
+                size = len(group)
+                in_splits = [i + 1 for i in group]
+                out_splits = [rank + 1 for _ in group]
+                in_tensor = torch.ones([sum(in_splits), size], dtype=dtype) * rank
+                out_tensor = torch.ones([(rank + 1) * size, size], dtype=dtype)
+                expected_tensor = torch.cat(
+                    [torch.ones([rank + 1, size], dtype=dtype) * i for i in group]
+                )
+                if cuda:
+                    rank_to_GPU = rank_to_GPU[rank][0]
+                    in_tensor = in_tensor.cuda(rank_to_GPU)
+                    expected_tensor = expected_tensor.cuda(rank_to_GPU)
+                    out_tensor = out_tensor.cuda(rank_to_GPU)
+                    quantize_alltoall_single = quant.auto_quantize(
+                        dist.all_to_all_single, qtype, quant_loss=None
+                    )
+                    quantize_alltoall_single(
+                        out_tensor,
+                        in_tensor,
+                        out_splits=out_splits,
+                        in_splits=in_splits,
+                        group=group_id,
+                    )
+                    self.assertEqual(out_tensor, expected_tensor)
+
+
+if __name__ == "__main__":
+    run_tests()
+
+```
+
+
+
+## High-Level Overview
+
+
+This Python file contains 1 class(es) and 14 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `DistQuantizationTests`
+
+**Functions defined**: `_build_tensor`, `setUp`, `tearDown`, `op_timeout_sec`, `world_size`, `test_all_gather_fp16`, `test_all_gather_bfp16`, `test_all_to_all_fp16`, `test_all_to_all_bfp16`, `test_all_to_all_single_fp16`, `test_all_to_all_single_bfp16`, `_test_all_gather`, `_test_all_to_all`, `_test_all_to_all_single`
+
+**Key imports**: os, sys, torch, torch.cuda, torch.distributed as dist, torch.distributed.algorithms._quantization.quantization as quant, DQuantType
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/distributed/algorithms/quantization`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `os`
+- `sys`
+- `torch`
+- `torch.cuda`
+- `torch.distributed as dist`
+- `torch.distributed.algorithms._quantization.quantization as quant`
+- `torch.distributed.algorithms._quantization.quantization`: DQuantType
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Error Handling**: Includes exception handling
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/distributed/algorithms/quantization/test_quantization.py
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/distributed/algorithms/quantization`):
+
+
+
+## Cross-References
+
+- **File Documentation**: `test_quantization.py_docs.md`
+- **Keyword Index**: `test_quantization.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/distributed/algorithms/quantization`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/distributed/algorithms/quantization`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Error Handling**: Includes exception handling
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/distributed/algorithms/quantization/test_quantization.py_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/distributed/algorithms/quantization`):
+
+- [`test_quantization.py_kw.md_docs.md`](./test_quantization.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_quantization.py_docs.md_docs.md`
+- **Keyword Index**: `test_quantization.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

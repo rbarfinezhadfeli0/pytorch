@@ -1,0 +1,83 @@
+# Keyword Index: `docs/aten/src/ATen/native/mkldnn/MKLDNNCommon.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/native/mkldnn/MKLDNNCommon.h_kw.md](../../../../../../../docs/aten/src/ATen/native/mkldnn/MKLDNNCommon.h_kw.md)
+- **Documentation**: [`MKLDNNCommon.h_kw.md_docs.md`](./MKLDNNCommon.h_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/native/mkldnn`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Analysis`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Architecture`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Basic`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Class`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Complete`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Config`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Considerations`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Dependencies`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Design`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Detailed`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Documentation`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Efficiency`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Extracted`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`File`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Folder`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Functions`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Generated`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`High`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`How`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`In`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Includes`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Index`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Information`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Keyword`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Keywords`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Level`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`MKLDNNCommon`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Map`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Metadata`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Namespaces`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Original`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Overview`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Performance`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Purpose`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`PyTorch`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Related`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Repository`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Safety`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Section`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Security`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Source`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Structs`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`System`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Tensor`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Testing`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`The`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`This`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+- **`Usage`**: [MKLDNNCommon.h_kw.md_docs.md](./MKLDNNCommon.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

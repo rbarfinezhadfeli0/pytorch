@@ -1,0 +1,87 @@
+# Keyword Index: `docs/aten/src/ATen/core/op_registration/infer_schema.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/core/op_registration/infer_schema.h_kw.md](../../../../../../../docs/aten/src/ATen/core/op_registration/infer_schema.h_kw.md)
+- **Documentation**: [`infer_schema.h_kw.md_docs.md`](./infer_schema.h_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/core/op_registration`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Analysis`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Architecture`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`ArgumentDef`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Basic`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Class`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Complete`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Considerations`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Dependencies`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Design`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Detailed`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Documentation`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Efficiency`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Enable`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Extracted`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`File`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Folder`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`FuncType`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Functions`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Generated`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`High`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`How`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`In`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Includes`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Index`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Information`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Keyword`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Keywords`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Level`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Map`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Metadata`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Metaprogramming`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Namespaces`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Original`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Overview`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`ParameterTypes`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Performance`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Purpose`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`PyTorch`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Related`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Repository`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`ReturnType`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`ReturnTypeTuple`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Safety`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Section`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Security`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Source`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Structs`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`System`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Testing`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`The`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`This`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+- **`Usage`**: [infer_schema.h_kw.md_docs.md](./infer_schema.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

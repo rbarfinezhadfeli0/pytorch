@@ -1,0 +1,427 @@
+# Documentation: `docs/torch/_C/_jit_tree_views.pyi_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/_C/_jit_tree_views.pyi_docs.md`
+- **Size**: 7,935 bytes (7.75 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/_C/_jit_tree_views.pyi`
+
+## File Metadata
+
+- **Path**: `torch/_C/_jit_tree_views.pyi`
+- **Size**: 5,555 bytes (5.42 KB)
+- **Type**: Python Type Stub
+- **Extension**: `.pyi`
+
+## File Purpose
+
+This is a python type stub that is part of the PyTorch project.
+
+## Original Source
+
+```python
+from typing import Any, Optional
+
+# Defined in torch/csrc/jit/python/python_tree_views.cpp
+
+class SourceRange:
+    def highlight(self) -> str: ...
+    @property
+    def start(self) -> int: ...
+    @property
+    def end(self) -> int: ...
+
+class SourceRangeFactory:
+    def __init__(
+        self,
+        text: str,
+        filename: Any,
+        file_lineno: int,
+        leading_whitespace_chars: int,
+    ) -> None: ...
+    def make_range(self, line: int, start_col: int, end_col: int) -> SourceRange: ...
+    def make_raw_range(self, start: int, end: int) -> SourceRange: ...
+    @property
+    def source(self) -> str: ...
+
+class TreeView:
+    def range(self) -> SourceRange: ...
+    def dump(self) -> None: ...
+
+class Ident(TreeView):
+    def __init__(self, *args: Any, **kwargs: Any) -> None: ...
+    @property
+    def name(self) -> str: ...
+
+class Param(TreeView):
+    def __init__(self, type: Optional[Any], name: Ident, kwarg_only: bool) -> None: ...
+
+class Attribute(TreeView):
+    def __init__(self, name: Ident, value: Any) -> None: ...
+
+# Literals
+def TrueLiteral(range: SourceRange) -> Any: ...
+def FalseLiteral(range: SourceRange) -> Any: ...
+def NoneLiteral(range: SourceRange) -> Any: ...
+
+# Tree nodes
+class Stmt(TreeView):
+    def __init__(self, thing: TreeView) -> None: ...
+
+class Expr(TreeView): ...
+
+class Def(TreeView):
+    def __init__(self, name: Ident, decl: Any, body: list[Stmt]) -> None: ...
+    def decl(self) -> Any: ...
+    def name(self) -> Ident: ...
+
+class Property(TreeView):
+    def __init__(
+        self, r: SourceRange, name: Ident, getter: Def, setter: Optional[Def]
+    ) -> None: ...
+    def name(self) -> Ident: ...
+    def getter_name(self) -> str: ...
+    def setter_name(self) -> Optional[Ident]: ...
+
+class ClassDef(TreeView):
+    def __init__(
+        self, name: Ident, body: list[Stmt], props: list[Property], assigns: list[Any]
+    ) -> None: ...
+
+class Decl(TreeView):
+    def __init__(
+        self, r: SourceRange, params: list[Param], return_type: Optional[Expr]
+    ) -> None: ...
+
+class Delete(Stmt):
+    def __init__(self, range: SourceRange, targets: list[Expr]) -> None: ...
+
+class WithItem(Expr):
+    def __init__(
+        self, range: SourceRange, target: Expr, var: Optional[Any]
+    ) -> None: ...
+
+class Assign(Stmt):
+    def __init__(
+        self, lhs: list[Expr], rhs: Expr, type: Optional[Expr] = None
+    ) -> None: ...
+
+class AugAssign(Stmt):
+    def __init__(self, lhs: Expr, kind_str: str, rhs: Expr) -> None: ...
+
+class Return(Stmt):
+    def __init__(self, range: SourceRange, value: Optional[Expr]) -> None: ...
+
+class Raise(Stmt):
+    def __init__(self, range: SourceRange, expr: Expr) -> None: ...
+
+class Assert(Stmt):
+    def __init__(self, range: SourceRange, test: Expr, msg: Optional[Expr]) -> None: ...
+
+class Pass(Stmt):
+    def __init__(self, range: SourceRange) -> None: ...
+
+class Break(Stmt): ...
+class Continue(Stmt): ...
+
+class Dots(Expr, TreeView):
+    def __init__(self, range: SourceRange) -> None: ...
+
+class If(Stmt):
+    def __init__(
+        self,
+        range: SourceRange,
+        cond: Expr,
+        true_branch: list[Stmt],
+        false_branch: list[Stmt],
+    ) -> None: ...
+
+class While(Stmt):
+    def __init__(self, range: SourceRange, cond: Expr, body: list[Stmt]) -> None: ...
+
+class With(Stmt):
+    def __init__(
+        self, range: SourceRange, targets: list[WithItem], body: list[Stmt]
+    ) -> None: ...
+
+class For(Stmt):
+    def __init__(
+        self,
+        range: SourceRange,
+        targets: list[Expr],
+        itrs: list[Expr],
+        body: list[Stmt],
+    ) -> None: ...
+
+class ExprStmt(Stmt):
+    def __init__(self, expr: Expr) -> None: ...
+
+class Var(Expr):
+    def __init__(self, name: Ident) -> None: ...
+    @property
+    def name(self) -> str: ...
+
+class BinOp(Expr):
+    def __init__(self, kind: str, lhs: Expr, rhs: Expr) -> None: ...
+
+class UnaryOp(Expr):
+    def __init__(self, range: SourceRange, kind: str, expr: Expr) -> None: ...
+
+class Const(Expr):
+    def __init__(self, range: SourceRange, value: str) -> None: ...
+
+class StringLiteral(Expr):
+    def __init__(self, range: SourceRange, value: str) -> None: ...
+
+class Apply(Expr):
+    def __init__(
+        self, expr: Expr, args: list[Expr], kwargs: list[Attribute]
+    ) -> None: ...
+
+class Select(Expr):
+    def __init__(self, expr: Expr, field: Ident) -> None: ...
+
+class TernaryIf(Expr):
+    def __init__(self, cond: Expr, true_expr: Expr, false_expr: Expr) -> None: ...
+
+class ListComp(Expr):
+    def __init__(
+        self, range: SourceRange, elt: Expr, target: Expr, iter: Expr
+    ) -> None: ...
+
+class DictComp(Expr):
+    def __init__(
+        self, range: SourceRange, key: Expr, value: Expr, target: Expr, iter: Expr
+    ) -> None: ...
+
+class ListLiteral(Expr):
+    def __init__(self, range: SourceRange, args: list[Expr]) -> None: ...
+
+class TupleLiteral(Expr):
+    def __init__(self, range: SourceRange, args: list[Expr]) -> None: ...
+
+class DictLiteral(Expr):
+    def __init__(
+        self, range: SourceRange, keys: list[Expr], values: list[Expr]
+    ) -> None: ...
+
+class Subscript(Expr):
+    def __init__(self, base: Expr, subscript_exprs: list[Expr]) -> None: ...
+
+class SliceExpr(Expr):
+    def __init__(
+        self,
+        range: SourceRange,
+        lower: Optional[Expr],
+        upper: Optional[Expr],
+        step: Optional[Expr],
+    ) -> None: ...
+
+class Starred(Expr):
+    def __init__(self, range: SourceRange, expr: Expr) -> None: ...
+
+class EmptyTypeAnnotation(TreeView):
+    def __init__(self, range: SourceRange) -> None: ...
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `torch/_C`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/_C`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/_C`):
+
+- [`_onnx.pyi_docs.md`](./_onnx.pyi_docs.md)
+- [`_distributed_autograd.pyi_docs.md`](./_distributed_autograd.pyi_docs.md)
+- [`_distributed_rpc_testing.pyi_docs.md`](./_distributed_rpc_testing.pyi_docs.md)
+- [`_distributed_rpc.pyi_docs.md`](./_distributed_rpc.pyi_docs.md)
+- [`_lazy_ts_backend.pyi_docs.md`](./_lazy_ts_backend.pyi_docs.md)
+- [`_verbose.pyi_docs.md`](./_verbose.pyi_docs.md)
+- [`build.bzl_docs.md`](./build.bzl_docs.md)
+- [`_instruction_counter.pyi_docs.md`](./_instruction_counter.pyi_docs.md)
+- [`_functions.pyi_docs.md`](./_functions.pyi_docs.md)
+- [`_aoti.pyi_docs.md`](./_aoti.pyi_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `_jit_tree_views.pyi_docs.md`
+- **Keyword Index**: `_jit_tree_views.pyi_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/_C`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/_C`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/_C`):
+
+- [`_nvtx.pyi_docs.md_docs.md`](./_nvtx.pyi_docs.md_docs.md)
+- [`_aoti.pyi_docs.md_docs.md`](./_aoti.pyi_docs.md_docs.md)
+- [`_cpu.pyi_docs.md_docs.md`](./_cpu.pyi_docs.md_docs.md)
+- [`_lazy_ts_backend.pyi_docs.md_docs.md`](./_lazy_ts_backend.pyi_docs.md_docs.md)
+- [`_distributed_c10d.pyi_kw.md_docs.md`](./_distributed_c10d.pyi_kw.md_docs.md)
+- [`_profiler.pyi_docs.md_docs.md`](./_profiler.pyi_docs.md_docs.md)
+- [`_functionalization.pyi_kw.md_docs.md`](./_functionalization.pyi_kw.md_docs.md)
+- [`_distributed.pyi_docs.md_docs.md`](./_distributed.pyi_docs.md_docs.md)
+- [`_itt.pyi_docs.md_docs.md`](./_itt.pyi_docs.md_docs.md)
+- [`build.bzl_kw.md_docs.md`](./build.bzl_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `_jit_tree_views.pyi_docs.md_docs.md`
+- **Keyword Index**: `_jit_tree_views.pyi_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

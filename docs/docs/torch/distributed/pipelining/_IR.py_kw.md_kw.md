@@ -1,0 +1,95 @@
+# Keyword Index: `docs/torch/distributed/pipelining/_IR.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/distributed/pipelining/_IR.py_kw.md](../../../../../docs/torch/distributed/pipelining/_IR.py_kw.md)
+- **Documentation**: [`_IR.py_kw.md_docs.md`](./_IR.py_kw.md_docs.md)
+- **Folder**: `docs/torch/distributed/pipelining`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Any`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Architecture`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Basic`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Callable`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Classs`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Complete`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Considerations`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Dependencies`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Design`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`DetachExecutor`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Detailed`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Documentation`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`DummyModule`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Efficiency`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Enum`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`ExportedProgram`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Extracted`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`File`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Folder`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Functions`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Generated`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`High`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`How`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Imports`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`In`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Index`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Information`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Keyword`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Keywords`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Level`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`LossWrapper`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Map`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Metadata`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`MethodType`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`MultiUseParameterConfig`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`MyModelWrapper`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Original`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Overview`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Parameter`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Performance`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Pipe`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`PipeInfo`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`PipeSequential`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`PipeSplitWrapper`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`ProcessGroup`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Purpose`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`PyTorch`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Related`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Repository`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Safety`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Section`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Security`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Source`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`SplitPoint`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`System`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Testing`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`The`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`This`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`TrivialLossWrapper`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+- **`Usage`**: [_IR.py_kw.md_docs.md](./_IR.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

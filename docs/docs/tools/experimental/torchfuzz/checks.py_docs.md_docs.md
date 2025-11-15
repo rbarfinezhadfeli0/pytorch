@@ -1,0 +1,287 @@
+# Documentation: `docs/tools/experimental/torchfuzz/checks.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/tools/experimental/torchfuzz/checks.py_docs.md`
+- **Size**: 4,834 bytes (4.72 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**. This file is a **utility or tool script**.
+
+## Original Source
+
+```markdown
+# Documentation: `tools/experimental/torchfuzz/checks.py`
+
+## File Metadata
+
+- **Path**: `tools/experimental/torchfuzz/checks.py`
+- **Size**: 2,197 bytes (2.15 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is a **utility or tool script**.
+
+## Original Source
+
+```python
+"""Check abstractions for different execution modes and validations."""
+
+from abc import ABC, abstractmethod
+
+
+class Check(ABC):
+    """Base class for execution checks."""
+
+    @abstractmethod
+    def codegen(self, args_tuple: str) -> list[str]:
+        """Generate code lines for this check."""
+
+
+class EagerVsFullGraphDynamicCompileCheck(Check):
+    """Standard check that runs eager then fullgraph+dynamic compilation."""
+
+    def codegen(self, args_tuple: str) -> list[str]:
+        return [
+            f"args = {args_tuple}",
+            "result_original = fuzzed_program(*args)",
+            "print('✅ eager success')",
+            "compiled_program = torch.compile(fuzzed_program, fullgraph=True, dynamic=True)",
+            "result_compiled = compiled_program(*args)",
+            "print('✅ compile success')",
+        ]
+
+
+class EagerVsFullGraphDynamicCompileWithNumericsCheck(Check):
+    """Check that runs eager and compiled, compares forward numerics."""
+
+    def codegen(self, args_tuple: str) -> list[str]:
+        return [
+            f"args = {args_tuple}",
+            "out_eager = fuzzed_program(*args)",
+            "out_eager.sum().backward()",
+            "print('Eager Success! ✅')",
+            "compiled_program = torch.compile(fuzzed_program, fullgraph=True, dynamic=True)",
+            "out_compiled = compiled_program(*args)",
+            "out_compiled.sum().backward()",
+            "print('Compile Success! ✅')",
+            "out_eager_sum = out_eager.sum()",
+            "out_compiled_sum = out_compiled.sum()",
+            "diff = (out_eager_sum - out_compiled_sum).abs().item()",
+            "rel_diff = diff / (out_eager_sum.abs().item() + 1e-12) * 100",
+            "print(f'Relative diff (sum): {rel_diff:.6f}%')",
+            "if rel_diff > 5 and diff > 1:",
+            "    print(f'❌ Forward output sums differ significantly (relative and absolute)!')",
+            "    print('out_eager_sum:', out_eager_sum.item())",
+            "    print('out_compiled_sum:', out_compiled_sum.item())",
+            "    print('Absolute diff:', diff)",
+            "    print('Relative diff (%):', rel_diff)",
+            "    import sys; sys.exit(1)",
+        ]
+
+```
+
+
+
+## High-Level Overview
+
+"""Check abstractions for different execution modes and validations."""from abc import ABC, abstractmethodclass Check(ABC):
+
+This Python file contains 4 class(es) and 3 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `Check`, `EagerVsFullGraphDynamicCompileCheck`, `EagerVsFullGraphDynamicCompileWithNumericsCheck`
+
+**Functions defined**: `codegen`, `codegen`, `codegen`
+
+**Key imports**: ABC, abstractmethod, sys
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `tools/experimental/torchfuzz`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `abc`: ABC, abstractmethod
+- `sys`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Abstract Base Classes**: Defines abstract interfaces
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`tools/experimental/torchfuzz`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`codegen.py_docs.md`](./codegen.py_docs.md)
+- [`tensor_fuzzer.py_docs.md`](./tensor_fuzzer.py_docs.md)
+- [`fuzzer.py_docs.md`](./fuzzer.py_docs.md)
+- [`visualize_graph.py_docs.md`](./visualize_graph.py_docs.md)
+- [`test_determinism.py_docs.md`](./test_determinism.py_docs.md)
+- [`type_promotion.py_docs.md`](./type_promotion.py_docs.md)
+- [`ops_fuzzer.py_docs.md`](./ops_fuzzer.py_docs.md)
+- [`multi_process_fuzzer.py_docs.md`](./multi_process_fuzzer.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `checks.py_docs.md`
+- **Keyword Index**: `checks.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/tools/experimental/torchfuzz`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/tools/experimental/torchfuzz`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Abstract Base Classes**: Defines abstract interfaces
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/tools/experimental/torchfuzz`):
+
+- [`ops_fuzzer.py_docs.md_docs.md`](./ops_fuzzer.py_docs.md_docs.md)
+- [`multi_process_fuzzer.py_docs.md_docs.md`](./multi_process_fuzzer.py_docs.md_docs.md)
+- [`multi_process_fuzzer.py_kw.md_docs.md`](./multi_process_fuzzer.py_kw.md_docs.md)
+- [`checks.py_kw.md_docs.md`](./checks.py_kw.md_docs.md)
+- [`README.md_docs.md_docs.md`](./README.md_docs.md_docs.md)
+- [`runner.py_docs.md_docs.md`](./runner.py_docs.md_docs.md)
+- [`type_promotion.py_docs.md_docs.md`](./type_promotion.py_docs.md_docs.md)
+- [`fuzzer.py_kw.md_docs.md`](./fuzzer.py_kw.md_docs.md)
+- [`test_determinism.py_kw.md_docs.md`](./test_determinism.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `checks.py_docs.md_docs.md`
+- **Keyword Index**: `checks.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

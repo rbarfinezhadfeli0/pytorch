@@ -1,0 +1,378 @@
+# Documentation: `docs/torch/csrc/utils/throughput_benchmark.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/utils/throughput_benchmark.cpp_docs.md`
+- **Size**: 7,029 bytes (6.86 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/csrc/utils/throughput_benchmark.cpp`
+
+## File Metadata
+
+- **Path**: `torch/csrc/utils/throughput_benchmark.cpp`
+- **Size**: 4,399 bytes (4.30 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#include <torch/csrc/utils/throughput_benchmark.h>
+
+#include <pybind11/pybind11.h>
+#include <torch/csrc/jit/python/pybind_utils.h>
+#include <torch/csrc/utils/pybind.h>
+
+namespace torch::throughput_benchmark {
+
+std::ostream& operator<<(
+    std::ostream& os,
+    const BenchmarkExecutionStats& value) {
+  return os << "Average latency / iter (ms): " << value.latency_avg_ms
+            << "\n Total number of iters: " << value.num_iters;
+}
+
+void ThroughputBenchmark::addInput(py::args args, py::kwargs kwargs) {
+  CHECK(script_module_.initialized() ^ module_.initialized());
+  if (script_module_.initialized()) {
+    script_module_.addInput(std::move(args), std::move(kwargs));
+  } else {
+    CHECK(module_.initialized());
+    module_.addInput(std::move(args), std::move(kwargs));
+  }
+}
+
+py::object ThroughputBenchmark::runOnce(
+    const py::args& args,
+    const py::kwargs& kwargs) {
+  CHECK(script_module_.initialized() ^ module_.initialized());
+  if (script_module_.initialized()) {
+    c10::IValue result;
+    {
+      pybind11::gil_scoped_release no_gil_guard;
+      result = script_module_.runOnce(args, kwargs);
+    }
+    return jit::toPyObject(std::move(result));
+  } else {
+    CHECK(module_.initialized());
+    return module_.runOnce(args, kwargs);
+  }
+}
+
+ThroughputBenchmark::ThroughputBenchmark(const jit::Module& script_module)
+    : script_module_(script_module) {}
+
+ThroughputBenchmark::ThroughputBenchmark(py::object module)
+    : module_(std::move(module)) {}
+
+BenchmarkExecutionStats ThroughputBenchmark::benchmark(
+    const BenchmarkConfig& config) const {
+  CHECK(script_module_.initialized() ^ module_.initialized());
+  // Main benchmark thread doesn't hold the GIL after scheduling worker threads
+  // But for now we don't release it as we will be implicitly manipulating with
+  // py::object ref. counts in the case of nn.Module benchmarking.
+  if (script_module_.initialized()) {
+    return script_module_.benchmark(config);
+  } else {
+    CHECK(module_.initialized());
+    TORCH_WARN(
+        "Starting benchmark on an nn.Module. This can be slow due "
+        "to Python GIL.For proper inference simulation you might want to switch to "
+        "a ScriptModule instead");
+    return module_.benchmark(config);
+  }
+}
+
+namespace detail {
+
+template <>
+void ScriptModuleBenchmark::runOnce(ScriptModuleInput&& input) const {
+  CHECK(initialized_);
+  // TODO: provide guarantees that compiler won't optimize this out
+  model_.get_method("forward").function()(std::move(input));
+}
+
+template <>
+ScriptModuleOutput ScriptModuleBenchmark::runOnce(
+    const py::args& args,
+    const py::kwargs& kwargs) const {
+  CHECK(initialized_);
+  auto& function = model_.get_method("forward").function();
+  ScriptModuleInput stack = jit::createStackForSchema(
+      function.getSchema(), args, kwargs, model_._ivalue());
+  return function(std::move(stack));
+}
+
+template <>
+// NOLINTNEXTLINE(*-rvalue-reference-param-not-moved)
+void ModuleBenchmark::runOnce(ModuleInput&& input) const {
+  CHECK(initialized_);
+  pybind11::gil_scoped_acquire gil_guard;
+  model_(*input.args, **input.kwargs);
+}
+
+template <>
+ModuleOutput ModuleBenchmark::runOnce(
+    const py::args& args,
+    const py::kwargs& kwargs) const {
+  CHECK(initialized_);
+  pybind11::gil_scoped_acquire gil_guard;
+  return model_(*args, **kwargs);
+}
+
+template <>
+// NOLINTNEXTLINE(*-rvalue-reference-param-not-moved)
+void ScriptModuleBenchmark::addInput(py::args&& args, py::kwargs&& kwargs) {
+  jit::Stack stack = jit::createStackForSchema(
+      model_.get_method("forward").function().getSchema(),
+      args,
+      kwargs,
+      model_._ivalue());
+  inputs_.emplace_back(std::move(stack));
+}
+
+template <>
+void ScriptModuleBenchmark::addInput(ScriptModuleInput&& input) {
+  input.insert(input.begin(), model_._ivalue());
+  inputs_.emplace_back(std::move(input));
+}
+
+template <>
+void ModuleBenchmark::addInput(py::args&& args, py::kwargs&& kwargs) {
+  inputs_.emplace_back(std::move(args), std::move(kwargs));
+}
+
+template <>
+ModuleInput cloneInput<ModuleInput>(const ModuleInput& input) {
+  pybind11::gil_scoped_acquire gil_guard;
+  py::args args = input.args;
+  py::kwargs kwargs = input.kwargs;
+  return {std::move(args), std::move(kwargs)};
+}
+
+template <>
+ScriptModuleInput cloneInput<ScriptModuleInput>(
+    const ScriptModuleInput& input) {
+  return input;
+}
+
+} // namespace detail
+
+} // namespace torch::throughput_benchmark
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 2 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`, `detail`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/utils`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `torch/csrc/utils/throughput_benchmark.h`
+- `pybind11/pybind11.h`
+- `torch/csrc/jit/python/pybind_utils.h`
+- `torch/csrc/utils/pybind.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/utils`):
+
+- [`tensor_list.h_docs.md`](./tensor_list.h_docs.md)
+- [`disable_torch_function.cpp_docs.md`](./disable_torch_function.cpp_docs.md)
+- [`tensor_new.cpp_docs.md`](./tensor_new.cpp_docs.md)
+- [`tensor_apply.cpp_docs.md`](./tensor_apply.cpp_docs.md)
+- [`cpp_stacktraces.cpp_docs.md`](./cpp_stacktraces.cpp_docs.md)
+- [`numpy_stub.h_docs.md`](./numpy_stub.h_docs.md)
+- [`nested.h_docs.md`](./nested.h_docs.md)
+- [`nested.cpp_docs.md`](./nested.cpp_docs.md)
+- [`six.h_docs.md`](./six.h_docs.md)
+- [`python_scalars.h_docs.md`](./python_scalars.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `throughput_benchmark.cpp_docs.md`
+- **Keyword Index**: `throughput_benchmark.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/utils`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/utils`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/utils`):
+
+- [`python_tuples.h_kw.md_docs.md`](./python_tuples.h_kw.md_docs.md)
+- [`six.h_kw.md_docs.md`](./six.h_kw.md_docs.md)
+- [`tensor_types.cpp_docs.md_docs.md`](./tensor_types.cpp_docs.md_docs.md)
+- [`tensor_list.h_kw.md_docs.md`](./tensor_list.h_kw.md_docs.md)
+- [`verbose.h_kw.md_docs.md`](./verbose.h_kw.md_docs.md)
+- [`invalid_arguments.cpp_kw.md_docs.md`](./invalid_arguments.cpp_kw.md_docs.md)
+- [`tensor_apply.h_kw.md_docs.md`](./tensor_apply.h_kw.md_docs.md)
+- [`cuda_enabled.h_docs.md_docs.md`](./cuda_enabled.h_docs.md_docs.md)
+- [`tensor_layouts.h_docs.md_docs.md`](./tensor_layouts.h_docs.md_docs.md)
+- [`variadic.h_kw.md_docs.md`](./variadic.h_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `throughput_benchmark.cpp_docs.md_docs.md`
+- **Keyword Index**: `throughput_benchmark.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

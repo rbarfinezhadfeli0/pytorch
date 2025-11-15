@@ -1,0 +1,387 @@
+# Documentation: `docs/torch/_export/tools.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/_export/tools.py_docs.md`
+- **Size**: 7,525 bytes (7.35 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/_export/tools.py`
+
+## File Metadata
+
+- **Path**: `torch/_export/tools.py`
+- **Size**: 4,599 bytes (4.49 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This is a python source code that is part of the PyTorch project.
+
+## Original Source
+
+```python
+# mypy: allow-untyped-defs
+import logging
+import warnings
+from collections.abc import Iterable
+from typing import Any, Optional
+
+import torch
+import torch.export
+import torch.export._trace
+from torch._utils_internal import log_export_usage
+
+
+log = logging.getLogger(__name__)
+
+__all__ = ["report_exportability"]
+
+
+def _generate_inputs_for_submodules(
+    model: torch.nn.Module,
+    target_submodules: Iterable[str],
+    args: tuple[Any, ...],
+    kwargs: Optional[dict[str, Any]] = None,
+) -> dict[str, tuple[Any, Any]]:
+    """
+    Generate inputs for targeting submdoules in the given model. Note that if two submodules refer to the same obj, this
+    function doesn't work.
+
+    Args:
+        model: root model.
+        inputs: inputs to the root model.
+        target_submodules: submodules that we want to generate inputs for.
+
+    Returns:
+        A dict that maps from submodule name to its inputs.
+    """
+    kwargs = kwargs or {}
+
+    handles = []
+    results = {}
+    submodule_to_names = {mod: name for name, mod in model.named_modules()}
+
+    def pre_forward(module, module_args, module_kwargs):
+        results[submodule_to_names[module]] = (module_args, module_kwargs)
+
+    try:
+        for name, mod in model.named_modules():
+            if name in target_submodules:
+                handles.append(
+                    mod.register_forward_pre_hook(pre_forward, with_kwargs=True)
+                )
+        model(*args, **kwargs)
+    except Exception as e:
+        warnings.warn(
+            f"Failed to generate submodule inputs because of the following error:\n{e}",
+            stacklevel=2,
+        )
+    finally:
+        for h in handles:
+            h.remove()
+    return results
+
+
+def report_exportability(
+    mod: torch.nn.Module,
+    args: tuple[Any, ...],
+    kwargs: Optional[dict[str, Any]] = None,
+    *,
+    strict: bool = True,
+    pre_dispatch: bool = False,
+) -> dict[str, Optional[Exception]]:
+    """
+    Report exportability issues for a module in one-shot.
+
+    Args:
+        mod: root module.
+        args: args to the root module.
+        kwargs: kwargs to the root module.
+    Returns:
+        A dict that maps from submodule name to the exception that was raised when trying to export it.
+        `None` means the module is exportable without issue.
+    Sample output:
+        {
+            '': UnsupportedOperatorException(func=<OpOverload(op='testlib.op_missing_meta', overload='default')>),
+            'submod_1': UnsupportedOperatorException(func=<OpOverload(op='testlib.op_missing_meta', overload='default')>),
+            'submod_2': None
+        }
+    """
+
+    log_export_usage(event="export.report_exportability")
+
+    kwargs = kwargs or {}
+
+    all_submod_names = [name for name, _ in mod.named_modules() if name != ""]
+    submod_inputs = _generate_inputs_for_submodules(mod, all_submod_names, args, kwargs)
+
+    tried_module_types = set()
+    report: dict[str, Optional[Exception]] = {}
+
+    def try_export(module, module_name, args, kwargs):
+        nonlocal submod_inputs, report, strict, pre_dispatch, tried_module_types
+
+        if type(module) in tried_module_types:
+            return
+        tried_module_types.add(type(module))
+
+        if args is not None or kwargs is not None:
+            try:
+                torch.export._trace._export(
+                    module,
+                    args,
+                    kwargs,
+                    strict=strict,
+                    pre_dispatch=pre_dispatch,
+                )
+                report[module_name] = None
+                log.info("Successfully exported `%s`", module_name)
+                return
+            except Exception as e:
+                short_msg = repr(e).split("\n")[0]
+                log.warning(
+                    "Failed exporting `%s` with exception: %s", module_name, short_msg
+                )
+                report[module_name] = e
+
+        for name, submod in module.named_children():
+            sub_module_name = name if module_name == "" else f"{module_name}.{name}"
+
+            submod_args, submod_kwargs = submod_inputs.get(
+                sub_module_name, (None, None)
+            )
+
+            try_export(submod, sub_module_name, submod_args, submod_kwargs)
+
+        return
+
+    try_export(mod, "", args, kwargs)
+
+    unique_issues = set()
+    for exception in report.values():
+        if exception is not None:
+            key = repr(exception).split("\\n")[0]
+            unique_issues.add(key)
+
+    log.warning("Found %d export issues:", len(unique_issues))
+    for issue in unique_issues:
+        log.warning(issue)
+
+    return report
+
+```
+
+
+
+## High-Level Overview
+
+"""    Generate inputs for targeting submdoules in the given model. Note that if two submodules refer to the same obj, this    function doesn't work.    Args:        model: root model.        inputs: inputs to the root model.        target_submodules: submodules that we want to generate inputs for.    Returns:        A dict that maps from submodule name to its inputs.
+
+This Python file contains 0 class(es) and 4 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Functions defined**: `_generate_inputs_for_submodules`, `pre_forward`, `report_exportability`, `try_export`
+
+**Key imports**: logging, warnings, Iterable, Any, Optional, torch, torch.export, torch.export._trace, log_export_usage
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/_export`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `logging`
+- `warnings`
+- `collections.abc`: Iterable
+- `typing`: Any, Optional
+- `torch`
+- `torch.export`
+- `torch.export._trace`
+- `torch._utils_internal`: log_export_usage
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Error Handling**: Includes exception handling
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/_export`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`utils.py_docs.md`](./utils.py_docs.md)
+- [`error.py_docs.md`](./error.py_docs.md)
+- [`config.py_docs.md`](./config.py_docs.md)
+- [`pass_base.py_docs.md`](./pass_base.py_docs.md)
+- [`non_strict_utils.py_docs.md`](./non_strict_utils.py_docs.md)
+- [`converter.py_docs.md`](./converter.py_docs.md)
+- [`wrappers.py_docs.md`](./wrappers.py_docs.md)
+- [`verifier.py_docs.md`](./verifier.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `tools.py_docs.md`
+- **Keyword Index**: `tools.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/_export`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/_export`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Error Handling**: Includes exception handling
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/_export`):
+
+- [`error.py_kw.md_docs.md`](./error.py_kw.md_docs.md)
+- [`converter.py_kw.md_docs.md`](./converter.py_kw.md_docs.md)
+- [`utils.py_docs.md_docs.md`](./utils.py_docs.md_docs.md)
+- [`pass_base.py_kw.md_docs.md`](./pass_base.py_kw.md_docs.md)
+- [`wrappers.py_docs.md_docs.md`](./wrappers.py_docs.md_docs.md)
+- [`converter.py_docs.md_docs.md`](./converter.py_docs.md_docs.md)
+- [`config.py_kw.md_docs.md`](./config.py_kw.md_docs.md)
+- [`__init__.py_docs.md_docs.md`](./__init__.py_docs.md_docs.md)
+- [`verifier.py_kw.md_docs.md`](./verifier.py_kw.md_docs.md)
+- [`verifier.py_docs.md_docs.md`](./verifier.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `tools.py_docs.md_docs.md`
+- **Keyword Index**: `tools.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

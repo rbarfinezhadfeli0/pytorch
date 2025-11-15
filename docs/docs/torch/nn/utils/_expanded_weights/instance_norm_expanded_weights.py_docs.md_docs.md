@@ -1,0 +1,338 @@
+# Documentation: `docs/torch/nn/utils/_expanded_weights/instance_norm_expanded_weights.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/nn/utils/_expanded_weights/instance_norm_expanded_weights.py_docs.md`
+- **Size**: 6,713 bytes (6.56 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/nn/utils/_expanded_weights/instance_norm_expanded_weights.py`
+
+## File Metadata
+
+- **Path**: `torch/nn/utils/_expanded_weights/instance_norm_expanded_weights.py`
+- **Size**: 3,772 bytes (3.68 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This is a python source code that is part of the PyTorch project.
+
+## Original Source
+
+```python
+# mypy: allow-untyped-defs
+from functools import partial
+
+import torch
+import torch.nn.functional as F
+
+from .expanded_weights_impl import implements_per_sample_grads
+from .expanded_weights_utils import (
+    forward_helper,
+    set_grad_sample_if_exists,
+    standard_kwargs,
+    unpack_expanded_weight_or_tensor,
+)
+
+
+@implements_per_sample_grads(F.instance_norm)
+class InstanceNormPerSampleGrad(torch.autograd.Function):
+    @staticmethod
+    # pyrefly: ignore [bad-override]
+    def forward(ctx, kwarg_names, _, *expanded_args_and_kwargs):
+        instance_norm = partial(torch.instance_norm, cudnn_enabled=True)
+        expanded_args, expanded_kwargs = standard_kwargs(
+            kwarg_names, expanded_args_and_kwargs
+        )
+        output = forward_helper(instance_norm, expanded_args, expanded_kwargs)
+        ctx.input = expanded_args[0]
+        ctx.running_mean, ctx.running_var = (
+            expanded_kwargs["running_mean"],
+            expanded_kwargs["running_var"],
+        )
+        ctx.weight, ctx.bias, ctx.eps = (
+            expanded_kwargs["weight"],
+            expanded_kwargs["bias"],
+            expanded_kwargs["eps"],
+        )
+        return output
+
+    @staticmethod
+    # pyrefly: ignore [bad-override]
+    def backward(ctx, grad_output):
+        input, running_mean, running_var = ctx.input, ctx.running_mean, ctx.running_var
+        weight, bias, eps = ctx.weight, ctx.bias, ctx.eps
+
+        results: list[torch.Tensor | None] = []
+        results.append(None)  # for kwarg names
+        results.append(None)  # for op reference
+        if input.requires_grad:
+            b = input.shape[0]
+            c = input.shape[1]
+            new_shape = (1, b * c, *input.shape[2:])
+
+            weight_ = unpack_expanded_weight_or_tensor(
+                weight, lambda orig_weight: orig_weight.repeat(b)
+            )
+            running_mean_ = running_mean.repeat(b) if running_mean is not None else None
+            running_var_ = running_var.repeat(b) if running_var is not None else None
+            input_reshaped = input.contiguous().view(new_shape)
+            grad_output_reshaped = grad_output.contiguous().view(new_shape)
+            mean = torch.mean(
+                input_reshaped, (0,) + tuple(range(2, input.dim())), False
+            )
+            var = torch.var(
+                input_reshaped,
+                (0,) + tuple(range(2, input.dim())),
+                keepdim=False,
+                unbiased=False,
+            )
+            rstd = 1 / torch.sqrt(var + eps)
+
+            # must use native batch norm since it supports all inputs. This may have used cuda or openmi during the forward but
+            # it didn't save the metadata, so we don't know during the backward
+            res = torch.ops.aten.native_batch_norm_backward(
+                grad_output_reshaped,
+                input_reshaped,
+                weight_,
+                running_mean_,
+                running_var_,
+                mean,
+                rstd,
+                True,
+                eps,
+                (True, False, False),
+            )
+            results.append(res[0].reshape(input.shape))
+        else:
+            results.append(None)
+
+        # weight and bias don't compute batched gradients; no other arguments are differentiable (2 are not saved from the forward)
+        results = results + [None] * 7
+
+        # set grad_sample field for weight and bias with per sample gradients
+        set_grad_sample_if_exists(
+            weight,
+            lambda _: torch.einsum(
+                "ni...->ni", F.instance_norm(input, eps=eps) * grad_output
+            ),
+        )
+        set_grad_sample_if_exists(
+            bias, lambda _: torch.einsum("ni...->ni", grad_output)
+        )
+        return tuple(results)
+
+```
+
+
+
+## High-Level Overview
+
+
+This Python file contains 1 class(es) and 2 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `InstanceNormPerSampleGrad`
+
+**Functions defined**: `forward`, `backward`
+
+**Key imports**: partial, torch, torch.nn.functional as F, implements_per_sample_grads
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/nn/utils/_expanded_weights`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `functools`: partial
+- `torch`
+- `torch.nn.functional as F`
+- `.expanded_weights_impl`: implements_per_sample_grads
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Neural Network**: Defines or uses PyTorch neural network components
+- **Automatic Differentiation**: Uses autograd for gradient computation
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/nn/utils/_expanded_weights`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`group_norm_expanded_weights.py_docs.md`](./group_norm_expanded_weights.py_docs.md)
+- [`layer_norm_expanded_weights.py_docs.md`](./layer_norm_expanded_weights.py_docs.md)
+- [`linear_expanded_weights.py_docs.md`](./linear_expanded_weights.py_docs.md)
+- [`expanded_weights_utils.py_docs.md`](./expanded_weights_utils.py_docs.md)
+- [`expanded_weights_impl.py_docs.md`](./expanded_weights_impl.py_docs.md)
+- [`conv_utils.py_docs.md`](./conv_utils.py_docs.md)
+- [`conv_expanded_weights.py_docs.md`](./conv_expanded_weights.py_docs.md)
+- [`embedding_expanded_weights.py_docs.md`](./embedding_expanded_weights.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `instance_norm_expanded_weights.py_docs.md`
+- **Keyword Index**: `instance_norm_expanded_weights.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/nn/utils/_expanded_weights`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/nn/utils/_expanded_weights`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Neural Network**: Defines or uses PyTorch neural network components
+- **Automatic Differentiation**: Uses autograd for gradient computation
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/nn/utils/_expanded_weights`):
+
+- [`expanded_weights_utils.py_docs.md_docs.md`](./expanded_weights_utils.py_docs.md_docs.md)
+- [`embedding_expanded_weights.py_kw.md_docs.md`](./embedding_expanded_weights.py_kw.md_docs.md)
+- [`conv_expanded_weights.py_docs.md_docs.md`](./conv_expanded_weights.py_docs.md_docs.md)
+- [`conv_utils.py_kw.md_docs.md`](./conv_utils.py_kw.md_docs.md)
+- [`conv_utils.py_docs.md_docs.md`](./conv_utils.py_docs.md_docs.md)
+- [`embedding_expanded_weights.py_docs.md_docs.md`](./embedding_expanded_weights.py_docs.md_docs.md)
+- [`expanded_weights_impl.py_kw.md_docs.md`](./expanded_weights_impl.py_kw.md_docs.md)
+- [`__init__.py_docs.md_docs.md`](./__init__.py_docs.md_docs.md)
+- [`linear_expanded_weights.py_kw.md_docs.md`](./linear_expanded_weights.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `instance_norm_expanded_weights.py_docs.md_docs.md`
+- **Keyword Index**: `instance_norm_expanded_weights.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

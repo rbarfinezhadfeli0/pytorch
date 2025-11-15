@@ -1,0 +1,474 @@
+# Documentation: `docs/test/inductor/test_aot_inductor.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/test/inductor/test_aot_inductor.py_kw.md`
+- **Size**: 30,546 bytes (29.83 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `test/inductor/test_aot_inductor.py`
+
+## File Information
+
+- **Original File**: [test/inductor/test_aot_inductor.py](../../../test/inductor/test_aot_inductor.py)
+- **Documentation**: [`test_aot_inductor.py_docs.md`](./test_aot_inductor.py_docs.md)
+- **Folder**: `test/inductor`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`A`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`AOTInductorLoggingTest`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`AOTInductorTestABICompatibleCpu`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`AOTInductorTestABICompatibleGpu`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`AOTInductorTestABICompatibleMps`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`AOTInductorTestsTemplate`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`Child1`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`Child2`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`Foo`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`FooBarModule`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`KVCache`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`LinearModel`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`M`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`Model`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`Model1`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`Model2`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`Module`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`MyModel`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`MyModule`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`NestedChild`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`Repro`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`SubModule`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`TestAOTInductorConfig`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`TestModule`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`ToCpuModel`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+
+### Functions
+
+- **`__init__`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`_group_quantize_tensor_xpu`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`_quantize`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`add_kernel`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`add_one_kernel`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`convert_weight_to_int4pack`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`create_test_fn`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`cudagraph`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`custom_add`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`f_`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`fail_cpu`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`fail_gpu`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`fail_mps`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`false_fn`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`fn`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`foo`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`foo_add1_impl`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`foo_add2_impl`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`foo_fake_impl`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`foo_impl`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`force_realize`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`forward`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`forward_block`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`get_module_ext_type`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`grid`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`grid_fn`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`pass_kernel`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`realize_out_tensor_with_size`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`runner_call`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`sin_kernel`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`sin_triton`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test__int_mm`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test__weight_int4pack_mm`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test__weight_int4pack_mm_with_scales_and_zeros`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_add_complex`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_addmm`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_addmm_multiple_dynamic`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_aliased_buffer_reuse`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_amp_fallback_random`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_aot_inductor_consts_cpp_build`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_aoti_constant_tensor`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_aoti_constant_tensor_name_collision`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_aoti_debug_printer_codegen`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_aoti_debug_printer_cpp_kernel`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_aoti_debug_printer_fp8_dtype`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_aoti_debug_printer_sym_inputs`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_aoti_debug_printer_user_defined_triton_kernel`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_aoti_debug_printing_model_inputs_codegen`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_aoti_profiler`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_aoti_runtime_asserts`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_aoti_runtime_asserts_backed_symint`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_aoti_user_defined_triton_kernel_profiling`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_assert_async`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_assert_tensor_meta`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_autotune_int64_user_defined_triton_kernel`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_autotune_with_constant_folding`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_autotuning_args_reuse`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_backward_no_op_logging`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_bmm_multiple_dynamic`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_bool_input`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_boolean_indexing`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_buffer_mutation_1`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_buffer_mutation_2`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_buffer_mutation_3`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_buffer_mutation_4`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_buffer_mutation_and_force_mmap_weights`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_buffer_reuse`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_clamp_decomposition`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_compile_standalone_cross_compile_windows_package_format`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_compile_standalone_explicit_set`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_compile_standalone_package_cpp_false_raises`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_compile_standalone_sets_package_cpp`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_composed_dynamic_size`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_cond_mismatched_branch_output`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_cond_nested`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_cond_non_tensor_predicates`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_cond_share_predicte`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_cond_simple`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_cond_symint_input`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_cond_symint_input_disable_one_pass`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_cond_unbacked_symint_closure`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_cond_use_buffers_from_outer_scope`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_cond_with_multiple_outputs`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_cond_with_outer_code_before_after`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_cond_with_parameters`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_cond_with_reinterpret_view_inputs_outputs`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_consecutive_compiles`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_constant`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_constant_folding`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_constant_folding_with_update`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_constant_original_fqn_and_dtype`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_constant_type_propagation`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_conv3d`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_conv_freezing`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_convolution`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_copy_non_blocking_is_pinned`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_custom_op_in_subgraph`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_d2h_copy`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_deconv_freezing`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_dup_unbacked_sym_decl`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_dup_unbacked_sym_decl_with_refinement`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_duplicate_constant_folding`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_duplicated_params`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_dynamic_cat`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_dynamic_scalar`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_dynamic_smem_above_default_limit`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_embedding_bag`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_empty_cat_dtype_promotion`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_empty_constant_folding`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_empty_graph`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_extract_constants_map`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_fake_tensor_device_validation`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_fallback_kernel_with_symexpr_output`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_fallback_mem_leak_fix`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_fft_c2c`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_fill__fallback`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_fn`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_foreach_multiple_dynamic`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_fp8`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_fp8_view_of_param`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_fqn`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_free_inactive_buffer`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_freezing`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_fx_gm_return_tuple_validation`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_index_put_fallback`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_index_put_with_none_index`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_inf`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_input_codegen_with_sympy_expr`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_int_list_input`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_issue_140766`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_large_dynamic_dim`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_large_grid`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_large_mmaped_weights`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_large_mmaped_weights_on_disk`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_large_weight`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_libtorch_free_so`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_linear_dynamic_maxautotune`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_linear_freezing`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_load_package_multiple_gpus`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_masked_select_dynamic`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_misaligned_input_1`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_misaligned_input_2`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_misc_1`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_missing_cubin`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_missing_output`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_mixed_device_1`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_model_modified_weights`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_multi_device`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_multiple_output_alias`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_nan`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_narrow_fallback`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_nested_tensor_from_jagged`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_no_args`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_no_compile_standalone`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_non_contiguous_output_alias`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_non_default_gpu_device`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_non_tensor_input`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_none_args_aot_codegen`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_normal_functional`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_on_gpu_device1`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_output_misaligned`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_output_path_1`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_output_path_2`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_pad_fallback`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_pad_non_zero_memory_leak`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_poi_multiple_dynamic`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_profile_benchmark_harness`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_proxy_executor_abs`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_proxy_executor_hann`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_proxy_executor_permute`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_proxy_executor_squeeze`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_pytree_inputs`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_quanatized_int8_linear`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_quantized_linear`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_quantized_linear_bias_none`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_repeat_interleave`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_repeat_output`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_repeated_calling`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_repeated_user_defined_triton_kernel`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_replace_unbacked_symbol_with_backed_expr`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_replicate_on_devices`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_return_constant`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_return_view_constant`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_reuse_kernel`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_reuse_kernel_dynamic`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_rocm_triton_autotuning`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_run_with_grad_enabled`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_runtime_checks`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_runtime_checks_complex`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_runtime_checks_device_type_failed`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_runtime_checks_dtype_failed`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_runtime_checks_fp8`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_runtime_checks_large`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_runtime_checks_shape_failed`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_same_backing`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_scaled_dot_product_efficient_attention`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_scaled_grouped_mm`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_scatter_fallback`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_scatter_reduce_fallback`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_sdpa`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+
+### Imports
+
+- **`.test_aot_inductor_utils`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`.test_control_flow`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`.test_torchinductor`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`Bottleneck`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`CompileEventLogLevel`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`CustomTensorPlainOut`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`Dim`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`FileCheck`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`LoggingTestCase`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`TestCase`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`WritableTempFile`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`X86InductorQuantizer`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`_pytree`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`add_kernel`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`cache_dir`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`capture_triton`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`common_utils`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`compile_fx`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`config`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`convert_pt2e`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`copy_tests`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`counters`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`draft_export`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`full_aoti_runtime_assert`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`get_interface_for_device`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`itertools`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`json`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`language`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`load_pt2`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`logging`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`make_fx`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`math`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`normalize_path_separator`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`os`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`package_aoti`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`patch`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`pathlib`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`rand_strided`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`requires_gpu`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`run_tests`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`skip`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`subprocess`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`sys`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`tempfile`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_aot_inductor_utils`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_control_flow`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`test_torchinductor`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch._dynamo`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch._dynamo.device_interface`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch._dynamo.testing`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch._dynamo.utils`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch._export`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch._functorch`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch._inductor`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch._inductor.codecache`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch._inductor.config`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch._inductor.cpp_builder`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch._inductor.package`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch._inductor.runtime.runtime_utils`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch._inductor.test_case`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch._inductor.utils`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch._library`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch._utils_internal`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch.ao.quantization.quantize_pt2e`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch.ao.quantization.quantizer.x86_inductor_quantizer`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch.export`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch.export._draft_export`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch.export.pt2_archive._package`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch.fx._pytree`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch.fx.experimental.proxy_tensor`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch.nn`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch.testing`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch.testing._internal`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch.testing._internal.common_cuda`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch.testing._internal.common_device_type`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch.testing._internal.common_quantization`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch.testing._internal.custom_tensor`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch.testing._internal.inductor_utils`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch.testing._internal.logging_utils`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch.testing._internal.triton_utils`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch.utils`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torch.utils._triton`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torchvision`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`torchvision.models.resnet`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`triton`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`unittest`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`unittest.mock`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+- **`zipfile`**: [test_aot_inductor.py_docs.md](./test_aot_inductor.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/inductor`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/inductor`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Implements or uses **caching** mechanisms.
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- **Command Execution**: Executes system commands - validate inputs
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/inductor/test_aot_inductor.py_kw.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/inductor`):
+
+- [`test_snode_runtime.py_kw.md_docs.md`](./test_snode_runtime.py_kw.md_docs.md)
+- [`test_metrics.py_docs.md_docs.md`](./test_metrics.py_docs.md_docs.md)
+- [`test_flex_attention.py_kw.md_docs.md`](./test_flex_attention.py_kw.md_docs.md)
+- [`test_cuda_repro.py_kw.md_docs.md`](./test_cuda_repro.py_kw.md_docs.md)
+- [`test_fxir_backend.py_kw.md_docs.md`](./test_fxir_backend.py_kw.md_docs.md)
+- [`test_split_cat_fx_passes.py_kw.md_docs.md`](./test_split_cat_fx_passes.py_kw.md_docs.md)
+- [`test_mmdecomp.py_kw.md_docs.md`](./test_mmdecomp.py_kw.md_docs.md)
+- [`test_torchinductor_codegen_config_overrides.py_kw.md_docs.md`](./test_torchinductor_codegen_config_overrides.py_kw.md_docs.md)
+- [`test_aot_inductor_custom_ops.py_kw.md_docs.md`](./test_aot_inductor_custom_ops.py_kw.md_docs.md)
+- [`test_minifier.py_kw.md_docs.md`](./test_minifier.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_aot_inductor.py_kw.md_docs.md`
+- **Keyword Index**: `test_aot_inductor.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

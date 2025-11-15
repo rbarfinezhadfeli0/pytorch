@@ -1,0 +1,292 @@
+# Documentation: `docs/torch/csrc/jit/mobile/quantization.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/jit/mobile/quantization.cpp_docs.md`
+- **Size**: 4,629 bytes (4.52 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/csrc/jit/mobile/quantization.cpp`
+
+## File Metadata
+
+- **Path**: `torch/csrc/jit/mobile/quantization.cpp`
+- **Size**: 2,176 bytes (2.12 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#include <ATen/Context.h>
+#include <torch/csrc/jit/mobile/module.h>
+#include <torch/csrc/jit/mobile/quantization.h>
+
+namespace torch::jit::mobile::quantization {
+
+void PTQQuanizationHelper::quantize_dynamic(
+    torch::jit::mobile::Module& m,
+    const std::string& method_name) {
+  at::globalContext().setReleaseWeightsWhenPrepacking(false);
+  std::string reset_observers_method_name = "reset_observers_" + method_name;
+  std::string observe_method_name = "observe_" + method_name;
+  std::string quantize_method_name = "quantize_" + method_name;
+  std::string quantized_method_name = "quantized_" + method_name;
+
+  TORCH_CHECK(
+      m.find_method(reset_observers_method_name).has_value(),
+      "PTQ ready module must have",
+      reset_observers_method_name,
+      " method.");
+  TORCH_CHECK(
+      m.find_method(observe_method_name),
+      "PTQ ready module must have",
+      reset_observers_method_name,
+      " method.");
+  TORCH_CHECK(
+      m.find_method(quantize_method_name),
+      "PTQ ready module must have",
+      quantize_method_name,
+      " method.");
+  TORCH_CHECK(
+      m.find_method(quantized_method_name),
+      "PTQ ready module must have",
+      quantized_method_name,
+      " method.");
+  TORCH_CHECK(
+      m.find_method("get_all_bundled_inputs"),
+      "PTQ ready module must have get_all_bundled_inputs method.");
+
+  auto inputs = m.run_method("get_all_bundled_inputs")
+                    .toList()
+                    .get(0)
+                    .toTupleRef()
+                    .elements()
+                    .vec();
+  m.get_method(reset_observers_method_name)({});
+  m.get_method(observe_method_name)(inputs);
+  m.get_method(quantize_method_name)(inputs);
+
+  m.compareMethodSchemas(method_name, quantized_method_name);
+  m.unsafeRemoveMethod(method_name);
+  const Function& to_be_copied =
+      m.find_method(quantized_method_name).value().function();
+  m.unsafeCopyMethod(method_name, to_be_copied);
+  m.unsafeRemoveMethod(quantized_method_name);
+  m.unsafeRemoveMethod(quantize_method_name);
+  m.unsafeRemoveMethod(observe_method_name);
+  m.unsafeRemoveMethod(reset_observers_method_name);
+}
+} // namespace torch::jit::mobile::quantization
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 0 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/jit/mobile`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/Context.h`
+- `torch/csrc/jit/mobile/module.h`
+- `torch/csrc/jit/mobile/quantization.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/jit/mobile`):
+
+- [`register_ops_common_utils.cpp_docs.md`](./register_ops_common_utils.cpp_docs.md)
+- [`import.h_docs.md`](./import.h_docs.md)
+- [`prim_ops_registery.h_docs.md`](./prim_ops_registery.h_docs.md)
+- [`profiler_edge.h_docs.md`](./profiler_edge.h_docs.md)
+- [`interpreter.h_docs.md`](./interpreter.h_docs.md)
+- [`file_format.h_docs.md`](./file_format.h_docs.md)
+- [`module.h_docs.md`](./module.h_docs.md)
+- [`observer.h_docs.md`](./observer.h_docs.md)
+- [`module.cpp_docs.md`](./module.cpp_docs.md)
+- [`flatbuffer_loader.cpp_docs.md`](./flatbuffer_loader.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `quantization.cpp_docs.md`
+- **Keyword Index**: `quantization.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/jit/mobile`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/jit/mobile`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/jit/mobile`):
+
+- [`code.h_docs.md_docs.md`](./code.h_docs.md_docs.md)
+- [`register_ops_common_utils.cpp_docs.md_docs.md`](./register_ops_common_utils.cpp_docs.md_docs.md)
+- [`observer.h_kw.md_docs.md`](./observer.h_kw.md_docs.md)
+- [`prim_ops_registery.cpp_kw.md_docs.md`](./prim_ops_registery.cpp_kw.md_docs.md)
+- [`quantization.h_docs.md_docs.md`](./quantization.h_docs.md_docs.md)
+- [`debug_info.cpp_kw.md_docs.md`](./debug_info.cpp_kw.md_docs.md)
+- [`interpreter.cpp_kw.md_docs.md`](./interpreter.cpp_kw.md_docs.md)
+- [`debug_info.h_docs.md_docs.md`](./debug_info.h_docs.md_docs.md)
+- [`interpreter.cpp_docs.md_docs.md`](./interpreter.cpp_docs.md_docs.md)
+- [`promoted_prim_ops.cpp_docs.md_docs.md`](./promoted_prim_ops.cpp_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `quantization.cpp_docs.md_docs.md`
+- **Keyword Index**: `quantization.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

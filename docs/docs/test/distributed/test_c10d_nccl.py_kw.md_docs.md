@@ -1,0 +1,433 @@
+# Documentation: `docs/test/distributed/test_c10d_nccl.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/test/distributed/test_c10d_nccl.py_kw.md`
+- **Size**: 26,069 bytes (25.46 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `test/distributed/test_c10d_nccl.py`
+
+## File Information
+
+- **Original File**: [test/distributed/test_c10d_nccl.py](../../../test/distributed/test_c10d_nccl.py)
+- **Documentation**: [`test_c10d_nccl.py_docs.md`](./test_c10d_nccl.py_docs.md)
+- **Folder**: `test/distributed`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`AcceptsParam`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`CommTest`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`DistributedDataParallelTest`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`Env`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`FindUnusedParametersModule`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`ForwardReturnValueModule`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`LargeCommTest`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`MultipleOutputModule`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`NCCLTraceTest`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`NCCLTraceTestBase`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`NCCLTraceTestDumpOnTimeout`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`NCCLTraceTestDumpOnTimeoutBase`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`NCCLTraceTestTimeoutDumpOnStuckRanks`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`NcclErrorDumpTest`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`NcclErrorHandlingTest`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`NcclProcessGroupWithDispatchedCollectivesTests`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`NcclUserBufferRegistrationTest`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`NoGradModule`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`ProcessGroupNCCLGroupTest`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`ProcessGroupNCCLInitTest`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`ProcessGroupNCCLLargerScaleTest`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`ProcessGroupNCCLNoGPUTest`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`RendezvousEnvTest`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`SetDeviceMethod`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`SparseCollective`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`TestModel`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`TimeoutTest`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`ToyModel`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`WorkHookTest`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`increased`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`is`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+
+### Functions
+
+- **`__enter__`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`__exit__`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`__init__`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_check_nccl_timeout`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_check_return_codes`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_create_process_group_nccl`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_get_default_ranks_to_exclude`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_get_process_group`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_get_store`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_gpu_model_with_ddp_comm_hook`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_helper_test_extra_cuda_context_by_memory`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_helper_test_extra_cuda_context_by_nvml`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_init_process_group`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_init_two_pg2_subgroups`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_join_processes`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_perform_shrink_test`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_reduce_timeout`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_run`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_run_all_reduce`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_run_invalid_nccl_blocking_wait_env`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_setup_shrink_test`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_spawn_processes`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_test_accumulate_gradients_module`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_test_arbitrary_forward_return_value`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_test_barrier_error`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_test_bf16_compress_wrapper`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_test_broadcast_coalesced`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_test_builtin_ddp_comm_hooks_nccl`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_test_collective_on_shrunk_group`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_test_ddp_comm_hook_allreduce_hook_nccl`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_test_default_ddp_comm_hooks_nccl`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_test_find_unused_parameters_kwarg`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_test_fp16`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_test_fp16_compress_wrapper`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_test_grad_layout`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_test_invalid_input`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_test_multiple_outputs_multiple_backward`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_test_nccl_backend`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_test_pass_nccl_options`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_test_powerSGD_ddp_comm_hook_nccl`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_test_shrink_group_with_flag`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_trace_basename`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_trace_name`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_ts`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_validate_shrunk_group`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_verify_trace`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_wait_process`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`abortpg`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`allreduce_hook`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`allreduce_with_then_hook`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`assert_fut_success`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`blocking_wait_error_msg`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`check_if_test_is_skipped`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`check_no_grads`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`configure`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`define_module`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`destroy_pg_upon_exit`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`device`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`div`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`first_bucket_size`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`forward`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`gather_trace`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`hook`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`init_collective_task`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`load_libpthread_or_libc`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`local_device`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`log_test_error`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`log_test_info`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`log_test_success`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`log_test_validation`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`log_test_warning`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`mult`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`op_timeout_sec`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`open_file_with_timeout`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`opts`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`rank_to_GPU`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`setUp`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`set_thread_name`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`started_or_scheduled`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`step_model`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`tearDown`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_abort_in_destroy_mixed_empty_pgs`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_abort_in_destroy_multi_pgs`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_abort_in_destroy_pg`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_abort_pg`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_accumulate_gradients_module`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_accumulate_gradients_module_with_grad_is_view`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_all_reduce_coalesced_manager_nccl`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_all_reduce_coalesced_nccl`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_all_to_all_single`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_allgather_base`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_allgather_float8`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_allgather_uneven`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_allreduce_coalesced`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_arbitrary_forward_return_value`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_arbitrary_forward_return_value_grad_is_view`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_barrier_profiling`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_batch_send_recv_subgroup`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_batched_send_recv`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_bf16_compress_wrapper_is_view`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_bf16_compress_wrapper_nccl`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_block_current_stream`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_broadcast_coalesced_nccl`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_broadcast_object_list_subgroup`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_broadcast_subgroup`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_builtin_ddp_comm_hooks_nccl`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_builtin_ddp_comm_hooks_nccl_grad_is_view`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_channels_last_contig`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_close_pg`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_coalescing_manager_collective`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_collectives`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_comm_eager_init_subgroup`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_comm_recursive_split_group`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_comm_split_group`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_comm_split_group_larger_scale`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_comm_split_group_mixed_backend`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_comm_split_subgroup`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_common_errors`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_cuda_event_cache_mthd_race`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_ddp_comm_hook_allreduce_hook_nccl`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_ddp_comm_hook_allreduce_hook_nccl_grad_is_view`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_ddp_comm_hook_allreduce_hook_nccl_static_graph`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_ddp_comm_hook_allreduce_with_then_hook_nccl`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_ddp_comm_hook_future_passing_gpu_nccl`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_ddp_complex_params`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_ddp_multi_device_module_config`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_ddp_packed_sequence`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_ddp_set_sparse_metadata`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_ddp_weight_sharing`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_ddp_with_lazy_parameters`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_default_ddp_comm_hooks_nccl`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_default_ddp_comm_hooks_nccl_is_view`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_default_store_timeout_nccl`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_destruct_before_terminate_pg`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_deterministic_mode_no_break`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_dump_pipe`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_error_detection_and_propagation`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_extend_nccl_pg_timeout`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_extra_cuda_context`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_extra_cuda_context_sync_ops`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_failure_recovery`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_file_store_check`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_find_unused_parameters`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_find_unused_parameters_kwarg_debug_detail`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_find_unused_parameters_kwarg_debug_info`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_find_unused_parameters_kwarg_debug_off`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_find_unused_parameters_kwarg_grad_is_view_debug_detail`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_find_unused_parameters_kwarg_grad_is_view_debug_info`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_find_unused_parameters_kwarg_grad_is_view_debug_off`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_fp16`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_fp16_compress_wrapper_is_view`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_fp16_compress_wrapper_nccl`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_fp16_grad_is_view`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_fr_record_multiple_resets`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_fr_record_reset`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_fr_record_reset_circular_buffer_full`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_fr_record_reset_partial_overwrite`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_fr_record_reset_wraparound`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_gather_object_subgroup`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_gather_subgroup`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_get_uid`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_grad_layout_1devicemodule_1replicaperprocess`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_grad_layout_2devicemodule`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_individual_send_recv`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_init_no_gpus`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_init_process_group_nccl_timeout`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_init_with_idx`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_init_wo_backend_str`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_intra_node_comm_all_reduce`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_invalid_nccl_blocking_wait_env`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_long`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_multiple_outputs_multiple_backward`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_multiple_outputs_multiple_backward_grad_is_view`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_nan_assert`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_nan_check`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_nan_rank_filter`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_nccl_backend_1gpu_module_device_ids_integer_list`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_nccl_backend_1gpu_module_device_ids_torch_device_list`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_nccl_backend_2gpu_module`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_nccl_backend_4gpu_module`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_nccl_backend_multi_device_ids_not_allowed`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_nccl_backend_multi_device_module_device_ids_None`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_nccl_backend_single_device_module_device_ids_None`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_nccl_backend_single_device_module_empty_device_ids`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_nccl_barrier`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_nccl_barrier_device_ids`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_nccl_blocking_wait_with_barrier`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_nccl_dist_backend_error`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_nccl_errors_blocking`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_nccl_errors_dump`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_nccl_errors_nonblocking`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_nccl_non_blocking_wait_with_barrier`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_nccl_propagate_error_reason`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_nccl_user_buffer_registration`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_nccl_warn_not_in_group_debug_detail`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_nccl_warn_not_in_group_debug_info`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_nccl_warn_not_in_group_debug_off`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_nccl_window_registration`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_new_group`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+
+### Imports
+
+- **`DistributedDataParallel`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`ErrorType`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`SHRINK_ABORT`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`SM80OrLater`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_get_intra_node_comm_usage_counter`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_get_process_group_uid`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`_get_torch_rocm_version`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`auto`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`chain`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`contextlib`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`contextmanager`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`copy`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`ctypes`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`ctypes.util`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`datetime`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`enum`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`itertools`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`json`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`logging`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`mock`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`nn`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`os`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`pickle`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`pynvml`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`random`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`re`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`signal`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`sys`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`tempfile`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`test_c10d_common`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`threading`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`time`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`torch`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`torch._C._distributed_c10d`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`torch.distributed`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`torch.distributed._functional_collectives`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`torch.distributed.algorithms.ddp_comm_hooks.default_hooks`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`torch.distributed.algorithms.ddp_comm_hooks.powerSGD_hook`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`torch.distributed.distributed_c10d`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`torch.nn.functional`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`torch.nn.parallel`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`torch.testing._internal.common_cuda`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`torch.testing._internal.common_distributed`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`unittest`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+- **`warnings`**: [test_c10d_nccl.py_docs.md](./test_c10d_nccl.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/distributed`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/distributed`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Implements or uses **caching** mechanisms.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- **Serialization**: Uses pickle - be cautious with untrusted data
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/distributed/test_c10d_nccl.py_kw.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/distributed`):
+
+- [`test_run.py_kw.md_docs.md`](./test_run.py_kw.md_docs.md)
+- [`test_inductor_collectives.py_docs.md_docs.md`](./test_inductor_collectives.py_docs.md_docs.md)
+- [`test_control_collectives.py_kw.md_docs.md`](./test_control_collectives.py_kw.md_docs.md)
+- [`test_c10d_gloo.py_docs.md_docs.md`](./test_c10d_gloo.py_docs.md_docs.md)
+- [`test_collective_utils.py_kw.md_docs.md`](./test_collective_utils.py_kw.md_docs.md)
+- [`test_data_parallel.py_kw.md_docs.md`](./test_data_parallel.py_kw.md_docs.md)
+- [`test_overlap_bucketing_unit.py_kw.md_docs.md`](./test_overlap_bucketing_unit.py_kw.md_docs.md)
+- [`test_multi_threaded_pg.py_docs.md_docs.md`](./test_multi_threaded_pg.py_docs.md_docs.md)
+- [`argparse_util_test.py_kw.md_docs.md`](./argparse_util_test.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_c10d_nccl.py_kw.md_docs.md`
+- **Keyword Index**: `test_c10d_nccl.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

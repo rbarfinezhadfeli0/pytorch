@@ -1,0 +1,198 @@
+# Documentation: `docs/android/pytorch_android/src/main/java/org/pytorch/IValue.java_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/android/pytorch_android/src/main/java/org/pytorch/IValue.java_kw.md`
+- **Size**: 4,611 bytes (4.50 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `android/pytorch_android/src/main/java/org/pytorch/IValue.java`
+
+## File Information
+
+- **Original File**: [android/pytorch_android/src/main/java/org/pytorch/IValue.java](../../../../../../../../android/pytorch_android/src/main/java/org/pytorch/IValue.java)
+- **Documentation**: [`IValue.java_docs.md`](./IValue.java_docs.md)
+- **Folder**: `android/pytorch_android/src/main/java/org/pytorch`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`All`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`Bool`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`BoolList`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`Calling`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`Creates`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`Data`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`Dict`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`DictLongKey`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`DictStringKey`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`DoNotStrip`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`Double`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`DoubleList`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`Expected`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`GenericList`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`IValue`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`IValues`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`IllegalArgumentException`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`IllegalStateException`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`Java`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`List`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`Locale`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`Long`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`LongList`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`Map`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`Note`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`Null`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`Object`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`Optional`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`String`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`T`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`T0`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`T1`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`TYPE_CODE_BOOL`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`TYPE_CODE_BOOL_LIST`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`TYPE_CODE_DICT_LONG_KEY`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`TYPE_CODE_DICT_STRING_KEY`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`TYPE_CODE_DOUBLE`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`TYPE_CODE_DOUBLE_LIST`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`TYPE_CODE_LIST`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`TYPE_CODE_LONG`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`TYPE_CODE_LONG_LIST`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`TYPE_CODE_NULL`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`TYPE_CODE_STRING`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`TYPE_CODE_TENSOR`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`TYPE_CODE_TENSOR_LIST`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`TYPE_CODE_TUPLE`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`TYPE_NAMES`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`Tensor`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`TensorList`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`TorchScript`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`Tuple`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`US`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`Unknown`**: [IValue.java_docs.md](./IValue.java_docs.md)
+- **`V`**: [IValue.java_docs.md](./IValue.java_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/android/pytorch_android/src/main/java/org/pytorch`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/android/pytorch_android/src/main/java/org/pytorch`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/android/pytorch_android/src/main/java/org/pytorch`):
+
+- [`NativePeer.java_kw.md_docs.md`](./NativePeer.java_kw.md_docs.md)
+- [`LiteModuleLoader.java_docs.md_docs.md`](./LiteModuleLoader.java_docs.md_docs.md)
+- [`PyTorchAndroid.java_docs.md_docs.md`](./PyTorchAndroid.java_docs.md_docs.md)
+- [`LiteNativePeer.java_kw.md_docs.md`](./LiteNativePeer.java_kw.md_docs.md)
+- [`PyTorchAndroid.java_kw.md_docs.md`](./PyTorchAndroid.java_kw.md_docs.md)
+- [`NativePeer.java_docs.md_docs.md`](./NativePeer.java_docs.md_docs.md)
+- [`INativePeer.java_docs.md_docs.md`](./INativePeer.java_docs.md_docs.md)
+- [`Tensor.java_docs.md_docs.md`](./Tensor.java_docs.md_docs.md)
+- [`MemoryFormat.java_docs.md_docs.md`](./MemoryFormat.java_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `IValue.java_kw.md_docs.md`
+- **Keyword Index**: `IValue.java_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

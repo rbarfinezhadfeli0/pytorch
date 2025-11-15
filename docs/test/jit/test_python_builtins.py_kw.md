@@ -1,0 +1,84 @@
+# Keyword Index: `test/jit/test_python_builtins.py`
+
+## File Information
+
+- **Original File**: [test/jit/test_python_builtins.py](../../../test/jit/test_python_builtins.py)
+- **Documentation**: [`test_python_builtins.py_docs.md`](./test_python_builtins.py_docs.md)
+- **Folder**: `test/jit`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`TestPythonBuiltinOP`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+
+### Functions
+
+- **`_check_code`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`bar`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`check_dynamic_indexing`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`check_indexing`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`check_slicing_tuple`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`consec`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`f`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`fn`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`foo`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`func`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`func1`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`func2`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`func3`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`func4`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`func5`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`get_fn`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`test_add`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`test_adv_indexing_list`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`test_advancedindex`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`test_gather`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`test_index`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`test_index_ellipses`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`test_inf`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`test_matmul_py3`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`test_mul`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`test_pow`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`test_random`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`test_slice`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`test_stepped_tuple_slicing`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`test_str_to_float`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`test_triple`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+
+### Imports
+
+- **`dedent`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`execWrapper`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`importlib.util`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`os`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`raise_on_run_directly`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`random`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`sys`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`tempfile`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`textwrap`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`torch`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+- **`torch.testing._internal.jit_utils`**: [test_python_builtins.py_docs.md](./test_python_builtins.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

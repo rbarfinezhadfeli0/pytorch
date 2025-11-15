@@ -1,0 +1,370 @@
+# Documentation: `docs/aten/src/ATen/native/xnnpack/Activation.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/xnnpack/Activation.cpp_docs.md`
+- **Size**: 6,385 bytes (6.24 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/native/xnnpack/Activation.cpp`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/xnnpack/Activation.cpp`
+- **Size**: 3,956 bytes (3.86 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#ifdef USE_XNNPACK
+
+#include <ATen/native/xnnpack/Common.h>
+#include <ATen/native/xnnpack/Engine.h>
+#include <ATen/native/utils/Factory.h>
+
+namespace at::native::xnnpack {
+
+
+bool use_hardswish(
+  const Tensor& input) {
+  return xnnpack::available() &&
+          (1 <= input.ndimension()) &&
+          (input.device().is_cpu()) &&
+          (kFloat == input.scalar_type()) &&
+          !input.requires_grad() &&
+           true;
+}
+
+static Tensor& hardswish_impl(Tensor& input, Tensor& output) {
+  using namespace internal;
+  // Create XNNPACK Subgraph
+  xnn_subgraph_t subgraph_ptr = nullptr;
+  xnn_status status = xnn_create_subgraph(
+    /*external_value_ids=*/2,
+    /*flags=*/0,
+    &subgraph_ptr);
+  TORCH_CHECK(
+      status == xnn_status_success,
+      "xnn create subgraph failed(", status,")!");
+  std::unique_ptr<xnn_subgraph, decltype(&xnn_delete_subgraph)> subgraph(
+      subgraph_ptr, &xnn_delete_subgraph);
+  uint32_t input_id = XNN_INVALID_VALUE_ID, output_id = XNN_INVALID_VALUE_ID;
+  std::vector<size_t> input_output_shape(input.sizes().begin(), input.sizes().end());
+
+  status = xnn_define_tensor_value(
+    subgraph_ptr,
+    xnn_datatype_fp32,
+    input_output_shape.size(),
+    input_output_shape.data(),
+    nullptr,
+    0,
+    XNN_VALUE_FLAG_EXTERNAL_INPUT,
+    &input_id
+  );
+  TORCH_CHECK(
+      status == xnn_status_success,
+      "defining xnn input failed(", status,")!");
+
+  status = xnn_define_tensor_value(
+    subgraph_ptr,
+    xnn_datatype_fp32,
+    input_output_shape.size(),
+    input_output_shape.data(),
+    nullptr,
+    1,
+    XNN_VALUE_FLAG_EXTERNAL_OUTPUT,
+    &output_id
+  );
+  TORCH_CHECK(
+      status == xnn_status_success,
+      "defining xnn output failed(", status,")!");
+
+  status = xnn_define_unary(
+    subgraph_ptr,
+    xnn_unary_hardswish,
+    nullptr,
+    input_id,
+    output_id,
+    0
+  );
+
+  // create runtime
+  xnn_runtime_t runtime_ptr = nullptr;
+  status = xnn_create_runtime_v2(subgraph_ptr, caffe2::pthreadpool_(), 0, &runtime_ptr);
+  TORCH_CHECK(
+      status == xnn_status_success,
+      "xnn create runtime failed(", status,")!");
+  TORCH_CHECK(
+      runtime_ptr != nullptr,
+      "xnn create runtime failed because runtime_ptr is null");
+  std::unique_ptr<xnn_runtime, decltype(&xnn_delete_runtime)> auto_runtime(
+      runtime_ptr, &xnn_delete_runtime);
+
+  std::array<xnn_external_value, 2> external = {
+    xnn_external_value{input_id, input.data_ptr<float>()},
+    xnn_external_value{output_id, output.data_ptr<float>()}};
+
+  status = xnn_setup_runtime(
+    runtime_ptr,
+    external.size(),
+    external.data());
+  TORCH_CHECK(
+      status == xnn_status_success,
+      "xnn setup runtime failed(", status,")!");
+  status = xnn_invoke_runtime(runtime_ptr);
+  TORCH_CHECK(
+      status == xnn_status_success,
+      "xnn invoke runtime failed(", status,")!");
+
+  return output;
+}
+
+Tensor hardswish(const Tensor& input) {
+  Tensor padded_input = mobile::allocate_padded_contiguous_if_needed(
+    input, input.suggest_memory_format());
+
+  Tensor output = mobile::empty_with_tail_padding(
+    padded_input.sizes(),
+    padded_input.options().dtype(),
+    input.suggest_memory_format(),
+    padded_input.opt_names());
+
+  hardswish_impl(padded_input, output);
+  return output.contiguous(input.suggest_memory_format());
+}
+
+Tensor& hardswish_(Tensor& input) {
+  Tensor padded_input = mobile::allocate_padded_contiguous_if_needed(
+    input, input.suggest_memory_format());
+
+  // Don't need to allocate output if input is contiguous & already padded
+  if (input.data_ptr() == padded_input.data_ptr()) {
+    hardswish_impl(input, input);
+    return input;
+  } else {
+    Tensor output = mobile::empty_with_tail_padding(
+      padded_input.sizes(),
+      padded_input.options().dtype(),
+      input.suggest_memory_format(),
+      padded_input.opt_names());
+    hardswish_impl(padded_input, output);
+    return input.copy_(output);
+  }
+}
+
+} // namespace at::native::xnnpack
+
+#endif /* USE_XNNPACK */
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 9 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `internal`, `at`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native/xnnpack`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/native/xnnpack/Common.h`
+- `ATen/native/xnnpack/Engine.h`
+- `ATen/native/utils/Factory.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native/xnnpack`):
+
+- [`Engine.h_docs.md`](./Engine.h_docs.md)
+- [`Linear.cpp_docs.md`](./Linear.cpp_docs.md)
+- [`ChannelShuffle.cpp_docs.md`](./ChannelShuffle.cpp_docs.md)
+- [`Convolution.h_docs.md`](./Convolution.h_docs.md)
+- [`RegisterOpContextClass.cpp_docs.md`](./RegisterOpContextClass.cpp_docs.md)
+- [`Common.h_docs.md`](./Common.h_docs.md)
+- [`Convolution.cpp_docs.md`](./Convolution.cpp_docs.md)
+- [`Linear.h_docs.md`](./Linear.h_docs.md)
+- [`Shim.cpp_docs.md`](./Shim.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `Activation.cpp_docs.md`
+- **Keyword Index**: `Activation.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native/xnnpack`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native/xnnpack`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native/xnnpack`):
+
+- [`MaxPooling.cpp_docs.md_docs.md`](./MaxPooling.cpp_docs.md_docs.md)
+- [`Convolution.cpp_docs.md_docs.md`](./Convolution.cpp_docs.md_docs.md)
+- [`Common.h_kw.md_docs.md`](./Common.h_kw.md_docs.md)
+- [`Pooling.h_docs.md_docs.md`](./Pooling.h_docs.md_docs.md)
+- [`RegisterOpContextClass.cpp_kw.md_docs.md`](./RegisterOpContextClass.cpp_kw.md_docs.md)
+- [`AveragePooling.cpp_kw.md_docs.md`](./AveragePooling.cpp_kw.md_docs.md)
+- [`OpContext.cpp_kw.md_docs.md`](./OpContext.cpp_kw.md_docs.md)
+- [`ChannelShuffle.cpp_docs.md_docs.md`](./ChannelShuffle.cpp_docs.md_docs.md)
+- [`MaxPooling.cpp_kw.md_docs.md`](./MaxPooling.cpp_kw.md_docs.md)
+- [`Common.h_docs.md_docs.md`](./Common.h_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `Activation.cpp_docs.md_docs.md`
+- **Keyword Index**: `Activation.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

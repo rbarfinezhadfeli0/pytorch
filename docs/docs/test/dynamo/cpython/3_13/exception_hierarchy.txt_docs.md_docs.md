@@ -1,0 +1,300 @@
+# Documentation: `docs/test/dynamo/cpython/3_13/exception_hierarchy.txt_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/dynamo/cpython/3_13/exception_hierarchy.txt_docs.md`
+- **Size**: 4,894 bytes (4.78 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/dynamo/cpython/3_13/exception_hierarchy.txt`
+
+## File Metadata
+
+- **Path**: `test/dynamo/cpython/3_13/exception_hierarchy.txt`
+- **Size**: 2,479 bytes (2.42 KB)
+- **Type**: Source File (.txt)
+- **Extension**: `.txt`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**.
+
+## Original Source
+
+```
+BaseException
+ ├── BaseExceptionGroup
+ ├── GeneratorExit
+ ├── KeyboardInterrupt
+ ├── SystemExit
+ └── Exception
+      ├── ArithmeticError
+      │    ├── FloatingPointError
+      │    ├── OverflowError
+      │    └── ZeroDivisionError
+      ├── AssertionError
+      ├── AttributeError
+      ├── BufferError
+      ├── EOFError
+      ├── ExceptionGroup [BaseExceptionGroup]
+      ├── ImportError
+      │    └── ModuleNotFoundError
+      ├── LookupError
+      │    ├── IndexError
+      │    └── KeyError
+      ├── MemoryError
+      ├── NameError
+      │    └── UnboundLocalError
+      ├── OSError
+      │    ├── BlockingIOError
+      │    ├── ChildProcessError
+      │    ├── ConnectionError
+      │    │    ├── BrokenPipeError
+      │    │    ├── ConnectionAbortedError
+      │    │    ├── ConnectionRefusedError
+      │    │    └── ConnectionResetError
+      │    ├── FileExistsError
+      │    ├── FileNotFoundError
+      │    ├── InterruptedError
+      │    ├── IsADirectoryError
+      │    ├── NotADirectoryError
+      │    ├── PermissionError
+      │    ├── ProcessLookupError
+      │    └── TimeoutError
+      ├── ReferenceError
+      ├── RuntimeError
+      │    ├── NotImplementedError
+      │    ├── PythonFinalizationError
+      │    └── RecursionError
+      ├── StopAsyncIteration
+      ├── StopIteration
+      ├── SyntaxError
+      │    └── _IncompleteInputError
+      │    └── IndentationError
+      │         └── TabError
+      ├── SystemError
+      ├── TypeError
+      ├── ValueError
+      │    └── UnicodeError
+      │         ├── UnicodeDecodeError
+      │         ├── UnicodeEncodeError
+      │         └── UnicodeTranslateError
+      └── Warning
+           ├── BytesWarning
+           ├── DeprecationWarning
+           ├── EncodingWarning
+           ├── FutureWarning
+           ├── ImportWarning
+           ├── PendingDeprecationWarning
+           ├── ResourceWarning
+           ├── RuntimeWarning
+           ├── SyntaxWarning
+           ├── UnicodeWarning
+           └── UserWarning
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `test/dynamo/cpython/3_13`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/dynamo/cpython/3_13`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/dynamo/cpython/3_13/exception_hierarchy.txt
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/dynamo/cpython/3_13`):
+
+- [`mapping_tests.diff_docs.md`](./mapping_tests.diff_docs.md)
+- [`test_float.py_docs.md`](./test_float.py_docs.md)
+- [`test_generators.py_docs.md`](./test_generators.py_docs.md)
+- [`test_dict.py_docs.md`](./test_dict.py_docs.md)
+- [`test_generator_stop.diff_docs.md`](./test_generator_stop.diff_docs.md)
+- [`test_sort.diff_docs.md`](./test_sort.diff_docs.md)
+- [`test_list.diff_docs.md`](./test_list.diff_docs.md)
+- [`test_userdict.diff_docs.md`](./test_userdict.diff_docs.md)
+- [`test_generators.diff_docs.md`](./test_generators.diff_docs.md)
+- [`test_userlist.py_docs.md`](./test_userlist.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `exception_hierarchy.txt_docs.md`
+- **Keyword Index**: `exception_hierarchy.txt_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/dynamo/cpython/3_13`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/dynamo/cpython/3_13`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/dynamo/cpython/3_13/exception_hierarchy.txt_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/dynamo/cpython/3_13`):
+
+- [`seq_tests.py_kw.md_docs.md`](./seq_tests.py_kw.md_docs.md)
+- [`test_tuple.diff_kw.md_docs.md`](./test_tuple.diff_kw.md_docs.md)
+- [`test_userdict.py_docs.md_docs.md`](./test_userdict.py_docs.md_docs.md)
+- [`test_bool.diff_docs.md_docs.md`](./test_bool.diff_docs.md_docs.md)
+- [`test_operator.py_docs.md_docs.md`](./test_operator.py_docs.md_docs.md)
+- [`seq_tests.diff_docs.md_docs.md`](./seq_tests.diff_docs.md_docs.md)
+- [`test_list.diff_kw.md_docs.md`](./test_list.diff_kw.md_docs.md)
+- [`test_bool.py_docs.md_docs.md`](./test_bool.py_docs.md_docs.md)
+- [`test_raise.py_docs.md_docs.md`](./test_raise.py_docs.md_docs.md)
+- [`test_itertools.diff_kw.md_docs.md`](./test_itertools.diff_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `exception_hierarchy.txt_docs.md_docs.md`
+- **Keyword Index**: `exception_hierarchy.txt_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

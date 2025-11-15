@@ -1,0 +1,87 @@
+# Keyword Index: `docs/torch/ao/quantization/quantize_fx.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/ao/quantization/quantize_fx.py_kw.md](../../../../../docs/torch/ao/quantization/quantize_fx.py_kw.md)
+- **Documentation**: [`quantize_fx.py_kw.md_docs.md`](./quantize_fx.py_kw.md_docs.md)
+- **Folder**: `docs/torch/ao/quantization`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Any`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Architecture`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`BackendConfig`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Basic`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Classs`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Complete`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Considerations`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`ConvertCustomConfig`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`DEPRECATION_WARNING`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Dependencies`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Design`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Detailed`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Documentation`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Efficiency`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Extracted`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`File`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Folder`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Functions`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Generated`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`GraphModule`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`High`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`How`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Imports`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`In`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Index`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Information`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Keyword`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Keywords`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Level`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`M`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Map`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Metadata`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`ObservedGraphModule`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Original`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Overview`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Performance`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Purpose`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`PyTorch`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`QConfigMapping`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`QuantizationTracer`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Related`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Repository`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Safety`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Section`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Security`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Source`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Submodule`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`System`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Testing`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`The`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`This`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+- **`Usage`**: [quantize_fx.py_kw.md_docs.md](./quantize_fx.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

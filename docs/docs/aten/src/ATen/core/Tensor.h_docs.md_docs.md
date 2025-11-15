@@ -1,0 +1,329 @@
+# Documentation: `docs/aten/src/ATen/core/Tensor.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/core/Tensor.h_docs.md`
+- **Size**: 4,783 bytes (4.67 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/core/Tensor.h`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/core/Tensor.h`
+- **Size**: 2,403 bytes (2.35 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#pragma once
+
+#include <ATen/core/TensorBody.h>
+#include <c10/util/Exception.h>
+
+namespace at {
+// NOLINTNEXTLINE(cppcoreguidelines-special-member-functions)
+class TORCH_API OptionalTensorRef {
+ public:
+  OptionalTensorRef() = default;
+
+  ~OptionalTensorRef() {
+    ref_.unsafeReleaseTensorImpl();
+  }
+
+  OptionalTensorRef(const TensorBase& src)
+      : ref_(Tensor::unsafe_borrow_t{}, src) {
+    TORCH_INTERNAL_ASSERT_DEBUG_ONLY(src.defined());
+  }
+
+  OptionalTensorRef(const OptionalTensorRef& rhs)
+      : ref_(Tensor::unsafe_borrow_t{}, rhs.ref_) {}
+
+  OptionalTensorRef(OptionalTensorRef&& rhs) = default;
+  OptionalTensorRef& operator=(OptionalTensorRef rhs) {
+    std::swap(ref_, rhs.ref_);
+    return *this;
+  }
+
+  bool has_value() const {
+    return ref_.defined();
+  }
+
+  const Tensor& getTensorRef() const & {
+    return ref_;
+  }
+
+  const Tensor& operator*() const & {
+    return ref_;
+  }
+
+  const Tensor* operator->() const & {
+    return &ref_;
+  }
+
+  operator bool() const {
+    return ref_.defined();
+  }
+
+ private:
+  Tensor ref_;
+};
+
+// Use to convert a TensorBase (that may be undefined) to an at::Tensor
+// without bumping refcount.
+class TORCH_API TensorRef {
+ public:
+  ~TensorRef() {
+    ref_.unsafeReleaseTensorImpl();
+  }
+
+  TensorRef(const TensorBase& src)
+      : ref_(Tensor::unsafe_borrow_t{}, src) {}
+  TensorRef(TensorRef&& other) = default;
+  TensorRef(const TensorRef&) = default;
+  TensorRef& operator=(const TensorRef&) = default;
+  TensorRef& operator=(TensorRef&&) = default;
+
+  const Tensor& operator*() const & {
+    return ref_;
+  }
+ private:
+  Tensor ref_;
+};
+
+template <typename T>
+auto Tensor::register_hook(T&& hook) const -> Tensor::hook_return_void_t<T> {
+  // Return the grad argument in case of a hook with void return type to have an
+  // std::function with Tensor return type
+  static_assert(std::is_same_v<decltype(hook(Tensor())), void>,
+                "Expected hook to return void");
+  return _register_hook([fn=std::forward<T>(hook)](const TensorBase& grad_base) {
+    TensorRef grad(grad_base);
+    fn(*grad);
+    return Tensor();
+  });
+}
+
+template <typename T>
+auto Tensor::register_hook(T&& hook) const -> Tensor::hook_return_var_t<T> {
+  return _register_hook([fn=std::forward<T>(hook)](const TensorBase& grad_base) {
+    TensorRef grad(grad_base);
+    Tensor ret = fn(*grad);
+    return TensorBase(std::move(ret));
+  });
+}
+
+} // namespace at
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 2 class(es)/struct(s) and 10 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `at`
+
+**Classes/Structs**: `TORCH_API`, `TORCH_API`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/core`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/core/TensorBody.h`
+- `c10/util/Exception.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/core`):
+
+- [`DistributionsHelper.h_docs.md`](./DistributionsHelper.h_docs.md)
+- [`rref_interface.h_docs.md`](./rref_interface.h_docs.md)
+- [`Generator.h_docs.md`](./Generator.h_docs.md)
+- [`enum_type.h_docs.md`](./enum_type.h_docs.md)
+- [`QuantizerBase.h_docs.md`](./QuantizerBase.h_docs.md)
+- [`Array.h_docs.md`](./Array.h_docs.md)
+- [`MetaFallbackKernel.cpp_docs.md`](./MetaFallbackKernel.cpp_docs.md)
+- [`ATenOpList.h_docs.md`](./ATenOpList.h_docs.md)
+- [`ivalue_inl.h_docs.md`](./ivalue_inl.h_docs.md)
+- [`TransformationHelper.h_docs.md`](./TransformationHelper.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `Tensor.h_docs.md`
+- **Keyword Index**: `Tensor.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/core`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/core`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/core`):
+
+- [`operator_name.cpp_docs.md_docs.md`](./operator_name.cpp_docs.md_docs.md)
+- [`builtin_function.h_kw.md_docs.md`](./builtin_function.h_kw.md_docs.md)
+- [`QuantizerBase.h_docs.md_docs.md`](./QuantizerBase.h_docs.md_docs.md)
+- [`MT19937RNGEngine.h_docs.md_docs.md`](./MT19937RNGEngine.h_docs.md_docs.md)
+- [`UndefinedTensorImpl.h_docs.md_docs.md`](./UndefinedTensorImpl.h_docs.md_docs.md)
+- [`IListRef_test.cpp_docs.md_docs.md`](./IListRef_test.cpp_docs.md_docs.md)
+- [`CheckMemoryFormat.h_docs.md_docs.md`](./CheckMemoryFormat.h_docs.md_docs.md)
+- [`Tensor.cpp_kw.md_docs.md`](./Tensor.cpp_kw.md_docs.md)
+- [`PythonFallbackKernel.cpp_docs.md_docs.md`](./PythonFallbackKernel.cpp_docs.md_docs.md)
+- [`Dict.h_kw.md_docs.md`](./Dict.h_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `Tensor.h_docs.md_docs.md`
+- **Keyword Index**: `Tensor.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

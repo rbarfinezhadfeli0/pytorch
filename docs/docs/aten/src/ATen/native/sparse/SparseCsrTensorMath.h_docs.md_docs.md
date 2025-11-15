@@ -1,0 +1,316 @@
+# Documentation: `docs/aten/src/ATen/native/sparse/SparseCsrTensorMath.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/sparse/SparseCsrTensorMath.h_docs.md`
+- **Size**: 4,972 bytes (4.86 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/native/sparse/SparseCsrTensorMath.h`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/sparse/SparseCsrTensorMath.h`
+- **Size**: 2,372 bytes (2.32 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#pragma once
+
+#include <ATen/Tensor.h>
+#include <ATen/core/Scalar.h>
+#include <ATen/TensorUtils.h>
+#include <ATen/native/ReductionType.h>
+#include <ATen/native/cpu/SpmmReduceKernel.h>
+
+namespace at::native::sparse::impl {
+
+// Returns true if all entries of self are zero
+// TODO: This has potential to be a generic helper
+inline bool _is_sparse_and_zero(const Tensor& self) {
+  if (self.layout() == kSparse || self.layout() == kSparseCsr ||
+      self.layout() == kSparseCsc || self.layout() == kSparseBsr ||
+      self.layout() == kSparseBsc) {
+    if (self._nnz() == 0) {
+      return true;
+    }
+  }
+  return false;
+}
+
+inline void _check_is_cpu(const Tensor& self, std::string_view name) {
+  TORCH_CHECK(
+      self.is_cpu(),
+      "Expected all tensors to be on the same device. addmm expected '",
+      name,
+      "' to be CPU tensor, but got ",
+      self.device(),
+      " tensor");
+}
+
+inline void _check_is_cuda(const Tensor& self, std::string_view name) {
+  TORCH_CHECK(
+      self.is_cuda(),
+      "Expected all tensors to be on the same device. addmm expected '",
+      name,
+      "' to be CUDA tensor, but got ",
+      self.device(),
+      " tensor");
+}
+
+inline void _check_dim(const Tensor& self, int64_t target_dim, std::string_view name) {
+  if (target_dim == 2) {
+    TORCH_CHECK(
+        self.dim() == target_dim,
+        name, " must be a matrix, ",
+        "got ", self.dim(), "-D tensor");
+  }
+  TORCH_CHECK(
+      self.dim() == target_dim,
+      "Expected ",
+      name,
+      " to be of dimension ",
+      target_dim,
+      " but got ",
+      self.dim(),
+      " instead.");
+}
+
+template <bool train>
+inline void check_sparse_mm_reduce_impl_inputs(
+    const Tensor& self,
+    const Tensor& grad_out,
+    const Tensor& other) {
+  TORCH_INTERNAL_ASSERT(self.is_sparse_csr());
+
+  const auto input_scalar_type = self.values().scalar_type();
+  CheckedFrom c = train ? "sparse_mm_reduce_backward" : "sparse_mm_reduce";
+  if (train) {
+    checkLayout(c, grad_out, kStrided);
+    checkScalarType(c, {grad_out, "grad_out", 1}, input_scalar_type);
+    check_dim_size(grad_out, 2, 0, self.size(0));
+    check_dim_size(grad_out, 2, 1, other.size(1));
+  }
+
+  int pos = train ? 2 : 1;
+  checkLayout(c, other, kStrided);
+  checkScalarType(c, {other, "other", pos}, input_scalar_type);
+  check_dim_size(other, 2, 0, self.size(1));
+}
+
+} // at::native::sparse::impl
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 5 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `at`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native/sparse`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/Tensor.h`
+- `ATen/core/Scalar.h`
+- `ATen/TensorUtils.h`
+- `ATen/native/ReductionType.h`
+- `ATen/native/cpu/SpmmReduceKernel.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native/sparse`):
+
+- [`SparseBinaryOpIntersectionCommon.h_docs.md`](./SparseBinaryOpIntersectionCommon.h_docs.md)
+- [`SparseFactories.cpp_docs.md`](./SparseFactories.cpp_docs.md)
+- [`ParamUtils.cpp_docs.md`](./ParamUtils.cpp_docs.md)
+- [`SparseTensor.cpp_docs.md`](./SparseTensor.cpp_docs.md)
+- [`ValidateCompressedIndicesKernel.cpp_docs.md`](./ValidateCompressedIndicesKernel.cpp_docs.md)
+- [`SparseBlas.cpp_docs.md`](./SparseBlas.cpp_docs.md)
+- [`SparseBlas.h_docs.md`](./SparseBlas.h_docs.md)
+- [`SparseStubs.h_docs.md`](./SparseStubs.h_docs.md)
+- [`SparseTensorMath.h_docs.md`](./SparseTensorMath.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `SparseCsrTensorMath.h_docs.md`
+- **Keyword Index**: `SparseCsrTensorMath.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native/sparse`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native/sparse`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native/sparse`):
+
+- [`ValidateCompressedIndicesKernel.cpp_docs.md_docs.md`](./ValidateCompressedIndicesKernel.cpp_docs.md_docs.md)
+- [`SparseTensorMath.h_docs.md_docs.md`](./SparseTensorMath.h_docs.md_docs.md)
+- [`SparseBlasImpl.h_kw.md_docs.md`](./SparseBlasImpl.h_kw.md_docs.md)
+- [`SparseBlas.h_docs.md_docs.md`](./SparseBlas.h_docs.md_docs.md)
+- [`FlattenIndicesKernel.cpp_kw.md_docs.md`](./FlattenIndicesKernel.cpp_kw.md_docs.md)
+- [`SoftMax.cpp_docs.md_docs.md`](./SoftMax.cpp_docs.md_docs.md)
+- [`SparseTensor.cpp_kw.md_docs.md`](./SparseTensor.cpp_kw.md_docs.md)
+- [`SparseBinaryOpIntersectionKernel.cpp_docs.md_docs.md`](./SparseBinaryOpIntersectionKernel.cpp_docs.md_docs.md)
+- [`SparseCsrTensor.cpp_docs.md_docs.md`](./SparseCsrTensor.cpp_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `SparseCsrTensorMath.h_docs.md_docs.md`
+- **Keyword Index**: `SparseCsrTensorMath.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

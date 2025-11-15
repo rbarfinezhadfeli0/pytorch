@@ -1,0 +1,402 @@
+# Documentation: `docs/torch/_C/_distributed_c10d.pyi_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/_C/_distributed_c10d.pyi_kw.md`
+- **Size**: 23,483 bytes (22.93 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `torch/_C/_distributed_c10d.pyi`
+
+## File Information
+
+- **Original File**: [torch/_C/_distributed_c10d.pyi](../../../torch/_C/_distributed_c10d.pyi)
+- **Documentation**: [`_distributed_c10d.pyi_docs.md`](./_distributed_c10d.pyi_docs.md)
+- **Folder**: `torch/_C`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`AllToAllOptions`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`AllgatherOptions`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`AllreduceCoalescedOptions`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`AllreduceOptions`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`Backend`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`BackendType`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`BarrierOptions`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`BroadcastOptions`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`BuiltinCommHookType`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`DDPLoggingData`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`DebugLevel`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`Device`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`ErrorType`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`FakeProcessGroup`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`FakeWork`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`FileStore`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`GatherOptions`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`GradBucket`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`HashStore`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`Logger`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`NCCLConfig`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`Options`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`PrefixStore`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`ProcessGroup`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`ProcessGroupGloo`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`ProcessGroupMPI`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`ProcessGroupNCCL`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`ProcessGroupUCC`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`ProcessGroupXCCL`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`PythonCallbackWork`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`RedOpType`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`ReduceOp`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`ReduceOptions`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`ReduceScatterOptions`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`Reducer`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`ScatterOptions`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`Store`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`TCPStore`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`Work`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_ControlCollectives`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_DistributedBackendOptions`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_ProcessGroupWrapper`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_StoreCollectives`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_SymmetricMemory`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_WorkerServer`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+
+### Functions
+
+- **`__init__`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_add_ephemeral_timeout`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_allgather_base`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_allow_inflight_collective_as_graph_input`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_backend_id`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_broadcast_coalesced`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_check_reducer_finalized`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_compute_bucket_assignment_by_size`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_create_internal`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_current_process_group`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_device_types`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_end_coalescing`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_end_time_estimate`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_get_backend`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_get_backend_name`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_get_ddp_logging_data`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_get_local_used_map`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_get_work_registry_size`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_get_zeros_like_grad_buckets`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_group_end`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_group_start`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_has_hooks`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_hash_tensors`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_install_post_backward_futures`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_is_initialized`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_is_nvshmem_available`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_make_nccl_premul_sum`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_nvshmemx_cumodule_init`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_push_all_rebuilt_params`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_rebuild_buckets`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_reduce_scatter_base`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_register_backend`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_register_builtin_comm_hook`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_register_comm_hook`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_register_process_group`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_register_work`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_remove_autograd_hooks`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_reset_state`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_resolve_process_group`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_run_comm_hook`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_set_allow_inflight_collective_as_graph_input`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_set_comm_hook_name`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_set_ddp_runtime_logging_sample_rate`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_set_default_backend`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_set_default_timeout`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_set_forward_pass_work_handle`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_set_global_rank`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_set_group_desc`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_set_group_name`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_set_process_group`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_set_sequence_number_for_group`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_set_sparse_metadata`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_set_static_graph`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_set_uneven_input_join`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_source_rank`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_start_coalescing`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_start_time_estimate`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_test_python_store`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_timeout`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_unregister_all_process_groups`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_unregister_process_group`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_update_process_group`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_verify_params_across_processes`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`_wait_for_pending_works`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`abort`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`add`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`all_gather`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`all_sum`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`allgather`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`allgather_coalesced`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`allgather_into_tensor_coalesced`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`allocate_tensor`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`allreduce`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`allreduce_coalesced`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`alltoall`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`alltoall_base`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`backend`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`barrier`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`block_current_stream`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`bound_device_id`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`boxed`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`broadcast`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`broadcast_recv`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`broadcast_send`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`buffer`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`buffer_ptrs`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`buffer_ptrs_dev`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`buffer_size`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`check`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`comm_split_count`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`compare_set`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`create`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`create_default_device`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`create_device`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`delete_key`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`deregister_mem_pool`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`eager_connect_single_device`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`empty_strided_p2p`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`exception`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`gather`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`gather_recv`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`gather_send`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`get`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`getFuture`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`get_backend`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`get_backward_stats`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`get_buffer`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`get_build_nccl_version`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`get_debug_level`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`get_error`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`get_future`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`get_group_store`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`get_mempool_allocator`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`get_remote_tensor`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`get_runtime_nccl_version`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`get_signal_pad`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`global_ranks_in_group`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`gradients`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`group_desc`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`group_id`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`group_name`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`group_rank`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`group_size`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`has_multicast_support`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`host`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`index`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`is_completed`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`is_last`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`is_success`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`mem_allocator`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`memset32`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`merge_remote_group`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`multicast_ptr`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`name`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`num_keys`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`options`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`parameters`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`perform_nocolor_split`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`port`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`prepare_for_backward`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`prepare_for_forward`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`put_signal`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`queue_len`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`queue_pop`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`queue_push`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`rank`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`recv`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`recv_anysource`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`reduce`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`reduce_scatter`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`reduce_scatter_tensor_coalesced`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`register_mem_pool`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`rendezvous`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`result`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`scatter`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`scatter_recv`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`scatter_send`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`send`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`set`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`set_backend`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`set_buffer`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`set_construction_data_and_log`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`set_debug_level`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`set_debug_level_from_env`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`set_error_and_log`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`set_group_info`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`set_logger`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`set_runtime_stats_and_log`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`set_timeout`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`shutdown`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`signal_pad_ptrs`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`signal_pad_ptrs_dev`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`signal_pad_size`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`size`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`source_rank`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`split_group`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`store`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`stream_write_value32`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`supports_coalescing`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`supports_splitting`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`supports_tensor_alloc`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`supports_time_estimate`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`synchronize`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`timeout`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`uid`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`unbox`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`underlying_store`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`unsafe_get_ptr`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`wait`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`wait_signal`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`world_size`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+
+### Imports
+
+- **`Any`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`Callable`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`DeviceType`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`Enum`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`Future`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`ScriptObject`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`Tensor`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`collections.abc`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`datetime`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`enum`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`timedelta`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`torch`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`torch._C`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`torch._C._autograd`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`torch.futures`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+- **`typing`**: [_distributed_c10d.pyi_docs.md](./_distributed_c10d.pyi_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/_C`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/_C`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/_C`):
+
+- [`_nvtx.pyi_docs.md_docs.md`](./_nvtx.pyi_docs.md_docs.md)
+- [`_aoti.pyi_docs.md_docs.md`](./_aoti.pyi_docs.md_docs.md)
+- [`_cpu.pyi_docs.md_docs.md`](./_cpu.pyi_docs.md_docs.md)
+- [`_lazy_ts_backend.pyi_docs.md_docs.md`](./_lazy_ts_backend.pyi_docs.md_docs.md)
+- [`_profiler.pyi_docs.md_docs.md`](./_profiler.pyi_docs.md_docs.md)
+- [`_functionalization.pyi_kw.md_docs.md`](./_functionalization.pyi_kw.md_docs.md)
+- [`_distributed.pyi_docs.md_docs.md`](./_distributed.pyi_docs.md_docs.md)
+- [`_itt.pyi_docs.md_docs.md`](./_itt.pyi_docs.md_docs.md)
+- [`build.bzl_kw.md_docs.md`](./build.bzl_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `_distributed_c10d.pyi_kw.md_docs.md`
+- **Keyword Index**: `_distributed_c10d.pyi_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

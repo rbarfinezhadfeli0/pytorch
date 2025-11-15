@@ -1,0 +1,200 @@
+# Documentation: `docs/test/inductor/test_aoti_cross_compile_windows.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/test/inductor/test_aoti_cross_compile_windows.py_kw.md`
+- **Size**: 5,994 bytes (5.85 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `test/inductor/test_aoti_cross_compile_windows.py`
+
+## File Information
+
+- **Original File**: [test/inductor/test_aoti_cross_compile_windows.py](../../../test/inductor/test_aoti_cross_compile_windows.py)
+- **Documentation**: [`test_aoti_cross_compile_windows.py_docs.md`](./test_aoti_cross_compile_windows.py_docs.md)
+- **Folder**: `test/inductor`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`Simple`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`SimpleCNN`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`SimpleTransformer`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`TestAOTInductorWindowsCrossCompilation`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`WindowsCrossCompilationTestFramework`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`class`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`for`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`from`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+
+### Functions
+
+- **`__init__`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`_define_simple`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`_define_simple_cnn`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`_define_transformer`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`auto_generate_tests`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`base_path`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`compile_test`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`create_compile_test`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`create_load_test`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`forward`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`get_package_path`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`get_win_torch_libs_path`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`load_test`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`set_base_path`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`set_win_torch_libs_path`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+
+### Imports
+
+- **`Any`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`GPU_TYPE`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`Path`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`TestCase`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`dataclass`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`dataclasses`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`is_fbcode`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`os`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`pathlib`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`platform`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`run_tests`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`sys`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`tempfile`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`torch`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`torch._environment`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`torch._inductor.config`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`torch._inductor.test_case`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`torch.testing._internal.inductor_utils`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`typing`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+- **`unittest`**: [test_aoti_cross_compile_windows.py_docs.md](./test_aoti_cross_compile_windows.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/inductor`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/inductor`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/inductor/test_aoti_cross_compile_windows.py_kw.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/inductor`):
+
+- [`test_snode_runtime.py_kw.md_docs.md`](./test_snode_runtime.py_kw.md_docs.md)
+- [`test_metrics.py_docs.md_docs.md`](./test_metrics.py_docs.md_docs.md)
+- [`test_flex_attention.py_kw.md_docs.md`](./test_flex_attention.py_kw.md_docs.md)
+- [`test_cuda_repro.py_kw.md_docs.md`](./test_cuda_repro.py_kw.md_docs.md)
+- [`test_fxir_backend.py_kw.md_docs.md`](./test_fxir_backend.py_kw.md_docs.md)
+- [`test_split_cat_fx_passes.py_kw.md_docs.md`](./test_split_cat_fx_passes.py_kw.md_docs.md)
+- [`test_mmdecomp.py_kw.md_docs.md`](./test_mmdecomp.py_kw.md_docs.md)
+- [`test_torchinductor_codegen_config_overrides.py_kw.md_docs.md`](./test_torchinductor_codegen_config_overrides.py_kw.md_docs.md)
+- [`test_aot_inductor_custom_ops.py_kw.md_docs.md`](./test_aot_inductor_custom_ops.py_kw.md_docs.md)
+- [`test_minifier.py_kw.md_docs.md`](./test_minifier.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_aoti_cross_compile_windows.py_kw.md_docs.md`
+- **Keyword Index**: `test_aoti_cross_compile_windows.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

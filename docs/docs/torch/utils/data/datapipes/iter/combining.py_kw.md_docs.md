@@ -1,0 +1,201 @@
+# Documentation: `docs/torch/utils/data/datapipes/iter/combining.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/utils/data/datapipes/iter/combining.py_kw.md`
+- **Size**: 4,691 bytes (4.58 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `torch/utils/data/datapipes/iter/combining.py`
+
+## File Information
+
+- **Original File**: [torch/utils/data/datapipes/iter/combining.py](../../../../../../torch/utils/data/datapipes/iter/combining.py)
+- **Documentation**: [`combining.py_docs.md`](./combining.py_docs.md)
+- **Folder**: `torch/utils/data/datapipes/iter`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`ConcaterIterDataPipe`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`DemultiplexerIterDataPipe`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`ForkerIterDataPipe`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`MultiplexerIterDataPipe`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`ZipperIterDataPipe`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`_ChildDataPipe`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`_ContainerTemplate`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`_DemultiplexerIterDataPipe`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`_ForkerIterDataPipe`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`for`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`will`**: [combining.py_docs.md](./combining.py_docs.md)
+
+### Functions
+
+- **`__del__`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`__getstate__`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`__init__`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`__iter__`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`__len__`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`__new__`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`__setstate__`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`_check_valid_iterator_id`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`_cleanup`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`_find_next`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`_no_op`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`_set_main_datapipe_valid_iterator_id`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`get_length_by_instance`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`get_next_element_by_instance`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`is_every_instance_exhausted`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`odd_or_even`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`odd_or_even_no_zero`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`reset`**: [combining.py_docs.md](./combining.py_docs.md)
+
+### Imports
+
+- **`ABC`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`Any`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`Callable`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`IterDataPipe`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`IterableWrapper`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`_SnapshotState`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`_check_unpickable_fn`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`abc`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`collections`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`collections.abc`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`copy`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`deque`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`functional_datapipe`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`random`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`torch.utils.data.datapipes._decorator`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`torch.utils.data.datapipes._hook_iterator`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`torch.utils.data.datapipes.datapipe`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`torch.utils.data.datapipes.utils.common`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`torchdata.datapipes.iter`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`typing`**: [combining.py_docs.md](./combining.py_docs.md)
+- **`warnings`**: [combining.py_docs.md](./combining.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/utils/data/datapipes/iter`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/utils/data/datapipes/iter`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Abstract Base Classes**: Defines abstract interfaces
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/utils/data/datapipes/iter`):
+
+- [`combining.py_docs.md_docs.md`](./combining.py_docs.md_docs.md)
+- [`selecting.py_docs.md_docs.md`](./selecting.py_docs.md_docs.md)
+- [`sharding.py_kw.md_docs.md`](./sharding.py_kw.md_docs.md)
+- [`filelister.py_kw.md_docs.md`](./filelister.py_kw.md_docs.md)
+- [`fileopener.py_kw.md_docs.md`](./fileopener.py_kw.md_docs.md)
+- [`utils.py_docs.md_docs.md`](./utils.py_docs.md_docs.md)
+- [`routeddecoder.py_docs.md_docs.md`](./routeddecoder.py_docs.md_docs.md)
+- [`selecting.py_kw.md_docs.md`](./selecting.py_kw.md_docs.md)
+- [`grouping.py_kw.md_docs.md`](./grouping.py_kw.md_docs.md)
+- [`filelister.py_docs.md_docs.md`](./filelister.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `combining.py_kw.md_docs.md`
+- **Keyword Index**: `combining.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

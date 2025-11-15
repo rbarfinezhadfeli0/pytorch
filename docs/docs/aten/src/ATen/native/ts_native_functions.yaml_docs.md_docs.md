@@ -1,0 +1,465 @@
+# Documentation: `docs/aten/src/ATen/native/ts_native_functions.yaml_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/ts_native_functions.yaml_docs.md`
+- **Size**: 7,248 bytes (7.08 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/native/ts_native_functions.yaml`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/ts_native_functions.yaml`
+- **Size**: 4,773 bytes (4.66 KB)
+- **Type**: YAML Configuration
+- **Extension**: `.yaml`
+
+## File Purpose
+
+This is a yaml configuration that is part of the PyTorch project.
+
+## Original Source
+
+```yaml
+backend: Lazy
+cpp_namespace: torch::lazy
+full_codegen:
+  - _adaptive_avg_pool2d
+  - _adaptive_avg_pool2d_backward
+  - _log_softmax
+  - _log_softmax_backward_data
+  - _softmax
+  - _softmax_backward_data
+  - abs
+  - add.Tensor
+  - addcdiv
+  - addcmul
+  - addmm
+  - arange.start_out
+  - all
+  - any
+  - avg_pool2d
+  - avg_pool2d_backward
+  - baddbmm
+  - bernoulli
+  - bernoulli.p
+  - binary_cross_entropy
+  - binary_cross_entropy_backward
+  - bitwise_and.Tensor
+  - bitwise_or.Tensor
+  - bmm
+  - cat
+  - clamp
+  - clamp_min
+  - constant_pad_nd
+  - convolution
+  - convolution_backward
+  - cos
+  - cumsum
+  - div.Tensor
+  - div.Tensor_mode
+  - elu
+  - elu_backward
+  - embedding
+  - embedding_dense_backward
+  - eq.Scalar
+  - eq.Tensor
+  - exp
+  - flip
+  - floor
+  - frac
+  - gather
+  - ge.Scalar
+  - ge.Tensor
+  - gelu
+  - gelu_backward
+  - glu
+  - glu_backward
+  - glu_jvp
+  - grid_sampler_2d
+  - grid_sampler_2d_backward
+  - gt.Scalar
+  - gt.Tensor
+  - hardsigmoid
+  - index_select
+  - le.Scalar
+  - le.Tensor
+  - leaky_relu
+  - leaky_relu_backward
+  - log
+  - log2
+  - logdet
+  - log_sigmoid_backward
+  - log_sigmoid_forward
+  - lt.Scalar
+  - lt.Tensor
+  - masked_fill.Scalar
+  - masked_fill.Tensor
+  - max
+  - max.dim
+  - max_pool2d_with_indices
+  - max_pool2d_with_indices_backward
+  - maximum
+  - mean
+  - mean.dim
+  - min
+  - minimum
+  - mm
+  - mul.Tensor
+  - mv
+  - native_batch_norm
+  - native_batch_norm_backward
+  - native_dropout
+  - native_dropout_backward
+  - native_layer_norm
+  - native_layer_norm_backward
+  - ne.Scalar
+  - ne.Tensor
+  - neg
+  - nll_loss_backward
+  - nll_loss_forward
+  - nll_loss2d_backward
+  - nll_loss2d_forward
+  - nonzero
+  - norm.ScalarOpt_dim
+  - pow.Tensor_Scalar
+  - pow.Tensor_Tensor
+  - random
+  - random.from
+  - random.to
+  - reciprocal
+  - relu
+  - remainder.Tensor
+  - repeat
+  - rsqrt
+  - scatter_add
+  - sgn
+  - sigmoid
+  - sigmoid_backward
+  - silu
+  - smooth_l1_loss
+  - smooth_l1_loss_backward
+  - softplus
+  - softplus_backward
+  - sort
+  - sqrt
+  - stack
+  - std
+  - std.dim
+  - std.correction
+  - sub.Tensor
+  - sum
+  - sum.dim_IntList
+  - tanh
+  - tanh_backward
+  - threshold
+  - threshold_backward
+  - topk
+  - trace
+  - tril
+  - triu
+  - trunc
+  - upsample_bilinear2d
+  - upsample_bilinear2d_backward
+  - upsample_nearest2d
+  - upsample_nearest2d_backward
+  - zero
+  - alias_copy
+  - as_strided_copy
+  - diagonal_copy
+  - expand_copy
+  - permute_copy
+  - _reshape_alias_copy
+  - select_copy.int
+  - detach_copy
+  - slice_copy.Tensor
+  # Not implemented yet because LTC codegen doesn't currently work
+  # for ops that return lists of tensors.
+  #- split_copy.Tensor
+  #- split_with_sizes_copy
+  #- unbind_copy.int
+  - squeeze_copy
+  - squeeze_copy.dim
+  - squeeze_copy.dims
+  - t_copy
+  - transpose_copy.int
+  - unsqueeze_copy
+  - view_copy
+  - view_copy.dtype
+  - unfold_copy
+  - select_scatter
+  - slice_scatter
+  - diagonal_scatter
+  - as_strided_scatter
+  # random ops
+  - normal_functional
+  - uniform
+ir_gen:
+  - selu
+supported:
+  - clone
+  - _copy_from
+  - _copy_from_and_resize
+  - empty.memory_format
+  - empty_strided
+  - fill_.Scalar
+  - max_pool3d_with_indices
+  - max_pool3d_with_indices_backward
+  - _to_copy
+  - _unsafe_view
+  - lift
+  - lift_fresh
+  # Below are all operators that are "composite" in core,
+  # but require us to explicitly re-enable functionalization in order to use them.
+  # Why? These operators are all CompositeExplicitAutograd, which mean that they run
+  # after functionalization,
+  # but their implementations call view operators (which we need to functionalize away).
+  - block_diag
+  - diag_embed
+  - diagonal_backward
+  - slice_backward
+  - new_empty_strided
+  - narrow_copy
+  - pixel_shuffle
+  - pixel_unshuffle
+  - select_backward
+  - _trilinear
+  - linalg_pinv.atol_rtol_tensor
+  - svd
+  - logsumexp.out
+symint:
+  - empty.memory_format
+  - expand_copy
+  - narrow_copy
+  - view_copy
+  - as_strided_copy
+  - as_strided_scatter
+  - diagonal_backward
+  - slice_backward
+  - slice_copy.Tensor
+  - slice_scatter
+  - empty_strided
+  - new_empty_strided
+  - _reshape_alias_copy
+  - select_backward
+autograd:
+  - max_pool3d
+  - native_group_norm
+
+# Ops that don't have a native schema definitions and are dispatched within Lazy Tensor Core
+non_native:
+  - func: scalar(Scalar value, ScalarType type) -> Tensor
+    opkind: at::prim::Constant
+    properties:
+      - ShapeCompute
+      - TreatScalarsAsConstants
+      - CanBeReusedDeclOnly
+  # Even we have removed all the other view ops in favor of the *_copy version, expand
+  # is still kept because it's used in copy_.
+  - func: expand(Tensor input, int[] size, bool is_scalar_expand) -> Tensor
+  - func: cast(Tensor input, ScalarType dtype, ScalarType? stype) -> Tensor
+    opkind: ltc_cast
+    properties:
+      - ShapeCompute
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `aten/src/ATen/native`.
+
+## Detailed Analysis
+
+### Code Structure
+
+This is a configuration file. See the original source for structure.
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native`):
+
+- [`LossMulti.h_docs.md`](./LossMulti.h_docs.md)
+- [`NaiveConvolutionTranspose3d.cpp_docs.md`](./NaiveConvolutionTranspose3d.cpp_docs.md)
+- [`UnaryOps.cpp_docs.md`](./UnaryOps.cpp_docs.md)
+- [`ResizeCommon.h_docs.md`](./ResizeCommon.h_docs.md)
+- [`FusedAdagrad.cpp_docs.md`](./FusedAdagrad.cpp_docs.md)
+- [`SharedReduceOps.h_docs.md`](./SharedReduceOps.h_docs.md)
+- [`SpectralOpsUtils.h_docs.md`](./SpectralOpsUtils.h_docs.md)
+- [`FractionalMaxPooling.h_docs.md`](./FractionalMaxPooling.h_docs.md)
+- [`TensorDimApply.h_docs.md`](./TensorDimApply.h_docs.md)
+- [`Lerp.cpp_docs.md`](./Lerp.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `ts_native_functions.yaml_docs.md`
+- **Keyword Index**: `ts_native_functions.yaml_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native`):
+
+- [`AdaptiveMaxPooling2d.cpp_docs.md_docs.md`](./AdaptiveMaxPooling2d.cpp_docs.md_docs.md)
+- [`Distributions.cpp_docs.md_docs.md`](./Distributions.cpp_docs.md_docs.md)
+- [`im2col_shape_check.h_docs.md_docs.md`](./im2col_shape_check.h_docs.md_docs.md)
+- [`ReduceOps.cpp_kw.md_docs.md`](./ReduceOps.cpp_kw.md_docs.md)
+- [`Lerp.cpp_kw.md_docs.md`](./Lerp.cpp_kw.md_docs.md)
+- [`CPUFallback.h_docs.md_docs.md`](./CPUFallback.h_docs.md_docs.md)
+- [`MetaTensor.cpp_docs.md_docs.md`](./MetaTensor.cpp_docs.md_docs.md)
+- [`Correlation.cpp_kw.md_docs.md`](./Correlation.cpp_kw.md_docs.md)
+- [`im2col_shape_check.h_kw.md_docs.md`](./im2col_shape_check.h_kw.md_docs.md)
+- [`UpSampleNearest2d.cpp_kw.md_docs.md`](./UpSampleNearest2d.cpp_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `ts_native_functions.yaml_docs.md_docs.md`
+- **Keyword Index**: `ts_native_functions.yaml_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

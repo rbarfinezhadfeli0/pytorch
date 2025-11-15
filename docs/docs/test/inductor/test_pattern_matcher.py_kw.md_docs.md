@@ -1,0 +1,316 @@
+# Documentation: `docs/test/inductor/test_pattern_matcher.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/test/inductor/test_pattern_matcher.py_kw.md`
+- **Size**: 16,326 bytes (15.94 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `test/inductor/test_pattern_matcher.py`
+
+## File Information
+
+- **Original File**: [test/inductor/test_pattern_matcher.py](../../../test/inductor/test_pattern_matcher.py)
+- **Documentation**: [`test_pattern_matcher.py_docs.md`](./test_pattern_matcher.py_docs.md)
+- **Folder**: `test/inductor`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`Model`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`ReluSumPattern`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`TestPatternMatcher`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`_CustomPass`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+
+### Functions
+
+- **`__call__`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`__init__`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`_test`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`_test_fused_int_mm_mul_impl`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`_test_mixed_impl`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`add`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`addmm_replacement`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`call`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`check`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`common`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`count_view_ops`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`custom_backend`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`custom_pass`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`div_softmax`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`empty_bf16`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`empty_int8`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`extra_check`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`f`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`f0`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`f1`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`f2`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`f_default`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`f_replaced`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`fn`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`fn0`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`fn1`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`fn2`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`fn3`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`fn4`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`fn5`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`fn6`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`fn_replaced`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`fn_with_noop`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`foo`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`forward`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`func`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`fused_rms_norm_quant_static`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`inputs`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`mul_softmax`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`my_func_static`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`pattern`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`pattern1`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`pattern2`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`register`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`remap_fake_tensor`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`repl`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`replace`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`replacement`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`replacement1`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`replacement2`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`rms_norm`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`rms_pattern_static`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`rms_replacement_static`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`static_scaled_int8_quant`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`sym_minus`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_addmm`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_addmm_alpha_beta_with_pointwise`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_addmm_broadcasting_bias`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_addmm_dtype_mismatch`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_addmm_symbolic_scalar`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_bmm_to_mm`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_bound_method_pattern_matcher`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_cat_addmm`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_cat_mm`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_cat_slice_cat_cuda`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_cat_splitwithsizes`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_duplicate_search`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_fn`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_fused_int_mm_mul`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_fused_int_mm_mul_epilogue`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_fused_int_mm_mul_gating`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_fwd_only_generate_original_aten_meta`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_input_output_same`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_match_equivalent_function_invocations1`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_match_equivalent_function_invocations2`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_match_equivalent_function_invocations3`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_match_with_mutation`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_mixed_mm`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_mixed_mm_bad_cases`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_mixed_mm_cpu`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_mixed_mm_epi_works`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_mixed_mm_exhaustive_dtypes`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_mixed_mm_gating`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_mm_plus_mm`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_multioutput_register_replacement`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_mutation_op_matching`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_original_aten_preserved_split_addmm`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_pointless_convert`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_pointless_cumsum`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_pointless_permute_pair`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_pointless_permute_pair_3d`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_pointless_view_pair`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_pointless_view_pair_dynamic_shapes`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_remove_noop_pass_with_remove_passes`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_remove_pointless_clones`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_replace_mul_zero`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_scaled_softmax`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_serialized_patterns_up_to_date`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_splitwithsizes_cat`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_stable_topological_sort`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_successful_partial_reuse`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_symint_pattern_matching`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_unfuse_bias_addmm`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`test_unsuccessful_partial_reuse`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`triton_tem_fused_addmm`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+
+### Imports
+
+- **`Callable`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`FileCheck`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`GPU_TYPE`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`Optional`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`SM80OrLater`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`V`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`_known_precompiled_patterns`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`_pytree`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`auto_functionalized`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`collections.abc`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`compile_fx`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`config`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`copy`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`count_calls`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`itertools`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`joint_graph`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`make_fx`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`os`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`out_dtype`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`pre_grad_passes`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`run_and_get_code`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`run_tests`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`skipCUDAIf`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`torch`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`torch._dynamo.config`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`torch._dynamo.utils`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`torch._higher_order_ops.auto_functionalize`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`torch._higher_order_ops.out_dtype`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`torch._inductor`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`torch._inductor.compile_fx`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`torch._inductor.config`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`torch._inductor.fx_passes`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`torch._inductor.fx_passes.post_grad`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`torch._inductor.fx_passes.pre_grad`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`torch._inductor.pattern_matcher`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`torch._inductor.test_case`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`torch._inductor.utils`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`torch._inductor.virtualized`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`torch.fx.experimental.proxy_tensor`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`torch.nn.functional`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`torch.testing`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`torch.testing._internal.common_cuda`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`torch.testing._internal.common_device_type`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`torch.testing._internal.inductor_utils`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`torch.utils`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`torch.utils._pytree`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`typing`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+- **`unittest`**: [test_pattern_matcher.py_docs.md](./test_pattern_matcher.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/inductor`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/inductor`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/inductor/test_pattern_matcher.py_kw.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/inductor`):
+
+- [`test_snode_runtime.py_kw.md_docs.md`](./test_snode_runtime.py_kw.md_docs.md)
+- [`test_metrics.py_docs.md_docs.md`](./test_metrics.py_docs.md_docs.md)
+- [`test_flex_attention.py_kw.md_docs.md`](./test_flex_attention.py_kw.md_docs.md)
+- [`test_cuda_repro.py_kw.md_docs.md`](./test_cuda_repro.py_kw.md_docs.md)
+- [`test_fxir_backend.py_kw.md_docs.md`](./test_fxir_backend.py_kw.md_docs.md)
+- [`test_split_cat_fx_passes.py_kw.md_docs.md`](./test_split_cat_fx_passes.py_kw.md_docs.md)
+- [`test_mmdecomp.py_kw.md_docs.md`](./test_mmdecomp.py_kw.md_docs.md)
+- [`test_torchinductor_codegen_config_overrides.py_kw.md_docs.md`](./test_torchinductor_codegen_config_overrides.py_kw.md_docs.md)
+- [`test_aot_inductor_custom_ops.py_kw.md_docs.md`](./test_aot_inductor_custom_ops.py_kw.md_docs.md)
+- [`test_minifier.py_kw.md_docs.md`](./test_minifier.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_pattern_matcher.py_kw.md_docs.md`
+- **Keyword Index**: `test_pattern_matcher.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

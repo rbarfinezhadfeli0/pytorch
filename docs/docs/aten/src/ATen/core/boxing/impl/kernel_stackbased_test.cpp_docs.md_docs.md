@@ -1,0 +1,449 @@
+# Documentation: `docs/aten/src/ATen/core/boxing/impl/kernel_stackbased_test.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/core/boxing/impl/kernel_stackbased_test.cpp_docs.md`
+- **Size**: 12,080 bytes (11.80 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/core/boxing/impl/kernel_stackbased_test.cpp`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/core/boxing/impl/kernel_stackbased_test.cpp`
+- **Size**: 9,169 bytes (8.95 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This appears to be a **test file**.
+
+## Original Source
+
+```cpp
+
+#include <gtest/gtest.h>
+#include <ATen/core/boxing/impl/test_helpers.h>
+
+#include <ATen/core/op_registration/op_registration.h>
+#include <ATen/core/Tensor.h>
+#include <torch/csrc/jit/frontend/function_schema_parser.h>
+#include <torch/library.h>
+
+#include <ATen/core/LegacyTypeDispatch.h>
+
+using c10::RegisterOperators;
+using c10::DispatchKey;
+using c10::Stack;
+using std::make_unique;
+using c10::OperatorHandle;
+using std::unique_ptr;
+
+namespace {
+
+void errorKernel(const OperatorHandle&, Stack* stack) {
+  EXPECT_TRUE(false); // this kernel should never be called
+}
+
+void incrementKernel(const OperatorHandle&, Stack* stack) {
+  int input = torch::jit::pop(*stack).toInt();
+  torch::jit::pop(*stack); // pop the dummy tensor
+  torch::jit::push(*stack, input + 1);
+}
+
+void decrementKernel(const OperatorHandle&, Stack* stack) {
+  int input = torch::jit::pop(*stack).toInt();
+  torch::jit::pop(*stack); // pop the dummy tensor
+  torch::jit::push(*stack, input - 1);
+}
+
+bool called_redispatching_kernel = false;
+void redispatchingKernel_with_DispatchKeySet(const OperatorHandle& op, c10::DispatchKeySet ks, Stack* stack) {
+  // this kernel is a no-op- it just redispatches to the lower-priority kernel
+  called_redispatching_kernel = true;
+  auto updated_ks = ks & c10::DispatchKeySet(c10::DispatchKeySet::FULL_AFTER, c10::DispatchKey::TESTING_ONLY_GenericWrapper);
+  op.redispatchBoxed(updated_ks, stack);
+}
+
+void expectCallsIncrement(c10::DispatchKeySet ks) {
+  at::AutoDispatchBelowAutograd mode;
+
+  // assert that schema and cpu kernel are present
+  auto op = c10::Dispatcher::singleton().findSchema({"_test::my_op", ""});
+  ASSERT_TRUE(op.has_value());
+  auto result = callOp(*op, dummyTensor(ks), 5);
+  EXPECT_EQ(1, result.size());
+  EXPECT_EQ(6, result[0].toInt());
+}
+
+void expectCallsIncrement(DispatchKey dispatch_key) {
+  expectCallsIncrement(c10::DispatchKeySet(dispatch_key));
+}
+
+void expectCallsIncrementUnboxed(DispatchKey dispatch_key) {
+  at::AutoDispatchBelowAutograd mode;
+
+  // assert that schema and cpu kernel are present
+  auto op = c10::Dispatcher::singleton().findSchema({"_test::my_op", ""});
+  ASSERT_TRUE(op.has_value());
+  int64_t result = callOpUnboxed<int64_t, at::Tensor, int64_t>(*op, dummyTensor(dispatch_key), 5);
+  EXPECT_EQ(6, result);
+}
+
+void expectCallsDecrement(DispatchKey dispatch_key) {
+  at::AutoDispatchBelowAutograd mode;
+
+  // assert that schema and cpu kernel are present
+  auto op = c10::Dispatcher::singleton().findSchema({"_test::my_op", ""});
+  ASSERT_TRUE(op.has_value());
+  auto result = callOp(*op, dummyTensor(dispatch_key), 5);
+  EXPECT_EQ(1, result.size());
+  EXPECT_EQ(4, result[0].toInt());
+}
+
+TEST(OperatorRegistrationTestStackBasedKernel, givenKernel_whenRegistered_thenCanBeCalled) {
+  auto registrar = RegisterOperators().op("_test::my_op(Tensor dummy, int input) -> int", RegisterOperators::options().kernel<&incrementKernel>(DispatchKey::CPU));
+  expectCallsIncrement(DispatchKey::CPU);
+}
+
+TEST(OperatorRegistrationTestStackBasedKernel, givenMultipleOperatorsAndKernels_whenRegisteredInOneRegistrar_thenCallsRightKernel) {
+  auto registrar = RegisterOperators()
+      .op("_test::my_op(Tensor dummy, int input) -> int", RegisterOperators::options().kernel<&incrementKernel>(DispatchKey::CPU)
+                                                                                      .kernel<&errorKernel>(DispatchKey::CUDA))
+      .op("_test::error(Tensor dummy, int input) -> int", RegisterOperators::options().kernel<&errorKernel>(DispatchKey::CPU)
+                                                                                      .kernel<&errorKernel>(DispatchKey::CUDA));
+  expectCallsIncrement(DispatchKey::CPU);
+}
+
+TEST(OperatorRegistrationTestStackBasedKernel, givenMultipleOperatorsAndKernels_whenRegisteredInMultipleRegistrars_thenCallsRightKernel) {
+  auto registrar1 = RegisterOperators().op("_test::my_op(Tensor dummy, int input) -> int", RegisterOperators::options().kernel<&incrementKernel>(DispatchKey::CPU)
+                                                                                                                       .kernel<&errorKernel>(DispatchKey::CUDA));
+  auto registrar2 = RegisterOperators().op("_test::error(Tensor dummy, int input) -> int", RegisterOperators::options().kernel<&errorKernel>(DispatchKey::CPU)
+                                                                                                                       .kernel<&errorKernel>(DispatchKey::CUDA));
+  expectCallsIncrement(DispatchKey::CPU);
+}
+
+TEST(OperatorRegistrationTestStackBasedKernel, givenKernel_whenRegistrationRunsOutOfScope_thenCannotBeCalledAnymore) {
+  {
+    auto m = MAKE_TORCH_LIBRARY(_test);
+    m.def("_test::my_op(Tensor dummy, int input) -> int");
+    auto m_cpu = MAKE_TORCH_LIBRARY_IMPL(_test, CPU);
+    m_cpu.impl("my_op", DispatchKey::CPU, torch::CppFunction::makeFromBoxedFunction<incrementKernel>());
+    {
+      auto m_cuda = MAKE_TORCH_LIBRARY_IMPL(_test, CUDA);
+      m_cuda.impl("my_op", DispatchKey::CUDA, torch::CppFunction::makeFromBoxedFunction<decrementKernel>());
+
+      // assert that schema and cpu kernel are present
+      expectCallsIncrement(DispatchKey::CPU);
+      expectCallsDecrement(DispatchKey::CUDA);
+    }
+
+    // now registrar2 is destructed. Assert that schema is still present but cpu kernel is not
+    expectCallsIncrement(DispatchKey::CPU);
+    expectDoesntFindKernel("_test::my_op", DispatchKey::CUDA);
+  }
+
+  // now both registrars are destructed. Assert that the whole schema is gone
+  expectDoesntFindOperator("_test::my_op");
+}
+
+bool called = false;
+
+void kernelWithoutInputs(const OperatorHandle&, Stack*) {
+  called = true;
+}
+
+TEST(OperatorRegistrationTestStackBasedKernel, givenFallbackKernelWithoutAnyArguments_whenRegistered_thenCanBeCalled) {
+  // note: non-fallback kernels without tensor arguments don't work because there
+  // is no way to get the dispatch key. For operators that only have a fallback
+  // kernel, this must work for backwards compatibility.
+  auto registrar = RegisterOperators()
+      .op("_test::no_tensor_args() -> ()", RegisterOperators::options().catchAllKernel<&kernelWithoutInputs>());
+
+  auto op = c10::Dispatcher::singleton().findSchema({"_test::no_tensor_args", ""});
+  ASSERT_TRUE(op.has_value());
+
+  called = false;
+  auto outputs = callOp(*op);
+  EXPECT_TRUE(called);
+}
+
+void kernelWithoutTensorInputs(const OperatorHandle&, Stack* stack) {
+  stack->back() = stack->back().toInt() + 1;
+}
+
+TEST(OperatorRegistrationTestStackBasedKernel, givenFallbackKernelWithoutTensorArguments_whenRegistered_thenCanBeCalled) {
+  // note: non-fallback kernels without tensor arguments don't work because there
+  // is no way to get the dispatch key. For operators that only have a fallback
+  // kernel, this must work for backwards compatibility.
+  auto registrar = RegisterOperators()
+      .op("_test::no_tensor_args(int arg) -> int", RegisterOperators::options().catchAllKernel<&kernelWithoutTensorInputs>());
+
+  auto op = c10::Dispatcher::singleton().findSchema({"_test::no_tensor_args", ""});
+  ASSERT_TRUE(op.has_value());
+
+  auto outputs = callOp(*op, 3);
+  EXPECT_EQ(1, outputs.size());
+  EXPECT_EQ(4, outputs[0].toInt());
+}
+
+void kernelForSchemaInference(const OperatorHandle&, Stack* stack) {
+}
+
+TEST(OperatorRegistrationTestStackBasedKernel, givenKernel_whenRegisteredWithoutSpecifyingSchema_thenFailsBecauseItCannotInferFromStackBasedKernel) {
+  expectThrows<c10::Error>([] {
+      RegisterOperators().op("_test::no_schema_specified", RegisterOperators::options().catchAllKernel<&kernelForSchemaInference>());
+  }, "Cannot infer operator schema for this kind of kernel in registration of operator _test::no_schema_specified");
+}
+
+TEST(OperatorRegistrationTestStackBasedKernel, givenKernel_whenRegistered_thenCanAlsoBeCalledUnboxed) {
+  auto registrar = RegisterOperators().op("_test::my_op(Tensor dummy, int input) -> int", RegisterOperators::options().kernel<&incrementKernel>(DispatchKey::CPU));
+  expectCallsIncrementUnboxed(DispatchKey::CPU);
+}
+
+TEST(OperatorRegistrationTestStackBasedKernel, callKernelsWithDispatchKeySetConvention_redispatchesToLowerPriorityKernels) {
+  auto m = MAKE_TORCH_LIBRARY(_test);
+  m.def("my_op(Tensor dummy, int input) -> int");
+  auto m_cpu = MAKE_TORCH_LIBRARY_IMPL(_, CPU);
+  m_cpu.fallback(torch::CppFunction::makeFromBoxedFunction<&incrementKernel>());
+  auto m_testing = MAKE_TORCH_LIBRARY_IMPL(_, TESTING_ONLY_GenericWrapper);
+  m_testing.fallback(torch::CppFunction::makeFromBoxedFunction<&redispatchingKernel_with_DispatchKeySet>());
+
+  auto op = c10::Dispatcher::singleton().findSchema({"_test::my_op", ""});
+  ASSERT_TRUE(op.has_value());
+
+  auto testing_cpu_set = c10::DispatchKeySet()
+                                    .add(c10::DispatchKey::TESTING_ONLY_GenericWrapper)
+                                    .add(c10::DispatchKey::CPU);
+  called_redispatching_kernel = false;
+
+  // call CPU (and not TESTING_ONLY_GenericWrapper)
+  expectCallsIncrement(DispatchKey::CPU);
+  ASSERT_FALSE(called_redispatching_kernel);
+
+  // call TESTING_ONLY_GenericWrapper -> call CPU
+  expectCallsIncrement(testing_cpu_set);
+  ASSERT_TRUE(called_redispatching_kernel);
+}
+
+}
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 16 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/core/boxing/impl`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `gtest/gtest.h`
+- `ATen/core/boxing/impl/test_helpers.h`
+- `ATen/core/op_registration/op_registration.h`
+- `ATen/core/Tensor.h`
+- `torch/csrc/jit/frontend/function_schema_parser.h`
+- `torch/library.h`
+- `ATen/core/LegacyTypeDispatch.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python aten/src/ATen/core/boxing/impl/kernel_stackbased_test.cpp
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/core/boxing/impl`):
+
+- [`kernel_function_test.cpp_docs.md`](./kernel_function_test.cpp_docs.md)
+- [`WrapFunctionIntoRuntimeFunctor.h_docs.md`](./WrapFunctionIntoRuntimeFunctor.h_docs.md)
+- [`kernel_lambda_legacy_test.cpp_docs.md`](./kernel_lambda_legacy_test.cpp_docs.md)
+- [`make_boxed_from_unboxed_functor_test.cpp_docs.md`](./make_boxed_from_unboxed_functor_test.cpp_docs.md)
+- [`test_helpers.h_docs.md`](./test_helpers.h_docs.md)
+- [`kernel_function_legacy_test.cpp_docs.md`](./kernel_function_legacy_test.cpp_docs.md)
+- [`kernel_lambda_test.cpp_docs.md`](./kernel_lambda_test.cpp_docs.md)
+- [`boxing.h_docs.md`](./boxing.h_docs.md)
+- [`make_boxed_from_unboxed_functor.h_docs.md`](./make_boxed_from_unboxed_functor.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `kernel_stackbased_test.cpp_docs.md`
+- **Keyword Index**: `kernel_stackbased_test.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/core/boxing/impl`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/core/boxing/impl`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/aten/src/ATen/core/boxing/impl/kernel_stackbased_test.cpp_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/core/boxing/impl`):
+
+- [`WrapFunctionIntoRuntimeFunctor.h_kw.md_docs.md`](./WrapFunctionIntoRuntimeFunctor.h_kw.md_docs.md)
+- [`kernel_lambda_test.cpp_kw.md_docs.md`](./kernel_lambda_test.cpp_kw.md_docs.md)
+- [`boxing.h_docs.md_docs.md`](./boxing.h_docs.md_docs.md)
+- [`boxing.h_kw.md_docs.md`](./boxing.h_kw.md_docs.md)
+- [`make_boxed_from_unboxed_functor_test.cpp_kw.md_docs.md`](./make_boxed_from_unboxed_functor_test.cpp_kw.md_docs.md)
+- [`kernel_function_legacy_test.cpp_docs.md_docs.md`](./kernel_function_legacy_test.cpp_docs.md_docs.md)
+- [`kernel_function_test.cpp_docs.md_docs.md`](./kernel_function_test.cpp_docs.md_docs.md)
+- [`kernel_lambda_test.cpp_docs.md_docs.md`](./kernel_lambda_test.cpp_docs.md_docs.md)
+- [`test_helpers.h_docs.md_docs.md`](./test_helpers.h_docs.md_docs.md)
+- [`make_boxed_from_unboxed_functor.h_docs.md_docs.md`](./make_boxed_from_unboxed_functor.h_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `kernel_stackbased_test.cpp_docs.md_docs.md`
+- **Keyword Index**: `kernel_stackbased_test.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

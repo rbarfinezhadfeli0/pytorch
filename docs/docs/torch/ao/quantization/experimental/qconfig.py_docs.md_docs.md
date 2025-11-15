@@ -1,0 +1,287 @@
+# Documentation: `docs/torch/ao/quantization/experimental/qconfig.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/ao/quantization/experimental/qconfig.py_docs.md`
+- **Size**: 4,539 bytes (4.43 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**. This file handles **configuration or setup**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/ao/quantization/experimental/qconfig.py`
+
+## File Metadata
+
+- **Path**: `torch/ao/quantization/experimental/qconfig.py`
+- **Size**: 1,943 bytes (1.90 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file handles **configuration or setup**.
+
+## Original Source
+
+```python
+import torch
+from torch.ao.quantization import MinMaxObserver
+from torch.ao.quantization.experimental.fake_quantize import APoTFakeQuantize
+from torch.ao.quantization.fake_quantize import FakeQuantize
+from torch.ao.quantization.qconfig import QConfig
+
+
+"""
+Default symmetric fake_quant for activations.
+"""
+default_symmetric_fake_quant = FakeQuantize.with_args(
+    observer=MinMaxObserver, qscheme=torch.per_tensor_symmetric, dtype=torch.quint8
+)
+
+"""
+Default symmetric fake_quant for weights.
+"""
+default_weight_symmetric_fake_quant = FakeQuantize.with_args(
+    observer=MinMaxObserver, qscheme=torch.per_tensor_symmetric, dtype=torch.qint8
+)
+
+# uniform activation and weight, b=8 k=2
+uniform_qconfig_8bit = QConfig(
+    activation=default_symmetric_fake_quant,
+    weight=default_weight_symmetric_fake_quant.with_args,
+)
+
+# uniform activation, APoT weight, b=8 k=2
+apot_weight_qconfig_8bit = QConfig(
+    activation=default_symmetric_fake_quant.with_args,
+    weight=APoTFakeQuantize.with_args(b=8, k=2, dtype=torch.qint8),
+)
+
+# APoT activation and uniform weight, b=8 k=2
+apot_qconfig_8bit = QConfig(
+    activation=APoTFakeQuantize.with_args(b=8, k=2, dtype=torch.quint8),
+    weight=APoTFakeQuantize.with_args(b=8, k=2, dtype=torch.qint8),
+)
+
+# uniform activation and weight, b=4 k=2
+uniform_qconfig_4bit = QConfig(
+    activation=default_symmetric_fake_quant.with_args(quant_min=0, quant_max=15),
+    weight=default_weight_symmetric_fake_quant.with_args(quant_min=0, quant_max=15),
+)
+
+# uniform activation, APoT weight, b=4 k=2
+apot_weight_qconfig_4bit = QConfig(
+    activation=default_symmetric_fake_quant.with_args(quant_min=0, quant_max=15),
+    weight=APoTFakeQuantize.with_args(b=4, k=2, dtype=torch.qint8),
+)
+
+# APoT activation and uniform weight, b=4 k=2
+apot_qconfig_4bit = QConfig(
+    activation=APoTFakeQuantize.with_args(b=4, k=2, dtype=torch.quint8),
+    weight=APoTFakeQuantize.with_args(b=4, k=2, dtype=torch.qint8),
+)
+
+```
+
+
+
+## High-Level Overview
+
+"""Default symmetric fake_quant for activations.
+
+This Python file contains 0 class(es) and 0 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Key imports**: torch, MinMaxObserver, APoTFakeQuantize, FakeQuantize, QConfig
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/ao/quantization/experimental`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `torch`
+- `torch.ao.quantization`: MinMaxObserver
+- `torch.ao.quantization.experimental.fake_quantize`: APoTFakeQuantize
+- `torch.ao.quantization.fake_quantize`: FakeQuantize
+- `torch.ao.quantization.qconfig`: QConfig
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/ao/quantization/experimental`):
+
+- [`fake_quantize.py_docs.md`](./fake_quantize.py_docs.md)
+- [`adaround_fake_quantize.py_docs.md`](./adaround_fake_quantize.py_docs.md)
+- [`linear.py_docs.md`](./linear.py_docs.md)
+- [`adaround_loss.py_docs.md`](./adaround_loss.py_docs.md)
+- [`observer.py_docs.md`](./observer.py_docs.md)
+- [`quantizer.py_docs.md`](./quantizer.py_docs.md)
+- [`fake_quantize_function.py_docs.md`](./fake_quantize_function.py_docs.md)
+- [`APoT_tensor.py_docs.md`](./APoT_tensor.py_docs.md)
+- [`adaround_optimization.py_docs.md`](./adaround_optimization.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `qconfig.py_docs.md`
+- **Keyword Index**: `qconfig.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/ao/quantization/experimental`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/ao/quantization/experimental`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/ao/quantization/experimental`):
+
+- [`apot_utils.py_docs.md_docs.md`](./apot_utils.py_docs.md_docs.md)
+- [`APoT_tensor.py_kw.md_docs.md`](./APoT_tensor.py_kw.md_docs.md)
+- [`fake_quantize_function.py_kw.md_docs.md`](./fake_quantize_function.py_kw.md_docs.md)
+- [`adaround_loss.py_docs.md_docs.md`](./adaround_loss.py_docs.md_docs.md)
+- [`apot_utils.py_kw.md_docs.md`](./apot_utils.py_kw.md_docs.md)
+- [`adaround_fake_quantize.py_docs.md_docs.md`](./adaround_fake_quantize.py_docs.md_docs.md)
+- [`APoT_tensor.py_docs.md_docs.md`](./APoT_tensor.py_docs.md_docs.md)
+- [`observer.py_kw.md_docs.md`](./observer.py_kw.md_docs.md)
+- [`observer.py_docs.md_docs.md`](./observer.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `qconfig.py_docs.md_docs.md`
+- **Keyword Index**: `qconfig.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

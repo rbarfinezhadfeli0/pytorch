@@ -1,0 +1,254 @@
+# Documentation: `docs/docs/source/cpp_index.rst_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/docs/source/cpp_index.rst_docs.md`
+- **Size**: 4,676 bytes (4.57 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `docs/source/cpp_index.rst`
+
+## File Metadata
+
+- **Path**: `docs/source/cpp_index.rst`
+- **Size**: 2,172 bytes (2.12 KB)
+- **Type**: Source File (.rst)
+- **Extension**: `.rst`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```
+:orphan:
+
+C++
+===================================
+.. Note::
+    If you are looking for the PyTorch C++ API docs, directly go `here <https://pytorch.org/cppdocs/>`__.
+
+PyTorch provides several features for working with C++, and it’s best to choose from them based on your needs. At a high level, the following support is available:
+
+Tensor and Autograd in C++
+---------------------------
+Most of the tensor and autograd operations in PyTorch Python API are also available in the C++ API. These include:
+
+* ``torch::Tensor`` methods such as ``add`` / ``reshape`` / ``clone``. For the full list of methods available, please see: https://pytorch.org/cppdocs/api/classat_1_1_tensor.html
+* C++ tensor indexing API that looks and behaves the same as the Python API. For details on its usage, please see: https://pytorch.org/cppdocs/notes/tensor_indexing.html
+* The tensor autograd APIs and the ``torch::autograd`` package that are crucial for building dynamic neural networks in C++ frontend. For more details, please see: https://pytorch.org/tutorials/advanced/cpp_autograd.html
+
+Authoring Models in C++
+------------------------
+We provide the full capability of authoring and training a neural net model purely in C++, with familiar components such as ``torch::nn`` / ``torch::nn::functional`` / ``torch::optim`` that closely resemble the Python API.
+
+* For an overview of the PyTorch C++ model authoring and training API, please see: https://pytorch.org/cppdocs/frontend.html
+* For a detailed tutorial on how to use the API, please see: https://pytorch.org/tutorials/advanced/cpp_frontend.html
+* Docs for components such as ``torch::nn`` / ``torch::nn::functional`` / ``torch::optim`` can be found at: https://pytorch.org/cppdocs/api/library_root.html
+
+
+Packaging for C++
+------------------
+For guidance on how to install and link with libtorch (the library that contains all of the above C++ APIs), please see: https://pytorch.org/cppdocs/installing.html. Note that on Linux there are two types of libtorch binaries provided: one compiled with GCC pre-cxx11 ABI and the other with GCC cxx11 ABI, and you should make the selection based on the GCC ABI your system is using.
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/source`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/source`, which is part of the PyTorch project infrastructure.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/source`):
+
+- [`torch.compiler_troubleshooting.md_docs.md`](./torch.compiler_troubleshooting.md_docs.md)
+- [`torch.compiler_aot_inductor_debugging_guide.md_docs.md`](./torch.compiler_aot_inductor_debugging_guide.md_docs.md)
+- [`mtia.memory.md_docs.md`](./mtia.memory.md_docs.md)
+- [`torch.compiler_get_started.md_docs.md`](./torch.compiler_get_started.md_docs.md)
+- [`torch.compiler_dynamo_deepdive.md_docs.md`](./torch.compiler_dynamo_deepdive.md_docs.md)
+- [`mtia.mtia_graph.md_docs.md`](./mtia.mtia_graph.md_docs.md)
+- [`hub.md_docs.md`](./hub.md_docs.md)
+- [`torch_nccl_environment_variables.md_docs.md`](./torch_nccl_environment_variables.md_docs.md)
+- [`optim.md_docs.md`](./optim.md_docs.md)
+- [`torch.compiler_aot_inductor.md_docs.md`](./torch.compiler_aot_inductor.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `cpp_index.rst_docs.md`
+- **Keyword Index**: `cpp_index.rst_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/docs/source`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/docs/source`, which is part of the PyTorch project infrastructure.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/docs/source`):
+
+- [`distributions.md_docs.md_docs.md`](./distributions.md_docs.md_docs.md)
+- [`distributed.optim.md_docs.md_docs.md`](./distributed.optim.md_docs.md_docs.md)
+- [`torch.compiler_dynamic_shapes.md_kw.md_docs.md`](./torch.compiler_dynamic_shapes.md_kw.md_docs.md)
+- [`tensor_attributes.rst_docs.md_docs.md`](./tensor_attributes.rst_docs.md_docs.md)
+- [`tensor_attributes.rst_kw.md_docs.md`](./tensor_attributes.rst_kw.md_docs.md)
+- [`torch.compiler_dynamo_overview.md_docs.md_docs.md`](./torch.compiler_dynamo_overview.md_docs.md_docs.md)
+- [`mtia.memory.md_kw.md_docs.md`](./mtia.memory.md_kw.md_docs.md)
+- [`nn.attention.varlen.md_kw.md_docs.md`](./nn.attention.varlen.md_kw.md_docs.md)
+- [`cpu.rst_kw.md_docs.md`](./cpu.rst_kw.md_docs.md)
+- [`torch.compiler_faq.md_docs.md_docs.md`](./torch.compiler_faq.md_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `cpp_index.rst_docs.md_docs.md`
+- **Keyword Index**: `cpp_index.rst_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

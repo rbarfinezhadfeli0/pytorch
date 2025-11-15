@@ -1,0 +1,90 @@
+# Keyword Index: `.github/merge_rules.yaml`
+
+## File Information
+
+- **Original File**: [.github/merge_rules.yaml](../../.github/merge_rules.yaml)
+- **Documentation**: [`merge_rules.yaml_docs.md`](./merge_rules.yaml_docs.md)
+- **Folder**: `.github`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`AlannaBurke`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`Algebra`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`Autocast`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`BUILD`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`CI`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`CPU`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`CaoE`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`Chillee`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`Convolution`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`Core`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`DCP`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`DenisVieriu97`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`DeviceAccelerator`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`Distributed`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`Distributions`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`Documentation`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`Dynamo`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`EasyCLA`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`EikanWang`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`Executorch`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`FFT`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`FindMKLDNN`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`GeneratorForPrivateuseone`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`H`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`Huang`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`IDEEP`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`IvanYashchuk`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`JackCaoG`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`Lazy`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`LinalgBackend`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`Linear`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`LinearAlgebra`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`Lint`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`LucasLLC`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`MPS`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`Maintainers`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`Modules`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`NNC`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`NVFuser`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`ONNX`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`OSS`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`PrimTorch`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`PrivateUse1`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`PrivateUse1HooksInterface`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`ROCm`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`Reviewers`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`SYCL`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`Skylion007`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`Sparse`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`SpectralOps`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`Tensor`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`XLA`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`XPU`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`XiaobingSuper`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+- **`XilunWu`**: [merge_rules.yaml_docs.md](./merge_rules.yaml_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,354 @@
+# Documentation: `docs/aten/src/ATen/native/vulkan/ops/Padding.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/vulkan/ops/Padding.cpp_docs.md`
+- **Size**: 5,532 bytes (5.40 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/native/vulkan/ops/Padding.cpp`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/vulkan/ops/Padding.cpp`
+- **Size**: 3,143 bytes (3.07 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#include <ATen/native/vulkan/ops/Common.h>
+#include <c10/util/irange.h>
+#include <torch/library.h>
+
+namespace at {
+namespace native {
+namespace vulkan {
+namespace ops {
+namespace {
+
+using namespace api::utils;
+
+Tensor pad2d(
+    const Tensor& self_arg,
+    IntArrayRef padding,
+    const api::ShaderInfo& shader_descriptor) {
+  const int pad_dim = padding.size();
+  const IntArrayRef input_size = self_arg.sizes();
+  const int input_dim = input_size.size();
+
+  TORCH_CHECK(
+      pad_dim == 1 || pad_dim == 4,
+      "Padding sizes must be a 1-tuple or 4-tuple!");
+  TORCH_CHECK(input_dim >= 2, "Input tensor must have dim >= 2!");
+
+  api::Context* const context = api::context();
+
+  int pad_left = padding[0];
+  int pad_right = padding[0];
+  int pad_top = padding[0];
+  int pad_bottom = padding[0];
+  if (pad_dim == 4) {
+    pad_right = padding[1];
+    pad_top = padding[2];
+    pad_bottom = padding[3];
+  }
+
+  const Tensor self = self_arg.is_vulkan() ? self_arg : self_arg.vulkan();
+  const vTensor& v_self = convert(self);
+
+  std::vector<int64_t> output_size(input_dim);
+  for (const auto d : c10::irange(input_dim)) {
+    if (d == input_dim - 1) {
+      output_size[d] = input_size[d] + pad_right + pad_left;
+    } else if (d == input_dim - 2) {
+      output_size[d] = input_size[d] + pad_top + pad_bottom;
+    } else {
+      output_size[d] = input_size[d];
+    }
+  }
+
+  vTensor v_output{
+      context,
+      output_size,
+      v_self.dtype(),
+  };
+
+  const struct Block final {
+    uvec3 extents;
+    uint32_t _;
+    uvec4 padding;
+  } block{
+      v_output.extents(),
+      0u,
+      {safe_downcast<uint32_t>(pad_left),
+       safe_downcast<uint32_t>(pad_right),
+       safe_downcast<uint32_t>(pad_top),
+       safe_downcast<uint32_t>(pad_bottom)},
+  };
+
+  api::UniformParamsBuffer params(context, block);
+  api::PipelineBarrier pipeline_barrier{};
+
+  context->submit_compute_job(
+      // shader descriptor
+      shader_descriptor,
+      // pipeline barrier
+      pipeline_barrier,
+      // global work group size
+      v_output.extents(),
+      // local work group size
+      adaptive_work_group_size(v_output.extents()),
+      // fence handle
+      VK_NULL_HANDLE,
+      // shader arguments
+      v_output.image(
+          pipeline_barrier,
+          api::PipelineStage::COMPUTE,
+          api::MemoryAccessType::WRITE),
+      v_self.image(pipeline_barrier, api::PipelineStage::COMPUTE),
+      // params buffer
+      params.buffer());
+
+  return convert(v_output);
+}
+
+Tensor reflection_pad2d(const Tensor& self_arg, IntArrayRef padding) {
+  return pad2d(self_arg, padding, VK_KERNEL(reflection_pad2d));
+}
+
+Tensor replication_pad2d(const Tensor& self_arg, IntArrayRef padding) {
+  return pad2d(self_arg, padding, VK_KERNEL(replication_pad2d));
+}
+
+#ifdef USE_VULKAN_API
+
+TORCH_LIBRARY_IMPL(aten, Vulkan, m) {
+  m.impl(
+      TORCH_SELECTIVE_NAME("aten::reflection_pad2d"),
+      TORCH_FN(reflection_pad2d));
+  m.impl(
+      TORCH_SELECTIVE_NAME("aten::replication_pad2d"),
+      TORCH_FN(replication_pad2d));
+}
+
+#endif /* USE_VULKAN_API */
+
+} // namespace
+} // namespace ops
+} // namespace vulkan
+} // namespace native
+} // namespace at
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 10 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `vulkan`, `ops`, `api`, `native`, `at`
+
+**Classes/Structs**: `Block`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native/vulkan/ops`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/native/vulkan/ops/Common.h`
+- `c10/util/irange.h`
+- `torch/library.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native/vulkan/ops`):
+
+- [`Convert.h_docs.md`](./Convert.h_docs.md)
+- [`Batchnorm.cpp_docs.md`](./Batchnorm.cpp_docs.md)
+- [`Slice.cpp_docs.md`](./Slice.cpp_docs.md)
+- [`Lerp.cpp_docs.md`](./Lerp.cpp_docs.md)
+- [`Shape.cpp_docs.md`](./Shape.cpp_docs.md)
+- [`Mean.cpp_docs.md`](./Mean.cpp_docs.md)
+- [`UnaryOp.cpp_docs.md`](./UnaryOp.cpp_docs.md)
+- [`Permute.cpp_docs.md`](./Permute.cpp_docs.md)
+- [`Unsqueeze.cpp_docs.md`](./Unsqueeze.cpp_docs.md)
+- [`Stack.cpp_docs.md`](./Stack.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `Padding.cpp_docs.md`
+- **Keyword Index**: `Padding.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native/vulkan/ops`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native/vulkan/ops`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native/vulkan/ops`):
+
+- [`Lerp.cpp_kw.md_docs.md`](./Lerp.cpp_kw.md_docs.md)
+- [`Select.cpp_docs.md_docs.md`](./Select.cpp_docs.md_docs.md)
+- [`Batchnorm.h_docs.md_docs.md`](./Batchnorm.h_docs.md_docs.md)
+- [`Lstm.cpp_kw.md_docs.md`](./Lstm.cpp_kw.md_docs.md)
+- [`Concat.cpp_kw.md_docs.md`](./Concat.cpp_kw.md_docs.md)
+- [`Convolution.cpp_docs.md_docs.md`](./Convolution.cpp_docs.md_docs.md)
+- [`Zero.cpp_kw.md_docs.md`](./Zero.cpp_kw.md_docs.md)
+- [`Gru.h_kw.md_docs.md`](./Gru.h_kw.md_docs.md)
+- [`Repeat.cpp_kw.md_docs.md`](./Repeat.cpp_kw.md_docs.md)
+- [`Register.cpp_docs.md_docs.md`](./Register.cpp_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `Padding.cpp_docs.md_docs.md`
+- **Keyword Index**: `Padding.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

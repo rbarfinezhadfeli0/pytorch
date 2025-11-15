@@ -1,0 +1,268 @@
+# Documentation: `docs/aten/src/ATen/native/cuda/IndexKernelUtils.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/cuda/IndexKernelUtils.h_docs.md`
+- **Size**: 4,521 bytes (4.42 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/native/cuda/IndexKernelUtils.h`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/cuda/IndexKernelUtils.h`
+- **Size**: 1,906 bytes (1.86 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+
+#include <cstdint>
+#include <ATen/native/TensorIterator.h>
+#include <ATen/native/cuda/MemoryAccess.cuh>
+
+namespace at::native {
+
+template<int alignment>
+inline bool fast_gather_kernel_eligible(const TensorIterator& iter, char * const out_ptr, char * const in_ptr, const size_t index_stride_bytes, const size_t element_size) {
+  using at::native::memory::get_alignment;
+  const auto index_element_size = iter.element_size(2);
+  //TensorIterator strides and sizes are ordered fastest moving to slowest moving,
+  //in contrast to regular sizes
+  // we need contiguous source and dst slices and aligned pointers and strides and slice size to do vectorized loads
+  // also we need idx to be expanded in the last dimension so we can copy entire slices
+  // and we need the src tensor to keep 0 stride from restriding
+  // (it could have been deleted by dimension collapse, in this case iterator would still be 2d
+  // but we cannot use fast path)
+
+  return iter.ndim() == 2 && iter.strides(2)[0]==0 && iter.strides(2)[1]==index_element_size &&
+         static_cast<size_t>(iter.strides(0)[0])==element_size &&
+         static_cast<size_t>(iter.strides(1)[0])==element_size && static_cast<size_t>(iter.strides(1)[1] == 0) &&
+         get_alignment(out_ptr) == alignment && get_alignment(in_ptr) == alignment &&
+         get_alignment(static_cast<size_t>(iter.shape()[0] * element_size)) == alignment &&
+         get_alignment(static_cast<size_t>(index_stride_bytes)) == alignment &&
+         get_alignment(static_cast<size_t>(iter.strides(0)[1])) == alignment;
+}
+
+template <int64_t Alignment, typename index_t>
+void vectorized_gather_kernel_launch(char * out, char * inp, index_t * idx, int num_ind,
+                                     int64_t slice_size_in_bytes, int64_t ind_dim_size, int64_t inp_stride_bytes, int64_t out_stride_bytes,
+                                     bool allow_neg_indices=false);
+
+
+}
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 2 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `at`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native/cuda`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `cstdint`
+- `ATen/native/TensorIterator.h`
+- `ATen/native/cuda/MemoryAccess.cuh`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native/cuda`):
+
+- [`LogcumsumexpKernel.cu_docs.md`](./LogcumsumexpKernel.cu_docs.md)
+- [`WeightNorm.cu_docs.md`](./WeightNorm.cu_docs.md)
+- [`SparseBinaryOpIntersectionKernel.cu_docs.md`](./SparseBinaryOpIntersectionKernel.cu_docs.md)
+- [`jit_utils.cpp_docs.md`](./jit_utils.cpp_docs.md)
+- [`ReduceNormKernel.cu_docs.md`](./ReduceNormKernel.cu_docs.md)
+- [`BinaryMiscOpsKernels.cu_docs.md`](./BinaryMiscOpsKernels.cu_docs.md)
+- [`RowwiseScaledMM.h_docs.md`](./RowwiseScaledMM.h_docs.md)
+- [`fused_adamw_amsgrad_impl.cuh_docs.md`](./fused_adamw_amsgrad_impl.cuh_docs.md)
+- [`Col2Im.cu_docs.md`](./Col2Im.cu_docs.md)
+- [`DistributionRandomKernel.cu_docs.md`](./DistributionRandomKernel.cu_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `IndexKernelUtils.h_docs.md`
+- **Keyword Index**: `IndexKernelUtils.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native/cuda`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native/cuda`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native/cuda`):
+
+- [`DeviceSqrt.cuh_kw.md_docs.md`](./DeviceSqrt.cuh_kw.md_docs.md)
+- [`UnaryGeometricAsinKernel.cu_kw.md_docs.md`](./UnaryGeometricAsinKernel.cu_kw.md_docs.md)
+- [`Distributions.cpp_docs.md_docs.md`](./Distributions.cpp_docs.md_docs.md)
+- [`fused_adamw_impl.cu_docs.md_docs.md`](./fused_adamw_impl.cu_docs.md_docs.md)
+- [`TensorTopK.h_kw.md_docs.md`](./TensorTopK.h_kw.md_docs.md)
+- [`ReduceOps.cpp_kw.md_docs.md`](./ReduceOps.cpp_kw.md_docs.md)
+- [`FusedSgdKernel.cu_docs.md_docs.md`](./FusedSgdKernel.cu_docs.md_docs.md)
+- [`Distributions.cu_kw.md_docs.md`](./Distributions.cu_kw.md_docs.md)
+- [`block_reduce.cuh_docs.md_docs.md`](./block_reduce.cuh_docs.md_docs.md)
+- [`fused_adagrad_impl.cuh_kw.md_docs.md`](./fused_adagrad_impl.cuh_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `IndexKernelUtils.h_docs.md_docs.md`
+- **Keyword Index**: `IndexKernelUtils.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

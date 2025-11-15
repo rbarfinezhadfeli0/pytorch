@@ -1,0 +1,299 @@
+# Documentation: `docs/test/jit/test_concrete_module_type.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/jit/test_concrete_module_type.py_docs.md`
+- **Size**: 4,719 bytes (4.61 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/jit/test_concrete_module_type.py`
+
+## File Metadata
+
+- **Path**: `test/jit/test_concrete_module_type.py`
+- **Size**: 1,682 bytes (1.64 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**. Contains **unit tests** using Python testing frameworks. Can be **executed as a standalone script**.
+
+## Original Source
+
+```python
+# Owner(s): ["oncall: jit"]
+
+import unittest
+
+import torch
+from torch.testing._internal.common_utils import raise_on_run_directly
+
+
+class TestConcreteModuleTypeFindSubmodule(unittest.TestCase):
+    def test_error_message_includes_submodule_name(self):
+        class ChildModule(torch.nn.Module):
+            def __init__(self):
+                super().__init__()
+                self.linear = torch.nn.Linear(5, 3)
+
+            def forward(self, x):
+                return self.linear(x)
+
+        class ParentModule(torch.nn.Module):
+            def __init__(self):
+                super().__init__()
+                self.existing_child = ChildModule()
+
+            def forward(self, x):
+                return self.existing_child(x)
+
+        module = ParentModule()
+        scripted_module = torch.jit.script(module)
+
+        self.assertIsNotNone(scripted_module.existing_child)
+
+        # Now try to trigger the error by accessing a non-existent submodule
+        # through the internal ConcreteModuleType mechanism. This happens
+        # when the TorchScript compiler tries to resolve submodule references.
+        class BrokenModule(torch.nn.Module):
+            def __init__(self):
+                super().__init__()
+                self.parent = ParentModule()
+
+            def forward(self, x):
+                return self.parent.missing_submodule(x)
+
+        broken_module = BrokenModule()
+
+        with self.assertRaises(RuntimeError) as context:
+            torch.jit.script(broken_module)
+
+        error_msg = str(context.exception)
+        self.assertIn("missing_submodule", error_msg.lower())
+
+
+if __name__ == "__main__":
+    raise_on_run_directly("test/test_jit.py")
+
+```
+
+
+
+## High-Level Overview
+
+
+This Python file contains 4 class(es) and 7 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `TestConcreteModuleTypeFindSubmodule`, `ChildModule`, `ParentModule`, `BrokenModule`
+
+**Functions defined**: `test_error_message_includes_submodule_name`, `__init__`, `forward`, `__init__`, `forward`, `__init__`, `forward`
+
+**Key imports**: unittest, torch, raise_on_run_directly
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/jit`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `unittest`
+- `torch`
+- `torch.testing._internal.common_utils`: raise_on_run_directly
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/jit/test_concrete_module_type.py
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/jit`):
+
+- [`test_dataclasses.py_docs.md`](./test_dataclasses.py_docs.md)
+- [`test_recursive_script.py_docs.md`](./test_recursive_script.py_docs.md)
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`test_python_builtins.py_docs.md`](./test_python_builtins.py_docs.md)
+- [`test_functional_blocks.py_docs.md`](./test_functional_blocks.py_docs.md)
+- [`test_hooks_modules.py_docs.md`](./test_hooks_modules.py_docs.md)
+- [`mydecorator.py_docs.md`](./mydecorator.py_docs.md)
+- [`test_union.py_docs.md`](./test_union.py_docs.md)
+- [`test_python_bindings.py_docs.md`](./test_python_bindings.py_docs.md)
+- [`test_parametrization.py_docs.md`](./test_parametrization.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_concrete_module_type.py_docs.md`
+- **Keyword Index**: `test_concrete_module_type.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/jit`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/jit`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/jit/test_concrete_module_type.py_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/jit`):
+
+- [`test_attr.py_kw.md_docs.md`](./test_attr.py_kw.md_docs.md)
+- [`test_parametrization.py_kw.md_docs.md`](./test_parametrization.py_kw.md_docs.md)
+- [`test_hooks.py_kw.md_docs.md`](./test_hooks.py_kw.md_docs.md)
+- [`test_dataclasses.py_docs.md_docs.md`](./test_dataclasses.py_docs.md_docs.md)
+- [`test_aten_pow.py_kw.md_docs.md`](./test_aten_pow.py_kw.md_docs.md)
+- [`test_misc.py_docs.md_docs.md`](./test_misc.py_docs.md_docs.md)
+- [`test_graph_rewrite_passes.py_kw.md_docs.md`](./test_graph_rewrite_passes.py_kw.md_docs.md)
+- [`test_module_containers.py_kw.md_docs.md`](./test_module_containers.py_kw.md_docs.md)
+- [`test_complex.py_kw.md_docs.md`](./test_complex.py_kw.md_docs.md)
+- [`test_types.py_kw.md_docs.md`](./test_types.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_concrete_module_type.py_docs.md_docs.md`
+- **Keyword Index**: `test_concrete_module_type.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

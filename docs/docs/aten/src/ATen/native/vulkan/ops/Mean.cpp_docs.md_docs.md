@@ -1,0 +1,384 @@
+# Documentation: `docs/aten/src/ATen/native/vulkan/ops/Mean.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/vulkan/ops/Mean.cpp_docs.md`
+- **Size**: 6,352 bytes (6.20 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/native/vulkan/ops/Mean.cpp`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/vulkan/ops/Mean.cpp`
+- **Size**: 4,006 bytes (3.91 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#include <ATen/native/vulkan/ops/Common.h>
+#include <ATen/native/vulkan/ops/Utils.h>
+#include <torch/library.h>
+
+namespace at {
+namespace native {
+namespace vulkan {
+namespace ops {
+namespace {
+
+using namespace api::utils;
+
+Tensor mean_dim(
+    const at::Tensor& self,
+    int64_t dim,
+    bool keepdim,
+    const std::optional<ScalarType> dtype) {
+  TORCH_CHECK(
+      self.dim() >= 2 && self.dim() <= 4,
+      "Vulkan mean_dim supports 2d, 3d, 4d tensors as input!");
+  TORCH_CHECK(
+      dim >= -self.dim() && dim < self.dim(),
+      "Vulkan mean.dim dimension out of range expected to be in range of [",
+      -self.dim(),
+      ",",
+      self.dim() - 1,
+      "], but got ",
+      dim);
+
+  // Get the global Vulkan context
+  api::Context* const context = api::context();
+
+  // Cast the input Tensor to a vTensor
+  const Tensor input = self.is_vulkan() ? self : self.vulkan();
+  const vTensor& v_input = convert(input);
+
+  // Normalize dim into range [0, self.dim()]
+  dim = utils::normalize(dim, self.dim());
+
+  // Create the output texture
+  std::vector<int64_t> output_size = v_input.sizes();
+  uint32_t dim_size = output_size[dim];
+  if (keepdim) {
+    output_size[dim] = 1;
+  } else {
+    output_size.erase(output_size.begin() + dim);
+  }
+
+  ScalarType type = self.scalar_type();
+  if (dtype.has_value()) {
+    type = dtype.value();
+  }
+
+  vTensor v_output{
+      context,
+      output_size,
+      convert_dtype(type),
+  };
+
+  // Required to determine how to insert memory barriers in the command buffer
+  api::PipelineBarrier pipeline_barrier{};
+
+  // Shift dim into 4d range
+  if (self.dim() < 4) {
+    dim += (4 - self.dim());
+  }
+
+  // Create the params buffer
+  const struct Block final {
+    uvec2 dim_info;
+    int32_t channel;
+  } block{
+      {static_cast<uint32_t>(dim), dim_size},
+      static_cast<int32_t>(get_dim<Dim4D::Channel>(v_input)),
+  };
+
+  api::UniformParamsBuffer params(context, block);
+
+  context->submit_compute_job(
+      // shader descriptor
+      keepdim ? VK_KERNEL(mean_dim_keepdim) : VK_KERNEL(mean_dim),
+      // pipeline barrier
+      pipeline_barrier,
+      // global work group size
+      v_output.extents(),
+      // local work group size
+      adaptive_work_group_size(v_output.extents()),
+      // fence handle
+      VK_NULL_HANDLE,
+      // shader arguments
+      v_output.image(
+          pipeline_barrier,
+          api::PipelineStage::COMPUTE,
+          api::MemoryAccessType::WRITE),
+      v_input.image(pipeline_barrier, api::PipelineStage::COMPUTE),
+      // params buffer
+      params.buffer());
+  return convert(v_output);
+}
+
+Tensor mean_dim_IntList(
+    const at::Tensor& self,
+    const OptionalIntArrayRef opt_dim,
+    bool keepdim,
+    const std::optional<ScalarType> dtype) {
+  TORCH_CHECK(
+      opt_dim.has_value(), "Vulkan mean without a dim arg is not implemented");
+
+  std::set<int64_t> dims_set;
+
+  if (opt_dim.has_value()) {
+    auto dims = opt_dim.value();
+    for (const auto& d : dims) {
+      TORCH_CHECK(
+          d >= -self.dim() && d < self.dim(),
+          "Vulkan mean.dim_IntList dimension out of range expected to be in range of [",
+          -self.dim(),
+          ",",
+          self.dim() - 1,
+          "], but got ",
+          d);
+      int64_t dim_normalized = utils::normalize(d, self.dim());
+      if (dims_set.find(dim_normalized) != dims_set.end()) {
+        TORCH_CHECK(
+            false,
+            "dim ",
+            dim_normalized,
+            " appears multiple times in the list of dims")
+      }
+      dims_set.insert(dim_normalized);
+    }
+    Tensor output = self;
+    for (auto it = dims_set.rbegin(); it != dims_set.rend(); ++it) {
+      output = mean_dim(output, *it, keepdim, dtype);
+    }
+    return output;
+  }
+  return self;
+}
+
+#ifdef USE_VULKAN_API
+
+TORCH_LIBRARY_IMPL(aten, Vulkan, m) {
+  m.impl(TORCH_SELECTIVE_NAME("aten::mean.dim"), TORCH_FN(mean_dim_IntList));
+}
+
+#endif /* USE_VULKAN_API */
+
+} // namespace
+} // namespace ops
+} // namespace vulkan
+} // namespace native
+} // namespace at
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 7 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `vulkan`, `ops`, `api`, `native`, `at`
+
+**Classes/Structs**: `Block`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native/vulkan/ops`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/native/vulkan/ops/Common.h`
+- `ATen/native/vulkan/ops/Utils.h`
+- `torch/library.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native/vulkan/ops`):
+
+- [`Convert.h_docs.md`](./Convert.h_docs.md)
+- [`Batchnorm.cpp_docs.md`](./Batchnorm.cpp_docs.md)
+- [`Slice.cpp_docs.md`](./Slice.cpp_docs.md)
+- [`Lerp.cpp_docs.md`](./Lerp.cpp_docs.md)
+- [`Shape.cpp_docs.md`](./Shape.cpp_docs.md)
+- [`UnaryOp.cpp_docs.md`](./UnaryOp.cpp_docs.md)
+- [`Permute.cpp_docs.md`](./Permute.cpp_docs.md)
+- [`Unsqueeze.cpp_docs.md`](./Unsqueeze.cpp_docs.md)
+- [`Stack.cpp_docs.md`](./Stack.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `Mean.cpp_docs.md`
+- **Keyword Index**: `Mean.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native/vulkan/ops`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native/vulkan/ops`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native/vulkan/ops`):
+
+- [`Lerp.cpp_kw.md_docs.md`](./Lerp.cpp_kw.md_docs.md)
+- [`Select.cpp_docs.md_docs.md`](./Select.cpp_docs.md_docs.md)
+- [`Batchnorm.h_docs.md_docs.md`](./Batchnorm.h_docs.md_docs.md)
+- [`Lstm.cpp_kw.md_docs.md`](./Lstm.cpp_kw.md_docs.md)
+- [`Concat.cpp_kw.md_docs.md`](./Concat.cpp_kw.md_docs.md)
+- [`Convolution.cpp_docs.md_docs.md`](./Convolution.cpp_docs.md_docs.md)
+- [`Zero.cpp_kw.md_docs.md`](./Zero.cpp_kw.md_docs.md)
+- [`Gru.h_kw.md_docs.md`](./Gru.h_kw.md_docs.md)
+- [`Repeat.cpp_kw.md_docs.md`](./Repeat.cpp_kw.md_docs.md)
+- [`Register.cpp_docs.md_docs.md`](./Register.cpp_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `Mean.cpp_docs.md_docs.md`
+- **Keyword Index**: `Mean.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,83 @@
+# Keyword Index: `docs/aten/src/ATen/StorageUtils.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/StorageUtils.h_kw.md](../../../../../docs/aten/src/ATen/StorageUtils.h_kw.md)
+- **Documentation**: [`StorageUtils.h_kw.md_docs.md`](./StorageUtils.h_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Analysis`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Architecture`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Basic`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Class`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Complete`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Considerations`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Dependencies`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Design`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Detailed`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Documentation`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Efficiency`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Extracted`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`File`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Folder`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Generated`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`High`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`How`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`In`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Includes`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Index`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Information`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Keyword`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Keywords`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Level`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Map`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Metadata`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Namespaces`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Original`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Overview`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Performance`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Purpose`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`PyTorch`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Related`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Repository`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Safety`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Section`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Security`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Source`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Storage`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`StorageImpl`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`StorageUtils`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Structs`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`System`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`TensorBase`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Testing`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`The`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`This`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+- **`Usage`**: [StorageUtils.h_kw.md_docs.md](./StorageUtils.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

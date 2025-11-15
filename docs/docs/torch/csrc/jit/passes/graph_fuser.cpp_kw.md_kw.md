@@ -1,0 +1,83 @@
+# Keyword Index: `docs/torch/csrc/jit/passes/graph_fuser.cpp_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/csrc/jit/passes/graph_fuser.cpp_kw.md](../../../../../../docs/torch/csrc/jit/passes/graph_fuser.cpp_kw.md)
+- **Documentation**: [`graph_fuser.cpp_kw.md_docs.md`](./graph_fuser.cpp_kw.md_docs.md)
+- **Folder**: `docs/torch/csrc/jit/passes`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Architecture`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Basic`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Class`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Complete`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Considerations`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Dependencies`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Design`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Detailed`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Documentation`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Efficiency`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Exception`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Extracted`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`File`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Folder`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Functions`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`FuseGraph`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Generated`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`GraphFuser`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`High`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`How`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`In`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Includes`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Index`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Information`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Keyword`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Keywords`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Level`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Map`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Metadata`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Namespaces`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Original`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Overview`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`PeepholeOptimizeShapeExpressions`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Performance`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Purpose`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`PyTorch`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Related`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Repository`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Safety`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Section`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Security`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Source`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Structs`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`System`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Testing`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`The`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`This`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+- **`Usage`**: [graph_fuser.cpp_kw.md_docs.md](./graph_fuser.cpp_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

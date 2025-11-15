@@ -1,0 +1,78 @@
+# Keyword Index: `docs/torch/jit/_shape_functions.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/jit/_shape_functions.py_kw.md](../../../../docs/torch/jit/_shape_functions.py_kw.md)
+- **Documentation**: [`_shape_functions.py_kw.md_docs.md`](./_shape_functions.py_kw.md_docs.md)
+- **Folder**: `docs/torch/jit`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`Any`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`Architecture`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`Basic`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`Callable`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`Complete`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`Considerations`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`Dependencies`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`Design`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`Detailed`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`Documentation`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`Efficiency`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`Extracted`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`File`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`Folder`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`Functions`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`Generated`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`High`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`How`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`Imports`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`In`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`Index`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`Information`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`Keyword`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`Keywords`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`Level`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`Map`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`Metadata`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`Original`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`Overview`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`Performance`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`Purpose`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`PyTorch`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`Related`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`Repository`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`Safety`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`Section`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`Security`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`Source`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`System`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`Testing`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`The`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`This`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+- **`Usage`**: [_shape_functions.py_kw.md_docs.md](./_shape_functions.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

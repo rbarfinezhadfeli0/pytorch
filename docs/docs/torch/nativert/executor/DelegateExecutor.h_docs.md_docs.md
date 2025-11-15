@@ -1,0 +1,289 @@
+# Documentation: `docs/torch/nativert/executor/DelegateExecutor.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/nativert/executor/DelegateExecutor.h_docs.md`
+- **Size**: 4,712 bytes (4.60 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/nativert/executor/DelegateExecutor.h`
+
+## File Metadata
+
+- **Path**: `torch/nativert/executor/DelegateExecutor.h`
+- **Size**: 2,136 bytes (2.09 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#pragma once
+
+#include <memory>
+#include <vector>
+
+#include <ATen/core/Tensor.h>
+#include <caffe2/serialize/inline_container.h>
+#include <torch/csrc/inductor/aoti_torch/proxy_executor.h>
+#include <torch/nativert/executor/Weights.h>
+namespace torch::nativert {
+
+std::string extractToTemporaryFolder(
+    caffe2::serialize::PyTorchStreamReader& packageReader,
+    const std::string& targetPath);
+
+using MakeProxyExecutorFn =
+    std::function<std::unique_ptr<torch::aot_inductor::ProxyExecutor>(
+        const std::string&,
+        bool,
+        std::optional<std::unordered_map<std::string, c10::IValue>>)>;
+
+// This is the extension point for delegation backends.
+class DelegateExecutor {
+ public:
+  virtual ~DelegateExecutor() {}
+
+  // Runtime calls processWeights() to pass the weights to the delegate backend.
+  // Typically, a backend would perform some form of validation and processing,
+  // such as constant folding. The processed weights stays in the deactivate
+  // state until commitWeights() is called.
+  //
+  // Weights tensors are co-owned by the runtime and the delegate backend.
+  // In the regular inference run() path, neither Runtime or Delegate backend
+  // can modify the weights tensor.
+  // To support inplace weight update, weight tensors are be exposed by
+  // ModelRunner::getWeights() to an external caller. The external caller can
+  // then modify the weight tensors in-place. Such mutation would instantly
+  // affect the weight tensors in the delegate backend.
+  // When a weight tensor is no longer used by the delegate backend, the backend
+  // must release it by decreasing a refcount. Runtime would
+  // also release the refcount for weight tensor if it's no longer activate. The
+  // underlying storage for weight tensors will be freed when the refcount
+  // reaches 0.
+  virtual void processWeights(std::shared_ptr<Weights> weights) = 0;
+
+  // This call activate the processed weights.
+  virtual void commitWeights() = 0;
+
+  virtual void initWeights(std::shared_ptr<Weights> weights) = 0;
+
+  virtual std::vector<at::Tensor> run(std::vector<at::Tensor>& inputs) = 0;
+};
+
+} // namespace torch::nativert
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 1 class(es)/struct(s) and 7 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`
+
+**Classes/Structs**: `DelegateExecutor`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/nativert/executor`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `memory`
+- `vector`
+- `ATen/core/Tensor.h`
+- `caffe2/serialize/inline_container.h`
+- `torch/csrc/inductor/aoti_torch/proxy_executor.h`
+- `torch/nativert/executor/Weights.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/nativert/executor`):
+
+- [`OpKernel.cpp_docs.md`](./OpKernel.cpp_docs.md)
+- [`AOTInductorDelegateExecutor.cpp_docs.md`](./AOTInductorDelegateExecutor.cpp_docs.md)
+- [`ExecutionFrame.cpp_docs.md`](./ExecutionFrame.cpp_docs.md)
+- [`ParallelGraphExecutor.h_docs.md`](./ParallelGraphExecutor.h_docs.md)
+- [`ExecutionFrame.h_docs.md`](./ExecutionFrame.h_docs.md)
+- [`ExecutorConfig.h_docs.md`](./ExecutorConfig.h_docs.md)
+- [`SerialGraphExecutor.h_docs.md`](./SerialGraphExecutor.h_docs.md)
+- [`Weights.cpp_docs.md`](./Weights.cpp_docs.md)
+- [`OpKernelKind.h_docs.md`](./OpKernelKind.h_docs.md)
+- [`Executor.h_docs.md`](./Executor.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `DelegateExecutor.h_docs.md`
+- **Keyword Index**: `DelegateExecutor.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/nativert/executor`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/nativert/executor`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/nativert/executor`):
+
+- [`GraphExecutorBase.h_docs.md_docs.md`](./GraphExecutorBase.h_docs.md_docs.md)
+- [`Placement.h_kw.md_docs.md`](./Placement.h_kw.md_docs.md)
+- [`ParallelGraphExecutor.cpp_kw.md_docs.md`](./ParallelGraphExecutor.cpp_kw.md_docs.md)
+- [`ExecutionFrame.h_docs.md_docs.md`](./ExecutionFrame.h_docs.md_docs.md)
+- [`Executor.cpp_kw.md_docs.md`](./Executor.cpp_kw.md_docs.md)
+- [`SerialGraphExecutor.h_docs.md_docs.md`](./SerialGraphExecutor.h_docs.md_docs.md)
+- [`AOTInductorModelContainerCudaShim.cpp_docs.md_docs.md`](./AOTInductorModelContainerCudaShim.cpp_docs.md_docs.md)
+- [`ParallelGraphExecutor.h_docs.md_docs.md`](./ParallelGraphExecutor.h_docs.md_docs.md)
+- [`Placement.cpp_kw.md_docs.md`](./Placement.cpp_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `DelegateExecutor.h_docs.md_docs.md`
+- **Keyword Index**: `DelegateExecutor.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

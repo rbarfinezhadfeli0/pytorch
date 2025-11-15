@@ -1,0 +1,323 @@
+# Documentation: `docs/test/torch_np/numpy_tests/core/test_scalarinherit.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/torch_np/numpy_tests/core/test_scalarinherit.py_docs.md`
+- **Size**: 4,768 bytes (4.66 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/torch_np/numpy_tests/core/test_scalarinherit.py`
+
+## File Metadata
+
+- **Path**: `test/torch_np/numpy_tests/core/test_scalarinherit.py`
+- **Size**: 1,335 bytes (1.30 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**. Contains **unit tests** using Python testing frameworks. Can be **executed as a standalone script**.
+
+## Original Source
+
+```python
+# Owner(s): ["module: dynamo"]
+
+"""Test printing of scalar types."""
+
+import functools
+from unittest import skipIf as skipif
+
+import pytest
+
+import torch._numpy as np
+from torch._numpy.testing import assert_
+from torch.testing._internal.common_utils import run_tests, TestCase
+
+
+skip = functools.partial(skipif, True)
+
+
+class A:
+    pass
+
+
+class B(A, np.float64):
+    pass
+
+
+class C(B):
+    pass
+
+
+class D(C, B):
+    pass
+
+
+class B0(np.float64, A):
+    pass
+
+
+class C0(B0):
+    pass
+
+
+class HasNew:
+    def __new__(cls, *args, **kwargs):
+        return cls, args, kwargs
+
+
+class B1(np.float64, HasNew):
+    pass
+
+
+@skip(reason="scalar repr: numpy plans to make it more explicit")
+class TestInherit(TestCase):
+    def test_init(self):
+        x = B(1.0)
+        assert_(str(x) == "1.0")
+        y = C(2.0)
+        assert_(str(y) == "2.0")
+        z = D(3.0)
+        assert_(str(z) == "3.0")
+
+    def test_init2(self):
+        x = B0(1.0)
+        assert_(str(x) == "1.0")
+        y = C0(2.0)
+        assert_(str(y) == "2.0")
+
+    def test_gh_15395(self):
+        # HasNew is the second base, so `np.float64` should have priority
+        x = B1(1.0)
+        assert_(str(x) == "1.0")
+
+        # previously caused RecursionError!?
+        with pytest.raises(TypeError):
+            B1(1.0, 2.0)
+
+
+if __name__ == "__main__":
+    run_tests()
+
+```
+
+
+
+## High-Level Overview
+
+"""Test printing of scalar types."""import functoolsfrom unittest import skipIf as skipifimport pytestimport torch._numpy as npfrom torch._numpy.testing import assert_from torch.testing._internal.common_utils import run_tests, TestCaseskip = functools.partial(skipif, True)class A:    passclass B(A, np.float64):    passclass C(B):    passclass D(C, B):    passclass B0(np.float64, A):    passclass C0(B0):    passclass HasNew:    def __new__(cls, *args, **kwargs):        return cls, args, kwargsclass B1(np.float64, HasNew):    pass
+
+This Python file contains 9 class(es) and 4 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `A`, `B`, `C`, `D`, `B0`, `C0`, `HasNew`, `B1`, `TestInherit`
+
+**Functions defined**: `__new__`, `test_init`, `test_init2`, `test_gh_15395`
+
+**Key imports**: functools, skipIf as skipif, pytest, torch._numpy as np, assert_, run_tests, TestCase
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/torch_np/numpy_tests/core`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `functools`
+- `unittest`: skipIf as skipif
+- `pytest`
+- `torch._numpy as np`
+- `torch._numpy.testing`: assert_
+- `torch.testing._internal.common_utils`: run_tests, TestCase
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/torch_np/numpy_tests/core/test_scalarinherit.py
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/torch_np/numpy_tests/core`):
+
+- [`test_shape_base.py_docs.md`](./test_shape_base.py_docs.md)
+- [`test_scalar_methods.py_docs.md`](./test_scalar_methods.py_docs.md)
+- [`test_einsum.py_docs.md`](./test_einsum.py_docs.md)
+- [`test_indexing.py_docs.md`](./test_indexing.py_docs.md)
+- [`test_dlpack.py_docs.md`](./test_dlpack.py_docs.md)
+- [`test_getlimits.py_docs.md`](./test_getlimits.py_docs.md)
+- [`test_multiarray.py_docs.md`](./test_multiarray.py_docs.md)
+- [`test_numerictypes.py_docs.md`](./test_numerictypes.py_docs.md)
+- [`test_dtype.py_docs.md`](./test_dtype.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_scalarinherit.py_docs.md`
+- **Keyword Index**: `test_scalarinherit.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/torch_np/numpy_tests/core`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/torch_np/numpy_tests/core`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/torch_np/numpy_tests/core/test_scalarinherit.py_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/torch_np/numpy_tests/core`):
+
+- [`test_scalar_methods.py_docs.md_docs.md`](./test_scalar_methods.py_docs.md_docs.md)
+- [`test_einsum.py_docs.md_docs.md`](./test_einsum.py_docs.md_docs.md)
+- [`test_scalarmath.py_kw.md_docs.md`](./test_scalarmath.py_kw.md_docs.md)
+- [`test_scalarmath.py_docs.md_docs.md`](./test_scalarmath.py_docs.md_docs.md)
+- [`test_shape_base.py_docs.md_docs.md`](./test_shape_base.py_docs.md_docs.md)
+- [`test_numerictypes.py_docs.md_docs.md`](./test_numerictypes.py_docs.md_docs.md)
+- [`test_scalar_ctors.py_docs.md_docs.md`](./test_scalar_ctors.py_docs.md_docs.md)
+- [`test_scalar_methods.py_kw.md_docs.md`](./test_scalar_methods.py_kw.md_docs.md)
+- [`test_indexing.py_docs.md_docs.md`](./test_indexing.py_docs.md_docs.md)
+- [`test_scalar_ctors.py_kw.md_docs.md`](./test_scalar_ctors.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_scalarinherit.py_docs.md_docs.md`
+- **Keyword Index**: `test_scalarinherit.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

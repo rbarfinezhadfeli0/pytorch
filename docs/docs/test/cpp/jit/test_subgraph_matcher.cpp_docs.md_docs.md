@@ -1,0 +1,809 @@
+# Documentation: `docs/test/cpp/jit/test_subgraph_matcher.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/cpp/jit/test_subgraph_matcher.cpp_docs.md`
+- **Size**: 15,486 bytes (15.12 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/cpp/jit/test_subgraph_matcher.cpp`
+
+## File Metadata
+
+- **Path**: `test/cpp/jit/test_subgraph_matcher.cpp`
+- **Size**: 12,831 bytes (12.53 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**.
+
+## Original Source
+
+```cpp
+#include <gtest/gtest.h>
+
+#include "test/cpp/jit/test_utils.h"
+#include "torch/csrc/jit/ir/subgraph_matcher.h"
+
+namespace torch {
+namespace jit {
+
+TEST(SubgraphMatcherTest, Trivial1) {
+  Graph graph, pattern;
+  parseIR(
+      R"IR(
+graph(%0):
+  %a = a::aaa(%0)
+  return (%a))IR",
+      &graph);
+  parseIR(
+      R"IR(
+graph(%0):
+  %x = a::aaa(%0)
+  return (%x))IR",
+      &pattern);
+  AT_ASSERT(!findPatternMatches(pattern, graph).empty());
+}
+
+TEST(SubgraphMatcherTest, Trivial2) {
+  Graph graph;
+  auto* g_in = graph.addInput();
+  auto* g_tanh = graph.insertNode(graph.create(aten::tanh, /*num_outputs =*/1));
+  g_tanh->addInput(g_in);
+  graph.registerOutput(g_tanh->output());
+
+  Graph pattern;
+  auto* p_in = pattern.addInput();
+  auto* p_tanh =
+      pattern.insertNode(pattern.create(aten::tanh, /*num_outputs =*/1));
+  p_tanh->addInput(p_in);
+  pattern.registerOutput(p_tanh->output());
+
+  auto matches = findPatternMatches(pattern, graph);
+  AT_ASSERT(matches.size() == 1);
+  for (const Match& m : matches) {
+    AT_ASSERT(m.values_map.at(p_in) == g_in);
+    AT_ASSERT(m.values_map.at(p_tanh->output()) == g_tanh->output());
+    AT_ASSERT(m.nodes_map.at(p_tanh) == g_tanh);
+  }
+}
+
+TEST(SubgraphMatcherTest, Trivial3) {
+  Graph graph, pattern;
+  parseIR(
+      R"IR(
+graph(%0):
+  %a = a::a(%0)
+  %b = a::b(%0)
+  %c = a::c(%a, %b)
+  return (%c))IR",
+      &graph);
+  parseIR(
+      R"IR(
+graph(%a, %b):
+  %c = a::c(%a, %b)
+  return (%c))IR",
+      &pattern);
+  AT_ASSERT(!findPatternMatches(pattern, graph).empty());
+}
+
+TEST(SubgraphMatcherTest, Trivial4) {
+  Graph graph;
+  auto* g_in0 = graph.addInput();
+  auto* g_in1 = graph.addInput();
+  auto* g_mul = graph.insertNode(graph.create(aten::mul, /*num_outputs =*/1));
+  g_mul->addInput(g_in0);
+  g_mul->addInput(g_in1);
+  graph.registerOutput(g_mul->output());
+
+  Graph pattern;
+  auto* p_in0 = pattern.addInput();
+  auto* p_in1 = pattern.addInput();
+  auto* p_mul =
+      pattern.insertNode(pattern.create(aten::mul, /*num_outputs =*/1));
+  p_mul->addInput(p_in0);
+  p_mul->addInput(p_in1);
+  pattern.registerOutput(p_mul->output());
+
+  auto matches = findPatternMatches(pattern, graph);
+  AT_ASSERT(matches.size() == 1);
+  for (const Match& m : matches) {
+    AT_ASSERT(m.values_map.at(p_in0) == g_in0);
+    AT_ASSERT(m.values_map.at(p_in1) == g_in1);
+    AT_ASSERT(m.values_map.at(p_mul->output()) == g_mul->output());
+    AT_ASSERT(m.nodes_map.at(p_mul) == g_mul);
+  }
+}
+
+TEST(SubgraphMatcherTest, Linear1) {
+  Graph graph, pattern;
+  parseIR(
+      R"IR(
+graph(%0):
+  %a = a::aaa(%0)
+  %b = b::bbb(%a)
+  %c = c::ccc(%b)
+  %d = d::ddd(%c)
+  %a = a::aaa(%0)
+  return (%d))IR",
+      &graph);
+  parseIR(
+      R"IR(
+graph(%0):
+  %x = b::bbb(%0)
+  %y = c::ccc(%x)
+  return (%y))IR",
+      &pattern);
+  AT_ASSERT(!findPatternMatches(pattern, graph).empty());
+}
+
+TEST(SubgraphMatcherTest, Linear2) {
+  Graph graph;
+  auto* g_in = graph.addInput();
+
+  auto* g_tanh = graph.insertNode(graph.create(aten::tanh, /*num_outputs =*/1));
+  g_tanh->addInput(g_in);
+
+  auto* g_tanh2 =
+      graph.insertNode(graph.create(aten::tanh, /*num_outputs =*/1));
+  g_tanh2->addInput(g_tanh->output());
+
+  graph.registerOutput(g_tanh2->output());
+
+  Graph pattern;
+  auto* p_in = pattern.addInput();
+
+  auto* p_tanh =
+      pattern.insertNode(pattern.create(aten::tanh, /*num_outputs =*/1));
+  p_tanh->addInput(p_in);
+
+  auto* p_tanh2 =
+      pattern.insertNode(pattern.create(aten::tanh, /*num_outputs =*/1));
+  p_tanh2->addInput(p_tanh->output());
+
+  pattern.registerOutput(p_tanh2->output());
+
+  auto matches = findPatternMatches(pattern, graph);
+  AT_ASSERT(matches.size() == 1);
+  for (const Match& m : matches) {
+    AT_ASSERT(m.values_map.at(p_in) == g_in);
+    AT_ASSERT(m.values_map.at(p_tanh->output()) == g_tanh->output());
+    AT_ASSERT(m.values_map.at(p_tanh2->output()) == g_tanh2->output());
+    AT_ASSERT(m.nodes_map.at(p_tanh) == g_tanh);
+    AT_ASSERT(m.nodes_map.at(p_tanh2) == g_tanh2);
+  }
+}
+
+/**
+ * Test diamond pattern:
+ *
+ *     ooo
+ *      |
+ *     aaa
+ *    /   \
+ *  bbb   ccc
+ *     \ /
+ *     ddd
+ *      |
+ *     eee
+ */
+TEST(SubgraphMatcherTest, Diamond1) {
+  Graph graph, pattern1, pattern2;
+  parseIR(
+      R"IR(
+graph(%0):
+  %o = o::ooo(%0)
+  %a = a::aaa(%o)
+  %b = b::bbb(%a)
+  %c = c::ccc(%a)
+  %d = d::ddd(%b, %c)
+  %e = e::eee(%d)
+  return (%e))IR",
+      &graph);
+
+  parseIR(
+      R"IR(
+graph(%0):
+  %a = a::aaa(%0)
+  %b = b::bbb(%a)
+  %c = c::ccc(%a)
+  %d = d::ddd(%b, %c)
+  return (%d))IR",
+      &pattern1);
+  AT_ASSERT(!findPatternMatches(pattern1, graph).empty());
+
+  // Check that order of nodes inside the diamond does not affect the result
+  parseIR(
+      R"IR(
+graph(%0):
+  %a = a::aaa(%0)
+  %c = c::ccc(%a)
+  %b = b::bbb(%a)
+  %d = d::ddd(%b, %c)
+  return (%d))IR",
+      &pattern2);
+  AT_ASSERT(!findPatternMatches(pattern2, graph).empty());
+}
+
+/**
+ * Test diamond pattern:
+ *
+ *     i0
+ *      |
+ *    chunk
+ *    /   \
+ * os[0] os[1]
+ *     \ /
+ *      *
+ *      |
+ *      o1
+ */
+TEST(SubgraphMatcherTest, Diamond2) {
+  Graph graph;
+  auto* g_in = graph.addInput();
+
+  auto* g_chunk =
+      graph.insertNode(graph.create(prim::ConstantChunk, /*num_outputs =*/2));
+  g_chunk->i_(attr::chunks, 2)->i_(attr::dim, 0);
+  g_chunk->addInput(g_in);
+
+  auto* g_mul = graph.insertNode(graph.create(aten::mul, /*num_outputs =*/1));
+  g_mul->addInput(g_chunk->outputs()[0]);
+  g_mul->addInput(g_chunk->outputs()[1]);
+  graph.registerOutput(g_mul->output());
+
+  Graph pattern;
+  auto* p_in = pattern.addInput();
+  auto* p_chunk = pattern.insertNode(
+      pattern.create(prim::ConstantChunk, /*num_outputs =*/2));
+  p_chunk->i_(attr::chunks, 2)->i_(attr::dim, 0);
+  p_chunk->addInput(p_in);
+
+  auto* p_mul =
+      pattern.insertNode(pattern.create(aten::mul, /*num_outputs =*/1));
+  p_mul->addInput(p_chunk->outputs()[0]);
+  p_mul->addInput(p_chunk->outputs()[1]);
+  pattern.registerOutput(p_mul->output());
+
+  auto matches = findPatternMatches(pattern, graph);
+  AT_ASSERT(matches.size() == 1);
+  for (const Match& m : matches) {
+    AT_ASSERT(m.values_map.at(p_in) == g_in);
+    AT_ASSERT(m.values_map.at(p_chunk->outputs()[0]) == g_chunk->outputs()[0]);
+    AT_ASSERT(m.values_map.at(p_chunk->outputs()[1]) == g_chunk->outputs()[1]);
+    AT_ASSERT(m.values_map.at(p_mul->output()) == g_mul->output());
+    AT_ASSERT(m.nodes_map.at(p_mul) == g_mul);
+  }
+}
+
+TEST(SubgraphMatcherTest, XPattern) {
+  Graph graph, pattern;
+  parseIR(
+      R"IR(
+graph(%0, %1):
+  %b = b::bbb(%0)
+  %c = c::ccc(%1)
+  %x = x::xxx(%b, %c)
+  %e = e::eee(%x)
+  %f = f::fff(%x)
+  %g = g::ggg(%e, %f)
+  return (%g))IR",
+      &graph);
+  parseIR(
+      R"IR(
+graph(%0, %1):
+  %b = b::bbb(%0)
+  %c = c::ccc(%1)
+  %x = x::xxx(%b, %c)
+  %e = e::eee(%x)
+  %f = f::fff(%x)
+  %g = g::ggg(%e, %f)
+  return (%g))IR",
+      &pattern);
+  AT_ASSERT(!findPatternMatches(pattern, graph).empty());
+}
+
+TEST(SubgraphMatcherTest, MultipleMatches) {
+  Graph graph, pattern;
+  parseIR(
+      R"IR(
+graph(%t0):
+  %t1 = a::aaa(%t0)
+  %t2 = a::aaa(%t1)
+  %t3 = a::aaa(%t2)
+  %t4 = a::aaa(%t3)
+  return (%t4))IR",
+      &graph);
+  parseIR(
+      R"IR(
+graph(%t0):
+  %t1 = a::aaa(%t0)
+  return (%t1))IR",
+      &pattern);
+  auto matches = findPatternMatches(pattern, graph);
+  AT_ASSERT(matches.size() == 4);
+}
+
+TEST(SubgraphMatcherTest, OverlappingMatches) {
+  Graph graph, pattern;
+  parseIR(
+      R"IR(
+graph(%t0):
+  %t1 = a::aaa(%t0)
+  %t2 = a::aaa(%t1)
+  %t3 = a::aaa(%t2)
+  %t4 = a::aaa(%t3)
+  return (%t4))IR",
+      &graph);
+  parseIR(
+      R"IR(
+graph(%t0):
+  %t1 = a::aaa(%t0)
+  %t2 = a::aaa(%t1)
+  return (%t2))IR",
+      &pattern);
+  auto matches = findPatternMatches(pattern, graph);
+  AT_ASSERT(matches.size() == 3);
+}
+
+TEST(SubgraphMatcherTest, MatchInBasicBlocks1) {
+  Graph graph;
+  parseIR(
+      R"IR(
+graph(%a, %b, %c):
+  %d = aten::mul(%a, %b)
+  %x = prim::If(%c)
+    block0():
+      %x1 = aten::mul(%a, %d)
+      -> (%x1)
+    block1():
+      %x2 = aten::mul(%b, %d)
+      -> (%x2)
+  return (%x))IR",
+      &graph);
+
+  // Ensure the matches don't cross basic block boundaries
+  Graph pattern0;
+  parseIR(
+      R"IR(
+graph(%x, %y):
+  %z = aten::mul(%x, %y)
+  return (%z))IR",
+      &pattern0);
+  AT_ASSERT(findPatternMatches(pattern0, graph).size() == 3);
+
+  Graph pattern1;
+  parseIR(
+      R"IR(
+graph(%x, %y):
+  %z1 = aten::mul(%x, %y)
+  %z2 = aten::mul(%y, %z1)
+  return (%z2))IR",
+      &pattern1);
+  AT_ASSERT(findPatternMatches(pattern1, graph).size() == 0);
+}
+
+TEST(SubgraphMatcherTest, MatchInBasicBlocks2) {
+  Graph graph;
+  parseIR(
+      R"IR(
+graph(%a, %b):
+  %x = my::mul(%a, %b)
+  %y = my::node_with_subblock()
+    block0():
+      %z = my::mul(%b, %x)
+      -> (%z)
+  return (%y))IR",
+      &graph);
+
+  // Check that we can match both mul ops
+  Graph pattern0;
+  parseIR(
+      R"IR(
+graph(%x, %y):
+  %z = my::mul(%x, %y)
+  return (%z))IR",
+      &pattern0);
+  AT_ASSERT(findPatternMatches(pattern0, graph).size() == 2);
+
+  // Ensure the matches don't cross basic block boundaries
+  Graph pattern1;
+  parseIR(
+      R"IR(
+graph(%x, %y):
+  %u = my::mul(%x, %y)
+  %v = my::mul(%y, %u)
+  return (%v))IR",
+      &pattern1);
+  AT_ASSERT(findPatternMatches(pattern1, graph).size() == 0);
+}
+
+TEST(SubgraphMatcherTest, MatchesAttributes) {
+  Graph graph;
+  parseIR(
+      R"IR(
+graph(%0):
+  %a = a::a[isattr=[1,2]](%0)
+  %b = a::b[intattr=10, floatattr=3.14, complexattr=-3.14j](%0)
+  %c = a::c[myattr="qqq"](%a, %b)
+  return (%c))IR",
+      &graph);
+
+  {
+    Graph pattern;
+    parseIR(
+        R"IR(
+graph(%a, %b):
+  %c = a::c[myattr="qqq"](%a, %b)
+  return (%c))IR",
+        &pattern);
+    AT_ASSERT(!findPatternMatches(pattern, graph).empty());
+  }
+  {
+    Graph pattern;
+    parseIR(
+        R"IR(
+graph(%a, %b):
+  %c = a::c[myattr="zzz"](%a, %b)
+  return (%c))IR",
+        &pattern);
+    AT_ASSERT(findPatternMatches(pattern, graph).empty());
+  }
+  {
+    Graph pattern;
+    parseIR(
+        R"IR(
+graph(%0):
+  %b = a::b[extraattr=10](%0)
+  return (%b))IR",
+        &pattern);
+    AT_ASSERT(findPatternMatches(pattern, graph).empty());
+  }
+  {
+    Graph pattern;
+    parseIR(
+        R"IR(
+graph(%0):
+  %b = a::b[intattr=10, floatattr=3.14, complexattr=-3.14j](%0)
+  return (%b))IR",
+        &pattern);
+    AT_ASSERT(!findPatternMatches(pattern, graph).empty());
+  }
+  {
+    Graph pattern;
+    parseIR(
+        R"IR(
+graph(%0):
+  %b = a::b[intattr=10, floatattr=3.14, complexattr=-3.14j, strattr="rrr"](%0)
+  return (%b))IR",
+        &pattern);
+    AT_ASSERT(findPatternMatches(pattern, graph).empty());
+  }
+  {
+    Graph pattern;
+    parseIR(
+        R"IR(
+graph(%0):
+  %a = a::a[isattr=[1,2]](%0)
+  return (%a))IR",
+        &pattern);
+    // Lists are not supported yet, thus we shouldn't match for now.
+    AT_ASSERT(findPatternMatches(pattern, graph).empty());
+  }
+  {
+    Graph pattern;
+    parseIR(
+        R"IR(
+graph(%a, %b):
+  %c = a::c[myattr="q.*"](%a, %b)
+  return (%c))IR",
+        &pattern);
+    AT_ASSERT(!findPatternMatches(pattern, graph).empty());
+  }
+}
+
+TEST(SubgraphMatcherTest, BadPattern) {
+  Graph graph, pattern1, pattern2;
+  parseIR(
+      R"IR(
+graph(%x):
+  %y = my::op1(%x)
+  %z = my::op2(%x)
+  return (%y, %z))IR",
+      &graph);
+
+  parseIR(
+      R"IR(
+graph(%x):
+  %y = my::node_with_subblock()
+    block0():
+      %z = my::op(%x)
+      -> (%z)
+  return (%y))IR",
+      &pattern1);
+  // No support for patterns with subblocks
+  // NOLINTNEXTLINE(cppcoreguidelines-avoid-goto,hicpp-avoid-goto)
+  ASSERT_ANY_THROW(findPatternMatches(pattern1, graph));
+
+  parseIR(
+      R"IR(
+graph(%x):
+  %y = my::op1(%x)
+  %z = my::op2(%x)
+  return (%y, %z))IR",
+      &pattern2);
+  // Not supported multi-output pattern, because not the whole pattern is
+  // covered by a traversal up from the first output (`%z = ...` is not
+  // visited). See the note "Multi-output Patterns" in subgraph_matcher.h.
+  // NOLINTNEXTLINE(cppcoreguidelines-avoid-goto,hicpp-avoid-goto)
+  ASSERT_ANY_THROW(findPatternMatches(pattern2, graph));
+}
+
+TEST(SubgraphMatcherTest, MultiOutput) {
+  {
+    Graph graph, pattern;
+    parseIR(
+        R"IR(
+graph(%0):
+  %a = a::aaa(%0)
+  %b = b::bbb(%a)
+  %c = c::ccc(%a, %b)
+  %x = a::aaa(%c)
+  %y = b::bbb(%x)
+  %z = d::ddd(%x, %y)
+  return (%y))IR",
+        &graph);
+    parseIR(
+        R"IR(
+graph(%0):
+  %a = a::aaa(%0)
+  %b = b::bbb(%a)
+  return (%b, %a))IR",
+        &pattern);
+    AT_ASSERT(findPatternMatches(pattern, graph).size() == 2);
+  }
+  {
+    Graph graph, pattern;
+    parseIR(
+        R"IR(
+graph(%0, %1):
+  %a1, %a2 = a::aaa(%0, %1)
+  %b = b::bbb(%a1)
+  %c = c::ccc(%b)
+
+  %x1, %x2 = a::aaa(%c, %a2)
+  %y = b::bbb(%x1)
+  %z = d::ddd(%y)
+  return (%z))IR",
+        &graph);
+    parseIR(
+        R"IR(
+graph(%0, %1):
+  %a1, %a2 = a::aaa(%0, %1)
+  %b = b::bbb(%a1)
+  return (%b, %a2))IR",
+        &pattern);
+    AT_ASSERT(findPatternMatches(pattern, graph).size() == 2);
+  }
+}
+
+} // namespace jit
+} // namespace torch
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 2 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `jit`, `torch`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/cpp/jit`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `gtest/gtest.h`
+- `test/cpp/jit/test_utils.h`
+- `torch/csrc/jit/ir/subgraph_matcher.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/cpp/jit/test_subgraph_matcher.cpp
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/cpp/jit`):
+
+- [`test_code_template.cpp_docs.md`](./test_code_template.cpp_docs.md)
+- [`test_memory_dag.cpp_docs.md`](./test_memory_dag.cpp_docs.md)
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`test_cleanup_passes.cpp_docs.md`](./test_cleanup_passes.cpp_docs.md)
+- [`test_union.cpp_docs.md`](./test_union.cpp_docs.md)
+- [`test_subgraph_rewriter.cpp_docs.md`](./test_subgraph_rewriter.cpp_docs.md)
+- [`test_backend_compiler_preprocess.cpp_docs.md`](./test_backend_compiler_preprocess.cpp_docs.md)
+- [`test_lite_interpreter_direct.cpp_docs.md`](./test_lite_interpreter_direct.cpp_docs.md)
+- [`test_save_load.cpp_docs.md`](./test_save_load.cpp_docs.md)
+- [`test_module_api.cpp_docs.md`](./test_module_api.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_subgraph_matcher.cpp_docs.md`
+- **Keyword Index**: `test_subgraph_matcher.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/cpp/jit`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/cpp/jit`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/cpp/jit/test_subgraph_matcher.cpp_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/cpp/jit`):
+
+- [`test_graph_iterator.cpp_kw.md_docs.md`](./test_graph_iterator.cpp_kw.md_docs.md)
+- [`test_qualified_name.cpp_docs.md_docs.md`](./test_qualified_name.cpp_docs.md_docs.md)
+- [`test_fuser.cpp_kw.md_docs.md`](./test_fuser.cpp_kw.md_docs.md)
+- [`test_utils.cpp_docs.md_docs.md`](./test_utils.cpp_docs.md_docs.md)
+- [`test_custom_class_registrations.h_docs.md_docs.md`](./test_custom_class_registrations.h_docs.md_docs.md)
+- [`tests_setup.py_docs.md_docs.md`](./tests_setup.py_docs.md_docs.md)
+- [`test_exception.cpp_kw.md_docs.md`](./test_exception.cpp_kw.md_docs.md)
+- [`test_cs_debug_info_serialization.cpp_docs.md_docs.md`](./test_cs_debug_info_serialization.cpp_docs.md_docs.md)
+- [`torch_python_test.cpp_docs.md_docs.md`](./torch_python_test.cpp_docs.md_docs.md)
+- [`test_backend_compiler_preprocess.cpp_docs.md_docs.md`](./test_backend_compiler_preprocess.cpp_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_subgraph_matcher.cpp_docs.md_docs.md`
+- **Keyword Index**: `test_subgraph_matcher.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

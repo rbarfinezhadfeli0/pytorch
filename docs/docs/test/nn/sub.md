@@ -1,0 +1,111 @@
+# Subtree Keyword Index: `docs/test/nn/`
+
+## Scope
+
+This index covers all files within `docs/test/nn/` and all its subdirectories (recursively).
+
+## Keywords
+
+
+### __init__
+
+- [`docs/test/nn/attention/__init__.py_docs.md`](../../../docs/test/nn/attention/__init__.py_docs.md_docs.md)
+- [`docs/test/nn/attention/__init__.py_kw.md`](../../../docs/test/nn/attention/__init__.py_kw.md_docs.md)
+
+### files-.md
+
+- [`docs/test/nn/test_parametrization.py_kw.md`](./test_parametrization.py_kw.md_docs.md)
+- [`docs/test/nn/test_load_state_dict.py_kw.md`](./test_load_state_dict.py_kw.md_docs.md)
+- [`docs/test/nn/test_embedding.py_kw.md`](./test_embedding.py_kw.md_docs.md)
+- [`docs/test/nn/test_module_hooks.py_kw.md`](./test_module_hooks.py_kw.md_docs.md)
+- [`docs/test/nn/test_dropout.py_docs.md`](./test_dropout.py_docs.md_docs.md)
+- [`docs/test/nn/test_dropout.py_kw.md`](./test_dropout.py_kw.md_docs.md)
+- [`docs/test/nn/test_packed_sequence.py_docs.md`](./test_packed_sequence.py_docs.md_docs.md)
+- [`docs/test/nn/test_multihead_attention.py_docs.md`](./test_multihead_attention.py_docs.md_docs.md)
+- [`docs/test/nn/test_pruning.py_kw.md`](./test_pruning.py_kw.md_docs.md)
+- [`docs/test/nn/test_init.py_docs.md`](./test_init.py_docs.md_docs.md)
+- [`docs/test/nn/test_convolution.py_docs.md`](./test_convolution.py_docs.md_docs.md)
+- [`docs/test/nn/test_pooling.py_kw.md`](./test_pooling.py_kw.md_docs.md)
+- [`docs/test/nn/test_embedding.py_docs.md`](./test_embedding.py_docs.md_docs.md)
+- [`docs/test/nn/test_parametrization.py_docs.md`](./test_parametrization.py_docs.md_docs.md)
+- [`docs/test/nn/test_load_state_dict.py_docs.md`](./test_load_state_dict.py_docs.md_docs.md)
+- [`docs/test/nn/test_multihead_attention.py_kw.md`](./test_multihead_attention.py_kw.md_docs.md)
+- [`docs/test/nn/test_lazy_modules.py_kw.md`](./test_lazy_modules.py_kw.md_docs.md)
+- [`docs/test/nn/test_packed_sequence.py_kw.md`](./test_packed_sequence.py_kw.md_docs.md)
+- [`docs/test/nn/test_module_hooks.py_docs.md`](./test_module_hooks.py_docs.md_docs.md)
+- [`docs/test/nn/test_convolution.py_kw.md`](./test_convolution.py_kw.md_docs.md)
+
+### test_convolution
+
+- [`docs/test/nn/test_convolution.py_docs.md`](./test_convolution.py_docs.md_docs.md)
+- [`docs/test/nn/test_convolution.py_kw.md`](./test_convolution.py_kw.md_docs.md)
+
+### test_dropout
+
+- [`docs/test/nn/test_dropout.py_docs.md`](./test_dropout.py_docs.md_docs.md)
+- [`docs/test/nn/test_dropout.py_kw.md`](./test_dropout.py_kw.md_docs.md)
+
+### test_embedding
+
+- [`docs/test/nn/test_embedding.py_kw.md`](./test_embedding.py_kw.md_docs.md)
+- [`docs/test/nn/test_embedding.py_docs.md`](./test_embedding.py_docs.md_docs.md)
+
+### test_fa4
+
+- [`docs/test/nn/attention/test_fa4.py_kw.md`](../../../docs/test/nn/attention/test_fa4.py_kw.md_docs.md)
+- [`docs/test/nn/attention/test_fa4.py_docs.md`](../../../docs/test/nn/attention/test_fa4.py_docs.md_docs.md)
+
+### test_init
+
+- [`docs/test/nn/test_init.py_docs.md`](./test_init.py_docs.md_docs.md)
+- [`docs/test/nn/test_init.py_kw.md`](./test_init.py_kw.md_docs.md)
+
+### test_lazy_modules
+
+- [`docs/test/nn/test_lazy_modules.py_kw.md`](./test_lazy_modules.py_kw.md_docs.md)
+- [`docs/test/nn/test_lazy_modules.py_docs.md`](./test_lazy_modules.py_docs.md_docs.md)
+
+### test_load_state_dict
+
+- [`docs/test/nn/test_load_state_dict.py_kw.md`](./test_load_state_dict.py_kw.md_docs.md)
+- [`docs/test/nn/test_load_state_dict.py_docs.md`](./test_load_state_dict.py_docs.md_docs.md)
+
+### test_module_hooks
+
+- [`docs/test/nn/test_module_hooks.py_kw.md`](./test_module_hooks.py_kw.md_docs.md)
+- [`docs/test/nn/test_module_hooks.py_docs.md`](./test_module_hooks.py_docs.md_docs.md)
+
+### test_multihead_attention
+
+- [`docs/test/nn/test_multihead_attention.py_docs.md`](./test_multihead_attention.py_docs.md_docs.md)
+- [`docs/test/nn/test_multihead_attention.py_kw.md`](./test_multihead_attention.py_kw.md_docs.md)
+
+### test_open_registry
+
+- [`docs/test/nn/attention/test_open_registry.py_docs.md`](../../../docs/test/nn/attention/test_open_registry.py_docs.md_docs.md)
+- [`docs/test/nn/attention/test_open_registry.py_kw.md`](../../../docs/test/nn/attention/test_open_registry.py_kw.md_docs.md)
+
+### test_packed_sequence
+
+- [`docs/test/nn/test_packed_sequence.py_docs.md`](./test_packed_sequence.py_docs.md_docs.md)
+- [`docs/test/nn/test_packed_sequence.py_kw.md`](./test_packed_sequence.py_kw.md_docs.md)
+
+### test_parametrization
+
+- [`docs/test/nn/test_parametrization.py_kw.md`](./test_parametrization.py_kw.md_docs.md)
+- [`docs/test/nn/test_parametrization.py_docs.md`](./test_parametrization.py_docs.md_docs.md)
+
+### test_pooling
+
+- [`docs/test/nn/test_pooling.py_kw.md`](./test_pooling.py_kw.md_docs.md)
+- [`docs/test/nn/test_pooling.py_docs.md`](./test_pooling.py_docs.md_docs.md)
+
+### test_pruning
+
+- [`docs/test/nn/test_pruning.py_kw.md`](./test_pruning.py_kw.md_docs.md)
+- [`docs/test/nn/test_pruning.py_docs.md`](./test_pruning.py_docs.md_docs.md)
+
+
+---
+
+*Generated by PyTorch Repository Documentation System*

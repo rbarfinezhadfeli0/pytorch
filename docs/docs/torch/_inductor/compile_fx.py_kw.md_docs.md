@@ -1,0 +1,385 @@
+# Documentation: `docs/torch/_inductor/compile_fx.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/_inductor/compile_fx.py_kw.md`
+- **Size**: 18,612 bytes (18.18 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `torch/_inductor/compile_fx.py`
+
+## File Information
+
+- **Original File**: [torch/_inductor/compile_fx.py](../../../torch/_inductor/compile_fx.py)
+- **Documentation**: [`compile_fx.py_docs.md`](./compile_fx.py_docs.md)
+- **Folder**: `torch/_inductor`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`CompilerConfigExtra`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`FxCompile`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`FxCompileMode`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_CompileFxCallable`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_CompileFxKwargs`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_FxCompileStat`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_InProcessFxCompile`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`class`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`from`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+
+### Functions
+
+- **`__call__`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`__repr__`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_aoti_flatten_inputs`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_check_triton_bf16_support`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_compile_fx_inner`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_compile_fx_main`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_extract_inputs_from_exported_gm`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_fx_compile_mode_default`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_get_progression_configs`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_get_subgraph_names`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_maybe_wrap_and_compile_fx_main`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_recursive_joint_graph_passes`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_recursive_post_grad_passes`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_recursive_pre_grad_passes`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_recursive_record_original_output_strides`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_recursive_record_user_visible_output_idxs`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_reset_stats`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_resolve_name_collision`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_step_logger`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_unlift_graph`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_warn_tf32_disabled`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`bw_compiler`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`codegen_and_compile`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`compile_fx`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`compile_fx_aot`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`compile_fx_backward`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`compile_fx_forward`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`compile_fx_inner`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`create_compiler_config_extra`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`cudagraphify`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`cudagraphify_impl`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`fake_tensor_prop`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`find_smallest_i`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`fw_compiler_base`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`fw_compiler_freezing`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`fx_codegen_and_compile`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`get_cpp_wrapper_config`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`get_cuda_device_context`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`get_input_idxs_to_check`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`get_num_model_outputs`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`get_patched_config_dict`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`get_static_input_idxs`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`graph_returns_tuple`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`handle_dynamo_export_graph`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`index_expanded_dims_and_copy_`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`is_tf32_warning_applicable`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`log_optimus_to_scuba`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`make_graph_return_tuple`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`maybe_disable_comprehensive_padding`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`maybe_disable_graph_partition`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`partition_fn`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`record_original_output_strides`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`run`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`run_pre_grad_passes`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`split_const_gm`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`static_input`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`time_and_log`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`warn_and_skip`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`with_fresh_cache_if_config`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`wrapper`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+
+### Imports
+
+- **`.`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`.._dynamo.backends.common`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`.._dynamo.exc`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`..fx._lazy_graph_module`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`..fx.graph`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`..utils._triton`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`.codecache`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`.codegen.common`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`.compile_fx`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`.compile_fx_async`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`.compile_fx_ext`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`.compile_fx_subproc`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`.debug`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`.decomposition`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`.exc`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`.fx_passes.joint_graph`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`.fx_passes.post_grad`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`.fx_passes.pre_grad`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`.graph`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`.ir`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`.output_code`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`.triton_bundler`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`.utils`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`.virtualized`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`ABC`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`AbstractContextManager`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`Any`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`AotCodeCompiler`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`Callable`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`CompileEventLogLevel`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`CompilerBisector`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`CustomPartitionerFn`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`DebugContext`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`ExternKernelNode`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`FakeScriptObject`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`FakeTensorProp`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`GraphLowering`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`GraphModule`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`InductorError`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`Never`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`OpOverload`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`OrderedSet`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`ShortenTraceback`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`SkipFrame`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`TritonBundler`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`UserError`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`V`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`Weights`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_AsyncFxCompile`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_DebugSerdeFxCompile`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_LazyGraphModule`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_OutOfProcessFxCompile`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_ProgressiveFxCompile`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_PyTreeCodeGen`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_StrideExprStr`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_SubprocessFxCompile`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_WaitCounter`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`__future__`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_assign_attr`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_detect_fake_mode_from_gm`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_fakify_script_objects`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_unlift`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`_use_lazy_graph_module`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`abc`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`annotations`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`aot_autograd`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`attrgetter`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`cache_dir`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`code_hash`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`collections`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`collections.abc`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`compile_lock`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`compile_time_strobelight_meta`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`complex_memory_overlap`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`config`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`contextlib`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`convert_conv_weights_to_channels_last`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`copy`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`count`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`currentframe`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`dataclass`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`dataclasses`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`defaultdict`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`enable_python_dispatcher`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`enum`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`free_unbacked_symbols`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`functools`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`functorch.compile`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`fx`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`get_device_type`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`get_interface_for_device`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`get_wrapper_codegen_for_device`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`graph_returns_tuple`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`has_triton`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`inspect`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`io`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`is_opaque_type`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`is_valid_aoti_model_name`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`itertools`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`joint_graph_passes`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`json`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`log_optimus_to_scuba`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`logging`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`maybe_aoti_standalone_config`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`min_cut_rematerialization_partition`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`mock`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`operator`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`os`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`post_grad_passes`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`pre_grad_passes`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`select_decomp_table`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`sys`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`time`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch._dispatch.python`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch._dynamo`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch._dynamo.convert_frame`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch._dynamo.device_interface`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch._dynamo.exc`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch._dynamo.repro.after_aot`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch._dynamo.utils`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch._export.non_strict_utils`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch._export.utils`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch._functorch`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch._functorch._aot_autograd.schemas`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch._functorch._aot_autograd.subclass_parametrization`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch._functorch.aot_autograd`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch._inductor.async_compile`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch._inductor.codecache`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch._inductor.compiler_bisector`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch._inductor.constant_folding`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch._inductor.cudagraph_trees`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch._inductor.cudagraph_utils`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch._inductor.custom_graph_pass`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch._inductor.debug`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch._inductor.fb.utils`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch._inductor.freezing`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch._inductor.output_code`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch._inductor.runtime.cache_dir_utils`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch._inductor.utils`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch._library.fake_class_registry`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch._library.opaque_object`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch._logging`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch._ops`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch._utils_internal`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch.export._unlift`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch.export.pt2_archive._package_weights`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch.export.unflatten`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch.fx`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch.fx._lazy_graph_module`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch.fx.experimental.symbolic_shapes`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch.fx.passes.fake_tensor_prop`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch.monitor`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch.utils._ordered_set`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`torch.utils._pytree`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`trace_structured`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`types`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`typing`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`typing_extensions`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`unittest`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`warnings`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+- **`wrap_compiler_debug`**: [compile_fx.py_docs.md](./compile_fx.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/_inductor`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/_inductor`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Abstract Base Classes**: Defines abstract interfaces
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Implements or uses **caching** mechanisms.
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/_inductor`):
+
+- [`freezing.py_docs.md_docs.md`](./freezing.py_docs.md_docs.md)
+- [`lowering.py_kw.md_docs.md`](./lowering.py_kw.md_docs.md)
+- [`quantized_lowerings.py_docs.md_docs.md`](./quantized_lowerings.py_docs.md_docs.md)
+- [`select_algorithm.py_docs.md_docs.md`](./select_algorithm.py_docs.md_docs.md)
+- [`kernel_inputs.py_kw.md_docs.md`](./kernel_inputs.py_kw.md_docs.md)
+- [`compile_fx_ext.py_kw.md_docs.md`](./compile_fx_ext.py_kw.md_docs.md)
+- [`extern_node_serializer.py_docs.md_docs.md`](./extern_node_serializer.py_docs.md_docs.md)
+- [`mkldnn_lowerings.py_kw.md_docs.md`](./mkldnn_lowerings.py_kw.md_docs.md)
+- [`ops_handler.py_docs.md_docs.md`](./ops_handler.py_docs.md_docs.md)
+- [`test_operators.py_docs.md_docs.md`](./test_operators.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `compile_fx.py_kw.md_docs.md`
+- **Keyword Index**: `compile_fx.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

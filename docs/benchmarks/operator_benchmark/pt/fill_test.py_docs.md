@@ -1,0 +1,183 @@
+# Documentation: `benchmarks/operator_benchmark/pt/fill_test.py`
+
+## File Metadata
+
+- **Path**: `benchmarks/operator_benchmark/pt/fill_test.py`
+- **Size**: 1,186 bytes (1.16 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file contains **examples or benchmarks**. This appears to be a **test file**. Can be **executed as a standalone script**.
+
+## Original Source
+
+```python
+import operator_benchmark as op_bench
+
+import torch
+from torch.testing._internal.common_device_type import get_all_device_types
+
+
+"""Microbenchmark for Fill_ operator."""
+
+fill_short_configs = op_bench.config_list(
+    attr_names=["N"],
+    attrs=[
+        [1],
+        [1024],
+        [2048],
+    ],
+    cross_product_configs={
+        "device": ["cpu", "cuda"],
+        "dtype": [torch.int32],
+    },
+    tags=["short"],
+)
+
+fill_long_configs = op_bench.cross_product_configs(
+    N=[10, 1000],
+    device=get_all_device_types(),
+    dtype=[
+        torch.bool,
+        torch.int8,
+        torch.uint8,
+        torch.int16,
+        torch.int32,
+        torch.int64,
+        torch.half,
+        torch.float,
+        torch.double,
+    ],
+    tags=["long"],
+)
+
+
+class Fill_Benchmark(op_bench.TorchBenchmarkBase):
+    def init(self, N, device, dtype):
+        self.inputs = {"input_one": torch.zeros(N, device=device).type(dtype)}
+        self.set_module_name("fill_")
+
+    def forward(self, input_one):
+        return input_one.fill_(10)
+
+
+op_bench.generate_pt_test(fill_short_configs + fill_long_configs, Fill_Benchmark)
+
+
+if __name__ == "__main__":
+    op_bench.benchmark_runner.main()
+
+```
+
+
+
+## High-Level Overview
+
+"""Microbenchmark for Fill_ operator."""fill_short_configs = op_bench.config_list(    attr_names=["N"],    attrs=[        [1],        [1024],        [2048],    ],    cross_product_configs={        "device": ["cpu", "cuda"],        "dtype": [torch.int32],    },    tags=["short"],)fill_long_configs = op_bench.cross_product_configs(    N=[10, 1000],    device=get_all_device_types(),    dtype=[        torch.bool,        torch.int8,        torch.uint8,        torch.int16,        torch.int32,        torch.int64,        torch.half,        torch.float,        torch.double,    ],    tags=["long"],)class Fill_Benchmark(op_bench.TorchBenchmarkBase):    def init(self, N, device, dtype):        self.inputs = {"input_one": torch.zeros(N, device=device).type(dtype)}        self.set_module_name("fill_")    def forward(self, input_one):        return input_one.fill_(10)op_bench.generate_pt_test(fill_short_configs + fill_long_configs, Fill_Benchmark)
+
+This Python file contains 1 class(es) and 2 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `Fill_Benchmark`
+
+**Functions defined**: `init`, `forward`
+
+**Key imports**: operator_benchmark as op_bench, torch, get_all_device_types
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `benchmarks/operator_benchmark/pt`, which is part of the PyTorch project infrastructure.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `operator_benchmark as op_bench`
+- `torch`
+- `torch.testing._internal.common_device_type`: get_all_device_types
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python benchmarks/operator_benchmark/pt/fill_test.py
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`benchmarks/operator_benchmark/pt`):
+
+- [`qarithmetic_test.py_docs.md`](./qarithmetic_test.py_docs.md)
+- [`bmm_test.py_docs.md`](./bmm_test.py_docs.md)
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`gather_test.py_docs.md`](./gather_test.py_docs.md)
+- [`clip_ranges_test.py_docs.md`](./clip_ranges_test.py_docs.md)
+- [`split_test.py_docs.md`](./split_test.py_docs.md)
+- [`groupnorm_test.py_docs.md`](./groupnorm_test.py_docs.md)
+- [`sum_test.py_docs.md`](./sum_test.py_docs.md)
+- [`matrix_mult_test.py_docs.md`](./matrix_mult_test.py_docs.md)
+- [`pool_test.py_docs.md`](./pool_test.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `fill_test.py_docs.md`
+- **Keyword Index**: `fill_test.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

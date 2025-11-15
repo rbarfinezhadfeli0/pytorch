@@ -1,0 +1,91 @@
+# Keyword Index: `docs/aten/src/ATen/native/Blas.cpp_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/native/Blas.cpp_kw.md](../../../../../../docs/aten/src/ATen/native/Blas.cpp_kw.md)
+- **Documentation**: [`Blas.cpp_kw.md_docs.md`](./Blas.cpp_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/native`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Analysis`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Architecture`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Basic`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Blas`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`CPUFunctions`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Complete`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Config`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Considerations`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Dependencies`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Design`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Detailed`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Dispatch`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Documentation`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Efficiency`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`ExpandUtils`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Extracted`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`File`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Folder`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Functions`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Generated`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`GroupedMMUtils`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`High`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`How`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`In`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Includes`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Index`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Information`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Keyword`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Keywords`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Level`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Linear`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Map`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Matmul`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Metadata`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`NamedTensor`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`NamedTensorUtils`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Namespaces`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`NativeFunctions`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Original`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Overview`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Performance`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Purpose`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`PyTorch`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Related`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Repository`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Resize`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Safety`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Section`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Security`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Source`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`System`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Tensor`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Testing`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`The`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`This`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+- **`Usage`**: [Blas.cpp_kw.md_docs.md](./Blas.cpp_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

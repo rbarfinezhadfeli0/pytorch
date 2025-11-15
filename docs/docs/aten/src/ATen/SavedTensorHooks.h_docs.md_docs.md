@@ -1,0 +1,306 @@
+# Documentation: `docs/aten/src/ATen/SavedTensorHooks.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/SavedTensorHooks.h_docs.md`
+- **Size**: 5,029 bytes (4.91 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/SavedTensorHooks.h`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/SavedTensorHooks.h`
+- **Size**: 2,486 bytes (2.43 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#pragma once
+
+#include <c10/core/SafePyObject.h>
+#include <c10/macros/Export.h>
+#include <c10/util/python_stub.h>
+#include <optional>
+#include <stack>
+#include <string>
+
+#include <utility>
+
+namespace at {
+
+namespace impl {
+
+struct TORCH_API SavedTensorDefaultHooksTLS {
+  // PyObject is defined in c10/util/python_stub.h
+  std::stack<std::pair<c10::SafePyObject, c10::SafePyObject>> stack;
+
+  // See NOTE: [Disabling SavedTensorDefaultHooks] for context
+  // NOTE: [disabled_error_message invariant]
+  // disabled_error_message is nullopt IFF Saved Tensor hooks is enabled
+  // We did this for efficiency (so we didn't have to keep a separate bool
+  // around)
+  std::optional<std::string> disabled_error_message;
+
+  // See NOTE: [Deferring tensor pack/unpack hooks until runtime]
+  bool is_tracing = false;
+};
+
+} // namespace impl
+
+struct TORCH_API SavedTensorDefaultHooks {
+  static void push_hooks(
+      c10::SafePyObject pack_hook,
+      c10::SafePyObject unpack_hook);
+  static std::pair<c10::SafePyObject, c10::SafePyObject> pop_hooks();
+  static std::optional<std::pair<c10::SafePyObject, c10::SafePyObject>>
+  get_hooks(bool ignore_is_tracing = false);
+  static void lazy_initialize();
+
+  static const impl::SavedTensorDefaultHooksTLS& get_tls_state();
+  static void set_tls_state(const impl::SavedTensorDefaultHooksTLS& tls);
+
+  // NOTE: [Disabling SavedTensorDefaultHooks]
+  // A developer of a PyTorch feature may choose to disable SavedTensorDefault
+  // hooks, especially if their feature does not work with it. If they are
+  // disabled, then the following will raise an error:
+  // - Attempting to push_hooks
+  // - calling disable(message) with a non-zero stack (hooks) size
+  static void disable(
+      const std::string& error_message,
+      const bool fail_if_non_empty = true);
+  static void enable();
+  static bool is_enabled();
+  static const std::optional<std::string>& get_disabled_error_message();
+
+  // NOTE: [Deferring tensor pack/unpack hooks until runtime]
+  // To preserve eager semantics of pack/unpack hooks firing only once per saved
+  // variable, Dynamo/AOTAutograd need to defer hook firing until runtime. Using
+  // disable() would loud error at trace time, and pushing a no-op hook would
+  // fail when the traced code is wrapped in a disable_saved_tensors_hooks ctx.
+  // To do so, we disable these hooks during tracing. See
+  // https://github.com/pytorch/pytorch/issues/113263.
+  static bool set_tracing(bool is_tracing);
+};
+
+} // namespace at
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 10 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `impl`, `at`
+
+**Classes/Structs**: `TORCH_API`, `TORCH_API`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `c10/core/SafePyObject.h`
+- `c10/macros/Export.h`
+- `c10/util/python_stub.h`
+- `optional`
+- `stack`
+- `string`
+- `utility`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen`):
+
+- [`TensorGeometry.cpp_docs.md`](./TensorGeometry.cpp_docs.md)
+- [`ROCmFABackend.h_docs.md`](./ROCmFABackend.h_docs.md)
+- [`Generator.h_docs.md`](./Generator.h_docs.md)
+- [`ParallelCommon.cpp_docs.md`](./ParallelCommon.cpp_docs.md)
+- [`ZeroTensorFallback.cpp_docs.md`](./ZeroTensorFallback.cpp_docs.md)
+- [`CachedTensorUtils.h_docs.md`](./CachedTensorUtils.h_docs.md)
+- [`LegacyBatchedFallback.cpp_docs.md`](./LegacyBatchedFallback.cpp_docs.md)
+- [`TensorOptions.h_docs.md`](./TensorOptions.h_docs.md)
+- [`ExpandUtils.h_docs.md`](./ExpandUtils.h_docs.md)
+- [`TensorIteratorInternal.h_docs.md`](./TensorIteratorInternal.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `SavedTensorHooks.h_docs.md`
+- **Keyword Index**: `SavedTensorHooks.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Implements or uses **caching** mechanisms.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen`):
+
+- [`Dispatch.cpp_docs.md_docs.md`](./Dispatch.cpp_docs.md_docs.md)
+- [`Context.cpp_docs.md_docs.md`](./Context.cpp_docs.md_docs.md)
+- [`ThreadLocalState.cpp_docs.md_docs.md`](./ThreadLocalState.cpp_docs.md_docs.md)
+- [`DeviceAccelerator.cpp_kw.md_docs.md`](./DeviceAccelerator.cpp_kw.md_docs.md)
+- [`FunctionalInverses.cpp_kw.md_docs.md`](./FunctionalInverses.cpp_kw.md_docs.md)
+- [`SequenceNumber.h_kw.md_docs.md`](./SequenceNumber.h_kw.md_docs.md)
+- [`ThreadLocalPythonObjects.h_docs.md_docs.md`](./ThreadLocalPythonObjects.h_docs.md_docs.md)
+- [`TensorNames.h_docs.md_docs.md`](./TensorNames.h_docs.md_docs.md)
+- [`LegacyBatchedTensorImpl.h_docs.md_docs.md`](./LegacyBatchedTensorImpl.h_docs.md_docs.md)
+- [`TensorOperators.h_docs.md_docs.md`](./TensorOperators.h_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `SavedTensorHooks.h_docs.md_docs.md`
+- **Keyword Index**: `SavedTensorHooks.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

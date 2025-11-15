@@ -1,0 +1,77 @@
+# Keyword Index: `docs/torch/csrc/jit/frontend/builtin_functions.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/csrc/jit/frontend/builtin_functions.h_kw.md](../../../../../../docs/torch/csrc/jit/frontend/builtin_functions.h_kw.md)
+- **Documentation**: [`builtin_functions.h_kw.md_docs.md`](./builtin_functions.h_kw.md_docs.md)
+- **Folder**: `docs/torch/csrc/jit/frontend`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`Architecture`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`Basic`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`Complete`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`Considerations`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`Dependencies`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`Design`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`Detailed`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`Documentation`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`Efficiency`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`Export`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`Extracted`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`File`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`Folder`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`Generated`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`High`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`How`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`In`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`Includes`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`Index`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`Information`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`Keyword`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`Keywords`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`Level`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`Map`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`Metadata`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`Namespaces`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`Original`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`Overview`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`Performance`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`Purpose`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`PyTorch`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`Related`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`Repository`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`Safety`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`Section`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`Security`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`Source`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`System`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`Testing`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`The`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`This`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+- **`Usage`**: [builtin_functions.h_kw.md_docs.md](./builtin_functions.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

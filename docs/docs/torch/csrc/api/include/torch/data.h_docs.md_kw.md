@@ -1,0 +1,92 @@
+# Keyword Index: `docs/torch/csrc/api/include/torch/data.h_docs.md`
+
+## File Information
+
+- **Original File**: [docs/torch/csrc/api/include/torch/data.h_docs.md](../../../../../../../docs/torch/csrc/api/include/torch/data.h_docs.md)
+- **Documentation**: [`data.h_docs.md_docs.md`](./data.h_docs.md_docs.md)
+- **Folder**: `docs/torch/csrc/api/include/torch`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Architecture`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`BatchDataset`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`C`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Code`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Common`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Considerations`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Cross`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Dataset`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Dependencies`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Design`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Detailed`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Documentation`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Examples`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Extension`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`File`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Files`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Folder`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`For`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Generated`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Header`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`High`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Idioms`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Import`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Index`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`KB`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Keyword`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Level`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Manual`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Metadata`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`NOLINT`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Namespaces`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`No`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Notes`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Original`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Overview`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Path`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Patterns`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Performance`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Purpose`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`PyTorch`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`References`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Related`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Repository`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Role`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Safety`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Security`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`See`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Size`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Some`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Source`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Structure`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`System`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Test`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Testing`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`This`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Type`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+- **`Usage`**: [data.h_docs.md_docs.md](./data.h_docs.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

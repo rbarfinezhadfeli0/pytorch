@@ -1,0 +1,84 @@
+# Keyword Index: `docs/torch/csrc/Exceptions.cpp_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/csrc/Exceptions.cpp_kw.md](../../../../docs/torch/csrc/Exceptions.cpp_kw.md)
+- **Documentation**: [`Exceptions.cpp_kw.md_docs.md`](./Exceptions.cpp_kw.md_docs.md)
+- **Folder**: `docs/torch/csrc`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Architecture`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Basic`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Class`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Complete`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Considerations`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Dependencies`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Design`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Detailed`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Documentation`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Efficiency`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Exceptions`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Extracted`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`File`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Folder`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Functions`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Generated`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`High`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`How`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`In`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Includes`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Index`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Information`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Keyword`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Keywords`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Level`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Map`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Metadata`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Namespaces`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Original`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Overview`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Performance`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Purpose`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`PyTorch`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Related`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Repository`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Safety`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Section`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Security`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Source`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`StringUtil`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Structs`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`System`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`THP`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`THPException_init`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Testing`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`The`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`This`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Usage`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+- **`Visitor`**: [Exceptions.cpp_kw.md_docs.md](./Exceptions.cpp_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,297 @@
+# Documentation: `docs/test/distributed/test_backends.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/distributed/test_backends.py_docs.md`
+- **Size**: 4,510 bytes (4.40 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/distributed/test_backends.py`
+
+## File Metadata
+
+- **Path**: `test/distributed/test_backends.py`
+- **Size**: 1,580 bytes (1.54 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**. Can be **executed as a standalone script**.
+
+## Original Source
+
+```python
+# Owner(s): ["oncall: distributed"]
+
+import os
+
+import torch.distributed as dist
+from torch.testing._internal.common_device_type import instantiate_device_type_tests
+from torch.testing._internal.common_utils import run_tests, TestCase
+
+
+"""
+common backend API tests
+"""
+
+
+class TestMiscCollectiveUtils(TestCase):
+    def test_device_to_backend_mapping(self, device) -> None:
+        """
+        Test device to backend mapping
+        """
+        if "cuda" in device:
+            assert dist.get_default_backend_for_device(device) == "nccl"
+        elif "cpu" in device:
+            assert dist.get_default_backend_for_device(device) == "gloo"
+        elif "hpu" in device:
+            assert dist.get_default_backend_for_device(device) == "hccl"
+        else:
+            with self.assertRaises(ValueError):
+                dist.get_default_backend_for_device(device)
+
+    def test_create_pg(self, device) -> None:
+        """
+        Test create process group
+        """
+        os.environ["MASTER_ADDR"] = "localhost"
+        os.environ["MASTER_PORT"] = "29500"
+
+        backend = dist.get_default_backend_for_device(device)
+        dist.init_process_group(
+            backend=backend, rank=0, world_size=1, init_method="env://"
+        )
+        pg = dist.distributed_c10d._get_default_group()
+        backend_pg = pg._get_backend_name()
+        assert backend_pg == backend
+        dist.destroy_process_group()
+
+
+devices = ["cpu", "cuda", "hpu"]
+instantiate_device_type_tests(TestMiscCollectiveUtils, globals(), only_for=devices)
+
+if __name__ == "__main__":
+    run_tests()
+
+```
+
+
+
+## High-Level Overview
+
+"""common backend API tests
+
+This Python file contains 1 class(es) and 2 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `TestMiscCollectiveUtils`
+
+**Functions defined**: `test_device_to_backend_mapping`, `test_create_pg`
+
+**Key imports**: os, torch.distributed as dist, instantiate_device_type_tests, run_tests, TestCase
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/distributed`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `os`
+- `torch.distributed as dist`
+- `torch.testing._internal.common_device_type`: instantiate_device_type_tests
+- `torch.testing._internal.common_utils`: run_tests, TestCase
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/distributed/test_backends.py
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/distributed`):
+
+- [`test_run.py_docs.md`](./test_run.py_docs.md)
+- [`test_c10d_logger.py_docs.md`](./test_c10d_logger.py_docs.md)
+- [`test_dist2.py_docs.md`](./test_dist2.py_docs.md)
+- [`test_c10d_functional_native.py_docs.md`](./test_c10d_functional_native.py_docs.md)
+- [`test_c10d_object_collectives.py_docs.md`](./test_c10d_object_collectives.py_docs.md)
+- [`test_c10d_spawn_ucc.py_docs.md`](./test_c10d_spawn_ucc.py_docs.md)
+- [`test_c10d_ucc.py_docs.md`](./test_c10d_ucc.py_docs.md)
+- [`test_serialization.py_docs.md`](./test_serialization.py_docs.md)
+- [`test_nccl.py_docs.md`](./test_nccl.py_docs.md)
+- [`test_multi_threaded_pg.py_docs.md`](./test_multi_threaded_pg.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_backends.py_docs.md`
+- **Keyword Index**: `test_backends.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/distributed`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/distributed`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/distributed/test_backends.py_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/distributed`):
+
+- [`test_run.py_kw.md_docs.md`](./test_run.py_kw.md_docs.md)
+- [`test_inductor_collectives.py_docs.md_docs.md`](./test_inductor_collectives.py_docs.md_docs.md)
+- [`test_control_collectives.py_kw.md_docs.md`](./test_control_collectives.py_kw.md_docs.md)
+- [`test_c10d_gloo.py_docs.md_docs.md`](./test_c10d_gloo.py_docs.md_docs.md)
+- [`test_collective_utils.py_kw.md_docs.md`](./test_collective_utils.py_kw.md_docs.md)
+- [`test_data_parallel.py_kw.md_docs.md`](./test_data_parallel.py_kw.md_docs.md)
+- [`test_overlap_bucketing_unit.py_kw.md_docs.md`](./test_overlap_bucketing_unit.py_kw.md_docs.md)
+- [`test_c10d_nccl.py_kw.md_docs.md`](./test_c10d_nccl.py_kw.md_docs.md)
+- [`test_multi_threaded_pg.py_docs.md_docs.md`](./test_multi_threaded_pg.py_docs.md_docs.md)
+- [`argparse_util_test.py_kw.md_docs.md`](./argparse_util_test.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_backends.py_docs.md_docs.md`
+- **Keyword Index**: `test_backends.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

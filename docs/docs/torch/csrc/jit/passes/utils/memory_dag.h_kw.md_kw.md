@@ -1,0 +1,85 @@
+# Keyword Index: `docs/torch/csrc/jit/passes/utils/memory_dag.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/csrc/jit/passes/utils/memory_dag.h_kw.md](../../../../../../../docs/torch/csrc/jit/passes/utils/memory_dag.h_kw.md)
+- **Documentation**: [`memory_dag.h_kw.md_docs.md`](./memory_dag.h_kw.md_docs.md)
+- **Folder**: `docs/torch/csrc/jit/passes/utils`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Analysis`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Architecture`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`ArrayRef`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Basic`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Class`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Complete`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Considerations`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Dependencies`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Design`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Detailed`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Documentation`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Efficiency`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Element`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Export`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Extracted`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`File`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Folder`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Generated`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`High`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`How`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`In`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Includes`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Index`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Information`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Keyword`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Keywords`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Level`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Map`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`MemoryDAG`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Metadata`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Namespaces`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Original`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Overview`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Performance`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Purpose`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`PyTorch`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Related`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Repository`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Safety`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Section`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Security`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Source`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Structs`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`System`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`TORCH_API`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Testing`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`The`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`This`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Usage`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+- **`Value`**: [memory_dag.h_kw.md_docs.md](./memory_dag.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

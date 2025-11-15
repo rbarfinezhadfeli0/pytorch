@@ -1,0 +1,317 @@
+# Documentation: `docs/torchgen/dest/native_functions.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torchgen/dest/native_functions.py_docs.md`
+- **Size**: 5,824 bytes (5.69 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torchgen/dest/native_functions.py`
+
+## File Metadata
+
+- **Path**: `torchgen/dest/native_functions.py`
+- **Size**: 3,171 bytes (3.10 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This is a python source code that is part of the PyTorch project.
+
+## Original Source
+
+```python
+from __future__ import annotations
+
+import torchgen.api.meta as meta
+import torchgen.api.structured as structured
+from torchgen.api.types import kernel_signature
+from torchgen.context import with_native_function_and_index
+from torchgen.model import BackendIndex, NativeFunction, NativeFunctionsGroup
+from torchgen.utils import mapMaybe
+
+
+def torch_api_key_word_prefix(bankend_index: BackendIndex) -> str:
+    if bankend_index.external:
+        return ""
+
+    # Although Intel GPU ATen library is out-of-tree, it still utilizes torchgen to produce structured
+    # kernels. Regarding these produced structured kernels, they should be visible for the Intel GPU ATen
+    # library. Therefore, we need to add "TORCH_XPU_API" prefix to these structured kernels,
+    # rather than "TORCH_API". Because the semantic of "TORCH_API" is "hidden" for out-of-tree backends.
+    # For other in-tree backends like cpu and cuda, they still use "TORCH_API" prefix with "visible" semantic.
+    device_torch_api_key_word_mapping = {
+        "XPU": "TORCH_XPU_API",
+    }
+
+    return (
+        device_torch_api_key_word_mapping.get(
+            bankend_index.dispatch_key.name, "TORCH_API"
+        )
+        + " "
+    )
+
+
+@with_native_function_and_index
+def gen_unstructured(f: NativeFunction, backend_index: BackendIndex) -> str | None:
+    sig = kernel_signature(f, backend_index)
+    metadata = backend_index.get_kernel(f)
+    if metadata is None:
+        return None
+    if "legacy::" in metadata.kernel:
+        return None
+    else:
+        prefix = "static" if backend_index.external else "TORCH_API"
+        return f"{prefix} {sig.decl(name=metadata.kernel)};"
+
+
+@with_native_function_and_index
+def gen_structured(g: NativeFunctionsGroup, backend_index: BackendIndex) -> list[str]:
+    meta_name = meta.name(g)
+    out_args = structured.impl_arguments(g)
+    metadata = backend_index.get_kernel(g)
+    if metadata is None:
+        return []
+    prefix = torch_api_key_word_prefix(backend_index)
+    return [
+        f"""\
+struct {prefix}structured_{metadata.kernel} : public at::meta::structured_{meta_name} {{
+void impl({", ".join(a.decl() for a in out_args)});
+}};
+"""
+    ]
+
+
+# Generates NativeFunctions.h, a list of forward declarations of all
+# actual kernel definitions we keep in aten/src/ATen/native/
+@with_native_function_and_index
+def compute_native_function_declaration(
+    g: NativeFunctionsGroup | NativeFunction, backend_index: BackendIndex
+) -> list[str]:
+    metadata = backend_index.get_kernel(g)
+    if isinstance(g, NativeFunctionsGroup):
+        if metadata is not None and metadata.structured:
+            if backend_index.external:
+                # Structured hasn't been tested with external backends yet.
+                raise AssertionError(
+                    "Structured external backend functions are not implemented yet."
+                )
+            else:
+                return gen_structured(g, backend_index)
+        else:
+            return list(
+                mapMaybe(lambda f: gen_unstructured(f, backend_index), g.functions())
+            )
+    else:
+        x = gen_unstructured(g, backend_index)
+        return [] if x is None else [x]
+
+```
+
+
+
+## High-Level Overview
+
+
+This Python file contains 0 class(es) and 4 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Functions defined**: `torch_api_key_word_prefix`, `gen_unstructured`, `gen_structured`, `compute_native_function_declaration`
+
+**Key imports**: annotations, torchgen.api.meta as meta, torchgen.api.structured as structured, kernel_signature, with_native_function_and_index, BackendIndex, NativeFunction, NativeFunctionsGroup, mapMaybe
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torchgen/dest`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `__future__`: annotations
+- `torchgen.api.meta as meta`
+- `torchgen.api.structured as structured`
+- `torchgen.api.types`: kernel_signature
+- `torchgen.context`: with_native_function_and_index
+- `torchgen.model`: BackendIndex, NativeFunction, NativeFunctionsGroup
+- `torchgen.utils`: mapMaybe
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torchgen/dest`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`ufunc.py_docs.md`](./ufunc.py_docs.md)
+- [`lazy_ir.py_docs.md`](./lazy_ir.py_docs.md)
+- [`register_dispatch_key.py_docs.md`](./register_dispatch_key.py_docs.md)
+- [`lazy_ts_lowering.py_docs.md`](./lazy_ts_lowering.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `native_functions.py_docs.md`
+- **Keyword Index**: `native_functions.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torchgen/dest`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torchgen/dest`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torchgen/dest`):
+
+- [`register_dispatch_key.py_docs.md_docs.md`](./register_dispatch_key.py_docs.md_docs.md)
+- [`native_functions.py_kw.md_docs.md`](./native_functions.py_kw.md_docs.md)
+- [`ufunc.py_docs.md_docs.md`](./ufunc.py_docs.md_docs.md)
+- [`lazy_ts_lowering.py_kw.md_docs.md`](./lazy_ts_lowering.py_kw.md_docs.md)
+- [`lazy_ir.py_kw.md_docs.md`](./lazy_ir.py_kw.md_docs.md)
+- [`lazy_ts_lowering.py_docs.md_docs.md`](./lazy_ts_lowering.py_docs.md_docs.md)
+- [`__init__.py_docs.md_docs.md`](./__init__.py_docs.md_docs.md)
+- [`register_dispatch_key.py_kw.md_docs.md`](./register_dispatch_key.py_kw.md_docs.md)
+- [`lazy_ir.py_docs.md_docs.md`](./lazy_ir.py_docs.md_docs.md)
+- [`__init__.py_kw.md_docs.md`](./__init__.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `native_functions.py_docs.md_docs.md`
+- **Keyword Index**: `native_functions.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,337 @@
+# Documentation: `docs/torch/csrc/api/src/optim/schedulers/reduce_on_plateau_scheduler.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/api/src/optim/schedulers/reduce_on_plateau_scheduler.cpp_docs.md`
+- **Size**: 5,273 bytes (5.15 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/csrc/api/src/optim/schedulers/reduce_on_plateau_scheduler.cpp`
+
+## File Metadata
+
+- **Path**: `torch/csrc/api/src/optim/schedulers/reduce_on_plateau_scheduler.cpp`
+- **Size**: 3,250 bytes (3.17 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#include <torch/optim/schedulers/reduce_on_plateau_scheduler.h>
+
+#include <iomanip>
+
+namespace torch::optim {
+
+ReduceLROnPlateauScheduler::ReduceLROnPlateauScheduler(
+    Optimizer& optimizer,
+    SchedulerMode mode,
+    float factor,
+    int patience,
+    double threshold,
+    ThresholdMode threshold_mode,
+    int cooldown,
+    const std::vector<float>& min_lr,
+    double eps,
+    bool verbose)
+    : optimizer(optimizer) {
+  if (min_lr.empty()) {
+    this->min_lrs = std::vector<float>(optimizer.param_groups().size());
+  } else {
+    // Check if number of learning rates is equal to the number of parameters
+    // groups in the optimizer
+    TORCH_CHECK(
+        min_lr.size() == optimizer.param_groups().size(),
+        "Number of learning rates not equal to the number of param groups\n",
+        "Number of learning rates given: ",
+        min_lr.size(),
+        "\nNumber of param groups: ",
+        optimizer.param_groups().size());
+    this->min_lrs = min_lr;
+  }
+
+  TORCH_CHECK(factor < 1.0, "Factor should be < 1.0.");
+  this->factor = factor;
+  this->patience = patience;
+  this->cooldown = cooldown;
+  this->eps = eps;
+  this->verbose = verbose;
+
+  init_is_better(mode, threshold, threshold_mode);
+  reset();
+}
+
+void ReduceLROnPlateauScheduler::step(float metrics) {
+  last_epoch++;
+
+  if (is_better(metrics)) {
+    best = metrics;
+    num_bad_epochs = 0;
+  } else {
+    num_bad_epochs++;
+  }
+
+  if (in_cooldown()) {
+    cooldown_counter--;
+    num_bad_epochs = 0;
+  }
+
+  if (num_bad_epochs > patience) {
+    reduce_lr(last_epoch);
+    cooldown_counter = cooldown;
+    num_bad_epochs = 0;
+  }
+}
+
+void ReduceLROnPlateauScheduler::reduce_lr(int epoch) {
+  for (std::size_t i = 0; i < optimizer.param_groups().size(); i++) {
+    auto old_lr = optimizer.param_groups()[i].options().get_lr();
+    auto new_lr = std::fmax(old_lr * factor, min_lrs[i]);
+    if (old_lr - new_lr > eps) {
+      optimizer.param_groups()[i].options().set_lr(new_lr);
+      if (verbose) {
+        std::cout << std::setprecision(4) << "Epoch " << epoch
+                  << ": reducing learning rate of group " << i << " to "
+                  << new_lr << '\n';
+      }
+    }
+  }
+}
+
+void ReduceLROnPlateauScheduler::reset() {
+  this->cooldown_counter = 0;
+  this->num_bad_epochs = 0;
+  this->last_epoch = 0;
+  this->best = mode_worse;
+}
+
+bool ReduceLROnPlateauScheduler::in_cooldown() const {
+  return cooldown_counter > 0;
+}
+
+bool ReduceLROnPlateauScheduler::is_better(float a) {
+  if (mode == min && threshold_mode == rel) {
+    auto rel_epsilon = 1.0 - threshold;
+    return a < best * rel_epsilon;
+  } else if (mode == min && threshold_mode == abs) {
+    return a < best - threshold;
+  } else if (mode == max && threshold_mode == rel) {
+    auto rel_epsilon = 1.0 + threshold;
+    return a > best * rel_epsilon;
+  } else {
+    return a > best * threshold;
+  }
+}
+
+void ReduceLROnPlateauScheduler::init_is_better(
+    SchedulerMode mode,
+    double threshold,
+    ThresholdMode threshold_mode) {
+  if (mode == min) {
+    mode_worse = std::numeric_limits<float>::max();
+  } else {
+    mode_worse = std::numeric_limits<float>::min();
+  }
+
+  this->mode = mode;
+  this->threshold_mode = threshold_mode;
+  this->threshold = threshold;
+}
+} // namespace torch::optim
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 3 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/api/src/optim/schedulers`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `torch/optim/schedulers/reduce_on_plateau_scheduler.h`
+- `iomanip`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/api/src/optim/schedulers`):
+
+- [`lr_scheduler.cpp_docs.md`](./lr_scheduler.cpp_docs.md)
+- [`step_lr.cpp_docs.md`](./step_lr.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `reduce_on_plateau_scheduler.cpp_docs.md`
+- **Keyword Index**: `reduce_on_plateau_scheduler.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/api/src/optim/schedulers`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/api/src/optim/schedulers`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/api/src/optim/schedulers`):
+
+- [`lr_scheduler.cpp_kw.md_docs.md`](./lr_scheduler.cpp_kw.md_docs.md)
+- [`reduce_on_plateau_scheduler.cpp_kw.md_docs.md`](./reduce_on_plateau_scheduler.cpp_kw.md_docs.md)
+- [`step_lr.cpp_docs.md_docs.md`](./step_lr.cpp_docs.md_docs.md)
+- [`lr_scheduler.cpp_docs.md_docs.md`](./lr_scheduler.cpp_docs.md_docs.md)
+- [`step_lr.cpp_kw.md_docs.md`](./step_lr.cpp_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `reduce_on_plateau_scheduler.cpp_docs.md_docs.md`
+- **Keyword Index**: `reduce_on_plateau_scheduler.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,87 @@
+# Keyword Index: `docs/android/pytorch_android/src/main/java/org/pytorch/DType.java_kw.md`
+
+## File Information
+
+- **Original File**: [docs/android/pytorch_android/src/main/java/org/pytorch/DType.java_kw.md](../../../../../../../../../docs/android/pytorch_android/src/main/java/org/pytorch/DType.java_kw.md)
+- **Documentation**: [`DType.java_kw.md_docs.md`](./DType.java_kw.md_docs.md)
+- **Folder**: `docs/android/pytorch_android/src/main/java/org/pytorch`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Architecture`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Basic`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Code`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Codes`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Complete`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Considerations`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`DType`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Dependencies`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Design`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Detailed`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Documentation`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Efficiency`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Extracted`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`FLOAT32`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`FLOAT64`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`File`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Folder`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Generated`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`High`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`How`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`INT32`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`INT64`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`INT8`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Identifiers`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`In`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Index`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Information`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Keyword`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Keywords`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Level`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Map`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Metadata`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`NOTE`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Never`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Original`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Overview`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Performance`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Purpose`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`PyTorch`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Related`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Repository`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Safety`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Section`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Security`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Source`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`System`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Tensor`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Testing`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`The`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`This`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`UINT8`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+- **`Usage`**: [DType.java_kw.md_docs.md](./DType.java_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

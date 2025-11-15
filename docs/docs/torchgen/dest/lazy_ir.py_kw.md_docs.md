@@ -1,0 +1,204 @@
+# Documentation: `docs/torchgen/dest/lazy_ir.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/torchgen/dest/lazy_ir.py_kw.md`
+- **Size**: 4,609 bytes (4.50 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `torchgen/dest/lazy_ir.py`
+
+## File Information
+
+- **Original File**: [torchgen/dest/lazy_ir.py](../../../torchgen/dest/lazy_ir.py)
+- **Documentation**: [`lazy_ir.py_docs.md`](./lazy_ir.py_docs.md)
+- **Folder**: `torchgen/dest`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`ComputeShapeSignature`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`GenLazyIR`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`GenLazyNativeFuncDefinition`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`GenLazyShapeInferenceDefinition`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`GenTSLazyIR`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`constructor`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`decl`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`from`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`is`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+
+### Functions
+
+- **`__call__`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`__call_suffix`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`__decl_suffix`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`__init__`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`aten_symbol`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`build_ir_node`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`can_be_reused_function`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`convert_to_meta_tensors`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`create_function`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`create_lazy_tensor`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`force_eager_fallback`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`gen`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`gen_fallback_code`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`generate_non_native_lazy_ir_nodes`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`get_device`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`lazy_tensor_decls`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`lowering_function`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`metrics`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`node_base_ctor_call`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`node_ctor_arg_rvalue_string`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`node_ctor_inputs`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`return_aten_tensor`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`shape_call`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`shape_decl`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`shape_inference`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`this_shape`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+
+### Imports
+
+- **`ABC`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`Any`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`__future__`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`abc`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`annotations`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`dataclass`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`dataclasses`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`itertools`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`method_with_native_function`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`torchgen.api.dispatcher`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`torchgen.api.lazy`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`torchgen.api.translate`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`torchgen.api.types`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`torchgen.context`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`torchgen.dest.lazy_ts_lowering`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`torchgen.model`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`translate`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`ts_lowering_body`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+- **`typing`**: [lazy_ir.py_docs.md](./lazy_ir.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torchgen/dest`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torchgen/dest`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Abstract Base Classes**: Defines abstract interfaces
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torchgen/dest`):
+
+- [`register_dispatch_key.py_docs.md_docs.md`](./register_dispatch_key.py_docs.md_docs.md)
+- [`native_functions.py_kw.md_docs.md`](./native_functions.py_kw.md_docs.md)
+- [`ufunc.py_docs.md_docs.md`](./ufunc.py_docs.md_docs.md)
+- [`lazy_ts_lowering.py_kw.md_docs.md`](./lazy_ts_lowering.py_kw.md_docs.md)
+- [`lazy_ts_lowering.py_docs.md_docs.md`](./lazy_ts_lowering.py_docs.md_docs.md)
+- [`__init__.py_docs.md_docs.md`](./__init__.py_docs.md_docs.md)
+- [`register_dispatch_key.py_kw.md_docs.md`](./register_dispatch_key.py_kw.md_docs.md)
+- [`lazy_ir.py_docs.md_docs.md`](./lazy_ir.py_docs.md_docs.md)
+- [`__init__.py_kw.md_docs.md`](./__init__.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `lazy_ir.py_kw.md_docs.md`
+- **Keyword Index**: `lazy_ir.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

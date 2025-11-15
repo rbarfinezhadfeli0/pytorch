@@ -1,0 +1,83 @@
+# Keyword Index: `docs/torch/csrc/jit/passes/mkldnn_rewrite.cpp_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/csrc/jit/passes/mkldnn_rewrite.cpp_kw.md](../../../../../../docs/torch/csrc/jit/passes/mkldnn_rewrite.cpp_kw.md)
+- **Documentation**: [`mkldnn_rewrite.cpp_kw.md_docs.md`](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **Folder**: `docs/torch/csrc/jit/passes`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Analysis`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Architecture`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Basic`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Complete`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Config`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Considerations`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Dependencies`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Design`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Detailed`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Documentation`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Efficiency`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Extracted`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`File`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`FoldPrePackingOps`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Folder`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Functions`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`FuseConvWithEltwise`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`FuseReluWithPackedOps`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Generated`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`High`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`How`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`In`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Includes`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Index`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Information`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Keyword`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Keywords`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Level`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Map`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Metadata`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Namespaces`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Original`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Overview`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Performance`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`PrePackingOpsFolder`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Purpose`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`PyTorch`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Related`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Repository`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Safety`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Section`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Security`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Source`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`System`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Testing`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`The`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`This`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+- **`Usage`**: [mkldnn_rewrite.cpp_kw.md_docs.md](./mkldnn_rewrite.cpp_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

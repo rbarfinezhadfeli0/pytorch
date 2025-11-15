@@ -1,0 +1,310 @@
+# Documentation: `docs/aten/src/ATen/core/NestedIntSymNodeImpl.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/core/NestedIntSymNodeImpl.cpp_docs.md`
+- **Size**: 5,267 bytes (5.14 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/core/NestedIntSymNodeImpl.cpp`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/core/NestedIntSymNodeImpl.cpp`
+- **Size**: 2,832 bytes (2.77 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#include <ATen/core/NestedIntSymNodeImpl.h>
+#include <c10/core/SymNodeImpl.h>
+#include <c10/util/Exception.h>
+
+namespace c10 {
+
+namespace {
+bool _eq(const char* op, c10::SymNodeImpl* lhs, c10::SymNodeImpl* rhs) {
+  TORCH_INTERNAL_ASSERT(lhs->is_nested_int());
+  std::optional<int64_t> c = rhs->nested_int();
+  return (
+      c.has_value() && lhs->nested_int() == *c &&
+      lhs->nested_int_coeff() == rhs->nested_int_coeff());
+}
+bool _ge(const char* op, c10::SymNodeImpl* lhs, c10::SymNodeImpl* rhs) {
+  if (auto mb_si = lhs->nested_int()) {
+    if (auto mb_si2 = rhs->nested_int()) {
+      if (*mb_si == *mb_si2) {
+        return lhs->nested_int_coeff() >= rhs->nested_int_coeff();
+      }
+      TORCH_CHECK(false, "nested int ", op, ": Relation is indeterminate");
+    }
+    // NOLINTNEXTLINE(bugprone-unchecked-optional-access)
+    if (rhs->constant_int() && *rhs->constant_int() <= 2) {
+      return true;
+    }
+    TORCH_CHECK(false, "nested int ", op, ": Relation is indeterminate");
+  } else if (rhs->nested_int()) {
+    // NOLINTNEXTLINE(bugprone-unchecked-optional-access)
+    if (lhs->constant_int() && *lhs->constant_int() < 2) {
+      return false;
+    }
+    TORCH_CHECK(false, "nested int ", op, ": Relation is indeterminate");
+  }
+  TORCH_INTERNAL_ASSERT(false, "expect at least one nested int");
+}
+} // namespace
+
+c10::SymNode NestedIntSymNodeImpl::eq(const c10::SymNode& other) {
+  return SymNode(c10::make_intrusive<ConstantSymNodeImpl<bool>>(
+      _eq("eq", this, other.get())));
+}
+
+c10::SymNode NestedIntSymNodeImpl::ne(const c10::SymNode& other) {
+  return SymNode(c10::make_intrusive<ConstantSymNodeImpl<bool>>(
+      !_eq("ne", this, other.get())));
+}
+
+c10::SymNode NestedIntSymNodeImpl::ge(const c10::SymNode& other) {
+  return SymNode(c10::make_intrusive<ConstantSymNodeImpl<bool>>(
+      _ge("ge", this, other.get())));
+}
+
+c10::SymNode NestedIntSymNodeImpl::gt(const c10::SymNode& other) {
+  return SymNode(c10::make_intrusive<ConstantSymNodeImpl<bool>>(
+      !_ge("gt", other.get(), this)));
+}
+
+c10::SymNode NestedIntSymNodeImpl::lt(const c10::SymNode& other) {
+  return SymNode(c10::make_intrusive<ConstantSymNodeImpl<bool>>(
+      !_ge("lt", this, other.get())));
+}
+
+c10::SymNode NestedIntSymNodeImpl::le(const c10::SymNode& other) {
+  return SymNode(c10::make_intrusive<ConstantSymNodeImpl<bool>>(
+      _ge("le", other.get(), this)));
+}
+
+c10::SymNode NestedIntSymNodeImpl::mul(const c10::SymNode& other) {
+  TORCH_CHECK(!other->nested_int(), "nested int cannot be multiplied by nested int");
+  std::optional<int64_t> c = other->constant_int();
+  TORCH_CHECK(c.has_value());
+  return SymNode(c10::make_intrusive<NestedIntSymNodeImpl>(val_, coeff_ * *c));
+}
+
+c10::SymNode NestedIntSymNodeImpl::clone() {
+  return SymNode(c10::make_intrusive<NestedIntSymNodeImpl>(val_, coeff_));
+}
+
+} // namespace c10
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 11 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `c10`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/core`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/core/NestedIntSymNodeImpl.h`
+- `c10/core/SymNodeImpl.h`
+- `c10/util/Exception.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/core`):
+
+- [`DistributionsHelper.h_docs.md`](./DistributionsHelper.h_docs.md)
+- [`rref_interface.h_docs.md`](./rref_interface.h_docs.md)
+- [`Generator.h_docs.md`](./Generator.h_docs.md)
+- [`enum_type.h_docs.md`](./enum_type.h_docs.md)
+- [`QuantizerBase.h_docs.md`](./QuantizerBase.h_docs.md)
+- [`Array.h_docs.md`](./Array.h_docs.md)
+- [`MetaFallbackKernel.cpp_docs.md`](./MetaFallbackKernel.cpp_docs.md)
+- [`ATenOpList.h_docs.md`](./ATenOpList.h_docs.md)
+- [`ivalue_inl.h_docs.md`](./ivalue_inl.h_docs.md)
+- [`TransformationHelper.h_docs.md`](./TransformationHelper.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `NestedIntSymNodeImpl.cpp_docs.md`
+- **Keyword Index**: `NestedIntSymNodeImpl.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/core`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/core`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/core`):
+
+- [`operator_name.cpp_docs.md_docs.md`](./operator_name.cpp_docs.md_docs.md)
+- [`builtin_function.h_kw.md_docs.md`](./builtin_function.h_kw.md_docs.md)
+- [`QuantizerBase.h_docs.md_docs.md`](./QuantizerBase.h_docs.md_docs.md)
+- [`MT19937RNGEngine.h_docs.md_docs.md`](./MT19937RNGEngine.h_docs.md_docs.md)
+- [`UndefinedTensorImpl.h_docs.md_docs.md`](./UndefinedTensorImpl.h_docs.md_docs.md)
+- [`IListRef_test.cpp_docs.md_docs.md`](./IListRef_test.cpp_docs.md_docs.md)
+- [`CheckMemoryFormat.h_docs.md_docs.md`](./CheckMemoryFormat.h_docs.md_docs.md)
+- [`Tensor.cpp_kw.md_docs.md`](./Tensor.cpp_kw.md_docs.md)
+- [`PythonFallbackKernel.cpp_docs.md_docs.md`](./PythonFallbackKernel.cpp_docs.md_docs.md)
+- [`Dict.h_kw.md_docs.md`](./Dict.h_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `NestedIntSymNodeImpl.cpp_docs.md_docs.md`
+- **Keyword Index**: `NestedIntSymNodeImpl.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

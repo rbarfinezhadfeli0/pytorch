@@ -1,0 +1,192 @@
+# Documentation: `docs/torch/distributed/tensor/_ops/_tensor_ops.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/distributed/tensor/_ops/_tensor_ops.py_kw.md`
+- **Size**: 4,691 bytes (4.58 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `torch/distributed/tensor/_ops/_tensor_ops.py`
+
+## File Information
+
+- **Original File**: [torch/distributed/tensor/_ops/_tensor_ops.py](../../../../../torch/distributed/tensor/_ops/_tensor_ops.py)
+- **Documentation**: [`_tensor_ops.py_docs.md`](./_tensor_ops.py_docs.md)
+- **Folder**: `torch/distributed/tensor/_ops`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Functions
+
+- **`_derive_follow_placements_from_tuple_strategy`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`cat_strategy`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`create_like_strategy`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`equal_strategy`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`gather_strategy`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`gen_bucketize_strategy`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`gen_slice_scatter_strategy`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`gen_slice_strategy`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`gen_unbind_strategy`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`merge_placement`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`new_factory_strategy`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`place`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`prop_index`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`prop_index_put`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`prop_index_select`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`propagate_single_input_strategy`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`replica_only_strategy`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`replicate_tensor_dim`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`scatter_add_strategy`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`scatter_strategy`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`select_backward_strategy`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`select_int_strategy`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`size_split`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`slice_backward_rules`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`split_strategy`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`stack_strategy`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`unshard_tensor_dim`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+
+### Imports
+
+- **`DTensorSpec`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`IntLike`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`MaskPartial`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`Sequence`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`cast`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`collections.abc`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`pointwise_rule`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`statically_known_true`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`torch`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`torch._prims_common`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`torch.distributed.tensor._dtensor_spec`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`torch.distributed.tensor._op_schema`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`torch.distributed.tensor._ops._common_rules`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`torch.distributed.tensor._ops._embedding_ops`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`torch.distributed.tensor._ops.utils`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`torch.distributed.tensor.placement_types`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`torch.fx.experimental.symbolic_shapes`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+- **`typing`**: [_tensor_ops.py_docs.md](./_tensor_ops.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/distributed/tensor/_ops`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/distributed/tensor/_ops`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/distributed/tensor/_ops`):
+
+- [`_tensor_ops.py_docs.md_docs.md`](./_tensor_ops.py_docs.md_docs.md)
+- [`_matrix_ops.py_docs.md_docs.md`](./_matrix_ops.py_docs.md_docs.md)
+- [`utils.py_docs.md_docs.md`](./utils.py_docs.md_docs.md)
+- [`_matrix_ops.py_kw.md_docs.md`](./_matrix_ops.py_kw.md_docs.md)
+- [`_random_ops.py_kw.md_docs.md`](./_random_ops.py_kw.md_docs.md)
+- [`_pointwise_ops.py_docs.md_docs.md`](./_pointwise_ops.py_docs.md_docs.md)
+- [`_math_ops.py_kw.md_docs.md`](./_math_ops.py_kw.md_docs.md)
+- [`_embedding_ops.py_docs.md_docs.md`](./_embedding_ops.py_docs.md_docs.md)
+- [`_einsum_strategy.py_kw.md_docs.md`](./_einsum_strategy.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `_tensor_ops.py_kw.md_docs.md`
+- **Keyword Index**: `_tensor_ops.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

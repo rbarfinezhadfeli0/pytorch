@@ -1,0 +1,416 @@
+# Documentation: `docs/aten/src/ATen/native/quantized/cpu/qnormalization.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/quantized/cpu/qnormalization.cpp_docs.md`
+- **Size**: 8,254 bytes (8.06 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/native/quantized/cpu/qnormalization.cpp`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/quantized/cpu/qnormalization.cpp`
+- **Size**: 5,516 bytes (5.39 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#include <ATen/core/Tensor.h>
+#include <ATen/native/layer_norm.h>
+#include <ATen/native/quantized/cpu/QuantizedOps.h>
+#include <ATen/Parallel.h>
+#include <c10/util/accumulate.h>
+#include <torch/library.h>
+
+#ifndef AT_PER_OPERATOR_HEADERS
+#include <ATen/Functions.h>
+#else
+#include <ATen/ops/_empty_affine_quantized.h>
+#endif
+
+#include <algorithm>
+#include <vector>
+
+namespace at::native {
+
+DEFINE_DISPATCH(quantized_normalize_stub);
+DEFINE_DISPATCH(quantized_groupnorm_nhwc_stub);
+
+static Tensor quantized_layer_norm_impl(
+    const Tensor& input,
+    IntArrayRef normalized_shape,
+    const Tensor& weight /* optional */,
+    const Tensor& bias /* optional */,
+    double eps,
+    double output_scale,
+    int64_t output_zero_point) {
+
+  auto M_N = _check_layer_norm_inputs(input, normalized_shape, weight, bias);
+  auto M = M_N.first;
+  auto N = M_N.second;
+  auto X = input.expect_contiguous();
+  auto gamma = weight.expect_contiguous();
+  auto beta = bias.expect_contiguous();
+
+  Tensor Y = at::_empty_affine_quantized(
+    X->sizes(),
+    X->scalar_type(),
+    output_scale,
+    output_zero_point,
+    X->suggest_memory_format());
+
+  if (M > 0) {
+    bool affine_per_channel = false;
+    int num_channels = 1; // not relevant for LayerNorm
+    int num_groups = 1; // not relevant for LayerNorm
+    quantized_normalize_stub(kCPU, *X, *gamma, *beta, affine_per_channel,
+        num_channels, num_groups, M, N, eps, &Y);
+  }
+  return Y;
+}
+
+static Tensor quantized_group_norm_impl(
+    const Tensor& qx,
+    int64_t num_groups,
+    const Tensor& weight, // optional
+    const Tensor& bias, // optional
+    double eps,
+    double output_scale,
+    int64_t output_zero_point) {
+  bool is_channels_last = qx.is_contiguous(c10::MemoryFormat::ChannelsLast);
+  auto mem_layout = is_channels_last ? c10::MemoryFormat::ChannelsLast :
+                                       c10::MemoryFormat::Contiguous;
+
+  const auto& qx_contig = qx.contiguous(mem_layout);
+  const auto& weight_contig = weight.contiguous();
+  const auto& bias_contig = bias.contiguous();
+
+  const auto input_ndim = qx_contig.dim();
+  TORCH_CHECK(
+      input_ndim >= 3,
+      "Expected normalized_shape to be at least 3-dimensional");
+  TORCH_CHECK(num_groups > 0, "Expected num_groups to be positive");
+
+  const auto input_shape = qx_contig.sizes();
+  TORCH_CHECK(input_shape[1] % num_groups == 0,
+      "Expected channels to be divisible by groups");
+
+  const int64_t batches = input_shape[0];
+  const int64_t num_channels = input_shape[1];
+  const int64_t elements_per_batch =
+      c10::multiply_integers(input_shape.cbegin() + 1, input_shape.cend());
+
+  const int64_t M = batches * num_groups;
+  const int64_t N = elements_per_batch / num_groups;
+
+  Tensor Y = at::_empty_affine_quantized(
+    qx_contig.sizes(),
+    qx_contig.scalar_type(),
+    output_scale,
+    output_zero_point,
+    qx_contig.suggest_memory_format());
+
+  if (M > 0) {
+    bool affine_per_channel = true;
+    if (is_channels_last) {
+      quantized_groupnorm_nhwc_stub(kCPU, qx_contig, weight_contig, bias_contig,
+          affine_per_channel, num_channels, num_groups, M, N, eps, &Y);
+    } else {
+      quantized_normalize_stub(kCPU, qx_contig, weight_contig, bias_contig,
+          affine_per_channel, num_channels, num_groups, M, N, eps, &Y);
+    }
+  }
+  return Y;
+}
+
+static Tensor quantized_instance_norm_impl(
+    const Tensor& qx,
+    const Tensor& weight, // optional
+    const Tensor& bias, // optional
+    double eps,
+    double output_scale,
+    int64_t output_zero_point) {
+
+  const auto input_ndim = qx.dim();
+  TORCH_CHECK(
+      input_ndim >= 3,
+      "Expected normalized_shape to be at least 3-dimensional");
+  const auto input_shape = qx.sizes();
+
+  // IN is GN with num_groups == num_channels
+  const auto num_channels = input_shape[1];
+  TORCH_CHECK(num_channels > 0, "Expected 2nd dimension to be positive");
+
+  return quantized_group_norm_impl(
+      qx, num_channels, weight, bias, eps, output_scale, output_zero_point);
+}
+
+
+TORCH_LIBRARY_IMPL(quantized, QuantizedCPU, m) {
+  // TODO: this is kind of... blegh
+  m.impl(TORCH_SELECTIVE_NAME("quantized::layer_norm"), [](
+    Tensor input,
+    std::vector<int64_t> normalized_shape,  // because IntArrayRef doesn't work
+    std::optional<Tensor> weight,
+    std::optional<Tensor> bias,
+    double eps,
+    double output_scale,
+    int64_t output_zero_point) {
+      return quantized_layer_norm_impl(
+          input, normalized_shape,
+          weight.has_value() ? *weight : Tensor(),
+          bias.has_value() ? *bias : Tensor(),
+          eps, output_scale, output_zero_point);
+  });
+  m.impl(TORCH_SELECTIVE_NAME("quantized::group_norm"), [](
+      Tensor qx,
+      int64_t num_groups,
+      std::optional<Tensor> weight,
+      std::optional<Tensor> bias,
+      double eps,
+      double output_scale,
+      int64_t output_zero_point) {
+    return quantized_group_norm_impl(
+        qx, num_groups,
+        weight.has_value() ? *weight : Tensor(),
+        bias.has_value() ? *bias : Tensor(),
+        eps, output_scale, output_zero_point);
+  });
+  m.impl(TORCH_SELECTIVE_NAME("quantized::instance_norm"), [](
+      Tensor qx,
+      std::optional<Tensor> weight,
+      std::optional<Tensor> bias,
+      double eps,
+      double output_scale,
+      int64_t output_zero_point) {
+    return quantized_instance_norm_impl(
+        qx,
+        weight.has_value() ? *weight : Tensor(),
+        bias.has_value() ? *bias : Tensor(),
+        eps, output_scale, output_zero_point);
+  });
+}
+
+} // namespace at::native
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 8 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `at`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native/quantized/cpu`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/core/Tensor.h`
+- `ATen/native/layer_norm.h`
+- `ATen/native/quantized/cpu/QuantizedOps.h`
+- `ATen/Parallel.h`
+- `c10/util/accumulate.h`
+- `torch/library.h`
+- `ATen/Functions.h`
+- `ATen/ops/_empty_affine_quantized.h`
+- `algorithm`
+- `vector`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native/quantized/cpu`):
+
+- [`ACLUtils.cpp_docs.md`](./ACLUtils.cpp_docs.md)
+- [`LinearUnpackImpl.cpp_docs.md`](./LinearUnpackImpl.cpp_docs.md)
+- [`UpSampleNearest3d.cpp_docs.md`](./UpSampleNearest3d.cpp_docs.md)
+- [`Pooling.cpp_docs.md`](./Pooling.cpp_docs.md)
+- [`QnnpackUtils.h_docs.md`](./QnnpackUtils.h_docs.md)
+- [`qembeddingbag_unpack.cpp_docs.md`](./qembeddingbag_unpack.cpp_docs.md)
+- [`fbgemm_utils.h_docs.md`](./fbgemm_utils.h_docs.md)
+- [`TensorOperators.cpp_docs.md`](./TensorOperators.cpp_docs.md)
+- [`XnnpackUtils.h_docs.md`](./XnnpackUtils.h_docs.md)
+- [`qconv_dynamic.cpp_docs.md`](./qconv_dynamic.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `qnormalization.cpp_docs.md`
+- **Keyword Index**: `qnormalization.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native/quantized/cpu`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native/quantized/cpu`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native/quantized/cpu`):
+
+- [`ReduceOps.cpp_kw.md_docs.md`](./ReduceOps.cpp_kw.md_docs.md)
+- [`init_qnnpack.cpp_docs.md_docs.md`](./init_qnnpack.cpp_docs.md_docs.md)
+- [`qelu.cpp_kw.md_docs.md`](./qelu.cpp_kw.md_docs.md)
+- [`UpSampleNearest2d.cpp_kw.md_docs.md`](./UpSampleNearest2d.cpp_kw.md_docs.md)
+- [`qclamp.cpp_docs.md_docs.md`](./qclamp.cpp_docs.md_docs.md)
+- [`qembeddingbag_prepack.h_docs.md_docs.md`](./qembeddingbag_prepack.h_docs.md_docs.md)
+- [`qdropout.cpp_docs.md_docs.md`](./qdropout.cpp_docs.md_docs.md)
+- [`qelu.cpp_docs.md_docs.md`](./qelu.cpp_docs.md_docs.md)
+- [`qembeddingbag_unpack.cpp_docs.md_docs.md`](./qembeddingbag_unpack.cpp_docs.md_docs.md)
+- [`LinearUnpackImpl.cpp_kw.md_docs.md`](./LinearUnpackImpl.cpp_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `qnormalization.cpp_docs.md_docs.md`
+- **Keyword Index**: `qnormalization.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

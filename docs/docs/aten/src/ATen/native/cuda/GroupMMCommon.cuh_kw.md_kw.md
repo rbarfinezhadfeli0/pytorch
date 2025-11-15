@@ -1,0 +1,79 @@
+# Keyword Index: `docs/aten/src/ATen/native/cuda/GroupMMCommon.cuh_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/native/cuda/GroupMMCommon.cuh_kw.md](../../../../../../../docs/aten/src/ATen/native/cuda/GroupMMCommon.cuh_kw.md)
+- **Documentation**: [`GroupMMCommon.cuh_kw.md_docs.md`](./GroupMMCommon.cuh_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/native/cuda`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`Analysis`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`Architecture`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`Basic`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`Complete`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`Considerations`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`Dependencies`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`Design`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`Detailed`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`Documentation`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`Efficiency`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`Extracted`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`File`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`Folder`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`Functions`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`Generated`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`GroupMMCommon`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`High`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`How`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`In`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`Includes`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`Index`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`Information`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`Keyword`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`Keywords`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`Level`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`Map`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`Metadata`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`Namespaces`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`Original`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`Overview`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`Performance`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`Purpose`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`PyTorch`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`Related`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`Repository`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`Safety`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`Section`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`Security`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`Source`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`System`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`Testing`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`The`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`This`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+- **`Usage`**: [GroupMMCommon.cuh_kw.md_docs.md](./GroupMMCommon.cuh_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

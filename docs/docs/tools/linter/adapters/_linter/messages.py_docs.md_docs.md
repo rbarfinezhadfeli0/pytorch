@@ -1,0 +1,338 @@
+# Documentation: `docs/tools/linter/adapters/_linter/messages.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/tools/linter/adapters/_linter/messages.py_docs.md`
+- **Size**: 5,811 bytes (5.67 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**. This file is a **utility or tool script**.
+
+## Original Source
+
+```markdown
+# Documentation: `tools/linter/adapters/_linter/messages.py`
+
+## File Metadata
+
+- **Path**: `tools/linter/adapters/_linter/messages.py`
+- **Size**: 3,259 bytes (3.18 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is a **utility or tool script**.
+
+## Original Source
+
+```python
+from __future__ import annotations
+
+import dataclasses as dc
+from enum import Enum
+
+
+class LintSeverity(str, Enum):
+    ERROR = "error"
+    WARNING = "warning"
+    ADVICE = "advice"
+    DISABLED = "disabled"
+
+
+@dc.dataclass
+class LintMessage:
+    """This is a datatype representation of the JSON that gets sent to lintrunner
+    as described here:
+    https://docs.rs/lintrunner/latest/lintrunner/lint_message/struct.LintMessage.html
+    """
+
+    code: str
+    name: str
+    severity: LintSeverity
+
+    char: int | None = None
+    description: str | None = None
+    line: int | None = None
+    original: str | None = None
+    path: str | None = None
+    replacement: str | None = None
+
+    asdict = dc.asdict
+
+
+@dc.dataclass
+class LintResult:
+    """LintResult is a single result from a linter.
+
+    Like LintMessage but the .length member allows you to make specific edits to
+    one location within a file, not just replace the whole file.
+
+    Linters can generate recursive results - results that contain other results.
+
+    For example, the annotation linter would find two results in this code sample:
+
+        index = Union[Optional[str], int]
+
+    And the first result, `Union[Optional[str], int]`, contains the second one,
+    `Optional[str]`, so the first result is recursive but the second is not.
+
+    If --fix is selected, the linter does a cycle of tokenizing and fixing all
+    the non-recursive edits until no edits remain.
+    """
+
+    name: str
+
+    line: int | None = None
+    char: int | None = None
+    replacement: str | None = None
+    length: int | None = None  # Not in LintMessage
+    description: str | None = None
+    original: str | None = None
+
+    is_recursive: bool = False  # Not in LintMessage
+
+    @property
+    def is_edit(self) -> bool:
+        return None not in (self.char, self.length, self.line, self.replacement)
+
+    def apply(self, lines: list[str]) -> None:
+        if not (
+            self.char is None
+            or self.length is None
+            or self.line is None
+            or self.replacement is None
+        ):
+            line = lines[self.line - 1]
+            before = line[: self.char]
+            after = line[self.char + self.length :]
+            lines[self.line - 1] = f"{before}{self.replacement}{after}"
+
+    def contains(self, r: LintResult) -> bool:
+        assert self.char is not None and self.line is not None
+        assert r.char is not None and r.line is not None
+        return self.line == r.line and self.char <= r.char and self.end >= r.end
+
+    @property
+    def end(self) -> int:
+        assert self.char is not None and self.length is not None
+        return self.char + self.length
+
+    def as_message(self, code: str, path: str) -> LintMessage:
+        d = dc.asdict(self)
+        d.pop("is_recursive")
+        d.pop("length")
+        if self.is_edit:
+            # This is one of our , which we don't want to
+            # send to lintrunner as a replacement
+            d["replacement"] = None
+
+        return LintMessage(code=code, path=path, severity=LintSeverity.ERROR, **d)
+
+    def sort_key(self) -> tuple[int, int, str]:
+        line = -1 if self.line is None else self.line
+        char = -1 if self.char is None else self.char
+        return line, char, self.name
+
+```
+
+
+
+## High-Level Overview
+
+"""This is a datatype representation of the JSON that gets sent to lintrunner    as described here:    https://docs.rs/lintrunner/latest/lintrunner/lint_message/struct.LintMessage.html
+
+This Python file contains 3 class(es) and 6 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `LintSeverity`, `LintMessage`, `LintResult`
+
+**Functions defined**: `is_edit`, `apply`, `contains`, `end`, `as_message`, `sort_key`
+
+**Key imports**: annotations, dataclasses as dc, Enum
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `tools/linter/adapters/_linter`, which contains **development tools and scripts**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `__future__`: annotations
+- `dataclasses as dc`
+- `enum`: Enum
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`tools/linter/adapters/_linter`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`sets.py_docs.md`](./sets.py_docs.md)
+- [`block.py_docs.md`](./block.py_docs.md)
+- [`argument_parser.py_docs.md`](./argument_parser.py_docs.md)
+- [`python_file.py_docs.md`](./python_file.py_docs.md)
+- [`blocks.py_docs.md`](./blocks.py_docs.md)
+- [`bracket_pairs.py_docs.md`](./bracket_pairs.py_docs.md)
+- [`file_linter.py_docs.md`](./file_linter.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `messages.py_docs.md`
+- **Keyword Index**: `messages.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/tools/linter/adapters/_linter`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/tools/linter/adapters/_linter`, which contains **development tools and scripts**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/tools/linter/adapters/_linter`):
+
+- [`argument_parser.py_kw.md_docs.md`](./argument_parser.py_kw.md_docs.md)
+- [`blocks.py_kw.md_docs.md`](./blocks.py_kw.md_docs.md)
+- [`block.py_docs.md_docs.md`](./block.py_docs.md_docs.md)
+- [`sets.py_kw.md_docs.md`](./sets.py_kw.md_docs.md)
+- [`argument_parser.py_docs.md_docs.md`](./argument_parser.py_docs.md_docs.md)
+- [`block.py_kw.md_docs.md`](./block.py_kw.md_docs.md)
+- [`sets.py_docs.md_docs.md`](./sets.py_docs.md_docs.md)
+- [`messages.py_kw.md_docs.md`](./messages.py_kw.md_docs.md)
+- [`file_linter.py_kw.md_docs.md`](./file_linter.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `messages.py_docs.md_docs.md`
+- **Keyword Index**: `messages.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,341 @@
+# Documentation: `docs/aten/src/ATen/native/quantized/cpu/qnnpack/test/sconv.cc_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/quantized/cpu/qnnpack/test/sconv.cc_docs.md`
+- **Size**: 4,847 bytes (4.73 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/native/quantized/cpu/qnnpack/test/sconv.cc`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/quantized/cpu/qnnpack/test/sconv.cc`
+- **Size**: 2,186 bytes (2.13 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cc`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**.
+
+## Original Source
+
+```cpp
+/*
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+#include <cpuinfo.h>
+#include <gtest/gtest.h>
+
+#include <qnnpack/isa-checks.h>
+#include <qnnpack/sconv.h>
+
+#include "gemm-microkernel-tester.h"
+
+TEST(SCONV_6x8__PSIMD, k_eq_1) {
+  GemmMicrokernelTester()
+      .mr(6)
+      .nr(8)
+      .np(8)
+      .kr(1)
+      .m(6)
+      .n(8)
+      .k(1)
+      .aStride(37)
+      .test(pytorch_sconv_ukernel_6x8__psimd);
+}
+
+TEST(SCONV_6x8__PSIMD, k_eq_1_strided_c) {
+  GemmMicrokernelTester()
+      .mr(6)
+      .nr(8)
+      .np(8)
+      .kr(1)
+      .m(6)
+      .n(8)
+      .k(1)
+      .aStride(37)
+      .cStride(17)
+      .test(pytorch_sconv_ukernel_6x8__psimd);
+}
+
+TEST(SCONV_6x8__PSIMD, k_eq_1_qmin128) {
+  GemmMicrokernelTester().mr(6).nr(8).np(8).kr(1).m(6).n(8).k(1).qmin(128).test(
+      pytorch_sconv_ukernel_6x8__psimd);
+}
+
+TEST(SCONV_6x8__PSIMD, k_eq_1_qmax128) {
+  GemmMicrokernelTester().mr(6).nr(8).np(8).kr(1).m(6).n(8).k(1).qmax(128).test(
+      pytorch_sconv_ukernel_6x8__psimd);
+}
+
+TEST(SCONV_6x8__PSIMD, k_gt_1) {
+  for (size_t k = 2; k < 16; k++) {
+    GemmMicrokernelTester()
+        .mr(6)
+        .nr(8)
+        .np(8)
+        .kr(1)
+        .m(6)
+        .n(8)
+        .k(k)
+        .aStride(37)
+        .test(pytorch_sconv_ukernel_6x8__psimd);
+  }
+}
+
+TEST(SCONV_6x8__PSIMD, k_gt_1_strided_c) {
+  for (size_t k = 2; k < 16; k++) {
+    GemmMicrokernelTester()
+        .mr(6)
+        .nr(8)
+        .np(8)
+        .kr(1)
+        .m(6)
+        .n(8)
+        .k(k)
+        .aStride(37)
+        .cStride(17)
+        .test(pytorch_sconv_ukernel_6x8__psimd);
+  }
+}
+
+TEST(SCONV_6x8__PSIMD, k_gt_1_subtile) {
+  for (size_t k = 2; k < 16; k++) {
+    for (uint32_t m = 1; m <= 6; m++) {
+      for (uint32_t n = 1; n <= 8; n++) {
+        GemmMicrokernelTester()
+            .mr(6)
+            .nr(8)
+            .np(8)
+            .kr(1)
+            .m(m)
+            .n(n)
+            .k(k)
+            .aStride(37)
+            .iterations(3)
+            .test(pytorch_sconv_ukernel_6x8__psimd);
+      }
+    }
+  }
+}
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 0 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native/quantized/cpu/qnnpack/test`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `cpuinfo.h`
+- `gtest/gtest.h`
+- `qnnpack/isa-checks.h`
+- `qnnpack/sconv.h`
+- `gemm-microkernel-tester.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python aten/src/ATen/native/quantized/cpu/qnnpack/test/sconv.cc
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native/quantized/cpu/qnnpack/test`):
+
+- [`avgpool-microkernel-tester.h_docs.md`](./avgpool-microkernel-tester.h_docs.md)
+- [`tanh.cc_docs.md`](./tanh.cc_docs.md)
+- [`average-pooling-operator-tester.h_docs.md`](./average-pooling-operator-tester.h_docs.md)
+- [`u8lut32norm.cc_docs.md`](./u8lut32norm.cc_docs.md)
+- [`lut-norm-microkernel-tester.h_docs.md`](./lut-norm-microkernel-tester.h_docs.md)
+- [`softargmax.cc_docs.md`](./softargmax.cc_docs.md)
+- [`hardsigmoid-operator-tester.h_docs.md`](./hardsigmoid-operator-tester.h_docs.md)
+- [`q8avgpool.cc_docs.md`](./q8avgpool.cc_docs.md)
+- [`global-average-pooling.cc_docs.md`](./global-average-pooling.cc_docs.md)
+- [`channel-shuffle-operator-tester.h_docs.md`](./channel-shuffle-operator-tester.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `sconv.cc_docs.md`
+- **Keyword Index**: `sconv.cc_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native/quantized/cpu/qnnpack/test`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native/quantized/cpu/qnnpack/test`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/aten/src/ATen/native/quantized/cpu/qnnpack/test/sconv.cc_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native/quantized/cpu/qnnpack/test`):
+
+- [`leaky-relu.cc_kw.md_docs.md`](./leaky-relu.cc_kw.md_docs.md)
+- [`sgemm.cc_kw.md_docs.md`](./sgemm.cc_kw.md_docs.md)
+- [`softargmax-operator-tester.h_kw.md_docs.md`](./softargmax-operator-tester.h_kw.md_docs.md)
+- [`maxpool-microkernel-tester.h_kw.md_docs.md`](./maxpool-microkernel-tester.h_kw.md_docs.md)
+- [`rmax-microkernel-tester.h_kw.md_docs.md`](./rmax-microkernel-tester.h_kw.md_docs.md)
+- [`add-operator-tester.h_kw.md_docs.md`](./add-operator-tester.h_kw.md_docs.md)
+- [`tanh-operator-tester.h_docs.md_docs.md`](./tanh-operator-tester.h_docs.md_docs.md)
+- [`channel-shuffle.cc_docs.md_docs.md`](./channel-shuffle.cc_docs.md_docs.md)
+- [`q8vadd.cc_kw.md_docs.md`](./q8vadd.cc_kw.md_docs.md)
+- [`global-average-pooling.cc_docs.md_docs.md`](./global-average-pooling.cc_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `sconv.cc_docs.md_docs.md`
+- **Keyword Index**: `sconv.cc_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

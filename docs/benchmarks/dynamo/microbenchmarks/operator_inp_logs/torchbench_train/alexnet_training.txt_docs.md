@@ -1,0 +1,169 @@
+# Documentation: `benchmarks/dynamo/microbenchmarks/operator_inp_logs/torchbench_train/alexnet_training.txt`
+
+## File Metadata
+
+- **Path**: `benchmarks/dynamo/microbenchmarks/operator_inp_logs/torchbench_train/alexnet_training.txt`
+- **Size**: 4,242 bytes (4.14 KB)
+- **Type**: Source File (.txt)
+- **Extension**: `.txt`
+
+## File Purpose
+
+This file contains **examples or benchmarks**.
+
+## Original Source
+
+```
+Operator: aten._adaptive_avg_pool2d.default
+cnt: 1, ((T([128, 256, 6, 6], f16), [6, 6]), {})
+Operator: aten._adaptive_avg_pool2d_backward.default
+cnt: 1, ((T([128, 256, 6, 6], f16), T([128, 256, 6, 6], f16)), {})
+Operator: aten.addmm.default
+cnt: 1, ((T([4096], f16), T([128, 9216], f16), T([9216, 4096], f16, stride=(1, 9216))), {})
+cnt: 1, ((T([4096], f16), T([128, 4096], f16), T([4096, 4096], f16, stride=(1, 4096))), {})
+cnt: 1, ((T([1000], f16), T([128, 4096], f16), T([4096, 1000], f16, stride=(1, 4096))), {})
+Operator: aten.clone.default
+cnt: 1, ((T([128, 3, 224, 224], f16),), {})
+Operator: aten.convolution.default
+cnt: 1, ((T([128, 3, 224, 224], f16), T([64, 3, 11, 11], f16), T([64], f16), [4, 4], [2, 2], [1, 1], False, [0, 0], 1), {})
+cnt: 1, ((T([128, 64, 27, 27], f16), T([192, 64, 5, 5], f16), T([192], f16), [1, 1], [2, 2], [1, 1], False, [0, 0], 1), {})
+cnt: 1, ((T([128, 192, 13, 13], f16), T([384, 192, 3, 3], f16), T([384], f16), [1, 1], [1, 1], [1, 1], False, [0, 0], 1), {})
+cnt: 1, ((T([128, 384, 13, 13], f16), T([256, 384, 3, 3], f16), T([256], f16), [1, 1], [1, 1], [1, 1], False, [0, 0], 1), {})
+cnt: 1, ((T([128, 256, 13, 13], f16), T([256, 256, 3, 3], f16), T([256], f16), [1, 1], [1, 1], [1, 1], False, [0, 0], 1), {})
+Operator: aten.convolution_backward.default
+cnt: 1, ((T([128, 256, 13, 13], f16), T([128, 256, 13, 13], f16), T([256, 256, 3, 3], f16), [256], [1, 1], [1, 1], [1, 1], False, [0, 0], 1, [True, True, True]), {})
+cnt: 1, ((T([128, 256, 13, 13], f16), T([128, 384, 13, 13], f16), T([256, 384, 3, 3], f16), [256], [1, 1], [1, 1], [1, 1], False, [0, 0], 1, [True, True, True]), {})
+cnt: 1, ((T([128, 384, 13, 13], f16), T([128, 192, 13, 13], f16), T([384, 192, 3, 3], f16), [384], [1, 1], [1, 1], [1, 1], False, [0, 0], 1, [True, True, True]), {})
+cnt: 1, ((T([128, 192, 27, 27], f16), T([128, 64, 27, 27], f16), T([192, 64, 5, 5], f16), [192], [1, 1], [2, 2], [1, 1], False, [0, 0], 1, [True, True, True]), {})
+cnt: 1, ((T([128, 64, 55, 55], f16), T([128, 3, 224, 224], f16), T([64, 3, 11, 11], f16), [64], [4, 4], [2, 2], [1, 1], False, [0, 0], 1, [False, True, True]), {})
+Operator: aten.copy_.default
+cnt: 1, ((T([128, 3, 224, 224], f16), T([128, 3, 224, 224], f16)), {})
+Operator: aten.div.Tensor
+cnt: 2, ((T([], f16), 128000), {})
+Operator: aten.max_pool2d_with_indices.default
+cnt: 1, ((T([128, 64, 55, 55], f16), [3, 3], [2, 2]), {})
+cnt: 1, ((T([128, 192, 27, 27], f16), [3, 3], [2, 2]), {})
+cnt: 1, ((T([128, 256, 13, 13], f16), [3, 3], [2, 2]), {})
+Operator: aten.max_pool2d_with_indices_backward.default
+cnt: 1, ((T([128, 256, 6, 6], f16), T([128, 256, 13, 13], f16), [3, 3], [2, 2], [0, 0], [1, 1], False, T([128, 256, 6, 6], i64)), {})
+cnt: 1, ((T([128, 192, 13, 13], f16), T([128, 192, 27, 27], f16), [3, 3], [2, 2], [0, 0], [1, 1], False, T([128, 192, 13, 13], i64)), {})
+cnt: 1, ((T([128, 64, 27, 27], f16), T([128, 64, 55, 55], f16), [3, 3], [2, 2], [0, 0], [1, 1], False, T([128, 64, 27, 27], i64)), {})
+Operator: aten.mm.default
+cnt: 1, ((T([128, 1000], f16, stride=(0, 0)), T([1000, 4096], f16)), {})
+cnt: 1, ((T([1000, 128], f16, stride=(0, 0)), T([128, 4096], f16)), {})
+cnt: 1, ((T([128, 4096], f16), T([4096, 4096], f16)), {})
+cnt: 1, ((T([4096, 128], f16, stride=(1, 4096)), T([128, 4096], f16)), {})
+cnt: 1, ((T([128, 4096], f16), T([4096, 9216], f16)), {})
+cnt: 1, ((T([4096, 128], f16, stride=(1, 4096)), T([128, 9216], f16)), {})
+Operator: aten.relu_.default
+cnt: 1, ((T([128, 64, 55, 55], f16),), {})
+cnt: 1, ((T([128, 192, 27, 27], f16),), {})
+cnt: 1, ((T([128, 384, 13, 13], f16),), {})
+cnt: 2, ((T([128, 256, 13, 13], f16),), {})
+cnt: 2, ((T([128, 4096], f16),), {})
+Operator: aten.sum.SymInt
+cnt: 1, ((T([128, 1000], f16, stride=(0, 0)), [0], True), {})
+cnt: 2, ((T([128, 4096], f16), [0], True), {})
+Operator: aten.sum.default
+cnt: 1, ((T([128, 1000], f16),), {})
+Operator: aten.threshold_backward.default
+cnt: 2, ((T([128, 4096], f16), T([128, 4096], f16), 0), {})
+cnt: 2, ((T([128, 256, 13, 13], f16), T([128, 256, 13, 13], f16), 0), {})
+cnt: 1, ((T([128, 384, 13, 13], f16), T([128, 384, 13, 13], f16), 0), {})
+cnt: 1, ((T([128, 192, 27, 27], f16), T([128, 192, 27, 27], f16), 0), {})
+cnt: 1, ((T([128, 64, 55, 55], f16), T([128, 64, 55, 55], f16), 0), {})
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `benchmarks/dynamo/microbenchmarks/operator_inp_logs/torchbench_train`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `benchmarks/dynamo/microbenchmarks/operator_inp_logs/torchbench_train`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`benchmarks/dynamo/microbenchmarks/operator_inp_logs/torchbench_train`):
+
+- [`yolov3_training.txt_docs.md`](./yolov3_training.txt_docs.md)
+- [`pytorch_stargan_training.txt_docs.md`](./pytorch_stargan_training.txt_docs.md)
+- [`tts_angular_training.txt_docs.md`](./tts_angular_training.txt_docs.md)
+- [`squeezenet1_1_training.txt_docs.md`](./squeezenet1_1_training.txt_docs.md)
+- [`attention_is_all_you_need_pytorch_training.txt_docs.md`](./attention_is_all_you_need_pytorch_training.txt_docs.md)
+- [`timm_regnet_training.txt_docs.md`](./timm_regnet_training.txt_docs.md)
+- [`dcgan_training.txt_docs.md`](./dcgan_training.txt_docs.md)
+- [`pytorch_struct_training.txt_docs.md`](./pytorch_struct_training.txt_docs.md)
+- [`Background_Matting_training.txt_docs.md`](./Background_Matting_training.txt_docs.md)
+- [`fambench_dlrm_training.txt_docs.md`](./fambench_dlrm_training.txt_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `alexnet_training.txt_docs.md`
+- **Keyword Index**: `alexnet_training.txt_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

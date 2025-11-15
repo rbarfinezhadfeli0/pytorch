@@ -1,0 +1,83 @@
+# Keyword Index: `docs/aten/src/ATen/native/metal/mpscnn/MPSCNNUtils.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/native/metal/mpscnn/MPSCNNUtils.h_kw.md](../../../../../../../../docs/aten/src/ATen/native/metal/mpscnn/MPSCNNUtils.h_kw.md)
+- **Documentation**: [`MPSCNNUtils.h_kw.md_docs.md`](./MPSCNNUtils.h_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/native/metal/mpscnn`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Analysis`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Architecture`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Basic`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`C10_LIKELY`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Class`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Complete`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Considerations`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Dependencies`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Design`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Detailed`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Documentation`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Efficiency`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Extracted`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`File`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Folder`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Functions`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Generated`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`High`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`How`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`In`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Includes`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Index`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Information`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Keyword`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Keywords`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`LaunchParams`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Level`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`MPSCNNUtils`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Map`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Metadata`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Namespaces`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Original`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Overview`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Performance`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Purpose`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`PyTorch`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Related`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Repository`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Safety`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Section`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Security`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Source`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Structs`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`System`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Testing`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`The`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`This`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+- **`Usage`**: [MPSCNNUtils.h_kw.md_docs.md](./MPSCNNUtils.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

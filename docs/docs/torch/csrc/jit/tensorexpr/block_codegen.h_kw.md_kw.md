@@ -1,0 +1,83 @@
+# Keyword Index: `docs/torch/csrc/jit/tensorexpr/block_codegen.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/csrc/jit/tensorexpr/block_codegen.h_kw.md](../../../../../../docs/torch/csrc/jit/tensorexpr/block_codegen.h_kw.md)
+- **Documentation**: [`block_codegen.h_kw.md_docs.md`](./block_codegen.h_kw.md_docs.md)
+- **Folder**: `docs/torch/csrc/jit/tensorexpr`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Analysis`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Architecture`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Basic`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`BlockAnalysis`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`BlockPrinter`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Class`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Complete`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Considerations`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Dependencies`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Design`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Detailed`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Documentation`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Efficiency`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Extracted`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`File`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Folder`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Functions`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Generated`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`High`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`How`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`In`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Includes`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Index`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Information`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Keyword`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Keywords`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Level`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Map`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Metadata`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Namespaces`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Original`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Overview`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Performance`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Purpose`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`PyTorch`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Related`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Repository`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Safety`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Section`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Security`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Source`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Structs`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`System`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`TORCH_API`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Testing`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`The`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`This`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+- **`Usage`**: [block_codegen.h_kw.md_docs.md](./block_codegen.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

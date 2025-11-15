@@ -1,0 +1,198 @@
+# Documentation: `docs/test/inductor/test_minifier.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/test/inductor/test_minifier.py_kw.md`
+- **Size**: 4,589 bytes (4.48 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `test/inductor/test_minifier.py`
+
+## File Information
+
+- **Original File**: [test/inductor/test_minifier.py](../../../test/inductor/test_minifier.py)
+- **Documentation**: [`test_minifier.py_docs.md`](./test_minifier.py_docs.md)
+- **Folder**: `test/inductor`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`MinifierTests`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`Model`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`Repro`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+
+### Functions
+
+- **`__init__`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`_aoti_check_relu_repro`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`_test_after_aot`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`_test_aoti`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`_test_aoti_unflattened_inputs`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`forward`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`inner`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`test_accuracy_vs_strict_accuracy`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`test_after_aot_cpu_accuracy_error`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`test_after_aot_cpu_compile_error`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`test_after_aot_gpu_accuracy_error`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`test_after_aot_gpu_compile_error`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`test_aoti_cpu_accuracy_error`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`test_aoti_cpu_compile_error`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`test_aoti_cpu_compile_error_unflatten`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`test_aoti_gpu_accuracy_error`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`test_aoti_gpu_compile_error`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`test_aoti_gpu_compile_error_unflatten`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`test_constant_in_graph`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`test_offload_to_disk`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`test_rmse_improves_over_atol`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+
+### Imports
+
+- **`GPU_TYPE`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`MinifierTestBase`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`config`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`load`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`patch`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`requires_gpu`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`run_tests`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`torch._dynamo.config`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`torch._dynamo.test_case`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`torch._dynamo.test_minifier_common`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`torch._inductor`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`torch._inductor.config`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`torch.export`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`torch.testing._internal.inductor_utils`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`torch.testing._internal.triton_utils`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`unittest`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+- **`unittest.mock`**: [test_minifier.py_docs.md](./test_minifier.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/inductor`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/inductor`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/inductor/test_minifier.py_kw.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/inductor`):
+
+- [`test_snode_runtime.py_kw.md_docs.md`](./test_snode_runtime.py_kw.md_docs.md)
+- [`test_metrics.py_docs.md_docs.md`](./test_metrics.py_docs.md_docs.md)
+- [`test_flex_attention.py_kw.md_docs.md`](./test_flex_attention.py_kw.md_docs.md)
+- [`test_cuda_repro.py_kw.md_docs.md`](./test_cuda_repro.py_kw.md_docs.md)
+- [`test_fxir_backend.py_kw.md_docs.md`](./test_fxir_backend.py_kw.md_docs.md)
+- [`test_split_cat_fx_passes.py_kw.md_docs.md`](./test_split_cat_fx_passes.py_kw.md_docs.md)
+- [`test_mmdecomp.py_kw.md_docs.md`](./test_mmdecomp.py_kw.md_docs.md)
+- [`test_torchinductor_codegen_config_overrides.py_kw.md_docs.md`](./test_torchinductor_codegen_config_overrides.py_kw.md_docs.md)
+- [`test_aot_inductor_custom_ops.py_kw.md_docs.md`](./test_aot_inductor_custom_ops.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_minifier.py_kw.md_docs.md`
+- **Keyword Index**: `test_minifier.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,83 @@
+# Keyword Index: `docs/torch/csrc/lazy/backend/lowering_context.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/csrc/lazy/backend/lowering_context.h_kw.md](../../../../../../docs/torch/csrc/lazy/backend/lowering_context.h_kw.md)
+- **Documentation**: [`lowering_context.h_kw.md_docs.md`](./lowering_context.h_kw.md_docs.md)
+- **Folder**: `docs/torch/csrc/lazy/backend`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Architecture`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Basic`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`CheckResultShape`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Class`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Complete`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Considerations`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Dependencies`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Design`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Detailed`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Documentation`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Efficiency`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Extracted`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`File`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Folder`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Functions`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Generated`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`GetEmittedNodeCount`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`High`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`How`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`In`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Includes`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Index`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Information`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Keyword`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Keywords`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Level`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Map`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Metadata`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Namespaces`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Original`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Overview`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Performance`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Purpose`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`PyTorch`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Related`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Repository`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Safety`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Section`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Security`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`SetUpAlias`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Source`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Structs`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`System`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`TORCH_API`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Testing`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`The`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`This`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+- **`Usage`**: [lowering_context.h_kw.md_docs.md](./lowering_context.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

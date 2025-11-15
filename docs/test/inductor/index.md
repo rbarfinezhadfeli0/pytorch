@@ -1,0 +1,178 @@
+# Index: `test/inductor/`
+
+## Overview
+
+This folder contains source code, configurations, or documentation for the PyTorch project.
+
+**Location**: `test/inductor/`
+
+## Subfolders
+
+- [`cpp/`](./cpp/index.md) - cpp module
+- [`extension_backends/`](./extension_backends/index.md) - extension_backends module
+
+## Files
+
+| File | Description | Documentation | Keywords |
+|------|-------------|---------------|----------|
+| [`CMakeLists.txt`](../../../test/inductor/CMakeLists.txt) | Source code | [docs](./CMakeLists.txt_docs.md) | [keywords](./CMakeLists.txt_kw.md) |
+| [`__init__.py`](../../../test/inductor/__init__.py) | Package initialization | [docs](./__init__.py_docs.md) | [keywords](./__init__.py_kw.md) |
+| [`custom_inductor_config.py`](../../../test/inductor/custom_inductor_config.py) | Source code | [docs](./custom_inductor_config.py_docs.md) | [keywords](./custom_inductor_config.py_kw.md) |
+| [`custom_ops.cpp`](../../../test/inductor/custom_ops.cpp) | Source code | [docs](./custom_ops.cpp_docs.md) | [keywords](./custom_ops.cpp_kw.md) |
+| [`indirect_assert_helper.py`](../../../test/inductor/indirect_assert_helper.py) | Source code | [docs](./indirect_assert_helper.py_docs.md) | [keywords](./indirect_assert_helper.py_kw.md) |
+| [`minifier_smoke.py`](../../../test/inductor/minifier_smoke.py) | Source code | [docs](./minifier_smoke.py_docs.md) | [keywords](./minifier_smoke.py_kw.md) |
+| [`opinfo_harness.py`](../../../test/inductor/opinfo_harness.py) | Source code | [docs](./opinfo_harness.py_docs.md) | [keywords](./opinfo_harness.py_kw.md) |
+| [`s429861_repro.py`](../../../test/inductor/s429861_repro.py) | Source code | [docs](./s429861_repro.py_docs.md) | [keywords](./s429861_repro.py_kw.md) |
+| [`test_alignment.py`](../../../test/inductor/test_alignment.py) | Test file | [docs](./test_alignment.py_docs.md) | [keywords](./test_alignment.py_kw.md) |
+| [`test_analysis.py`](../../../test/inductor/test_analysis.py) | Test file | [docs](./test_analysis.py_docs.md) | [keywords](./test_analysis.py_kw.md) |
+| [`test_aot_inductor.py`](../../../test/inductor/test_aot_inductor.py) | Test file | [docs](./test_aot_inductor.py_docs.md) | [keywords](./test_aot_inductor.py_kw.md) |
+| [`test_aot_inductor_arrayref.py`](../../../test/inductor/test_aot_inductor_arrayref.py) | Test file | [docs](./test_aot_inductor_arrayref.py_docs.md) | [keywords](./test_aot_inductor_arrayref.py_kw.md) |
+| [`test_aot_inductor_custom_ops.py`](../../../test/inductor/test_aot_inductor_custom_ops.py) | Test file | [docs](./test_aot_inductor_custom_ops.py_docs.md) | [keywords](./test_aot_inductor_custom_ops.py_kw.md) |
+| [`test_aot_inductor_package.py`](../../../test/inductor/test_aot_inductor_package.py) | Test file | [docs](./test_aot_inductor_package.py_docs.md) | [keywords](./test_aot_inductor_package.py_kw.md) |
+| [`test_aot_inductor_utils.py`](../../../test/inductor/test_aot_inductor_utils.py) | Test file | [docs](./test_aot_inductor_utils.py_docs.md) | [keywords](./test_aot_inductor_utils.py_kw.md) |
+| [`test_aoti_cross_compile_windows.py`](../../../test/inductor/test_aoti_cross_compile_windows.py) | Test file | [docs](./test_aoti_cross_compile_windows.py_docs.md) | [keywords](./test_aoti_cross_compile_windows.py_kw.md) |
+| [`test_async_compile.py`](../../../test/inductor/test_async_compile.py) | Test file | [docs](./test_async_compile.py_docs.md) | [keywords](./test_async_compile.py_kw.md) |
+| [`test_augmented_graph_helper.py`](../../../test/inductor/test_augmented_graph_helper.py) | Test file | [docs](./test_augmented_graph_helper.py_docs.md) | [keywords](./test_augmented_graph_helper.py_kw.md) |
+| [`test_auto_functionalize.py`](../../../test/inductor/test_auto_functionalize.py) | Test file | [docs](./test_auto_functionalize.py_docs.md) | [keywords](./test_auto_functionalize.py_kw.md) |
+| [`test_autoheuristic.py`](../../../test/inductor/test_autoheuristic.py) | Test file | [docs](./test_autoheuristic.py_docs.md) | [keywords](./test_autoheuristic.py_kw.md) |
+| [`test_b2b_gemm.py`](../../../test/inductor/test_b2b_gemm.py) | Test file | [docs](./test_b2b_gemm.py_docs.md) | [keywords](./test_b2b_gemm.py_kw.md) |
+| [`test_benchmark_fusion.py`](../../../test/inductor/test_benchmark_fusion.py) | Test file | [docs](./test_benchmark_fusion.py_docs.md) | [keywords](./test_benchmark_fusion.py_kw.md) |
+| [`test_benchmarking.py`](../../../test/inductor/test_benchmarking.py) | Test file | [docs](./test_benchmarking.py_docs.md) | [keywords](./test_benchmarking.py_kw.md) |
+| [`test_best_config.py`](../../../test/inductor/test_best_config.py) | Test file | [docs](./test_best_config.py_docs.md) | [keywords](./test_best_config.py_kw.md) |
+| [`test_binary_folding.py`](../../../test/inductor/test_binary_folding.py) | Test file | [docs](./test_binary_folding.py_docs.md) | [keywords](./test_binary_folding.py_kw.md) |
+| [`test_block_analysis.py`](../../../test/inductor/test_block_analysis.py) | Test file | [docs](./test_block_analysis.py_docs.md) | [keywords](./test_block_analysis.py_kw.md) |
+| [`test_cache.py`](../../../test/inductor/test_cache.py) | Test file | [docs](./test_cache.py_docs.md) | [keywords](./test_cache.py_kw.md) |
+| [`test_caching.py`](../../../test/inductor/test_caching.py) | Test file | [docs](./test_caching.py_docs.md) | [keywords](./test_caching.py_kw.md) |
+| [`test_ck_backend.py`](../../../test/inductor/test_ck_backend.py) | Test file | [docs](./test_ck_backend.py_docs.md) | [keywords](./test_ck_backend.py_kw.md) |
+| [`test_codecache.py`](../../../test/inductor/test_codecache.py) | Test file | [docs](./test_codecache.py_docs.md) | [keywords](./test_codecache.py_kw.md) |
+| [`test_codegen_triton.py`](../../../test/inductor/test_codegen_triton.py) | Test file | [docs](./test_codegen_triton.py_docs.md) | [keywords](./test_codegen_triton.py_kw.md) |
+| [`test_combo_kernels.py`](../../../test/inductor/test_combo_kernels.py) | Test file | [docs](./test_combo_kernels.py_docs.md) | [keywords](./test_combo_kernels.py_kw.md) |
+| [`test_compile.py`](../../../test/inductor/test_compile.py) | Test file | [docs](./test_compile.py_docs.md) | [keywords](./test_compile.py_kw.md) |
+| [`test_compile_subprocess.py`](../../../test/inductor/test_compile_subprocess.py) | Test file | [docs](./test_compile_subprocess.py_docs.md) | [keywords](./test_compile_subprocess.py_kw.md) |
+| [`test_compile_worker.py`](../../../test/inductor/test_compile_worker.py) | Test file | [docs](./test_compile_worker.py_docs.md) | [keywords](./test_compile_worker.py_kw.md) |
+| [`test_compiled_autograd.py`](../../../test/inductor/test_compiled_autograd.py) | Test file | [docs](./test_compiled_autograd.py_docs.md) | [keywords](./test_compiled_autograd.py_kw.md) |
+| [`test_compiled_optimizers.py`](../../../test/inductor/test_compiled_optimizers.py) | Test file | [docs](./test_compiled_optimizers.py_docs.md) | [keywords](./test_compiled_optimizers.py_kw.md) |
+| [`test_config.py`](../../../test/inductor/test_config.py) | Test file | [docs](./test_config.py_docs.md) | [keywords](./test_config.py_kw.md) |
+| [`test_control_deps.py`](../../../test/inductor/test_control_deps.py) | Test file | [docs](./test_control_deps.py_docs.md) | [keywords](./test_control_deps.py_kw.md) |
+| [`test_control_flow.py`](../../../test/inductor/test_control_flow.py) | Test file | [docs](./test_control_flow.py_docs.md) | [keywords](./test_control_flow.py_kw.md) |
+| [`test_cooperative_reductions.py`](../../../test/inductor/test_cooperative_reductions.py) | Test file | [docs](./test_cooperative_reductions.py_docs.md) | [keywords](./test_cooperative_reductions.py_kw.md) |
+| [`test_coordinate_descent_tuner.py`](../../../test/inductor/test_coordinate_descent_tuner.py) | Test file | [docs](./test_coordinate_descent_tuner.py_docs.md) | [keywords](./test_coordinate_descent_tuner.py_kw.md) |
+| [`test_cpp_wrapper_hipify.py`](../../../test/inductor/test_cpp_wrapper_hipify.py) | Test file | [docs](./test_cpp_wrapper_hipify.py_docs.md) | [keywords](./test_cpp_wrapper_hipify.py_kw.md) |
+| [`test_cpu_cpp_wrapper.py`](../../../test/inductor/test_cpu_cpp_wrapper.py) | Test file | [docs](./test_cpu_cpp_wrapper.py_docs.md) | [keywords](./test_cpu_cpp_wrapper.py_kw.md) |
+| [`test_cpu_repro.py`](../../../test/inductor/test_cpu_repro.py) | Test file | [docs](./test_cpu_repro.py_docs.md) | [keywords](./test_cpu_repro.py_kw.md) |
+| [`test_cpu_select_algorithm.py`](../../../test/inductor/test_cpu_select_algorithm.py) | Test file | [docs](./test_cpu_select_algorithm.py_docs.md) | [keywords](./test_cpu_select_algorithm.py_kw.md) |
+| [`test_cuda_repro.py`](../../../test/inductor/test_cuda_repro.py) | Test file | [docs](./test_cuda_repro.py_docs.md) | [keywords](./test_cuda_repro.py_kw.md) |
+| [`test_cuda_select_algorithm.py`](../../../test/inductor/test_cuda_select_algorithm.py) | Test file | [docs](./test_cuda_select_algorithm.py_docs.md) | [keywords](./test_cuda_select_algorithm.py_kw.md) |
+| [`test_cudacodecache.py`](../../../test/inductor/test_cudacodecache.py) | Test file | [docs](./test_cudacodecache.py_docs.md) | [keywords](./test_cudacodecache.py_kw.md) |
+| [`test_cudagraph_trees.py`](../../../test/inductor/test_cudagraph_trees.py) | Test file | [docs](./test_cudagraph_trees.py_docs.md) | [keywords](./test_cudagraph_trees.py_kw.md) |
+| [`test_cudagraph_trees_expandable_segments.py`](../../../test/inductor/test_cudagraph_trees_expandable_segments.py) | Test file | [docs](./test_cudagraph_trees_expandable_segments.py_docs.md) | [keywords](./test_cudagraph_trees_expandable_segments.py_kw.md) |
+| [`test_custom_lowering.py`](../../../test/inductor/test_custom_lowering.py) | Test file | [docs](./test_custom_lowering.py_docs.md) | [keywords](./test_custom_lowering.py_kw.md) |
+| [`test_custom_op_autotune.py`](../../../test/inductor/test_custom_op_autotune.py) | Test file | [docs](./test_custom_op_autotune.py_docs.md) | [keywords](./test_custom_op_autotune.py_kw.md) |
+| [`test_custom_partitioner_fn.py`](../../../test/inductor/test_custom_partitioner_fn.py) | Test file | [docs](./test_custom_partitioner_fn.py_docs.md) | [keywords](./test_custom_partitioner_fn.py_kw.md) |
+| [`test_custom_post_grad_passes.py`](../../../test/inductor/test_custom_post_grad_passes.py) | Test file | [docs](./test_custom_post_grad_passes.py_docs.md) | [keywords](./test_custom_post_grad_passes.py_kw.md) |
+| [`test_cutedsl_grouped_mm.py`](../../../test/inductor/test_cutedsl_grouped_mm.py) | Test file | [docs](./test_cutedsl_grouped_mm.py_docs.md) | [keywords](./test_cutedsl_grouped_mm.py_kw.md) |
+| [`test_cutedsl_template.py`](../../../test/inductor/test_cutedsl_template.py) | Test file | [docs](./test_cutedsl_template.py_docs.md) | [keywords](./test_cutedsl_template.py_kw.md) |
+| [`test_cutlass_backend.py`](../../../test/inductor/test_cutlass_backend.py) | Test file | [docs](./test_cutlass_backend.py_docs.md) | [keywords](./test_cutlass_backend.py_kw.md) |
+| [`test_cutlass_evt.py`](../../../test/inductor/test_cutlass_evt.py) | Test file | [docs](./test_cutlass_evt.py_docs.md) | [keywords](./test_cutlass_evt.py_kw.md) |
+| [`test_debug_trace.py`](../../../test/inductor/test_debug_trace.py) | Test file | [docs](./test_debug_trace.py_docs.md) | [keywords](./test_debug_trace.py_kw.md) |
+| [`test_decompose_mem_bound_mm.py`](../../../test/inductor/test_decompose_mem_bound_mm.py) | Test file | [docs](./test_decompose_mem_bound_mm.py_docs.md) | [keywords](./test_decompose_mem_bound_mm.py_kw.md) |
+| [`test_dependencies.py`](../../../test/inductor/test_dependencies.py) | Test file | [docs](./test_dependencies.py_docs.md) | [keywords](./test_dependencies.py_kw.md) |
+| [`test_deterministic.py`](../../../test/inductor/test_deterministic.py) | Test file | [docs](./test_deterministic.py_docs.md) | [keywords](./test_deterministic.py_kw.md) |
+| [`test_device_assert.py`](../../../test/inductor/test_device_assert.py) | Test file | [docs](./test_device_assert.py_docs.md) | [keywords](./test_device_assert.py_kw.md) |
+| [`test_distributed_patterns.py`](../../../test/inductor/test_distributed_patterns.py) | Test file | [docs](./test_distributed_patterns.py_docs.md) | [keywords](./test_distributed_patterns.py_kw.md) |
+| [`test_efficient_conv_bn_eval.py`](../../../test/inductor/test_efficient_conv_bn_eval.py) | Test file | [docs](./test_efficient_conv_bn_eval.py_docs.md) | [keywords](./test_efficient_conv_bn_eval.py_kw.md) |
+| [`test_extension_backend.py`](../../../test/inductor/test_extension_backend.py) | Test file | [docs](./test_extension_backend.py_docs.md) | [keywords](./test_extension_backend.py_kw.md) |
+| [`test_external_callables.py`](../../../test/inductor/test_external_callables.py) | Test file | [docs](./test_external_callables.py_docs.md) | [keywords](./test_external_callables.py_kw.md) |
+| [`test_flex_attention.py`](../../../test/inductor/test_flex_attention.py) | Test file | [docs](./test_flex_attention.py_docs.md) | [keywords](./test_flex_attention.py_kw.md) |
+| [`test_flex_decoding.py`](../../../test/inductor/test_flex_decoding.py) | Test file | [docs](./test_flex_decoding.py_docs.md) | [keywords](./test_flex_decoding.py_kw.md) |
+| [`test_flex_flash.py`](../../../test/inductor/test_flex_flash.py) | Test file | [docs](./test_flex_flash.py_docs.md) | [keywords](./test_flex_flash.py_kw.md) |
+| [`test_foreach.py`](../../../test/inductor/test_foreach.py) | Test file | [docs](./test_foreach.py_docs.md) | [keywords](./test_foreach.py_kw.md) |
+| [`test_fp8.py`](../../../test/inductor/test_fp8.py) | Test file | [docs](./test_fp8.py_docs.md) | [keywords](./test_fp8.py_kw.md) |
+| [`test_fused_attention.py`](../../../test/inductor/test_fused_attention.py) | Test file | [docs](./test_fused_attention.py_docs.md) | [keywords](./test_fused_attention.py_kw.md) |
+| [`test_fuzzer.py`](../../../test/inductor/test_fuzzer.py) | Test file | [docs](./test_fuzzer.py_docs.md) | [keywords](./test_fuzzer.py_kw.md) |
+| [`test_fx_fusion.py`](../../../test/inductor/test_fx_fusion.py) | Test file | [docs](./test_fx_fusion.py_docs.md) | [keywords](./test_fx_fusion.py_kw.md) |
+| [`test_fxir_backend.py`](../../../test/inductor/test_fxir_backend.py) | Test file | [docs](./test_fxir_backend.py_docs.md) | [keywords](./test_fxir_backend.py_kw.md) |
+| [`test_gpu_cpp_wrapper.py`](../../../test/inductor/test_gpu_cpp_wrapper.py) | Test file | [docs](./test_gpu_cpp_wrapper.py_docs.md) | [keywords](./test_gpu_cpp_wrapper.py_kw.md) |
+| [`test_graph_transform_observer.py`](../../../test/inductor/test_graph_transform_observer.py) | Test file | [docs](./test_graph_transform_observer.py_docs.md) | [keywords](./test_graph_transform_observer.py_kw.md) |
+| [`test_group_batch_fusion.py`](../../../test/inductor/test_group_batch_fusion.py) | Test file | [docs](./test_group_batch_fusion.py_docs.md) | [keywords](./test_group_batch_fusion.py_kw.md) |
+| [`test_halide.py`](../../../test/inductor/test_halide.py) | Test file | [docs](./test_halide.py_docs.md) | [keywords](./test_halide.py_kw.md) |
+| [`test_helion_kernels.py`](../../../test/inductor/test_helion_kernels.py) | Test file | [docs](./test_helion_kernels.py_docs.md) | [keywords](./test_helion_kernels.py_kw.md) |
+| [`test_indexing.py`](../../../test/inductor/test_indexing.py) | Test file | [docs](./test_indexing.py_docs.md) | [keywords](./test_indexing.py_kw.md) |
+| [`test_inductor_annotations.py`](../../../test/inductor/test_inductor_annotations.py) | Test file | [docs](./test_inductor_annotations.py_docs.md) | [keywords](./test_inductor_annotations.py_kw.md) |
+| [`test_inductor_freezing.py`](../../../test/inductor/test_inductor_freezing.py) | Test file | [docs](./test_inductor_freezing.py_docs.md) | [keywords](./test_inductor_freezing.py_kw.md) |
+| [`test_inductor_scheduler.py`](../../../test/inductor/test_inductor_scheduler.py) | Test file | [docs](./test_inductor_scheduler.py_docs.md) | [keywords](./test_inductor_scheduler.py_kw.md) |
+| [`test_inductor_utils.py`](../../../test/inductor/test_inductor_utils.py) | Test file | [docs](./test_inductor_utils.py_docs.md) | [keywords](./test_inductor_utils.py_kw.md) |
+| [`test_inplace_padding.py`](../../../test/inductor/test_inplace_padding.py) | Test file | [docs](./test_inplace_padding.py_docs.md) | [keywords](./test_inplace_padding.py_kw.md) |
+| [`test_inplacing_pass.py`](../../../test/inductor/test_inplacing_pass.py) | Test file | [docs](./test_inplacing_pass.py_docs.md) | [keywords](./test_inplacing_pass.py_kw.md) |
+| [`test_kernel_benchmark.py`](../../../test/inductor/test_kernel_benchmark.py) | Test file | [docs](./test_kernel_benchmark.py_docs.md) | [keywords](./test_kernel_benchmark.py_kw.md) |
+| [`test_kernel_optimization.py`](../../../test/inductor/test_kernel_optimization.py) | Test file | [docs](./test_kernel_optimization.py_docs.md) | [keywords](./test_kernel_optimization.py_kw.md) |
+| [`test_layout_optim.py`](../../../test/inductor/test_layout_optim.py) | Test file | [docs](./test_layout_optim.py_docs.md) | [keywords](./test_layout_optim.py_kw.md) |
+| [`test_lookup_table.py`](../../../test/inductor/test_lookup_table.py) | Test file | [docs](./test_lookup_table.py_docs.md) | [keywords](./test_lookup_table.py_kw.md) |
+| [`test_loop_ordering.py`](../../../test/inductor/test_loop_ordering.py) | Test file | [docs](./test_loop_ordering.py_docs.md) | [keywords](./test_loop_ordering.py_kw.md) |
+| [`test_max_autotune.py`](../../../test/inductor/test_max_autotune.py) | Test file | [docs](./test_max_autotune.py_docs.md) | [keywords](./test_max_autotune.py_kw.md) |
+| [`test_mem_estimation.py`](../../../test/inductor/test_mem_estimation.py) | Test file | [docs](./test_mem_estimation.py_docs.md) | [keywords](./test_mem_estimation.py_kw.md) |
+| [`test_memory.py`](../../../test/inductor/test_memory.py) | Test file | [docs](./test_memory.py_docs.md) | [keywords](./test_memory.py_kw.md) |
+| [`test_memory_planning.py`](../../../test/inductor/test_memory_planning.py) | Test file | [docs](./test_memory_planning.py_docs.md) | [keywords](./test_memory_planning.py_kw.md) |
+| [`test_metrics.py`](../../../test/inductor/test_metrics.py) | Test file | [docs](./test_metrics.py_docs.md) | [keywords](./test_metrics.py_kw.md) |
+| [`test_minifier.py`](../../../test/inductor/test_minifier.py) | Test file | [docs](./test_minifier.py_docs.md) | [keywords](./test_minifier.py_kw.md) |
+| [`test_minifier_isolate.py`](../../../test/inductor/test_minifier_isolate.py) | Test file | [docs](./test_minifier_isolate.py_docs.md) | [keywords](./test_minifier_isolate.py_kw.md) |
+| [`test_minifier_utils.py`](../../../test/inductor/test_minifier_utils.py) | Test file | [docs](./test_minifier_utils.py_docs.md) | [keywords](./test_minifier_utils.py_kw.md) |
+| [`test_mix_order_reduction.py`](../../../test/inductor/test_mix_order_reduction.py) | Test file | [docs](./test_mix_order_reduction.py_docs.md) | [keywords](./test_mix_order_reduction.py_kw.md) |
+| [`test_mkldnn_pattern_matcher.py`](../../../test/inductor/test_mkldnn_pattern_matcher.py) | Test file | [docs](./test_mkldnn_pattern_matcher.py_docs.md) | [keywords](./test_mkldnn_pattern_matcher.py_kw.md) |
+| [`test_mmdecomp.py`](../../../test/inductor/test_mmdecomp.py) | Test file | [docs](./test_mmdecomp.py_docs.md) | [keywords](./test_mmdecomp.py_kw.md) |
+| [`test_move_constructors_to_cuda.py`](../../../test/inductor/test_move_constructors_to_cuda.py) | Test file | [docs](./test_move_constructors_to_cuda.py_docs.md) | [keywords](./test_move_constructors_to_cuda.py_kw.md) |
+| [`test_mps_basic.py`](../../../test/inductor/test_mps_basic.py) | Test file | [docs](./test_mps_basic.py_docs.md) | [keywords](./test_mps_basic.py_kw.md) |
+| [`test_multi_kernel.py`](../../../test/inductor/test_multi_kernel.py) | Test file | [docs](./test_multi_kernel.py_docs.md) | [keywords](./test_multi_kernel.py_kw.md) |
+| [`test_native_matmul.py`](../../../test/inductor/test_native_matmul.py) | Test file | [docs](./test_native_matmul.py_docs.md) | [keywords](./test_native_matmul.py_kw.md) |
+| [`test_needs_exact_strides.py`](../../../test/inductor/test_needs_exact_strides.py) | Test file | [docs](./test_needs_exact_strides.py_docs.md) | [keywords](./test_needs_exact_strides.py_kw.md) |
+| [`test_online_softmax.py`](../../../test/inductor/test_online_softmax.py) | Test file | [docs](./test_online_softmax.py_docs.md) | [keywords](./test_online_softmax.py_kw.md) |
+| [`test_op_completeness.py`](../../../test/inductor/test_op_completeness.py) | Test file | [docs](./test_op_completeness.py_docs.md) | [keywords](./test_op_completeness.py_kw.md) |
+| [`test_op_dtype_prop.py`](../../../test/inductor/test_op_dtype_prop.py) | Test file | [docs](./test_op_dtype_prop.py_docs.md) | [keywords](./test_op_dtype_prop.py_kw.md) |
+| [`test_ordered_set.py`](../../../test/inductor/test_ordered_set.py) | Test file | [docs](./test_ordered_set.py_docs.md) | [keywords](./test_ordered_set.py_kw.md) |
+| [`test_pad_mm.py`](../../../test/inductor/test_pad_mm.py) | Test file | [docs](./test_pad_mm.py_docs.md) | [keywords](./test_pad_mm.py_kw.md) |
+| [`test_padding.py`](../../../test/inductor/test_padding.py) | Test file | [docs](./test_padding.py_docs.md) | [keywords](./test_padding.py_kw.md) |
+| [`test_pallas.py`](../../../test/inductor/test_pallas.py) | Test file | [docs](./test_pallas.py_docs.md) | [keywords](./test_pallas.py_kw.md) |
+| [`test_pattern_matcher.py`](../../../test/inductor/test_pattern_matcher.py) | Test file | [docs](./test_pattern_matcher.py_docs.md) | [keywords](./test_pattern_matcher.py_kw.md) |
+| [`test_perf.py`](../../../test/inductor/test_perf.py) | Test file | [docs](./test_perf.py_docs.md) | [keywords](./test_perf.py_kw.md) |
+| [`test_profiler.py`](../../../test/inductor/test_profiler.py) | Test file | [docs](./test_profiler.py_docs.md) | [keywords](./test_profiler.py_kw.md) |
+| [`test_provenance_tracing.py`](../../../test/inductor/test_provenance_tracing.py) | Test file | [docs](./test_provenance_tracing.py_docs.md) | [keywords](./test_provenance_tracing.py_kw.md) |
+| [`test_quantization.py`](../../../test/inductor/test_quantization.py) | Test file | [docs](./test_quantization.py_docs.md) | [keywords](./test_quantization.py_kw.md) |
+| [`test_remote_cache.py`](../../../test/inductor/test_remote_cache.py) | Test file | [docs](./test_remote_cache.py_docs.md) | [keywords](./test_remote_cache.py_kw.md) |
+| [`test_scatter_optimization.py`](../../../test/inductor/test_scatter_optimization.py) | Test file | [docs](./test_scatter_optimization.py_docs.md) | [keywords](./test_scatter_optimization.py_kw.md) |
+| [`test_segmented_tree.py`](../../../test/inductor/test_segmented_tree.py) | Test file | [docs](./test_segmented_tree.py_docs.md) | [keywords](./test_segmented_tree.py_kw.md) |
+| [`test_select_algorithm.py`](../../../test/inductor/test_select_algorithm.py) | Test file | [docs](./test_select_algorithm.py_docs.md) | [keywords](./test_select_algorithm.py_kw.md) |
+| [`test_selective_lowering.py`](../../../test/inductor/test_selective_lowering.py) | Test file | [docs](./test_selective_lowering.py_docs.md) | [keywords](./test_selective_lowering.py_kw.md) |
+| [`test_smoke.py`](../../../test/inductor/test_smoke.py) | Test file | [docs](./test_smoke.py_docs.md) | [keywords](./test_smoke.py_kw.md) |
+| [`test_snode_runtime.py`](../../../test/inductor/test_snode_runtime.py) | Test file | [docs](./test_snode_runtime.py_docs.md) | [keywords](./test_snode_runtime.py_kw.md) |
+| [`test_split_cat_fx_aten_passes.py`](../../../test/inductor/test_split_cat_fx_aten_passes.py) | Test file | [docs](./test_split_cat_fx_aten_passes.py_docs.md) | [keywords](./test_split_cat_fx_aten_passes.py_kw.md) |
+| [`test_split_cat_fx_passes.py`](../../../test/inductor/test_split_cat_fx_passes.py) | Test file | [docs](./test_split_cat_fx_passes.py_docs.md) | [keywords](./test_split_cat_fx_passes.py_kw.md) |
+| [`test_static_cuda_launcher.py`](../../../test/inductor/test_static_cuda_launcher.py) | Test file | [docs](./test_static_cuda_launcher.py_docs.md) | [keywords](./test_static_cuda_launcher.py_kw.md) |
+| [`test_subgraph_choice.py`](../../../test/inductor/test_subgraph_choice.py) | Test file | [docs](./test_subgraph_choice.py_docs.md) | [keywords](./test_subgraph_choice.py_kw.md) |
+| [`test_template_heuristics_registry.py`](../../../test/inductor/test_template_heuristics_registry.py) | Test file | [docs](./test_template_heuristics_registry.py_docs.md) | [keywords](./test_template_heuristics_registry.py_kw.md) |
+| [`test_torchbind.py`](../../../test/inductor/test_torchbind.py) | Test file | [docs](./test_torchbind.py_docs.md) | [keywords](./test_torchbind.py_kw.md) |
+| [`test_torchinductor.py`](../../../test/inductor/test_torchinductor.py) | Test file | [docs](./test_torchinductor.py_docs.md) | [keywords](./test_torchinductor.py_kw.md) |
+| [`test_torchinductor_codegen_config_overrides.py`](../../../test/inductor/test_torchinductor_codegen_config_overrides.py) | Test file | [docs](./test_torchinductor_codegen_config_overrides.py_docs.md) | [keywords](./test_torchinductor_codegen_config_overrides.py_kw.md) |
+| [`test_torchinductor_codegen_dynamic_shapes.py`](../../../test/inductor/test_torchinductor_codegen_dynamic_shapes.py) | Test file | [docs](./test_torchinductor_codegen_dynamic_shapes.py_docs.md) | [keywords](./test_torchinductor_codegen_dynamic_shapes.py_kw.md) |
+| [`test_torchinductor_dynamic_shapes.py`](../../../test/inductor/test_torchinductor_dynamic_shapes.py) | Test file | [docs](./test_torchinductor_dynamic_shapes.py_docs.md) | [keywords](./test_torchinductor_dynamic_shapes.py_kw.md) |
+| [`test_torchinductor_opinfo.py`](../../../test/inductor/test_torchinductor_opinfo.py) | Test file | [docs](./test_torchinductor_opinfo.py_docs.md) | [keywords](./test_torchinductor_opinfo.py_kw.md) |
+| [`test_torchinductor_strided_blocks.py`](../../../test/inductor/test_torchinductor_strided_blocks.py) | Test file | [docs](./test_torchinductor_strided_blocks.py_docs.md) | [keywords](./test_torchinductor_strided_blocks.py_kw.md) |
+| [`test_triton_cpu_backend.py`](../../../test/inductor/test_triton_cpu_backend.py) | Test file | [docs](./test_triton_cpu_backend.py_docs.md) | [keywords](./test_triton_cpu_backend.py_kw.md) |
+| [`test_triton_extension_backend.py`](../../../test/inductor/test_triton_extension_backend.py) | Test file | [docs](./test_triton_extension_backend.py_docs.md) | [keywords](./test_triton_extension_backend.py_kw.md) |
+| [`test_triton_heuristics.py`](../../../test/inductor/test_triton_heuristics.py) | Test file | [docs](./test_triton_heuristics.py_docs.md) | [keywords](./test_triton_heuristics.py_kw.md) |
+| [`test_triton_kernels.py`](../../../test/inductor/test_triton_kernels.py) | Test file | [docs](./test_triton_kernels.py_docs.md) | [keywords](./test_triton_kernels.py_kw.md) |
+| [`test_triton_syntax.py`](../../../test/inductor/test_triton_syntax.py) | Test file | [docs](./test_triton_syntax.py_docs.md) | [keywords](./test_triton_syntax.py_kw.md) |
+| [`test_triton_wrapper.py`](../../../test/inductor/test_triton_wrapper.py) | Test file | [docs](./test_triton_wrapper.py_docs.md) | [keywords](./test_triton_wrapper.py_kw.md) |
+| [`test_unbacked_symints.py`](../../../test/inductor/test_unbacked_symints.py) | Test file | [docs](./test_unbacked_symints.py_docs.md) | [keywords](./test_unbacked_symints.py_kw.md) |
+| [`test_utils.py`](../../../test/inductor/test_utils.py) | Test file | [docs](./test_utils.py_docs.md) | [keywords](./test_utils.py_kw.md) |
+| [`test_xpu_basic.py`](../../../test/inductor/test_xpu_basic.py) | Test file | [docs](./test_xpu_basic.py_docs.md) | [keywords](./test_xpu_basic.py_kw.md) |
+
+
+## Navigation
+
+- **Parent Folder**: [..](../index.md)
+- **Folder Documentation**: [doc.md](./doc.md)
+- **Keyword Index**: [sub.md](./sub.md)
+
+---
+
+*Generated by PyTorch Repository Documentation System*

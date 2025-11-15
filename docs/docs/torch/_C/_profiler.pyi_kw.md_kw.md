@@ -1,0 +1,85 @@
+# Keyword Index: `docs/torch/_C/_profiler.pyi_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/_C/_profiler.pyi_kw.md](../../../../docs/torch/_C/_profiler.pyi_kw.md)
+- **Documentation**: [`_profiler.pyi_kw.md_docs.md`](./_profiler.pyi_kw.md_docs.md)
+- **Folder**: `docs/torch/_C`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ActiveProfilerType`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Analysis`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Architecture`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Basic`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`CapturedTraceback`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Classs`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Complete`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Considerations`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Dependencies`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Design`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Detailed`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Documentation`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Efficiency`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Enum`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Extracted`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`File`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Folder`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Functions`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Generated`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`High`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`How`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Imports`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`In`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Index`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Information`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Keyword`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Keywords`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Level`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Literal`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Map`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Metadata`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Original`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Overview`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Performance`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`ProfilerActivity`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`ProfilerConfig`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`ProfilerState`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Purpose`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`PyTorch`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`RecordScope`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Related`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Repository`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Safety`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Section`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Security`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Source`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`System`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Testing`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`The`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`This`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+- **`Usage`**: [_profiler.pyi_kw.md_docs.md](./_profiler.pyi_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

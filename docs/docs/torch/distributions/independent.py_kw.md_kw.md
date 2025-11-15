@@ -1,0 +1,83 @@
+# Keyword Index: `docs/torch/distributions/independent.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/distributions/independent.py_kw.md](../../../../docs/torch/distributions/independent.py_kw.md)
+- **Documentation**: [`independent.py_kw.md_docs.md`](./independent.py_kw.md_docs.md)
+- **Folder**: `docs/torch/distributions`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Architecture`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Basic`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Classs`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Complete`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Considerations`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Dependencies`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Design`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Detailed`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Distribution`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Documentation`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Efficiency`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Extracted`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`File`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Folder`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Functions`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Generated`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Generic`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`High`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`How`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Imports`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`In`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Independent`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Index`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Information`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Keyword`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Keywords`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Level`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Map`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Metadata`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`MultivariateNormal`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Normal`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Original`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Overview`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Performance`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Purpose`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`PyTorch`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Related`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Repository`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Safety`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Section`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Security`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Size`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Source`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`System`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Testing`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`The`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`This`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+- **`Usage`**: [independent.py_kw.md_docs.md](./independent.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

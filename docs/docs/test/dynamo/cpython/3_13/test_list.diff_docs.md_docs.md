@@ -1,0 +1,501 @@
+# Documentation: `docs/test/dynamo/cpython/3_13/test_list.diff_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/dynamo/cpython/3_13/test_list.diff_docs.md`
+- **Size**: 11,495 bytes (11.23 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/dynamo/cpython/3_13/test_list.diff`
+
+## File Metadata
+
+- **Path**: `test/dynamo/cpython/3_13/test_list.diff`
+- **Size**: 9,003 bytes (8.79 KB)
+- **Type**: Source File (.diff)
+- **Extension**: `.diff`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**.
+
+## Original Source
+
+```
+diff --git a/test/dynamo/cpython/3_13/test_list.py b/test/dynamo/cpython/3_13/test_list.py
+index 23ef902aa0b..b9afb1ef26e 100644
+--- a/test/dynamo/cpython/3_13/test_list.py
++++ b/test/dynamo/cpython/3_13/test_list.py
+@@ -1,6 +1,60 @@
++# ======= BEGIN Dynamo patch =======
++# Owner(s): ["module: dynamo"]
++
++# ruff: noqa
++# flake8: noqa
++
++# Test copied from
++# https://raw.githubusercontent.com/python/cpython/refs/tags/v3.13.5/Lib/test/test_list.py
++
++import sys
++import torch
++import torch._dynamo.test_case
++import unittest
++from torch._dynamo.test_case import CPythonTestCase
++from torch.testing._internal.common_utils import run_tests
++
++__TestCase = CPythonTestCase
++
++
++# redirect import statements
++import sys
++import importlib.abc
++
++redirect_imports = (
++    "test.mapping_tests",
++    "test.typinganndata",
++    "test.test_grammar",
++    "test.test_math",
++    "test.test_iter",
++    "test.typinganndata.ann_module",
++)
++
++class RedirectImportFinder(importlib.abc.MetaPathFinder):
++    def find_spec(self, fullname, path, target=None):
++        # Check if the import is the problematic one
++        if fullname in redirect_imports:
++            try:
++                # Attempt to import the standalone module
++                name = fullname.removeprefix("test.")
++                r = importlib.import_module(name)
++                # Redirect the module in sys.modules
++                sys.modules[fullname] = r
++                # Return a module spec from the found module
++                return importlib.util.find_spec(name)
++            except ImportError:
++                return None
++        return None
++
++# Add the custom finder to sys.meta_path
++sys.meta_path.insert(0, RedirectImportFinder())
++
++
++# ======= END DYNAMO PATCH =======
++
+ import sys
+ import textwrap
+-from test import list_tests
++import list_tests
+ from test.support import cpython_only
+ from test.support.script_helper import assert_python_ok
+ import pickle
+@@ -36,7 +90,7 @@ class ListTest(list_tests.CommonTest):
+             # earlier due to a newlib bug.  See the following mailing list
+             # thread for the details:
+
+             self.assertRaises(MemoryError, list, range(sys.maxsize // 2))
+
+         # This code used to segfault in Py2.4a3
+@@ -49,28 +103,31 @@ class ListTest(list_tests.CommonTest):
+             list(sequence=[])
+
+     def test_keywords_in_subclass(self):
+-        class subclass(list):
+-            pass
++        with torch._dynamo.error_on_graph_break(False):
++            class subclass(list):
++                pass
+         u = subclass([1, 2])
+         self.assertIs(type(u), subclass)
+         self.assertEqual(list(u), [1, 2])
+         with self.assertRaises(TypeError):
+             subclass(sequence=())
+
+-        class subclass_with_init(list):
+-            def __init__(self, seq, newarg=None):
+-                super().__init__(seq)
+-                self.newarg = newarg
++        with torch._dynamo.error_on_graph_break(False):
++            class subclass_with_init(list):
++                def __init__(self, seq, newarg=None):
++                    super().__init__(seq)
++                    self.newarg = newarg
+         u = subclass_with_init([1, 2], newarg=3)
+         self.assertIs(type(u), subclass_with_init)
+         self.assertEqual(list(u), [1, 2])
+         self.assertEqual(u.newarg, 3)
+
+-        class subclass_with_new(list):
+-            def __new__(cls, seq, newarg=None):
+-                self = super().__new__(cls, seq)
+-                self.newarg = newarg
+-                return self
++        with torch._dynamo.error_on_graph_break(False):
++            class subclass_with_new(list):
++                def __new__(cls, seq, newarg=None):
++                    self = super().__new__(cls, seq)
++                    self.newarg = newarg
++                    return self
+         u = subclass_with_new([1, 2], newarg=3)
+         self.assertIs(type(u), subclass_with_new)
+         self.assertEqual(list(u), [1, 2])
+@@ -117,14 +174,15 @@ class ListTest(list_tests.CommonTest):
+             lst *= size
+
+     def test_repr_mutate(self):
+-        class Obj:
+-            @staticmethod
+-            def __repr__():
+-                try:
+-                    mylist.pop()
+-                except IndexError:
+-                    pass
+-                return 'obj'
++        with torch._dynamo.error_on_graph_break(False):
++            class Obj:
++                @staticmethod
++                def __repr__():
++                    try:
++                        mylist.pop()
++                    except IndexError:
++                        pass
++                    return 'obj'
+
+         mylist = [Obj() for _ in range(5)]
+         self.assertEqual(repr(mylist), '[obj, obj, obj]')
+@@ -220,26 +278,28 @@ class ListTest(list_tests.CommonTest):
+         # Issue 8847: In the PGO build, the MSVC linker's COMDAT folding
+         # optimization causes failures in code that relies on distinct
+         # function addresses.
+-        class L(list): pass
++        with torch._dynamo.error_on_graph_break(False):
++            class L(list): pass
+         with self.assertRaises(TypeError):
+             (3,) + L([1,2])
+
+     def test_equal_operator_modifying_operand(self):
+         # test fix for seg fault reported in bpo-38588 part 2.
+-        class X:
+-            def __eq__(self,other) :
+-                list2.clear()
+-                return NotImplemented
+-
+-        class Y:
+-            def __eq__(self, other):
+-                list1.clear()
+-                return NotImplemented
+-
+-        class Z:
+-            def __eq__(self, other):
+-                list3.clear()
+-                return NotImplemented
++        with torch._dynamo.error_on_graph_break(False):
++            class X:
++                def __eq__(self,other) :
++                    list2.clear()
++                    return NotImplemented
++
++            class Y:
++                def __eq__(self, other):
++                    list1.clear()
++                    return NotImplemented
++
++            class Z:
++                def __eq__(self, other):
++                    list3.clear()
++                    return NotImplemented
+
+         list1 = [X()]
+         list2 = [Y()]
+@@ -250,24 +310,26 @@ class ListTest(list_tests.CommonTest):
+         self.assertFalse(list3 == list4)
+
+     def test_lt_operator_modifying_operand(self):
+-        # See gh-120298
+-        class evil:
+-            def __lt__(self, other):
+-                other.clear()
+-                return NotImplemented
++        with torch._dynamo.error_on_graph_break(False):
++            # See gh-120298
++            class evil:
++                def __lt__(self, other):
++                    other.clear()
++                    return NotImplemented
+
+         a = [[evil()]]
+         with self.assertRaises(TypeError):
+             a[0] < a
+
+     def test_list_index_modifing_operand(self):
+-        # See gh-120384
+-        class evil:
+-            def __init__(self, lst):
+-                self.lst = lst
+-            def __iter__(self):
+-                yield from self.lst
+-                self.lst.clear()
++        with torch._dynamo.error_on_graph_break(False):
++            # See gh-120384
++            class evil:
++                def __init__(self, lst):
++                    self.lst = lst
++                def __iter__(self):
++                    yield from self.lst
++                    self.lst.clear()
+
+         lst = list(range(5))
+         operand = evil(lst)
+@@ -286,19 +348,21 @@ class ListTest(list_tests.CommonTest):
+         # bpo-38610: The count(), index(), and remove() methods were not
+         # holding strong references to list elements while calling
+         # PyObject_RichCompareBool().
+-        class X:
+-            def __eq__(self, other):
+-                lst.clear()
+-                return NotImplemented
++        with torch._dynamo.error_on_graph_break(False):
++            class X:
++                def __eq__(self, other):
++                    lst.clear()
++                    return NotImplemented
+
+         lst = [X()]
+         with self.assertRaises(ValueError):
+             lst.index(lst)
+
+-        class L(list):
+-            def __eq__(self, other):
+-                str(other)
+-                return NotImplemented
++        with torch._dynamo.error_on_graph_break(False):
++            class L(list):
++                def __eq__(self, other):
++                    str(other)
++                    return NotImplemented
+
+         lst = L([X()])
+         lst.count(lst)
+@@ -324,6 +388,7 @@ class ListTest(list_tests.CommonTest):
+             a.append(4)
+             self.assertEqual(list(it), [])
+
++    @unittest.skip("Fails on python <=3.13.2 and passes on >=3.13.3")
+     def test_deopt_from_append_list(self):
+         # gh-132011: it used to crash, because
+         # of `CALL_LIST_APPEND` specialization failure.
+@@ -345,4 +410,4 @@ class ListTest(list_tests.CommonTest):
+         self.assertEqual(rc, 0)
+
+ if __name__ == "__main__":
+-    unittest.main()
++    run_tests()
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `test/dynamo/cpython/3_13`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/dynamo/cpython/3_13`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+- **Error Handling**: Includes exception handling
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- **Serialization**: Uses pickle - be cautious with untrusted data
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/dynamo/cpython/3_13/test_list.diff
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/dynamo/cpython/3_13`):
+
+- [`mapping_tests.diff_docs.md`](./mapping_tests.diff_docs.md)
+- [`test_float.py_docs.md`](./test_float.py_docs.md)
+- [`test_generators.py_docs.md`](./test_generators.py_docs.md)
+- [`test_dict.py_docs.md`](./test_dict.py_docs.md)
+- [`test_generator_stop.diff_docs.md`](./test_generator_stop.diff_docs.md)
+- [`test_sort.diff_docs.md`](./test_sort.diff_docs.md)
+- [`test_userdict.diff_docs.md`](./test_userdict.diff_docs.md)
+- [`test_generators.diff_docs.md`](./test_generators.diff_docs.md)
+- [`test_userlist.py_docs.md`](./test_userlist.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_list.diff_docs.md`
+- **Keyword Index**: `test_list.diff_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/dynamo/cpython/3_13`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/dynamo/cpython/3_13`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+- **Error Handling**: Includes exception handling
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- **Serialization**: Uses pickle - be cautious with untrusted data
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/dynamo/cpython/3_13/test_list.diff_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/dynamo/cpython/3_13`):
+
+- [`seq_tests.py_kw.md_docs.md`](./seq_tests.py_kw.md_docs.md)
+- [`test_tuple.diff_kw.md_docs.md`](./test_tuple.diff_kw.md_docs.md)
+- [`test_userdict.py_docs.md_docs.md`](./test_userdict.py_docs.md_docs.md)
+- [`test_bool.diff_docs.md_docs.md`](./test_bool.diff_docs.md_docs.md)
+- [`test_operator.py_docs.md_docs.md`](./test_operator.py_docs.md_docs.md)
+- [`seq_tests.diff_docs.md_docs.md`](./seq_tests.diff_docs.md_docs.md)
+- [`test_list.diff_kw.md_docs.md`](./test_list.diff_kw.md_docs.md)
+- [`test_bool.py_docs.md_docs.md`](./test_bool.py_docs.md_docs.md)
+- [`test_raise.py_docs.md_docs.md`](./test_raise.py_docs.md_docs.md)
+- [`test_itertools.diff_kw.md_docs.md`](./test_itertools.diff_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_list.diff_docs.md_docs.md`
+- **Keyword Index**: `test_list.diff_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

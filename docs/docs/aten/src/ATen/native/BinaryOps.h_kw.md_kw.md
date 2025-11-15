@@ -1,0 +1,87 @@
+# Keyword Index: `docs/aten/src/ATen/native/BinaryOps.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/native/BinaryOps.h_kw.md](../../../../../../docs/aten/src/ATen/native/BinaryOps.h_kw.md)
+- **Documentation**: [`BinaryOps.h_kw.md_docs.md`](./BinaryOps.h_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/native`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Analysis`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Architecture`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Basic`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`BinaryOps`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Class`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Complete`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Considerations`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Dependencies`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Design`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Detailed`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`DispatchStub`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Documentation`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Efficiency`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Extracted`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`File`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Folder`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Functions`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Generated`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`High`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`How`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`In`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Includes`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Index`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Information`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Keyword`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Keywords`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Level`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Map`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Metadata`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Namespaces`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Original`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Overview`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Performance`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Purpose`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`PyTorch`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Related`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Repository`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Safety`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Scalar`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Section`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Security`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Source`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Structs`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`System`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`TensorBase`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`TensorIterator`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`TensorIteratorBase`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Testing`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`The`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`This`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`TypeSafeSignMath`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+- **`Usage`**: [BinaryOps.h_kw.md_docs.md](./BinaryOps.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

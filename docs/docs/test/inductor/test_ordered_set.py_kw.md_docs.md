@@ -1,0 +1,391 @@
+# Documentation: `docs/test/inductor/test_ordered_set.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/test/inductor/test_ordered_set.py_kw.md`
+- **Size**: 21,501 bytes (21.00 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `test/inductor/test_ordered_set.py`
+
+## File Information
+
+- **Original File**: [test/inductor/test_ordered_set.py](../../../test/inductor/test_ordered_set.py)
+- **Documentation**: [`test_ordered_set.py_docs.md`](./test_ordered_set.py_docs.md)
+- **Folder**: `test/inductor`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`A`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`BadCmp`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`C`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`E`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`G`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`H`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`HashCountingInt`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`I`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`Ig`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`N`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`PassThru`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`ReprWrapper`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`S`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestBasicOps`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestBasicOpsBytes`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestBasicOpsEmpty`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestBasicOpsMixedStringBytes`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestBasicOpsSingleton`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestBasicOpsString`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestBasicOpsTriple`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestBasicOpsTuple`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestBinaryOps`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestCopying`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestCopyingEmpty`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestCopyingNested`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestCopyingSingleton`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestCopyingTriple`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestCopyingTuple`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestExceptionPropagation`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestGraphs`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestIdentities`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestJointOps`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestMutate`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestOnlySetsDict`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestOnlySetsGenerator`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestOnlySetsInBinaryOps`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestOnlySetsNumeric`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestOnlySetsOperator`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestOnlySetsString`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestOnlySetsTuple`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestRichSetCompare`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestSet`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestSetOfSets`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestSubsetEmptyNonEmpty`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestSubsetEqualEmpty`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestSubsetEqualNonEmpty`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestSubsetNonOverlap`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestSubsetPartial`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestSubsets`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestUpdateOps`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestVariousIteratorArgs`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestWeirdBugs`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`Tracer`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`X`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`bad_dict_clear`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`bad_eq`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`name`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+
+### Functions
+
+- **`L`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`R`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`__deepcopy__`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`__eq__`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`__ge__`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`__getitem__`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`__gt__`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`__hash__`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`__init__`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`__iter__`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`__le__`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`__lt__`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`__next__`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`__repr__`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`baditer`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`check_pass_thru`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`check_repr_against_values`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`cube`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`f`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`faces`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`gen`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`gooditer`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`linegraph`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`powerset`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`record`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`setUp`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_8420_set_merge`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_add`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_add_absent`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_add_present`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_add_until_full`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_and`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_badcmp`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_binopsVsSubsets`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_changingSizeWhileIterating`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_clear`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_commutativity`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_constructor`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_constructor_identity`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_container_iterator`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_contains`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_copy`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_cube`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_cuboctahedron`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_cyclical_repr`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_deep_copy`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_deepcopy`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_difference`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_difference_method_call`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_difference_non_overlap`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_difference_overlap`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_difference_subset`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_difference_superset`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_difference_update`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_difference_update_operator`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_discard`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_discard_absent`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_discard_present`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_do_not_rehash_dict_keys`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_empty_difference`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_empty_difference_rev`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_empty_intersection`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_empty_isdisjoint`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_empty_symmetric_difference`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_empty_union`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_eq`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_eq_ne`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_equality`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_equivalent_equality`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_exclusion`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_free_after_iterating`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_gc`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_ge_gt_le_lt`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_hash`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_iand`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_in`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_init`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_inline_methods`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_inplace_methods`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_inplace_on_self`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_instanceWithException`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_instancesWithoutException`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_intersection`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_intersection_empty`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_intersection_method_call`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_intersection_non_overlap`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_intersection_overlap`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_intersection_subset`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_intersection_superset`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_intersection_update`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_intersection_update_operator`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_ior`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_isdisjoint`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_isdisjoint_empty`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_isdisjoint_non_overlap`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_isdisjoint_overlap`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_isdisjoint_subset`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_isdisjoint_superset`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_issubset`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_issue_37219`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_isub`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_iter_and_mutate`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_iteration`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_iterator_pickling`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_ixor`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_len`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_length`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_merge_and_mutate`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_new_or_init`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_not_in`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_or`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_pickling`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_pop`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_remove`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_remove_absent`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_remove_keyerror_set`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_remove_keyerror_unpacking`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_remove_present`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_remove_until_empty`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_repr`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_rich_compare`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_self_difference`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_self_equality`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_self_intersection`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_self_isdisjoint`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_self_symmetric_difference`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_self_union`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_setOfFrozensets`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_set_literal`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_set_literal_evaluation_order`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_set_literal_insertion_order`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_sub`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_sub_and_super`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_subclass_with_custom_hash`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_summations`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_sym_difference`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_sym_difference_method_call`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_sym_difference_non_overlap`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_sym_difference_overlap`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_sym_difference_subset`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_sym_difference_superset`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_sym_difference_update`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_sym_difference_update_operator`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_symmetric_difference`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_symmetric_difference_update`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_union`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_union_empty`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_union_method_call`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_union_non_overlap`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_union_overlap`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_union_subset`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_union_superset`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_uniquification`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_update`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_update_empty_tuple`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_update_operator`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_update_unit_tuple_non_overlap`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_update_unit_tuple_overlap`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_weakref`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test_xor`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+
+### Imports
+
+- **`OrderedSet`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`TestCase`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`chain`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`collections`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`collections.abc`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`copy`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`gc`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`itertools`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`operator`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`pickle`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`run_tests`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`support`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`test`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`torch._inductor.test_case`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`torch.utils._ordered_set`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`unittest`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`warnings`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+- **`weakref`**: [test_ordered_set.py_docs.md](./test_ordered_set.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/inductor`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/inductor`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- **Serialization**: Uses pickle - be cautious with untrusted data
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/inductor/test_ordered_set.py_kw.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/inductor`):
+
+- [`test_snode_runtime.py_kw.md_docs.md`](./test_snode_runtime.py_kw.md_docs.md)
+- [`test_metrics.py_docs.md_docs.md`](./test_metrics.py_docs.md_docs.md)
+- [`test_flex_attention.py_kw.md_docs.md`](./test_flex_attention.py_kw.md_docs.md)
+- [`test_cuda_repro.py_kw.md_docs.md`](./test_cuda_repro.py_kw.md_docs.md)
+- [`test_fxir_backend.py_kw.md_docs.md`](./test_fxir_backend.py_kw.md_docs.md)
+- [`test_split_cat_fx_passes.py_kw.md_docs.md`](./test_split_cat_fx_passes.py_kw.md_docs.md)
+- [`test_mmdecomp.py_kw.md_docs.md`](./test_mmdecomp.py_kw.md_docs.md)
+- [`test_torchinductor_codegen_config_overrides.py_kw.md_docs.md`](./test_torchinductor_codegen_config_overrides.py_kw.md_docs.md)
+- [`test_aot_inductor_custom_ops.py_kw.md_docs.md`](./test_aot_inductor_custom_ops.py_kw.md_docs.md)
+- [`test_minifier.py_kw.md_docs.md`](./test_minifier.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_ordered_set.py_kw.md_docs.md`
+- **Keyword Index**: `test_ordered_set.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

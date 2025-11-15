@@ -1,0 +1,91 @@
+# Keyword Index: `docs/torch/headeronly/core/ScalarType.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/headeronly/core/ScalarType.h_kw.md](../../../../../docs/torch/headeronly/core/ScalarType.h_kw.md)
+- **Documentation**: [`ScalarType.h_kw.md_docs.md`](./ScalarType.h_kw.md_docs.md)
+- **Folder**: `docs/torch/headeronly/core`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Architecture`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`BFloat16`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Basic`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Class`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Complete`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Considerations`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`CppTypeToScalarType`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Dependencies`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Design`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Detailed`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Documentation`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Efficiency`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Extracted`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`File`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Float4_e2m1fn_x2`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Float8_e4m3fn`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Float8_e4m3fnuz`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Float8_e5m2`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Float8_e5m2fnuz`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Float8_e8m0fnu`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Folder`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Functions`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Generated`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Half`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`High`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`How`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`In`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Includes`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Index`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Information`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Keyword`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Keywords`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Level`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Macros`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Map`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Metadata`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Namespaces`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Original`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Overview`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Performance`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Purpose`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`PyTorch`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Related`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Repository`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Safety`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`ScalarType`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`ScalarTypeToCPPType`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Section`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Security`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Source`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Structs`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`System`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Testing`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`The`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`This`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+- **`Usage`**: [ScalarType.h_kw.md_docs.md](./ScalarType.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,78 @@
+# Keyword Index: `test/inductor/test_inductor_scheduler.py`
+
+## File Information
+
+- **Original File**: [test/inductor/test_inductor_scheduler.py](../../../test/inductor/test_inductor_scheduler.py)
+- **Documentation**: [`test_inductor_scheduler.py_docs.md`](./test_inductor_scheduler.py_docs.md)
+- **Folder**: `test/inductor`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`TestScheduler`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+
+### Functions
+
+- **`FlopCounterMode`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+- **`T`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+- **`_create_mock_node`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+- **`_test_cases`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+- **`cT`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+- **`composite`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+- **`composite_relu`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+- **`get_total_flops`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+- **`random_tensor`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+- **`test_disable_get_estimated_runtime_logging`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+- **`test_flop_counter_op`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+- **`test_fusion_prevent_too_many_reads_and_writes_allows_fusion`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+- **`test_fusion_prevent_too_many_reads_and_writes_prevents_fusion`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+
+### Imports
+
+- **`BaseSchedulerNode`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+- **`Dep`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+- **`IS_BIG_GPU`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+- **`Mock`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+- **`OrderedSet`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+- **`SM70OrLater`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+- **`counters`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+- **`fresh_inductor_cache`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+- **`parametrize`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+- **`skipIf`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+- **`torch`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+- **`torch._dynamo.utils`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+- **`torch._inductor.dependencies`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+- **`torch._inductor.metrics`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+- **`torch._inductor.scheduler`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+- **`torch._inductor.utils`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+- **`torch.testing._internal.common_cuda`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+- **`torch.testing._internal.common_device_type`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+- **`torch.testing._internal.inductor_utils`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+- **`torch.utils._ordered_set`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+- **`torch.utils.flop_counter`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+- **`unittest`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+- **`unittest.mock`**: [test_inductor_scheduler.py_docs.md](./test_inductor_scheduler.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

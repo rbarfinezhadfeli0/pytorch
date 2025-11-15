@@ -1,0 +1,286 @@
+# Documentation: `docs/aten/src/ATen/native/cuda/Pow.cuh_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/cuda/Pow.cuh_docs.md`
+- **Size**: 4,595 bytes (4.49 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/native/cuda/Pow.cuh`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/cuda/Pow.cuh`
+- **Size**: 2,154 bytes (2.10 KB)
+- **Type**: CUDA Header File
+- **Extension**: `.cuh`
+
+## File Purpose
+
+This is a cuda header file that is part of the PyTorch project.
+
+## Original Source
+
+```
+#pragma once
+#include <ATen/native/Pow.h>
+#include <c10/core/Scalar.h>
+
+namespace at::native {
+
+namespace {
+
+
+// SFINAE doesn't work well with NVCC under Windows for math functions like pow and sqrt.
+// So we need to define the functions with the explicit function signatures.
+// As for pow, the following signatures are defined as the device function:
+//   pow(float, int)
+//   pow(double, int)
+//   pow(float, float)
+//   pow(double, double)
+#if defined(_MSC_VER) || defined(_LIBCPP_VERSION)
+// Functions for pow
+// pow for at::Half
+static inline __host__ __device__ at::Half pow_(at::Half base, at::Half exp) {
+  return static_cast<at::Half>(std::pow(static_cast<float>(base), static_cast<float>(exp)));
+}
+// pow for at::BFloat16
+static inline __host__ __device__ at::BFloat16 pow_(at::BFloat16 base, at::BFloat16 exp) {
+  return static_cast<at::BFloat16>(std::pow(static_cast<float>(base), static_cast<float>(exp)));
+}
+// pow (floating, floating/int)
+template <typename Base_type, typename Exp_type>
+static inline __host__ __device__ typename std::enable_if_t<std::is_floating_point_v<Base_type> && (std::is_same_v<Base_type, Exp_type> || std::is_same_v<Exp_type, int>), Base_type>
+  pow_(Base_type base, Exp_type exp) {
+  return std::pow(base, exp);
+}
+// pow (Otherwise)
+template <typename Base_type, typename Exp_type>
+static inline __host__ __device__ typename std::enable_if_t<!std::is_same_v<Base_type, Exp_type> && !std::is_same_v<Exp_type, int>, Base_type>
+  pow_(Base_type base, Exp_type exp) {
+  return static_cast<Base_type>(std::pow(static_cast<double>(base), static_cast<double>(exp)));
+}
+#else
+template <typename Base_type, typename Exp_type>
+static inline __host__ __device__ Base_type pow_(Base_type base, Exp_type exp) {
+  return ::pow(base, exp);
+}
+#endif
+
+template <typename T>
+static inline __host__ __device__ std::enable_if_t<std::is_integral_v<T>, T> pow_(
+    T base, T exp) {
+  return at::native::powi(base, exp);
+}
+
+template <typename T>
+static inline __host__ __device__ c10::complex<T> pow_(c10::complex<T> base, c10::complex<T> exp) {
+  return c10_complex_math::pow(base, exp);
+}
+
+} // namespace
+} // namespace at::native
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `aten/src/ATen/native/cuda`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native/cuda`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/native/Pow.h`
+- `c10/core/Scalar.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native/cuda`):
+
+- [`LogcumsumexpKernel.cu_docs.md`](./LogcumsumexpKernel.cu_docs.md)
+- [`WeightNorm.cu_docs.md`](./WeightNorm.cu_docs.md)
+- [`SparseBinaryOpIntersectionKernel.cu_docs.md`](./SparseBinaryOpIntersectionKernel.cu_docs.md)
+- [`jit_utils.cpp_docs.md`](./jit_utils.cpp_docs.md)
+- [`ReduceNormKernel.cu_docs.md`](./ReduceNormKernel.cu_docs.md)
+- [`BinaryMiscOpsKernels.cu_docs.md`](./BinaryMiscOpsKernels.cu_docs.md)
+- [`RowwiseScaledMM.h_docs.md`](./RowwiseScaledMM.h_docs.md)
+- [`fused_adamw_amsgrad_impl.cuh_docs.md`](./fused_adamw_amsgrad_impl.cuh_docs.md)
+- [`Col2Im.cu_docs.md`](./Col2Im.cu_docs.md)
+- [`DistributionRandomKernel.cu_docs.md`](./DistributionRandomKernel.cu_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `Pow.cuh_docs.md`
+- **Keyword Index**: `Pow.cuh_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native/cuda`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native/cuda`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native/cuda`):
+
+- [`DeviceSqrt.cuh_kw.md_docs.md`](./DeviceSqrt.cuh_kw.md_docs.md)
+- [`UnaryGeometricAsinKernel.cu_kw.md_docs.md`](./UnaryGeometricAsinKernel.cu_kw.md_docs.md)
+- [`Distributions.cpp_docs.md_docs.md`](./Distributions.cpp_docs.md_docs.md)
+- [`fused_adamw_impl.cu_docs.md_docs.md`](./fused_adamw_impl.cu_docs.md_docs.md)
+- [`TensorTopK.h_kw.md_docs.md`](./TensorTopK.h_kw.md_docs.md)
+- [`ReduceOps.cpp_kw.md_docs.md`](./ReduceOps.cpp_kw.md_docs.md)
+- [`FusedSgdKernel.cu_docs.md_docs.md`](./FusedSgdKernel.cu_docs.md_docs.md)
+- [`Distributions.cu_kw.md_docs.md`](./Distributions.cu_kw.md_docs.md)
+- [`block_reduce.cuh_docs.md_docs.md`](./block_reduce.cuh_docs.md_docs.md)
+- [`fused_adagrad_impl.cuh_kw.md_docs.md`](./fused_adagrad_impl.cuh_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `Pow.cuh_docs.md_docs.md`
+- **Keyword Index**: `Pow.cuh_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

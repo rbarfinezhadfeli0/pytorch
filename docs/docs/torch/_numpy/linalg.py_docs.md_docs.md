@@ -1,0 +1,483 @@
+# Documentation: `docs/torch/_numpy/linalg.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/_numpy/linalg.py_docs.md`
+- **Size**: 8,416 bytes (8.22 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/_numpy/linalg.py`
+
+## File Metadata
+
+- **Path**: `torch/_numpy/linalg.py`
+- **Size**: 5,648 bytes (5.52 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This is a python source code that is part of the PyTorch project.
+
+## Original Source
+
+```python
+# mypy: ignore-errors
+
+from __future__ import annotations
+
+import functools
+import math
+from typing import TYPE_CHECKING
+
+import torch
+
+from . import _dtypes_impl, _util
+from ._normalizations import ArrayLike, KeepDims, normalizer
+
+
+if TYPE_CHECKING:
+    from collections.abc import Sequence
+
+
+class LinAlgError(Exception):
+    pass
+
+
+def _atleast_float_1(a):
+    if not (a.dtype.is_floating_point or a.dtype.is_complex):
+        a = a.to(_dtypes_impl.default_dtypes().float_dtype)
+    return a
+
+
+def _atleast_float_2(a, b):
+    dtyp = _dtypes_impl.result_type_impl(a, b)
+    if not (dtyp.is_floating_point or dtyp.is_complex):
+        dtyp = _dtypes_impl.default_dtypes().float_dtype
+
+    a = _util.cast_if_needed(a, dtyp)
+    b = _util.cast_if_needed(b, dtyp)
+    return a, b
+
+
+def linalg_errors(func):
+    @functools.wraps(func)
+    def wrapped(*args, **kwds):
+        try:
+            return func(*args, **kwds)
+        except torch._C._LinAlgError as e:
+            raise LinAlgError(*e.args)  # noqa: B904
+
+    return wrapped
+
+
+# ### Matrix and vector products ###
+
+
+@normalizer
+@linalg_errors
+def matrix_power(a: ArrayLike, n):
+    a = _atleast_float_1(a)
+    return torch.linalg.matrix_power(a, n)
+
+
+@normalizer
+@linalg_errors
+def multi_dot(inputs: Sequence[ArrayLike], *, out=None):
+    return torch.linalg.multi_dot(inputs)
+
+
+# ### Solving equations and inverting matrices ###
+
+
+@normalizer
+@linalg_errors
+def solve(a: ArrayLike, b: ArrayLike):
+    a, b = _atleast_float_2(a, b)
+    return torch.linalg.solve(a, b)
+
+
+@normalizer
+@linalg_errors
+def lstsq(a: ArrayLike, b: ArrayLike, rcond=None):
+    a, b = _atleast_float_2(a, b)
+    # NumPy is using gelsd: https://github.com/numpy/numpy/blob/v1.24.0/numpy/linalg/umath_linalg.cpp#L3991
+    # on CUDA, only `gels` is available though, so use it instead
+    driver = "gels" if a.is_cuda or b.is_cuda else "gelsd"
+    return torch.linalg.lstsq(a, b, rcond=rcond, driver=driver)
+
+
+@normalizer
+@linalg_errors
+def inv(a: ArrayLike):
+    a = _atleast_float_1(a)
+    result = torch.linalg.inv(a)
+    return result
+
+
+@normalizer
+@linalg_errors
+def pinv(a: ArrayLike, rcond=1e-15, hermitian=False):
+    a = _atleast_float_1(a)
+    return torch.linalg.pinv(a, rtol=rcond, hermitian=hermitian)
+
+
+@normalizer
+@linalg_errors
+def tensorsolve(a: ArrayLike, b: ArrayLike, axes=None):
+    a, b = _atleast_float_2(a, b)
+    return torch.linalg.tensorsolve(a, b, dims=axes)
+
+
+@normalizer
+@linalg_errors
+def tensorinv(a: ArrayLike, ind=2):
+    a = _atleast_float_1(a)
+    return torch.linalg.tensorinv(a, ind=ind)
+
+
+# ### Norms and other numbers ###
+
+
+@normalizer
+@linalg_errors
+def det(a: ArrayLike):
+    a = _atleast_float_1(a)
+    return torch.linalg.det(a)
+
+
+@normalizer
+@linalg_errors
+def slogdet(a: ArrayLike):
+    a = _atleast_float_1(a)
+    return torch.linalg.slogdet(a)
+
+
+@normalizer
+@linalg_errors
+def cond(x: ArrayLike, p=None):
+    x = _atleast_float_1(x)
+
+    # check if empty
+    # cf: https://github.com/numpy/numpy/blob/v1.24.0/numpy/linalg/linalg.py#L1744
+    if x.numel() == 0 and math.prod(x.shape[-2:]) == 0:
+        raise LinAlgError("cond is not defined on empty arrays")
+
+    result = torch.linalg.cond(x, p=p)
+
+    # Convert nans to infs (numpy does it in a data-dependent way, depending on
+    # whether the input array has nans or not)
+    # XXX: NumPy does this: https://github.com/numpy/numpy/blob/v1.24.0/numpy/linalg/linalg.py#L1744
+    return torch.where(torch.isnan(result), float("inf"), result)
+
+
+@normalizer
+@linalg_errors
+def matrix_rank(a: ArrayLike, tol=None, hermitian=False):
+    a = _atleast_float_1(a)
+
+    if a.ndim < 2:
+        return int((a != 0).any())
+
+    if tol is None:
+        # follow https://github.com/numpy/numpy/blob/v1.24.0/numpy/linalg/linalg.py#L1885
+        atol = 0
+        rtol = max(a.shape[-2:]) * torch.finfo(a.dtype).eps
+    else:
+        atol, rtol = tol, 0
+    return torch.linalg.matrix_rank(a, atol=atol, rtol=rtol, hermitian=hermitian)
+
+
+@normalizer
+@linalg_errors
+def norm(x: ArrayLike, ord=None, axis=None, keepdims: KeepDims = False):
+    x = _atleast_float_1(x)
+    return torch.linalg.norm(x, ord=ord, dim=axis)
+
+
+# ### Decompositions ###
+
+
+@normalizer
+@linalg_errors
+def cholesky(a: ArrayLike):
+    a = _atleast_float_1(a)
+    return torch.linalg.cholesky(a)
+
+
+@normalizer
+@linalg_errors
+def qr(a: ArrayLike, mode="reduced"):
+    a = _atleast_float_1(a)
+    result = torch.linalg.qr(a, mode=mode)
+    if mode == "r":
+        # match NumPy
+        result = result.R
+    return result
+
+
+@normalizer
+@linalg_errors
+def svd(a: ArrayLike, full_matrices=True, compute_uv=True, hermitian=False):
+    a = _atleast_float_1(a)
+    if not compute_uv:
+        return torch.linalg.svdvals(a)
+
+    # NB: ignore the hermitian= argument (no pytorch equivalent)
+    result = torch.linalg.svd(a, full_matrices=full_matrices)
+    return result
+
+
+# ### Eigenvalues and eigenvectors ###
+
+
+@normalizer
+@linalg_errors
+def eig(a: ArrayLike):
+    a = _atleast_float_1(a)
+    w, vt = torch.linalg.eig(a)
+
+    if not a.is_complex() and w.is_complex() and (w.imag == 0).all():
+        w = w.real
+        vt = vt.real
+    return w, vt
+
+
+@normalizer
+@linalg_errors
+def eigh(a: ArrayLike, UPLO="L"):
+    a = _atleast_float_1(a)
+    return torch.linalg.eigh(a, UPLO=UPLO)
+
+
+@normalizer
+@linalg_errors
+def eigvals(a: ArrayLike):
+    a = _atleast_float_1(a)
+    result = torch.linalg.eigvals(a)
+    if not a.is_complex() and result.is_complex() and (result.imag == 0).all():
+        result = result.real
+    return result
+
+
+@normalizer
+@linalg_errors
+def eigvalsh(a: ArrayLike, UPLO="L"):
+    a = _atleast_float_1(a)
+    return torch.linalg.eigvalsh(a, UPLO=UPLO)
+
+```
+
+
+
+## High-Level Overview
+
+
+This Python file contains 1 class(es) and 24 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `LinAlgError`
+
+**Functions defined**: `_atleast_float_1`, `_atleast_float_2`, `linalg_errors`, `wrapped`, `matrix_power`, `multi_dot`, `solve`, `lstsq`, `inv`, `pinv`, `tensorsolve`, `tensorinv`, `det`, `slogdet`, `cond`, `matrix_rank`, `norm`, `cholesky`, `qr`, `svd`
+
+**Key imports**: annotations, functools, math, TYPE_CHECKING, torch, _dtypes_impl, _util, ArrayLike, KeepDims, normalizer, Sequence
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/_numpy`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `__future__`: annotations
+- `functools`
+- `math`
+- `typing`: TYPE_CHECKING
+- `torch`
+- `.`: _dtypes_impl, _util
+- `._normalizations`: ArrayLike, KeepDims, normalizer
+- `collections.abc`: Sequence
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Error Handling**: Includes exception handling
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/_numpy`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`_util.py_docs.md`](./_util.py_docs.md)
+- [`_funcs_impl.py_docs.md`](./_funcs_impl.py_docs.md)
+- [`_ufuncs.py_docs.md`](./_ufuncs.py_docs.md)
+- [`fft.py_docs.md`](./fft.py_docs.md)
+- [`_binary_ufuncs_impl.py_docs.md`](./_binary_ufuncs_impl.py_docs.md)
+- [`README.md_docs.md`](./README.md_docs.md)
+- [`_ndarray.py_docs.md`](./_ndarray.py_docs.md)
+- [`random.py_docs.md`](./random.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `linalg.py_docs.md`
+- **Keyword Index**: `linalg.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/_numpy`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/_numpy`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Error Handling**: Includes exception handling
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/_numpy`):
+
+- [`_funcs_impl.py_kw.md_docs.md`](./_funcs_impl.py_kw.md_docs.md)
+- [`_ndarray.py_docs.md_docs.md`](./_ndarray.py_docs.md_docs.md)
+- [`_dtypes.py_kw.md_docs.md`](./_dtypes.py_kw.md_docs.md)
+- [`_reductions_impl.py_kw.md_docs.md`](./_reductions_impl.py_kw.md_docs.md)
+- [`_ufuncs.py_docs.md_docs.md`](./_ufuncs.py_docs.md_docs.md)
+- [`fft.py_kw.md_docs.md`](./fft.py_kw.md_docs.md)
+- [`README.md_docs.md_docs.md`](./README.md_docs.md_docs.md)
+- [`random.py_docs.md_docs.md`](./random.py_docs.md_docs.md)
+- [`_dtypes_impl.py_docs.md_docs.md`](./_dtypes_impl.py_docs.md_docs.md)
+- [`_unary_ufuncs_impl.py_docs.md_docs.md`](./_unary_ufuncs_impl.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `linalg.py_docs.md_docs.md`
+- **Keyword Index**: `linalg.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

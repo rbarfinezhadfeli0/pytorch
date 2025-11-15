@@ -1,0 +1,347 @@
+# Documentation: `docs/test/export/test_serialize.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/test/export/test_serialize.py_kw.md`
+- **Size**: 17,143 bytes (16.74 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `test/export/test_serialize.py`
+
+## File Information
+
+- **Original File**: [test/export/test_serialize.py](../../../test/export/test_serialize.py)
+- **Documentation**: [`test_serialize.py_docs.md`](./test_serialize.py_docs.md)
+- **Folder**: `test/export`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`Bar`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`DynamicFloatSimpleModel`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`DynamicShapeSimpleModel`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`ExtensionVerifier`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`Foo`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`FooExtensionHandler`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`FooExtensionOp`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`M`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`Mod`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`Module`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`MyLinear`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`MyModel`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`MyModelAutotune`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`MyModule`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`N2`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`TestDeserialize`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`TestModule`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`TestSaveLoad`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`TestSchemaVersioning`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`TestSerialize`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`TestSerializeCustomClass`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`for`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`is`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+
+### Functions
+
+- **`__call__`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`__eq__`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`__hash__`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`__init__`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`__name__`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`_check_graph`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`_check_graph_nodes`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`_deepcopy_inputs`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`_test_tensor_tensor_list_output`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`add_kernel`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`allowed_op_types`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`check_graph`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`custom_add`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`custom_add_autotune`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`f`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`foo1_impl`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`foo2_impl`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`foo3_impl`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`foo_impl`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`forward`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`from_op_name`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`get_filtered_export_db_tests`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`grid`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`namespace`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`op_schema`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`parse_constant`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`setUp`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`t`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_1D_tensor_slicing`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_2D_tensor_slicing`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_arg_from`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_auto_functionalize`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_backed_size_oblivious_serdes`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_basic`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_canonicalize`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_complex_constant`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_cond`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_constraints`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_custom_class`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_custom_class_containing_fake_tensor`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_custom_class_input_to_function`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_custom_obj`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_custom_obj_list_out`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_custom_obj_tuple_out`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_custom_tag_metadata_copy`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_custom_tag_metadata_decomp`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_custom_tag_metadata_serialization`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_device`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_dynamic`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_empty_constant`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_empty_state_dict`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_error`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_export_example_inputs_preserved`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_export_no_inputs`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_export_with_extension_op_serialization`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_exportdb_supported`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_forward_compatibility`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_get_attr`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_get_attr_list`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_hoo_symint_input`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_int_list`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_kwargs_default`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_list_of_optional_tensors`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_map`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_metadata_parsing_with_layer_split`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_metadata_run_decomp_serder`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_module`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_module_meta`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_multi_return`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_multi_return_some_unused`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_multiple_getitem`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_nested_layer_split`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_non_float_weight`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_none_input`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_nonfinite_inputs`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_optional_tuple`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_positional_argument_with_default_value`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_predispatch_export_with_autograd_op`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_preserve_aliasing`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_pytree_namedtuple`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_rational_ranges`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_save_buffer`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_save_constants`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_save_extra`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_save_file`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_save_load_with_multiple_empty_tensors`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_save_path`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_serialize_constant_outputs`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_serialize_float8`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_serialize_infinite_sym_int`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_serialize_list_returns`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_serialize_multiple_returns_from_node`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_serialize_param_mutation`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_serialize_sym_float`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_serialize_sym_int`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_shape`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_storage_offset`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_sym_bool`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_sym_bool_dynamic_shapes`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_sym_bool_torch_check_equal`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_sym_float`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_sym_int_torch_check_equal`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_sym_ite`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_symint_list`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_tensor_tensor_list`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_triton_hop`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_unbacked_bindings_serialize`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_unbacked_range_serdes`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_version_error`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`test_weight_sharing_gpu`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`to_op_name`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+
+### Imports
+
+- **`ARCHIVE_VERSION_PATH`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`ArgumentKind`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`Dim`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`ExportCase`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`FakeTensor`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`GPU_TYPE`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`NamedTuple`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`Path`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`_export`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`_get_shape_env_from_gm`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`all_examples`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`collections`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`cond`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`control_flow`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`copy`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`enable_torchbind_tracing`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`functorch.experimental`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`functorch.experimental.control_flow`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`has_triton`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`init_torchbind_implementations`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`io`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`is_concrete_int`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`json`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`math`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`namedtuple`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`pathlib`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`prefix_str`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`requires_gpu`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`sympy`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`tempfile`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`torch`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`torch._dynamo`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`torch._export.db.case`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`torch._export.db.examples`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`torch._export.serde.schema`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`torch._export.serde.serialize`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`torch._export.utils`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`torch._higher_order_ops.torchbind`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`torch._subclasses.fake_tensor`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`torch.export`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`torch.export._trace`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`torch.export.pt2_archive.constants`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`torch.fx.experimental.symbolic_shapes`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`torch.library`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`torch.testing._internal.inductor_utils`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`torch.testing._internal.torchbind_impls`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`torch.testing._internal.triton_utils`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`torch.utils._pytree`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`torch.utils._sympy.symbol`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`torch.utils._triton`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`triton`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`triton.language`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`typing`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`unittest`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`wrap_triton`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+- **`zipfile`**: [test_serialize.py_docs.md](./test_serialize.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/export`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/export`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/export/test_serialize.py_kw.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/export`):
+
+- [`test_serialize.py_docs.md_docs.md`](./test_serialize.py_docs.md_docs.md)
+- [`test_verifier.py_kw.md_docs.md`](./test_verifier.py_kw.md_docs.md)
+- [`test_upgrader.py_kw.md_docs.md`](./test_upgrader.py_kw.md_docs.md)
+- [`test_db.py_docs.md_docs.md`](./test_db.py_docs.md_docs.md)
+- [`test_export.py_docs.md_docs.md`](./test_export.py_docs.md_docs.md)
+- [`test_dynamic_shapes.py_kw.md_docs.md`](./test_dynamic_shapes.py_kw.md_docs.md)
+- [`test_passes.py_kw.md_docs.md`](./test_passes.py_kw.md_docs.md)
+- [`test_unflatten.py_docs.md_docs.md`](./test_unflatten.py_docs.md_docs.md)
+- [`test_pass_infra.py_kw.md_docs.md`](./test_pass_infra.py_kw.md_docs.md)
+- [`test_functionalized_assertions.py_kw.md_docs.md`](./test_functionalized_assertions.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_serialize.py_kw.md_docs.md`
+- **Keyword Index**: `test_serialize.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,311 @@
+# Documentation: `docs/aten/src/ATen/native/PointwiseOps.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/PointwiseOps.cpp_docs.md`
+- **Size**: 4,783 bytes (4.67 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/native/PointwiseOps.cpp`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/PointwiseOps.cpp`
+- **Size**: 2,268 bytes (2.21 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+// Ternary and higher-order pointwise operations
+#define TORCH_ASSERT_ONLY_METHOD_OPERATORS
+#include <ATen/native/PointwiseOps.h>
+
+#include <ATen/core/Tensor.h>
+#include <ATen/TensorMeta.h>
+
+#ifndef AT_PER_OPERATOR_HEADERS
+#include <ATen/NativeFunctions.h>
+#else
+#include <ATen/ops/addcdiv_native.h>
+#include <ATen/ops/addcmul_native.h>
+#endif
+
+namespace at::meta {
+
+TORCH_META_FUNC(addcmul)
+(const Tensor& self,
+ const Tensor& tensor1,
+ const Tensor& tensor2,
+ const Scalar& value) {
+  build(TensorIteratorConfig()
+      .allow_cpu_scalars(true)
+      .promote_inputs_to_common_dtype(true)
+      .cast_common_dtype_to_outputs(true)
+      .enforce_safe_casting_to_output(true)
+      .add_owned_output(maybe_get_output())
+      .add_owned_const_input(self)
+      .add_owned_const_input(tensor1)
+      .add_owned_const_input(tensor2));
+}
+
+TORCH_META_FUNC(addcdiv)
+(const Tensor& self,
+ const Tensor& tensor1,
+ const Tensor& tensor2,
+ const Scalar& value) {
+  if (isIntegralType(tensor1.scalar_type(), /*includeBool=*/true) &&
+      isIntegralType(tensor2.scalar_type(), /*includeBool=*/true)) {
+    TORCH_CHECK(
+        false,
+        "Integer division with addcdiv is no longer supported, and in a future  ",
+        "release addcdiv will perform a true division of tensor1 and tensor2. ",
+        "The historic addcdiv behavior can be implemented as ",
+        "(input + value * torch.trunc(tensor1 / tensor2)).to(input.dtype) ",
+        "for integer inputs and as ",
+        "(input + value * tensor1 / tensor2) for float inputs. ",
+        "The future addcdiv behavior is just the latter implementation: ",
+        "(input + value * tensor1 / tensor2), for all dtypes.");
+  }
+  build_ternary_op(maybe_get_output(), self, tensor1, tensor2);
+}
+
+} // namespace at::meta
+namespace at::native {
+
+TORCH_IMPL_FUNC(addcmul_out)
+(const Tensor& self,
+ const Tensor& tensor1,
+ const Tensor& tensor2,
+ const Scalar& value,
+ const Tensor& result) {
+  addcmul_stub(device_type(), *this, value);
+}
+
+TORCH_IMPL_FUNC(addcdiv_out)
+(const Tensor& self,
+ const Tensor& tensor1,
+ const Tensor& tensor2,
+ const Scalar& value,
+ const Tensor& result) {
+  addcdiv_stub(device_type(), *this, value);
+}
+
+DEFINE_DISPATCH(addcmul_stub);
+DEFINE_DISPATCH(addcdiv_stub);
+
+} // namespace at::native
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 0 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `at`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/native/PointwiseOps.h`
+- `ATen/core/Tensor.h`
+- `ATen/TensorMeta.h`
+- `ATen/NativeFunctions.h`
+- `ATen/ops/addcdiv_native.h`
+- `ATen/ops/addcmul_native.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native`):
+
+- [`LossMulti.h_docs.md`](./LossMulti.h_docs.md)
+- [`NaiveConvolutionTranspose3d.cpp_docs.md`](./NaiveConvolutionTranspose3d.cpp_docs.md)
+- [`UnaryOps.cpp_docs.md`](./UnaryOps.cpp_docs.md)
+- [`ResizeCommon.h_docs.md`](./ResizeCommon.h_docs.md)
+- [`FusedAdagrad.cpp_docs.md`](./FusedAdagrad.cpp_docs.md)
+- [`SharedReduceOps.h_docs.md`](./SharedReduceOps.h_docs.md)
+- [`SpectralOpsUtils.h_docs.md`](./SpectralOpsUtils.h_docs.md)
+- [`FractionalMaxPooling.h_docs.md`](./FractionalMaxPooling.h_docs.md)
+- [`TensorDimApply.h_docs.md`](./TensorDimApply.h_docs.md)
+- [`Lerp.cpp_docs.md`](./Lerp.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `PointwiseOps.cpp_docs.md`
+- **Keyword Index**: `PointwiseOps.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native`):
+
+- [`AdaptiveMaxPooling2d.cpp_docs.md_docs.md`](./AdaptiveMaxPooling2d.cpp_docs.md_docs.md)
+- [`Distributions.cpp_docs.md_docs.md`](./Distributions.cpp_docs.md_docs.md)
+- [`im2col_shape_check.h_docs.md_docs.md`](./im2col_shape_check.h_docs.md_docs.md)
+- [`ReduceOps.cpp_kw.md_docs.md`](./ReduceOps.cpp_kw.md_docs.md)
+- [`Lerp.cpp_kw.md_docs.md`](./Lerp.cpp_kw.md_docs.md)
+- [`CPUFallback.h_docs.md_docs.md`](./CPUFallback.h_docs.md_docs.md)
+- [`MetaTensor.cpp_docs.md_docs.md`](./MetaTensor.cpp_docs.md_docs.md)
+- [`Correlation.cpp_kw.md_docs.md`](./Correlation.cpp_kw.md_docs.md)
+- [`im2col_shape_check.h_kw.md_docs.md`](./im2col_shape_check.h_kw.md_docs.md)
+- [`UpSampleNearest2d.cpp_kw.md_docs.md`](./UpSampleNearest2d.cpp_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `PointwiseOps.cpp_docs.md_docs.md`
+- **Keyword Index**: `PointwiseOps.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

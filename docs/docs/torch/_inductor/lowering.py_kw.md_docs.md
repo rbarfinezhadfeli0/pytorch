@@ -1,0 +1,421 @@
+# Documentation: `docs/torch/_inductor/lowering.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/_inductor/lowering.py_kw.md`
+- **Size**: 20,248 bytes (19.77 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `torch/_inductor/lowering.py`
+
+## File Information
+
+- **Original File**: [torch/_inductor/lowering.py](../../../torch/_inductor/lowering.py)
+- **Documentation**: [`lowering.py_docs.md`](./lowering.py_docs.md)
+- **Folder**: `torch/_inductor`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Functions
+
+- **`_adaptive_avg_pool2d`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_adaptive_pooling_fn`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_adaptive_pooling_fn_with_idx`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_assert_async`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_assert_scalar`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_assert_tensor_metadata`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_avg_poolnd`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_boundaries_helper`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_constant_like`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_convert_element_type`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_create_constants`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_device_put`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_foobar`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_foreach_map`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_fractional_max_pool`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_fractional_pooling_offsets`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_full`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_get_pointwise_overrides`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_get_primitive_bitwidth`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_local_scalar_dense`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_low_memory_max_pool_offsets_to_indices`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_low_memory_max_pool_with_offsets`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_make_reduction_inner`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_make_scan_inner`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_max_pool_with_indices`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_max_pool_with_offsets`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_new_constant`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_padding_can_be_fused`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_pool_offsets_to_indices`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_realize`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_register_foreach_lowering`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_register_lowering`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_sink_tokens`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_sorter_helper`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_to_dtype`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_unsafe_index`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_unsafe_index_put`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_unsafe_index_put_`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_unsafe_masked_index`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_unsafe_masked_index_put_accumulate`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_unwrap`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_upsample_nearest_exact1d`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_upsample_nearest_exact2d`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_upsample_nearest_exact3d`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_validate_dim`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_validate_reduction_axis`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_view_dtype`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_warn_complex_not_supported`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_warn_triton_random`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`adaptive_max_pool2d`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`add_layout_constraint`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`add_needs_realized_inputs`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`additional_pointwise_ops`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`apply_constraint`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`as_strided`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`as_strided_`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`as_strided_copy`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`as_strided_scatter`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`as_tensor`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`assert_nyi`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`associative_scan`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`avg_pool2d`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`avg_pool2d_backward`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`avg_pool3d`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`avg_pool3d_backward`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`backend_reduce_str`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`bernoulli_`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`bernoulli_p`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`binary_search`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`broadcast_in_dim`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`broadcast_symbolic_shapes`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`broadcast_tensors`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`bucketize`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`can_fuse_reduction`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`cat`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`ceil`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`check_and_broadcast_indices`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`check_skip_condition`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`clamp`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`clone`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`clone_preserve_reinterpret_view`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`combine_fn`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`compute_indices_adaptive_pooling`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`compute_pool_size_without_padding`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`compute_slice_index`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`cond`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`const_func`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`constant_boundary_condition`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`constant_like`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`constant_pad_nd`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`constrain_to_fake_tensor`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`constrain_to_fake_tensors`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`constrain_to_fx_strides`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`construct_input`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`control_deps_op_lowering`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`copy`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`copy_`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`copy_strided`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`create_tensor_like`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`cummax`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`cummin`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`cumprod`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`cumsum`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`cur_node_has_non_foreach_users`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`decode_dtype`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`diagonal`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`diagonal_copy`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`diagonal_scatter`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`div`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`div_mode`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`div_prim`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`embedding`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`empty`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`empty_strided`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`end_index`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`expand`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`expand_as`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`fallback_handler`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`fallback_node_due_to_unsupported_type`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`fill_`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`floor`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`floordiv`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`fmod`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`fn`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`fn_inner`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`fn_sum`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`foobar`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`force_fallback`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`fractional_max_pool2d`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`fractional_max_pool3d`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`frexp0`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`frexp1`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`fsdp_copy_`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`full`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`full_like`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`gather`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`get_constant_or_index_expr`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`get_constant_value`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`get_flattened_index`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`get_overloads`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`get_promoted_dtype`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`glu`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`group_foreach_args`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`handler`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`in_namespace`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`increments_to_index`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`index`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`index_impl`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`index_impl_helper`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`index_output_size_and_inner_fn`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`index_put`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`index_put_`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`index_put_as_masked_fill`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`index_put_fallback`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`index_put_impl_`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`indice_slice_from_randperm`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`inductor_force_stride_order`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`inductor_lookup_seed`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`inductor_randint`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`inductor_random`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`inductor_seed`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`inductor_seeds`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`inner`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`inner_fn`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`inner_fn_max_idx`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`inner_fn_max_val`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`inplace_constant_pad_nd`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`invoke_quant_tracer`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`invoke_subgraph`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`iota`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`is_aligned`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`is_boolean_type`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`is_integer_type`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`is_reduction`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`isinf`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`isnan`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`load`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`loader`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`log_add_exp_helper`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`logcumsumexp`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`long_tensor`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`lower_assert_async`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`lower_assert_functional_async`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`make_fallback`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`make_foreach_pointwise`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`make_pointwise`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`make_reduction`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`make_triton_fallback`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`mask`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`max_pool2d_with_indices`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`max_pool2d_with_indices_backward`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`max_pool3d_with_indices`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`max_pool_checks`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`maybe_copy_cpu_scalar`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`maybe_layout_constraints`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`mean`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`mul`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`mutate_to`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`native_dropout`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`new_constant`**: [lowering.py_docs.md](./lowering.py_docs.md)
+
+### Imports
+
+- **`.`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`.._dynamo.utils`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`.codegen.common`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`.comm_lowering`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`.decomposition`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`.ir`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`.ops_handler`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`.subgraph_lowering`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`.utils`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`.virtualized`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`Any`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`BackendFeature`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`Callable`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`FakeScriptObject`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`InputDescriptor`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`OrderedSet`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`ParamSpec`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`PointwiseSubgraphLowering`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`ReductionType`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`__future__`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`_get_effect`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`annotations`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`associative_scan_op`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`auto_functionalized`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`collections`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`collections.abc`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`config`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`contextlib`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`control_deps`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`counters`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`dataclasses`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`decompositions`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`defaultdict`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`functools`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`get_layout_constraint_tag`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`import_submodule`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`itertools`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`jagged_lowerings`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`kernel`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`kernel_side_table`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`logging`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`magic_methods`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`math`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`mkldnn_lowerings`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`operator`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`ops`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`os`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`patch`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`quantized_lowerings`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`register_comm_lowerings`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`sympy`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`textwrap`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`torch`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`torch._dynamo.utils`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`torch._higher_order_ops.associative_scan`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`torch._higher_order_ops.auto_functionalize`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`torch._higher_order_ops.effects`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`torch._higher_order_ops.triton_kernel_wrap`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`torch._inductor.fx_passes.control_dependencies`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`torch._library.fake_class_registry`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`torch._library.utils`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`torch._prims_common`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`torch.ao.quantization.fx._decomposed`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`torch.fx`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`torch.fx.experimental.sym_node`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`torch.fx.experimental.symbolic_shapes`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`torch.utils._ordered_set`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`torch.utils._pytree`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`torch.utils._sympy.functions`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`triton_kernel_wrapper_mutation`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`typing`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`typing_extensions`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`unittest.mock`**: [lowering.py_docs.md](./lowering.py_docs.md)
+- **`warnings`**: [lowering.py_docs.md](./lowering.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/_inductor`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/_inductor`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/_inductor`):
+
+- [`freezing.py_docs.md_docs.md`](./freezing.py_docs.md_docs.md)
+- [`quantized_lowerings.py_docs.md_docs.md`](./quantized_lowerings.py_docs.md_docs.md)
+- [`select_algorithm.py_docs.md_docs.md`](./select_algorithm.py_docs.md_docs.md)
+- [`kernel_inputs.py_kw.md_docs.md`](./kernel_inputs.py_kw.md_docs.md)
+- [`compile_fx_ext.py_kw.md_docs.md`](./compile_fx_ext.py_kw.md_docs.md)
+- [`extern_node_serializer.py_docs.md_docs.md`](./extern_node_serializer.py_docs.md_docs.md)
+- [`mkldnn_lowerings.py_kw.md_docs.md`](./mkldnn_lowerings.py_kw.md_docs.md)
+- [`ops_handler.py_docs.md_docs.md`](./ops_handler.py_docs.md_docs.md)
+- [`test_operators.py_docs.md_docs.md`](./test_operators.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `lowering.py_kw.md_docs.md`
+- **Keyword Index**: `lowering.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

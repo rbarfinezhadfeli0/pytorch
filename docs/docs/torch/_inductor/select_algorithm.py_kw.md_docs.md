@@ -1,0 +1,407 @@
+# Documentation: `docs/torch/_inductor/select_algorithm.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/_inductor/select_algorithm.py_kw.md`
+- **Size**: 22,566 bytes (22.04 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `torch/_inductor/select_algorithm.py`
+
+## File Information
+
+- **Original File**: [torch/_inductor/select_algorithm.py](../../../torch/_inductor/select_algorithm.py)
+- **Documentation**: [`select_algorithm.py_docs.md`](./select_algorithm.py_docs.md)
+- **Folder**: `torch/_inductor`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`AlgorithmSelectorCache`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`DataProcessorChoiceCallerWrapper`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`DataProcessorTemplateWrapper`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`ErrorFromChoice`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`ExternKernelCaller`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`ExternKernelChoice`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`GenerateAndLoadResult`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`GeneratedCodeCache`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`GeneratedCodeCacheEntry`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`KernelNamespace`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`ModificationWrapper`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`NoValidChoicesError`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`PartialRender`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`StoreOutputSubstitution`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`SubgraphInfo`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`SymbolicGridFn`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`TritonTemplate`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`TritonTemplateCaller`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`TritonTemplateKernel`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`class`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`extends`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`for`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`together`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+
+### Functions
+
+- **`__call__`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`__getattr__`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`__init__`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`__post_init__`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`__repr__`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`__str__`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`_add_kernel_input`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`_autotune_metadata`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`_gen_tmp_var`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`_generate_index_from_tma_index`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`_generated_mask_for_tma`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`_get_subgraph`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`_handle_scatter_graph`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`_is_extern`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`_jinja2_env`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`_log_autotune_choices_stats`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`_log_autotune_exceptions`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`_process_indexing`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`_register_default_preprocessing_fns`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`_register_extra_template_env_fns`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`_register_hook`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`add_feedback_saver`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`add_preprocessing_fn`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`additional_call_args_and_types`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`and`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`append_to_log`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`autoheuristic_id`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`autotune`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`autotune_select_algorithm`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`benchmark`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`benchmark_choice`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`benchmark_choices`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`benchmark_example_value`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`benchmark_in_current_process`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`benchmark_in_sub_process`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`bind`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`cache_clear`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`call_kernel`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`call_name`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`choice_or_none`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`clear_feedback_savers`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`clear_preprocessing_fns`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`code`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`codegen_range_tree`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`contiguous_strides`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`create_inputs_key`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`create_no_valid_choices`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`create_precompile_key`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`create_subgraph_body`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`decorator`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`def_kernel`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`do_autotuning`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`estimate_flops`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`estimate_kernel_num_bytes`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`filter_choices_by_desc_regex`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`filter_choices_by_name_regex`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`finalize_all`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`finalize_hook`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`finalize_remaining`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`from_choice_args`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`gen_argdefs`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`gen_defines`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`generate`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`generate_and_load`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`generate_code`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`generate_example_value`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`get_algorithm_selector_cache`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`get_benchmark_tensors`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`get_choice_info`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`get_entry`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`get_flex_attention_choice_info`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`get_flex_attention_log_filename`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`get_inputs`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`get_make_kernel_render`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`get_mm_log_filename`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`get_num_workers`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`get_timings`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`grid`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`has_flexible_layout`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`hash_key`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`hook`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`indexing`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`indirect_indexing`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`info_dict`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`input_dependent_preserved_state`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`jit_lines`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`kernel_benchmark_extra_args`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`key_of`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`layout_key`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`load`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`load_input`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`log_results`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`make_benchmark_fn`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`make_extra`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`make_kernel`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`make_kernel_render`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`make_key`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`make_load`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`make_precompile_fn`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`maybe_append_choice`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`maybe_log_flex_attention_results`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`maybe_test_cache`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`modification`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`my_filter`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`need_numel_args`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`no_op`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`on_complete`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`output_node`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`pick_deterministic_choice`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`precompile`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`precompile_with_captured_stdout`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`prescreen_choices`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`profiler_bench_function`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`prune_choices_postscreen`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`put_entry`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`realize_inputs`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`record_input_dependent_tracked_event`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`render`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`replay_cached_events`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`set_subgraph_body`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`size`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`store`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`store_output`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`stride`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`sympy_call`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`to_callable`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`to_dict`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`track_has_autotuned`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`uid`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`unpack`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`verify`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`wait_on_futures`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`wrapper`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+
+### Imports
+
+- **`.`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`..utils._sympy.functions`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`.autotune_process`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`.codecache`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`.codegen.common`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`.codegen.cuda.cuda_kernel`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`.codegen.simd_kernel_features`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`.codegen.subgraph`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`.codegen.triton`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`.codegen.triton_utils`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`.codegen.wrapper`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`.exc`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`.fx_utils`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`.ir`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`.ops_handler`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`.runtime.benchmarking`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`.runtime.hints`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`.runtime.triton_compat`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`.runtime.triton_heuristics`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`.utils`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`.virtualized`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`Any`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`CSE`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`CUDACompileError`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`CUDATemplateCaller`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`Callable`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`CeilDiv`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`ChoiceCaller`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`DeviceProperties`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`FileLock`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`FixedGrid`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`HAS_WARP_SPEC`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`IndexingOptions`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`IterationRangesEntry`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`ModuleType`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`OrderedSet`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`OutOfResources`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`Path`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`SIMDKernelFeatures`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`Self`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`StoreMode`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`StringIO`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`SubgraphChoiceCaller`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`V`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`as_completed`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`autotune_process`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`await_sync`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`benchmarker`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`clear_on_fresh_cache`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`code_hash`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`collections.abc`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`concurrent`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`concurrent.futures`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`config`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`config_of`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`contextlib`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`count_flops_fx`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`dataclasses`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`functools`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`get_interface_for_device`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`hashlib`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`inspect`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`io`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`itertools`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`jinja2`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`json`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`logging`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`lowering`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`math`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`operator`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`os`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`patch`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`pathlib`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`pexpr`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`rand_strided`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`re`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`sympy`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`sys`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`textwrap`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`time`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`torch`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`torch._dynamo.device_interface`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`torch._dynamo.testing`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`torch._dynamo.utils`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`torch._inductor.async_compile`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`torch._inductor.await_utils`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`torch._inductor.codegen.cuda.cuda_kernel`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`torch._inductor.codegen.simd`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`torch._inductor.utils`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`torch.utils._filelock`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`torch.utils._ordered_set`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`triton.runtime.autotuner`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`types`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`typing`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`typing_extensions`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+- **`unittest.mock`**: [select_algorithm.py_docs.md](./select_algorithm.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/_inductor`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/_inductor`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Implements or uses **caching** mechanisms.
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/_inductor`):
+
+- [`freezing.py_docs.md_docs.md`](./freezing.py_docs.md_docs.md)
+- [`lowering.py_kw.md_docs.md`](./lowering.py_kw.md_docs.md)
+- [`quantized_lowerings.py_docs.md_docs.md`](./quantized_lowerings.py_docs.md_docs.md)
+- [`select_algorithm.py_docs.md_docs.md`](./select_algorithm.py_docs.md_docs.md)
+- [`kernel_inputs.py_kw.md_docs.md`](./kernel_inputs.py_kw.md_docs.md)
+- [`compile_fx_ext.py_kw.md_docs.md`](./compile_fx_ext.py_kw.md_docs.md)
+- [`extern_node_serializer.py_docs.md_docs.md`](./extern_node_serializer.py_docs.md_docs.md)
+- [`mkldnn_lowerings.py_kw.md_docs.md`](./mkldnn_lowerings.py_kw.md_docs.md)
+- [`ops_handler.py_docs.md_docs.md`](./ops_handler.py_docs.md_docs.md)
+- [`test_operators.py_docs.md_docs.md`](./test_operators.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `select_algorithm.py_kw.md_docs.md`
+- **Keyword Index**: `select_algorithm.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

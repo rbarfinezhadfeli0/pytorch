@@ -1,0 +1,205 @@
+# Documentation: `c10/util/DynamicCounter.cpp`
+
+## File Metadata
+
+- **Path**: `c10/util/DynamicCounter.cpp`
+- **Size**: 2,393 bytes (2.34 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#include <c10/util/DynamicCounter.h>
+
+#include <c10/util/Synchronized.h>
+
+#include <stdexcept>
+#include <string>
+#include <unordered_set>
+#include <vector>
+
+namespace c10::monitor {
+
+namespace {
+using DynamicCounterBackends =
+    std::vector<std::shared_ptr<detail::DynamicCounterBackendIf>>;
+
+Synchronized<DynamicCounterBackends>& dynamicCounterBackends() {
+  static auto instance = new Synchronized<DynamicCounterBackends>();
+  return *instance;
+}
+
+Synchronized<std::unordered_set<std::string>>& registeredCounters() {
+  static auto instance = new Synchronized<std::unordered_set<std::string>>();
+  return *instance;
+}
+} // namespace
+
+namespace detail {
+void registerDynamicCounterBackend(
+    std::unique_ptr<DynamicCounterBackendIf> backend) {
+  dynamicCounterBackends().withLock(
+      [&](auto& backends) { backends.push_back(std::move(backend)); });
+}
+} // namespace detail
+
+struct DynamicCounter::Guard {
+  Guard(std::string_view key, Callback&& getCounterCallback)
+      : key_{key},
+        getCounterCallback_(std::move(getCounterCallback)),
+        backends_{dynamicCounterBackends().withLock(
+            [](auto& backends) { return backends; })} {
+    registeredCounters().withLock([&](auto& registeredCounters) {
+      if (!registeredCounters.insert(std::string(key)).second) {
+        throw std::logic_error(
+            "Counter " + std::string(key) + " already registered");
+      }
+    });
+
+    for (const auto& backend : backends_) {
+      // Avoid copying the user-provided callback to avoid unexpected behavior
+      // changes when more than one backend is registered.
+      backend->registerCounter(key, [&]() { return getCounterCallback_(); });
+    }
+  }
+
+  Guard(Guard&& other) = delete;
+  Guard(const Guard&) = delete;
+  Guard& operator=(const Guard&) = delete;
+  Guard& operator=(Guard&&) = delete;
+
+  ~Guard() {
+    for (const auto& backend : backends_) {
+      backend->unregisterCounter(key_);
+    }
+
+    registeredCounters().withLock(
+        [&](auto& registeredCounters) { registeredCounters.erase(key_); });
+  }
+
+ private:
+  std::string key_;
+  Callback getCounterCallback_;
+  DynamicCounterBackends backends_;
+};
+
+DynamicCounter::DynamicCounter(
+    std::string_view key,
+    Callback getCounterCallback)
+    : guard_{std::make_unique<Guard>(key, std::move(getCounterCallback))} {}
+
+DynamicCounter::~DynamicCounter() = default;
+
+} // namespace c10::monitor
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 2 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `namespace`, `detail`, `c10`
+
+**Classes/Structs**: `DynamicCounter`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `c10/util`, which is part of **C10** (Caffe2 Core), the core library providing fundamental abstractions.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `c10/util/DynamicCounter.h`
+- `c10/util/Synchronized.h`
+- `stdexcept`
+- `string`
+- `unordered_set`
+- `vector`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`c10/util`):
+
+- [`CallOnce.h_docs.md`](./CallOnce.h_docs.md)
+- [`Unicode.cpp_docs.md`](./Unicode.cpp_docs.md)
+- [`logging_is_not_google_glog.h_docs.md`](./logging_is_not_google_glog.h_docs.md)
+- [`Array.h_docs.md`](./Array.h_docs.md)
+- [`complex_math.h_docs.md`](./complex_math.h_docs.md)
+- [`order_preserving_flat_hash_map.h_docs.md`](./order_preserving_flat_hash_map.h_docs.md)
+- [`flags_use_gflags.cpp_docs.md`](./flags_use_gflags.cpp_docs.md)
+- [`flags_use_no_gflags.cpp_docs.md`](./flags_use_no_gflags.cpp_docs.md)
+- [`Float8_e4m3fnuz.h_docs.md`](./Float8_e4m3fnuz.h_docs.md)
+- [`typeid.cpp_docs.md`](./typeid.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `DynamicCounter.cpp_docs.md`
+- **Keyword Index**: `DynamicCounter.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

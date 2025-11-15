@@ -1,0 +1,207 @@
+# Documentation: `docs/pt_ops.bzl_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/pt_ops.bzl_kw.md`
+- **Size**: 4,685 bytes (4.58 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `pt_ops.bzl`
+
+## File Information
+
+- **Original File**: [pt_ops.bzl](../pt_ops.bzl)
+- **Documentation**: [`pt_ops.bzl_docs.md`](./pt_ops.bzl_docs.md)
+- **Folder**: `root`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`BUCK`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`Bool`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`CPU`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`Delete`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`Dict_Tensor`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`Dict_bool`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`Dict_default_Tensor`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`Dict_default_bool`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`Dict_default_float`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`Dict_default_int`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`Dict_default_str`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`Dict_float`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`Dict_int`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`Dict_str`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`EnumName`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`EnumValue`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`Expected`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`False`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`Float`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`FloatImplicit`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`IS_OSS`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`If`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`Int`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`IntImplicit`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`Is`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`Model`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`Name`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`None`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`NumToTensor`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`OSS`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`OUT`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`PT_BASE_OPS`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`PT_OPS_PRIM`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`PUBLIC`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`Pass`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`Print`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`PyTorch`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`QuantizedCPU`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`RaiseException`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`Sanity`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`Scalar`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`ScalarImplicit`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`Scalar_Scalar`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`See`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`Since`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`Size`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`SparseCPU`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`TODO`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`Tensor`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`Tensor_hacked_twin`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`The`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`This`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`True`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`TupleIndex`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`TupleUnpack`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`Typechecker`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`USED_PT_BACKENDS`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`Uninitialized`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`We`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`While`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`YAML`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+- **`ZVh1AgOKW8Vv`**: [pt_ops.bzl_docs.md](./pt_ops.bzl_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs`, which is part of the PyTorch project infrastructure.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs`):
+
+- [`Makefile_docs.md`](./Makefile_docs.md)
+- [`README.md_docs.md`](./README.md_docs.md)
+- [`requirements.txt_docs.md`](./requirements.txt_docs.md)
+- [`libtorch.rst_docs.md`](./libtorch.rst_docs.md)
+- [`BUILD.bazel_docs.md_docs.md`](./BUILD.bazel_docs.md_docs.md)
+- [`generate_repo_docs.py_kw.md_docs.md`](./generate_repo_docs.py_kw.md_docs.md)
+- [`CMakeLists.txt_docs.md_docs.md`](./CMakeLists.txt_docs.md_docs.md)
+- [`pt_template_srcs.bzl_kw.md_docs.md`](./pt_template_srcs.bzl_kw.md_docs.md)
+- [`CLAUDE.md_docs.md_docs.md`](./CLAUDE.md_docs.md_docs.md)
+- [`setup.py_kw.md_docs.md`](./setup.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `pt_ops.bzl_kw.md_docs.md`
+- **Keyword Index**: `pt_ops.bzl_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

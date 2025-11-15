@@ -1,0 +1,190 @@
+# Documentation: `torch/csrc/jit/runtime/calculate_necessary_args.h`
+
+## File Metadata
+
+- **Path**: `torch/csrc/jit/runtime/calculate_necessary_args.h`
+- **Size**: 2,281 bytes (2.23 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#pragma once
+
+#include <torch/csrc/Export.h>
+#include <torch/csrc/jit/frontend/schema_matching.h>
+#include <cstddef>
+
+namespace torch::jit {
+
+// Calculates the number of args that need to be passed in.
+// Less args may be needed if defaults are provided.
+// Returns: {number args needed, number of out args}
+inline std::pair<int64_t, int64_t> CalculateNecessaryArgs(
+    const std::vector<Argument>& schema_args,
+    at::ArrayRef<Value*> actual_inputs,
+    bool allow_trailing_out_args) {
+  if (schema_args.empty()) {
+    return std::make_pair(0, 0);
+  }
+
+  // count number of out arguments
+  int64_t schema_idx = static_cast<int64_t>(schema_args.size()) - 1;
+  if (allow_trailing_out_args) {
+    // skip over out arguments in the end.
+    while (schema_idx >= 0) {
+      const auto& current_arg = schema_args.at(schema_idx);
+      if (!current_arg.is_out()) {
+        break;
+      }
+      schema_idx--;
+    }
+  }
+
+  int64_t num_out = static_cast<int64_t>(schema_args.size()) - schema_idx - 1;
+
+  if (schema_args.size() < actual_inputs.size()) {
+    return std::make_pair(actual_inputs.size(), num_out);
+  }
+
+  // if it is the default args, we reset the index to the last element
+  if (!allow_trailing_out_args) {
+    schema_idx = schema_args.size() - 1;
+  }
+  // keeps track of trailing unnecessary args
+  while (schema_idx >= 0) {
+    // this means it is not default argument, so it is necessary
+    if (!schema_args.at(schema_idx).default_value().has_value()) {
+      return std::make_pair(schema_idx + 1, num_out);
+    } else {
+      auto schema_value =
+          schema_args.at(schema_idx).default_value().value().toIValue();
+      // non-const value will become nullptr here, so will be marked necessary
+      // non-const would include prim::ListConstruct, prim::DictConstruct as
+      // well.
+      auto actual_value = toIValue(actual_inputs[schema_idx]);
+      if (!actual_value.has_value()) {
+        return std::make_pair(schema_idx + 1, num_out);
+      }
+      // if the IR has same value as default value of the schema,
+      // it is not necessary argument.
+      if (schema_value != actual_value.value()) {
+        return std::make_pair(schema_idx + 1, num_out);
+      }
+    }
+    schema_idx--;
+  }
+  return std::make_pair(0, num_out);
+}
+
+} // namespace torch::jit
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 3 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`
+
+**Classes/Structs**: `as`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/jit/runtime`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `torch/csrc/Export.h`
+- `torch/csrc/jit/frontend/schema_matching.h`
+- `cstddef`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/jit/runtime`):
+
+- [`decomposition_registry.h_docs.md`](./decomposition_registry.h_docs.md)
+- [`register_distributed_ops.cpp_docs.md`](./register_distributed_ops.cpp_docs.md)
+- [`instruction.h_docs.md`](./instruction.h_docs.md)
+- [`argument_spec.cpp_docs.md`](./argument_spec.cpp_docs.md)
+- [`instruction.cpp_docs.md`](./instruction.cpp_docs.md)
+- [`symbolic_script.h_docs.md`](./symbolic_script.h_docs.md)
+- [`register_prim_ops_fulljit.cpp_docs.md`](./register_prim_ops_fulljit.cpp_docs.md)
+- [`symbolic_shape_registry_util.cpp_docs.md`](./symbolic_shape_registry_util.cpp_docs.md)
+- [`interpreter.h_docs.md`](./interpreter.h_docs.md)
+- [`logging.h_docs.md`](./logging.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `calculate_necessary_args.h_docs.md`
+- **Keyword Index**: `calculate_necessary_args.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

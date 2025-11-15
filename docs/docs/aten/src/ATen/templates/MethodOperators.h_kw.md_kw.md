@@ -1,0 +1,79 @@
+# Keyword Index: `docs/aten/src/ATen/templates/MethodOperators.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/templates/MethodOperators.h_kw.md](../../../../../../docs/aten/src/ATen/templates/MethodOperators.h_kw.md)
+- **Documentation**: [`MethodOperators.h_kw.md_docs.md`](./MethodOperators.h_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/templates`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`ATen_fwd`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`Analysis`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`Architecture`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`Basic`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`Complete`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`Considerations`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`Dependencies`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`Design`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`Detailed`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`Documentation`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`Efficiency`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`Extracted`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`File`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`Folder`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`Generated`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`High`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`How`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`In`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`Includes`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`Index`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`Information`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`Keyword`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`Keywords`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`Level`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`Map`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`Metadata`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`MethodOperators`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`Namespaces`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`Original`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`Overview`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`Performance`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`Purpose`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`PyTorch`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`Related`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`Repository`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`Safety`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`Section`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`Security`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`Source`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`System`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`Testing`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`The`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`This`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+- **`Usage`**: [MethodOperators.h_kw.md_docs.md](./MethodOperators.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

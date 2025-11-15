@@ -1,0 +1,79 @@
+# Keyword Index: `docs/aten/src/ATen/TensorGeometry.cpp_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/TensorGeometry.cpp_kw.md](../../../../../docs/aten/src/ATen/TensorGeometry.cpp_kw.md)
+- **Documentation**: [`TensorGeometry.cpp_kw.md_docs.md`](./TensorGeometry.cpp_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`Analysis`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`Architecture`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`Basic`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`Complete`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`Considerations`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`Dependencies`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`Design`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`Detailed`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`Documentation`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`Efficiency`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`Extracted`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`File`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`Folder`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`Functions`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`Generated`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`High`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`How`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`In`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`Includes`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`Index`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`Information`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`Keyword`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`Keywords`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`Level`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`Map`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`Metadata`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`Namespaces`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`Original`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`Overview`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`Performance`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`Purpose`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`PyTorch`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`Related`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`Repository`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`Safety`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`Section`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`Security`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`Source`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`System`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`TensorGeometry`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`Testing`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`The`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`This`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+- **`Usage`**: [TensorGeometry.cpp_kw.md_docs.md](./TensorGeometry.cpp_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

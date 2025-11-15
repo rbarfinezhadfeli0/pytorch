@@ -1,0 +1,308 @@
+# Documentation: `docs/test/distributed/elastic/agent/server/test/local_elastic_agent_test.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/test/distributed/elastic/agent/server/test/local_elastic_agent_test.py_kw.md`
+- **Size**: 18,954 bytes (18.51 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `test/distributed/elastic/agent/server/test/local_elastic_agent_test.py`
+
+## File Information
+
+- **Original File**: [test/distributed/elastic/agent/server/test/local_elastic_agent_test.py](../../../../../../../test/distributed/elastic/agent/server/test/local_elastic_agent_test.py)
+- **Documentation**: [`local_elastic_agent_test.py_docs.md`](./local_elastic_agent_test.py_docs.md)
+- **Folder**: `test/distributed/elastic/agent/server/test`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`LocalElasticAgentTest`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`class`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`from`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+
+### Functions
+
+- **`_bipolar_function`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`_bipolar_sleep_function`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`_check_env_function`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`_check_env_value`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`_check_local_watchdog_setup`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`_check_master_port_addr_override`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`_dist_sum`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`_echo`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`_fatal_signal_function`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`_get_role_info`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`_happy_function`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`_sad_function`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`_sleep`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`acquire_available_port`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`assert_rank_consistency`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`assert_ranks_sequential`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`barrier_failed`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`check_master_addr_port_override`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`correct_rank_assignment_heterogeneous`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`correct_rank_assignment_homogeneous`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`double_agent_elastic`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`double_agent_fault_tolerance`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`dummy_compute`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`dummy_compute_simulate_rank_failure`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`fail_rank_one_once`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`get_agent`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`get_worker_spec`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`init_rpc`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`log_dir`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`no_exit_barrier_on_failure`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`rpc_master`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`rpc_worker`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`run_agent`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`run_agent_healthcheck_setup_disabled`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`run_agent_healthcheck_setup_enabled`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`run_agent_local_watchdog_setup_disabled`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`run_agent_local_watchdog_setup_enabled`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`run_bipolar_function`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`run_check_env_function`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`run_check_nccl_async_error_handling_env`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`run_check_nccl_async_error_handling_env_default`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`run_distributed_sum_heterogeneous`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`run_distributed_sum_homogeneous`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`run_function_with_return_value`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`run_happy_function`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`run_job`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`run_sad_function`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`run_test_with_backend`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`setUp`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`setUpClass`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`shutdown_called`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`simple_dist_sum`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`tearDown`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`tearDownClass`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_barrier_failed_c10d`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_barrier_failed_etcd`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_barrier_failed_etcd_v2`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_check_master_addr_port_override_etcd`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_check_master_addr_port_override_etcd_v2`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_correct_rank_assignment_heterogeneous_etcd`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_correct_rank_assignment_heterogeneous_etcd_v2`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_correct_rank_assignment_homogeneous_etcd`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_correct_rank_assignment_homogeneous_etcd_v2`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_double_agent_elastic_c10d`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_double_agent_elastic_etcd`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_double_agent_elastic_etcd_v2`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_double_agent_fault_tolerance_etcd`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_double_agent_fault_tolerance_etcd_v2`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_dummy_compute_c10d`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_dummy_compute_etcd`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_dummy_compute_etcd_v2`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_no_exit_barrier_on_failure`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_rank_restart_after_failure`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_run_agent_healthcheck_setup_disabled_c10d`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_run_agent_healthcheck_setup_disabled_etcd`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_run_agent_healthcheck_setup_enabled_c10d`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_run_agent_healthcheck_setup_enabled_etcd`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_run_agent_local_watchdog_setup_disabled_c10d`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_run_agent_local_watchdog_setup_disabled_etcd`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_run_agent_local_watchdog_setup_enabled_c10d`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_run_agent_local_watchdog_setup_enabled_etcd`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_run_bipolar_function_c10d`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_run_bipolar_function_etcd`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_run_bipolar_function_etcd_v2`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_run_check_env_function_etcd`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_run_check_nccl_async_error_handling_env_c10d`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_run_check_nccl_async_error_handling_env_default_c10d`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_run_distributed_sum_heterogeneous_c10d`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_run_distributed_sum_heterogeneous_etcd`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_run_distributed_sum_heterogeneous_etcd_v2`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_run_distributed_sum_homogeneous_c10d`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_run_distributed_sum_homogeneous_etcd`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_run_distributed_sum_homogeneous_etcd_v2`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_run_function_with_return_value_c10d`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_run_function_with_return_value_etcd`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_run_function_with_return_value_etcd_v2`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_run_happy_function_c10d`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_run_happy_function_etcd`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_run_happy_function_etcd_v2`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_run_sad_function_c10d`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_run_sad_function_etcd`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_run_sad_function_etcd_v2`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_run_with_custom_log_lines`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_shutdown_called_c10d`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_shutdown_called_etcd`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_shutdown_called_etcd_v2`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_simple_dist_sum_c10d`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_simple_dist_sum_etcd`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_simple_dist_sum_etcd_v2`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_torch_rpc_c10d`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_torch_rpc_etcd`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_torch_rpc_etcd_v2`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_workers_drift_fail_etcd`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_workers_drift_fail_etcd_v2`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_workers_drift_success_etcd`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`test_workers_drift_success_etcd_v2`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`torch_rpc`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`workers_drift_fail`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`workers_drift_success`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+
+### Imports
+
+- **`BackendType`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`Callable`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`ChildFailedError`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`DefaultLogsSpecs`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`EtcdServer`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`Mock`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`Optional`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`RendezvousParameters`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`collections.abc`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`dataclass`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`dataclasses`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`json`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`mock`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`multiprocessing`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`os`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`shutil`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`signal`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`socket`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`tempfile`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`time`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`torch`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`torch.distributed`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`torch.distributed.elastic.agent.server.api`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`torch.distributed.elastic.agent.server.local_elastic_agent`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`torch.distributed.elastic.multiprocessing`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`torch.distributed.elastic.multiprocessing.errors`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`torch.distributed.elastic.rendezvous`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`torch.distributed.elastic.rendezvous.etcd_server`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`torch.distributed.elastic.rendezvous.registry`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`torch.distributed.rpc`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`torch.distributed.rpc.backend_registry`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`typing`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`unittest`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`unittest.mock`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+- **`uuid`**: [local_elastic_agent_test.py_docs.md](./local_elastic_agent_test.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/distributed/elastic/agent/server/test`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/distributed/elastic/agent/server/test`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/distributed/elastic/agent/server/test/local_elastic_agent_test.py_kw.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/distributed/elastic/agent/server/test`):
+
+- [`__init__.py_docs.md_docs.md`](./__init__.py_docs.md_docs.md)
+- [`local_elastic_agent_test.py_docs.md_docs.md`](./local_elastic_agent_test.py_docs.md_docs.md)
+- [`__init__.py_kw.md_docs.md`](./__init__.py_kw.md_docs.md)
+- [`api_test.py_kw.md_docs.md`](./api_test.py_kw.md_docs.md)
+- [`api_test.py_docs.md_docs.md`](./api_test.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `local_elastic_agent_test.py_kw.md_docs.md`
+- **Keyword Index**: `local_elastic_agent_test.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

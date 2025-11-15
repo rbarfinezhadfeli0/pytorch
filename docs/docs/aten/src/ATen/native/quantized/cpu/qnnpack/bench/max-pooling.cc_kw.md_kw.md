@@ -1,0 +1,81 @@
+# Keyword Index: `docs/aten/src/ATen/native/quantized/cpu/qnnpack/bench/max-pooling.cc_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/native/quantized/cpu/qnnpack/bench/max-pooling.cc_kw.md](../../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/bench/max-pooling.cc_kw.md)
+- **Documentation**: [`max-pooling.cc_kw.md_docs.md`](./max-pooling.cc_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/native/quantized/cpu/qnnpack/bench`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`Analysis`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`Architecture`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`Basic`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`Complete`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`Considerations`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`Dependencies`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`Design`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`Detailed`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`Documentation`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`Efficiency`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`Extracted`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`File`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`Folder`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`Functions`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`Generated`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`High`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`How`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`In`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`Includes`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`Index`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`Information`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`Keyword`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`Keywords`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`Level`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`Map`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`Metadata`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`Original`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`Overview`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`Performance`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`Purpose`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`PyTorch`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`Related`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`Repository`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`Safety`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`Section`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`Security`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`ShuffleNet`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`Source`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`SqueezeNetV10`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`SqueezeNetV11`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`System`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`Testing`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`The`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`This`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`Usage`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+- **`VGG`**: [max-pooling.cc_kw.md_docs.md](./max-pooling.cc_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

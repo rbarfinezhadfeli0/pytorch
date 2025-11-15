@@ -1,0 +1,356 @@
+# Documentation: `docs/torch/fx/experimental/unify_refinements.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/fx/experimental/unify_refinements.py_docs.md`
+- **Size**: 5,803 bytes (5.67 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/fx/experimental/unify_refinements.py`
+
+## File Metadata
+
+- **Path**: `torch/fx/experimental/unify_refinements.py`
+- **Size**: 3,130 bytes (3.06 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This is a python source code that is part of the PyTorch project.
+
+## Original Source
+
+```python
+# mypy: allow-untyped-defs
+from torch.fx.experimental.graph_gradual_typechecker import Refine
+from torch.fx.experimental.unification import unify, Var  # type: ignore[attr-defined]
+from torch.fx.tensor_type import TensorType
+
+
+def infer_symbolic_types_single_pass(traced):
+    """
+    Calls our symbolic inferencer once.
+    """
+    r = Refine(traced)
+    r.refine()
+    mgu = unify_eq(r.constraints)
+    substitute_all_types(traced.graph, mgu)
+
+
+def infer_symbolic_types(traced):
+    """
+    Calls our symbolic inferencer twice.
+    This is useful when one pass is not enough
+    to infer all the information such as the case
+    for braodcasting.
+    """
+    r = Refine(traced)
+    r.refine()
+    mgu = unify_eq(r.constraints)
+    substitute_all_types(traced.graph, mgu)
+
+    r = Refine(traced)
+    r.refine()
+    mgu = unify_eq(r.constraints)
+    substitute_all_types(traced.graph, mgu)
+
+    r.symbolic_relations()
+
+
+def convert_eq(list_of_eq):
+    """
+    Convert equality constraints in the right format
+    to be used by unification library.
+    """
+    lhs = []
+    rhs = []
+    for eq in list_of_eq:
+        lhs.append(eq.lhs)
+        rhs.append(eq.rhs)
+    return tuple(lhs), tuple(rhs)
+
+
+def unify_eq(list_of_eq):
+    """
+    Apply unification to a set of
+    equality constraints
+    """
+    lhs, rhs = convert_eq(list_of_eq)
+    return unify(lhs, rhs)
+
+
+def substitute_solution_one_type(mapping, t):
+    """
+    Apply the most general unifier to a type
+    """
+    if isinstance(t, Var):
+        if t in mapping:
+            return mapping[t]
+        else:
+            return t
+
+    elif isinstance(t, TensorType):
+        new_type = []
+        for typ in t.__args__:
+            if typ in mapping:
+                new_type.append(mapping[typ])
+            else:
+                new_type.append(typ)
+        return TensorType(tuple(new_type))
+
+    elif isinstance(t, list):
+        new_type = []
+        for typ in t:
+            new_type.append(substitute_solution_one_type(mapping, typ))
+        return new_type
+
+    elif isinstance(t, tuple):
+        new_type = []
+        for typ in t:
+            new_type.append(substitute_solution_one_type(mapping, typ))
+        return tuple(new_type)
+
+    else:
+        return t
+
+
+def substitute_all_types(graph, mapping):
+    """
+    Apply the most general unifier to all types in a graph
+    till reaching a fixed point. If the input and output graph
+    are the same, we converge.
+    """
+    flag = True
+    while flag:
+        flag = False
+        for k in mapping:
+            old_mapping_val = mapping[k]
+            if mapping[k] in mapping:
+                new_key = mapping[k]
+                mapping[k] = mapping[new_key]
+            if old_mapping_val != mapping[k]:
+                flag = True
+
+    for n in graph.nodes:
+        n.type = substitute_solution_one_type(mapping, n.type)
+
+
+def check_for_type_equality(g1, g2):
+    """
+    A check equality to be used in fixed points.
+    We do not use graph equality but instead type
+    equality.
+    """
+    for n, m in zip(g1.nodes, g2.nodes):
+        if n.type != m.type:
+            return False
+    return True
+
+```
+
+
+
+## High-Level Overview
+
+"""    Calls our symbolic inferencer once.
+
+This Python file contains 0 class(es) and 7 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Functions defined**: `infer_symbolic_types_single_pass`, `infer_symbolic_types`, `convert_eq`, `unify_eq`, `substitute_solution_one_type`, `substitute_all_types`, `check_for_type_equality`
+
+**Key imports**: Refine, unify, Var  , TensorType
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/fx/experimental`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `torch.fx.experimental.graph_gradual_typechecker`: Refine
+- `torch.fx.experimental.unification`: unify, Var  
+- `torch.fx.tensor_type`: TensorType
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/fx/experimental`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`graph_gradual_typechecker.py_docs.md`](./graph_gradual_typechecker.py_docs.md)
+- [`validator.py_docs.md`](./validator.py_docs.md)
+- [`accelerator_partitioner.py_docs.md`](./accelerator_partitioner.py_docs.md)
+- [`debug.py_docs.md`](./debug.py_docs.md)
+- [`const_fold.py_docs.md`](./const_fold.py_docs.md)
+- [`merge_matmul.py_docs.md`](./merge_matmul.py_docs.md)
+- [`rewriter.py_docs.md`](./rewriter.py_docs.md)
+- [`partitioner_utils.py_docs.md`](./partitioner_utils.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `unify_refinements.py_docs.md`
+- **Keyword Index**: `unify_refinements.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/fx/experimental`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/fx/experimental`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/fx/experimental`):
+
+- [`schema_type_annotation.py_kw.md_docs.md`](./schema_type_annotation.py_kw.md_docs.md)
+- [`proxy_tensor.py_kw.md_docs.md`](./proxy_tensor.py_kw.md_docs.md)
+- [`partitioner_utils.py_docs.md_docs.md`](./partitioner_utils.py_docs.md_docs.md)
+- [`recording.py_docs.md_docs.md`](./recording.py_docs.md_docs.md)
+- [`validator.py_kw.md_docs.md`](./validator.py_kw.md_docs.md)
+- [`recording.py_kw.md_docs.md`](./recording.py_kw.md_docs.md)
+- [`accelerator_partitioner.py_kw.md_docs.md`](./accelerator_partitioner.py_kw.md_docs.md)
+- [`optimization.py_kw.md_docs.md`](./optimization.py_kw.md_docs.md)
+- [`graph_gradual_typechecker.py_docs.md_docs.md`](./graph_gradual_typechecker.py_docs.md_docs.md)
+- [`_dynamism.py_kw.md_docs.md`](./_dynamism.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `unify_refinements.py_docs.md_docs.md`
+- **Keyword Index**: `unify_refinements.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

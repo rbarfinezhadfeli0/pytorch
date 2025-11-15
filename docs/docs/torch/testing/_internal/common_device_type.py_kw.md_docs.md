@@ -1,0 +1,340 @@
+# Documentation: `docs/torch/testing/_internal/common_device_type.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/testing/_internal/common_device_type.py_kw.md`
+- **Size**: 17,413 bytes (17.00 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `torch/testing/_internal/common_device_type.py`
+
+## File Information
+
+- **Original File**: [torch/testing/_internal/common_device_type.py](../../../../torch/testing/_internal/common_device_type.py)
+- **Documentation**: [`common_device_type.py_docs.md`](./common_device_type.py_docs.md)
+- **Folder**: `torch/testing/_internal`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`CPUTestBase`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`CUDATestBase`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`DeviceTypeTestBase`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`HPUTestBase`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`LazyTestBase`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`MPSTestBase`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`OpDTypes`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`PrivateUse1TestBase`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`TestClassFoo`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`TestClassFooCPU`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`TestClassFooCUDA`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`XPUTestBase`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`and`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`be`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`contains`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`creates`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`deviceCountAtLeast`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`dtypes`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`dtypesIfCPU`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`dtypesIfCUDA`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`dtypesIfHPU`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`dtypesIfMPS`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`dtypesIfPRIVATEUSE1`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`dtypesIfXPU`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`expectedFailure`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`for`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`from`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`in`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`invokes`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`methods`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`object`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`onlyOn`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`ops`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`precisionOverride`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipCPUIf`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipCUDAIf`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipGPUIf`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipHPUIf`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipIf`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipLazyIf`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipMPSIf`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipMetaIf`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipPRIVATEUSE1If`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipXLAIf`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipXPUIf`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`to`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`toleranceOverride`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+
+### Functions
+
+- **`__call__`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`__init__`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`_apply_precision_override_for_test`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`_dtype_test_suffix`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`_get_dtypes`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`_get_precision_override`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`_get_tolerance_override`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`_has_sufficient_memory`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`_init_and_get_primary_device`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`_parametrize_test`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`_serialize_sample`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`_setUpClass`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`_should_stop_test_suite`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`_tearDownClass`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`_update_param_kwargs`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`dec_fn`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`decorator`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`default_parametrize_fn`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`dep_fn`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`disableMkldnn`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`disable_cudnn`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`disable_mkldnn`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`disablecuDNN`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`dtype_parametrize_fn`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`efail_fn`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`expectedFailureCPU`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`expectedFailureCUDA`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`expectedFailureHPU`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`expectedFailureMPS`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`expectedFailureMPSComplex`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`expectedFailureMPSPre14`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`expectedFailureMPSPre15`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`expectedFailureMeta`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`expectedFailureXLA`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`expectedFailureXPU`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`filter_desired_device_types`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`func_replace`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`get_all_device_types`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`get_all_devices`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`get_desired_device_type_test_bases`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`get_device_type_test_bases`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`get_primary_device`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`has_cudnn`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`has_cusolver`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`has_hipsolver`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`inner`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`instantiate_device_type_tests`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`instantiate_test`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`instantiate_test_helper`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`instantiated_test`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`largeTensorTest`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`multi_fn`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`onlyCPU`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`onlyCUDA`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`onlyCUDAAndPRIVATEUSE1`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`onlyHPU`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`onlyMPS`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`onlyNativeDeviceTypes`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`onlyNativeDeviceTypesAnd`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`onlyPRIVATEUSE1`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`onlyXPU`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`only_fn`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`precision`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`rel_tol`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`run`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`setUpClass`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipCPUIfNoFFT`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipCPUIfNoLapack`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipCPUIfNoMkl`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipCPUIfNoMklSparse`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipCPUIfNoMkldnn`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipCUDAIfCudnnVersionLessThan`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipCUDAIfMiopen`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipCUDAIfNoCudnn`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipCUDAIfNoCusolver`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipCUDAIfNoCusparseGeneric`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipCUDAIfNoHipsparseGeneric`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipCUDAIfNoMagma`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipCUDAIfNoMagmaAndNoCusolver`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipCUDAIfNoMagmaAndNoLinalgsolver`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipCUDAIfNoMiopen`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipCUDAIfNoSparseGeneric`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipCUDAIfNotMiopenSuggestNHWC`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipCUDAIfNotRocm`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipCUDAIfRocm`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipCUDAIfRocmVersionLessThan`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipCUDAIfVersionLessThan`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipCUDAVersionIn`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipHPU`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipLazy`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipMPS`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipMeta`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipPRIVATEUSE1`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipXLA`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`skipXPU`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`split_if_not_empty`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`test_X`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`test_bar`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`test_bar_cpu`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`test_bar_cuda`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`test_car`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`test_numerics`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`test_wrapper`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`wrap_fn`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+
+### Imports
+
+- **`Any`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`Callable`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`Enum`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`GPU_TYPES`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`ParamSpec`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`collections`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`collections.abc`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`common_device_type`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`copy`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`enum`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`functools`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`gc`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`get_all_dtypes`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`inspect`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`namedtuple`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`os`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`partial`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`platform`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`psutil`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`runpy`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`sys`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`threading`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`torch`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`torch._inductor.utils`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`torch._lazy`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`torch._lazy.metrics`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`torch._lazy.ts_backend`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`torch.testing._internal.common_cuda`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`torch.testing._internal.common_dtype`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`typing`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`typing_extensions`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+- **`unittest`**: [common_device_type.py_docs.md](./common_device_type.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/testing/_internal`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/testing/_internal`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/torch/testing/_internal/common_device_type.py_kw.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/testing/_internal`):
+
+- [`hypothesis_utils.py_kw.md_docs.md`](./hypothesis_utils.py_kw.md_docs.md)
+- [`fake_config_module2.py_kw.md_docs.md`](./fake_config_module2.py_kw.md_docs.md)
+- [`static_module.py_kw.md_docs.md`](./static_module.py_kw.md_docs.md)
+- [`common_pruning.py_kw.md_docs.md`](./common_pruning.py_kw.md_docs.md)
+- [`composite_compliance.py_kw.md_docs.md`](./composite_compliance.py_kw.md_docs.md)
+- [`common_mkldnn.py_docs.md_docs.md`](./common_mkldnn.py_docs.md_docs.md)
+- [`triton_utils.py_docs.md_docs.md`](./triton_utils.py_docs.md_docs.md)
+- [`common_dtype.py_docs.md_docs.md`](./common_dtype.py_docs.md_docs.md)
+- [`common_methods_invocations.py_docs.md_docs.md`](./common_methods_invocations.py_docs.md_docs.md)
+- [`hypothesis_utils.py_docs.md_docs.md`](./hypothesis_utils.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `common_device_type.py_kw.md_docs.md`
+- **Keyword Index**: `common_device_type.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

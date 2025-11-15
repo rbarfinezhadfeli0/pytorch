@@ -1,0 +1,288 @@
+# Documentation: `docs/torch/csrc/lazy/ts_backend/ts_autograd_functions.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/lazy/ts_backend/ts_autograd_functions.cpp_docs.md`
+- **Size**: 4,494 bytes (4.39 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/csrc/lazy/ts_backend/ts_autograd_functions.cpp`
+
+## File Metadata
+
+- **Path**: `torch/csrc/lazy/ts_backend/ts_autograd_functions.cpp`
+- **Size**: 2,028 bytes (1.98 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#include <ATen/Operators.h>
+#include <ATen/native/CPUFallback.h>
+#include <torch/csrc/lazy/ts_backend/ts_autograd_functions.h>
+#include <torch/csrc/lazy/ts_backend/ts_eager_fallback.h>
+
+namespace torch::lazy {
+
+at::Tensor MaxPool3dAutogradFunctionTS::forward(
+    torch::autograd::AutogradContext* ctx,
+    const at::Tensor& self,
+    at::IntArrayRef kernel_size,
+    at::IntArrayRef stride,
+    at::IntArrayRef padding,
+    at::IntArrayRef dilation,
+    bool ceil_mode) {
+  ctx->saved_data["kernel_size"] = kernel_size;
+  ctx->saved_data["stride"] = stride;
+  ctx->saved_data["padding"] = padding;
+  ctx->saved_data["dilation"] = dilation;
+  ctx->saved_data["ceil_mode"] = ceil_mode;
+  auto results = at::native::
+      call_fallback_fn<&ltc_eager_fallback, ATEN_OP(max_pool3d_with_indices)>::
+          call(self, kernel_size, stride, padding, dilation, ceil_mode);
+  ctx->save_for_backward({self, std::get<1>(results)});
+  return std::get<0>(results);
+}
+
+torch::autograd::variable_list MaxPool3dAutogradFunctionTS::backward(
+    torch::autograd::AutogradContext* ctx,
+    torch::autograd::variable_list grad_output) {
+  auto kernel_size = ctx->saved_data["kernel_size"].toIntList().vec();
+  auto stride = ctx->saved_data["stride"].toIntList().vec();
+  auto padding = ctx->saved_data["padding"].toIntList().vec();
+  auto dilation = ctx->saved_data["dilation"].toIntList().vec();
+  auto ceil_mode = ctx->saved_data["ceil_mode"].toBool();
+  auto saved = ctx->get_saved_variables();
+  const auto& self = saved[0];
+  at::Tensor grad;
+  const auto& indices = saved[1];
+  grad = at::native::call_fallback_fn<
+      &ltc_eager_fallback,
+      ATEN_OP(max_pool3d_with_indices_backward)>::
+      call(
+          grad_output[0],
+          self,
+          kernel_size,
+          stride,
+          padding,
+          dilation,
+          ceil_mode,
+          indices);
+
+  at::Tensor undef;
+  torch::autograd::variable_list grad_inputs = {
+      grad, undef, undef, undef, undef, undef};
+  return grad_inputs;
+}
+
+} // namespace torch::lazy
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 0 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/lazy/ts_backend`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/Operators.h`
+- `ATen/native/CPUFallback.h`
+- `torch/csrc/lazy/ts_backend/ts_autograd_functions.h`
+- `torch/csrc/lazy/ts_backend/ts_eager_fallback.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/lazy/ts_backend`):
+
+- [`ts_node.h_docs.md`](./ts_node.h_docs.md)
+- [`dynamic_ir.cpp_docs.md`](./dynamic_ir.cpp_docs.md)
+- [`ts_backend_impl.h_docs.md`](./ts_backend_impl.h_docs.md)
+- [`config.cpp_docs.md`](./config.cpp_docs.md)
+- [`ts_eager_fallback.h_docs.md`](./ts_eager_fallback.h_docs.md)
+- [`dynamic_ir.h_docs.md`](./dynamic_ir.h_docs.md)
+- [`tensor_aten_ops.cpp_docs.md`](./tensor_aten_ops.cpp_docs.md)
+- [`tensor_aten_ops.h_docs.md`](./tensor_aten_ops.h_docs.md)
+- [`ts_lowering_context.cpp_docs.md`](./ts_lowering_context.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `ts_autograd_functions.cpp_docs.md`
+- **Keyword Index**: `ts_autograd_functions.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/lazy/ts_backend`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/lazy/ts_backend`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/lazy/ts_backend`):
+
+- [`ts_native_functions.cpp_kw.md_docs.md`](./ts_native_functions.cpp_kw.md_docs.md)
+- [`ts_native_functions.cpp_docs.md_docs.md`](./ts_native_functions.cpp_docs.md_docs.md)
+- [`ir_builder.h_docs.md_docs.md`](./ir_builder.h_docs.md_docs.md)
+- [`ts_node.cpp_docs.md_docs.md`](./ts_node.cpp_docs.md_docs.md)
+- [`ts_lowering_context.h_kw.md_docs.md`](./ts_lowering_context.h_kw.md_docs.md)
+- [`ts_lowering_context.cpp_kw.md_docs.md`](./ts_lowering_context.cpp_kw.md_docs.md)
+- [`tensor_aten_ops.cpp_kw.md_docs.md`](./tensor_aten_ops.cpp_kw.md_docs.md)
+- [`tensor_aten_ops.cpp_docs.md_docs.md`](./tensor_aten_ops.cpp_docs.md_docs.md)
+- [`config.h_docs.md_docs.md`](./config.h_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `ts_autograd_functions.cpp_docs.md_docs.md`
+- **Keyword Index**: `ts_autograd_functions.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

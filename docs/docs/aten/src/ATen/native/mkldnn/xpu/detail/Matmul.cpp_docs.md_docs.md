@@ -1,0 +1,501 @@
+# Documentation: `docs/aten/src/ATen/native/mkldnn/xpu/detail/Matmul.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/mkldnn/xpu/detail/Matmul.cpp_docs.md`
+- **Size**: 10,784 bytes (10.53 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/native/mkldnn/xpu/detail/Matmul.cpp`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/mkldnn/xpu/detail/Matmul.cpp`
+- **Size**: 8,312 bytes (8.12 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+
+#include <c10/xpu/XPUFunctions.h>
+
+#include <ATen/ATen.h>
+#include <ATen/record_function.h>
+
+#include <Attr.h>
+#include <Utils.h>
+
+#include <c10/core/ScalarType.h>
+#include <oneapi/dnnl/dnnl.hpp>
+
+namespace at::native::onednn {
+
+sycl::event matmul(
+    at::Tensor& result,
+    const at::Tensor& mat1,
+    const at::Tensor& mat2,
+    const at::Tensor& b_raw,
+    bool m2_trans,
+    Attr attr,
+    const std::vector<sycl::event>& deps) {
+  // m2_trans means mat2 is transposed from the nn.Linear perspective.
+  // m2_trans==true means mat2 is [k, n] layout.
+  // m2_trans==false means mat2 is [n, k] layout, aka, the default layout in
+  // nn.Linear.
+  int64_t dims = result.dim();
+  TORCH_CHECK(
+      dims == 2 || dims == 3,
+      "oneDNN matmul only works with 2D or 3D, got ",
+      dims);
+  TORCH_CHECK(
+      dims == mat1.dim() && dims == mat2.dim(),
+      "oneDNN input matrixes must have the same ranks");
+  TORCH_CHECK(result.defined(), "oneDNN matmul result should be defined");
+
+  auto& engine = GpuEngineManager::Instance().get_engine();
+  auto& stream = GpuStreamManager::Instance().get_stream();
+
+  at::Tensor m1 = mat1;
+  at::Tensor m2 = mat2;
+
+  undo_broadcast_on_batch(m1, m2);
+
+  m1 = is_onednn_matmul_strides(m1) ? m1 : m1.contiguous();
+  m2 = is_onednn_matmul_strides(m2) ? m2 : m2.contiguous();
+  at::Tensor dst =
+      is_onednn_matmul_strides(result) ? result : result.contiguous();
+
+  int64_t m = dst.size(-2);
+  int64_t n = dst.size(-1);
+  int64_t k = m1.size(-1);
+  int64_t mb = 1;
+
+  if (dims == 3) {
+    mb = dst.size(0);
+    TORCH_CHECK(
+        mb == mat1.size(0) && mb == mat2.size(0),
+        "batch size mismatch, dst mb: ",
+        mb,
+        "m1 mb",
+        mat1.size(0),
+        " m2 mb: ",
+        mat2.size(0));
+  }
+
+  // validate bias and make it compatible with oneDNN implementation
+  bool with_bias = false;
+  at::Tensor b = b_raw;
+  if (b.defined()) {
+    with_bias = true;
+    if (b.dim() == 1) {
+      TORCH_CHECK(
+          b.size(0) == n || b.size(0) == 1,
+          "matmul supports [n] or [1] when bias dim is 1 ...");
+      if (b.size(0) == 0) {
+        with_bias = false;
+      } else if (m1.dim() == 3) {
+        b = b.expand({mb, m, n}).contiguous();
+      } else if (m1.dim() == 2) {
+        b = b.expand({1, n}).contiguous();
+      }
+    } else if (b.dim() == 2) {
+      TORCH_CHECK(
+          (b.size(0) == m && b.size(1) == n) ||
+              (b.size(0) == 1 && b.size(1) == n) ||
+              (b.size(0) == m && b.size(1) == 1) ||
+              (b.size(0) == 1 && b.size(1) == 1),
+          "matmul supports [m, n] or [1, n] or [m, 1] or [1, 1] when bias dim is 2 ...");
+      if (b.size(0) == 1 && b.size(1) == 1)
+        b = b.expand({1, n}).contiguous();
+    } else if (b.dim() == 3) {
+      TORCH_CHECK(
+          at::are_expandable({mb, m, n}, b.sizes()),
+          "matmul bias must be expandable to:",
+          dst.sizes(),
+          " but got:",
+          b.sizes());
+      b = b.expand({mb, m, n}).contiguous();
+    } else if (b.dim() == 0) {
+      TORCH_CHECK(
+          b.numel() == 1, "matmul supports 1 numel when bias dim is [] ...");
+      if (m1.dim() == 3) {
+        b = b.expand({mb, m, n}).contiguous();
+      } else {
+        b = b.expand({1, n}).contiguous();
+      }
+    } else {
+      TORCH_CHECK(0, "unsupported bias dim in matmul ...");
+    }
+  }
+
+  b = b.contiguous(); // avoid reorder 2 times
+
+  // xpu matmul support both ab/ba shape for m2 tensor, we don't check any more
+  auto m1_usr_dt = get_onednn_dtype_include_double(m1);
+  auto m2_usr_dt = get_onednn_dtype_include_double(m2);
+  auto dst_usr_dt = get_onednn_dtype_include_double(dst);
+
+  auto m1_dt = m1_usr_dt;
+  auto m2_dt = m2_usr_dt;
+  auto dst_dt = dst_usr_dt;
+  dnnl::memory::data_type bias_dt;
+
+  dnnl::memory::desc m1_md, m1_usr_md, m1_any_md;
+  dnnl::memory::desc m2_md, m2_usr_md, m2_any_md;
+  dnnl::memory::desc dst_md, dst_usr_md, dst_any_md;
+  dnnl::memory::desc bias_md;
+
+  // Naive Master weight
+  if (m1_dt == dnnl::memory::data_type::bf16 &&
+      m2_dt == dnnl::memory::data_type::f32) {
+    m2_dt = dnnl::memory::data_type::bf16;
+    dst_dt = dnnl::memory::data_type::bf16;
+  } else if (
+      m1_dt == dnnl::memory::data_type::f32 &&
+      m2_dt == dnnl::memory::data_type::bf16) {
+    m1_dt = dnnl::memory::data_type::bf16;
+    dst_dt = dnnl::memory::data_type::bf16;
+  }
+
+  dnnl::memory::dims m1_dims, m2_dims, dst_dims, bias_dims;
+  dnnl::memory::dims m1_strides, m2_strides, dst_strides, bias_strides;
+  if (dims == 2) {
+    m1_dims = {m, k};
+    m2_dims = {k, n};
+    dst_dims = {m, n};
+
+    m1_strides = {m1.stride(0), m1.stride(1)};
+    if (m2_trans) {
+      m2_strides = {m2.stride(0), m2.stride(1)};
+    } else {
+      m2_strides = {m2.stride(1), m2.stride(0)};
+    }
+    dst_strides = {dst.stride(0), dst.stride(1)};
+  } else {
+    m1_dims = {m1.size(0), m, k};
+    m2_dims = {m2.size(0), k, n};
+    dst_dims = {mb, m, n};
+
+    m1_strides = {m1.stride(0), m1.stride(1), m1.stride(2)};
+    if (m2_trans) {
+      m2_strides = {m2.stride(0), m2.stride(1), m2.stride(2)};
+    } else {
+      m2_strides = {m2.stride(0), m2.stride(2), m2.stride(1)};
+    }
+    dst_strides = {dst.stride(0), dst.stride(1), dst.stride(2)};
+  }
+
+  if (with_bias) {
+    bias_dims = get_onednn_dims(b);
+    bias_dt = get_onednn_dtype_include_double(b);
+    bias_strides = get_onednn_strides(b);
+  }
+
+  dnnl::post_ops po = attr.extract_post_ops(dst);
+
+  std::unordered_map<int, dnnl::memory> args;
+  dnnl::matmul matmul_p;
+  dnnl::matmul::primitive_desc matmul_pd;
+
+  // STEP1: create memory desc
+  m1_md = dnnl::memory::desc(m1_dims, m1_dt, m1_strides);
+  m2_md = dnnl::memory::desc(m2_dims, m2_dt, m2_strides);
+  dst_md = dnnl::memory::desc(dst_dims, dst_dt, dst_strides);
+
+  // STEP2: creat attribute
+  dnnl::primitive_attr pattr;
+  pattr.set_post_ops(po);
+
+#if ONEDNN_SUPPORT_DETERMINISTIC
+  if (at::globalContext().deterministicAlgorithms() ||
+      at::globalContext().deterministicMkldnn())
+    pattr.set_deterministic(true);
+#endif
+
+  // scratchpad
+  pattr.set_scratchpad_mode(dnnl::scratchpad_mode::user);
+
+  if (m1_dt == dnnl::memory::data_type::f32) {
+    bool allow_tf32 = at::globalContext().allowTF32OneDNN();
+    if (allow_tf32) {
+      pattr.set_fpmath_mode(dnnl::fpmath_mode::tf32);
+    } else {
+      pattr.set_fpmath_mode(dnnl::fpmath_mode::strict);
+    }
+  }
+
+  // STEP3: create primitive
+  if (with_bias) {
+    bias_md = dnnl::memory::desc(bias_dims, bias_dt, bias_strides);
+    matmul_pd = dnnl::matmul::primitive_desc(
+        engine, m1_md, m2_md, bias_md, dst_md, pattr);
+  } else {
+    matmul_pd =
+        dnnl::matmul::primitive_desc(engine, m1_md, m2_md, dst_md, pattr);
+  }
+
+  matmul_p = dnnl::matmul(matmul_pd);
+
+  m1_usr_md = dnnl::memory::desc(m1_dims, m1_usr_dt, m1_strides);
+  m2_usr_md = dnnl::memory::desc(m2_dims, m2_usr_dt, m2_strides);
+  dst_usr_md = dnnl::memory::desc(dst_dims, dst_usr_dt, dst_strides);
+
+  // STEP4: create memory
+  auto m1_usr_m = make_onednn_memory(m1_usr_md, engine, m1.data_ptr());
+  auto m2_usr_m = make_onednn_memory(m2_usr_md, engine, m2.data_ptr());
+  auto dst_usr_m = make_onednn_memory(dst_usr_md, engine, dst.data_ptr());
+
+  auto expected_m1_md = matmul_pd.src_desc();
+  auto expected_m2_md = matmul_pd.weights_desc();
+  auto expected_dst_md = matmul_pd.dst_desc();
+
+  dnnl::memory m1_m = m1_usr_m, m2_m = m2_usr_m, dst_m = dst_usr_m;
+  at::Tensor m1_, m2_, dst_;
+
+  if (attr.with_binary())
+    attr.construct_post_binary(matmul_pd, args);
+
+  size_t scratchpad_size = matmul_pd.scratchpad_desc().get_size();
+  at::Tensor scratchpad_tensor = at::empty(
+      {static_cast<int64_t>(scratchpad_size)},
+      m1.options().dtype(at::kByte),
+      std::nullopt);
+  auto scratchpad_memory = make_onednn_memory(
+      matmul_pd.scratchpad_desc(), engine, scratchpad_tensor.data_ptr());
+  args.insert({DNNL_ARG_SCRATCHPAD, scratchpad_memory});
+
+  args.insert({DNNL_ARG_SRC, m1_m});
+  args.insert({DNNL_ARG_WEIGHTS, m2_m});
+  args.insert({DNNL_ARG_DST, dst_m});
+  if (with_bias) {
+    auto bias_m = make_onednn_memory(bias_md, engine, b.data_ptr());
+    args.insert({DNNL_ARG_BIAS, bias_m});
+  }
+
+  sycl::event matmul_event =
+      dnnl::sycl_interop::execute(matmul_p, stream, args, deps);
+
+  if (!dst.is_same(result))
+    result.copy_(dst);
+
+  return matmul_event;
+}
+
+} // namespace at::native::onednn
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 10 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `at`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native/mkldnn/xpu/detail`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `c10/xpu/XPUFunctions.h`
+- `ATen/ATen.h`
+- `ATen/record_function.h`
+- `Attr.h`
+- `Utils.h`
+- `c10/core/ScalarType.h`
+- `oneapi/dnnl/dnnl.hpp`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native/mkldnn/xpu/detail`):
+
+- [`Attention.cpp_docs.md`](./Attention.cpp_docs.md)
+- [`oneDNNContext.h_docs.md`](./oneDNNContext.h_docs.md)
+- [`LRUCache.h_docs.md`](./LRUCache.h_docs.md)
+- [`QConv.cpp_docs.md`](./QConv.cpp_docs.md)
+- [`WoQMatmul.cpp_docs.md`](./WoQMatmul.cpp_docs.md)
+- [`Deconv.cpp_docs.md`](./Deconv.cpp_docs.md)
+- [`oneDNNContext.cpp_docs.md`](./oneDNNContext.cpp_docs.md)
+- [`QMatmul.cpp_docs.md`](./QMatmul.cpp_docs.md)
+- [`oneDNN.h_docs.md`](./oneDNN.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `Matmul.cpp_docs.md`
+- **Keyword Index**: `Matmul.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native/mkldnn/xpu/detail`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native/mkldnn/xpu/detail`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Implements or uses **caching** mechanisms.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native/mkldnn/xpu/detail`):
+
+- [`Attention.cpp_kw.md_docs.md`](./Attention.cpp_kw.md_docs.md)
+- [`QConv.cpp_docs.md_docs.md`](./QConv.cpp_docs.md_docs.md)
+- [`Utils.cpp_docs.md_docs.md`](./Utils.cpp_docs.md_docs.md)
+- [`QMatmul.cpp_docs.md_docs.md`](./QMatmul.cpp_docs.md_docs.md)
+- [`oneDNN.h_kw.md_docs.md`](./oneDNN.h_kw.md_docs.md)
+- [`DnnlExt.h_kw.md_docs.md`](./DnnlExt.h_kw.md_docs.md)
+- [`Conv.cpp_docs.md_docs.md`](./Conv.cpp_docs.md_docs.md)
+- [`LRUCache.h_kw.md_docs.md`](./LRUCache.h_kw.md_docs.md)
+- [`oneDNNContext.h_docs.md_docs.md`](./oneDNNContext.h_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `Matmul.cpp_docs.md_docs.md`
+- **Keyword Index**: `Matmul.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,310 @@
+# Documentation: `docs/torch/csrc/profiler/orchestration/python_tracer.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/profiler/orchestration/python_tracer.h_docs.md`
+- **Size**: 4,635 bytes (4.53 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/csrc/profiler/orchestration/python_tracer.h`
+
+## File Metadata
+
+- **Path**: `torch/csrc/profiler/orchestration/python_tracer.h`
+- **Size**: 2,304 bytes (2.25 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#pragma once
+
+#include <cstdint>
+#include <memory>
+#include <utility>
+#include <vector>
+
+#include <c10/util/ApproximateClock.h>
+#include <c10/util/strong_type.h>
+
+#include <torch/csrc/profiler/kineto_shim.h>
+#include <torch/csrc/profiler/util.h>
+
+namespace torch::profiler::impl {
+
+class RecordQueue;
+struct Result;
+namespace python_tracer {
+
+using TraceKey = strong::type<
+    uint64_t,
+    struct TraceKey_,
+    strong::regular,
+    strong::hashable,
+    strong::ostreamable>;
+
+struct CompressedEvent {
+  TraceKey key_;
+  uint64_t system_tid_{};
+  kineto::DeviceAndResource kineto_info_{};
+  c10::time_t enter_t_{};
+};
+
+/*
+Libtorch does not depend on Python (e.g. cannot #include <Python.h>); however
+when we call the profiler from libtorch_python we need the profiler to be able
+to ingest the data that we collect from the Python tracer. (`PyEval_SetProfile`)
+
+In order to solve this dependency issue we define a virtual base and a function
+to register a getter. The python tracer then implements these functions and
+exposes itself by calling `registerTracer` from `torch/csrc/autograd/init.cpp`.
+This pattern of registration for faux python dependencies in libtorch is common
+in the PyTorch codebase.
+*/
+struct TORCH_API PythonTracerBase {
+  static std::unique_ptr<PythonTracerBase> make(RecordQueue* queue);
+  virtual ~PythonTracerBase() = default;
+
+  virtual void stop() = 0;
+  virtual void restart() = 0;
+  virtual void register_gc_callback() = 0;
+  virtual std::vector<std::shared_ptr<Result>> getEvents(
+      std::function<c10::time_t(c10::approx_time_t)> time_converter,
+      std::vector<CompressedEvent>& enters,
+      c10::time_t end_time_ns) = 0;
+};
+
+using MakeFn = std::unique_ptr<PythonTracerBase> (*)(RecordQueue*);
+TORCH_API void registerTracer(MakeFn make_tracer);
+
+/**
+ * Memory Tracer Implementation
+ */
+struct TORCH_API PythonMemoryTracerBase {
+  static std::unique_ptr<PythonMemoryTracerBase> make();
+  virtual ~PythonMemoryTracerBase() = default;
+
+  virtual void start() = 0;
+  virtual void stop() = 0;
+  virtual void export_memory_history(const std::string& path) = 0;
+};
+
+using MakeMemoryFn = std::unique_ptr<PythonMemoryTracerBase> (*)();
+TORCH_API void registerMemoryTracer(MakeMemoryFn make_memory_tracer);
+
+} // namespace python_tracer
+} // namespace torch::profiler::impl
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 1 class(es)/struct(s) and 9 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `python_tracer`, `torch`
+
+**Classes/Structs**: `RecordQueue`, `Result`, `TraceKey_`, `CompressedEvent`, `TORCH_API`, `TORCH_API`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/profiler/orchestration`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `cstdint`
+- `memory`
+- `utility`
+- `vector`
+- `c10/util/ApproximateClock.h`
+- `c10/util/strong_type.h`
+- `torch/csrc/profiler/kineto_shim.h`
+- `torch/csrc/profiler/util.h`
+- `Python.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/profiler/orchestration`):
+
+- [`observer.h_docs.md`](./observer.h_docs.md)
+- [`vulkan.h_docs.md`](./vulkan.h_docs.md)
+- [`observer.cpp_docs.md`](./observer.cpp_docs.md)
+- [`vulkan.cpp_docs.md`](./vulkan.cpp_docs.md)
+- [`python_tracer.cpp_docs.md`](./python_tracer.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `python_tracer.h_docs.md`
+- **Keyword Index**: `python_tracer.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/profiler/orchestration`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/profiler/orchestration`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/profiler/orchestration`):
+
+- [`observer.h_kw.md_docs.md`](./observer.h_kw.md_docs.md)
+- [`vulkan.cpp_docs.md_docs.md`](./vulkan.cpp_docs.md_docs.md)
+- [`vulkan.h_kw.md_docs.md`](./vulkan.h_kw.md_docs.md)
+- [`vulkan.cpp_kw.md_docs.md`](./vulkan.cpp_kw.md_docs.md)
+- [`python_tracer.cpp_kw.md_docs.md`](./python_tracer.cpp_kw.md_docs.md)
+- [`python_tracer.cpp_docs.md_docs.md`](./python_tracer.cpp_docs.md_docs.md)
+- [`vulkan.h_docs.md_docs.md`](./vulkan.h_docs.md_docs.md)
+- [`python_tracer.h_kw.md_docs.md`](./python_tracer.h_kw.md_docs.md)
+- [`observer.cpp_docs.md_docs.md`](./observer.cpp_docs.md_docs.md)
+- [`observer.cpp_kw.md_docs.md`](./observer.cpp_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `python_tracer.h_docs.md_docs.md`
+- **Keyword Index**: `python_tracer.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

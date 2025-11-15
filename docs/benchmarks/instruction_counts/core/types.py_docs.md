@@ -1,0 +1,198 @@
+# Documentation: `benchmarks/instruction_counts/core/types.py`
+
+## File Metadata
+
+- **Path**: `benchmarks/instruction_counts/core/types.py`
+- **Size**: 2,453 bytes (2.40 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file contains **examples or benchmarks**.
+
+## Original Source
+
+```python
+"""Type annotations for various benchmark objects."""
+
+# mypy: ignore-errors
+
+from typing import Optional, Union
+
+from core.api import AutoLabels, GroupedBenchmark, TimerArgs
+
+
+# =============================================================================
+# == Benchmark schema =========================================================
+# =============================================================================
+""" (There is a TL;DR at the end for ad-hoc benchmarks.)
+The end state for representing a benchmark is:
+  ```
+  Tuple[
+      Tuple[
+          Tuple[str, ...],      # Primary key
+          core.api.AutoLabels,  # Secondary key
+          core.api.TimerArgs,   # Value
+      ],
+      ...
+  ]
+  ```
+
+For example:
+  ```
+  [
+      (("pointwise", "add"), AutoLabels(..., Language.PYTHON), TimerArgs(...)),
+      (("pointwise", "add"), AutoLabels(..., Language.CPP), TimerArgs(...)),
+      ...
+  ]
+  ```
+
+However, such a flat list is somewhat tedious to maintain (and read), because
+there is significant duplication in the key structure. So instead, we would
+like to define something like:
+  ```
+  {
+      "pointwise" : {
+          "add": {
+              None: GroupedStmts(...),
+              "with alpha": GroupedStmts(...),
+          },
+          "mul": GroupedStmts(...),
+      },
+      "matmul": GroupedStmts(...),
+  }
+  ```
+and then parse out a flat representation. The type declarations below are
+simply formalizing the structure of nested dictionaries with string or tuple
+of string keys.
+
+TL;DR
+    If you only care about writing an ad-hoc benchmark for a PR, just use a
+    flat dictionary and everything will work. For example:
+    ```
+    {
+        "case 0": TimerArgs(...),
+        "case 1": TimerArgs(...),
+        "case 2": GroupedStmts(...),
+        ...
+    }
+    ```
+"""
+
+# Allow strings in definition for convenience, and None to signify a base
+# case. (No subsequent entry needed. See the "add" example above.)
+Label = tuple[str, ...]
+_Label = Union[Label, Optional[str]]
+
+_Value = Union[
+    Union[TimerArgs, GroupedBenchmark],
+    dict[_Label, "_Value"],
+]
+
+Definition = dict[_Label, _Value]
+
+# We initially have to parse (flatten) to an intermediate state in order to
+# build TorchScript models since multiple entries will share the same model
+# artifact.
+FlatIntermediateDefinition = dict[Label, Union[TimerArgs, GroupedBenchmark]]
+
+# Final parsed schema.
+FlatDefinition = tuple[tuple[Label, AutoLabels, TimerArgs], ...]
+
+```
+
+
+
+## High-Level Overview
+
+"""Type annotations for various benchmark objects."""# mypy: ignore-errorsfrom typing import Optional, Unionfrom core.api import AutoLabels, GroupedBenchmark, TimerArgs# =============================================================================# == Benchmark schema =========================================================# =============================================================================
+
+This Python file contains 0 class(es) and 0 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Key imports**: Optional, Union, AutoLabels, GroupedBenchmark, TimerArgs
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `benchmarks/instruction_counts/core`, which is part of the PyTorch project infrastructure.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `typing`: Optional, Union
+- `core.api`: AutoLabels, GroupedBenchmark, TimerArgs
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`benchmarks/instruction_counts/core`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`utils.py_docs.md`](./utils.py_docs.md)
+- [`api.py_docs.md`](./api.py_docs.md)
+- [`expand.py_docs.md`](./expand.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `types.py_docs.md`
+- **Keyword Index**: `types.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

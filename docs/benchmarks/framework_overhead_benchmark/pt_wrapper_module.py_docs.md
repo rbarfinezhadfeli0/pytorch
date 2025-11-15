@@ -1,0 +1,163 @@
+# Documentation: `benchmarks/framework_overhead_benchmark/pt_wrapper_module.py`
+
+## File Metadata
+
+- **Path**: `benchmarks/framework_overhead_benchmark/pt_wrapper_module.py`
+- **Size**: 1,940 bytes (1.89 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file contains **examples or benchmarks**.
+
+## Original Source
+
+```python
+import torch
+
+
+class WrapperModule:
+    """Wraps the instance of wrapped_type.
+    For graph_mode traces the instance of wrapped_type.
+    Randomaly initializes num_params tensors with single float element.
+    Args:
+        wrapped_type:
+            - Object type to be wrapped.
+                Expects the wrapped_type to:
+                   - be constructed with pt_fn specified in module_config.
+                   - provide forward method that takes module_config.num_params args.
+        module_config:
+            - Specified pt_fn to construct wrapped_type with, whether graph_mode
+              is enabled, and number of parameters wrapped_type's forward method
+              takes.
+        debug:
+            - Whether debug mode is enabled.
+        save:
+            - In graph mode, whether graph is to be saved.
+    """
+
+    def __init__(self, wrapped_type, module_config, debug, save=False):
+        pt_fn = module_config.pt_fn
+        self.module = wrapped_type(pt_fn)
+        self.tensor_inputs = []
+        self.module_name = wrapped_type.__name__
+        for _ in range(module_config.num_params):
+            self.tensor_inputs.append(torch.randn(1))
+        if module_config.graph_mode:
+            self.module = torch.jit.trace(self.module, self.tensor_inputs)
+            if save:
+                file_name = self.module_name + "_" + pt_fn.__name__ + ".pt"
+                torch.jit.save(self.module, file_name)
+                print(f"Generated graph is saved in {file_name}")
+        print(
+            f"Benchmarking module {self.module_name} with fn {pt_fn.__name__}: Graph mode:{module_config.graph_mode}"
+        )
+        if debug and isinstance(self.module, torch.jit.ScriptModule):
+            print(self.module.graph)
+            print(self.module.code)
+
+    def forward(self, niters):
+        with torch.no_grad():
+            for _ in range(niters):
+                self.module.forward(*self.tensor_inputs)
+
+```
+
+
+
+## High-Level Overview
+
+"""Wraps the instance of wrapped_type.    For graph_mode traces the instance of wrapped_type.    Randomaly initializes num_params tensors with single float element.    Args:        wrapped_type:            - Object type to be wrapped.                Expects the wrapped_type to:                   - be constructed with pt_fn specified in module_config.                   - provide forward method that takes module_config.num_params args.        module_config:            - Specified pt_fn to construct wrapped_type with, whether graph_mode              is enabled, and number of parameters wrapped_type's forward method              takes.        debug:            - Whether debug mode is enabled.        save:            - In graph mode, whether graph is to be saved.
+
+This Python file contains 1 class(es) and 2 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `WrapperModule`
+
+**Functions defined**: `__init__`, `forward`
+
+**Key imports**: torch
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `benchmarks/framework_overhead_benchmark`, which is part of the PyTorch project infrastructure.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `torch`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`benchmarks/framework_overhead_benchmark`):
+
+- [`framework_overhead_benchmark.py_docs.md`](./framework_overhead_benchmark.py_docs.md)
+- [`utils.py_docs.md`](./utils.py_docs.md)
+- [`SimpleAddModule.py_docs.md`](./SimpleAddModule.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `pt_wrapper_module.py_docs.md`
+- **Keyword Index**: `pt_wrapper_module.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

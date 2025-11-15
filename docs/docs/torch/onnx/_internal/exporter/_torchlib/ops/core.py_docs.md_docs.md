@@ -1,0 +1,277 @@
+# Documentation: `docs/torch/onnx/_internal/exporter/_torchlib/ops/core.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/onnx/_internal/exporter/_torchlib/ops/core.py_docs.md`
+- **Size**: 4,594 bytes (4.49 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/onnx/_internal/exporter/_torchlib/ops/core.py`
+
+## File Metadata
+
+- **Path**: `torch/onnx/_internal/exporter/_torchlib/ops/core.py`
+- **Size**: 1,568 bytes (1.53 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This is a python source code that is part of the PyTorch project.
+
+## Original Source
+
+```python
+"""torch.ops.aten operators under the `core` module."""
+# mypy: disable-error-code="misc,arg-type,type-arg,valid-type,assignment,return-value,type-var,operator,no-untyped-def,index"
+# pyrefly: ignore-errors
+# ruff: noqa: TCH001,TCH002
+
+from __future__ import annotations
+
+import operator
+
+from onnxscript.onnx_opset import opset18 as op
+
+import torch
+from torch.onnx._internal.exporter._torchlib._tensor_typing import TReal, TRealOrUInt8
+from torch.onnx._internal.exporter._torchlib._torchlib_registry import onnx_impl
+
+
+aten = torch.ops.aten
+
+
+@onnx_impl((aten.abs.default, operator.abs), trace_only=True)
+def aten_abs(self: TRealOrUInt8) -> TRealOrUInt8:
+    """abs(Tensor self) -> Tensor"""
+
+    return op.Abs(self)
+
+
+@onnx_impl(aten.abs.default, complex=True, trace_only=True)
+def aten_abs_complex(self: TRealOrUInt8) -> TRealOrUInt8:
+    """abs(Tensor self) -> Tensor"""
+
+    return op.ReduceL2(self, [-1], keepdims=False)
+
+
+@onnx_impl((aten.add.Tensor, aten.add.Scalar, operator.add), trace_only=True)
+def aten_add(self: TReal, other: TReal, alpha: float = 1.0) -> TReal:
+    """add.Tensor(Tensor self, Tensor other, *, Scalar alpha=1) -> Tensor"""
+    if alpha != 1.0:
+        alpha = op.CastLike(alpha, other)
+        other = op.Mul(other, alpha)
+    return op.Add(self, other)
+
+
+@onnx_impl((aten.add.Tensor, aten.add.Scalar), trace_only=True, complex=True)
+def aten_add_complex(self: TReal, other: TReal, alpha: float = 1.0) -> TReal:
+    """add.Tensor(Tensor self, Tensor other, *, Scalar alpha=1) -> Tensor"""
+
+    return aten_add(self, other, alpha=alpha)
+
+```
+
+
+
+## High-Level Overview
+
+"""torch.ops.aten operators under the `core` module."""# mypy: disable-error-code="misc,arg-type,type-arg,valid-type,assignment,return-value,type-var,operator,no-untyped-def,index"# pyrefly: ignore-errors# ruff: noqa: TCH001,TCH002from __future__ import annotationsimport operatorfrom onnxscript.onnx_opset import opset18 as opimport torchfrom torch.onnx._internal.exporter._torchlib._tensor_typing import TReal, TRealOrUInt8from torch.onnx._internal.exporter._torchlib._torchlib_registry import onnx_implaten = torch.ops.aten@onnx_impl((aten.abs.default, operator.abs), trace_only=True)def aten_abs(self: TRealOrUInt8) -> TRealOrUInt8:
+
+This Python file contains 0 class(es) and 4 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Functions defined**: `aten_abs`, `aten_abs_complex`, `aten_add`, `aten_add_complex`
+
+**Key imports**: annotations, operator, opset18 as op, torch, TReal, TRealOrUInt8, onnx_impl
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/onnx/_internal/exporter/_torchlib/ops`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `__future__`: annotations
+- `operator`
+- `onnxscript.onnx_opset`: opset18 as op
+- `torch`
+- `torch.onnx._internal.exporter._torchlib._tensor_typing`: TReal, TRealOrUInt8
+- `torch.onnx._internal.exporter._torchlib._torchlib_registry`: onnx_impl
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/onnx/_internal/exporter/_torchlib/ops`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`nn.py_docs.md`](./nn.py_docs.md)
+- [`symops.py_docs.md`](./symops.py_docs.md)
+- [`symbolic.py_docs.md`](./symbolic.py_docs.md)
+- [`hop.py_docs.md`](./hop.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `core.py_docs.md`
+- **Keyword Index**: `core.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/onnx/_internal/exporter/_torchlib/ops`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/onnx/_internal/exporter/_torchlib/ops`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/onnx/_internal/exporter/_torchlib/ops`):
+
+- [`symops.py_docs.md_docs.md`](./symops.py_docs.md_docs.md)
+- [`nn.py_docs.md_docs.md`](./nn.py_docs.md_docs.md)
+- [`symops.py_kw.md_docs.md`](./symops.py_kw.md_docs.md)
+- [`hop.py_docs.md_docs.md`](./hop.py_docs.md_docs.md)
+- [`nn.py_kw.md_docs.md`](./nn.py_kw.md_docs.md)
+- [`hop.py_kw.md_docs.md`](./hop.py_kw.md_docs.md)
+- [`__init__.py_docs.md_docs.md`](./__init__.py_docs.md_docs.md)
+- [`core.py_kw.md_docs.md`](./core.py_kw.md_docs.md)
+- [`__init__.py_kw.md_docs.md`](./__init__.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `core.py_docs.md_docs.md`
+- **Keyword Index**: `core.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,79 @@
+# Keyword Index: `torch/_dynamo/graph_deduplication.py`
+
+## File Information
+
+- **Original File**: [torch/_dynamo/graph_deduplication.py](../../../torch/_dynamo/graph_deduplication.py)
+- **Documentation**: [`graph_deduplication.py_docs.md`](./graph_deduplication.py_docs.md)
+- **Folder**: `torch/_dynamo`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Functions
+
+- **`_add_global_state_dependencies`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`_add_mutation_dependencies`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`_create_getitem_nodes`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`_create_subgraph`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`_get_all_output_indices`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`_get_children_getitems`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`_get_external_inputs`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`_get_flattened_node_indices`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`_get_inds_with_external_users`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`_has_aliasing`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`_has_cycle`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`_is_tuple_node`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`_populate_additional_deps`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`_replace_region_with_subgraph`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`_replace_tuple_outputs`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`_stable_topological_sort`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`_stable_topological_sort_impl`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`apply_graph_deduplication`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`copy_to_subgraph`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`map_arg`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`prev_cur_nodes`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+
+### Imports
+
+- **`.graph_region_tracker`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`.graph_utils`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`Generator`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`Node`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`Optional`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`OrderedSet`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`StorageWeakRef`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`_detect_cycles`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`collections`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`collections.abc`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`config`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`defaultdict`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`logging`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`operator`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`torch`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`torch._dynamo`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`torch.amp`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`torch.fx`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`torch.multiprocessing.reductions`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`torch.utils._ordered_set`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+- **`typing`**: [graph_deduplication.py_docs.md](./graph_deduplication.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,290 @@
+# Documentation: `docs/torch/csrc/jit/mobile/debug_info.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/jit/mobile/debug_info.h_docs.md`
+- **Size**: 4,792 bytes (4.68 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/csrc/jit/mobile/debug_info.h`
+
+## File Metadata
+
+- **Path**: `torch/csrc/jit/mobile/debug_info.h`
+- **Size**: 2,206 bytes (2.15 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#pragma once
+#include <c10/util/flat_hash_map.h>
+#include <caffe2/serialize/inline_container.h>
+#include <torch/csrc/jit/api/compilation_unit.h>
+#include <torch/csrc/jit/ir/scope.h>
+#include <torch/csrc/jit/serialization/source_range_serialization.h>
+
+namespace torch::jit {
+/*
+ * MobileDebugTable:
+ * Deserializes debug_pkl and callstack_map records from PT model's zip archive
+ * and stores them in a map of debug handles to DebugInfoPair. Debug handles are
+ * unique per model and runtime, be in lite interpreter or delegate, an
+ * exception of BackendRuntimeException should raised using debug handles.
+ * getSourceDebugString method is responsible for translating debug
+ * handles to correspond debug information.
+ * This debug information includes stack trace of model level source code and
+ * module hierarchy where the exception occurred.
+ */
+class MobileDebugTable {
+ public:
+  MobileDebugTable() = default;
+  MobileDebugTable(
+      std::unique_ptr<caffe2::serialize::PyTorchStreamReader>& reader,
+      const std::shared_ptr<CompilationUnit>& cu);
+
+  template <typename It>
+  MobileDebugTable(It begin, It end) : callstack_ptr_map_(begin, end) {}
+
+  std::string getSourceDebugString(
+      const int64_t debug_handle,
+      const std::string& top_module_type_name = "ModuleTypeUnknown") const;
+  std::string getSourceDebugString(
+      const std::vector<int64_t>& debug_handles,
+      const std::string& top_module_type_name = "ModuleTypeUnknown") const;
+  std::string getModuleHierarchyInfo(
+      const int64_t debug_handle,
+      const std::string& top_module_type_name = "ModuleTypeUnknown") const;
+  std::string getModuleHierarchyInfo(
+      const std::vector<int64_t>& debug_handles,
+      const std::string& top_module_type_name = "ModuleTypeUnknown") const;
+
+  const ska::flat_hash_map<int64_t, DebugInfoTuple>& getCallStackPtrMap()
+      const {
+    return callstack_ptr_map_;
+  }
+
+ private:
+  std::pair<std::string, std::string> getSourceDebugModuleHierarchyInfo(
+      const std::vector<int64_t>& debug_handles,
+      const std::string& top_module_type_name = "ModuleTypeUnknown") const;
+  ska::flat_hash_map<int64_t, DebugInfoTuple> callstack_ptr_map_;
+};
+
+} // namespace torch::jit
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 1 class(es)/struct(s) and 4 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`
+
+**Classes/Structs**: `MobileDebugTable`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/jit/mobile`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `c10/util/flat_hash_map.h`
+- `caffe2/serialize/inline_container.h`
+- `torch/csrc/jit/api/compilation_unit.h`
+- `torch/csrc/jit/ir/scope.h`
+- `torch/csrc/jit/serialization/source_range_serialization.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/jit/mobile`):
+
+- [`register_ops_common_utils.cpp_docs.md`](./register_ops_common_utils.cpp_docs.md)
+- [`import.h_docs.md`](./import.h_docs.md)
+- [`prim_ops_registery.h_docs.md`](./prim_ops_registery.h_docs.md)
+- [`profiler_edge.h_docs.md`](./profiler_edge.h_docs.md)
+- [`interpreter.h_docs.md`](./interpreter.h_docs.md)
+- [`file_format.h_docs.md`](./file_format.h_docs.md)
+- [`module.h_docs.md`](./module.h_docs.md)
+- [`observer.h_docs.md`](./observer.h_docs.md)
+- [`module.cpp_docs.md`](./module.cpp_docs.md)
+- [`flatbuffer_loader.cpp_docs.md`](./flatbuffer_loader.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `debug_info.h_docs.md`
+- **Keyword Index**: `debug_info.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/jit/mobile`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/jit/mobile`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/jit/mobile`):
+
+- [`code.h_docs.md_docs.md`](./code.h_docs.md_docs.md)
+- [`register_ops_common_utils.cpp_docs.md_docs.md`](./register_ops_common_utils.cpp_docs.md_docs.md)
+- [`observer.h_kw.md_docs.md`](./observer.h_kw.md_docs.md)
+- [`prim_ops_registery.cpp_kw.md_docs.md`](./prim_ops_registery.cpp_kw.md_docs.md)
+- [`quantization.h_docs.md_docs.md`](./quantization.h_docs.md_docs.md)
+- [`debug_info.cpp_kw.md_docs.md`](./debug_info.cpp_kw.md_docs.md)
+- [`interpreter.cpp_kw.md_docs.md`](./interpreter.cpp_kw.md_docs.md)
+- [`interpreter.cpp_docs.md_docs.md`](./interpreter.cpp_docs.md_docs.md)
+- [`promoted_prim_ops.cpp_docs.md_docs.md`](./promoted_prim_ops.cpp_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `debug_info.h_docs.md_docs.md`
+- **Keyword Index**: `debug_info.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

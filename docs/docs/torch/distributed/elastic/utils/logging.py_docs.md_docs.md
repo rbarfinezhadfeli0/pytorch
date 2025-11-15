@@ -1,0 +1,300 @@
+# Documentation: `docs/torch/distributed/elastic/utils/logging.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/distributed/elastic/utils/logging.py_docs.md`
+- **Size**: 4,879 bytes (4.76 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/distributed/elastic/utils/logging.py`
+
+## File Metadata
+
+- **Path**: `torch/distributed/elastic/utils/logging.py`
+- **Size**: 2,297 bytes (2.24 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This is a python source code that is part of the PyTorch project.
+
+## Original Source
+
+```python
+#!/usr/bin/env python3
+
+# Copyright (c) Facebook, Inc. and its affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the BSD-style license found in the
+# LICENSE file in the root directory of this source tree.
+
+import inspect
+import logging
+import os
+import warnings
+from typing import Optional
+
+from torch.distributed.elastic.utils.log_level import get_log_level
+
+
+def get_logger(name: Optional[str] = None) -> logging.Logger:
+    """
+    Util function to set up a simple logger that writes
+    into stderr. The loglevel is fetched from the LOGLEVEL
+    env. variable or WARNING as default. The function will use the
+    module name of the caller if no name is provided.
+
+    Args:
+        name: Name of the logger. If no name provided, the name will
+              be derived from the call stack.
+    """
+
+    # Derive the name of the caller, if none provided
+    # Use depth=2 since this function takes up one level in the call stack
+    return _setup_logger(name or _derive_module_name(depth=2))
+
+
+def _setup_logger(name: Optional[str] = None) -> logging.Logger:
+    logger = logging.getLogger(name)
+    logger.setLevel(os.environ.get("LOGLEVEL", get_log_level()))
+    return logger
+
+
+def _derive_module_name(depth: int = 1) -> Optional[str]:
+    """
+    Derives the name of the caller module from the stack frames.
+
+    Args:
+        depth: The position of the frame in the stack.
+    """
+    try:
+        stack = inspect.stack()
+        assert depth < len(stack)
+        # FrameInfo is just a named tuple: (frame, filename, lineno, function, code_context, index)
+        frame_info = stack[depth]
+
+        module = inspect.getmodule(frame_info[0])
+        if module:
+            module_name = module.__name__
+        else:
+            # inspect.getmodule(frame_info[0]) does NOT work (returns None) in
+            # binaries built with @mode/opt
+            # return the filename (minus the .py extension) as modulename
+            filename = frame_info[1]
+            module_name = os.path.splitext(os.path.basename(filename))[0]
+        return module_name
+    except Exception as e:
+        warnings.warn(
+            f"Error deriving logger module name, using <None>. Exception: {e}",
+            RuntimeWarning,
+            stacklevel=2,
+        )
+        return None
+
+```
+
+
+
+## High-Level Overview
+
+"""    Util function to set up a simple logger that writes    into stderr. The loglevel is fetched from the LOGLEVEL    env. variable or WARNING as default. The function will use the    module name of the caller if no name is provided.    Args:        name: Name of the logger. If no name provided, the name will              be derived from the call stack.
+
+This Python file contains 0 class(es) and 3 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Functions defined**: `get_logger`, `_setup_logger`, `_derive_module_name`
+
+**Key imports**: inspect, logging, os, warnings, Optional, get_log_level
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/distributed/elastic/utils`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `inspect`
+- `logging`
+- `os`
+- `warnings`
+- `typing`: Optional
+- `torch.distributed.elastic.utils.log_level`: get_log_level
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Error Handling**: Includes exception handling
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/distributed/elastic/utils`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`log_level.py_docs.md`](./log_level.py_docs.md)
+- [`distributed.py_docs.md`](./distributed.py_docs.md)
+- [`api.py_docs.md`](./api.py_docs.md)
+- [`store.py_docs.md`](./store.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `logging.py_docs.md`
+- **Keyword Index**: `logging.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/distributed/elastic/utils`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/distributed/elastic/utils`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Error Handling**: Includes exception handling
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/distributed/elastic/utils`):
+
+- [`api.py_kw.md_docs.md`](./api.py_kw.md_docs.md)
+- [`log_level.py_docs.md_docs.md`](./log_level.py_docs.md_docs.md)
+- [`store.py_docs.md_docs.md`](./store.py_docs.md_docs.md)
+- [`log_level.py_kw.md_docs.md`](./log_level.py_kw.md_docs.md)
+- [`__init__.py_docs.md_docs.md`](./__init__.py_docs.md_docs.md)
+- [`store.py_kw.md_docs.md`](./store.py_kw.md_docs.md)
+- [`distributed.py_docs.md_docs.md`](./distributed.py_docs.md_docs.md)
+- [`distributed.py_kw.md_docs.md`](./distributed.py_kw.md_docs.md)
+- [`__init__.py_kw.md_docs.md`](./__init__.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `logging.py_docs.md_docs.md`
+- **Keyword Index**: `logging.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

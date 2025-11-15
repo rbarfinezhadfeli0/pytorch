@@ -1,0 +1,223 @@
+# Documentation: `aten/src/ATen/native/quantized/cpu/qnnpack/src/qnnpack/AlignedAllocator.h`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/quantized/cpu/qnnpack/src/qnnpack/AlignedAllocator.h`
+- **Size**: 2,492 bytes (2.43 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+/*
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+#pragma once
+
+#include <cstddef>
+#include <limits>
+
+#include <stdlib.h>
+
+template <typename T, size_t Alignment>
+class AlignedAllocator;
+
+template <size_t Alignment>
+class AlignedAllocator<void, Alignment> {
+ public:
+  typedef void* pointer;
+  typedef const void* const_pointer;
+  typedef void value_type;
+
+  template <class U>
+  struct rebind {
+    typedef AlignedAllocator<U, Alignment> other;
+  };
+};
+
+template <typename T, size_t Alignment>
+class AlignedAllocator {
+ public:
+  typedef T value_type;
+  typedef T* pointer;
+  typedef const T* const_pointer;
+  typedef T& reference;
+  typedef const T& const_reference;
+  typedef size_t size_type;
+  typedef ptrdiff_t difference_type;
+
+#if __cplusplus >= 201402L
+  typedef std::true_type propagate_on_container_move_assignment;
+#endif
+
+  template <class U>
+  struct rebind {
+    typedef AlignedAllocator<U, Alignment> other;
+  };
+
+ public:
+  inline AlignedAllocator() noexcept = default;
+
+  template <class U>
+  inline AlignedAllocator(
+      const AlignedAllocator<U, Alignment>& other) noexcept {}
+
+  inline size_type max_size() const noexcept {
+    return (std::numeric_limits<size_type>::max() - size_type(Alignment)) /
+        sizeof(T);
+  }
+
+  inline pointer address(reference x) const noexcept {
+    return std::addressof(x);
+  }
+
+  inline const_pointer address(const_reference x) const noexcept {
+    return std::addressof(x);
+  }
+
+  inline pointer allocate(
+      size_type n,
+      typename AlignedAllocator<void, Alignment>::const_pointer hint = 0) {
+#if defined(__ANDROID__)
+    void* memory = memalign(Alignment, n * sizeof(T));
+    if (memory == 0) {
+#if !defined(__GNUC__) || defined(__EXCEPTIONS)
+      throw std::bad_alloc();
+#endif
+    }
+#else
+    void* memory = nullptr;
+    if (posix_memalign(&memory, Alignment, n * sizeof(T)) != 0) {
+#if !defined(__GNUC__) || defined(__EXCEPTIONS)
+      throw std::bad_alloc();
+#endif
+    }
+#endif
+    return static_cast<pointer>(memory);
+  }
+
+  inline void deallocate(pointer p, size_type n) noexcept {
+    free(static_cast<void*>(p));
+  }
+
+  template <class U, class... Args>
+  inline void construct(U* p, Args&&... args) {
+    ::new (static_cast<void*>(p)) U(std::forward<Args>(args)...);
+  }
+
+  template <class U>
+  inline void destroy(U* p) {
+    p->~U();
+  }
+};
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 8 class(es)/struct(s) and 10 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes/Structs**: `AlignedAllocator`, `AlignedAllocator`, `U`, `rebind`, `AlignedAllocator`, `U`, `rebind`, `U`, `U`, `U`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native/quantized/cpu/qnnpack/src/qnnpack`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `cstddef`
+- `limits`
+- `stdlib.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native/quantized/cpu/qnnpack/src/qnnpack`):
+
+- [`log.h_docs.md`](./log.h_docs.md)
+- [`x8zip.h_docs.md`](./x8zip.h_docs.md)
+- [`requantization.h_docs.md`](./requantization.h_docs.md)
+- [`pack.h_docs.md`](./pack.h_docs.md)
+- [`common.h_docs.md`](./common.h_docs.md)
+- [`u8maxpool.h_docs.md`](./u8maxpool.h_docs.md)
+- [`assembly.h_docs.md`](./assembly.h_docs.md)
+- [`q8gavgpool.h_docs.md`](./q8gavgpool.h_docs.md)
+- [`sdwconv.h_docs.md`](./sdwconv.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `AlignedAllocator.h_docs.md`
+- **Keyword Index**: `AlignedAllocator.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

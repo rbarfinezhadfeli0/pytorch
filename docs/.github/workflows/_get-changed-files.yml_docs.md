@@ -1,0 +1,177 @@
+# Documentation: `.github/workflows/_get-changed-files.yml`
+
+## File Metadata
+
+- **Path**: `.github/workflows/_get-changed-files.yml`
+- **Size**: 2,368 bytes (2.31 KB)
+- **Type**: YAML Configuration
+- **Extension**: `.yml`
+
+## File Purpose
+
+This is a yaml configuration that is part of the PyTorch project.
+
+## Original Source
+
+```yaml
+name: Get Changed Files
+
+on:
+  workflow_call:
+    inputs:
+      all_files:
+        description: "Whether to return all files instead of just changed files"
+        required: false
+        type: boolean
+        default: false
+    outputs:
+      changed-files:
+        description: "List of changed files (space-separated) or '*' if not in a PR"
+        value: ${{ jobs.get-changed-files.outputs.changed-files }}
+
+jobs:
+  get-changed-files:
+    runs-on: ubuntu-latest
+    outputs:
+      changed-files: ${{ steps.get-files.outputs.changed-files }}
+
+    steps:
+      - name: Get changed files
+        id: get-files
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Check if we're in a pull request context
+          if [ "${{ github.event_name }}" = "pull_request" ] || [ "${{ github.event_name }}" = "pull_request_target" ]; then
+            echo "Running in PR context"
+
+            # Get the PR number from the github context
+            PR_NUMBER="${{ github.event.number }}"
+
+            # Check if all_files is requested
+            if [ "${{ inputs.all_files }}" = "true" ]; then
+              echo "all_files input is true, returning all files"
+              echo "changed-files=*" >> "$GITHUB_OUTPUT"
+            else
+              # Use gh CLI to get changed files in the PR with explicit repo
+              CHANGED_FILES=$(gh api repos/${{ github.repository }}/pulls/$PR_NUMBER/files --paginate --jq '.[] | select(.status != "removed") | .filename' | tr '\n' ' ' | sed 's/ $//')
+
+              # See https://github.com/pytorch/pytorch/pull/134215#issuecomment-2332128790
+              PYI_FILES_TO_ADD=""
+              for file in ${CHANGED_FILES}; do
+                if [[ "${file}" == *".pyi.in" ]]; then
+                  PYI_FILES_TO_ADD="${PYI_FILES_TO_ADD} ${file//.in/}"
+                fi
+              done
+              CHANGED_FILES="${CHANGED_FILES}${PYI_FILES_TO_ADD}"
+
+              if [ -z "$CHANGED_FILES" ]; then
+                echo "No changed files found, setting to '*'"
+                CHANGED_FILES="*"
+              fi
+
+              echo "Changed files: $CHANGED_FILES"
+              echo "changed-files=$CHANGED_FILES" >> "$GITHUB_OUTPUT"
+            fi
+
+          else
+            echo "Not in PR context, setting changed files to '*'"
+            echo "changed-files=*" >> "$GITHUB_OUTPUT"
+          fi
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `.github/workflows`.
+
+## Detailed Analysis
+
+### Code Structure
+
+This is a configuration file. See the original source for structure.
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `.github/workflows`, which is part of the PyTorch project infrastructure.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`.github/workflows`):
+
+- [`unstable-periodic.yml_docs.md`](./unstable-periodic.yml_docs.md)
+- [`runner_determinator_script_sync.yaml_docs.md`](./runner_determinator_script_sync.yaml_docs.md)
+- [`auto_request_review.yml_docs.md`](./auto_request_review.yml_docs.md)
+- [`attention_op_microbenchmark.yml_docs.md`](./attention_op_microbenchmark.yml_docs.md)
+- [`inductor-nightly.yml_docs.md`](./inductor-nightly.yml_docs.md)
+- [`lint-autoformat.yml_docs.md`](./lint-autoformat.yml_docs.md)
+- [`inductor-perf-test-b200.yml_docs.md`](./inductor-perf-test-b200.yml_docs.md)
+- [`inductor-unittest.yml_docs.md`](./inductor-unittest.yml_docs.md)
+- [`_linux-build.yml_docs.md`](./_linux-build.yml_docs.md)
+- [`inductor-perf-test-nightly.yml_docs.md`](./inductor-perf-test-nightly.yml_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `_get-changed-files.yml_docs.md`
+- **Keyword Index**: `_get-changed-files.yml_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

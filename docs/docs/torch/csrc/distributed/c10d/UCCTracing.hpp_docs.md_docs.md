@@ -1,0 +1,288 @@
+# Documentation: `docs/torch/csrc/distributed/c10d/UCCTracing.hpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/distributed/c10d/UCCTracing.hpp_docs.md`
+- **Size**: 4,635 bytes (4.53 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/csrc/distributed/c10d/UCCTracing.hpp`
+
+## File Metadata
+
+- **Path**: `torch/csrc/distributed/c10d/UCCTracing.hpp`
+- **Size**: 2,301 bytes (2.25 KB)
+- **Type**: C++ Header File
+- **Extension**: `.hpp`
+
+## File Purpose
+
+This is a c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#pragma once
+
+#ifdef USE_C10D_UCC
+
+#include <torch/csrc/distributed/c10d/UCCUtils.hpp>
+
+namespace c10d {
+
+#define RECORD_COMMS_TRACE(                                                    \
+    _comms_tracer, _work, _opType, _rank, _comm_size, _inTensors, _outTensors) \
+  do {                                                                         \
+    if (torch_ucc_config.enable_comms_logger) {                                \
+      _comms_tracer->recordComms(                                              \
+          opTypeToString(_opType),                                             \
+          (uintptr_t)_work.get(),                                              \
+          _rank,                                                               \
+          _comm_size,                                                          \
+          _inTensors,                                                          \
+          _outTensors);                                                        \
+    }                                                                          \
+  } while (0)
+
+// interfaces to collect communication traces
+class TORCH_API CommTraceLogger : public torch::CustomClassHolder {
+ private:
+  std::vector<std::string> comms_trace_;
+  std::vector<std::string> curBlocks_; /* unused */
+  std::vector<int64_t> curOutSplitSizes_;
+  std::vector<int64_t> curInSplitSizes_;
+  int curRoot_ = -1;
+  unsigned long seqnum = 0;
+
+ public:
+  void setCurBlock(const std::string& name); /* unused */
+  void popBlock(); /* unused */
+  // record root info if applicable, e.g., broadcast, gather, scatter
+  void recordOptionalInfo(int root = -1);
+  // record input/output splits of Alltoallv
+  void recordOptionalInfo(
+      const std::vector<int64_t>& outputSplitSizes = {},
+      const std::vector<int64_t>& inputSplitSizes = {});
+  // record essential comms information
+  void recordComms(
+      const std::string& collName,
+      const uintptr_t workReq = 0,
+      const int rank = -1,
+      const int world_size = -1,
+      const std::vector<at::Tensor>& inputTensors = {},
+      const std::vector<at::Tensor>& outputTensor = {});
+  // return collected comms traces
+  std::vector<std::string>& getCommsTrace() {
+    return comms_trace_;
+  }
+};
+
+} // namespace c10d
+
+#endif // USE_C10D_UCC
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 1 class(es)/struct(s) and 6 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `c10d`
+
+**Classes/Structs**: `TORCH_API`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/distributed/c10d`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `torch/csrc/distributed/c10d/UCCUtils.hpp`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/distributed/c10d`):
+
+- [`Utils.hpp_docs.md`](./Utils.hpp_docs.md)
+- [`Ops.cpp_docs.md`](./Ops.cpp_docs.md)
+- [`Store.hpp_docs.md`](./Store.hpp_docs.md)
+- [`WinSockUtils.hpp_docs.md`](./WinSockUtils.hpp_docs.md)
+- [`FakeProcessGroup.hpp_docs.md`](./FakeProcessGroup.hpp_docs.md)
+- [`Work.cpp_docs.md`](./Work.cpp_docs.md)
+- [`PrefixStore.hpp_docs.md`](./PrefixStore.hpp_docs.md)
+- [`PyProcessGroup.hpp_docs.md`](./PyProcessGroup.hpp_docs.md)
+- [`debug.h_docs.md`](./debug.h_docs.md)
+- [`exception.h_docs.md`](./exception.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `UCCTracing.hpp_docs.md`
+- **Keyword Index**: `UCCTracing.hpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/distributed/c10d`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/distributed/c10d`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/distributed/c10d`):
+
+- [`ProcessGroupWrapper.cpp_docs.md_docs.md`](./ProcessGroupWrapper.cpp_docs.md_docs.md)
+- [`c10d.h_kw.md_docs.md`](./c10d.h_kw.md_docs.md)
+- [`TCPStoreLibUvBackend.cpp_kw.md_docs.md`](./TCPStoreLibUvBackend.cpp_kw.md_docs.md)
+- [`ProcessGroupGlooCuda.cpp_docs.md_docs.md`](./ProcessGroupGlooCuda.cpp_docs.md_docs.md)
+- [`NanCheck.cu_docs.md_docs.md`](./NanCheck.cu_docs.md_docs.md)
+- [`python_callback_work.hpp_kw.md_docs.md`](./python_callback_work.hpp_kw.md_docs.md)
+- [`sequence_num.hpp_kw.md_docs.md`](./sequence_num.hpp_kw.md_docs.md)
+- [`Functional.hpp_kw.md_docs.md`](./Functional.hpp_kw.md_docs.md)
+- [`TCPStoreBackend.cpp_kw.md_docs.md`](./TCPStoreBackend.cpp_kw.md_docs.md)
+- [`ProcessGroupUCC.cpp_kw.md_docs.md`](./ProcessGroupUCC.cpp_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `UCCTracing.hpp_docs.md_docs.md`
+- **Keyword Index**: `UCCTracing.hpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

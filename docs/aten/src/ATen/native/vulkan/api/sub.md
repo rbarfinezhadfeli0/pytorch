@@ -1,0 +1,135 @@
+# Subtree Keyword Index: `aten/src/ATen/native/vulkan/api/`
+
+## Scope
+
+This index covers all files within `aten/src/ATen/native/vulkan/api/` and all its subdirectories (recursively).
+
+## Keywords
+
+
+### Adapter
+
+- [`aten/src/ATen/native/vulkan/api/Adapter.h`](./Adapter.h_docs.md)
+- [`aten/src/ATen/native/vulkan/api/Adapter.cpp`](./Adapter.cpp_docs.md)
+
+### Allocator
+
+- [`aten/src/ATen/native/vulkan/api/Allocator.cpp`](./Allocator.cpp_docs.md)
+- [`aten/src/ATen/native/vulkan/api/Allocator.h`](./Allocator.h_docs.md)
+
+### Command
+
+- [`aten/src/ATen/native/vulkan/api/Command.cpp`](./Command.cpp_docs.md)
+- [`aten/src/ATen/native/vulkan/api/Command.h`](./Command.h_docs.md)
+
+### Context
+
+- [`aten/src/ATen/native/vulkan/api/Context.cpp`](./Context.cpp_docs.md)
+- [`aten/src/ATen/native/vulkan/api/Context.h`](./Context.h_docs.md)
+
+### Descriptor
+
+- [`aten/src/ATen/native/vulkan/api/Descriptor.h`](./Descriptor.h_docs.md)
+- [`aten/src/ATen/native/vulkan/api/Descriptor.cpp`](./Descriptor.cpp_docs.md)
+
+### Exception
+
+- [`aten/src/ATen/native/vulkan/api/Exception.cpp`](./Exception.cpp_docs.md)
+- [`aten/src/ATen/native/vulkan/api/Exception.h`](./Exception.h_docs.md)
+
+### Pipeline
+
+- [`aten/src/ATen/native/vulkan/api/Pipeline.h`](./Pipeline.h_docs.md)
+- [`aten/src/ATen/native/vulkan/api/Pipeline.cpp`](./Pipeline.cpp_docs.md)
+
+### QueryPool
+
+- [`aten/src/ATen/native/vulkan/api/QueryPool.h`](./QueryPool.h_docs.md)
+- [`aten/src/ATen/native/vulkan/api/QueryPool.cpp`](./QueryPool.cpp_docs.md)
+
+### Resource
+
+- [`aten/src/ATen/native/vulkan/api/Resource.h`](./Resource.h_docs.md)
+- [`aten/src/ATen/native/vulkan/api/Resource.cpp`](./Resource.cpp_docs.md)
+
+### Runtime
+
+- [`aten/src/ATen/native/vulkan/api/Runtime.cpp`](./Runtime.cpp_docs.md)
+- [`aten/src/ATen/native/vulkan/api/Runtime.h`](./Runtime.h_docs.md)
+
+### Shader
+
+- [`aten/src/ATen/native/vulkan/api/Shader.h`](./Shader.h_docs.md)
+- [`aten/src/ATen/native/vulkan/api/Shader.cpp`](./Shader.cpp_docs.md)
+
+### ShaderRegistry
+
+- [`aten/src/ATen/native/vulkan/api/ShaderRegistry.cpp`](./ShaderRegistry.cpp_docs.md)
+- [`aten/src/ATen/native/vulkan/api/ShaderRegistry.h`](./ShaderRegistry.h_docs.md)
+
+### StringUtil
+
+- [`aten/src/ATen/native/vulkan/api/StringUtil.h`](./StringUtil.h_docs.md)
+
+### Tensor
+
+- [`aten/src/ATen/native/vulkan/api/Tensor.h`](./Tensor.h_docs.md)
+- [`aten/src/ATen/native/vulkan/api/Tensor.cpp`](./Tensor.cpp_docs.md)
+
+### Types
+
+- [`aten/src/ATen/native/vulkan/api/Types.h`](./Types.h_docs.md)
+
+### Utils
+
+- [`aten/src/ATen/native/vulkan/api/Utils.h`](./Utils.h_docs.md)
+
+### api
+
+- [`aten/src/ATen/native/vulkan/api/api.h`](./api.h_docs.md)
+
+### files-.cpp
+
+- [`aten/src/ATen/native/vulkan/api/Allocator.cpp`](./Allocator.cpp_docs.md)
+- [`aten/src/ATen/native/vulkan/api/Adapter.cpp`](./Adapter.cpp_docs.md)
+- [`aten/src/ATen/native/vulkan/api/Command.cpp`](./Command.cpp_docs.md)
+- [`aten/src/ATen/native/vulkan/api/ShaderRegistry.cpp`](./ShaderRegistry.cpp_docs.md)
+- [`aten/src/ATen/native/vulkan/api/Context.cpp`](./Context.cpp_docs.md)
+- [`aten/src/ATen/native/vulkan/api/QueryPool.cpp`](./QueryPool.cpp_docs.md)
+- [`aten/src/ATen/native/vulkan/api/Exception.cpp`](./Exception.cpp_docs.md)
+- [`aten/src/ATen/native/vulkan/api/Descriptor.cpp`](./Descriptor.cpp_docs.md)
+- [`aten/src/ATen/native/vulkan/api/Pipeline.cpp`](./Pipeline.cpp_docs.md)
+- [`aten/src/ATen/native/vulkan/api/Runtime.cpp`](./Runtime.cpp_docs.md)
+- [`aten/src/ATen/native/vulkan/api/Resource.cpp`](./Resource.cpp_docs.md)
+- [`aten/src/ATen/native/vulkan/api/Shader.cpp`](./Shader.cpp_docs.md)
+- [`aten/src/ATen/native/vulkan/api/Tensor.cpp`](./Tensor.cpp_docs.md)
+
+### files-.h
+
+- [`aten/src/ATen/native/vulkan/api/Shader.h`](./Shader.h_docs.md)
+- [`aten/src/ATen/native/vulkan/api/Pipeline.h`](./Pipeline.h_docs.md)
+- [`aten/src/ATen/native/vulkan/api/Adapter.h`](./Adapter.h_docs.md)
+- [`aten/src/ATen/native/vulkan/api/Types.h`](./Types.h_docs.md)
+- [`aten/src/ATen/native/vulkan/api/QueryPool.h`](./QueryPool.h_docs.md)
+- [`aten/src/ATen/native/vulkan/api/Allocator.h`](./Allocator.h_docs.md)
+- [`aten/src/ATen/native/vulkan/api/Descriptor.h`](./Descriptor.h_docs.md)
+- [`aten/src/ATen/native/vulkan/api/Utils.h`](./Utils.h_docs.md)
+- [`aten/src/ATen/native/vulkan/api/ShaderRegistry.h`](./ShaderRegistry.h_docs.md)
+- [`aten/src/ATen/native/vulkan/api/api.h`](./api.h_docs.md)
+- [`aten/src/ATen/native/vulkan/api/Resource.h`](./Resource.h_docs.md)
+- [`aten/src/ATen/native/vulkan/api/Command.h`](./Command.h_docs.md)
+- [`aten/src/ATen/native/vulkan/api/vk_api.h`](./vk_api.h_docs.md)
+- [`aten/src/ATen/native/vulkan/api/Runtime.h`](./Runtime.h_docs.md)
+- [`aten/src/ATen/native/vulkan/api/Exception.h`](./Exception.h_docs.md)
+- [`aten/src/ATen/native/vulkan/api/Tensor.h`](./Tensor.h_docs.md)
+- [`aten/src/ATen/native/vulkan/api/StringUtil.h`](./StringUtil.h_docs.md)
+- [`aten/src/ATen/native/vulkan/api/Context.h`](./Context.h_docs.md)
+
+### vk_api
+
+- [`aten/src/ATen/native/vulkan/api/vk_api.h`](./vk_api.h_docs.md)
+
+
+---
+
+*Generated by PyTorch Repository Documentation System*

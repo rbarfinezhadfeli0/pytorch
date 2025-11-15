@@ -1,0 +1,295 @@
+# Documentation: `docs/test/distributed/tensor/test_dtensor_testbase.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/distributed/tensor/test_dtensor_testbase.py_docs.md`
+- **Size**: 4,459 bytes (4.35 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/distributed/tensor/test_dtensor_testbase.py`
+
+## File Metadata
+
+- **Path**: `test/distributed/tensor/test_dtensor_testbase.py`
+- **Size**: 1,446 bytes (1.41 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**. Can be **executed as a standalone script**.
+
+## Original Source
+
+```python
+# Copyright (c) Meta Platforms, Inc. and affiliates
+# Owner(s): ["oncall: distributed"]
+
+import numpy as np
+
+from torch.distributed.device_mesh import DeviceMesh, init_device_mesh
+from torch.testing._internal.common_utils import run_tests
+from torch.testing._internal.distributed._tensor.common_dtensor import (
+    DTensorTestBase,
+    with_comms,
+)
+
+
+class DTensorTestBaseUtilCPUTest(DTensorTestBase):
+    """
+    This class tests if the basic functionalities of DTensorTestBase are
+    working as expected on CPU, regardless of the presence of CUDA devices.
+    """
+
+    @property
+    def backend(self):
+        return "gloo"
+
+    @property
+    def device_type(self) -> str:
+        return "cpu"
+
+    @property
+    def world_size(self):
+        return np.prod(list(self.mesh_dim_sizes.values())).item()
+
+    @property
+    def mesh_dim_sizes(self) -> dict[str, int]:
+        """Mapping from mesh dimension names to sizes."""
+        return {"data": 2, "fsdp": 3, "tensor": 5}
+
+    def build_device_mesh(self) -> DeviceMesh:
+        return init_device_mesh(
+            self.device_type,
+            mesh_shape=tuple(self.mesh_dim_sizes.values()),
+            mesh_dim_names=tuple(self.mesh_dim_sizes.keys()),
+        )
+
+    @with_comms
+    def test_dtensor_testbase_destroy_pg(self):
+        # This tests destroy_pg() correctly finishes.
+        device_mesh = self.build_device_mesh()  # noqa: F841
+
+
+if __name__ == "__main__":
+    run_tests()
+
+```
+
+
+
+## High-Level Overview
+
+"""    This class tests if the basic functionalities of DTensorTestBase are    working as expected on CPU, regardless of the presence of CUDA devices.
+
+This Python file contains 2 class(es) and 6 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `DTensorTestBaseUtilCPUTest`
+
+**Functions defined**: `backend`, `device_type`, `world_size`, `mesh_dim_sizes`, `build_device_mesh`, `test_dtensor_testbase_destroy_pg`
+
+**Key imports**: numpy as np, DeviceMesh, init_device_mesh, run_tests
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/distributed/tensor`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `numpy as np`
+- `torch.distributed.device_mesh`: DeviceMesh, init_device_mesh
+- `torch.testing._internal.common_utils`: run_tests
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/distributed/tensor/test_dtensor_testbase.py
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/distributed/tensor`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`test_dtensor.py_docs.md`](./test_dtensor.py_docs.md)
+- [`test_optimizers.py_docs.md`](./test_optimizers.py_docs.md)
+- [`test_dtensor_dispatch_overhead.py_docs.md`](./test_dtensor_dispatch_overhead.py_docs.md)
+- [`test_tensor_ops.py_docs.md`](./test_tensor_ops.py_docs.md)
+- [`test_matrix_ops.py_docs.md`](./test_matrix_ops.py_docs.md)
+- [`test_op_schema.py_docs.md`](./test_op_schema.py_docs.md)
+- [`test_utils.py_docs.md`](./test_utils.py_docs.md)
+- [`test_attention.py_docs.md`](./test_attention.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_dtensor_testbase.py_docs.md`
+- **Keyword Index**: `test_dtensor_testbase.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/distributed/tensor`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/distributed/tensor`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/distributed/tensor/test_dtensor_testbase.py_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/distributed/tensor`):
+
+- [`test_math_ops.py_docs.md_docs.md`](./test_math_ops.py_docs.md_docs.md)
+- [`test_view_ops.py_kw.md_docs.md`](./test_view_ops.py_kw.md_docs.md)
+- [`test_dtensor_export.py_docs.md_docs.md`](./test_dtensor_export.py_docs.md_docs.md)
+- [`test_placement_types.py_docs.md_docs.md`](./test_placement_types.py_docs.md_docs.md)
+- [`test_convolution_ops.py_kw.md_docs.md`](./test_convolution_ops.py_kw.md_docs.md)
+- [`test_placement_types.py_kw.md_docs.md`](./test_placement_types.py_kw.md_docs.md)
+- [`test_common_rules.py_kw.md_docs.md`](./test_common_rules.py_kw.md_docs.md)
+- [`test_dtensor_compile.py_kw.md_docs.md`](./test_dtensor_compile.py_kw.md_docs.md)
+- [`README.md_docs.md_docs.md`](./README.md_docs.md_docs.md)
+- [`test_api.py_docs.md_docs.md`](./test_api.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_dtensor_testbase.py_docs.md_docs.md`
+- **Keyword Index**: `test_dtensor_testbase.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

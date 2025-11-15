@@ -1,0 +1,192 @@
+# Documentation: `docs/torch/testing/_internal/common_quantized.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/testing/_internal/common_quantized.py_kw.md`
+- **Size**: 4,564 bytes (4.46 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `torch/testing/_internal/common_quantized.py`
+
+## File Information
+
+- **Original File**: [torch/testing/_internal/common_quantized.py](../../../../torch/testing/_internal/common_quantized.py)
+- **Documentation**: [`common_quantized.py_docs.md`](./common_quantized.py_docs.md)
+- **Folder**: `torch/testing/_internal`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Functions
+
+- **`_bfloat16_to_float4_e2m1fn_x2`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`_calculate_dynamic_per_channel_qparams`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`_calculate_dynamic_qparams`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`_conv_output_shape`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`_dequantize`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`_f32_to_floatx_unpacked`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`_fake_quantize_per_channel_affine_grad_reference`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`_fake_quantize_per_channel_affine_reference`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`_floatx_unpacked_to_f32`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`_n_ones`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`_permute_to_axis_zero`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`_quantize`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`_requantize`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`_snr`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`_to_mx_rceil`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`ceil_div`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`down_size`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`from_blocked`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`from_blocked_format`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`generate_jagged_offs`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`override_cpu_allocator_for_qnnpack`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`override_qengines`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`override_quantized_engine`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`pack_uint4`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`qengine_is_fbgemm`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`qengine_is_onednn`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`qengine_is_qnnpack`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`qengine_is_x86`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`test_fn`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`to_blocked`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`to_mxfp`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`to_tensor`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+
+### Imports
+
+- **`TEST_WITH_TSAN`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`Tensor`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`contextlib`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`contextmanager`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`numpy`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`random`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`torch`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [common_quantized.py_docs.md](./common_quantized.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/testing/_internal`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/testing/_internal`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/torch/testing/_internal/common_quantized.py_kw.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/testing/_internal`):
+
+- [`hypothesis_utils.py_kw.md_docs.md`](./hypothesis_utils.py_kw.md_docs.md)
+- [`fake_config_module2.py_kw.md_docs.md`](./fake_config_module2.py_kw.md_docs.md)
+- [`static_module.py_kw.md_docs.md`](./static_module.py_kw.md_docs.md)
+- [`common_pruning.py_kw.md_docs.md`](./common_pruning.py_kw.md_docs.md)
+- [`composite_compliance.py_kw.md_docs.md`](./composite_compliance.py_kw.md_docs.md)
+- [`common_mkldnn.py_docs.md_docs.md`](./common_mkldnn.py_docs.md_docs.md)
+- [`triton_utils.py_docs.md_docs.md`](./triton_utils.py_docs.md_docs.md)
+- [`common_dtype.py_docs.md_docs.md`](./common_dtype.py_docs.md_docs.md)
+- [`common_methods_invocations.py_docs.md_docs.md`](./common_methods_invocations.py_docs.md_docs.md)
+- [`hypothesis_utils.py_docs.md_docs.md`](./hypothesis_utils.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `common_quantized.py_kw.md_docs.md`
+- **Keyword Index**: `common_quantized.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

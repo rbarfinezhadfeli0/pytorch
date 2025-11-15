@@ -1,0 +1,89 @@
+# Keyword Index: `docs/torch/testing/_internal/jit_utils.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/testing/_internal/jit_utils.py_kw.md](../../../../../docs/torch/testing/_internal/jit_utils.py_kw.md)
+- **Documentation**: [`jit_utils.py_kw.md_docs.md`](./jit_utils.py_kw.md_docs.md)
+- **Folder**: `docs/torch/testing/_internal`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Any`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Architecture`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Basic`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`BroadcastingList2`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Classs`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Complete`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Considerations`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Dependencies`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Design`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Detailed`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Documentation`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Efficiency`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Extracted`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`File`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`FileCheck`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Folder`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Functions`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Generated`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`High`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`How`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`IS_WINDOWS`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Imports`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`In`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Index`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Information`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`JitCommonTestCase`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`JitTestCase`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Keyword`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Keywords`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Level`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Loader`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Map`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Metadata`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`NoTracerWarnContextManager`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`OperatorExportTypes`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Original`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Overview`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Performance`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Purpose`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`PyTorch`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Related`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Repository`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Safety`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Section`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Security`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Source`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`StringIO`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`System`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`TensorExprTestOptions`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Testing`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`The`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`This`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Usage`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+- **`Variable`**: [jit_utils.py_kw.md_docs.md](./jit_utils.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,108 @@
+# Keyword Index: `torchgen/utils.py`
+
+## File Information
+
+- **Original File**: [torchgen/utils.py](../../torchgen/utils.py)
+- **Documentation**: [`utils.py_docs.md`](./utils.py_docs.md)
+- **Folder**: `torchgen`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`FileManager`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`NamespaceHelper`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`OrderedSet`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`Target`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`from`**: [utils.py_docs.md](./utils.py_docs.md)
+
+### Functions
+
+- **`__contains__`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`__eq__`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`__init__`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`__ior__`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`__iter__`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`__or__`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`_format`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`_format_dict`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`_format_list`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`_read_template`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`_write_if_changed`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`add`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`concatMap`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`context`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`copy`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`dataclass_repr`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`entity_name`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`epilogue`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`filenames`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`from_namespaced_entity`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`get_cpp_namespace`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`make_file_manager`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`mapMaybe`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`merge_env`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`prologue`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`split_name_params`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`string_stable_hash`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`substitute_with_template`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`template_dir_for_comments`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`union`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`update`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`write`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`write_outputs`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`write_sharded`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`write_sharded_with_template`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`write_with_template`**: [utils.py_docs.md](./utils.py_docs.md)
+
+### Imports
+
+- **`Any`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`Callable`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`CodeTemplate`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`Namespace`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`Path`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`__future__`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`annotations`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`argparse`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`assert_never`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`auto`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`collections.abc`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`contextlib`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`dataclasses`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`enum`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`functools`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`hashlib`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`is_dataclass`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`os`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`pathlib`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`pformat`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`pprint`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`re`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`sys`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`textwrap`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`torchgen.code_template`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`typing`**: [utils.py_docs.md](./utils.py_docs.md)
+- **`typing_extensions`**: [utils.py_docs.md](./utils.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

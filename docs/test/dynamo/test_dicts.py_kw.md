@@ -1,0 +1,196 @@
+# Keyword Index: `test/dynamo/test_dicts.py`
+
+## File Information
+
+- **Original File**: [test/dynamo/test_dicts.py](../../../test/dynamo/test_dicts.py)
+- **Documentation**: [`test_dicts.py_docs.md`](./test_dicts.py_docs.md)
+- **Folder**: `test/dynamo`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`ClassInstantier`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`CustomDict`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`DictGuardTests`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`DictMethodsTests`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`DictSubclassMethodsTests`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`DictTests`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`DummyUserDict`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`FakeMapping`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`Foo`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`MethodDict`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`MyDict`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`MyMod`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`MyModule`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`ODSubclass`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`OrderedDictMethodsTests`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`OrderedDictSubclass`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`OrderedDictSubclassOverload`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`ReversedDict`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`SetItemDict`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`SimpleDict`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`TensorDim`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`UserDefined`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`dotdict`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`in`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+
+### Functions
+
+- **`__getitem__`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`__init__`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`__iter__`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`__new__`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`__setitem__`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`add_1`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`assertEqual`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`assertNotEqual`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`f`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`f1`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`f2`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`f3`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`fn`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`forward`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`get`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`inner_fn`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`keys`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`move_to_end`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`nothing`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`run`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`setUp`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`tearDown`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_binop_ior`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_binop_ior_iterable`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_binop_ior_return_type`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_binop_or`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_binop_or_return_type`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_builtin_ior_`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_builtin_or_with_diff_keys`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_builtin_or_with_invalid_types`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_builtin_or_with_same_keys`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_clear`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_cmp_eq`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_cmp_eq_order`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_cmp_ior`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_cmp_ne`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_cmp_or`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_construct_user_dict_and_return`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_contains_dunder_dict`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_contains_module_dunder_dict`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_copy`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_custom_iter_dict`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_custom_keys_iter_dict`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_dict___iter__`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_dict_construct_from_mapping_like`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_dict_construction_from_mapping_proxy`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_dict_contains`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_dict_contains_enum`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_dict_copy_alias`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_dict_guard_on_keys_order`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_dict_guard_on_keys_order2`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_dict_iter`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_dict_keys_binop`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_dict_keys_inplace_binop`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_dict_list_values`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_dict_mutation_side_effect`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_dict_namedtuple`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_dict_order_keys`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_dict_order_keys_modules`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_dict_order_keys_tensors`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_dict_reconstruct_keeps_original_order`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_dict_subclass_contains`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_dict_subclass_get_method`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_dict_subclass_initialization_in_graph`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_dict_subclass_instantiation`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_dict_subclass_instantiation_return`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_dict_subclass_local_mutation`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_dict_subclass_local_with_non_dict_method`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_dict_subclass_methods_fallback_mutation`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_dict_subclass_methods_fallback_readonly`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_dict_subclass_setitem`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_dict_tag_guard`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_dict_type_comparison`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_empty_dict_recompilation`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_fn_id`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_fromkeys`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_get`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_items`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_items_type`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_iter_default_dict`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_keys`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_lazy_key_guarding`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_lazy_key_non_const_guarding`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_mapping_proxy_ban_muation_on_dict_realization`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_mapping_proxy_existing`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_mapping_proxy_existing_local_mutation`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_mapping_proxy_existing_mutation`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_mapping_proxy_for_local`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_mapping_proxy_for_nonlocal`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_move_to_end`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_newly_constructed_default_dict`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_newly_constructed_default_dict_no_default_factory`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_newly_constructed_default_dict_with_dict`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_ordered_dict_reordered_keys`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_ordered_dict_subclass_reordered_keys`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_overridden_get_item`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_pop`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_popitem`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_popitem_kwarg`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_setdefault`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_type`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_udf_dict_reconstruction`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_update`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_update_dunder_dict`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_update_module_dunder_dict`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_values`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`test_weakref_dict`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+
+### Imports
+
+- **`Any`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`LoggingTestCase`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`Unsupported`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`collections`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`defaultdict`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`dict_items`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`enum`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`itertools`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`operator`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`run_tests`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`same`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`torch`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`torch._dynamo.exc`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`torch._dynamo.test_case`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`torch._dynamo.testing`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`torch._dynamo.utils`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`torch._functorch.config`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`torch.nn`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`torch.testing._internal.logging_utils`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`torch.utils.checkpoint`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`types`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`typing`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`unittest`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+- **`weakref`**: [test_dicts.py_docs.md](./test_dicts.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

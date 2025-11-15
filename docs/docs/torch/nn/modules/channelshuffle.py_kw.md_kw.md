@@ -1,0 +1,80 @@
+# Keyword Index: `docs/torch/nn/modules/channelshuffle.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/nn/modules/channelshuffle.py_kw.md](../../../../../docs/torch/nn/modules/channelshuffle.py_kw.md)
+- **Documentation**: [`channelshuffle.py_kw.md_docs.md`](./channelshuffle.py_kw.md_docs.md)
+- **Folder**: `docs/torch/nn/modules`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Architecture`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Basic`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`ChannelShuffle`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Classs`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Complete`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Considerations`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Dependencies`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Design`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Detailed`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Documentation`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Efficiency`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Extracted`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`File`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Folder`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Functions`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Generated`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`High`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`How`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Imports`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`In`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Index`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Information`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Keyword`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Keywords`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Level`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Map`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Metadata`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Module`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Original`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Overview`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Performance`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Purpose`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`PyTorch`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Related`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Repository`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Safety`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Section`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Security`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Source`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`System`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Tensor`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Testing`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`The`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`This`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+- **`Usage`**: [channelshuffle.py_kw.md_docs.md](./channelshuffle.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

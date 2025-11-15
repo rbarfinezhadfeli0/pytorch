@@ -1,0 +1,355 @@
+# Documentation: `docs/aten/src/ATen/native/vulkan/ops/Mm.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/vulkan/ops/Mm.h_docs.md`
+- **Size**: 5,972 bytes (5.83 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/native/vulkan/ops/Mm.h`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/vulkan/ops/Mm.h`
+- **Size**: 3,344 bytes (3.27 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#pragma once
+
+#ifdef USE_VULKAN_API
+
+#include <ATen/native/quantized/PackedParams.h>
+#include <ATen/native/vulkan/ops/Common.h>
+#include <ATen/native/vulkan/ops/Utils.h>
+#include <ATen/native/vulkan/ops/VulkanPackedContext.h>
+#include <torch/library.h>
+
+namespace at {
+namespace native {
+namespace vulkan {
+namespace ops {
+
+template <typename T>
+void stage_pack_weights(
+    api::Context* const context,
+    vTensor& v_weight,
+    const Tensor& weight,
+    const int64_t src_kb_sz,
+    const int64_t src_kh_sz,
+    const int64_t src_kw_sz,
+    const int64_t dst_kh_sz,
+    const int64_t dst_kw_sz) {
+  const int64_t src_matrix_sz = src_kw_sz * src_kh_sz;
+  const int64_t dst_plane_sz = dst_kw_sz * dst_kh_sz;
+  const int64_t dst_matrix_sz = dst_plane_sz * 4;
+  const T* const src_weight_ptr = weight.const_data_ptr<T>();
+  api::StorageBuffer staging(context, api::kFloat, v_weight.gpu_numel());
+  {
+    api::MemoryMap mapping(staging.buffer(), api::MemoryAccessType::WRITE);
+
+    T* dst_weight_ptr = mapping.template data<T>();
+
+    memset(dst_weight_ptr, 0, v_weight.nbytes());
+
+    for (const auto src_b : c10::irange(src_kb_sz)) {
+      for (const auto src_h : c10::irange(src_kh_sz)) {
+        for (const auto src_w : c10::irange(src_kw_sz)) {
+          int64_t dst_plane = 2 * (src_h % 2) + (src_w % 2);
+          int64_t dst_index = (src_h / 2) * dst_kw_sz + (src_w / 2);
+          memcpy(
+              dst_weight_ptr + src_b * dst_matrix_sz +
+                  dst_plane * dst_plane_sz + dst_index,
+              src_weight_ptr + src_b * src_matrix_sz + src_h * src_kw_sz +
+                  src_w,
+              sizeof(T));
+        }
+      }
+    }
+  }
+  utils::pack_staging_to_vtensor(staging.buffer(), v_weight);
+}
+
+class LinearPackedContext final : virtual public VulkanPackedContext,
+                                  public torch::jit::CustomClassHolder {
+ private:
+  c10::impl::GenericList unpacked_;
+
+ public:
+  LinearPackedContext(
+      const Tensor& weight,
+      const std::optional<Tensor>& bias,
+      const bool use_batch = false);
+
+  /*
+   * Assigns a name to each index in the unpacked list.
+   */
+  struct Unpacked final {
+    static constexpr uint32_t Weight = 0u;
+    static constexpr uint32_t Bias = 1u;
+
+    static constexpr uint32_t NumArgs = 2u;
+  };
+
+  /*
+   * Assigns a name to each index in the packed list.
+   */
+  struct Packed final {
+    static constexpr uint32_t Weight = 0u;
+    static constexpr uint32_t Bias = 1u;
+    static constexpr uint32_t WeightSizes = 2u;
+    static constexpr uint32_t BiasDefined = 3u;
+
+    static constexpr uint32_t NumArgs = 4u;
+  };
+
+  static LinearPackedContext pack(c10::impl::GenericList);
+
+  const c10::impl::GenericList unpack() const override {
+    TORCH_CHECK(!unpacked_.empty(), "unpacked_ does not have any elements!");
+
+    return unpacked_;
+  }
+};
+
+c10::intrusive_ptr<LinearPackedContext> create_linear_context(
+    Tensor&& weight,
+    std::optional<Tensor>&& bias);
+
+Tensor run_linear_context(
+    const Tensor& input,
+    const c10::intrusive_ptr<LinearPackedContext>& context);
+
+Tensor run_qlinear_context(
+    const Tensor& input,
+    double output_scale,
+    int64_t output_zero_point,
+    const c10::intrusive_ptr<LinearPackedContext>& context);
+
+} // namespace ops
+} // namespace vulkan
+} // namespace native
+} // namespace at
+
+#endif /* USE_VULKAN_API */
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 1 class(es)/struct(s) and 7 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `vulkan`, `ops`, `native`, `at`
+
+**Classes/Structs**: `LinearPackedContext`, `Unpacked`, `Packed`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native/vulkan/ops`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/native/quantized/PackedParams.h`
+- `ATen/native/vulkan/ops/Common.h`
+- `ATen/native/vulkan/ops/Utils.h`
+- `ATen/native/vulkan/ops/VulkanPackedContext.h`
+- `torch/library.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native/vulkan/ops`):
+
+- [`Convert.h_docs.md`](./Convert.h_docs.md)
+- [`Batchnorm.cpp_docs.md`](./Batchnorm.cpp_docs.md)
+- [`Slice.cpp_docs.md`](./Slice.cpp_docs.md)
+- [`Lerp.cpp_docs.md`](./Lerp.cpp_docs.md)
+- [`Shape.cpp_docs.md`](./Shape.cpp_docs.md)
+- [`Mean.cpp_docs.md`](./Mean.cpp_docs.md)
+- [`UnaryOp.cpp_docs.md`](./UnaryOp.cpp_docs.md)
+- [`Permute.cpp_docs.md`](./Permute.cpp_docs.md)
+- [`Unsqueeze.cpp_docs.md`](./Unsqueeze.cpp_docs.md)
+- [`Stack.cpp_docs.md`](./Stack.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `Mm.h_docs.md`
+- **Keyword Index**: `Mm.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native/vulkan/ops`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native/vulkan/ops`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native/vulkan/ops`):
+
+- [`Lerp.cpp_kw.md_docs.md`](./Lerp.cpp_kw.md_docs.md)
+- [`Select.cpp_docs.md_docs.md`](./Select.cpp_docs.md_docs.md)
+- [`Batchnorm.h_docs.md_docs.md`](./Batchnorm.h_docs.md_docs.md)
+- [`Lstm.cpp_kw.md_docs.md`](./Lstm.cpp_kw.md_docs.md)
+- [`Concat.cpp_kw.md_docs.md`](./Concat.cpp_kw.md_docs.md)
+- [`Convolution.cpp_docs.md_docs.md`](./Convolution.cpp_docs.md_docs.md)
+- [`Zero.cpp_kw.md_docs.md`](./Zero.cpp_kw.md_docs.md)
+- [`Gru.h_kw.md_docs.md`](./Gru.h_kw.md_docs.md)
+- [`Repeat.cpp_kw.md_docs.md`](./Repeat.cpp_kw.md_docs.md)
+- [`Register.cpp_docs.md_docs.md`](./Register.cpp_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `Mm.h_docs.md_docs.md`
+- **Keyword Index**: `Mm.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

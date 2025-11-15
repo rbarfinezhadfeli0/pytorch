@@ -1,0 +1,80 @@
+# Keyword Index: `docs/caffe2/serialize/istream_adapter.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/caffe2/serialize/istream_adapter.h_kw.md](../../../../docs/caffe2/serialize/istream_adapter.h_kw.md)
+- **Documentation**: [`istream_adapter.h_kw.md_docs.md`](./istream_adapter.h_kw.md_docs.md)
+- **Folder**: `docs/caffe2/serialize`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Architecture`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Basic`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Class`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Complete`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Considerations`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Dependencies`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Design`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Detailed`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Documentation`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Efficiency`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Extracted`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`File`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Folder`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Generated`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`High`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`How`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`In`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Includes`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Index`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Information`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Keyword`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Keywords`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Level`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Macros`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Map`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Metadata`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Namespaces`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Original`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Overview`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Performance`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Purpose`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`PyTorch`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Related`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Repository`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Safety`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Section`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Security`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Source`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Structs`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`System`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`TORCH_API`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Testing`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`The`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`This`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+- **`Usage`**: [istream_adapter.h_kw.md_docs.md](./istream_adapter.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,91 @@
+# Keyword Index: `docs/docs/source/linalg.md_kw.md`
+
+## File Information
+
+- **Original File**: [docs/docs/source/linalg.md_kw.md](../../../../docs/docs/source/linalg.md_kw.md)
+- **Documentation**: [`linalg.md_kw.md_docs.md`](./linalg.md_kw.md_docs.md)
+- **Folder**: `docs/docs/source`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Algebra`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Analysis`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Architecture`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Basic`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Common`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Complete`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Considerations`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Decompositions`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Dependencies`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Design`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Detailed`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Documentation`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Efficiency`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Experimental`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Extracted`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`File`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Folder`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Functions`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Generated`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`High`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`How`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Identifiers`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`In`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Index`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Information`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Inverses`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Keyword`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Keywords`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Level`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Linear`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Map`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Matrix`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Metadata`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Misc`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Operations`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Original`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Overview`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Performance`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Products`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Properties`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Purpose`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`PyTorch`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Related`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Repository`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Safety`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Section`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Security`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`See`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Solvers`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Source`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Stability`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`System`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Tensor`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Testing`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`The`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`This`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+- **`Usage`**: [linalg.md_kw.md_docs.md](./linalg.md_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

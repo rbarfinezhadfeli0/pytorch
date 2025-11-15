@@ -1,0 +1,81 @@
+# Keyword Index: `docs/torch/csrc/distributed/c10d/cuda/StreamBlock.hpp_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/csrc/distributed/c10d/cuda/StreamBlock.hpp_kw.md](../../../../../../../docs/torch/csrc/distributed/c10d/cuda/StreamBlock.hpp_kw.md)
+- **Documentation**: [`StreamBlock.hpp_kw.md_docs.md`](./StreamBlock.hpp_kw.md_docs.md)
+- **Folder**: `docs/torch/csrc/distributed/c10d/cuda`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Architecture`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Basic`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Class`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Complete`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Considerations`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Dependencies`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Design`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Detailed`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Documentation`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Efficiency`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Extracted`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`File`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Folder`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Generated`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`High`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`How`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`In`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Includes`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Index`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Information`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Keyword`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Keywords`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Level`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Map`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Metadata`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Namespaces`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Original`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Overview`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Performance`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Purpose`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`PyTorch`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Registry`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Related`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Repository`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Safety`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Section`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Security`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Source`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`StreamBlock`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Structs`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`System`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`TORCH_API`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Testing`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`The`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`This`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+- **`Usage`**: [StreamBlock.hpp_kw.md_docs.md](./StreamBlock.hpp_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

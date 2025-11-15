@@ -1,0 +1,82 @@
+# Keyword Index: `docs/aten/src/ATen/native/NamedTensor.cpp_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/native/NamedTensor.cpp_kw.md](../../../../../../docs/aten/src/ATen/native/NamedTensor.cpp_kw.md)
+- **Documentation**: [`NamedTensor.cpp_kw.md_docs.md`](./NamedTensor.cpp_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/native`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Analysis`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Architecture`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Basic`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Complete`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Considerations`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Dependencies`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Design`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Detailed`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Documentation`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Efficiency`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Extracted`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`File`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Folder`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Functions`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Generated`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`High`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`How`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`In`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Includes`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Index`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Information`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Keyword`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Keywords`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Level`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Map`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Metadata`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`NamedTensor`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`NamedTensorUtils`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Namespaces`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`NativeFunctions`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Original`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Overview`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Performance`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Purpose`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`PyTorch`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Related`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Repository`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Safety`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Section`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Security`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Source`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`System`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Tensor`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Testing`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`The`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`This`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+- **`Usage`**: [NamedTensor.cpp_kw.md_docs.md](./NamedTensor.cpp_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,200 @@
+# Documentation: `docs/aten/src/ATen/cpu/vec/vec256/vsx/vec256_float_vsx.h_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/cpu/vec/vec256/vsx/vec256_float_vsx.h_kw.md`
+- **Size**: 4,630 bytes (4.52 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `aten/src/ATen/cpu/vec/vec256/vsx/vec256_float_vsx.h`
+
+## File Information
+
+- **Original File**: [aten/src/ATen/cpu/vec/vec256/vsx/vec256_float_vsx.h](../../../../../../../../aten/src/ATen/cpu/vec/vec256/vsx/vec256_float_vsx.h)
+- **Documentation**: [`vec256_float_vsx.h_docs.md`](./vec256_float_vsx.h_docs.md)
+- **Folder**: `aten/src/ATen/cpu/vec/vec256/vsx`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Class/Structs
+
+- **`Vectorized`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`is_vec_specialized_for`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+
+### Functions
+
+- **`abs`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`acos`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`acosh`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`asin`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`asinh`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`blend`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`blendv`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`ceil`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`cos`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`cosh`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`exp`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`exp2`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`exp_u20`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`fexp_u20`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`floor`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`frac`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`has_inf_nan`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`if`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`log`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`log10`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`log1p`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`log2`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`maximum`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`minimum`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`neg`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`pow`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`reciprocal`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`round`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`rsqrt`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`sin`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`sinh`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`size`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`sqrt`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`tan`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`tanh`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`trunc`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`zero_mask`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+
+### Includes
+
+- **`ATen/cpu/vec/intrinsics.h`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`ATen/cpu/vec/vec256/vsx/vsx_helpers.h`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`ATen/cpu/vec/vec_base.h`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`sleef.h`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+
+### Namespaces
+
+- **`CPU_CAPABILITY`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`at`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+- **`vec`**: [vec256_float_vsx.h_docs.md](./vec256_float_vsx.h_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/cpu/vec/vec256/vsx`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/cpu/vec/vec256/vsx`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/cpu/vec/vec256/vsx`):
+
+- [`vec256_complex_double_vsx.h_kw.md_docs.md`](./vec256_complex_double_vsx.h_kw.md_docs.md)
+- [`vec256_complex_float_vsx.h_docs.md_docs.md`](./vec256_complex_float_vsx.h_docs.md_docs.md)
+- [`vec256_quint8_vsx.h_kw.md_docs.md`](./vec256_quint8_vsx.h_kw.md_docs.md)
+- [`vec256_quint8_vsx.h_docs.md_docs.md`](./vec256_quint8_vsx.h_docs.md_docs.md)
+- [`vec256_complex_float_vsx.h_kw.md_docs.md`](./vec256_complex_float_vsx.h_kw.md_docs.md)
+- [`vec256_bfloat16_vsx.h_kw.md_docs.md`](./vec256_bfloat16_vsx.h_kw.md_docs.md)
+- [`vec256_double_vsx.h_docs.md_docs.md`](./vec256_double_vsx.h_docs.md_docs.md)
+- [`vsx_helpers.h_kw.md_docs.md`](./vsx_helpers.h_kw.md_docs.md)
+- [`vec256_int32_vsx.h_docs.md_docs.md`](./vec256_int32_vsx.h_docs.md_docs.md)
+- [`vec256_int16_vsx.h_docs.md_docs.md`](./vec256_int16_vsx.h_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `vec256_float_vsx.h_kw.md_docs.md`
+- **Keyword Index**: `vec256_float_vsx.h_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

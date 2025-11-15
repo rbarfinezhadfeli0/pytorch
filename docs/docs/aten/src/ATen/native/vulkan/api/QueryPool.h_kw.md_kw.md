@@ -1,0 +1,86 @@
+# Keyword Index: `docs/aten/src/ATen/native/vulkan/api/QueryPool.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/native/vulkan/api/QueryPool.h_kw.md](../../../../../../../../docs/aten/src/ATen/native/vulkan/api/QueryPool.h_kw.md)
+- **Documentation**: [`QueryPool.h_kw.md_docs.md`](./QueryPool.h_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/native/vulkan/api`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Adapter`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Analysis`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Architecture`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Basic`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Class`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Command`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Complete`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Considerations`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Dependencies`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Design`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Detailed`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Documentation`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Efficiency`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Extracted`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`File`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Folder`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Functions`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Generated`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`High`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`How`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`In`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Includes`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Index`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Information`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Keyword`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Keywords`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Level`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Map`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Metadata`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Namespaces`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Original`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Overview`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Performance`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Pipeline`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Purpose`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`PyTorch`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`QueryPool`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`QueryPoolConfig`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Related`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Repository`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Safety`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Section`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Security`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`ShaderDuration`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Source`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Structs`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`System`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Testing`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`The`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`This`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+- **`Usage`**: [QueryPool.h_kw.md_docs.md](./QueryPool.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

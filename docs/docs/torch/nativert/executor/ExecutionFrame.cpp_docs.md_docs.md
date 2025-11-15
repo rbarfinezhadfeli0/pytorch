@@ -1,0 +1,412 @@
+# Documentation: `docs/torch/nativert/executor/ExecutionFrame.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/nativert/executor/ExecutionFrame.cpp_docs.md`
+- **Size**: 8,213 bytes (8.02 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/nativert/executor/ExecutionFrame.cpp`
+
+## File Metadata
+
+- **Path**: `torch/nativert/executor/ExecutionFrame.cpp`
+- **Size**: 5,798 bytes (5.66 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#include <c10/util/Enumerate.h>
+#include <c10/util/Exception.h>
+#include <c10/util/Logging.h>
+
+#include <torch/nativert/executor/ExecutionFrame.h>
+
+namespace torch::nativert {
+
+ExecutionFrame::ExecutionFrame(const Graph& graph)
+    : graph_(graph),
+      allValues_(graph.numValues()),
+      persistent_(graph.numValues()),
+      moveable_output_mask_(graph.userOutputs().size()) {
+  updatePersistentValues(/* weights = nullptr */);
+  updateMovableOutputs();
+}
+
+ExecutionFrame::ExecutionFrame(
+    const Graph& graph,
+    const Weights& weights,
+    const torch::nativert::ExecutorConfig& cfg,
+    LayoutPlanner* layoutPlanner)
+    : ExecutionFrame(graph) {
+  setWeights(weights);
+  if (layoutPlanner != nullptr) {
+    layoutPlanner_ = layoutPlanner;
+    layoutManager_ = std::make_unique<LayoutManager>(
+        *layoutPlanner,
+        *this,
+        cfg.layoutPlannerSettings.layoutManagerSettings());
+  }
+}
+
+void ExecutionFrame::setWeights(const Weights& weights) {
+  weightVersion_ = weights.version();
+  updatePersistentValues(&weights);
+  updateMovableOutputs();
+}
+
+/* static */ std::vector<std::pair<ValueId, c10::IValue>> ExecutionFrame::
+    getPersistentValues(const Graph& graph, const Weights* weights) {
+  std::vector<std::pair<ValueId, c10::IValue>> persistentValues;
+
+  /* ADD GRAPH-DEPENDENT PERSISTENT VALUES */
+
+  for (const auto& [valueId, constSymintValue] :
+       graph.getConstantSymIntValues()) {
+    persistentValues.emplace_back(valueId, constSymintValue);
+  }
+
+  if (weights == nullptr) {
+    return persistentValues;
+  }
+
+  /* ADD WEIGHT-DEPENDENT PERSISTENT VALUES */
+
+  const auto& inputsToWeights = graph.signature().inputsToWeights();
+  for (const auto& [inputName, weightName] : inputsToWeights) {
+    const Value* value = graph.getValue(inputName);
+    persistentValues.emplace_back(value->id(), weights->at(weightName));
+  }
+
+  const auto& inputsToCustomObjs = graph.signature().inputsToCustomObjs();
+  for (const auto& [inputName, customObjName] : inputsToCustomObjs) {
+    const Value* value = graph.getValue(inputName);
+    persistentValues.emplace_back(
+        value->id(), weights->getCustomObj(customObjName));
+  }
+
+  std::unordered_map<std::string, ValueId> foldedConstIds;
+  for (const Node& node : graph.nodes()) {
+    if (node.target() == "torch.ops.higher_order.run_const_graph") {
+      const auto& const_graph =
+          std::get<std::unique_ptr<Graph>>(node.attributes().at(0).value);
+      for (size_t i = 0; i < node.outputs().size(); ++i) {
+        foldedConstIds[std::string{const_graph->outputs().at(i)->name()}] =
+            node.outputs()[i]->id();
+      }
+    }
+  }
+  for (const auto& [name, tensor] : weights->getFoldedConsts()) {
+    persistentValues.emplace_back(foldedConstIds.at(name), tensor);
+  }
+
+  for (const auto& [name, iv] : weights->getConstFoldedValues()) {
+    const Value* value = graph.getValue(name);
+    persistentValues.emplace_back(value->id(), iv);
+  }
+
+  return persistentValues;
+}
+
+void ExecutionFrame::updatePersistentValues(const Weights* weights) {
+  auto persistentValues = ExecutionFrame::getPersistentValues(graph_, weights);
+  for (auto it = std::make_move_iterator(persistentValues.begin());
+       it != std::make_move_iterator(persistentValues.end());
+       ++it) {
+    auto&& [value, iv] = *it;
+    setPersistentIValue(value, std::move(iv));
+  }
+}
+
+void ExecutionFrame::updateMovableOutputs() {
+  moveable_output_mask_.assign(moveable_output_mask_.size(), true);
+
+  c10::FastSet<ValueId> inputs;
+  for (const auto* input : graph_.userInputs()) {
+    if (input) {
+      inputs.insert(input->id());
+    }
+  }
+
+  const auto& outputs = graph_.userOutputs();
+  const size_t num_outputs = outputs.size();
+
+  c10::FastSet<ValueId> seen;
+  for (size_t i = 0; i < num_outputs; i++) {
+    auto idx = num_outputs - 1 - i;
+    if (const Value* const* valuePtr = std::get_if<Value*>(&outputs[idx]);
+        valuePtr && *valuePtr) {
+      auto id = (*valuePtr)->id();
+
+      /*
+          values are not moveable if:
+          1. they are persistent
+          2. they are inputs (since inputs are borrowed)
+          3. the value will be moved in a later (right-more) output
+      */
+
+      if (!seen.insert(id).second || persistent_[id] ||
+          inputs.find(id) != inputs.end()) {
+        moveable_output_mask_[idx] = false;
+      }
+    }
+  }
+}
+
+ExecutionFrame::ExecutionFrame(
+    const Graph& graph,
+    size_t numValues,
+    const std::vector<ValueId>& /*unused*/,
+    const std::vector<ValueId>& /*unused*/)
+    : graph_(graph) {
+  allValues_.resize(numValues);
+}
+
+void ExecutionFrame::setIValue(ValueId id, c10::IValue ivalue) {
+  DCHECK(static_cast<size_t>(id) < allValues_.size());
+  allValues_[id] = std::move(ivalue);
+}
+
+void ExecutionFrame::setBorrowedIValue(ValueId id, c10::IValue ivalue) {
+  DCHECK(static_cast<size_t>(id) < allValues_.size());
+  borrowedValueIds_.push_back(id);
+  allValues_[id] = std::move(ivalue);
+}
+
+at::Tensor ExecutionFrame::getTensor(ValueId id) const {
+  const auto& ivalue = getIValue(id);
+  TORCH_CHECK(ivalue.isTensor(), "getTensor called on non-tensor value");
+  return ivalue.toTensor();
+}
+
+std::vector<c10::IValue> ExecutionFrame::tryMoveUserOutputs() {
+  std::vector<c10::IValue> ret;
+  const auto& outputs = graph_.userOutputs();
+  ret.reserve(outputs.size());
+  for (const auto& [i, outputValue] : c10::enumerate(outputs)) {
+    if (const Value* const* valuePtr = std::get_if<Value*>(&outputValue);
+        valuePtr && *valuePtr) {
+      ret.push_back(
+          isOutputMovable(i) ? moveIValue((*valuePtr)->id())
+                             : getIValue((*valuePtr)->id()));
+    } else if (Constant const* constant = std::get_if<Constant>(&outputValue)) {
+      ret.push_back(constantToIValue(*constant));
+    }
+  }
+  return ret;
+}
+
+} // namespace torch::nativert
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 3 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/nativert/executor`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `c10/util/Enumerate.h`
+- `c10/util/Exception.h`
+- `c10/util/Logging.h`
+- `torch/nativert/executor/ExecutionFrame.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/nativert/executor`):
+
+- [`OpKernel.cpp_docs.md`](./OpKernel.cpp_docs.md)
+- [`AOTInductorDelegateExecutor.cpp_docs.md`](./AOTInductorDelegateExecutor.cpp_docs.md)
+- [`ParallelGraphExecutor.h_docs.md`](./ParallelGraphExecutor.h_docs.md)
+- [`ExecutionFrame.h_docs.md`](./ExecutionFrame.h_docs.md)
+- [`ExecutorConfig.h_docs.md`](./ExecutorConfig.h_docs.md)
+- [`SerialGraphExecutor.h_docs.md`](./SerialGraphExecutor.h_docs.md)
+- [`Weights.cpp_docs.md`](./Weights.cpp_docs.md)
+- [`OpKernelKind.h_docs.md`](./OpKernelKind.h_docs.md)
+- [`Executor.h_docs.md`](./Executor.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `ExecutionFrame.cpp_docs.md`
+- **Keyword Index**: `ExecutionFrame.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/nativert/executor`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/nativert/executor`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/nativert/executor`):
+
+- [`GraphExecutorBase.h_docs.md_docs.md`](./GraphExecutorBase.h_docs.md_docs.md)
+- [`Placement.h_kw.md_docs.md`](./Placement.h_kw.md_docs.md)
+- [`ParallelGraphExecutor.cpp_kw.md_docs.md`](./ParallelGraphExecutor.cpp_kw.md_docs.md)
+- [`ExecutionFrame.h_docs.md_docs.md`](./ExecutionFrame.h_docs.md_docs.md)
+- [`Executor.cpp_kw.md_docs.md`](./Executor.cpp_kw.md_docs.md)
+- [`SerialGraphExecutor.h_docs.md_docs.md`](./SerialGraphExecutor.h_docs.md_docs.md)
+- [`AOTInductorModelContainerCudaShim.cpp_docs.md_docs.md`](./AOTInductorModelContainerCudaShim.cpp_docs.md_docs.md)
+- [`ParallelGraphExecutor.h_docs.md_docs.md`](./ParallelGraphExecutor.h_docs.md_docs.md)
+- [`Placement.cpp_kw.md_docs.md`](./Placement.cpp_kw.md_docs.md)
+- [`DelegateExecutor.h_docs.md_docs.md`](./DelegateExecutor.h_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `ExecutionFrame.cpp_docs.md_docs.md`
+- **Keyword Index**: `ExecutionFrame.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

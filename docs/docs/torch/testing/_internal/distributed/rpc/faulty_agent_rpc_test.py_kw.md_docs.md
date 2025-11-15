@@ -1,0 +1,189 @@
+# Documentation: `docs/torch/testing/_internal/distributed/rpc/faulty_agent_rpc_test.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/testing/_internal/distributed/rpc/faulty_agent_rpc_test.py_kw.md`
+- **Size**: 4,993 bytes (4.88 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `torch/testing/_internal/distributed/rpc/faulty_agent_rpc_test.py`
+
+## File Information
+
+- **Original File**: [torch/testing/_internal/distributed/rpc/faulty_agent_rpc_test.py](../../../../../../torch/testing/_internal/distributed/rpc/faulty_agent_rpc_test.py)
+- **Documentation**: [`faulty_agent_rpc_test.py_docs.md`](./faulty_agent_rpc_test.py_docs.md)
+- **Folder**: `torch/testing/_internal/distributed/rpc`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`FaultyAgentRpcTest`**: [faulty_agent_rpc_test.py_docs.md](./faulty_agent_rpc_test.py_docs.md)
+
+### Functions
+
+- **`_test_remote_message_delay_timeout`**: [faulty_agent_rpc_test.py_docs.md](./faulty_agent_rpc_test.py_docs.md)
+- **`_test_remote_message_dropped_pickle`**: [faulty_agent_rpc_test.py_docs.md](./faulty_agent_rpc_test.py_docs.md)
+- **`_test_remote_message_dropped_timeout`**: [faulty_agent_rpc_test.py_docs.md](./faulty_agent_rpc_test.py_docs.md)
+- **`add_rref_to_value`**: [faulty_agent_rpc_test.py_docs.md](./faulty_agent_rpc_test.py_docs.md)
+- **`my_script_func`**: [faulty_agent_rpc_test.py_docs.md](./faulty_agent_rpc_test.py_docs.md)
+- **`my_sleep_func`**: [faulty_agent_rpc_test.py_docs.md](./faulty_agent_rpc_test.py_docs.md)
+- **`test_builtin_remote_message_dropped_timeout`**: [faulty_agent_rpc_test.py_docs.md](./faulty_agent_rpc_test.py_docs.md)
+- **`test_builtin_remote_message_dropped_timeout_to_self`**: [faulty_agent_rpc_test.py_docs.md](./faulty_agent_rpc_test.py_docs.md)
+- **`test_check_failed_messages`**: [faulty_agent_rpc_test.py_docs.md](./faulty_agent_rpc_test.py_docs.md)
+- **`test_custom_faulty_messages`**: [faulty_agent_rpc_test.py_docs.md](./faulty_agent_rpc_test.py_docs.md)
+- **`test_custom_messages_to_delay`**: [faulty_agent_rpc_test.py_docs.md](./faulty_agent_rpc_test.py_docs.md)
+- **`test_no_faulty_messages`**: [faulty_agent_rpc_test.py_docs.md](./faulty_agent_rpc_test.py_docs.md)
+- **`test_remote_message_builtin_delay_timeout`**: [faulty_agent_rpc_test.py_docs.md](./faulty_agent_rpc_test.py_docs.md)
+- **`test_remote_message_builtin_delay_timeout_to_self`**: [faulty_agent_rpc_test.py_docs.md](./faulty_agent_rpc_test.py_docs.md)
+- **`test_remote_message_dropped_pickle`**: [faulty_agent_rpc_test.py_docs.md](./faulty_agent_rpc_test.py_docs.md)
+- **`test_remote_message_dropped_pickle_to_self`**: [faulty_agent_rpc_test.py_docs.md](./faulty_agent_rpc_test.py_docs.md)
+- **`test_remote_message_script_delay_timeout`**: [faulty_agent_rpc_test.py_docs.md](./faulty_agent_rpc_test.py_docs.md)
+- **`test_remote_message_script_delay_timeout_to_self`**: [faulty_agent_rpc_test.py_docs.md](./faulty_agent_rpc_test.py_docs.md)
+- **`test_rpc_builtin_timeout`**: [faulty_agent_rpc_test.py_docs.md](./faulty_agent_rpc_test.py_docs.md)
+- **`test_rpc_script_timeout`**: [faulty_agent_rpc_test.py_docs.md](./faulty_agent_rpc_test.py_docs.md)
+- **`test_rref_to_here_timeout`**: [faulty_agent_rpc_test.py_docs.md](./faulty_agent_rpc_test.py_docs.md)
+- **`test_udf_remote_message_delay_timeout`**: [faulty_agent_rpc_test.py_docs.md](./faulty_agent_rpc_test.py_docs.md)
+- **`test_udf_remote_message_delay_timeout_to_self`**: [faulty_agent_rpc_test.py_docs.md](./faulty_agent_rpc_test.py_docs.md)
+- **`test_udf_remote_message_dropped_timeout`**: [faulty_agent_rpc_test.py_docs.md](./faulty_agent_rpc_test.py_docs.md)
+- **`test_udf_remote_message_dropped_timeout_to_self`**: [faulty_agent_rpc_test.py_docs.md](./faulty_agent_rpc_test.py_docs.md)
+- **`test_verify_backend_options`**: [faulty_agent_rpc_test.py_docs.md](./faulty_agent_rpc_test.py_docs.md)
+
+### Imports
+
+- **`_delete_all_user_and_unforked_owner_rrefs`**: [faulty_agent_rpc_test.py_docs.md](./faulty_agent_rpc_test.py_docs.md)
+- **`time`**: [faulty_agent_rpc_test.py_docs.md](./faulty_agent_rpc_test.py_docs.md)
+- **`torch`**: [faulty_agent_rpc_test.py_docs.md](./faulty_agent_rpc_test.py_docs.md)
+- **`torch.distributed.rpc`**: [faulty_agent_rpc_test.py_docs.md](./faulty_agent_rpc_test.py_docs.md)
+- **`torch.distributed.rpc.api`**: [faulty_agent_rpc_test.py_docs.md](./faulty_agent_rpc_test.py_docs.md)
+- **`torch.testing._internal.dist_utils`**: [faulty_agent_rpc_test.py_docs.md](./faulty_agent_rpc_test.py_docs.md)
+- **`torch.testing._internal.distributed.rpc.rpc_agent_test_fixture`**: [faulty_agent_rpc_test.py_docs.md](./faulty_agent_rpc_test.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/testing/_internal/distributed/rpc`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/testing/_internal/distributed/rpc`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- **Serialization**: Uses pickle - be cautious with untrusted data
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/torch/testing/_internal/distributed/rpc/faulty_agent_rpc_test.py_kw.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/testing/_internal/distributed/rpc`):
+
+- [`rpc_test.py_kw.md_docs.md`](./rpc_test.py_kw.md_docs.md)
+- [`dist_optimizer_test.py_docs.md_docs.md`](./dist_optimizer_test.py_docs.md_docs.md)
+- [`rpc_test.py_docs.md_docs.md`](./rpc_test.py_docs.md_docs.md)
+- [`__init__.py_docs.md_docs.md`](./__init__.py_docs.md_docs.md)
+- [`rpc_agent_test_fixture.py_kw.md_docs.md`](./rpc_agent_test_fixture.py_kw.md_docs.md)
+- [`dist_optimizer_test.py_kw.md_docs.md`](./dist_optimizer_test.py_kw.md_docs.md)
+- [`tensorpipe_rpc_agent_test_fixture.py_kw.md_docs.md`](./tensorpipe_rpc_agent_test_fixture.py_kw.md_docs.md)
+- [`faulty_agent_rpc_test.py_docs.md_docs.md`](./faulty_agent_rpc_test.py_docs.md_docs.md)
+- [`__init__.py_kw.md_docs.md`](./__init__.py_kw.md_docs.md)
+- [`dist_autograd_test.py_docs.md_docs.md`](./dist_autograd_test.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `faulty_agent_rpc_test.py_kw.md_docs.md`
+- **Keyword Index**: `faulty_agent_rpc_test.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

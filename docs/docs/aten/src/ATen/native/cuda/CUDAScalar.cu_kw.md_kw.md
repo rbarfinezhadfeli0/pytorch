@@ -1,0 +1,84 @@
+# Keyword Index: `docs/aten/src/ATen/native/cuda/CUDAScalar.cu_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/native/cuda/CUDAScalar.cu_kw.md](../../../../../../../docs/aten/src/ATen/native/cuda/CUDAScalar.cu_kw.md)
+- **Documentation**: [`CUDAScalar.cu_kw.md_docs.md`](./CUDAScalar.cu_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/native/cuda`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Analysis`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Architecture`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Basic`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`CUDAContext`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`CUDAScalar`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Complete`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Considerations`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Dependencies`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Design`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Detailed`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Dispatch_v2`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Documentation`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Efficiency`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`EmptyTensor`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Extracted`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`File`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Folder`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Functions`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Generated`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`High`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`How`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`In`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Includes`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Index`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Information`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Keyword`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Keywords`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Level`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Map`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Metadata`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Namespaces`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`NativeFunctions`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Original`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Overview`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Performance`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Purpose`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`PyTorch`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Related`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Repository`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Safety`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Section`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Security`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Source`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`System`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Tensor`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Testing`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`The`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`This`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+- **`Usage`**: [CUDAScalar.cu_kw.md_docs.md](./CUDAScalar.cu_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,314 @@
+# Documentation: `docs/torch/csrc/jit/testing/file_check.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/jit/testing/file_check.h_docs.md`
+- **Size**: 4,698 bytes (4.59 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/csrc/jit/testing/file_check.h`
+
+## File Metadata
+
+- **Path**: `torch/csrc/jit/testing/file_check.h`
+- **Size**: 2,543 bytes (2.48 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**.
+
+## Original Source
+
+```c
+#pragma once
+
+#include <torch/csrc/Export.h>
+#include <memory>
+#include <string>
+
+namespace torch::jit {
+
+struct Graph;
+
+namespace testing {
+
+struct FileCheckImpl;
+
+struct FileCheck {
+ public:
+  TORCH_API explicit FileCheck();
+  TORCH_API ~FileCheck();
+
+  // Run FileCheck against test string
+  TORCH_API void run(const std::string& test_string);
+
+  // Run FileCheck against dump of graph IR
+  TORCH_API void run(const Graph& graph);
+
+  // Parsing input checks string and run against test string / dump of graph IR
+  TORCH_API void run(
+      const std::string& input_checks_string,
+      const std::string& test_string);
+  TORCH_API void run(
+      const std::string& input_checks_string,
+      const Graph& graph);
+
+  // Checks that the string occurs, starting at the end of the most recent match
+  TORCH_API FileCheck* check(const std::string& str);
+
+  // Checks that the string does not occur between the previous match and next
+  // match. Consecutive check_nots test against the same previous match and next
+  // match
+  TORCH_API FileCheck* check_not(const std::string& str);
+
+  // Checks that the string occurs on the same line as the previous match
+  TORCH_API FileCheck* check_same(const std::string& str);
+
+  // Checks that the string occurs on the line immediately following the
+  // previous match
+  TORCH_API FileCheck* check_next(const std::string& str);
+
+  // Checks that the string occurs count number of times, starting at the end
+  // of the previous match. If exactly is true, checks that there are exactly
+  // count many matches
+  TORCH_API FileCheck* check_count(
+      const std::string& str,
+      size_t count,
+      bool exactly = false);
+
+  // A series of consecutive check_dags get turned into a group of checks
+  // which can appear in any order relative to each other. The checks begin
+  // at the end of the previous match, and the match for the check_dag group
+  // is the minimum match of all individual checks to the maximum match of all
+  // individual checks.
+  TORCH_API FileCheck* check_dag(const std::string& str);
+
+  // Checks that source token is highlighted in str (usually an error message).
+  TORCH_API FileCheck* check_source_highlighted(const std::string& str);
+
+  // Checks that the regex matched string occurs, starting at the end of the
+  // most recent match
+  TORCH_API FileCheck* check_regex(const std::string& str);
+
+  // reset checks
+  TORCH_API void reset();
+
+ private:
+  bool has_run = false;
+  std::unique_ptr<FileCheckImpl> fcImpl;
+};
+} // namespace testing
+} // namespace torch::jit
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 7 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`, `testing`
+
+**Classes/Structs**: `Graph`, `FileCheckImpl`, `FileCheck`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/jit/testing`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `torch/csrc/Export.h`
+- `memory`
+- `string`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python torch/csrc/jit/testing/file_check.h
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/jit/testing`):
+
+- [`catch_utils.hpp_docs.md`](./catch_utils.hpp_docs.md)
+- [`file_check.cpp_docs.md`](./file_check.cpp_docs.md)
+- [`hooks_for_testing.h_docs.md`](./hooks_for_testing.h_docs.md)
+- [`hooks_for_testing.cpp_docs.md`](./hooks_for_testing.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `file_check.h_docs.md`
+- **Keyword Index**: `file_check.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/jit/testing`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/jit/testing`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/torch/csrc/jit/testing/file_check.h_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/jit/testing`):
+
+- [`hooks_for_testing.h_kw.md_docs.md`](./hooks_for_testing.h_kw.md_docs.md)
+- [`file_check.cpp_docs.md_docs.md`](./file_check.cpp_docs.md_docs.md)
+- [`file_check.h_kw.md_docs.md`](./file_check.h_kw.md_docs.md)
+- [`file_check.cpp_kw.md_docs.md`](./file_check.cpp_kw.md_docs.md)
+- [`hooks_for_testing.cpp_kw.md_docs.md`](./hooks_for_testing.cpp_kw.md_docs.md)
+- [`hooks_for_testing.cpp_docs.md_docs.md`](./hooks_for_testing.cpp_docs.md_docs.md)
+- [`catch_utils.hpp_kw.md_docs.md`](./catch_utils.hpp_kw.md_docs.md)
+- [`hooks_for_testing.h_docs.md_docs.md`](./hooks_for_testing.h_docs.md_docs.md)
+- [`catch_utils.hpp_docs.md_docs.md`](./catch_utils.hpp_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `file_check.h_docs.md_docs.md`
+- **Keyword Index**: `file_check.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

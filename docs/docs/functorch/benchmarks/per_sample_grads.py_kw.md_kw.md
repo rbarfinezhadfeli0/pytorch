@@ -1,0 +1,77 @@
+# Keyword Index: `docs/functorch/benchmarks/per_sample_grads.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/functorch/benchmarks/per_sample_grads.py_kw.md](../../../../docs/functorch/benchmarks/per_sample_grads.py_kw.md)
+- **Documentation**: [`per_sample_grads.py_kw.md_docs.md`](./per_sample_grads.py_kw.md_docs.md)
+- **Folder**: `docs/functorch/benchmarks`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`Architecture`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`Basic`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`Complete`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`Considerations`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`Dependencies`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`Design`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`Detailed`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`Documentation`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`Efficiency`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`Extracted`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`File`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`Folder`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`Functions`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`Generated`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`High`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`How`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`Imports`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`In`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`Index`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`Information`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`Keyword`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`Keywords`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`Level`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`Map`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`Metadata`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`Original`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`Overview`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`Performance`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`PrivacyEngine`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`Purpose`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`PyTorch`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`Related`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`Repository`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`Safety`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`Section`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`Security`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`Source`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`System`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`Testing`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`The`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`This`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+- **`Usage`**: [per_sample_grads.py_kw.md_docs.md](./per_sample_grads.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

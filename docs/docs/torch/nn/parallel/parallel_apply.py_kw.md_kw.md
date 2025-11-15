@@ -1,0 +1,80 @@
+# Keyword Index: `docs/torch/nn/parallel/parallel_apply.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/nn/parallel/parallel_apply.py_kw.md](../../../../../docs/torch/nn/parallel/parallel_apply.py_kw.md)
+- **Documentation**: [`parallel_apply.py_kw.md_docs.md`](./parallel_apply.py_kw.md_docs.md)
+- **Folder**: `docs/torch/nn/parallel`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Any`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Architecture`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Basic`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Complete`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Considerations`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Dependencies`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Design`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Detailed`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Documentation`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Efficiency`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`ExceptionWrapper`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Extracted`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`File`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Folder`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Functions`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Generated`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`High`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`How`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Imports`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`In`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Index`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Information`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Keyword`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Keywords`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Level`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Map`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Metadata`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Module`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Original`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Overview`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Performance`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Purpose`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`PyTorch`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Related`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Repository`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Safety`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Section`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Security`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Sequence`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Source`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`System`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Testing`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`The`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`This`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+- **`Usage`**: [parallel_apply.py_kw.md_docs.md](./parallel_apply.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,80 @@
+# Keyword Index: `docs/aten/src/ATen/xpu/XPUGraphsUtils.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/xpu/XPUGraphsUtils.h_kw.md](../../../../../../docs/aten/src/ATen/xpu/XPUGraphsUtils.h_kw.md)
+- **Documentation**: [`XPUGraphsUtils.h_kw.md_docs.md`](./XPUGraphsUtils.h_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/xpu`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`Analysis`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`Architecture`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`Basic`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`Complete`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`Considerations`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`Dependencies`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`Design`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`Detailed`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`Documentation`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`Efficiency`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`Extracted`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`File`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`Folder`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`Functions`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`Generated`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`High`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`How`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`In`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`Includes`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`Index`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`Information`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`Keyword`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`Keywords`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`Level`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`Map`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`Metadata`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`Namespaces`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`Original`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`Overview`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`Performance`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`Purpose`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`PyTorch`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`Related`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`Repository`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`Safety`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`Section`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`Security`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`Source`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`System`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`Testing`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`The`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`This`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`Usage`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`XPUGraphsC10Utils`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+- **`XPUGraphsUtils`**: [XPUGraphsUtils.h_kw.md_docs.md](./XPUGraphsUtils.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,78 @@
+# Keyword Index: `docs/torch/csrc/jit/passes/add_if_then_else.cpp_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/csrc/jit/passes/add_if_then_else.cpp_kw.md](../../../../../../docs/torch/csrc/jit/passes/add_if_then_else.cpp_kw.md)
+- **Documentation**: [`add_if_then_else.cpp_kw.md_docs.md`](./add_if_then_else.cpp_kw.md_docs.md)
+- **Folder**: `docs/torch/csrc/jit/passes`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`AddIfThenElseOp`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`Analysis`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`Architecture`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`Basic`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`Complete`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`Considerations`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`Dependencies`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`Design`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`Detailed`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`Documentation`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`Efficiency`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`Extracted`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`File`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`Folder`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`Functions`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`Generated`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`High`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`How`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`In`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`Includes`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`Index`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`Information`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`Keyword`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`Keywords`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`Level`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`Map`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`Metadata`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`Namespaces`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`Original`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`Overview`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`Performance`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`Purpose`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`PyTorch`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`Related`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`Repository`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`Safety`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`Section`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`Security`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`Source`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`System`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`Testing`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`The`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`This`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+- **`Usage`**: [add_if_then_else.cpp_kw.md_docs.md](./add_if_then_else.cpp_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

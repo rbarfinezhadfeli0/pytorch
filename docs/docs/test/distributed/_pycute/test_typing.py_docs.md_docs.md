@@ -1,0 +1,302 @@
+# Documentation: `docs/test/distributed/_pycute/test_typing.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/distributed/_pycute/test_typing.py_docs.md`
+- **Size**: 5,122 bytes (5.00 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/distributed/_pycute/test_typing.py`
+
+## File Metadata
+
+- **Path**: `test/distributed/_pycute/test_typing.py`
+- **Size**: 2,699 bytes (2.64 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**. Can be **executed as a standalone script**.
+
+## Original Source
+
+```python
+# flake8: noqa
+# ruff: noqa: PGH004
+# Owner(s): ["oncall: distributed"]
+#################################################################################################
+#
+# Copyright (c) 2023 - 2025 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#
+# 1. Redistributions of source code must retain the above copyright notice, this
+# list of conditions and the following disclaimer.
+#
+# 2. Redistributions in binary form must reproduce the above copyright notice,
+# this list of conditions and the following disclaimer in the documentation
+# and/or other materials provided with the distribution.
+#
+# 3. Neither the name of the copyright holder nor the names of its
+# contributors may be used to endorse or promote products derived from
+# this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+# AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+# DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+# SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+# CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+# OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+# OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+#################################################################################################
+
+"""
+Unit tests for _pycute.typing
+"""
+
+import logging
+
+from torch.distributed._pycute import *
+from torch.testing._internal.common_utils import run_tests, TestCase
+
+
+_LOGGER = logging.getLogger(__name__)
+
+
+class TestTyping(TestCase):
+    def helper_test_typing(self, _cls, _obj, cls, expected: bool):
+        _LOGGER.debug(f"issubclass({_cls}, {cls})")
+        _LOGGER.debug(f"isinstance({_obj}, {cls})")
+
+        self.assertEqual(expected, issubclass(_cls, cls))
+        self.assertEqual(expected, isinstance(_obj, cls))
+
+    def test_typing(self):
+        self.helper_test_typing(int, 1, Integer, True)
+        self.helper_test_typing(float, 1.0, Integer, False)
+        self.helper_test_typing(str, "hi", Integer, False)
+        self.helper_test_typing(bool, False, Integer, False)
+
+
+if __name__ == "__main__":
+    run_tests()
+
+```
+
+
+
+## High-Level Overview
+
+"""Unit tests for _pycute.typing
+
+This Python file contains 1 class(es) and 2 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `TestTyping`
+
+**Functions defined**: `helper_test_typing`, `test_typing`
+
+**Key imports**: logging, run_tests, TestCase
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/distributed/_pycute`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `logging`
+- `torch.testing._internal.common_utils`: run_tests, TestCase
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/distributed/_pycute/test_typing.py
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/distributed/_pycute`):
+
+- [`test_coalesce.py_docs.md`](./test_coalesce.py_docs.md)
+- [`test_left_inverse.py_docs.md`](./test_left_inverse.py_docs.md)
+- [`test_int_tuple.py_docs.md`](./test_int_tuple.py_docs.md)
+- [`test_complement.py_docs.md`](./test_complement.py_docs.md)
+- [`test_composition.py_docs.md`](./test_composition.py_docs.md)
+- [`test_right_inverse.py_docs.md`](./test_right_inverse.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_typing.py_docs.md`
+- **Keyword Index**: `test_typing.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/distributed/_pycute`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/distributed/_pycute`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/distributed/_pycute/test_typing.py_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/distributed/_pycute`):
+
+- [`test_complement.py_kw.md_docs.md`](./test_complement.py_kw.md_docs.md)
+- [`test_composition.py_docs.md_docs.md`](./test_composition.py_docs.md_docs.md)
+- [`test_left_inverse.py_kw.md_docs.md`](./test_left_inverse.py_kw.md_docs.md)
+- [`test_coalesce.py_docs.md_docs.md`](./test_coalesce.py_docs.md_docs.md)
+- [`test_right_inverse.py_docs.md_docs.md`](./test_right_inverse.py_docs.md_docs.md)
+- [`test_complement.py_docs.md_docs.md`](./test_complement.py_docs.md_docs.md)
+- [`test_coalesce.py_kw.md_docs.md`](./test_coalesce.py_kw.md_docs.md)
+- [`test_int_tuple.py_docs.md_docs.md`](./test_int_tuple.py_docs.md_docs.md)
+- [`test_int_tuple.py_kw.md_docs.md`](./test_int_tuple.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_typing.py_docs.md_docs.md`
+- **Keyword Index**: `test_typing.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

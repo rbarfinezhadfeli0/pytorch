@@ -1,0 +1,178 @@
+# Documentation: `docs/torch/ao/quantization/backend_config/_common_operator_config_utils.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/ao/quantization/backend_config/_common_operator_config_utils.py_kw.md`
+- **Size**: 4,656 bytes (4.55 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**. This file handles **configuration or setup**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `torch/ao/quantization/backend_config/_common_operator_config_utils.py`
+
+## File Information
+
+- **Original File**: [torch/ao/quantization/backend_config/_common_operator_config_utils.py](../../../../../torch/ao/quantization/backend_config/_common_operator_config_utils.py)
+- **Documentation**: [`_common_operator_config_utils.py_docs.md`](./_common_operator_config_utils.py_docs.md)
+- **Folder**: `torch/ao/quantization/backend_config`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Functions
+
+- **`_add_fixed_qparams_to_dtype_configs`**: [_common_operator_config_utils.py_docs.md](./_common_operator_config_utils.py_docs.md)
+- **`_get_binary_op_configs`**: [_common_operator_config_utils.py_docs.md](./_common_operator_config_utils.py_docs.md)
+- **`_get_bn_configs`**: [_common_operator_config_utils.py_docs.md](./_common_operator_config_utils.py_docs.md)
+- **`_get_cat_config`**: [_common_operator_config_utils.py_docs.md](./_common_operator_config_utils.py_docs.md)
+- **`_get_config`**: [_common_operator_config_utils.py_docs.md](./_common_operator_config_utils.py_docs.md)
+- **`_get_conv_configs`**: [_common_operator_config_utils.py_docs.md](./_common_operator_config_utils.py_docs.md)
+- **`_get_default_op_configs`**: [_common_operator_config_utils.py_docs.md](./_common_operator_config_utils.py_docs.md)
+- **`_get_embedding_op_configs`**: [_common_operator_config_utils.py_docs.md](./_common_operator_config_utils.py_docs.md)
+- **`_get_fixed_qparams_op_configs`**: [_common_operator_config_utils.py_docs.md](./_common_operator_config_utils.py_docs.md)
+- **`_get_linear_configs`**: [_common_operator_config_utils.py_docs.md](./_common_operator_config_utils.py_docs.md)
+- **`_get_ln_configs`**: [_common_operator_config_utils.py_docs.md](./_common_operator_config_utils.py_docs.md)
+- **`_get_rnn_op_configs`**: [_common_operator_config_utils.py_docs.md](./_common_operator_config_utils.py_docs.md)
+- **`_get_share_qparams_op_configs`**: [_common_operator_config_utils.py_docs.md](./_common_operator_config_utils.py_docs.md)
+- **`_get_share_qprams_op_backend_config`**: [_common_operator_config_utils.py_docs.md](./_common_operator_config_utils.py_docs.md)
+- **`_get_tensor_info_op_configs`**: [_common_operator_config_utils.py_docs.md](./_common_operator_config_utils.py_docs.md)
+
+### Imports
+
+- **`.backend_config`**: [_common_operator_config_utils.py_docs.md](./_common_operator_config_utils.py_docs.md)
+- **`Callable`**: [_common_operator_config_utils.py_docs.md](./_common_operator_config_utils.py_docs.md)
+- **`collections`**: [_common_operator_config_utils.py_docs.md](./_common_operator_config_utils.py_docs.md)
+- **`collections.abc`**: [_common_operator_config_utils.py_docs.md](./_common_operator_config_utils.py_docs.md)
+- **`copy`**: [_common_operator_config_utils.py_docs.md](./_common_operator_config_utils.py_docs.md)
+- **`namedtuple`**: [_common_operator_config_utils.py_docs.md](./_common_operator_config_utils.py_docs.md)
+- **`operator`**: [_common_operator_config_utils.py_docs.md](./_common_operator_config_utils.py_docs.md)
+- **`torch`**: [_common_operator_config_utils.py_docs.md](./_common_operator_config_utils.py_docs.md)
+- **`torch.ao.nn.intrinsic`**: [_common_operator_config_utils.py_docs.md](./_common_operator_config_utils.py_docs.md)
+- **`torch.ao.nn.intrinsic.qat`**: [_common_operator_config_utils.py_docs.md](./_common_operator_config_utils.py_docs.md)
+- **`torch.ao.nn.qat`**: [_common_operator_config_utils.py_docs.md](./_common_operator_config_utils.py_docs.md)
+- **`torch.ao.nn.quantized.reference`**: [_common_operator_config_utils.py_docs.md](./_common_operator_config_utils.py_docs.md)
+- **`torch.ao.quantization.fuser_method_mappings`**: [_common_operator_config_utils.py_docs.md](./_common_operator_config_utils.py_docs.md)
+- **`torch.nn`**: [_common_operator_config_utils.py_docs.md](./_common_operator_config_utils.py_docs.md)
+- **`torch.nn.functional`**: [_common_operator_config_utils.py_docs.md](./_common_operator_config_utils.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/ao/quantization/backend_config`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/ao/quantization/backend_config`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/ao/quantization/backend_config`):
+
+- [`onednn.py_docs.md_docs.md`](./onednn.py_docs.md_docs.md)
+- [`backend_config.py_docs.md_docs.md`](./backend_config.py_docs.md_docs.md)
+- [`onednn.py_kw.md_docs.md`](./onednn.py_kw.md_docs.md)
+- [`README.md_docs.md_docs.md`](./README.md_docs.md_docs.md)
+- [`executorch.py_docs.md_docs.md`](./executorch.py_docs.md_docs.md)
+- [`x86.py_docs.md_docs.md`](./x86.py_docs.md_docs.md)
+- [`_qnnpack_pt2e.py_docs.md_docs.md`](./_qnnpack_pt2e.py_docs.md_docs.md)
+- [`utils.py_docs.md_docs.md`](./utils.py_docs.md_docs.md)
+- [`qnnpack.py_docs.md_docs.md`](./qnnpack.py_docs.md_docs.md)
+- [`executorch.py_kw.md_docs.md`](./executorch.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `_common_operator_config_utils.py_kw.md_docs.md`
+- **Keyword Index**: `_common_operator_config_utils.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,76 @@
+# Keyword Index: `docs/source/notes/large_scale_deployments.rst`
+
+## File Information
+
+- **Original File**: [docs/source/notes/large_scale_deployments.rst](../../../../docs/source/notes/large_scale_deployments.rst)
+- **Documentation**: [`large_scale_deployments.rst_docs.md`](./large_scale_deployments.rst_docs.md)
+- **Folder**: `docs/source/notes`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`API`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`APIs`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`After`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`Because`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`Before`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`C`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`C10_LOG_API_USAGE_ONCE`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`Called`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`Common`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`Custom`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`Dataset`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`Debug`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`DebugInfoGuard`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`Existing`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`Features`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`Fleet`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`Here`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`Hooks`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`IValue`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`If`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`Invoking`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`It`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`IterableDataset`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`New`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`Note`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`ON`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`One`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`Passed`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`PyTorch`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`Python`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`RecordFunction`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`RecordFunctionCallback`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`Sample`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`SetAPIUsageHandler`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`SetAPIUsageLogger`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`The`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`There`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`Therefore`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`This`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`ThreadLocalDebugInfo`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`Usually`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+- **`When`**: [large_scale_deployments.rst_docs.md](./large_scale_deployments.rst_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,619 @@
+# Documentation: `docs/aten/src/ATen/native/quantized/cpu/qnnpack/bench/requantization.cc_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/quantized/cpu/qnnpack/bench/requantization.cc_docs.md`
+- **Size**: 11,619 bytes (11.35 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/native/quantized/cpu/qnnpack/bench/requantization.cc`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/quantized/cpu/qnnpack/bench/requantization.cc`
+- **Size**: 8,965 bytes (8.75 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cc`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+/*
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+#include <algorithm>
+#include <cfloat>
+#include <chrono>
+#include <cmath>
+#include <functional>
+#include <iostream>
+#include <random>
+#include <vector>
+
+#include <cpuinfo.h>
+#include <qnnpack/AlignedAllocator.h>
+#include <qnnpack/requantization-stubs.h>
+
+#include <benchmark/benchmark.h>
+
+inline uint32_t divideRoundUp(uint32_t x, uint32_t q) {
+  return x / q + uint32_t(x % q != 0);
+}
+
+inline uint32_t roundUp(uint32_t x, uint32_t q) {
+  return q * divideRoundUp(x, q);
+}
+
+inline uint32_t min(uint32_t a, uint32_t b) {
+  return a < b ? a : b;
+}
+
+class Requantization : public benchmark::Fixture {
+ public:
+  inline Requantization() {
+    cpuinfo_initialize();
+    const size_t l1d_size = cpuinfo_get_l1d_cache(0)->size;
+    const size_t l1d_reserve = 1024;
+    n_ = (l1d_size - l1d_reserve) / (sizeof(int32_t) + sizeof(uint8_t));
+    n_ = n_ / 16 * 16;
+  }
+
+  void SetUp(const benchmark::State&) override {
+    const uint_fast32_t seed =
+        std::chrono::steady_clock::now().time_since_epoch().count();
+    auto rng =
+        std::bind(std::uniform_int_distribution<int32_t>(), std::mt19937(seed));
+
+    input_.resize(n());
+    std::generate(input_.begin(), input_.end(), std::ref(rng));
+    output_.resize(n());
+    std::fill(output_.begin(), output_.end(), 0xA5);
+  }
+
+  void TearDown(benchmark::State& state) override {
+    state.SetItemsProcessed(uint64_t(state.iterations()) * n());
+    state.SetBytesProcessed(
+        uint64_t(state.iterations()) * n() *
+        (sizeof(int32_t) + sizeof(uint8_t)));
+    input_.clear();
+    output_.clear();
+  }
+
+  inline const int32_t* input() const {
+    return input_.data();
+  }
+
+  inline uint8_t* output() {
+    return output_.data();
+  }
+
+  inline size_t n() const {
+    return n_;
+  }
+
+ protected:
+  std::vector<int32_t, AlignedAllocator<int32_t, 32>> input_;
+  std::vector<uint8_t> output_;
+  size_t n_;
+};
+
+BENCHMARK_F(Requantization, precise__scalar_unsigned32)
+(benchmark::State& state) {
+  for (auto _ : state) {
+    pytorch_qnnp_requantize_precise__scalar_unsigned32(
+        n(),
+        input(),
+        0x1.0p-12f /* scale */,
+        128 /* zero point */,
+        1 /* qmin */,
+        254 /* qmax */,
+        output());
+  }
+}
+
+BENCHMARK_F(Requantization, precise__scalar_unsigned64)
+(benchmark::State& state) {
+  for (auto _ : state) {
+    pytorch_qnnp_requantize_precise__scalar_unsigned64(
+        n(),
+        input(),
+        0x1.0p-12f /* scale */,
+        128 /* zero point */,
+        1 /* qmin */,
+        254 /* qmax */,
+        output());
+  }
+}
+
+BENCHMARK_F(Requantization, precise__scalar_signed64)(benchmark::State& state) {
+  for (auto _ : state) {
+    pytorch_qnnp_requantize_precise__scalar_signed64(
+        n(),
+        input(),
+        0x1.0p-12f /* scale */,
+        128 /* zero point */,
+        1 /* qmin */,
+        254 /* qmax */,
+        output());
+  }
+}
+
+BENCHMARK_F(Requantization, fp32__scalar_lrintf)(benchmark::State& state) {
+  for (auto _ : state) {
+    pytorch_qnnp_requantize_fp32__scalar_lrintf(
+        n(),
+        input(),
+        0x1.0p-12f /* scale */,
+        128 /* zero point */,
+        1 /* qmin */,
+        254 /* qmax */,
+        output());
+  }
+}
+
+BENCHMARK_F(Requantization, fp32__scalar_magic)(benchmark::State& state) {
+  for (auto _ : state) {
+    pytorch_qnnp_requantize_fp32__scalar_magic(
+        n(),
+        input(),
+        0x1.0p-12f /* scale */,
+        128 /* zero point */,
+        1 /* qmin */,
+        254 /* qmax */,
+        output());
+  }
+}
+
+BENCHMARK_F(Requantization, gemmlowp__scalar)(benchmark::State& state) {
+  for (auto _ : state) {
+    pytorch_qnnp_requantize_gemmlowp__scalar(
+        n(),
+        input(),
+        0x1.0p-12f /* scale */,
+        128 /* zero point */,
+        1 /* qmin */,
+        254 /* qmax */,
+        output());
+  }
+}
+
+BENCHMARK_F(Requantization, precise__psimd)(benchmark::State& state) {
+  for (auto _ : state) {
+    pytorch_qnnp_requantize_precise__psimd(
+        n(),
+        input(),
+        0x1.0p-12f /* scale */,
+        128 /* zero point */,
+        1 /* qmin */,
+        254 /* qmax */,
+        output());
+  }
+}
+
+BENCHMARK_F(Requantization, fp32__psimd)(benchmark::State& state) {
+  for (auto _ : state) {
+    pytorch_qnnp_requantize_fp32__psimd(
+        n(),
+        input(),
+        0x1.0p-12f /* scale */,
+        128 /* zero point */,
+        1 /* qmin */,
+        254 /* qmax */,
+        output());
+  }
+}
+
+#if CPUINFO_ARCH_ARM || CPUINFO_ARCH_ARM64
+BENCHMARK_F(Requantization, precise__neon)(benchmark::State& state) {
+  for (auto _ : state) {
+    pytorch_qnnp_requantize_precise__neon(
+        n(),
+        input(),
+        0x1.0p-12f /* scale */,
+        128 /* zero point */,
+        1 /* qmin */,
+        254 /* qmax */,
+        output());
+  }
+}
+
+BENCHMARK_F(Requantization, fp32__neon)(benchmark::State& state) {
+  for (auto _ : state) {
+    pytorch_qnnp_requantize_fp32__neon(
+        n(),
+        input(),
+        0x1.0p-12f /* scale */,
+        128 /* zero point */,
+        1 /* qmin */,
+        254 /* qmax */,
+        output());
+  }
+}
+
+BENCHMARK_F(Requantization, q31__neon)(benchmark::State& state) {
+  for (auto _ : state) {
+    pytorch_qnnp_requantize_q31__neon(
+        n(),
+        input(),
+        0x1.0p-12f /* scale */,
+        128 /* zero point */,
+        1 /* qmin */,
+        254 /* qmax */,
+        output());
+  }
+}
+
+BENCHMARK_F(Requantization, gemmlowp__neon)(benchmark::State& state) {
+  for (auto _ : state) {
+    pytorch_qnnp_requantize_gemmlowp__neon(
+        n(),
+        input(),
+        0x1.0p-12f /* scale */,
+        128 /* zero point */,
+        1 /* qmin */,
+        254 /* qmax */,
+        output());
+  }
+}
+#endif
+
+#if CPUINFO_ARCH_X86 || CPUINFO_ARCH_X86_64
+BENCHMARK_F(Requantization, precise__sse2)(benchmark::State& state) {
+  for (auto _ : state) {
+    pytorch_qnnp_requantize_precise__sse2(
+        n(),
+        input(),
+        0x1.0p-12f /* scale */,
+        128 /* zero point */,
+        1 /* qmin */,
+        254 /* qmax */,
+        output());
+  }
+}
+
+BENCHMARK_F(Requantization, precise__ssse3)(benchmark::State& state) {
+  for (auto _ : state) {
+    pytorch_qnnp_requantize_precise__ssse3(
+        n(),
+        input(),
+        0x1.0p-12f /* scale */,
+        128 /* zero point */,
+        1 /* qmin */,
+        254 /* qmax */,
+        output());
+  }
+}
+
+BENCHMARK_F(Requantization, precise__sse4)(benchmark::State& state) {
+  for (auto _ : state) {
+    pytorch_qnnp_requantize_precise__sse4(
+        n(),
+        input(),
+        0x1.0p-12f /* scale */,
+        128 /* zero point */,
+        1 /* qmin */,
+        254 /* qmax */,
+        output());
+  }
+}
+
+BENCHMARK_F(Requantization, fp32__sse2)(benchmark::State& state) {
+  for (auto _ : state) {
+    pytorch_qnnp_requantize_fp32__sse2(
+        n(),
+        input(),
+        0x1.0p-12f /* scale */,
+        128 /* zero point */,
+        1 /* qmin */,
+        254 /* qmax */,
+        output());
+  }
+}
+
+BENCHMARK_F(Requantization, q31__sse2)(benchmark::State& state) {
+  for (auto _ : state) {
+    pytorch_qnnp_requantize_q31__sse2(
+        n(),
+        input(),
+        0x1.0p-12f /* scale */,
+        128 /* zero point */,
+        1 /* qmin */,
+        254 /* qmax */,
+        output());
+  }
+}
+
+BENCHMARK_F(Requantization, q31__ssse3)(benchmark::State& state) {
+  for (auto _ : state) {
+    pytorch_qnnp_requantize_q31__ssse3(
+        n(),
+        input(),
+        0x1.0p-12f /* scale */,
+        128 /* zero point */,
+        1 /* qmin */,
+        254 /* qmax */,
+        output());
+  }
+}
+
+BENCHMARK_F(Requantization, q31__sse4)(benchmark::State& state) {
+  for (auto _ : state) {
+    pytorch_qnnp_requantize_q31__sse4(
+        n(),
+        input(),
+        0x1.0p-12f /* scale */,
+        128 /* zero point */,
+        1 /* qmin */,
+        254 /* qmax */,
+        output());
+  }
+}
+
+BENCHMARK_F(Requantization, gemmlowp__sse2)(benchmark::State& state) {
+  for (auto _ : state) {
+    pytorch_qnnp_requantize_gemmlowp__sse2(
+        n(),
+        input(),
+        0x1.0p-12f /* scale */,
+        128 /* zero point */,
+        1 /* qmin */,
+        254 /* qmax */,
+        output());
+  }
+}
+
+BENCHMARK_F(Requantization, gemmlowp__ssse3)(benchmark::State& state) {
+  for (auto _ : state) {
+    pytorch_qnnp_requantize_gemmlowp__ssse3(
+        n(),
+        input(),
+        0x1.0p-12f /* scale */,
+        128 /* zero point */,
+        1 /* qmin */,
+        254 /* qmax */,
+        output());
+  }
+}
+
+BENCHMARK_F(Requantization, gemmlowp__sse4)(benchmark::State& state) {
+  for (auto _ : state) {
+    pytorch_qnnp_requantize_gemmlowp__sse4(
+        n(),
+        input(),
+        0x1.0p-12f /* scale */,
+        128 /* zero point */,
+        1 /* qmin */,
+        254 /* qmax */,
+        output());
+  }
+}
+#endif
+
+#ifndef PYTORCH_QNNPACK_BENCHMARK_NO_MAIN
+BENCHMARK_MAIN();
+#endif
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 1 class(es)/struct(s) and 10 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes/Structs**: `Requantization`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native/quantized/cpu/qnnpack/bench`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `algorithm`
+- `cfloat`
+- `chrono`
+- `cmath`
+- `functional`
+- `iostream`
+- `random`
+- `vector`
+- `cpuinfo.h`
+- `qnnpack/AlignedAllocator.h`
+- `qnnpack/requantization-stubs.h`
+- `benchmark/benchmark.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Implements or uses **caching** mechanisms.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native/quantized/cpu/qnnpack/bench`):
+
+- [`tanh.cc_docs.md`](./tanh.cc_docs.md)
+- [`softargmax.cc_docs.md`](./softargmax.cc_docs.md)
+- [`global-average-pooling.cc_docs.md`](./global-average-pooling.cc_docs.md)
+- [`q8gemm_sparse.cc_docs.md`](./q8gemm_sparse.cc_docs.md)
+- [`max-pooling.cc_docs.md`](./max-pooling.cc_docs.md)
+- [`hgemm.cc_docs.md`](./hgemm.cc_docs.md)
+- [`add.cc_docs.md`](./add.cc_docs.md)
+- [`q8gemm.cc_docs.md`](./q8gemm.cc_docs.md)
+- [`convolution.cc_docs.md`](./convolution.cc_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `requantization.cc_docs.md`
+- **Keyword Index**: `requantization.cc_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native/quantized/cpu/qnnpack/bench`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native/quantized/cpu/qnnpack/bench`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Implements or uses **caching** mechanisms.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native/quantized/cpu/qnnpack/bench`):
+
+- [`sgemm.cc_kw.md_docs.md`](./sgemm.cc_kw.md_docs.md)
+- [`channel-shuffle.cc_docs.md_docs.md`](./channel-shuffle.cc_docs.md_docs.md)
+- [`global-average-pooling.cc_docs.md_docs.md`](./global-average-pooling.cc_docs.md_docs.md)
+- [`q8gemm.cc_docs.md_docs.md`](./q8gemm.cc_docs.md_docs.md)
+- [`tanh.cc_docs.md_docs.md`](./tanh.cc_docs.md_docs.md)
+- [`hardsigmoid.cc_docs.md_docs.md`](./hardsigmoid.cc_docs.md_docs.md)
+- [`softargmax.cc_docs.md_docs.md`](./softargmax.cc_docs.md_docs.md)
+- [`q8gemm.cc_kw.md_docs.md`](./q8gemm.cc_kw.md_docs.md)
+- [`sigmoid.cc_kw.md_docs.md`](./sigmoid.cc_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `requantization.cc_docs.md_docs.md`
+- **Keyword Index**: `requantization.cc_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

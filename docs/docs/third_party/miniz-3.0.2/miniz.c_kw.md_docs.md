@@ -1,0 +1,326 @@
+# Documentation: `docs/third_party/miniz-3.0.2/miniz.c_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/third_party/miniz-3.0.2/miniz.c_kw.md`
+- **Size**: 13,310 bytes (13.00 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `third_party/miniz-3.0.2/miniz.c`
+
+## File Information
+
+- **Original File**: [third_party/miniz-3.0.2/miniz.c](../../../third_party/miniz-3.0.2/miniz.c)
+- **Documentation**: [`miniz.c_docs.md`](./miniz.c_docs.md)
+- **Folder**: `third_party/miniz-3.0.2`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Class/Structs
+
+- **`MZ_FILE_STAT_STRUCT`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`__stat64`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`iterator`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_internal_state`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_internal_state_tag`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`tm`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`utimbuf`**: [miniz.c_docs.md](./miniz.c_docs.md)
+
+### Functions
+
+- **`TDEFL_READ_UNALIGNED_WORD`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`TDEFL_READ_UNALIGNED_WORD2`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`TDEFL_READ_UNALIGNED_WORD32`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`if`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`miniz_def_free_func`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_adler32`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_compress`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_compress2`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_compressBound`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_crc32`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_deflate`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_deflateBound`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_deflateEnd`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_deflateInit`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_deflateInit2`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_deflateReset`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_file_read_func_stdio`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_free`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_inflate`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_inflateEnd`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_inflateInit`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_inflateInit2`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_inflateReset`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_stat64`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_uncompress`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_uncompress2`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_write_le16`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_write_le32`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_write_le64`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_add_mem_to_archive_file_in_place`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_add_mem_to_archive_file_in_place_v2`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_array_clear`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_array_ensure_capacity`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_array_ensure_room`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_array_init`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_array_push_back`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_array_range_check`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_array_reserve`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_array_resize`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_clear_last_error`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_compute_crc32_callback`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_dos_to_time_t`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_end`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_file_read_func`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_file_stat_internal`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_file_write_callback`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_file_write_func`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_filename_compare`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_get_archive_file_start_offset`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_get_archive_size`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_get_central_dir_size`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_get_file_modified_time`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_get_last_error`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_get_mode`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_get_type`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_heap_write_func`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_is_zip64`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_locate_file_binary_search`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_mem_read_func`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_peek_last_error`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_read_archive_data`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_reader_end`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_reader_end_internal`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_reader_extract_file_to_callback`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_reader_extract_file_to_cfile`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_reader_extract_file_to_file`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_reader_extract_file_to_mem`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_reader_extract_file_to_mem_no_alloc`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_reader_extract_iter_free`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_reader_extract_iter_read`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_reader_extract_to_callback`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_reader_extract_to_cfile`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_reader_extract_to_file`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_reader_extract_to_mem`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_reader_extract_to_mem_no_alloc`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_reader_extract_to_mem_no_alloc1`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_reader_file_stat`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_reader_filename_less`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_reader_get_filename`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_reader_get_num_files`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_reader_init`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_reader_init_cfile`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_reader_init_file`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_reader_init_file_v2`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_reader_init_internal`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_reader_init_mem`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_reader_is_file_a_directory`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_reader_is_file_encrypted`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_reader_is_file_supported`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_reader_locate_file`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_reader_locate_file_v2`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_reader_locate_header_sig`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_reader_read_central_dir`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_reader_sort_central_dir_offsets_by_filename`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_set_error`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_set_file_times`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_set_last_error`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_string_equal`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_time_t_to_dos_time`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_validate_archive`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_validate_file`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_validate_file_archive`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_validate_mem_archive`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_writer_add_cfile`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_writer_add_file`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_writer_add_from_zip_reader`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_writer_add_mem`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_writer_add_mem_ex`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_writer_add_mem_ex_v2`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_writer_add_put_buf_callback`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_writer_add_read_buf_callback`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_writer_add_to_central_dir`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_writer_compute_padding_needed_for_file_alignment`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_writer_create_central_dir_header`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_writer_create_local_dir_header`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_writer_create_zip64_extra_data`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_writer_end`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_writer_end_internal`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_writer_finalize_archive`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_writer_finalize_heap_archive`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_writer_init`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_writer_init_cfile`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_writer_init_file`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_writer_init_file_v2`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_writer_init_from_reader`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_writer_init_from_reader_v2`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_writer_init_heap`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_writer_init_heap_v2`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_writer_init_v2`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_writer_update_zip64_extension_block`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_writer_validate_archive_name`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_writer_write_zeros`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`mz_zip_zero_struct`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`tdefl_calculate_minimum_redundancy`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`tdefl_compress`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`tdefl_compress_block`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`tdefl_compress_buffer`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`tdefl_compress_fast`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`tdefl_compress_lz_codes`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`tdefl_compress_mem_to_mem`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`tdefl_compress_mem_to_output`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`tdefl_compress_normal`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`tdefl_compressor_free`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`tdefl_create_comp_flags_from_zip_params`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`tdefl_find_match`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`tdefl_flush_block`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`tdefl_flush_output_buffer`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`tdefl_get_adler32`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`tdefl_get_prev_return_status`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`tdefl_huffman_enforce_max_code_size`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`tdefl_init`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`tdefl_optimize_huffman_table`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`tdefl_output_buffer_putter`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`tdefl_record_literal`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`tdefl_record_match`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`tdefl_start_dynamic_block`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`tdefl_start_static_block`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`tinfl_clear_tree`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`tinfl_decompress`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`tinfl_decompress_mem_to_callback`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`tinfl_decompress_mem_to_mem`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`tinfl_decompressor_free`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`while`**: [miniz.c_docs.md](./miniz.c_docs.md)
+
+### Includes
+
+- **`miniz.h`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`share.h`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`sys/stat.h`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`sys/utime.h`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`utime.h`**: [miniz.c_docs.md](./miniz.c_docs.md)
+- **`windows.h`**: [miniz.c_docs.md](./miniz.c_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/third_party/miniz-3.0.2`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/third_party/miniz-3.0.2`, which is part of the PyTorch project infrastructure.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/third_party/miniz-3.0.2`):
+
+- [`miniz.h_docs.md_docs.md`](./miniz.h_docs.md_docs.md)
+- [`BUILD.bazel_docs.md_docs.md`](./BUILD.bazel_docs.md_docs.md)
+- [`LICENSE_kw.md_docs.md`](./LICENSE_kw.md_docs.md)
+- [`miniz.c_docs.md_docs.md`](./miniz.c_docs.md_docs.md)
+- [`readme.md_docs.md_docs.md`](./readme.md_docs.md_docs.md)
+- [`ChangeLog.md_docs.md_docs.md`](./ChangeLog.md_docs.md_docs.md)
+- [`LICENSE_docs.md_docs.md`](./LICENSE_docs.md_docs.md)
+- [`ChangeLog.md_kw.md_docs.md`](./ChangeLog.md_kw.md_docs.md)
+- [`miniz.h_kw.md_docs.md`](./miniz.h_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `miniz.c_kw.md_docs.md`
+- **Keyword Index**: `miniz.c_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

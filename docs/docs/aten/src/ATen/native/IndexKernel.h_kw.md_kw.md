@@ -1,0 +1,87 @@
+# Keyword Index: `docs/aten/src/ATen/native/IndexKernel.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/native/IndexKernel.h_kw.md](../../../../../../docs/aten/src/ATen/native/IndexKernel.h_kw.md)
+- **Documentation**: [`IndexKernel.h_kw.md_docs.md`](./IndexKernel.h_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/native`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Analysis`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Architecture`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`ArrayRef`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Basic`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Class`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Complete`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Considerations`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Dependencies`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Design`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Detailed`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`DispatchStub`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Documentation`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Efficiency`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Extracted`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`File`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Folder`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Generated`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`High`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`How`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`In`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Includes`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Index`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`IndexKernel`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Information`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Keyword`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Keywords`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Level`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Map`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Metadata`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Namespaces`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Original`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Overview`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Performance`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Purpose`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`PyTorch`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Related`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Repository`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Safety`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Scalar`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Section`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Security`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Source`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Structs`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`System`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Tensor`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`TensorBase`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`TensorIterator`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`TensorIteratorBase`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Testing`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`The`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`This`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+- **`Usage`**: [IndexKernel.h_kw.md_docs.md](./IndexKernel.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

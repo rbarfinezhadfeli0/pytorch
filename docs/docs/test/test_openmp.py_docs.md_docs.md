@@ -1,0 +1,321 @@
+# Documentation: `docs/test/test_openmp.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/test_openmp.py_docs.md`
+- **Size**: 4,793 bytes (4.68 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/test_openmp.py`
+
+## File Metadata
+
+- **Path**: `test/test_openmp.py`
+- **Size**: 1,908 bytes (1.86 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**. Contains **unit tests** using Python testing frameworks. Can be **executed as a standalone script**.
+
+## Original Source
+
+```python
+# Owner(s): ["module: unknown"]
+
+import collections
+import unittest
+
+import torch
+from torch.testing._internal.common_utils import run_tests, TestCase
+
+
+try:
+    import psutil
+
+    HAS_PSUTIL = True
+except ModuleNotFoundError:
+    HAS_PSUTIL = False
+    psutil = None
+
+
+device = torch.device("cpu")
+
+
+class Network(torch.nn.Module):
+    maxp1 = torch.nn.MaxPool2d(1, 1)
+
+    def forward(self, x):
+        return self.maxp1(x)
+
+
+@unittest.skipIf(not HAS_PSUTIL, "Requires psutil to run")
+class TestOpenMP_ParallelFor(TestCase):
+    batch = 20
+    channels = 1
+    side_dim = 80
+    x = torch.randn([batch, channels, side_dim, side_dim], device=device)
+    model = Network()
+
+    def func(self, runs):
+        p = psutil.Process()
+        # warm up for 5 runs, then things should be stable for the last 5
+        last_rss = collections.deque(maxlen=5)
+        for _ in range(10):
+            for _ in range(runs):
+                self.model(self.x)
+            last_rss.append(p.memory_info().rss)
+        return last_rss
+
+    def func_rss(self, runs):
+        last_rss = list(self.func(runs))
+        # Check that the sequence is not strictly increasing
+        is_increasing = True
+        for idx in range(len(last_rss)):
+            if idx == 0:
+                continue
+            is_increasing = is_increasing and (last_rss[idx] > last_rss[idx - 1])
+        self.assertTrue(
+            not is_increasing, msg=f"memory usage is increasing, {str(last_rss)}"
+        )
+
+    def test_one_thread(self):
+        """Make sure there is no memory leak with one thread: issue gh-32284"""
+        torch.set_num_threads(1)
+        self.func_rss(300)
+
+    def test_n_threads(self):
+        """Make sure there is no memory leak with many threads"""
+        ncores = min(5, psutil.cpu_count(logical=False))
+        torch.set_num_threads(ncores)
+        self.func_rss(300)
+
+
+if __name__ == "__main__":
+    run_tests()
+
+```
+
+
+
+## High-Level Overview
+
+
+This Python file contains 2 class(es) and 5 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `Network`, `TestOpenMP_ParallelFor`
+
+**Functions defined**: `forward`, `func`, `func_rss`, `test_one_thread`, `test_n_threads`
+
+**Key imports**: collections, unittest, torch, run_tests, TestCase, psutil
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `collections`
+- `unittest`
+- `torch`
+- `torch.testing._internal.common_utils`: run_tests, TestCase
+- `psutil`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Error Handling**: Includes exception handling
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/test_openmp.py
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test`):
+
+- [`test_file_check.py_docs.md`](./test_file_check.py_docs.md)
+- [`test_jit_simple.py_docs.md`](./test_jit_simple.py_docs.md)
+- [`test_mkldnn.py_docs.md`](./test_mkldnn.py_docs.md)
+- [`test_expanded_weights.py_docs.md`](./test_expanded_weights.py_docs.md)
+- [`test_overrides.py_docs.md`](./test_overrides.py_docs.md)
+- [`test_decomp.py_docs.md`](./test_decomp.py_docs.md)
+- [`test_show_pickle.py_docs.md`](./test_show_pickle.py_docs.md)
+- [`test_utils_config_module.py_docs.md`](./test_utils_config_module.py_docs.md)
+- [`test_mobile_optimizer.py_docs.md`](./test_mobile_optimizer.py_docs.md)
+- [`test_type_info.py_docs.md`](./test_type_info.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_openmp.py_docs.md`
+- **Keyword Index**: `test_openmp.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Error Handling**: Includes exception handling
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- **Serialization**: Uses pickle - be cautious with untrusted data
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/test_openmp.py_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test`):
+
+- [`test_ops.py_docs.md_docs.md`](./test_ops.py_docs.md_docs.md)
+- [`test_tensorexpr.py_docs.md_docs.md`](./test_tensorexpr.py_docs.md_docs.md)
+- [`pytest_shard_custom.py_docs.md_docs.md`](./pytest_shard_custom.py_docs.md_docs.md)
+- [`test_weak.py_kw.md_docs.md`](./test_weak.py_kw.md_docs.md)
+- [`test_view_ops.py_kw.md_docs.md`](./test_view_ops.py_kw.md_docs.md)
+- [`test_varlen_attention.py_kw.md_docs.md`](./test_varlen_attention.py_kw.md_docs.md)
+- [`test_namedtensor.py_docs.md_docs.md`](./test_namedtensor.py_docs.md_docs.md)
+- [`test_binary_ufuncs.py_docs.md_docs.md`](./test_binary_ufuncs.py_docs.md_docs.md)
+- [`test_ops_gradients.py_kw.md_docs.md`](./test_ops_gradients.py_kw.md_docs.md)
+- [`test_torchfuzz_repros.py_docs.md_docs.md`](./test_torchfuzz_repros.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_openmp.py_docs.md_docs.md`
+- **Keyword Index**: `test_openmp.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

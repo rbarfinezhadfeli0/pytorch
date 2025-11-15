@@ -1,0 +1,80 @@
+# Keyword Index: `docs/torch/onnx/_internal/exporter/_registration.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/onnx/_internal/exporter/_registration.py_kw.md](../../../../../../docs/torch/onnx/_internal/exporter/_registration.py_kw.md)
+- **Documentation**: [`_registration.py_kw.md_docs.md`](./_registration.py_kw.md_docs.md)
+- **Folder**: `docs/torch/onnx/_internal/exporter`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Architecture`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Basic`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Callable`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Classs`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Complete`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Considerations`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Dependencies`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Design`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Detailed`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Documentation`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Efficiency`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Extracted`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`File`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Folder`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Functions`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Generated`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`High`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`How`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Imports`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`In`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Index`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Information`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Keyword`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Keywords`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Level`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Literal`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Map`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Metadata`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`ONNXRegistry`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Original`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Overview`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Performance`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Purpose`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`PyTorch`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Related`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Repository`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Safety`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Section`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Security`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Source`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`System`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Testing`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`The`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`This`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+- **`Usage`**: [_registration.py_kw.md_docs.md](./_registration.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

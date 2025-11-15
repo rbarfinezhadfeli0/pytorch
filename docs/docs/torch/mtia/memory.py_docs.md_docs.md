@@ -1,0 +1,295 @@
+# Documentation: `docs/torch/mtia/memory.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/mtia/memory.py_docs.md`
+- **Size**: 4,633 bytes (4.52 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/mtia/memory.py`
+
+## File Metadata
+
+- **Path**: `torch/mtia/memory.py`
+- **Size**: 2,298 bytes (2.24 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This is a python source code that is part of the PyTorch project.
+
+## Original Source
+
+```python
+# pyre-strict
+
+r"""This package adds support for device memory management implemented in MTIA."""
+
+from typing import Any, Optional
+
+import torch
+
+from . import _device_t, is_initialized
+from ._utils import _get_device_index
+
+
+def memory_stats(device: Optional[_device_t] = None) -> dict[str, Any]:
+    r"""Return a dictionary of MTIA memory allocator statistics for a given device.
+
+    Args:
+        device (torch.device, str, or int, optional) selected device. Returns
+            statistics for the current device, given by current_device(),
+            if device is None (default).
+    """
+    if not is_initialized():
+        return {}
+    return torch._C._mtia_memoryStats(_get_device_index(device, optional=True))
+
+
+def max_memory_allocated(device: Optional[_device_t] = None) -> int:
+    r"""Return the maximum memory allocated in bytes for a given device.
+
+    Args:
+        device (torch.device, str, or int, optional) selected device. Returns
+            statistics for the current device, given by current_device(),
+            if device is None (default).
+    """
+    if not is_initialized():
+        return 0
+    return memory_stats(device).get("dram", 0).get("peak_bytes", 0)
+
+
+def memory_allocated(device: Optional[_device_t] = None) -> int:
+    r"""Return the current MTIA memory occupied by tensors in bytes for a given device.
+
+    Args:
+        device (torch.device or int or str, optional): selected device. Returns
+            statistic for the current device, given by :func:`~torch.mtia.current_device`,
+            if :attr:`device` is ``None`` (default).
+    """
+    if not is_initialized():
+        return 0
+    return memory_stats(device).get("dram", 0).get("allocated_bytes", 0)
+
+
+def reset_peak_memory_stats(device: Optional[_device_t] = None) -> None:
+    r"""Reset the peak memory stats for a given device.
+
+
+    Args:
+        device (torch.device, str, or int, optional) selected device. Returns
+            statistics for the current device, given by current_device(),
+            if device is None (default).
+    """
+    if not is_initialized():
+        return
+    torch._C._mtia_resetPeakMemoryStats(_get_device_index(device, optional=True))
+
+
+__all__ = [
+    "memory_stats",
+    "max_memory_allocated",
+    "memory_allocated",
+    "reset_peak_memory_stats",
+]
+
+```
+
+
+
+## High-Level Overview
+
+r"""This package adds support for device memory management implemented in MTIA."""from typing import Any, Optionalimport torchfrom . import _device_t, is_initializedfrom ._utils import _get_device_indexdef memory_stats(device: Optional[_device_t] = None) -> dict[str, Any]:
+
+This Python file contains 0 class(es) and 4 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Functions defined**: `memory_stats`, `max_memory_allocated`, `memory_allocated`, `reset_peak_memory_stats`
+
+**Key imports**: Any, Optional, torch, _device_t, is_initialized, _get_device_index
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/mtia`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `typing`: Any, Optional
+- `torch`
+- `.`: _device_t, is_initialized
+- `._utils`: _get_device_index
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/mtia`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`mtia_graph.py_docs.md`](./mtia_graph.py_docs.md)
+- [`_utils.py_docs.md`](./_utils.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `memory.py_docs.md`
+- **Keyword Index**: `memory.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/mtia`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/mtia`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/mtia`):
+
+- [`mtia_graph.py_kw.md_docs.md`](./mtia_graph.py_kw.md_docs.md)
+- [`memory.py_kw.md_docs.md`](./memory.py_kw.md_docs.md)
+- [`mtia_graph.py_docs.md_docs.md`](./mtia_graph.py_docs.md_docs.md)
+- [`_utils.py_kw.md_docs.md`](./_utils.py_kw.md_docs.md)
+- [`_utils.py_docs.md_docs.md`](./_utils.py_docs.md_docs.md)
+- [`__init__.py_docs.md_docs.md`](./__init__.py_docs.md_docs.md)
+- [`__init__.py_kw.md_docs.md`](./__init__.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `memory.py_docs.md_docs.md`
+- **Keyword Index**: `memory.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,83 @@
+# Keyword Index: `docs/aten/src/ATen/native/ResizeCommon.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/native/ResizeCommon.h_kw.md](../../../../../../docs/aten/src/ATen/native/ResizeCommon.h_kw.md)
+- **Documentation**: [`ResizeCommon.h_kw.md_docs.md`](./ResizeCommon.h_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/native`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Analysis`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Architecture`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Basic`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Complete`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Considerations`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Dependencies`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Design`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Detailed`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Documentation`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Efficiency`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Extracted`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`File`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Folder`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Functions`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Generated`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`High`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`How`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`In`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Includes`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Index`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Information`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Keyword`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Keywords`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Level`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Map`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Metadata`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`NamedTensorUtils`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Namespaces`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`NativeFunctions`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Original`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Overview`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Performance`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Purpose`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`PyTorch`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Related`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Repository`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`ResizeCommon`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Safety`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Section`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Security`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Source`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`System`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Tensor`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`TensorFactories`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Testing`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`The`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`This`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+- **`Usage`**: [ResizeCommon.h_kw.md_docs.md](./ResizeCommon.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

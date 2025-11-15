@@ -1,0 +1,205 @@
+# Documentation: `test/dynamo/test_interop.py`
+
+## File Metadata
+
+- **Path**: `test/dynamo/test_interop.py`
+- **Size**: 2,073 bytes (2.02 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**. Can be **executed as a standalone script**.
+
+## Original Source
+
+```python
+# Owner(s): ["module: dynamo"]
+import torch
+import torch._dynamo.test_case
+import torch._dynamo.testing
+
+
+def fn(a, b):
+    return a + b * 0.67
+
+
+class InteropTests(torch._dynamo.test_case.TestCase):
+    def _common(self, fn):
+        inputs = [torch.randn(10), torch.randn(10)]
+        ref = fn(*inputs)
+        opt_fn = torch.compile(fn, backend="eager", fullgraph=True)
+        res = opt_fn(*inputs)
+        self.assertEqual(ref, res)
+
+    def test_fx_fn(self):
+        fx_fn = torch.fx.symbolic_trace(fn)
+        self._common(lambda a, b: fx_fn(a, b) + 1)
+
+    def test_script_fn(self):
+        script_fn = torch.jit.script(fn)
+        self._common(lambda a, b: script_fn(a, b) + 1)
+
+    def test_trace_fn(self):
+        trace_fn = torch.jit.trace(fn, [torch.zeros(10), torch.zeros(10)])
+        self._common(lambda a, b: trace_fn(a, b) + 1)
+
+    def test_staticmethod_script_fn(self):
+        class Foo:
+            @staticmethod
+            @torch.jit.script
+            def _g(a):
+                return a**2
+
+            def g(self, a, b):
+                return self._g(a) + b
+
+        foo = Foo()
+        self._common(lambda a, b: foo.g(a, b) + 1)
+
+    def test_vmap_in_graph(self):
+        from functools import wraps
+
+        from torch._dynamo import allow_in_graph
+
+        def traceable(f):
+            f = allow_in_graph(f)
+
+            @wraps(f)
+            def wrapper(*args, **kwargs):
+                return f(*args, **kwargs)
+
+            return wrapper
+
+        cnts = torch._dynamo.testing.CompileCounter()
+        x = torch.randn(3, 5, 3)
+
+        def fn(x):
+            return torch.vmap(torch.Tensor.t)(x)
+
+        fn_opt = torch.compile(fn, backend=cnts, fullgraph=True)
+        fn_opt_traceable = torch.compile(traceable(fn), backend=cnts, fullgraph=True)
+
+        self.assertEqual(fn(x), fn_opt(x))
+        self.assertEqual(cnts.frame_count, 1)
+        self.assertEqual(fn_opt(x), fn_opt_traceable(x))
+        self.assertEqual(cnts.frame_count, 2)
+
+
+if __name__ == "__main__":
+    from torch._dynamo.test_case import run_tests
+
+    run_tests()
+
+```
+
+
+
+## High-Level Overview
+
+
+This Python file contains 2 class(es) and 12 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `InteropTests`, `Foo`
+
+**Functions defined**: `fn`, `_common`, `test_fx_fn`, `test_script_fn`, `test_trace_fn`, `test_staticmethod_script_fn`, `_g`, `g`, `test_vmap_in_graph`, `traceable`, `wrapper`, `fn`
+
+**Key imports**: torch, torch._dynamo.test_case, torch._dynamo.testing, wraps, allow_in_graph, run_tests
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/dynamo`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `torch`
+- `torch._dynamo.test_case`
+- `torch._dynamo.testing`
+- `functools`: wraps
+- `torch._dynamo`: allow_in_graph
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/dynamo/test_interop.py
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/dynamo`):
+
+- [`test_guard_serialization.py_docs.md`](./test_guard_serialization.py_docs.md)
+- [`test_subgraphs.py_docs.md`](./test_subgraphs.py_docs.md)
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`test_unspec.py_docs.md`](./test_unspec.py_docs.md)
+- [`test_trace_rules.py_docs.md`](./test_trace_rules.py_docs.md)
+- [`test_package.py_docs.md`](./test_package.py_docs.md)
+- [`test_pre_dispatch.py_docs.md`](./test_pre_dispatch.py_docs.md)
+- [`test_autograd_function.py_docs.md`](./test_autograd_function.py_docs.md)
+- [`test_optimizers.py_docs.md`](./test_optimizers.py_docs.md)
+- [`test_callback.py_docs.md`](./test_callback.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_interop.py_docs.md`
+- **Keyword Index**: `test_interop.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

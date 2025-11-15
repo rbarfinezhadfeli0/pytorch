@@ -1,0 +1,78 @@
+# Keyword Index: `docs/torch/csrc/jit/passes/quantization/insert_observers.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/csrc/jit/passes/quantization/insert_observers.h_kw.md](../../../../../../../docs/torch/csrc/jit/passes/quantization/insert_observers.h_kw.md)
+- **Documentation**: [`insert_observers.h_kw.md_docs.md`](./insert_observers.h_kw.md_docs.md)
+- **Folder**: `docs/torch/csrc/jit/passes/quantization`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`Architecture`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`Basic`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`Class`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`Complete`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`Considerations`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`Dependencies`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`Design`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`Detailed`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`Documentation`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`Efficiency`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`Extracted`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`File`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`Folder`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`Generated`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`High`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`How`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`In`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`Includes`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`Index`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`Information`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`Keyword`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`Keywords`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`Level`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`Map`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`Metadata`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`Namespaces`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`Original`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`Overview`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`Performance`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`Purpose`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`PyTorch`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`Related`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`Repository`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`Safety`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`Section`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`Security`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`Source`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`Structs`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`System`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`Testing`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`The`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`This`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+- **`Usage`**: [insert_observers.h_kw.md_docs.md](./insert_observers.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

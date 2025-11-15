@@ -1,0 +1,302 @@
+# Documentation: `docs/aten/src/ATen/native/quantized/cpu/Sorting.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/quantized/cpu/Sorting.cpp_docs.md`
+- **Size**: 4,559 bytes (4.45 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/native/quantized/cpu/Sorting.cpp`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/quantized/cpu/Sorting.cpp`
+- **Size**: 1,911 bytes (1.87 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#define TORCH_ASSERT_ONLY_METHOD_OPERATORS
+#include <ATen/core/Tensor.h>
+#include <ATen/WrapDimUtils.h>
+#include <ATen/native/SortingUtils.h>
+#include <ATen/native/quantized/cpu/QuantizedOps.h>
+
+#ifndef AT_PER_OPERATOR_HEADERS
+#include <ATen/Functions.h>
+#include <ATen/NativeFunctions.h>
+#else
+#include <ATen/ops/_empty_affine_quantized.h>
+#include <ATen/ops/empty.h>
+#include <ATen/ops/topk_native.h>
+#endif
+
+namespace at::native {
+
+// Currently internal-only.
+//
+// This implementation assumes the quantizer for the input and the out-
+// put are the same.
+//
+// If we want to support this publicly, we need to add
+// a requantization step to the kernel.
+static std::tuple<Tensor&, Tensor&> quantized_topk_out_cpu(
+    Tensor& values,
+    Tensor& indices,
+    const Tensor& self,
+    int64_t k,
+    int64_t dim_,
+    bool largest,
+    bool sorted) {
+  int64_t dim = maybe_wrap_dim(dim_, self.dim(), /*wrap_scalar=*/true);
+  TORCH_CHECK(
+      k >= 0 && k <= (self.dim() > 0 ? self.size(dim) : 1),
+      "selected index k out of range");
+  _allocate_or_resize_output_with_indices(values, indices, self, dim_, k);
+
+  qtopk_stub(kCPU, values, indices, self, k, dim, largest, sorted);
+
+  return std::forward_as_tuple(values, indices);
+}
+
+std::tuple<Tensor, Tensor> topk_quantized_cpu(
+    const Tensor& self,
+    int64_t k,
+    int64_t dim,
+    bool largest,
+    bool sorted) {
+  auto qscheme = self.qscheme();
+  TORCH_CHECK(
+      qscheme == QScheme::PER_TENSOR_AFFINE ||
+          qscheme == QScheme::PER_TENSOR_SYMMETRIC,
+      "Top-K is only supported on per-tensor quantization");
+  Tensor values = at::_empty_affine_quantized(
+    {0},
+    self.options(),
+    self.q_scale(),
+    self.q_zero_point());
+  Tensor indices = at::empty({0}, self.options().dtype(kLong));
+  return quantized_topk_out_cpu(values, indices, self, k, dim, largest, sorted);
+}
+
+DEFINE_DISPATCH(qtopk_stub);
+
+}  // namespace at::native
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 1 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `at`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native/quantized/cpu`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/core/Tensor.h`
+- `ATen/WrapDimUtils.h`
+- `ATen/native/SortingUtils.h`
+- `ATen/native/quantized/cpu/QuantizedOps.h`
+- `ATen/Functions.h`
+- `ATen/NativeFunctions.h`
+- `ATen/ops/_empty_affine_quantized.h`
+- `ATen/ops/empty.h`
+- `ATen/ops/topk_native.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native/quantized/cpu`):
+
+- [`ACLUtils.cpp_docs.md`](./ACLUtils.cpp_docs.md)
+- [`LinearUnpackImpl.cpp_docs.md`](./LinearUnpackImpl.cpp_docs.md)
+- [`UpSampleNearest3d.cpp_docs.md`](./UpSampleNearest3d.cpp_docs.md)
+- [`Pooling.cpp_docs.md`](./Pooling.cpp_docs.md)
+- [`QnnpackUtils.h_docs.md`](./QnnpackUtils.h_docs.md)
+- [`qembeddingbag_unpack.cpp_docs.md`](./qembeddingbag_unpack.cpp_docs.md)
+- [`fbgemm_utils.h_docs.md`](./fbgemm_utils.h_docs.md)
+- [`TensorOperators.cpp_docs.md`](./TensorOperators.cpp_docs.md)
+- [`XnnpackUtils.h_docs.md`](./XnnpackUtils.h_docs.md)
+- [`qconv_dynamic.cpp_docs.md`](./qconv_dynamic.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `Sorting.cpp_docs.md`
+- **Keyword Index**: `Sorting.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native/quantized/cpu`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native/quantized/cpu`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native/quantized/cpu`):
+
+- [`ReduceOps.cpp_kw.md_docs.md`](./ReduceOps.cpp_kw.md_docs.md)
+- [`init_qnnpack.cpp_docs.md_docs.md`](./init_qnnpack.cpp_docs.md_docs.md)
+- [`qelu.cpp_kw.md_docs.md`](./qelu.cpp_kw.md_docs.md)
+- [`UpSampleNearest2d.cpp_kw.md_docs.md`](./UpSampleNearest2d.cpp_kw.md_docs.md)
+- [`qclamp.cpp_docs.md_docs.md`](./qclamp.cpp_docs.md_docs.md)
+- [`qembeddingbag_prepack.h_docs.md_docs.md`](./qembeddingbag_prepack.h_docs.md_docs.md)
+- [`qdropout.cpp_docs.md_docs.md`](./qdropout.cpp_docs.md_docs.md)
+- [`qelu.cpp_docs.md_docs.md`](./qelu.cpp_docs.md_docs.md)
+- [`qembeddingbag_unpack.cpp_docs.md_docs.md`](./qembeddingbag_unpack.cpp_docs.md_docs.md)
+- [`LinearUnpackImpl.cpp_kw.md_docs.md`](./LinearUnpackImpl.cpp_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `Sorting.cpp_docs.md_docs.md`
+- **Keyword Index**: `Sorting.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

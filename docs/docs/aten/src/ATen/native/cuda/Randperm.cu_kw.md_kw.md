@@ -1,0 +1,86 @@
+# Keyword Index: `docs/aten/src/ATen/native/cuda/Randperm.cu_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/native/cuda/Randperm.cu_kw.md](../../../../../../../docs/aten/src/ATen/native/cuda/Randperm.cu_kw.md)
+- **Documentation**: [`Randperm.cu_kw.md_docs.md`](./Randperm.cu_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/native/cuda`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Analysis`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Architecture`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Basic`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`CUDAContext`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Class`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Complete`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Considerations`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Dependencies`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Design`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Detailed`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Dispatch`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Documentation`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Efficiency`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Extracted`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`File`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Folder`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Functions`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Generated`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`High`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`How`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`In`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Includes`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Index`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Information`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Keyword`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Keywords`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Level`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Map`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Metadata`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Namespaces`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`NativeFunctions`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Original`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Overview`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Performance`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Purpose`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`PyTorch`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Randperm`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Related`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Repository`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Safety`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Section`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Security`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Source`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Structs`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`System`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Tensor`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`TensorFactories`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Testing`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`The`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`This`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+- **`Usage`**: [Randperm.cu_kw.md_docs.md](./Randperm.cu_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

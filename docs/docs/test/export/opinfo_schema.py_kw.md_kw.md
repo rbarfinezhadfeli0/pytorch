@@ -1,0 +1,81 @@
+# Keyword Index: `docs/test/export/opinfo_schema.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/test/export/opinfo_schema.py_kw.md](../../../../docs/test/export/opinfo_schema.py_kw.md)
+- **Documentation**: [`opinfo_schema.py_kw.md_docs.md`](./opinfo_schema.py_kw.md_docs.md)
+- **Folder**: `docs/test/export`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`Architecture`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`Basic`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`Classs`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`Complete`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`Considerations`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`Dependencies`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`Design`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`Detailed`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`Documentation`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`Efficiency`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`Extracted`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`File`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`Folder`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`Functions`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`Generated`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`High`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`How`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`Imports`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`In`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`Index`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`Information`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`Keyword`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`Keywords`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`Level`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`Map`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`Metadata`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`Original`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`Overview`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`Performance`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`PreDispatchSchemaCheckMode`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`Purpose`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`PyTorch`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`Related`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`Repository`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`Safety`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`SchemaCheckMode`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`Section`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`Security`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`Source`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`System`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`TestCase`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`TestOpInfo`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`Testing`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`The`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`This`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+- **`Usage`**: [opinfo_schema.py_kw.md_docs.md](./opinfo_schema.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

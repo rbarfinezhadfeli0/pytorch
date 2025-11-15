@@ -1,0 +1,206 @@
+# Documentation: `torch/csrc/jit/frontend/parse_string_literal.h`
+
+## File Metadata
+
+- **Path**: `torch/csrc/jit/frontend/parse_string_literal.h`
+- **Size**: 2,294 bytes (2.24 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#pragma once
+#include <torch/csrc/jit/frontend/error_report.h>
+#include <torch/csrc/jit/frontend/lexer.h>
+#include <optional>
+
+namespace torch::jit {
+
+inline bool isCharCount(char c, const std::string& str, size_t start, int len) {
+  // count checks from [start, start + len)
+  return start + len <= str.size() &&
+      std::count(
+          str.begin() + static_cast<ptrdiff_t>(start),
+          str.begin() + static_cast<ptrdiff_t>(start + len),
+          c) == len;
+}
+
+inline std::optional<char> parseOctal(const std::string& str, size_t pos) {
+  //\xxx where x are 0-7
+  if (pos + 3 >= str.size())
+    return std::nullopt;
+  size_t c = 0;
+  for (size_t i = 1, b = 64; i < 4; ++i, b /= 8) {
+    auto d = str[pos + i];
+    if (d < '0' || d > '7')
+      return std::nullopt;
+    c += b * (d - '0');
+  }
+  if (c >= 256)
+    return std::nullopt;
+  return c;
+}
+
+inline std::string parseStringLiteral(
+    const SourceRange& range,
+    const std::string& str) {
+  size_t quote_len = isCharCount(str[0], str, 0, 3) ? 3 : 1;
+  auto ret_str = str.substr(quote_len, str.size() - quote_len * 2);
+  size_t pos = ret_str.find('\\');
+  while (pos != std::string::npos) {
+    // invariant: pos has to escape a character because it is a valid string
+    char c = ret_str[pos + 1];
+    size_t to_erase = 2;
+    switch (ret_str[pos + 1]) {
+      case '\\':
+      case '\'':
+      case '\"':
+      case '\n':
+        break;
+      case 'a':
+        c = '\a';
+        break;
+      case 'b':
+        c = '\b';
+        break;
+      case 'f':
+        c = '\f';
+        break;
+      case 'n':
+        c = '\n';
+        break;
+      case 'v':
+        c = '\v';
+        break;
+      case 't':
+        c = '\t';
+        break;
+      case 'x':
+        throw(ErrorReport(range) << "unsupported hex specifier");
+      case 'u':
+      case 'U':
+        throw(ErrorReport(range) << "unsupported unicode specifier");
+      default:
+        // octal value in format \nnn, n is [0-7]
+        if (auto v = parseOctal(ret_str, pos)) {
+          to_erase = 4;
+          c = *v;
+        } else {
+          throw(ErrorReport(range) << " ill formed octal specifier");
+        }
+    }
+    ret_str.replace(pos, to_erase, /* num copies */ 1, c);
+    pos = ret_str.find('\\', pos + 1);
+  }
+  return ret_str;
+}
+
+} // namespace torch::jit
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 3 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/jit/frontend`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `torch/csrc/jit/frontend/error_report.h`
+- `torch/csrc/jit/frontend/lexer.h`
+- `optional`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/jit/frontend`):
+
+- [`canonicalize_modified_loop.cpp_docs.md`](./canonicalize_modified_loop.cpp_docs.md)
+- [`schema_matching.cpp_docs.md`](./schema_matching.cpp_docs.md)
+- [`source_range.h_docs.md`](./source_range.h_docs.md)
+- [`exit_transforms.h_docs.md`](./exit_transforms.h_docs.md)
+- [`function_schema_parser.h_docs.md`](./function_schema_parser.h_docs.md)
+- [`inline_loop_condition.h_docs.md`](./inline_loop_condition.h_docs.md)
+- [`mini_environment.h_docs.md`](./mini_environment.h_docs.md)
+- [`tree_views.cpp_docs.md`](./tree_views.cpp_docs.md)
+- [`function_schema_parser.cpp_docs.md`](./function_schema_parser.cpp_docs.md)
+- [`tracer.cpp_docs.md`](./tracer.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `parse_string_literal.h_docs.md`
+- **Keyword Index**: `parse_string_literal.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

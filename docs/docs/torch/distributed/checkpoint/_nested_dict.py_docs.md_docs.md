@@ -1,0 +1,301 @@
+# Documentation: `docs/torch/distributed/checkpoint/_nested_dict.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/distributed/checkpoint/_nested_dict.py_docs.md`
+- **Size**: 4,991 bytes (4.87 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/distributed/checkpoint/_nested_dict.py`
+
+## File Metadata
+
+- **Path**: `torch/distributed/checkpoint/_nested_dict.py`
+- **Size**: 2,273 bytes (2.22 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This is a python source code that is part of the PyTorch project.
+
+## Original Source
+
+```python
+# Copyright (c) Meta Platforms, Inc. and affiliates
+
+from torch.distributed.checkpoint.metadata import STATE_DICT_TYPE
+
+from . import _version
+from ._traverse import (
+    OBJ_PATH,
+    set_element,
+    STATE_DICT_ITEM,
+    traverse_state_dict,
+    traverse_state_dict_v_2_3,
+)
+
+
+"""
+TODO:
+Need to add ability to handle tuple, OrderedDict, NamedTuple.
+Update mappings from dict to a class.
+Change set_element to recreate the right type for tuple, OrderedDict, and NamedTuple.
+"""
+
+
+FLATTEN_MAPPING = dict[str, OBJ_PATH]
+
+
+# TODO: Update Docstring for nested_dict.py
+def flatten_state_dict(
+    state_dict: STATE_DICT_TYPE,
+) -> tuple[STATE_DICT_TYPE, FLATTEN_MAPPING]:
+    """
+    Flatten ``state_dict`` made of nested dicts and lists into a top level dictionary.
+
+    Use ``unflatten_state_dict`` to revert this process.
+    Returns:
+        A tuple with the flatten state_dict and a mapping from original to new state_dict.
+    N.B. The new keys are derived from the object paths, joined by dot.
+        For example: ``{ 'a': {'b':...}}`` results in the key `a.b`.
+    """
+    flattened: STATE_DICT_TYPE = {}
+    mappings: FLATTEN_MAPPING = {}
+
+    def flat_copy(path: OBJ_PATH, value: STATE_DICT_ITEM) -> None:
+        new_fqn = ".".join(map(str, path))
+        if new_fqn in flattened:
+            raise ValueError(f"duplicated flatten key {new_fqn}")
+        flattened[new_fqn] = value
+        mappings[new_fqn] = path
+
+    # We started to flatten dictionary since v2.4. But in order to not break
+    # the checkpoints that were saved before v2.4, we need to keep the old
+    # traversal so that we can reconstruct those checkpoints.
+    use_v_2_3 = (
+        _version._derived_version is not None and _version._derived_version == "2_3"
+    )
+    if use_v_2_3:
+        traverse_state_dict_v_2_3(state_dict, flat_copy)
+    else:
+        traverse_state_dict(state_dict, flat_copy)
+    return flattened, mappings
+
+
+def unflatten_state_dict(
+    state_dict: STATE_DICT_TYPE, mapping: FLATTEN_MAPPING
+) -> STATE_DICT_TYPE:
+    """Restore the original nested state_dict according to ``mapping`` and the flattened ``state_dict``."""
+    nested: STATE_DICT_TYPE = {}
+    for key, value in state_dict.items():
+        set_element(nested, mapping[key], value)
+    return nested
+
+```
+
+
+
+## High-Level Overview
+
+"""TODO:Need to add ability to handle tuple, OrderedDict, NamedTuple.Update mappings from dict to a class.Change set_element to recreate the right type for tuple, OrderedDict, and NamedTuple.
+
+This Python file contains 0 class(es) and 3 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Functions defined**: `flatten_state_dict`, `flat_copy`, `unflatten_state_dict`
+
+**Key imports**: STATE_DICT_TYPE, _version
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/distributed/checkpoint`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `torch.distributed.checkpoint.metadata`: STATE_DICT_TYPE
+- `.`: _version
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/distributed/checkpoint`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`filesystem.py_docs.md`](./filesystem.py_docs.md)
+- [`_consolidate_hf_safetensors.py_docs.md`](./_consolidate_hf_safetensors.py_docs.md)
+- [`hf_storage.py_docs.md`](./hf_storage.py_docs.md)
+- [`state_dict_loader.py_docs.md`](./state_dict_loader.py_docs.md)
+- [`logging_handlers.py_docs.md`](./logging_handlers.py_docs.md)
+- [`_storage_utils.py_docs.md`](./_storage_utils.py_docs.md)
+- [`utils.py_docs.md`](./utils.py_docs.md)
+- [`_async_process_executor.py_docs.md`](./_async_process_executor.py_docs.md)
+- [`resharding.py_docs.md`](./resharding.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `_nested_dict.py_docs.md`
+- **Keyword Index**: `_nested_dict.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/distributed/checkpoint`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/distributed/checkpoint`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/distributed/checkpoint`):
+
+- [`storage.py_docs.md_docs.md`](./storage.py_docs.md_docs.md)
+- [`api.py_kw.md_docs.md`](./api.py_kw.md_docs.md)
+- [`_async_process_executor.py_kw.md_docs.md`](./_async_process_executor.py_kw.md_docs.md)
+- [`stateful.py_kw.md_docs.md`](./stateful.py_kw.md_docs.md)
+- [`state_dict_loader.py_kw.md_docs.md`](./state_dict_loader.py_kw.md_docs.md)
+- [`_async_executor.py_kw.md_docs.md`](./_async_executor.py_kw.md_docs.md)
+- [`_state_dict_stager.py_kw.md_docs.md`](./_state_dict_stager.py_kw.md_docs.md)
+- [`_extension.py_kw.md_docs.md`](./_extension.py_kw.md_docs.md)
+- [`resharding.py_docs.md_docs.md`](./resharding.py_docs.md_docs.md)
+- [`format_utils.py_docs.md_docs.md`](./format_utils.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `_nested_dict.py_docs.md_docs.md`
+- **Keyword Index**: `_nested_dict.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,85 @@
+# Keyword Index: `cmake/Modules/FindOpenBLAS.cmake`
+
+## File Information
+
+- **Original File**: [cmake/Modules/FindOpenBLAS.cmake](../../../cmake/Modules/FindOpenBLAS.cmake)
+- **Documentation**: [`FindOpenBLAS.cmake_docs.md`](./FindOpenBLAS.cmake_docs.md)
+- **Folder**: `cmake/Modules`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`BOOL`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`CACHE`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`COMMAND`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`Check`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`Could`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`DEFINED`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`ELSE`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`ENDIF`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`ENV`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`EQUAL`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`ERROR_VARIABLE`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`FALSE`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`FATAL_ERROR`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`FIND`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`FIND_LIBRARY`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`FIND_PATH`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`Found`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`GREATER`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`IF`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`LDD_ERROR`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`LDD_OUTPUT`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`LDD_RESULT`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`LIBGOMP_FOUND_INDEX`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`MARK_AS_ADVANCED`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`MESSAGE`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`NAMES`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`NOT`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`OFF`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`ON`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`OPENBLAS_USES_LIBGOMP`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`OUTPUT_STRIP_TRAILING_WHITESPACE`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`OUTPUT_VARIABLE`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`OpenBLAS`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`OpenBLAS_FIND_QUIETLY`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`OpenBLAS_FIND_REQUIRED`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`OpenBLAS_FOUND`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`OpenBLAS_HOME`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`OpenBLAS_INCLUDE_DIR`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`OpenBLAS_LIB`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`OpenBLAS_LIB_NAME`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`Open_BLAS_INCLUDE_SEARCH_PATHS`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`Open_BLAS_LIB_NAME`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`Open_BLAS_LIB_SEARCH_PATHS`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`PATHS`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`RESULT_VARIABLE`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`Run`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`SET`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`STATUS`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`TRUE`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`Turning`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+- **`WARNING`**: [FindOpenBLAS.cmake_docs.md](./FindOpenBLAS.cmake_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,189 @@
+# Documentation: `aten/src/ATen/native/cuda/ActivationHardswishKernel.cu`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/cuda/ActivationHardswishKernel.cu`
+- **Size**: 2,076 bytes (2.03 KB)
+- **Type**: CUDA Source Code
+- **Extension**: `.cu`
+
+## File Purpose
+
+This is a cuda source code that is part of the PyTorch project.
+
+## Original Source
+
+```cuda
+#define TORCH_ASSERT_NO_OPERATORS
+#define _USE_MATH_DEFINES
+
+#include <ATen/native/Activation.h>
+
+#include <cmath>
+
+#include <thrust/tuple.h>
+
+#include <ATen/AccumulateType.h>
+#include <ATen/Dispatch.h>
+#include <ATen/core/TensorBase.h>
+#include <c10/core/Scalar.h>
+#include <c10/cuda/CUDAMathCompat.h>
+#include <ATen/cuda/ApplyGridUtils.cuh>
+#include <ATen/cuda/detail/OffsetCalculator.cuh>
+#include <ATen/native/cuda/Loops.cuh>
+
+namespace at::native {
+namespace {
+
+void hardswish_kernel(TensorIterator& iter) {
+  AT_DISPATCH_FLOATING_TYPES_AND2(at::ScalarType::Half, at::ScalarType::BFloat16, iter.dtype(), "hardswish_cuda", [&]() {
+    using opmath_t = at::opmath_type<scalar_t>;
+    const opmath_t zero(0.0f);
+    const opmath_t one_sixth(1.0f / 6.0f);
+    const opmath_t three(3.0f);
+    const opmath_t six(6.0f);
+    gpu_kernel(iter, [zero, one_sixth, three, six]GPU_LAMBDA(scalar_t self_val) -> scalar_t {
+      opmath_t x = static_cast<opmath_t>(self_val);
+      return x * std::min(std::max(x + three, zero), six) * one_sixth;
+    });
+  });
+}
+
+void hardswish_backward_kernel(TensorIterator& iter) {
+  AT_DISPATCH_FLOATING_TYPES_AND2(at::ScalarType::Half, at::ScalarType::BFloat16, iter.dtype(), "hardswish_backward_cuda", [&]() {
+    using opmath_t = at::opmath_type<scalar_t>;
+    const opmath_t zero(0.0f);
+    const opmath_t three(3.0f);
+    const opmath_t neg_three(-3.0f);
+    const opmath_t one_half(0.5f);
+    gpu_kernel(
+      iter,
+      [zero, three, neg_three, one_half]GPU_LAMBDA(scalar_t grad_val_, scalar_t self_val_) -> scalar_t {
+        opmath_t grad_val = static_cast<opmath_t>(grad_val_);
+        opmath_t self_val = static_cast<opmath_t>(self_val_);
+        if (self_val <= neg_three) {
+          return zero;
+        } else if (self_val < three) {
+          return grad_val * ((self_val / three) + one_half);
+        } else {
+          return grad_val;
+        }
+    });
+  });
+}
+} // namespace
+
+REGISTER_DISPATCH(hardswish_stub, &hardswish_kernel)
+REGISTER_DISPATCH(hardswish_backward_stub, &hardswish_backward_kernel)
+
+} // namespace at::native
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `aten/src/ATen/native/cuda`.
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `REGISTER_DISPATCH`, `at`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native/cuda`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/native/Activation.h`
+- `cmath`
+- `thrust/tuple.h`
+- `ATen/AccumulateType.h`
+- `ATen/Dispatch.h`
+- `ATen/core/TensorBase.h`
+- `c10/core/Scalar.h`
+- `c10/cuda/CUDAMathCompat.h`
+- `ATen/cuda/ApplyGridUtils.cuh`
+- `ATen/cuda/detail/OffsetCalculator.cuh`
+- `ATen/native/cuda/Loops.cuh`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native/cuda`):
+
+- [`LogcumsumexpKernel.cu_docs.md`](./LogcumsumexpKernel.cu_docs.md)
+- [`WeightNorm.cu_docs.md`](./WeightNorm.cu_docs.md)
+- [`SparseBinaryOpIntersectionKernel.cu_docs.md`](./SparseBinaryOpIntersectionKernel.cu_docs.md)
+- [`jit_utils.cpp_docs.md`](./jit_utils.cpp_docs.md)
+- [`ReduceNormKernel.cu_docs.md`](./ReduceNormKernel.cu_docs.md)
+- [`BinaryMiscOpsKernels.cu_docs.md`](./BinaryMiscOpsKernels.cu_docs.md)
+- [`RowwiseScaledMM.h_docs.md`](./RowwiseScaledMM.h_docs.md)
+- [`fused_adamw_amsgrad_impl.cuh_docs.md`](./fused_adamw_amsgrad_impl.cuh_docs.md)
+- [`Col2Im.cu_docs.md`](./Col2Im.cu_docs.md)
+- [`DistributionRandomKernel.cu_docs.md`](./DistributionRandomKernel.cu_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `ActivationHardswishKernel.cu_docs.md`
+- **Keyword Index**: `ActivationHardswishKernel.cu_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

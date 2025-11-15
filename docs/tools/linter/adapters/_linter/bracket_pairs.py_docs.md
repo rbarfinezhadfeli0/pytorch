@@ -1,0 +1,165 @@
+# Documentation: `tools/linter/adapters/_linter/bracket_pairs.py`
+
+## File Metadata
+
+- **Path**: `tools/linter/adapters/_linter/bracket_pairs.py`
+- **Size**: 1,501 bytes (1.47 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is a **utility or tool script**.
+
+## Original Source
+
+```python
+import token
+from collections.abc import Sequence
+from tokenize import TokenInfo
+
+from . import NO_TOKEN, ParseError
+
+
+FSTRING_START: int = getattr(token, "FSTRING_START", NO_TOKEN)
+FSTRING_END: int = getattr(token, "FSTRING_END", NO_TOKEN)
+
+BRACKETS = {"{": "}", "(": ")", "[": "]"}
+BRACKETS_INV = {j: i for i, j in BRACKETS.items()}
+
+
+def bracket_pairs(tokens: Sequence[TokenInfo]) -> dict[int, int]:
+    """Returns a dictionary mapping opening to closing brackets"""
+    braces: dict[int, int] = {}
+    stack: list[int] = []
+    in_fstring = False
+
+    for i, t in enumerate(tokens):
+        if t.type == token.OP and not in_fstring:
+            if t.string in BRACKETS:
+                stack.append(i)
+            elif inv := BRACKETS_INV.get(t.string):
+                if not stack:
+                    raise ParseError(t, "Never opened")
+                begin = stack.pop()
+
+                if not (stack and stack[-1] == FSTRING_START):
+                    braces[begin] = i
+
+                b = tokens[begin].string
+                if b != inv:
+                    raise ParseError(t, f"Mismatched braces '{b}' at {begin}")
+        elif t.type == FSTRING_START:
+            stack.append(FSTRING_START)
+            in_fstring = True
+        elif t.type == FSTRING_END:
+            if stack.pop() != FSTRING_START:
+                raise ParseError(t, "Mismatched FSTRING_START/FSTRING_END")
+            in_fstring = False
+    if stack:
+        raise ParseError(t, "Left open")
+    return braces
+
+```
+
+
+
+## High-Level Overview
+
+"""Returns a dictionary mapping opening to closing brackets"""    braces: dict[int, int] = {}    stack: list[int] = []    in_fstring = False    for i, t in enumerate(tokens):        if t.type == token.OP and not in_fstring:            if t.string in BRACKETS:                stack.append(i)            elif inv := BRACKETS_INV.get(t.string):                if not stack:                    raise ParseError(t, "Never opened")                begin = stack.pop()                if not (stack and stack[-1] == FSTRING_START):                    braces[begin] = i                b = tokens[begin].string                if b != inv:                    raise ParseError(t, f"Mismatched braces '{b}' at {begin}")        elif t.type == FSTRING_START:            stack.append(FSTRING_START)            in_fstring = True        elif t.type == FSTRING_END:            if stack.pop() != FSTRING_START:                raise ParseError(t, "Mismatched FSTRING_START/FSTRING_END")            in_fstring = False    if stack:        raise ParseError(t, "Left open")    return braces
+
+This Python file contains 0 class(es) and 1 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Functions defined**: `bracket_pairs`
+
+**Key imports**: token, Sequence, TokenInfo, NO_TOKEN, ParseError
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `tools/linter/adapters/_linter`, which contains **development tools and scripts**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `token`
+- `collections.abc`: Sequence
+- `tokenize`: TokenInfo
+- `.`: NO_TOKEN, ParseError
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`tools/linter/adapters/_linter`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`messages.py_docs.md`](./messages.py_docs.md)
+- [`sets.py_docs.md`](./sets.py_docs.md)
+- [`block.py_docs.md`](./block.py_docs.md)
+- [`argument_parser.py_docs.md`](./argument_parser.py_docs.md)
+- [`python_file.py_docs.md`](./python_file.py_docs.md)
+- [`blocks.py_docs.md`](./blocks.py_docs.md)
+- [`file_linter.py_docs.md`](./file_linter.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `bracket_pairs.py_docs.md`
+- **Keyword Index**: `bracket_pairs.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

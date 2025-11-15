@@ -1,0 +1,417 @@
+# Documentation: `docs/torch/csrc/jit/ir/attributes.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/jit/ir/attributes.h_docs.md`
+- **Size**: 7,358 bytes (7.19 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/csrc/jit/ir/attributes.h`
+
+## File Metadata
+
+- **Path**: `torch/csrc/jit/ir/attributes.h`
+- **Size**: 4,794 bytes (4.68 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#pragma once
+#include <ATen/core/Tensor.h>
+#include <string>
+#include <vector>
+
+#include <ATen/core/jit_type_base.h>
+#include <ATen/core/symbol.h>
+
+#include <torch/csrc/Export.h>
+
+namespace torch::jit {
+
+using ::c10::Symbol;
+
+constexpr int max_tensor_display_size = 10;
+
+enum class AttributeKind {
+  f,
+  fs,
+  c,
+  cs,
+  i,
+  is,
+  s,
+  ss,
+  t,
+  ts,
+  g,
+  gs,
+  ty,
+  tys,
+  ival
+};
+static inline const char* toString(AttributeKind kind) {
+  // NOLINTNEXTLINE(cppcoreguidelines-avoid-c-arrays,modernize-avoid-c-arrays)
+  static constexpr const char* names[] = {
+      "f",
+      "c",
+      "cs",
+      "fs",
+      "i",
+      "is",
+      "s",
+      "ss",
+      "t",
+      "ts",
+      "g",
+      "gs",
+      "ty",
+      "tys",
+      "ival"};
+  AT_ASSERT(size_t(kind) < sizeof(names) / sizeof(*names));
+  return names[int(kind)];
+}
+
+struct AttributeValue {
+  AttributeValue(Symbol name) : name(name) {}
+  using Ptr = std::unique_ptr<AttributeValue>;
+  Symbol name;
+  virtual AttributeKind kind() const = 0;
+  virtual Ptr clone() const = 0;
+  virtual ~AttributeValue() = default;
+};
+
+template <typename T, AttributeKind Kind>
+struct ScalarAttributeValue : public AttributeValue {
+  using ConstructorType = T;
+  using ValueType = T;
+  ScalarAttributeValue(Symbol name, ConstructorType value_)
+      : AttributeValue(name), value_(std::move(value_)) {}
+  ValueType& value() {
+    return value_;
+  }
+  Ptr clone() const override {
+    return Ptr(new ScalarAttributeValue(name, value_));
+  }
+  AttributeKind kind() const override {
+    return Kind;
+  }
+
+ private:
+  ValueType value_;
+};
+
+template <typename T, AttributeKind Kind>
+struct VectorAttributeValue : public AttributeValue {
+  using ConstructorType = std::vector<T>;
+  using ValueType = std::vector<T>;
+  VectorAttributeValue(Symbol name, ConstructorType value_)
+      : AttributeValue(name), value_(std::move(value_)) {}
+  ValueType& value() {
+    return value_;
+  }
+  AttributeKind kind() const override {
+    return Kind;
+  }
+  std::unique_ptr<AttributeValue> clone() const override {
+    auto copy = value_;
+    return Ptr(new VectorAttributeValue(name, std::move(copy)));
+  }
+
+ private:
+  ValueType value_;
+};
+
+using ComplexAttr =
+    ScalarAttributeValue<c10::complex<double>, AttributeKind::c>;
+using ComplexValsAttr =
+    VectorAttributeValue<c10::complex<double>, AttributeKind::cs>;
+using FloatAttr = ScalarAttributeValue<double, AttributeKind::f>;
+using FloatsAttr = VectorAttributeValue<double, AttributeKind::fs>;
+using IntAttr = ScalarAttributeValue<int64_t, AttributeKind::i>;
+using IntsAttr = VectorAttributeValue<int64_t, AttributeKind::is>;
+using StringAttr = ScalarAttributeValue<std::string, AttributeKind::s>;
+using StringsAttr = VectorAttributeValue<std::string, AttributeKind::ss>;
+using TensorAttr = ScalarAttributeValue<at::Tensor, AttributeKind::t>;
+using TensorsAttr = VectorAttributeValue<at::Tensor, AttributeKind::ts>;
+using TypeAttr = ScalarAttributeValue<c10::TypePtr, AttributeKind::ty>;
+using TypesAttr = VectorAttributeValue<c10::TypePtr, AttributeKind::tys>;
+using IValueAttr = ScalarAttributeValue<at::IValue, AttributeKind::ival>;
+
+struct Graph;
+
+// We special case Graph attributes like this because we want to ensure that
+// Graph::copy() is called when we clone() these attributes.
+struct TORCH_API GraphAttr : public AttributeValue {
+  using ConstructorType = std::shared_ptr<Graph>;
+  using ValueType = std::shared_ptr<Graph>;
+  GraphAttr(Symbol name, ConstructorType value_)
+      : AttributeValue(name), value_(std::move(value_)) {}
+  ValueType& value() {
+    return value_;
+  }
+  Ptr clone() const override;
+  AttributeKind kind() const override {
+    return AttributeKind::g;
+  }
+
+ private:
+  std::shared_ptr<Graph> value_;
+};
+
+struct TORCH_API GraphsAttr : public AttributeValue {
+  using ConstructorType = std::vector<std::shared_ptr<Graph>>;
+  using ValueType = std::vector<std::shared_ptr<Graph>>;
+  GraphsAttr(Symbol name, ConstructorType value_)
+      : AttributeValue(name), value_(std::move(value_)) {}
+  ValueType& value() {
+    return value_;
+  }
+  AttributeKind kind() const override {
+    return AttributeKind::gs;
+  }
+  std::unique_ptr<AttributeValue> clone() const override;
+
+ private:
+  ValueType value_;
+};
+
+struct IRAttributeError : public std::exception {
+  IRAttributeError(Symbol name, bool defined) {
+    std::stringstream ss;
+    // NOLINTNEXTLINE(bugprone-branch-clone)
+    if (!defined) {
+      ss << "required keyword attribute '" << name.toUnqualString()
+         << "' is undefined";
+    } else {
+      ss << "required keyword attribute '" << name.toUnqualString()
+         << "' has the wrong type";
+    }
+    msg = ss.str();
+  }
+  const char* what() const noexcept override {
+    return msg.c_str();
+  }
+
+ private:
+  std::string msg;
+};
+} // namespace torch::jit
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 1 class(es)/struct(s) and 13 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`
+
+**Classes/Structs**: `AttributeKind`, `AttributeValue`, `ScalarAttributeValue`, `VectorAttributeValue`, `Graph`, `TORCH_API`, `TORCH_API`, `IRAttributeError`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/jit/ir`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/core/Tensor.h`
+- `string`
+- `vector`
+- `ATen/core/jit_type_base.h`
+- `ATen/core/symbol.h`
+- `torch/csrc/Export.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/jit/ir`):
+
+- [`node_hashing.h_docs.md`](./node_hashing.h_docs.md)
+- [`constants.cpp_docs.md`](./constants.cpp_docs.md)
+- [`subgraph_matcher.h_docs.md`](./subgraph_matcher.h_docs.md)
+- [`scope.cpp_docs.md`](./scope.cpp_docs.md)
+- [`graph_node_list.h_docs.md`](./graph_node_list.h_docs.md)
+- [`type_hashing.cpp_docs.md`](./type_hashing.cpp_docs.md)
+- [`ir.h_docs.md`](./ir.h_docs.md)
+- [`ir.cpp_docs.md`](./ir.cpp_docs.md)
+- [`irparser.cpp_docs.md`](./irparser.cpp_docs.md)
+- [`node_hashing.cpp_docs.md`](./node_hashing.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `attributes.h_docs.md`
+- **Keyword Index**: `attributes.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/jit/ir`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/jit/ir`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/jit/ir`):
+
+- [`subgraph_matcher.h_docs.md_docs.md`](./subgraph_matcher.h_docs.md_docs.md)
+- [`node_hashing.h_kw.md_docs.md`](./node_hashing.h_kw.md_docs.md)
+- [`subgraph_matcher.h_kw.md_docs.md`](./subgraph_matcher.h_kw.md_docs.md)
+- [`graph_utils.h_kw.md_docs.md`](./graph_utils.h_kw.md_docs.md)
+- [`irparser.cpp_docs.md_docs.md`](./irparser.cpp_docs.md_docs.md)
+- [`constants.h_docs.md_docs.md`](./constants.h_docs.md_docs.md)
+- [`scope.h_kw.md_docs.md`](./scope.h_kw.md_docs.md)
+- [`scope.h_docs.md_docs.md`](./scope.h_docs.md_docs.md)
+- [`irparser.cpp_kw.md_docs.md`](./irparser.cpp_kw.md_docs.md)
+- [`scope.cpp_docs.md_docs.md`](./scope.cpp_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `attributes.h_docs.md_docs.md`
+- **Keyword Index**: `attributes.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

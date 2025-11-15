@@ -1,0 +1,76 @@
+# Keyword Index: `docs/aten/src/ATen/native/quantized/cpu/qnnpack/generate-wrapper.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/native/quantized/cpu/qnnpack/generate-wrapper.py_kw.md](../../../../../../../../../docs/aten/src/ATen/native/quantized/cpu/qnnpack/generate-wrapper.py_kw.md)
+- **Documentation**: [`generate-wrapper.py_kw.md_docs.md`](./generate-wrapper.py_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/native/quantized/cpu/qnnpack`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`Analysis`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`Architecture`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`Basic`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`Complete`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`Considerations`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`Dependencies`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`Design`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`Detailed`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`Documentation`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`Efficiency`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`Extracted`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`File`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`Folder`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`Generated`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`High`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`How`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`Imports`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`In`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`Index`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`Information`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`Keyword`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`Keywords`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`Level`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`Map`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`Metadata`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`Original`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`Overview`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`Performance`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`Purpose`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`PyTorch`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`Related`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`Repository`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`Safety`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`Section`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`Security`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`Source`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`System`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`Testing`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`The`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`This`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+- **`Usage`**: [generate-wrapper.py_kw.md_docs.md](./generate-wrapper.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

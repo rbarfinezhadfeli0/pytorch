@@ -1,0 +1,314 @@
+# Documentation: `docs/aten/src/ATen/native/vulkan/ops/Gru.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/vulkan/ops/Gru.h_docs.md`
+- **Size**: 4,657 bytes (4.55 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/native/vulkan/ops/Gru.h`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/vulkan/ops/Gru.h`
+- **Size**: 2,176 bytes (2.12 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#pragma once
+
+#ifdef USE_VULKAN_API
+
+#include <ATen/native/vulkan/ops/Common.h>
+#include <ATen/native/vulkan/ops/VulkanPackedContext.h>
+#include <torch/library.h>
+
+namespace at {
+namespace native {
+namespace vulkan {
+namespace ops {
+
+class GruPackedContext final : virtual public VulkanPackedContext,
+                               public torch::jit::CustomClassHolder {
+ public:
+  GruPackedContext(
+      const std::vector<Tensor>& params_cpu, // weights/biases (cpu)
+      bool has_biases,
+      int64_t num_layers,
+      double dropout,
+      bool train,
+      bool bidirectional,
+      bool batch_first);
+
+  /*
+   * Assigns a name to each index in the unpacked list.
+   */
+  struct Unpacked final {
+    static constexpr uint32_t Params = 0u;
+    static constexpr uint32_t hasBiases = 1u;
+    static constexpr uint32_t NumLayers = 2u;
+    static constexpr uint32_t Dropout = 3u;
+    static constexpr uint32_t Train = 4u;
+    static constexpr uint32_t Bidirectional = 5u;
+    static constexpr uint32_t BatchFirst = 6u;
+
+    static constexpr uint32_t NumArgs = 7u;
+  };
+
+  /*
+   * Assigns a name to each index in the packed list.
+   */
+  struct Packed final {
+    static constexpr uint32_t LinearContexts = 0u;
+    static constexpr uint32_t hasBiases = 1u;
+    static constexpr uint32_t NumLayers = 2u;
+    static constexpr uint32_t Dropout = 3u;
+    static constexpr uint32_t Train = 4u;
+    static constexpr uint32_t Bidirectional = 5u;
+    static constexpr uint32_t BatchFirst = 6u;
+
+    static constexpr uint32_t NumArgs = 7u;
+  };
+
+  static GruPackedContext pack(c10::impl::GenericList);
+
+  const c10::impl::GenericList unpack() const override;
+};
+
+c10::intrusive_ptr<GruPackedContext> create_gru_context(
+    std::vector<Tensor>&& params_cpu, // weights/biases (cpu)
+    bool has_biases,
+    int64_t num_layers,
+    double dropout,
+    bool train,
+    bool bidirectional,
+    bool batch_first);
+
+std::tuple<Tensor, Tensor> run_gru_context(
+    const Tensor& input_vk,
+    const Tensor& hx_vk,
+    const c10::intrusive_ptr<GruPackedContext>& vulkan_context);
+
+} // namespace ops
+} // namespace vulkan
+} // namespace native
+} // namespace at
+
+#endif /* USE_VULKAN_API */
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 1 class(es)/struct(s) and 2 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `vulkan`, `ops`, `native`, `at`
+
+**Classes/Structs**: `GruPackedContext`, `Unpacked`, `Packed`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native/vulkan/ops`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/native/vulkan/ops/Common.h`
+- `ATen/native/vulkan/ops/VulkanPackedContext.h`
+- `torch/library.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native/vulkan/ops`):
+
+- [`Convert.h_docs.md`](./Convert.h_docs.md)
+- [`Batchnorm.cpp_docs.md`](./Batchnorm.cpp_docs.md)
+- [`Slice.cpp_docs.md`](./Slice.cpp_docs.md)
+- [`Lerp.cpp_docs.md`](./Lerp.cpp_docs.md)
+- [`Shape.cpp_docs.md`](./Shape.cpp_docs.md)
+- [`Mean.cpp_docs.md`](./Mean.cpp_docs.md)
+- [`UnaryOp.cpp_docs.md`](./UnaryOp.cpp_docs.md)
+- [`Permute.cpp_docs.md`](./Permute.cpp_docs.md)
+- [`Unsqueeze.cpp_docs.md`](./Unsqueeze.cpp_docs.md)
+- [`Stack.cpp_docs.md`](./Stack.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `Gru.h_docs.md`
+- **Keyword Index**: `Gru.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native/vulkan/ops`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native/vulkan/ops`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native/vulkan/ops`):
+
+- [`Lerp.cpp_kw.md_docs.md`](./Lerp.cpp_kw.md_docs.md)
+- [`Select.cpp_docs.md_docs.md`](./Select.cpp_docs.md_docs.md)
+- [`Batchnorm.h_docs.md_docs.md`](./Batchnorm.h_docs.md_docs.md)
+- [`Lstm.cpp_kw.md_docs.md`](./Lstm.cpp_kw.md_docs.md)
+- [`Concat.cpp_kw.md_docs.md`](./Concat.cpp_kw.md_docs.md)
+- [`Convolution.cpp_docs.md_docs.md`](./Convolution.cpp_docs.md_docs.md)
+- [`Zero.cpp_kw.md_docs.md`](./Zero.cpp_kw.md_docs.md)
+- [`Gru.h_kw.md_docs.md`](./Gru.h_kw.md_docs.md)
+- [`Repeat.cpp_kw.md_docs.md`](./Repeat.cpp_kw.md_docs.md)
+- [`Register.cpp_docs.md_docs.md`](./Register.cpp_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `Gru.h_docs.md_docs.md`
+- **Keyword Index**: `Gru.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

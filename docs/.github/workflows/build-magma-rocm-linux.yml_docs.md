@@ -1,0 +1,182 @@
+# Documentation: `.github/workflows/build-magma-rocm-linux.yml`
+
+## File Metadata
+
+- **Path**: `.github/workflows/build-magma-rocm-linux.yml`
+- **Size**: 2,288 bytes (2.23 KB)
+- **Type**: YAML Configuration
+- **Extension**: `.yml`
+
+## File Purpose
+
+This is a yaml configuration that is part of the PyTorch project.
+
+## Original Source
+
+```yaml
+name: build-linux-magma-rocm
+
+on:
+  push:
+    branches:
+      main
+    paths:
+      - .ci/magma-rocm/*
+      - .ci/magma-rocm/package_files/*
+      - .github/workflows/build-magma-rocm-linux.yml
+  pull_request:
+    paths:
+      - .ci/magma-rocm/*
+      - .ci/magma-rocm/package_files/*
+      - .github/workflows/build-magma-rocm-linux.yml
+
+defaults:
+  run:
+    shell: bash -x -e -l {0}
+env:
+  BUILD_ENVIRONMENT: build-linux-magma-rocm
+  IN_CI: 1
+  IS_GHA: 1
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}-${{ github.event_name == 'workflow_dispatch' }}
+  cancel-in-progress: true
+
+jobs:
+  build-linux-magma-rocm:
+    if: github.repository_owner == 'pytorch'
+    runs-on: linux.2xlarge
+    permissions:
+      id-token: write
+    strategy:
+      matrix:
+        rocm_version: ["71", "70"]
+    steps:
+      - name: Checkout PyTorch
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Build Magma Rocm
+        working-directory: .ci/magma-rocm
+        run: |
+          # Produces artifacts under magma-rocm/output/linux-64/magma-rocm*.bz2
+          make magma-rocm${{ matrix.rocm_version }}
+      - name: Save as artifact
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          path: .ci/magma-rocm/output/linux-64/magma-rocm*.bz2
+          name: artifact_${{ matrix.rocm_version }}
+      - name: Configure AWS credentials(PyTorch account)
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        uses: aws-actions/configure-aws-credentials@ececac1a45f3b08a01d2dd070d28d111c5fe6722 # v4.1.0
+        with:
+          role-to-assume: arn:aws:iam::308535385114:role/gha_workflow_s3_ossci_linux_windows_read_write
+          aws-region: us-east-1
+      - name: Set DRY_RUN
+        if: ${{ github.event_name == 'push' && github.event.ref == 'refs/heads/main' }}
+        run: |
+            echo "DRY_RUN=disabled" >> "$GITHUB_ENV"
+      - name: Upload binaries
+        shell: bash
+        env:
+            PKG_DIR: ".ci/magma-rocm/output/linux-64/"
+            TARGET_OS: "linux"
+            PKG_INCLUDE: "magma-rocm*.tar.bz2"
+        run: |
+            set -ex
+            bash .github/scripts/upload_aws_ossci.sh
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `.github/workflows`.
+
+## Detailed Analysis
+
+### Code Structure
+
+This is a configuration file. See the original source for structure.
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `.github/workflows`, which is part of the PyTorch project infrastructure.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`.github/workflows`):
+
+- [`unstable-periodic.yml_docs.md`](./unstable-periodic.yml_docs.md)
+- [`runner_determinator_script_sync.yaml_docs.md`](./runner_determinator_script_sync.yaml_docs.md)
+- [`auto_request_review.yml_docs.md`](./auto_request_review.yml_docs.md)
+- [`attention_op_microbenchmark.yml_docs.md`](./attention_op_microbenchmark.yml_docs.md)
+- [`inductor-nightly.yml_docs.md`](./inductor-nightly.yml_docs.md)
+- [`lint-autoformat.yml_docs.md`](./lint-autoformat.yml_docs.md)
+- [`inductor-perf-test-b200.yml_docs.md`](./inductor-perf-test-b200.yml_docs.md)
+- [`inductor-unittest.yml_docs.md`](./inductor-unittest.yml_docs.md)
+- [`_linux-build.yml_docs.md`](./_linux-build.yml_docs.md)
+- [`inductor-perf-test-nightly.yml_docs.md`](./inductor-perf-test-nightly.yml_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `build-magma-rocm-linux.yml_docs.md`
+- **Keyword Index**: `build-magma-rocm-linux.yml_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

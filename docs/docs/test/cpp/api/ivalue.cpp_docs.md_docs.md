@@ -1,0 +1,311 @@
+# Documentation: `docs/test/cpp/api/ivalue.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/cpp/api/ivalue.cpp_docs.md`
+- **Size**: 4,777 bytes (4.67 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/cpp/api/ivalue.cpp`
+
+## File Metadata
+
+- **Path**: `test/cpp/api/ivalue.cpp`
+- **Size**: 2,390 bytes (2.33 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**.
+
+## Original Source
+
+```cpp
+#include <gtest/gtest.h>
+
+#include <ATen/core/ivalue.h>
+
+#include <c10/util/flat_hash_map.h>
+#include <c10/util/irange.h>
+#include <c10/util/tempfile.h>
+
+#include <torch/torch.h>
+
+#include <test/cpp/api/support.h>
+
+#include <cstdio>
+#include <memory>
+#include <sstream>
+#include <string>
+#include <vector>
+
+using namespace torch::test;
+using namespace torch::nn;
+using namespace torch::optim;
+
+TEST(IValueTest, DeepcopyTensors) {
+  torch::Tensor t0 = torch::randn({2, 3});
+  torch::Tensor t1 = torch::randn({3, 4});
+  torch::Tensor t2 = t0.detach();
+  torch::Tensor t3 = t0;
+  torch::Tensor t4 = t1.as_strided({2, 3}, {3, 1}, 2);
+  std::vector<torch::Tensor> tensor_vector = {t0, t1, t2, t3, t4};
+  c10::List<torch::Tensor> tensor_list(tensor_vector);
+  torch::IValue tensor_list_ivalue(tensor_list);
+
+  c10::IValue::CompIdentityIValues ivalue_compare;
+
+  // Make sure our setup configuration is correct
+  ASSERT_TRUE(ivalue_compare(tensor_list[0].get(), tensor_list[3].get()));
+  ASSERT_FALSE(ivalue_compare(tensor_list[0].get(), tensor_list[1].get()));
+  ASSERT_FALSE(ivalue_compare(tensor_list[0].get(), tensor_list[2].get()));
+  ASSERT_FALSE(ivalue_compare(tensor_list[1].get(), tensor_list[4].get()));
+  ASSERT_TRUE(tensor_list[0].get().isAliasOf(tensor_list[2].get()));
+
+  c10::IValue copied_ivalue = tensor_list_ivalue.deepcopy();
+  c10::List<torch::IValue> copied_list = copied_ivalue.toList();
+
+  // Make sure our setup configuration is correct
+  ASSERT_TRUE(ivalue_compare(copied_list[0].get(), copied_list[3].get()));
+  ASSERT_FALSE(ivalue_compare(copied_list[0].get(), copied_list[1].get()));
+  ASSERT_FALSE(ivalue_compare(copied_list[0].get(), copied_list[2].get()));
+  ASSERT_FALSE(ivalue_compare(copied_list[1].get(), copied_list[4].get()));
+  // NOTE: this is actually incorrect. Ideally, these _should_ be aliases.
+  ASSERT_FALSE(copied_list[0].get().isAliasOf(copied_list[2].get()));
+
+  ASSERT_TRUE(copied_list[0].get().toTensor().allclose(
+      tensor_list[0].get().toTensor()));
+  ASSERT_TRUE(copied_list[1].get().toTensor().allclose(
+      tensor_list[1].get().toTensor()));
+  ASSERT_TRUE(copied_list[2].get().toTensor().allclose(
+      tensor_list[2].get().toTensor()));
+  ASSERT_TRUE(copied_list[3].get().toTensor().allclose(
+      tensor_list[3].get().toTensor()));
+  ASSERT_TRUE(copied_list[4].get().toTensor().allclose(
+      tensor_list[4].get().toTensor()));
+}
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 3 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/cpp/api`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `gtest/gtest.h`
+- `ATen/core/ivalue.h`
+- `c10/util/flat_hash_map.h`
+- `c10/util/irange.h`
+- `c10/util/tempfile.h`
+- `torch/torch.h`
+- `test/cpp/api/support.h`
+- `cstdio`
+- `memory`
+- `sstream`
+- `string`
+- `vector`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/cpp/api/ivalue.cpp
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/cpp/api`):
+
+- [`fft.cpp_docs.md`](./fft.cpp_docs.md)
+- [`tensor_options.cpp_docs.md`](./tensor_options.cpp_docs.md)
+- [`any.cpp_docs.md`](./any.cpp_docs.md)
+- [`torch_include.cpp_docs.md`](./torch_include.cpp_docs.md)
+- [`rnn.cpp_docs.md`](./rnn.cpp_docs.md)
+- [`jit.cpp_docs.md`](./jit.cpp_docs.md)
+- [`nn_utils.cpp_docs.md`](./nn_utils.cpp_docs.md)
+- [`nested.cpp_docs.md`](./nested.cpp_docs.md)
+- [`meta_tensor.cpp_docs.md`](./meta_tensor.cpp_docs.md)
+- [`nested_int.cpp_docs.md`](./nested_int.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `ivalue.cpp_docs.md`
+- **Keyword Index**: `ivalue.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/cpp/api`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/cpp/api`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/cpp/api/ivalue.cpp_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/cpp/api`):
+
+- [`init_baseline.py_kw.md_docs.md`](./init_baseline.py_kw.md_docs.md)
+- [`support.cpp_kw.md_docs.md`](./support.cpp_kw.md_docs.md)
+- [`memory.cpp_docs.md_docs.md`](./memory.cpp_docs.md_docs.md)
+- [`parallel_benchmark.cpp_docs.md_docs.md`](./parallel_benchmark.cpp_docs.md_docs.md)
+- [`dataloader.cpp_docs.md_docs.md`](./dataloader.cpp_docs.md_docs.md)
+- [`moduledict.cpp_kw.md_docs.md`](./moduledict.cpp_kw.md_docs.md)
+- [`support.h_kw.md_docs.md`](./support.h_kw.md_docs.md)
+- [`ordered_dict.cpp_docs.md_docs.md`](./ordered_dict.cpp_docs.md_docs.md)
+- [`functional.cpp_docs.md_docs.md`](./functional.cpp_docs.md_docs.md)
+- [`CMakeLists.txt_docs.md_docs.md`](./CMakeLists.txt_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `ivalue.cpp_docs.md_docs.md`
+- **Keyword Index**: `ivalue.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

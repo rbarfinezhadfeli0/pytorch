@@ -1,0 +1,305 @@
+# Documentation: `docs/torch/csrc/api/include/torch/data/detail/queue.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/api/include/torch/data/detail/queue.h_docs.md`
+- **Size**: 4,542 bytes (4.44 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/csrc/api/include/torch/data/detail/queue.h`
+
+## File Metadata
+
+- **Path**: `torch/csrc/api/include/torch/data/detail/queue.h`
+- **Size**: 2,455 bytes (2.40 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#pragma once
+
+#include <torch/types.h>
+
+#include <c10/util/Exception.h>
+
+#include <chrono>
+#include <condition_variable>
+#include <cstddef>
+#include <mutex>
+#include <queue>
+
+namespace torch::data::detail {
+
+/// A basic locked, blocking MPMC queue.
+///
+/// Every `push` and `pop` is guarded by a mutex. A condition variable is used
+/// to communicate insertion of new elements, such that waiting threads will be
+/// woken up if they are currently waiting inside a call to `pop()`.
+///
+/// Note that this data structure is written specifically for use with the
+/// `DataLoader`. Its behavior is tailored to this use case and may not be
+/// applicable to more general uses.
+template <typename T>
+class Queue {
+ public:
+  /// Pushes a new value to the back of the `Queue` and notifies one thread on
+  /// the waiting side about this event.
+  void push(T value) {
+    {
+      std::lock_guard<std::mutex> lock(mutex_);
+      queue_.push(std::move(value));
+    }
+    cv_.notify_one();
+  }
+
+  /// Blocks until at least one element is ready to be popped from the front of
+  /// the queue. An optional `timeout` in seconds can be used to limit the time
+  /// spent waiting for an element. If the wait times out, an exception is
+  /// raised.
+  T pop(std::optional<std::chrono::milliseconds> timeout = std::nullopt) {
+    std::unique_lock<std::mutex> lock(mutex_);
+    if (timeout) {
+      if (!cv_.wait_for(
+              lock, *timeout, [this] { return !this->queue_.empty(); })) {
+        // clang-format off
+        TORCH_CHECK(false,
+            "Timeout in DataLoader queue while waiting for next batch"
+            " (timeout was ", timeout->count(), " ms)");
+        // clang-format on
+      }
+    } else {
+      cv_.wait(lock, [this] { return !this->queue_.empty(); });
+    }
+    AT_ASSERT(!queue_.empty());
+    T value = queue_.front();
+    queue_.pop();
+    lock.unlock();
+    return value;
+  }
+
+  /// Empties the queue and returns the number of elements that were present at
+  /// the start of the function. No threads are notified about this event as it
+  /// is assumed to be used to drain the queue during shutdown of a
+  /// `DataLoader`.
+  size_t clear() {
+    std::lock_guard<std::mutex> lock(this->mutex_);
+    const auto size = queue_.size();
+    while (!queue_.empty()) {
+      queue_.pop();
+    }
+    return size;
+  }
+
+ private:
+  std::queue<T> queue_;
+  std::mutex mutex_;
+  std::condition_variable cv_;
+};
+} // namespace torch::data::detail
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 1 class(es)/struct(s) and 4 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`
+
+**Classes/Structs**: `Queue`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/api/include/torch/data/detail`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `torch/types.h`
+- `c10/util/Exception.h`
+- `chrono`
+- `condition_variable`
+- `cstddef`
+- `mutex`
+- `queue`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/api/include/torch/data/detail`):
+
+- [`sequencers.h_docs.md`](./sequencers.h_docs.md)
+- [`data_shuttle.h_docs.md`](./data_shuttle.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `queue.h_docs.md`
+- **Keyword Index**: `queue.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/api/include/torch/data/detail`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/api/include/torch/data/detail`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/api/include/torch/data/detail`):
+
+- [`sequencers.h_docs.md_docs.md`](./sequencers.h_docs.md_docs.md)
+- [`sequencers.h_kw.md_docs.md`](./sequencers.h_kw.md_docs.md)
+- [`data_shuttle.h_kw.md_docs.md`](./data_shuttle.h_kw.md_docs.md)
+- [`data_shuttle.h_docs.md_docs.md`](./data_shuttle.h_docs.md_docs.md)
+- [`queue.h_kw.md_docs.md`](./queue.h_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `queue.h_docs.md_docs.md`
+- **Keyword Index**: `queue.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

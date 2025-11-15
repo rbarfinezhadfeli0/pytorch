@@ -1,0 +1,385 @@
+# Documentation: `docs/aten/src/ATen/native/vulkan/ops/MaskedFill.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/vulkan/ops/MaskedFill.cpp_docs.md`
+- **Size**: 7,244 bytes (7.07 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/native/vulkan/ops/MaskedFill.cpp`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/vulkan/ops/MaskedFill.cpp`
+- **Size**: 4,820 bytes (4.71 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#include <ATen/native/vulkan/ops/Common.h>
+#include <ATen/native/vulkan/ops/Utils.h>
+#include <torch/library.h>
+#include <vector>
+
+namespace at {
+namespace native {
+namespace vulkan {
+namespace ops {
+namespace {
+
+using namespace api::utils;
+
+Tensor masked_fill_scalar(
+    const Tensor& self_arg,
+    const Tensor& mask_arg,
+    const Scalar& value) {
+  utils::is_broadcastable(self_arg, mask_arg);
+
+  api::Context* const context = api::context();
+
+  const Tensor self = self_arg.is_vulkan() ? self_arg : self_arg.vulkan();
+
+  const Tensor mask = mask_arg.is_vulkan() ? mask_arg : mask_arg.vulkan();
+  const vTensor& v_mask = convert(mask);
+
+  // compute the output shape by broadcasting the shapes of self and mask
+  auto in_ndims = safe_downcast<uint32_t>(self_arg.dim());
+  auto in_sizes = self_arg.sizes();
+  auto mask_sizes = mask_arg.sizes();
+  std::vector<int64_t> out_sizes = utils::broadcast_size(self_arg, mask_arg);
+  TORCH_INTERNAL_ASSERT(!out_sizes.empty(), "output shape is empty!");
+
+  // generalize the shape of output and mask to 4D
+  uvec4 generalized_out_sizes{1u, 1u, 1u, 1u},
+      generalized_mask_sizes{1u, 1u, 1u, 1u};
+  int add_out_ndims = static_cast<int>(4 - out_sizes.size());
+  for (int i = 0; (unsigned)i < out_sizes.size(); i++) {
+    generalized_out_sizes.data[i + add_out_ndims] = out_sizes[i];
+  }
+  int add_mask_ndims = static_cast<int>(4 - mask_sizes.size());
+  for (int i = 0; (unsigned)i < mask_sizes.size(); i++) {
+    generalized_mask_sizes.data[i + add_mask_ndims] = mask_sizes[i];
+  }
+
+  auto out_ndims = safe_downcast<uint32_t>(out_sizes.size());
+
+  // channels of mask and output after padding to nearest multiple of 4
+  uint32_t mask_c_aligned =
+      api::utils::align_up(generalized_mask_sizes.data[1u], 4u);
+  uint32_t out_c_aligned =
+      api::utils::align_up(generalized_out_sizes.data[1u], 4u);
+
+  // compute the repeats needed to output a tensor of out_sizes by doing
+  // repeat operation on self
+  auto add_ndims = out_ndims - in_ndims;
+  std::vector<int64_t> repeats;
+  for (int i = 0; (unsigned)i < out_ndims; i++) {
+    if ((unsigned)i < add_ndims || in_sizes[i - add_ndims] == 1) {
+      repeats.push_back(out_sizes[i]);
+    } else {
+      repeats.push_back(1);
+    }
+  }
+
+  // generate the output of out_sizes by doing repeat operation on self
+  at::Tensor out = self.repeat(repeats);
+  vTensor& v_out = convert(out);
+
+  const struct Block final {
+    ivec3 outExtents;
+    int32_t fill0;
+    ivec3 maskExtents;
+    int32_t fill1;
+    uvec4 outTensorSize;
+    uvec4 maskTensorSize;
+    uvec2 alignedChannelInfo;
+    float value;
+  } block{
+      api::utils::make_ivec3(v_out.extents()),
+      0,
+      api::utils::make_ivec3(v_mask.extents()),
+      0,
+      generalized_out_sizes,
+      generalized_mask_sizes,
+      {out_c_aligned, mask_c_aligned},
+      value.to<float>(),
+  };
+
+  api::UniformParamsBuffer params(context, block);
+  api::PipelineBarrier pipeline_barrier{};
+
+  // One possible implementation of masked_fill is to do repeat operation on
+  // mask and generate a broadcasted mask of the same shape as the output, and
+  // then fill elements of the output with value where mask is True. However the
+  // repeat operation on mask would cause extra time and space overhead.
+  // Instead, in the shader file we traverse through the original mask and
+  // compute the corresponding broadcasted positions in the output tensor when a
+  // mask value is True.
+  context->submit_compute_job(
+      // shader descriptor
+      VK_KERNEL(masked_fill),
+      // pipeline barrier
+      pipeline_barrier,
+      // global work group size
+      v_mask.extents(),
+      // local work group size
+      adaptive_work_group_size(v_mask.extents()),
+      // fence handle
+      VK_NULL_HANDLE,
+      // shader arguments
+      v_out.image(
+          pipeline_barrier,
+          api::PipelineStage::COMPUTE,
+          api::MemoryAccessType::READ | api::MemoryAccessType::WRITE),
+      v_mask.image(pipeline_barrier, api::PipelineStage::COMPUTE),
+      // params buffer
+      params.buffer());
+
+  return convert(v_out);
+}
+
+Tensor masked_fill_tensor(
+    const Tensor& self_arg,
+    const Tensor& mask_arg,
+    const Tensor& value) {
+  TORCH_CHECK(
+      value.dim() == 0,
+      "masked_fill only supports a 0-dimensional value tensor, but got tensor with ",
+      value.dim(),
+      " dimension(s).");
+  return masked_fill_scalar(self_arg, mask_arg, value.item<float>());
+}
+
+#ifdef USE_VULKAN_API
+
+TORCH_LIBRARY_IMPL(aten, Vulkan, m) {
+  m.impl(
+      TORCH_SELECTIVE_NAME("aten::masked_fill.Scalar"),
+      TORCH_FN(masked_fill_scalar));
+  m.impl(
+      TORCH_SELECTIVE_NAME("aten::masked_fill.Tensor"),
+      TORCH_FN(masked_fill_tensor));
+}
+
+#endif /* USE_VULKAN_API */
+
+} // namespace
+} // namespace ops
+} // namespace vulkan
+} // namespace native
+} // namespace at
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 8 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `vulkan`, `ops`, `api`, `native`, `at`
+
+**Classes/Structs**: `Block`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native/vulkan/ops`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/native/vulkan/ops/Common.h`
+- `ATen/native/vulkan/ops/Utils.h`
+- `torch/library.h`
+- `vector`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native/vulkan/ops`):
+
+- [`Convert.h_docs.md`](./Convert.h_docs.md)
+- [`Batchnorm.cpp_docs.md`](./Batchnorm.cpp_docs.md)
+- [`Slice.cpp_docs.md`](./Slice.cpp_docs.md)
+- [`Lerp.cpp_docs.md`](./Lerp.cpp_docs.md)
+- [`Shape.cpp_docs.md`](./Shape.cpp_docs.md)
+- [`Mean.cpp_docs.md`](./Mean.cpp_docs.md)
+- [`UnaryOp.cpp_docs.md`](./UnaryOp.cpp_docs.md)
+- [`Permute.cpp_docs.md`](./Permute.cpp_docs.md)
+- [`Unsqueeze.cpp_docs.md`](./Unsqueeze.cpp_docs.md)
+- [`Stack.cpp_docs.md`](./Stack.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `MaskedFill.cpp_docs.md`
+- **Keyword Index**: `MaskedFill.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native/vulkan/ops`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native/vulkan/ops`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native/vulkan/ops`):
+
+- [`Lerp.cpp_kw.md_docs.md`](./Lerp.cpp_kw.md_docs.md)
+- [`Select.cpp_docs.md_docs.md`](./Select.cpp_docs.md_docs.md)
+- [`Batchnorm.h_docs.md_docs.md`](./Batchnorm.h_docs.md_docs.md)
+- [`Lstm.cpp_kw.md_docs.md`](./Lstm.cpp_kw.md_docs.md)
+- [`Concat.cpp_kw.md_docs.md`](./Concat.cpp_kw.md_docs.md)
+- [`Convolution.cpp_docs.md_docs.md`](./Convolution.cpp_docs.md_docs.md)
+- [`Zero.cpp_kw.md_docs.md`](./Zero.cpp_kw.md_docs.md)
+- [`Gru.h_kw.md_docs.md`](./Gru.h_kw.md_docs.md)
+- [`Repeat.cpp_kw.md_docs.md`](./Repeat.cpp_kw.md_docs.md)
+- [`Register.cpp_docs.md_docs.md`](./Register.cpp_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `MaskedFill.cpp_docs.md_docs.md`
+- **Keyword Index**: `MaskedFill.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

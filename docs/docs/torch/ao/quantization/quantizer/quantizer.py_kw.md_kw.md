@@ -1,0 +1,89 @@
+# Keyword Index: `docs/torch/ao/quantization/quantizer/quantizer.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/ao/quantization/quantizer/quantizer.py_kw.md](../../../../../../docs/torch/ao/quantization/quantizer/quantizer.py_kw.md)
+- **Documentation**: [`quantizer.py_kw.md_docs.md`](./quantizer.py_kw.md_docs.md)
+- **Folder**: `docs/torch/ao/quantization/quantizer`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ABC`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Analysis`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Annotated`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Architecture`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Basic`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Callable`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Classs`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Complete`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Considerations`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Dependencies`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`DerivedQuantizationSpec`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Design`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Detailed`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Documentation`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Efficiency`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Extracted`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`File`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`FixedQParamsQuantizationSpec`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Folder`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Functions`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Generated`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`High`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`How`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Imports`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`In`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Index`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Information`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Keyword`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Keywords`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Level`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Map`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Metadata`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Node`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`ObserverOrFakeQuantize`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Original`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Overview`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Performance`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Purpose`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`PyTorch`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`QuantizationSpec`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`QuantizationSpecBase`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Quantizer`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Related`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Repository`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Safety`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Section`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Security`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`SharedQuantizationSpec`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Source`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`System`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Tensor`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Testing`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`The`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`This`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+- **`Usage`**: [quantizer.py_kw.md_docs.md](./quantizer.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,86 @@
+# Keyword Index: `docs/torch/utils/data/datapipes/datapipe.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/utils/data/datapipes/datapipe.py_kw.md](../../../../../../docs/torch/utils/data/datapipes/datapipe.py_kw.md)
+- **Documentation**: [`datapipe.py_kw.md_docs.md`](./datapipe.py_kw.md_docs.md)
+- **Folder**: `docs/torch/utils/data/datapipes`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Architecture`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Basic`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Callable`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Classs`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Complete`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Considerations`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`DFIterDataPipe`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`DataChunk`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Dataset`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Dependencies`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Design`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Detailed`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Documentation`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Efficiency`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Extracted`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`File`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Folder`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Functions`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Generated`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`High`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`How`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Imports`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`In`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Index`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Information`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`IterDataPipe`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`IterableWrapper`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Keyword`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Keywords`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Level`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Map`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`MapDataPipe`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Metadata`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Original`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Overview`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Performance`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Purpose`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`PyTorch`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Related`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Repository`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Safety`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Section`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Security`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`SequenceWrapper`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Source`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`System`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Testing`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`The`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`This`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`TypeVar`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+- **`Usage`**: [datapipe.py_kw.md_docs.md](./datapipe.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

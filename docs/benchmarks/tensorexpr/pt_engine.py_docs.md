@@ -1,0 +1,201 @@
+# Documentation: `benchmarks/tensorexpr/pt_engine.py`
+
+## File Metadata
+
+- **Path**: `benchmarks/tensorexpr/pt_engine.py`
+- **Size**: 2,340 bytes (2.29 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file contains **examples or benchmarks**.
+
+## Original Source
+
+```python
+import torch
+
+
+class TorchTensorEngine:
+    def rand(self, shape, device=None, dtype=None, requires_grad=False):
+        return torch.rand(
+            shape, device=device, dtype=dtype, requires_grad=requires_grad
+        )
+
+    def randn(self, shape, device=None, dtype=None, requires_grad=False):
+        return torch.randn(
+            shape, device=device, dtype=dtype, requires_grad=requires_grad
+        )
+
+    def nchw_rand(self, shape, device=None, requires_grad=False):
+        return self.rand(shape, device=device, requires_grad=requires_grad)
+
+    def reset(self, _):
+        pass
+
+    def rand_like(self, v):
+        return torch.rand_like(v)
+
+    def numpy(self, t):
+        return t.cpu().numpy()
+
+    def mul(self, t1, t2):
+        return t1 * t2
+
+    def add(self, t1, t2):
+        return t1 + t2
+
+    def batch_norm(self, data, mean, var, training):
+        return torch.nn.functional.batch_norm(data, mean, var, training=training)
+
+    def instance_norm(self, data):
+        return torch.nn.functional.instance_norm(data)
+
+    def layer_norm(self, data, shape):
+        return torch.nn.functional.layer_norm(data, shape)
+
+    def sync_cuda(self):
+        torch.cuda.synchronize()
+
+    def backward(self, tensors, grad_tensors, _):
+        torch.autograd.backward(tensors, grad_tensors=grad_tensors)
+
+    def sum(self, data, dims):
+        return torch.sum(data, dims)
+
+    def softmax(self, data, dim=None, dtype=None):
+        return torch.nn.functional.softmax(data, dim, dtype)
+
+    def cat(self, inputs, dim=0):
+        return torch.cat(inputs, dim=dim)
+
+    def clamp(self, data, min, max):
+        return torch.clamp(data, min=min, max=max)
+
+    def relu(self, data):
+        return torch.nn.functional.relu(data)
+
+    def tanh(self, data):
+        return torch.tanh(data)
+
+    def max_pool2d(self, data, kernel_size, stride=1):
+        return torch.nn.functional.max_pool2d(data, kernel_size, stride=stride)
+
+    def avg_pool2d(self, data, kernel_size, stride=1):
+        return torch.nn.functional.avg_pool2d(data, kernel_size, stride=stride)
+
+    def conv2d_layer(self, ic, oc, kernel_size, groups=1):
+        return torch.nn.Conv2d(ic, oc, kernel_size, groups=groups)
+
+    def matmul(self, t1, t2):
+        return torch.matmul(t1, t2)
+
+    def to_device(self, module, device):
+        return module.to(device)
+
+```
+
+
+
+## High-Level Overview
+
+
+This Python file contains 1 class(es) and 24 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `TorchTensorEngine`
+
+**Functions defined**: `rand`, `randn`, `nchw_rand`, `reset`, `rand_like`, `numpy`, `mul`, `add`, `batch_norm`, `instance_norm`, `layer_norm`, `sync_cuda`, `backward`, `sum`, `softmax`, `cat`, `clamp`, `relu`, `tanh`, `max_pool2d`
+
+**Key imports**: torch
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `benchmarks/tensorexpr`, which is part of the PyTorch project infrastructure.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `torch`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Neural Network**: Defines or uses PyTorch neural network components
+- **Automatic Differentiation**: Uses autograd for gradient computation
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`benchmarks/tensorexpr`):
+
+- [`microbenchmarks.py_docs.md`](./microbenchmarks.py_docs.md)
+- [`HowToRun.md_docs.md`](./HowToRun.md_docs.md)
+- [`rnn_eltwise.py_docs.md`](./rnn_eltwise.py_docs.md)
+- [`concat.py_docs.md`](./concat.py_docs.md)
+- [`matmul.py_docs.md`](./matmul.py_docs.md)
+- [`conv.py_docs.md`](./conv.py_docs.md)
+- [`reduction.py_docs.md`](./reduction.py_docs.md)
+- [`broadcast.py_docs.md`](./broadcast.py_docs.md)
+- [`swish.py_docs.md`](./swish.py_docs.md)
+- [`normalization.py_docs.md`](./normalization.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `pt_engine.py_docs.md`
+- **Keyword Index**: `pt_engine.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

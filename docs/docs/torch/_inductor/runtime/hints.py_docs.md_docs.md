@@ -1,0 +1,469 @@
+# Documentation: `docs/torch/_inductor/runtime/hints.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/_inductor/runtime/hints.py_docs.md`
+- **Size**: 10,219 bytes (9.98 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/_inductor/runtime/hints.py`
+
+## File Metadata
+
+- **Path**: `torch/_inductor/runtime/hints.py`
+- **Size**: 7,041 bytes (6.88 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This is a python source code that is part of the PyTorch project.
+
+## Original Source
+
+```python
+# mypy: allow-untyped-defs
+from __future__ import annotations
+
+import collections
+import functools
+import typing
+from enum import auto, Enum
+
+import torch
+from torch.utils._triton import has_triton_package
+
+
+# The following maximums only apply to runtime autotuning, when using FixedTritonConfig one may see larger values
+# NOTE: if these fail asserts submit a PR to increase them
+TRITON_MAX_BLOCK = {
+    "X": 8192 if torch.version.hip else 4096,
+    "Y": 1024,
+    "Z": 1024,
+    "R0_": 4096 * 16,  # * 16 is multi-kernel only
+    "R1_": 2048 * 16,  # * 16 is multi-kernel only
+}
+TRITON_MAX_RSPLIT = 64
+
+
+class ReductionHint(Enum):
+    INNER = 0
+    OUTER = 1
+    OUTER_TINY = 2
+    DEFAULT = 3
+
+
+class TileHint(Enum):
+    SQUARE = 0
+    DEFAULT = 1
+
+
+# Define `AttrsDescriptorWrapper` function with clear conditional handling
+if has_triton_package():
+    import triton
+    import triton.backends.compiler
+    import triton.compiler.compiler
+
+    if hasattr(triton.backends.compiler, "AttrsDescriptor"):
+        # Triton 3.2.0 - the second implementation
+        from triton.backends.compiler import AttrsDescriptor
+
+        def AttrsDescriptorWrapper(
+            divisible_by_16=None,
+            equal_to_1=None,
+        ):
+            # Prepare the arguments for AttrsDescriptor
+            kwargs = {
+                "tt.divisibility": divisible_by_16,
+                "tt.equal_to": equal_to_1,
+            }
+
+            # Instantiate AttrsDescriptor with the prepared arguments
+            res = AttrsDescriptor.from_dict(
+                {"arg_properties": kwargs, "cls": AttrsDescriptor.__name__}
+            )
+            assert res.property_values["tt.divisibility"] == 16
+            assert res.property_values["tt.equal_to"] == 1
+            return res
+
+    elif hasattr(triton.compiler.compiler, "AttrsDescriptor"):
+        # Triton 3.0.0 - the original implementation
+        from triton.compiler.compiler import AttrsDescriptor
+
+        def AttrsDescriptorWrapper(
+            divisible_by_16=None,
+            equal_to_1=None,
+        ):
+            # Prepare the arguments for AttrsDescriptor
+            kwargs = {
+                "divisible_by_16": divisible_by_16,
+                "equal_to_1": equal_to_1,
+            }
+
+            # Instantiate AttrsDescriptor with the prepared arguments
+            return AttrsDescriptor(**kwargs)
+
+    else:
+        # Triton in 2025:
+        # note: there's also a range of triton commits not currently supported
+        # from ~Dec 9, 2024 to Jan 1 2025, in which AttrsDescriptors are still
+        # used, but the contents are different.
+
+        def AttrsDescriptorWrapper(
+            divisible_by_16=None,
+            equal_to_1=None,
+        ):
+            # pyrefly: ignore [not-iterable]
+            return {(x,): [["tt.divisibility", 16]] for x in divisible_by_16}
+
+else:
+    # Define a namedtuple as a fallback when AttrsDescriptor is not available
+    AttrsDescriptorWrapper = collections.namedtuple(  # type: ignore[no-redef, name-match]
+        # pyrefly: ignore [invalid-argument]
+        "AttrsDescriptor",
+        ["divisible_by_16", "equal_to_1"],
+        defaults=[(), ()],
+    )
+
+
+_NUM_THREADS_PER_WARP = 32
+
+
+class HeuristicType(Enum):
+    PERSISTENT_REDUCTION = auto()
+    POINTWISE = auto()
+    REDUCTION = auto()
+    SPLIT_SCAN = auto()
+    TEMPLATE = auto()
+    USER_AUTOTUNE = auto()
+    FIXED = auto()
+
+
+class AutotuneHint(Enum):
+    ONE_ELEMENT_PER_THREAD = 0
+
+    # Triton codegen tries to codegen set of AutotuneHints.
+    # Enum.__repr__ looks like "<AutotuneHint.ELEMENTS_PER_WARP_32: 0>""
+    # which isn't valid python.
+    # Enum.__str__ will just return "AutotuneHint.ELEMENTS_PER_WARP_32".
+    __repr__ = Enum.__str__
+
+
+class DeviceProperties(typing.NamedTuple):
+    """Copy device properties into a data structure not requiring torch to be imported"""
+
+    type: str  # type: ignore[assignment]
+    index: int  # type: ignore[assignment]
+    multi_processor_count: int
+    cc: int
+    major: int | None = None
+    regs_per_multiprocessor: int | None = None
+    max_threads_per_multi_processor: int | None = None
+    warp_size: int | None = None
+
+    @classmethod
+    @functools.cache
+    def create(cls, device) -> DeviceProperties:
+        import torch
+        from torch._dynamo.device_interface import get_interface_for_device
+
+        device_type = device.type
+
+        if torch.version.hip and device_type == "cuda":
+            device_type = "hip"
+
+        device_interface = get_interface_for_device(device)
+        props = device_interface.get_device_properties(device)
+        try:
+            multi_processor_count = props.multi_processor_count
+        except AttributeError:
+            if device_type == "xpu":
+                multi_processor_count = props.gpu_subslice_count
+            elif device_type == "mtia":
+                multi_processor_count = 64
+            else:
+                raise
+        return cls(
+            type=device_type,
+            index=device.index,
+            multi_processor_count=multi_processor_count,
+            cc=device_interface.get_compute_capability(device),
+            major=getattr(props, "major", None),
+            regs_per_multiprocessor=getattr(props, "regs_per_multiprocessor", None),
+            max_threads_per_multi_processor=getattr(
+                props, "max_threads_per_multi_processor", None
+            ),
+            warp_size=getattr(props, "warp_size", 32 if device_type != "cpu" else None),
+        )
+
+
+class HalideInputSpec(typing.NamedTuple):
+    ctype: str
+    name: str
+    shape: list[str] | None = None
+    stride: list[str] | None = None
+    offset: str | None = None
+    alias_of: str | None = None
+
+    def bindings_type(self) -> str:
+        if self.ctype in ("at::Half*", "at::BFloat16*"):
+            return "uint16_t*"  # half not defined
+        return self.ctype
+
+    def halide_type(self) -> str:
+        if self.ctype == "at::Half*":
+            return "halide_type_t(halide_type_float, 16)"  # half not defined
+        if self.ctype == "at::BFloat16*":
+            return "halide_type_t(halide_type_bfloat, 16)"  # half not defined
+        return f"halide_type_of<{self.ctype.replace('*', '')}>()"
+
+    def is_scalar(self) -> bool:
+        return self.shape is None
+
+    def is_buffer(self) -> bool:
+        return self.shape is not None
+
+
+class HalideMeta(typing.NamedTuple):
+    argtypes: list[HalideInputSpec]
+    target: str
+    scheduler: str | None = None
+    scheduler_flags: dict[str, int | str] | None = None
+    cuda_device: int | None = None
+
+    def args(self) -> list[str]:
+        """Command line args to pass to halide generator"""
+        args = [f"target={self.target}"]
+        if self.scheduler:
+            args.append(f"autoscheduler={self.scheduler}")
+        if self.scheduler_flags:
+            assert self.scheduler
+            for k, v in self.scheduler_flags.items():
+                args.append(f"autoscheduler.{k}={v}")
+        return args
+
+    def is_cuda(self) -> bool:
+        return self.cuda_device is not None
+
+```
+
+
+
+## High-Level Overview
+
+
+This Python file contains 7 class(es) and 10 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `ReductionHint`, `TileHint`, `HeuristicType`, `AutotuneHint`, `DeviceProperties`, `HalideInputSpec`, `HalideMeta`
+
+**Functions defined**: `AttrsDescriptorWrapper`, `AttrsDescriptorWrapper`, `AttrsDescriptorWrapper`, `create`, `bindings_type`, `halide_type`, `is_scalar`, `is_buffer`, `args`, `is_cuda`
+
+**Key imports**: annotations, collections, functools, typing, auto, Enum, torch, has_triton_package, triton, triton.backends.compiler, triton.compiler.compiler
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/_inductor/runtime`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `__future__`: annotations
+- `collections`
+- `functools`
+- `typing`
+- `enum`: auto, Enum
+- `torch`
+- `torch.utils._triton`: has_triton_package
+- `triton`
+- `triton.backends.compiler`
+- `triton.compiler.compiler`
+- `torch._dynamo.device_interface`: get_interface_for_device
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Error Handling**: Includes exception handling
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Implements or uses **caching** mechanisms.
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/_inductor/runtime`):
+
+- [`static_cuda_launcher.py_docs.md`](./static_cuda_launcher.py_docs.md)
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`coordinate_descent_tuner.py_docs.md`](./coordinate_descent_tuner.py_docs.md)
+- [`autotune_cache.py_docs.md`](./autotune_cache.py_docs.md)
+- [`triton_heuristics.py_docs.md`](./triton_heuristics.py_docs.md)
+- [`debug_utils.py_docs.md`](./debug_utils.py_docs.md)
+- [`compile_tasks.py_docs.md`](./compile_tasks.py_docs.md)
+- [`triton_compat.py_docs.md`](./triton_compat.py_docs.md)
+- [`cache_dir_utils.py_docs.md`](./cache_dir_utils.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `hints.py_docs.md`
+- **Keyword Index**: `hints.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/_inductor/runtime`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/_inductor/runtime`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Error Handling**: Includes exception handling
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Implements or uses **caching** mechanisms.
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/_inductor/runtime`):
+
+- [`README.md_docs.md_docs.md`](./README.md_docs.md_docs.md)
+- [`hints.py_kw.md_docs.md`](./hints.py_kw.md_docs.md)
+- [`cache_dir_utils.py_kw.md_docs.md`](./cache_dir_utils.py_kw.md_docs.md)
+- [`cache_dir_utils.py_docs.md_docs.md`](./cache_dir_utils.py_docs.md_docs.md)
+- [`halide_helpers.py_docs.md_docs.md`](./halide_helpers.py_docs.md_docs.md)
+- [`debug_utils.py_docs.md_docs.md`](./debug_utils.py_docs.md_docs.md)
+- [`runtime_utils.py_kw.md_docs.md`](./runtime_utils.py_kw.md_docs.md)
+- [`static_cuda_launcher.py_docs.md_docs.md`](./static_cuda_launcher.py_docs.md_docs.md)
+- [`static_cuda_launcher.py_kw.md_docs.md`](./static_cuda_launcher.py_kw.md_docs.md)
+- [`__init__.py_docs.md_docs.md`](./__init__.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `hints.py_docs.md_docs.md`
+- **Keyword Index**: `hints.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

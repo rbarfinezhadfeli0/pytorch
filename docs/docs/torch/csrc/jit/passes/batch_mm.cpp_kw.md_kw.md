@@ -1,0 +1,86 @@
+# Keyword Index: `docs/torch/csrc/jit/passes/batch_mm.cpp_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/csrc/jit/passes/batch_mm.cpp_kw.md](../../../../../../docs/torch/csrc/jit/passes/batch_mm.cpp_kw.md)
+- **Documentation**: [`batch_mm.cpp_kw.md_docs.md`](./batch_mm.cpp_kw.md_docs.md)
+- **Folder**: `docs/torch/csrc/jit/passes`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Analysis`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Architecture`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Basic`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`BatchMM`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`BatchMMSide`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`BatchMMTreeReduce`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Class`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Complete`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Considerations`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Dependencies`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Design`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Detailed`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Documentation`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Efficiency`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Exception`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Extracted`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`File`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Folder`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Functions`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Generated`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`High`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`How`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`In`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Includes`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Index`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Information`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Keyword`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Keywords`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Level`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Map`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Metadata`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Namespaces`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Original`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Overview`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Performance`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Purpose`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`PyTorch`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Related`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Repository`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Safety`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Section`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Security`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Side`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Source`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Structs`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`System`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Testing`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`The`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`This`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`TreeToken`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+- **`Usage`**: [batch_mm.cpp_kw.md_docs.md](./batch_mm.cpp_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

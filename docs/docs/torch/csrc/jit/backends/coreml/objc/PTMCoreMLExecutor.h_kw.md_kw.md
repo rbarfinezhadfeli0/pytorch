@@ -1,0 +1,77 @@
+# Keyword Index: `docs/torch/csrc/jit/backends/coreml/objc/PTMCoreMLExecutor.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/csrc/jit/backends/coreml/objc/PTMCoreMLExecutor.h_kw.md](../../../../../../../../docs/torch/csrc/jit/backends/coreml/objc/PTMCoreMLExecutor.h_kw.md)
+- **Documentation**: [`PTMCoreMLExecutor.h_kw.md_docs.md`](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **Folder**: `docs/torch/csrc/jit/backends/coreml/objc`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`Architecture`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`Basic`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`Complete`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`Considerations`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`Dependencies`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`Design`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`Detailed`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`Documentation`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`Efficiency`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`Extracted`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`File`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`Folder`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`Generated`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`High`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`How`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`In`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`Index`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`Information`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`Keyword`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`Keywords`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`Level`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`Map`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`Metadata`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`No`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`Original`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`Overview`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`PTMCoreMLExecutor`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`Performance`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`Purpose`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`PyTorch`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`Related`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`Repository`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`Safety`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`Section`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`Security`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`See`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`Source`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`System`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`Testing`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`The`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`This`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+- **`Usage`**: [PTMCoreMLExecutor.h_kw.md_docs.md](./PTMCoreMLExecutor.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

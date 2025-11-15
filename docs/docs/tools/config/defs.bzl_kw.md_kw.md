@@ -1,0 +1,92 @@
+# Keyword Index: `docs/tools/config/defs.bzl_kw.md`
+
+## File Information
+
+- **Original File**: [docs/tools/config/defs.bzl_kw.md](../../../../docs/tools/config/defs.bzl_kw.md)
+- **Documentation**: [`defs.bzl_kw.md_docs.md`](./defs.bzl_kw.md_docs.md)
+- **Folder**: `docs/tools/config`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Architecture`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Basic`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Because`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`CUDA`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Complete`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`ComputeCPP`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Considerations`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`DGOOGLE_CUDA`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Dependencies`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Design`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Detailed`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Documentation`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Efficiency`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Extracted`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`FIXME`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`False`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`File`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Folder`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`GPU`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Generated`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Helper`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`High`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`How`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`However`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Identifiers`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`In`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Index`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Information`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Instead`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Keyword`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Keywords`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Level`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Macros`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Map`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Metadata`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Most`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`NOTE`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Original`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Overview`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Performance`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Purpose`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`PyTorch`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`ROCM`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Related`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Repository`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`SYCL`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Safety`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Section`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Security`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Source`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`System`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`TensorRT`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Tensorflow`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Testing`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`The`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`This`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+- **`Usage`**: [defs.bzl_kw.md_docs.md](./defs.bzl_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

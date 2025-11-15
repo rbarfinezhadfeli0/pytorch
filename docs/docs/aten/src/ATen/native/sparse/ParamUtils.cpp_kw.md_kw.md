@@ -1,0 +1,82 @@
+# Keyword Index: `docs/aten/src/ATen/native/sparse/ParamUtils.cpp_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/native/sparse/ParamUtils.cpp_kw.md](../../../../../../../docs/aten/src/ATen/native/sparse/ParamUtils.cpp_kw.md)
+- **Documentation**: [`ParamUtils.cpp_kw.md_docs.md`](./ParamUtils.cpp_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/native/sparse`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`Analysis`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`Architecture`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`Basic`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`Complete`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`Considerations`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`Dependencies`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`Design`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`Detailed`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`Documentation`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`Efficiency`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`Extracted`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`File`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`Folder`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`Generated`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`High`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`How`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`In`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`Includes`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`Index`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`Information`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`Keyword`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`Keywords`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`Level`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`Map`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`Metadata`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`Namespaces`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`NativeFunctions`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`Original`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`Overview`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`ParamUtils`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`Performance`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`Purpose`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`PyTorch`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`Related`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`Repository`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`Safety`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`Section`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`Security`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`Source`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`System`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`Tensor`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`TensorUtils`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`Testing`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`The`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`This`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`Usage`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+- **`WrapDimUtils`**: [ParamUtils.cpp_kw.md_docs.md](./ParamUtils.cpp_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,83 @@
+# Keyword Index: `docs/torch/ao/quantization/fx/pattern_utils.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/ao/quantization/fx/pattern_utils.py_kw.md](../../../../../../docs/torch/ao/quantization/fx/pattern_utils.py_kw.md)
+- **Documentation**: [`pattern_utils.py_kw.md_docs.md`](./pattern_utils.py_kw.md_docs.md)
+- **Folder**: `docs/torch/ao/quantization/fx`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Any`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Architecture`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Basic`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Classs`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Complete`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Considerations`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`ConvOrLinearBNReLUFusion`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Dependencies`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Design`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Detailed`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Documentation`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Efficiency`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Extracted`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`File`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`FixedQParamsFakeQuantize`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Folder`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Functions`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Generated`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`High`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`How`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Imports`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`In`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Index`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Information`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Keyword`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Keywords`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Level`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Map`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Metadata`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`ObserverBase`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`OrderedDict`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Original`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Overview`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Pattern`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Performance`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Purpose`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`PyTorch`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Related`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Repository`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Safety`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Section`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Security`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Source`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`System`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Testing`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`The`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`This`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+- **`Usage`**: [pattern_utils.py_kw.md_docs.md](./pattern_utils.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

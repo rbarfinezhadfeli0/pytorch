@@ -1,0 +1,513 @@
+# Documentation: `docs/tools/BUCK.bzl_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/tools/BUCK.bzl_docs.md`
+- **Size**: 10,011 bytes (9.78 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**. This file is a **utility or tool script**.
+
+## Original Source
+
+```markdown
+# Documentation: `tools/BUCK.bzl`
+
+## File Metadata
+
+- **Path**: `tools/BUCK.bzl`
+- **Size**: 7,782 bytes (7.60 KB)
+- **Type**: Source File (.bzl)
+- **Extension**: `.bzl`
+
+## File Purpose
+
+This file is a **utility or tool script**.
+
+## Original Source
+
+```
+# @lint-ignore-every FBCODEBZLADDLOADS
+load("@fbsource//tools/build_defs:glob_defs.bzl", "subdir_glob")
+
+# shared by internal and OSS BUCK
+def define_tools_targets(
+        python_binary,
+        python_library,
+        python_test,
+        third_party,
+        torchgen_deps,
+        contacts = []):
+    python_library(
+        name = "substitutelib",
+        srcs = ["substitute.py"],
+        base_module = "",
+    )
+
+    python_binary(
+        name = "substitute",
+        main_module = "substitute",
+        visibility = ["PUBLIC"],
+        deps = [
+            ":substitutelib",
+        ],
+    )
+
+    python_library(
+        name = "jit",
+        srcs = glob([
+            "jit/*.py",
+            "jit/templates/*",
+        ]),
+        base_module = "tools",
+        visibility = ["PUBLIC"],
+        deps = [
+            torchgen_deps,
+        ],
+    )
+
+    python_binary(
+        name = "gen_unboxing_bin",
+        main_module = "tools.jit.gen_unboxing",
+        visibility = [
+            "PUBLIC",
+        ],
+        deps = [
+            ":jit",
+        ],
+    )
+
+    python_library(
+        name = "gen_selected_mobile_ops_header",
+        srcs = ["lite_interpreter/gen_selected_mobile_ops_header.py"],
+        base_module = "tools",
+        visibility = ["PUBLIC"],
+    )
+
+    python_library(
+        name = "gen_oplist_lib",
+        srcs = subdir_glob([
+            ("code_analyzer", "gen_oplist.py"),
+            ("code_analyzer", "gen_op_registration_allowlist.py"),
+        ]),
+        base_module = "tools.code_analyzer",
+        tests = [
+            ":gen_oplist_test",
+        ],
+        visibility = ["PUBLIC"],
+        deps = [
+            ":gen_selected_mobile_ops_header",
+            torchgen_deps,
+            third_party("pyyaml"),
+        ],
+    )
+
+    python_binary(
+        name = "gen_oplist",
+        main_module = "tools.code_analyzer.gen_oplist",
+        visibility = ["PUBLIC"],
+        deps = [
+            ":gen_oplist_lib",
+        ],
+    )
+
+    python_library(
+        name = "gen_operators_yaml_lib",
+        srcs = subdir_glob([
+            ("code_analyzer", "gen_operators_yaml.py"),
+            ("code_analyzer", "gen_op_registration_allowlist.py"),
+        ]),
+        base_module = "",
+        tests = [
+            ":gen_operators_yaml_test",
+        ],
+        deps = [
+            third_party("pyyaml"),
+            torchgen_deps,
+        ],
+    )
+
+    python_binary(
+        name = "gen_operators_yaml",
+        main_module = "gen_operators_yaml",
+        visibility = ["PUBLIC"],
+        deps = [
+            ":gen_operators_yaml_lib",
+        ],
+    )
+
+    python_library(
+        name = "autograd",
+        srcs = glob(["autograd/*.py"]),
+        base_module = "tools",
+        resources = [
+            "autograd/deprecated.yaml",
+            "autograd/derivatives.yaml",
+            "autograd/templates/ADInplaceOrViewType.cpp",
+            "autograd/templates/Functions.cpp",
+            "autograd/templates/Functions.h",
+            "autograd/templates/TraceType.cpp",
+            "autograd/templates/VariableType.cpp",
+            "autograd/templates/VariableType.h",
+            "autograd/templates/ViewFuncs.cpp",
+            "autograd/templates/ViewFuncs.h",
+            "autograd/templates/annotated_fn_args.py.in",
+            "autograd/templates/python_enum_tag.cpp",
+            "autograd/templates/python_fft_functions.cpp",
+            "autograd/templates/python_functions.cpp",
+            "autograd/templates/python_functions.h",
+            "autograd/templates/python_linalg_functions.cpp",
+            "autograd/templates/python_nested_functions.cpp",
+            "autograd/templates/python_nn_functions.cpp",
+            "autograd/templates/python_return_types.h",
+            "autograd/templates/python_return_types.cpp",
+            "autograd/templates/python_sparse_functions.cpp",
+            "autograd/templates/python_special_functions.cpp",
+            "autograd/templates/python_torch_functions.cpp",
+            "autograd/templates/python_variable_methods.cpp",
+            "autograd/templates/variable_factories.h",
+        ],
+        visibility = ["PUBLIC"],
+        deps = [
+            third_party("pyyaml"),
+            torchgen_deps,
+        ],
+    )
+
+    python_library(
+        name = "generate_code",
+        srcs = [
+            "setup_helpers/generate_code.py",
+        ],
+        base_module = "tools",
+        deps = [
+            ":autograd",
+            ":jit",
+            torchgen_deps,
+        ],
+    )
+
+    python_binary(
+        name = "generate_code_bin",
+        main_module = "tools.setup_helpers.generate_code",
+        # Windows does not support inplace:
+        # https://github.com/facebook/buck/issues/2161.
+        #
+        # Note that //arvr/mode/embedded/win/clang-aarch64-release sets
+        # its target platform to
+        # ovr_config//platform/embedded:clang-aarch64-linux-release, hence
+        # that is why we are selecting that OS to trigger this behavior.
+        package_style = select({
+            "DEFAULT": "inplace",
+            "ovr_config//os:linux-arm64": "standalone",
+        }),
+        visibility = ["PUBLIC"],
+        # Because Windows does not support inplace packaging, we need to
+        # ensure it is unzipped before executing it, otherwise it will not
+        # be able to find any resources using path manipulation.
+        #
+        # See note above about why the OS is Linux here and not Windows.
+        zip_safe = select({
+            "DEFAULT": True,
+            "ovr_config//os:linux-arm64": False,
+        }),
+        deps = [
+            ":generate_code",
+        ],
+    )
+
+    python_library(
+        name = "gen-version-header-lib",
+        srcs = [
+            "setup_helpers/gen_version_header.py",
+        ],
+        base_module = "",
+        deps = [],
+    )
+
+    python_binary(
+        name = "gen-version-header",
+        main_module = "setup_helpers.gen_version_header",
+        visibility = ["PUBLIC"],
+        deps = [
+            ":gen-version-header-lib",
+        ],
+    )
+
+    python_library(
+        name = "gen_aten_vulkan_spv_lib",
+        srcs = [
+            "gen_vulkan_spv.py",
+        ],
+        base_module = "tools",
+        deps = [
+            torchgen_deps,
+        ],
+    )
+
+    python_binary(
+        name = "gen_aten_vulkan_spv_bin",
+        main_module = "tools.gen_vulkan_spv",
+        visibility = [
+            "PUBLIC",
+        ],
+        deps = [
+            ":gen_aten_vulkan_spv_lib",
+        ],
+    )
+
+    python_test(
+        name = "vulkan_codegen_test",
+        srcs = [
+            "test/test_vulkan_codegen.py",
+        ],
+        contacts = contacts,
+        visibility = ["PUBLIC"],
+        deps = [
+            ":gen_aten_vulkan_spv_lib",
+        ],
+    )
+
+    python_test(
+        name = "selective_build_test",
+        srcs = [
+            "test/test_selective_build.py",
+        ],
+        contacts = contacts,
+        visibility = ["PUBLIC"],
+        deps = [
+            torchgen_deps,
+        ],
+    )
+
+    python_test(
+        name = "gen_oplist_test",
+        srcs = [
+            "test/gen_oplist_test.py",
+        ],
+        contacts = contacts,
+        visibility = ["PUBLIC"],
+        deps = [
+            ":gen_oplist_lib",
+        ],
+    )
+
+    python_test(
+        name = "gen_operators_yaml_test",
+        srcs = [
+            "test/gen_operators_yaml_test.py",
+        ],
+        visibility = ["PUBLIC"],
+        contacts = contacts,
+        deps = [
+            ":gen_operators_yaml_lib",
+        ],
+    )
+
+    python_test(
+        name = "test_codegen",
+        srcs = [
+            "test/test_codegen.py",
+        ],
+        contacts = contacts,
+        visibility = ["PUBLIC"],
+        deps = [
+            torchgen_deps,
+            ":autograd",
+        ],
+    )
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `tools`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `tools`, which contains **development tools and scripts**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`tools`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`render_junit.py_docs.md`](./render_junit.py_docs.md)
+- [`extract_scripts.py_docs.md`](./extract_scripts.py_docs.md)
+- [`nvcc_fix_deps.py_docs.md`](./nvcc_fix_deps.py_docs.md)
+- [`update_masked_docs.py_docs.md`](./update_masked_docs.py_docs.md)
+- [`optional_submodules.py_docs.md`](./optional_submodules.py_docs.md)
+- [`gen_vulkan_spv.py_docs.md`](./gen_vulkan_spv.py_docs.md)
+- [`generated_dirs.txt_docs.md`](./generated_dirs.txt_docs.md)
+- [`build_libtorch.py_docs.md`](./build_libtorch.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `BUCK.bzl_docs.md`
+- **Keyword Index**: `BUCK.bzl_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/tools`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/tools`, which contains **development tools and scripts**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/tools`):
+
+- [`git_add_generated_dirs.sh_docs.md_docs.md`](./git_add_generated_dirs.sh_docs.md_docs.md)
+- [`update_masked_docs.py_docs.md_docs.md`](./update_masked_docs.py_docs.md_docs.md)
+- [`bazel.bzl_docs.md_docs.md`](./bazel.bzl_docs.md_docs.md)
+- [`nightly_hotpatch.py_docs.md_docs.md`](./nightly_hotpatch.py_docs.md_docs.md)
+- [`README.md_docs.md_docs.md`](./README.md_docs.md_docs.md)
+- [`build_with_debinfo.py_docs.md_docs.md`](./build_with_debinfo.py_docs.md_docs.md)
+- [`extract_scripts.py_docs.md_docs.md`](./extract_scripts.py_docs.md_docs.md)
+- [`bazel.bzl_kw.md_docs.md`](./bazel.bzl_kw.md_docs.md)
+- [`build_with_debinfo.py_kw.md_docs.md`](./build_with_debinfo.py_kw.md_docs.md)
+- [`gen_flatbuffers.sh_kw.md_docs.md`](./gen_flatbuffers.sh_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `BUCK.bzl_docs.md_docs.md`
+- **Keyword Index**: `BUCK.bzl_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

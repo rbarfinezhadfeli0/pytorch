@@ -1,0 +1,362 @@
+# Documentation: `docs/test/test_transformers.py_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/test/test_transformers.py_kw.md`
+- **Size**: 21,523 bytes (21.02 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `test/test_transformers.py`
+
+## File Information
+
+- **Original File**: [test/test_transformers.py](../../test/test_transformers.py)
+- **Documentation**: [`test_transformers.py_docs.md`](./test_transformers.py_docs.md)
+- **Folder**: `test`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`FairseqDecoder`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`MyCustomLayer`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`TestAttnBias`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`TestSDPA`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`TestSDPACpuOnly`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`TestSDPACudaOnly`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`TestSDPAFailureModes`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`TestSDPAXpuOnly`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`TestTransformers`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`def`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+
+### Functions
+
+- **`__init__`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`_broadcast`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`_check_equal`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`_generate_fixed_qkv_helper`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`_get_block_size_n`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`_get_mem_eff_drop_mask`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`_size`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`_test`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`_test_fastpath`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`_test_mha_fastpath_called`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`_test_te_fastpath_called`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`attention_inputs`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`check_out_and_grad`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`compiled_func`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`compute_output_and_grads`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`construct_local_mask`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`convert_flash_attn_S_to_softmax`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`forward`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`func`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`get_a_test_layer`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`get_dropout_mask`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`get_platform_specific_sdpa`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`hook`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`is_causal_kernels`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`normalize_flash_attn_S`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`ones_tensor`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`pad_last_dim`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`perm_fn`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`query_key_value_clones`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`rand_nt`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`rand_sdpa_tensor`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`rand_tensor`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`ref`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`run_test`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`scaled_dot_product_attention`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`sdp_ref`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`sdpa_helper`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_attention`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_attention_preserves_query_layout`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_backends_set_to_math`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_bias_is_none`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_causal_variants`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_causal_variants_compile`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_cpu_flash_attn_nan_propagation`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_cudnn_attention_broken_166211`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_cudnn_attention_compiles`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_cudnn_attention_d256_heuristic`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_cudnn_attention_different_dk_dv`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_cudnn_attention_fail_d128`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_cudnn_attention_gqa`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_cudnn_attention_nonmodulo64seqlen`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_cudnn_attention_preserves_query_layout`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_cudnn_attention_seqlen1_dropout_heuristic`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_cudnn_attention_trivial_output_transpose`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_decoder_only_layer`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_decoder_padding_and_src_mask_bool`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_default_priority_order`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_disable_fastpath`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_dispatch_fails_no_backend`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_encoder_is_causal`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_encoder_padding_and_src_mask_bool`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_flash_atteention_large_bf16_nan_values`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_flash_attention_fail_with_non_square_causal_attention`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_flash_attention_vs_math_ref_grads`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_flash_attention_vs_math_ref_grads_nestedtensor`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_flash_autocast_fp32_bfloat16`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_flash_autocast_fp32_float16`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_flash_backward_failure_sm86plus`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_flash_fail_fp32`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_fully_masked_out_rows`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_fused_attention_broadcasted_input`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_fused_attention_different_dk_dv`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_fused_attention_gqa`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_fused_attention_vs_math_ref_grads_cudagraph`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_fused_backwards_throws_determinism_warning`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_fused_kernels_nested_broadcasting`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_fused_kernels_nested_broadcasting_error_cases`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_fused_kernels_nested_broadcasting_query_dense`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_fused_kernels_nested_broadcasting_requires_grad_failure`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_fused_kernels_seq_len_0_inputs`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_fused_kernels_seq_len_1_inputs`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_fused_sdp_choice`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_fused_sdp_choice_cpu`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_fused_sdp_choice_xpu`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_fused_sdp_priority_order`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_incompatible_mask`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_invalid_fused_inputs_attn_mask_present`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_invalid_fused_inputs_broadcast`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_invalid_fused_inputs_dim_3`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_invalid_fused_inputs_head_dim`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_invalid_fused_inputs_invalid_dtype`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_invalid_inputs_1_dimensional_inputs`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_invalid_inputs_different_datatypes`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_invalid_inputs_different_devices`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_invalid_last_dim_stride`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_invalid_sdpa_kernel_grouped_query_attention_cuda`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_invalid_sequence_lengths`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_is_causal_and_mask_fails`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_is_causal_equals_upper_left`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_is_causal_gpu`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_kpm_mask_trailing_column_with_nested_tensor`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_mask_check_fastpath`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_mask_invalid_last_dim_stride`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_math_backend_high_precision`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_mem_eff_attention_fail_with_batch_size_geq_65536`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_mem_eff_attention_fail_with_batch_size_geq_65536_error`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_mem_eff_attention_large_seq_len_uniform_attention`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_mem_eff_attention_long_sequence_mask`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_mem_eff_attention_non_contig_mask_bug`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_mem_eff_attention_non_contiguous_mask`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_mem_eff_backwards_determinism`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_mem_efficient_attention_attn_mask_vs_math_ref_grads`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_mem_efficient_attention_mask_variants`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_mem_efficient_attention_vs_math_ref_grads`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_mem_efficient_fail_bfloat16_less_than_sm80`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_mha_native_args`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_multiheadattention_fastpath_attn_mask`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_nested_fails_on_padding_head_dim`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_non_masked_rows_nan_props`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_onednn_attention_fail_d576`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_scaled_dot_product_attention`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_scaled_dot_product_attention_cudnn_nested`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_scaled_dot_product_attention_fp16_overflow`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_scaled_dot_product_attention_fused_kernels_packed`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_scaled_dot_product_attention_fused_kernels_packed_accuracy`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_scaled_dot_product_attention_fused_kernels_safe_softmax`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_scaled_dot_product_attention_math_with_negative_scale`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_scaled_dot_product_fused_attention_gqa_vs_math_cpu`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_scaled_dot_product_fused_attention_mask_vs_math`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_scaled_dot_product_fused_attention_mask_vs_math_cpu`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_script_encoder_subclass`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_script_mha_in_proj_weight_none`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_sdp_choice_with_determinism`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_sdp_flash_attention_grad_against_math`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_sdp_math_gradcheck`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_sdp_mem_efficient_grad_against_math`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_sdpa_backward_with_gradient`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_sdpa_with_inf`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_self_attn_TxT_attn_mask`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_singelton_head_dim_stride_ne_1`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_train_with_is_causal`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_train_with_pad_and_catch_error`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_transformer_bias_is_none`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_transformerencoder`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_transformerencoder_fastpath`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_transformerencoder_square_input`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_transformerencoderlayer_no_fastpath_with_hooks`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_transformerencoderlayer_src_mask`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_transformerencoderlayer_subclass`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_transformerencoderlayer_subclass_model`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_unaligned_tensors`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`test_with_nested_tensor_input`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`transformer_decoder`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`use_deterministic_algorithims`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+
+### Imports
+
+- **`CausalVariant`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`CompileCounterWithBackend`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`NNTestCase`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`Optional`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`Parameter`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`_calculate_scale`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`_cur_sdpa_kernel_backends`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`collections`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`contextlib`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`expectedFailureMPS`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`fairseq.models.transformer`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`functools`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`itertools`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`math`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`namedtuple`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`os`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`partial`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`patch`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`scaled_dot_product_attention`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`sdpa_kernel`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`sys`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`time`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`torch`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`torch._dynamo.testing`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`torch.nn`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`torch.nn.attention`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`torch.nn.attention.bias`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`torch.nn.functional`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`torch.nn.parameter`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`torch.optim`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`torch.testing._internal.common_cuda`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`torch.testing._internal.common_device_type`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`torch.testing._internal.common_methods_invocations`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`torch.testing._internal.common_nn`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`torch.testing._internal.common_utils`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`torch.utils.cpp_extension`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`typing`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`unittest`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`unittest.mock`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+- **`wrapper_set_seed`**: [test_transformers.py_docs.md](./test_transformers.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/test_transformers.py_kw.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test`):
+
+- [`test_ops.py_docs.md_docs.md`](./test_ops.py_docs.md_docs.md)
+- [`test_tensorexpr.py_docs.md_docs.md`](./test_tensorexpr.py_docs.md_docs.md)
+- [`pytest_shard_custom.py_docs.md_docs.md`](./pytest_shard_custom.py_docs.md_docs.md)
+- [`test_weak.py_kw.md_docs.md`](./test_weak.py_kw.md_docs.md)
+- [`test_view_ops.py_kw.md_docs.md`](./test_view_ops.py_kw.md_docs.md)
+- [`test_varlen_attention.py_kw.md_docs.md`](./test_varlen_attention.py_kw.md_docs.md)
+- [`test_namedtensor.py_docs.md_docs.md`](./test_namedtensor.py_docs.md_docs.md)
+- [`test_binary_ufuncs.py_docs.md_docs.md`](./test_binary_ufuncs.py_docs.md_docs.md)
+- [`test_ops_gradients.py_kw.md_docs.md`](./test_ops_gradients.py_kw.md_docs.md)
+- [`test_torchfuzz_repros.py_docs.md_docs.md`](./test_torchfuzz_repros.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_transformers.py_kw.md_docs.md`
+- **Keyword Index**: `test_transformers.py_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

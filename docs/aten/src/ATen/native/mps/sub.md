@@ -1,0 +1,111 @@
+# Subtree Keyword Index: `aten/src/ATen/native/mps/`
+
+## Scope
+
+This index covers all files within `aten/src/ATen/native/mps/` and all its subdirectories (recursively).
+
+## Keywords
+
+
+### BinaryKernel
+
+- [`aten/src/ATen/native/mps/operations/BinaryKernel.h`](../../../../../aten/src/ATen/native/mps/operations/BinaryKernel.h_docs.md)
+
+### Copy
+
+- [`aten/src/ATen/native/mps/Copy.h`](./Copy.h_docs.md)
+
+### EmbeddingBag
+
+- [`aten/src/ATen/native/mps/kernels/EmbeddingBag.h`](../../../../../aten/src/ATen/native/mps/kernels/EmbeddingBag.h_docs.md)
+
+### Equal
+
+- [`aten/src/ATen/native/mps/operations/Equal.cpp`](../../../../../aten/src/ATen/native/mps/operations/Equal.cpp_docs.md)
+
+### FusedAdamAmsgradKernelImpl
+
+- [`aten/src/ATen/native/mps/operations/FusedAdamAmsgradKernelImpl.h`](../../../../../aten/src/ATen/native/mps/operations/FusedAdamAmsgradKernelImpl.h_docs.md)
+
+### FusedAdamKernelImpl
+
+- [`aten/src/ATen/native/mps/operations/FusedAdamKernelImpl.h`](../../../../../aten/src/ATen/native/mps/operations/FusedAdamKernelImpl.h_docs.md)
+
+### FusedAdamWAmsgradKernelImpl
+
+- [`aten/src/ATen/native/mps/operations/FusedAdamWAmsgradKernelImpl.h`](../../../../../aten/src/ATen/native/mps/operations/FusedAdamWAmsgradKernelImpl.h_docs.md)
+
+### FusedAdamWKernelImpl
+
+- [`aten/src/ATen/native/mps/operations/FusedAdamWKernelImpl.h`](../../../../../aten/src/ATen/native/mps/operations/FusedAdamWKernelImpl.h_docs.md)
+
+### GridSampler
+
+- [`aten/src/ATen/native/mps/kernels/GridSampler.h`](../../../../../aten/src/ATen/native/mps/kernels/GridSampler.h_docs.md)
+
+### LinearAlgebra
+
+- [`aten/src/ATen/native/mps/kernels/LinearAlgebra.h`](../../../../../aten/src/ATen/native/mps/kernels/LinearAlgebra.h_docs.md)
+
+### MPSGraphSequoiaOps
+
+- [`aten/src/ATen/native/mps/MPSGraphSequoiaOps.h`](./MPSGraphSequoiaOps.h_docs.md)
+
+### MetalShaderLibrary
+
+- [`aten/src/ATen/native/mps/MetalShaderLibrary.h`](./MetalShaderLibrary.h_docs.md)
+
+### MultiTensorApply
+
+- [`aten/src/ATen/native/mps/operations/MultiTensorApply.h`](../../../../../aten/src/ATen/native/mps/operations/MultiTensorApply.h_docs.md)
+
+### OperationUtils
+
+- [`aten/src/ATen/native/mps/OperationUtils.h`](./OperationUtils.h_docs.md)
+
+### Pooling
+
+- [`aten/src/ATen/native/mps/kernels/Pooling.h`](../../../../../aten/src/ATen/native/mps/kernels/Pooling.h_docs.md)
+
+### Shape
+
+- [`aten/src/ATen/native/mps/kernels/Shape.h`](../../../../../aten/src/ATen/native/mps/kernels/Shape.h_docs.md)
+
+### TensorFactory
+
+- [`aten/src/ATen/native/mps/TensorFactory.h`](./TensorFactory.h_docs.md)
+- [`aten/src/ATen/native/mps/TensorFactory.cpp`](./TensorFactory.cpp_docs.md)
+
+### UpSample
+
+- [`aten/src/ATen/native/mps/kernels/UpSample.h`](../../../../../aten/src/ATen/native/mps/kernels/UpSample.h_docs.md)
+
+### files-.cpp
+
+- [`aten/src/ATen/native/mps/TensorFactory.cpp`](./TensorFactory.cpp_docs.md)
+- [`aten/src/ATen/native/mps/operations/Equal.cpp`](../../../../../aten/src/ATen/native/mps/operations/Equal.cpp_docs.md)
+
+### files-.h
+
+- [`aten/src/ATen/native/mps/OperationUtils.h`](./OperationUtils.h_docs.md)
+- [`aten/src/ATen/native/mps/TensorFactory.h`](./TensorFactory.h_docs.md)
+- [`aten/src/ATen/native/mps/Copy.h`](./Copy.h_docs.md)
+- [`aten/src/ATen/native/mps/MPSGraphSequoiaOps.h`](./MPSGraphSequoiaOps.h_docs.md)
+- [`aten/src/ATen/native/mps/MetalShaderLibrary.h`](./MetalShaderLibrary.h_docs.md)
+- [`aten/src/ATen/native/mps/operations/BinaryKernel.h`](../../../../../aten/src/ATen/native/mps/operations/BinaryKernel.h_docs.md)
+- [`aten/src/ATen/native/mps/operations/FusedAdamAmsgradKernelImpl.h`](../../../../../aten/src/ATen/native/mps/operations/FusedAdamAmsgradKernelImpl.h_docs.md)
+- [`aten/src/ATen/native/mps/operations/FusedAdamWAmsgradKernelImpl.h`](../../../../../aten/src/ATen/native/mps/operations/FusedAdamWAmsgradKernelImpl.h_docs.md)
+- [`aten/src/ATen/native/mps/operations/FusedAdamWKernelImpl.h`](../../../../../aten/src/ATen/native/mps/operations/FusedAdamWKernelImpl.h_docs.md)
+- [`aten/src/ATen/native/mps/operations/MultiTensorApply.h`](../../../../../aten/src/ATen/native/mps/operations/MultiTensorApply.h_docs.md)
+- [`aten/src/ATen/native/mps/operations/FusedAdamKernelImpl.h`](../../../../../aten/src/ATen/native/mps/operations/FusedAdamKernelImpl.h_docs.md)
+- [`aten/src/ATen/native/mps/kernels/EmbeddingBag.h`](../../../../../aten/src/ATen/native/mps/kernels/EmbeddingBag.h_docs.md)
+- [`aten/src/ATen/native/mps/kernels/GridSampler.h`](../../../../../aten/src/ATen/native/mps/kernels/GridSampler.h_docs.md)
+- [`aten/src/ATen/native/mps/kernels/Pooling.h`](../../../../../aten/src/ATen/native/mps/kernels/Pooling.h_docs.md)
+- [`aten/src/ATen/native/mps/kernels/Shape.h`](../../../../../aten/src/ATen/native/mps/kernels/Shape.h_docs.md)
+- [`aten/src/ATen/native/mps/kernels/UpSample.h`](../../../../../aten/src/ATen/native/mps/kernels/UpSample.h_docs.md)
+- [`aten/src/ATen/native/mps/kernels/LinearAlgebra.h`](../../../../../aten/src/ATen/native/mps/kernels/LinearAlgebra.h_docs.md)
+
+
+---
+
+*Generated by PyTorch Repository Documentation System*

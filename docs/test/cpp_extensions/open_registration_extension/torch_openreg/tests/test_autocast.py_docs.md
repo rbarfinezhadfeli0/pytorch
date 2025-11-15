@@ -1,0 +1,175 @@
+# Documentation: `test/cpp_extensions/open_registration_extension/torch_openreg/tests/test_autocast.py`
+
+## File Metadata
+
+- **Path**: `test/cpp_extensions/open_registration_extension/torch_openreg/tests/test_autocast.py`
+- **Size**: 2,073 bytes (2.02 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**. Can be **executed as a standalone script**.
+
+## Original Source
+
+```python
+# Owner(s): ["module: PrivateUse1"]
+
+import torch
+from torch.testing._internal.common_utils import run_tests, TestCase
+
+
+class TestAutocast(TestCase):
+    def test_autocast_with_unsupported_type(self):
+        with self.assertWarnsRegex(
+            UserWarning,
+            "In openreg autocast, but the target dtype is not supported. Disabling autocast.\n"
+            "openreg Autocast only supports dtypes of torch.float16, torch.bfloat16 currently.",
+        ):
+            with torch.autocast(device_type="openreg", dtype=torch.float32):
+                _ = torch.ones(10)
+
+    def test_autocast_operator_not_supported(self):
+        with self.assertRaisesRegex(
+            RuntimeError,
+            "torch.nn.functional.binary_cross_entropy and torch.nn.BCELoss are unsafe to autocast.",
+        ):
+            x = torch.randn(2, 3, device="openreg")
+            y = torch.randn(2, 3, device="openreg")
+            with torch.autocast(device_type="openreg", dtype=torch.float16):
+                _ = torch.nn.functional.binary_cross_entropy(x, y)
+
+    def test_autocast_low_precision(self):
+        with torch.amp.autocast(device_type="openreg", dtype=torch.float16):
+            x = torch.randn(2, 3, device="openreg")
+            y = torch.randn(3, 3, device="openreg")
+            result = torch.mm(x, y)
+            self.assertEqual(result.dtype, torch.float16)
+
+    def test_autocast_fp32(self):
+        with torch.amp.autocast(device_type="openreg"):
+            x = torch.randn(2, device="openreg", dtype=torch.float16)
+            result = torch.asin(x)
+            self.assertEqual(result.dtype, torch.float32)
+
+    def test_autocast_default_dtype(self):
+        openreg_fast_dtype = torch.get_autocast_dtype(device_type="openreg")
+        self.assertEqual(openreg_fast_dtype, torch.half)
+
+    def test_autocast_set_dtype(self):
+        for dtype in [torch.float16, torch.bfloat16]:
+            torch.set_autocast_dtype("openreg", dtype)
+            self.assertEqual(torch.get_autocast_dtype("openreg"), dtype)
+
+
+if __name__ == "__main__":
+    run_tests()
+
+```
+
+
+
+## High-Level Overview
+
+
+This Python file contains 1 class(es) and 6 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `TestAutocast`
+
+**Functions defined**: `test_autocast_with_unsupported_type`, `test_autocast_operator_not_supported`, `test_autocast_low_precision`, `test_autocast_fp32`, `test_autocast_default_dtype`, `test_autocast_set_dtype`
+
+**Key imports**: torch, run_tests, TestCase
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/cpp_extensions/open_registration_extension/torch_openreg/tests`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `torch`
+- `torch.testing._internal.common_utils`: run_tests, TestCase
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/cpp_extensions/open_registration_extension/torch_openreg/tests/test_autocast.py
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/cpp_extensions/open_registration_extension/torch_openreg/tests`):
+
+- [`test_rng.py_docs.md`](./test_rng.py_docs.md)
+- [`test_device.py_docs.md`](./test_device.py_docs.md)
+- [`test_utils.py_docs.md`](./test_utils.py_docs.md)
+- [`test_storage.py_docs.md`](./test_storage.py_docs.md)
+- [`test_misc.py_docs.md`](./test_misc.py_docs.md)
+- [`test_memory.py_docs.md`](./test_memory.py_docs.md)
+- [`test_ops.py_docs.md`](./test_ops.py_docs.md)
+- [`test_event.py_docs.md`](./test_event.py_docs.md)
+- [`test_autograd.py_docs.md`](./test_autograd.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_autocast.py_docs.md`
+- **Keyword Index**: `test_autocast.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

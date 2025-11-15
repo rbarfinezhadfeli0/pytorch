@@ -1,0 +1,93 @@
+# Keyword Index: `docs/tools/BUCK.bzl_kw.md`
+
+## File Information
+
+- **Original File**: [docs/tools/BUCK.bzl_kw.md](../../../docs/tools/BUCK.bzl_kw.md)
+- **Documentation**: [`BUCK.bzl_kw.md_docs.md`](./BUCK.bzl_kw.md_docs.md)
+- **Folder**: `docs/tools`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ADInplaceOrViewType`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Analysis`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Architecture`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`BUCK`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Basic`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Because`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Complete`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Considerations`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`DEFAULT`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Dependencies`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Design`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Detailed`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Documentation`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Efficiency`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Extracted`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`FBCODEBZLADDLOADS`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`False`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`File`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Folder`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Functions`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Generated`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`High`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`How`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Identifiers`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`In`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Index`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Information`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Keyword`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Keywords`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Level`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Linux`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Map`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Metadata`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Note`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`OS`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`OSS`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Original`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Overview`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`PUBLIC`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Performance`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Purpose`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`PyTorch`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Related`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Repository`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Safety`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Section`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Security`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`See`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Source`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`System`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Testing`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`The`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`This`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`TraceType`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`True`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Usage`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`VariableType`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`ViewFuncs`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+- **`Windows`**: [BUCK.bzl_kw.md_docs.md](./BUCK.bzl_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

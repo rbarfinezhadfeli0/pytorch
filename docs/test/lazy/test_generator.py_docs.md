@@ -1,0 +1,233 @@
+# Documentation: `test/lazy/test_generator.py`
+
+## File Metadata
+
+- **Path**: `test/lazy/test_generator.py`
+- **Size**: 3,163 bytes (3.09 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**. Can be **executed as a standalone script**.
+
+## Original Source
+
+```python
+# Owner(s): ["oncall: jit"]
+
+import torch
+import torch._lazy.metrics as metrics
+import torch._lazy.ts_backend
+from torch.testing._internal.common_utils import run_tests, skipIfTorchDynamo, TestCase
+
+
+torch._lazy.ts_backend.init()
+
+
+class LazyGeneratorTest(TestCase):
+    def test_generator(self):
+        """
+        Test that generators are being inserted into the TorchScript
+        graph by setting different seeds before each call to
+        generate_tensor but the resulting tensor is the same
+        """
+
+        def generate_tensor():
+            g1 = torch.Generator()
+            g1.manual_seed(2023)
+            t1 = torch.tensor(1.0)
+            t1.uniform_(generator=g1)
+
+            g2 = torch.Generator()
+            g2.manual_seed(2024)
+            t2 = torch.tensor(1.0)
+            t2.normal_(generator=g2)
+
+            return t1, t2
+
+        torch.manual_seed(1)
+
+        with torch.device("cpu"):
+            cpu_t1, cpu_t2 = generate_tensor()
+
+        torch.manual_seed(2)
+
+        with torch.device("lazy"):
+            lazy_t1, lazy_t2 = generate_tensor()
+
+        torch._lazy.mark_step()
+
+        assert torch.allclose(cpu_t1, lazy_t1.to("cpu")), (
+            f"Expected {cpu_t1}, got {lazy_t1.to('cpu')}"
+        )
+        assert torch.allclose(cpu_t2, lazy_t2.to("cpu")), (
+            f"Expected {cpu_t2}, got {lazy_t2.to('cpu')}"
+        )
+
+    @skipIfTorchDynamo("Torch Dynamo does not support torch.Generator type")
+    def test_generator_causes_multiple_compiles(self):
+        """
+        Test that inserting generators with different seed caused recompile
+        """
+
+        def generate_tensor(seed):
+            t = torch.tensor(1.0)
+            g = torch.Generator()
+            g.manual_seed(seed)
+            t.uniform_(-1, 1, generator=g)
+            return t
+
+        metrics.reset()
+
+        with torch.device("lazy"):
+            t = generate_tensor(1)
+            torch._lazy.mark_step()
+
+            uncached_compile = metrics.counter_value("UncachedCompile")
+            assert uncached_compile == 1, (
+                f"Expected 1 uncached compiles, got {uncached_compile}"
+            )
+
+            t = generate_tensor(2)
+            torch._lazy.mark_step()
+
+            uncached_compile = metrics.counter_value("UncachedCompile")
+            assert uncached_compile == 2, (
+                f"Expected 2 uncached compiles, got {uncached_compile}"
+            )
+
+            t = generate_tensor(1)  # noqa: F841
+            torch._lazy.mark_step()
+
+            uncached_compile = metrics.counter_value("UncachedCompile")
+            assert uncached_compile == 2, (
+                f"Expected 2 uncached compiles, got {uncached_compile}"
+            )
+            cached_compile = metrics.counter_value("CachedCompile")
+            assert cached_compile == 1, (
+                f"Expected 1 cached compile, got {cached_compile}"
+            )
+
+        metrics.reset()
+
+        latest_graph = torch._C._lazy_ts_backend._get_latest_computation_graph()
+        assert 'torch.Generator(device="cpu", seed=1)' in latest_graph
+        assert "aten::uniform" in latest_graph
+
+
+if __name__ == "__main__":
+    run_tests()
+
+```
+
+
+
+## High-Level Overview
+
+"""        Test that generators are being inserted into the TorchScript        graph by setting different seeds before each call to        generate_tensor but the resulting tensor is the same
+
+This Python file contains 1 class(es) and 4 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `LazyGeneratorTest`
+
+**Functions defined**: `test_generator`, `generate_tensor`, `test_generator_causes_multiple_compiles`, `generate_tensor`
+
+**Key imports**: torch, torch._lazy.metrics as metrics, torch._lazy.ts_backend, run_tests, skipIfTorchDynamo, TestCase
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/lazy`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `torch`
+- `torch._lazy.metrics as metrics`
+- `torch._lazy.ts_backend`
+- `torch.testing._internal.common_utils`: run_tests, skipIfTorchDynamo, TestCase
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Implements or uses **caching** mechanisms.
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/lazy/test_generator.py
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/lazy`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`test_ts_opinfo.py_docs.md`](./test_ts_opinfo.py_docs.md)
+- [`test_meta_kernel.py_docs.md`](./test_meta_kernel.py_docs.md)
+- [`test_functionalization.py_docs.md`](./test_functionalization.py_docs.md)
+- [`test_bindings.py_docs.md`](./test_bindings.py_docs.md)
+- [`test_extract_compiled_graph.py_docs.md`](./test_extract_compiled_graph.py_docs.md)
+- [`test_reuse_ir.py_docs.md`](./test_reuse_ir.py_docs.md)
+- [`test_step_closures.py_docs.md`](./test_step_closures.py_docs.md)
+- [`test_debug_util.py_docs.md`](./test_debug_util.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_generator.py_docs.md`
+- **Keyword Index**: `test_generator.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

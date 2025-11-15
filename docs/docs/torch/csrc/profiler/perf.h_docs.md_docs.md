@@ -1,0 +1,339 @@
+# Documentation: `docs/torch/csrc/profiler/perf.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/profiler/perf.h_docs.md`
+- **Size**: 5,041 bytes (4.92 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/csrc/profiler/perf.h`
+
+## File Metadata
+
+- **Path**: `torch/csrc/profiler/perf.h`
+- **Size**: 2,593 bytes (2.53 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#pragma once
+
+#include <array>
+#include <cstdint>
+#include <memory>
+#include <stack>
+#include <string>
+#include <unordered_map>
+#include <utility>
+#include <vector>
+
+#include <torch/csrc/profiler/events.h>
+
+#include <c10/util/Exception.h>
+
+namespace torch::profiler::impl::linux_perf {
+
+/*
+ * Maximum number of events supported
+ * This stems from the hardware limitation on CPU performance counters, and the
+ * fact that we don't support time multiplexing just yet.
+ * Time multiplexing involves scaling the counter values proportional to
+ * the enabled and running time or running the workload multiple times.
+ */
+constexpr uint8_t MAX_EVENTS = 4;
+
+struct PerfCounter {
+  uint64_t value; /* The value of the event */
+  uint64_t time_enabled; /* for TIME_ENABLED */
+  uint64_t time_running; /* for TIME_RUNNING */
+};
+
+/*
+ * Basic perf event handler for Android and Linux
+ */
+class PerfEvent {
+ public:
+  explicit PerfEvent(std::string& name) : name_(name) {}
+
+  PerfEvent(const PerfEvent& other) = delete;
+  PerfEvent& operator=(const PerfEvent&) = delete;
+  PerfEvent& operator=(PerfEvent&& other) noexcept {
+    if (this != &other) {
+      fd_ = other.fd_;
+      other.fd_ = -1;
+      name_ = std::move(other.name_);
+    }
+    return *this;
+  }
+
+  PerfEvent(PerfEvent&& other) noexcept {
+    *this = std::move(other);
+  }
+
+  ~PerfEvent();
+
+  /* Setup perf events with the Linux Kernel, attaches perf to this process
+   * using perf_event_open(2) */
+  void Init();
+
+  /* Stop incrementing hardware counters for this event */
+  void Disable() const;
+
+  /* Start counting hardware event from this point on */
+  void Enable() const;
+
+  /* Zero out the counts for this event */
+  void Reset() const;
+
+  /* Returns PerfCounter values for this event from kernel, on non supported
+   * platforms this always returns zero */
+  uint64_t ReadCounter() const;
+
+ private:
+  /* Name of the event */
+  std::string name_;
+
+  int fd_ = -1;
+};
+
+class PerfProfiler {
+ public:
+  /* Configure all the events and track them as individual PerfEvent */
+  void Configure(std::vector<std::string>& event_names);
+
+  /* Enable events counting from here */
+  void Enable();
+
+  /* Disable counting and fill in the caller supplied container with delta
+   * calculated from the start count values since last Enable() */
+  void Disable(perf_counters_t& /*vals*/);
+
+ private:
+  uint64_t CalcDelta(uint64_t start, uint64_t end) const;
+  void StartCounting() const;
+  void StopCounting() const;
+
+  std::vector<PerfEvent> events_;
+  std::stack<perf_counters_t> start_values_;
+};
+} // namespace torch::profiler::impl::linux_perf
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 2 class(es)/struct(s) and 14 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`
+
+**Classes/Structs**: `PerfCounter`, `PerfEvent`, `PerfProfiler`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/profiler`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `array`
+- `cstdint`
+- `memory`
+- `stack`
+- `string`
+- `unordered_map`
+- `utility`
+- `vector`
+- `torch/csrc/profiler/events.h`
+- `c10/util/Exception.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/profiler`):
+
+- [`perf-inl.h_docs.md`](./perf-inl.h_docs.md)
+- [`perf.cpp_docs.md`](./perf.cpp_docs.md)
+- [`kineto_client_interface.cpp_docs.md`](./kineto_client_interface.cpp_docs.md)
+- [`combined_traceback.h_docs.md`](./combined_traceback.h_docs.md)
+- [`kineto_shim.h_docs.md`](./kineto_shim.h_docs.md)
+- [`collection.h_docs.md`](./collection.h_docs.md)
+- [`kineto_shim.cpp_docs.md`](./kineto_shim.cpp_docs.md)
+- [`combined_traceback.cpp_docs.md`](./combined_traceback.cpp_docs.md)
+- [`kineto_client_interface.h_docs.md`](./kineto_client_interface.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `perf.h_docs.md`
+- **Keyword Index**: `perf.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/profiler`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/profiler`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/profiler`):
+
+- [`containers.h_docs.md_docs.md`](./containers.h_docs.md_docs.md)
+- [`perf-inl.h_docs.md_docs.md`](./perf-inl.h_docs.md_docs.md)
+- [`README.md_docs.md_docs.md`](./README.md_docs.md_docs.md)
+- [`combined_traceback.cpp_docs.md_docs.md`](./combined_traceback.cpp_docs.md_docs.md)
+- [`collection.cpp_kw.md_docs.md`](./collection.cpp_kw.md_docs.md)
+- [`collection.h_docs.md_docs.md`](./collection.h_docs.md_docs.md)
+- [`kineto_client_interface.h_docs.md_docs.md`](./kineto_client_interface.h_docs.md_docs.md)
+- [`combined_traceback.cpp_kw.md_docs.md`](./combined_traceback.cpp_kw.md_docs.md)
+- [`kineto_client_interface.cpp_docs.md_docs.md`](./kineto_client_interface.cpp_docs.md_docs.md)
+- [`kineto_shim.h_docs.md_docs.md`](./kineto_shim.h_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `perf.h_docs.md_docs.md`
+- **Keyword Index**: `perf.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

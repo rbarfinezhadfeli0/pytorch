@@ -1,0 +1,543 @@
+# Documentation: `docs/test/dynamo/cpython/3_13/test_with.diff_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/dynamo/cpython/3_13/test_with.diff_docs.md`
+- **Size**: 13,777 bytes (13.45 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/dynamo/cpython/3_13/test_with.diff`
+
+## File Metadata
+
+- **Path**: `test/dynamo/cpython/3_13/test_with.diff`
+- **Size**: 11,245 bytes (10.98 KB)
+- **Type**: Source File (.diff)
+- **Extension**: `.diff`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**.
+
+## Original Source
+
+```
+diff --git a/test/dynamo/cpython/3_13/test_with.py b/test/dynamo/cpython/3_13/test_with.py
+index 8e9ed8500c7..66c18ad886a 100644
+--- a/test/dynamo/cpython/3_13/test_with.py
++++ b/test/dynamo/cpython/3_13/test_with.py
+@@ -1,3 +1,23 @@
++# ======= BEGIN Dynamo patch =======
++# Owner(s): ["module: dynamo"]
++
++# ruff: noqa
++# flake8: noqa
++
++# Test copied from
++# https://raw.githubusercontent.com/python/cpython/refs/tags/v3.13.5/Lib/test/test_with.py
++
++import sys
++import torch
++import torch._dynamo.test_case
++import unittest
++from torch._dynamo.test_case import CPythonTestCase
++from torch.testing._internal.common_utils import run_tests
++
++__TestCase = CPythonTestCase
++
++# ======= END DYNAMO PATCH =======
++
+ """Unit tests for the with statement specified in PEP 343."""
+
+
+@@ -104,16 +124,17 @@ class MockNested(Nested):
+         return Nested.__exit__(self, *exc_info)
+
+
+-class FailureTestCase(unittest.TestCase):
++class FailureTestCase(__TestCase):
+     def testNameError(self):
+         def fooNotDeclared():
+             with foo: pass
+         self.assertRaises(NameError, fooNotDeclared)
+
+     def testEnterAttributeError1(self):
+-        class LacksEnter(object):
+-            def __exit__(self, type, value, traceback):
+-                pass
++        with torch._dynamo.error_on_graph_break(False):
++            class LacksEnter(object):
++                def __exit__(self, type, value, traceback):
++                    pass
+
+         def fooLacksEnter():
+             foo = LacksEnter()
+@@ -121,8 +142,9 @@ class FailureTestCase(unittest.TestCase):
+         self.assertRaisesRegex(TypeError, 'the context manager', fooLacksEnter)
+
+     def testEnterAttributeError2(self):
+-        class LacksEnterAndExit(object):
+-            pass
++        with torch._dynamo.error_on_graph_break(False):
++            class LacksEnterAndExit(object):
++                pass
+
+         def fooLacksEnterAndExit():
+             foo = LacksEnterAndExit()
+@@ -130,9 +152,10 @@ class FailureTestCase(unittest.TestCase):
+         self.assertRaisesRegex(TypeError, 'the context manager', fooLacksEnterAndExit)
+
+     def testExitAttributeError(self):
+-        class LacksExit(object):
+-            def __enter__(self):
+-                pass
++        with torch._dynamo.error_on_graph_break(False):
++            class LacksExit(object):
++                def __enter__(self):
++                    pass
+
+         def fooLacksExit():
+             foo = LacksExit()
+@@ -162,11 +185,12 @@ class FailureTestCase(unittest.TestCase):
+             '  pass')
+
+     def testEnterThrows(self):
+-        class EnterThrows(object):
+-            def __enter__(self):
+-                raise RuntimeError("Enter threw")
+-            def __exit__(self, *args):
+-                pass
++        with torch._dynamo.error_on_graph_break(False):
++            class EnterThrows(object):
++                def __enter__(self):
++                    raise RuntimeError("Enter threw")
++                def __exit__(self, *args):
++                    pass
+
+         def shouldThrow():
+             ct = EnterThrows()
+@@ -180,11 +204,12 @@ class FailureTestCase(unittest.TestCase):
+         self.assertEqual(self.foo, None)
+
+     def testExitThrows(self):
+-        class ExitThrows(object):
+-            def __enter__(self):
+-                return
+-            def __exit__(self, *args):
+-                raise RuntimeError(42)
++        with torch._dynamo.error_on_graph_break(False):
++            class ExitThrows(object):
++                def __enter__(self):
++                    return
++                def __exit__(self, *args):
++                    raise RuntimeError(42)
+         def shouldThrow():
+             with ExitThrows():
+                 pass
+@@ -194,6 +219,7 @@ class ContextmanagerAssertionMixin(object):
+
+     def setUp(self):
+         self.TEST_EXCEPTION = RuntimeError("test exception")
++        super().setUp()
+
+     def assertInWithManagerInvariants(self, mock_manager):
+         self.assertTrue(mock_manager.enter_called)
+@@ -237,7 +263,7 @@ class ContextmanagerAssertionMixin(object):
+         self.assertTrue(mock_generator.stopped)
+
+
+-class NonexceptionalTestCase(unittest.TestCase, ContextmanagerAssertionMixin):
++class NonexceptionalTestCase(__TestCase, ContextmanagerAssertionMixin):
+     def testInlineGeneratorSyntax(self):
+         with mock_contextmanager_generator():
+             pass
+@@ -289,7 +315,7 @@ class NonexceptionalTestCase(unittest.TestCase, ContextmanagerAssertionMixin):
+         self.assertAfterWithGeneratorInvariantsNoError(foo)
+
+
+-class NestedNonexceptionalTestCase(unittest.TestCase,
++class NestedNonexceptionalTestCase(__TestCase,
+     ContextmanagerAssertionMixin):
+     def testSingleArgInlineGeneratorSyntax(self):
+         with Nested(mock_contextmanager_generator()):
+@@ -355,7 +381,7 @@ class NestedNonexceptionalTestCase(unittest.TestCase,
+         self.assertAfterWithManagerInvariantsNoError(mock_nested)
+
+
+-class ExceptionalTestCase(ContextmanagerAssertionMixin, unittest.TestCase):
++class ExceptionalTestCase(ContextmanagerAssertionMixin, __TestCase):
+     def testSingleResource(self):
+         cm = mock_contextmanager_generator()
+         def shouldThrow():
+@@ -466,11 +492,12 @@ class ExceptionalTestCase(ContextmanagerAssertionMixin, unittest.TestCase):
+
+     def testRaisedStopIteration2(self):
+         # From bug 1462485
+-        class cm(object):
+-            def __enter__(self):
+-                pass
+-            def __exit__(self, type, value, traceback):
+-                pass
++        with torch._dynamo.error_on_graph_break(False):
++            class cm(object):
++                def __enter__(self):
++                    pass
++                def __exit__(self, type, value, traceback):
++                    pass
+
+         def shouldThrow():
+             with cm():
+@@ -507,11 +534,12 @@ class ExceptionalTestCase(ContextmanagerAssertionMixin, unittest.TestCase):
+
+     def testRaisedGeneratorExit2(self):
+         # From bug 1462485
+-        class cm (object):
+-            def __enter__(self):
+-                pass
+-            def __exit__(self, type, value, traceback):
+-                pass
++        with torch._dynamo.error_on_graph_break(False):
++            class cm (object):
++                def __enter__(self):
++                    pass
++                def __exit__(self, type, value, traceback):
++                    pass
+
+         def shouldThrow():
+             with cm():
+@@ -523,16 +551,17 @@ class ExceptionalTestCase(ContextmanagerAssertionMixin, unittest.TestCase):
+         # issue4589: __exit__ return code may raise an exception
+         # when looking at its truth value.
+
+-        class cm(object):
+-            def __init__(self, bool_conversion):
+-                class Bool:
+-                    def __bool__(self):
+-                        return bool_conversion()
+-                self.exit_result = Bool()
+-            def __enter__(self):
+-                return 3
+-            def __exit__(self, a, b, c):
+-                return self.exit_result
++        with torch._dynamo.error_on_graph_break(False):
++            class cm(object):
++                def __init__(self, bool_conversion):
++                    class Bool:
++                        def __bool__(self):
++                            return bool_conversion()
++                    self.exit_result = Bool()
++                def __enter__(self):
++                    return 3
++                def __exit__(self, a, b, c):
++                    return self.exit_result
+
+         def trueAsBool():
+             with cm(lambda: True):
+@@ -550,7 +579,7 @@ class ExceptionalTestCase(ContextmanagerAssertionMixin, unittest.TestCase):
+         self.assertRaises(ZeroDivisionError, failAsBool)
+
+
+-class NonLocalFlowControlTestCase(unittest.TestCase):
++class NonLocalFlowControlTestCase(__TestCase):
+
+     def testWithBreak(self):
+         counter = 0
+@@ -607,7 +636,7 @@ class NonLocalFlowControlTestCase(unittest.TestCase):
+             self.fail("Didn't raise RuntimeError")
+
+
+-class AssignmentTargetTestCase(unittest.TestCase):
++class AssignmentTargetTestCase(__TestCase):
+
+     def testSingleComplexTarget(self):
+         targets = {1: [0, 1, 2]}
+@@ -621,15 +650,17 @@ class AssignmentTargetTestCase(unittest.TestCase):
+             keys = list(targets.keys())
+             keys.sort()
+             self.assertEqual(keys, [1, 2])
+-        class C: pass
++        with torch._dynamo.error_on_graph_break(False):
++            class C: pass
+         blah = C()
+         with mock_contextmanager_generator() as blah.foo:
+             self.assertEqual(hasattr(blah, "foo"), True)
+
+     def testMultipleComplexTargets(self):
+-        class C:
+-            def __enter__(self): return 1, 2, 3
+-            def __exit__(self, t, v, tb): pass
++        with torch._dynamo.error_on_graph_break(False):
++            class C:
++                def __enter__(self): return 1, 2, 3
++                def __exit__(self, t, v, tb): pass
+         targets = {1: [0, 1, 2]}
+         with C() as (targets[1][0], targets[1][1], targets[1][2]):
+             self.assertEqual(targets, {1: [1, 2, 3]})
+@@ -637,7 +668,8 @@ class AssignmentTargetTestCase(unittest.TestCase):
+             self.assertEqual(targets, {1: [3, 2, 1]})
+         with C() as (targets[1], targets[2], targets[3]):
+             self.assertEqual(targets, {1: 1, 2: 2, 3: 3})
+-        class B: pass
++        with torch._dynamo.error_on_graph_break(False):
++            class B: pass
+         blah = B()
+         with C() as (blah.one, blah.two, blah.three):
+             self.assertEqual(blah.one, 1)
+@@ -651,12 +683,13 @@ class AssignmentTargetTestCase(unittest.TestCase):
+             self.assertEqual(c, 4)
+
+
+-class ExitSwallowsExceptionTestCase(unittest.TestCase):
++class ExitSwallowsExceptionTestCase(__TestCase):
+
+     def testExitTrueSwallowsException(self):
+-        class AfricanSwallow:
+-            def __enter__(self): pass
+-            def __exit__(self, t, v, tb): return True
++        with torch._dynamo.error_on_graph_break(False):
++            class AfricanSwallow:
++                def __enter__(self): pass
++                def __exit__(self, t, v, tb): return True
+         try:
+             with AfricanSwallow():
+                 1/0
+@@ -664,9 +697,10 @@ class ExitSwallowsExceptionTestCase(unittest.TestCase):
+             self.fail("ZeroDivisionError should have been swallowed")
+
+     def testExitFalseDoesntSwallowException(self):
+-        class EuropeanSwallow:
+-            def __enter__(self): pass
+-            def __exit__(self, t, v, tb): return False
++        with torch._dynamo.error_on_graph_break(False):
++            class EuropeanSwallow:
++                def __enter__(self): pass
++                def __exit__(self, t, v, tb): return False
+         try:
+             with EuropeanSwallow():
+                 1/0
+@@ -676,7 +710,7 @@ class ExitSwallowsExceptionTestCase(unittest.TestCase):
+             self.fail("ZeroDivisionError should have been raised")
+
+
+-class NestedWith(unittest.TestCase):
++class NestedWith(__TestCase):
+
+     class Dummy(object):
+         def __init__(self, value=None, gobble=False):
+@@ -796,4 +830,4 @@ class NestedWith(unittest.TestCase):
+
+
+ if __name__ == '__main__':
+-    unittest.main()
++    run_tests()
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `test/dynamo/cpython/3_13`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/dynamo/cpython/3_13`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+- **Context Manager**: Implements context manager protocol
+- **Error Handling**: Includes exception handling
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/dynamo/cpython/3_13/test_with.diff
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/dynamo/cpython/3_13`):
+
+- [`mapping_tests.diff_docs.md`](./mapping_tests.diff_docs.md)
+- [`test_float.py_docs.md`](./test_float.py_docs.md)
+- [`test_generators.py_docs.md`](./test_generators.py_docs.md)
+- [`test_dict.py_docs.md`](./test_dict.py_docs.md)
+- [`test_generator_stop.diff_docs.md`](./test_generator_stop.diff_docs.md)
+- [`test_sort.diff_docs.md`](./test_sort.diff_docs.md)
+- [`test_list.diff_docs.md`](./test_list.diff_docs.md)
+- [`test_userdict.diff_docs.md`](./test_userdict.diff_docs.md)
+- [`test_generators.diff_docs.md`](./test_generators.diff_docs.md)
+- [`test_userlist.py_docs.md`](./test_userlist.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_with.diff_docs.md`
+- **Keyword Index**: `test_with.diff_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/dynamo/cpython/3_13`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/dynamo/cpython/3_13`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+- **Context Manager**: Implements context manager protocol
+- **Error Handling**: Includes exception handling
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/dynamo/cpython/3_13/test_with.diff_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/dynamo/cpython/3_13`):
+
+- [`seq_tests.py_kw.md_docs.md`](./seq_tests.py_kw.md_docs.md)
+- [`test_tuple.diff_kw.md_docs.md`](./test_tuple.diff_kw.md_docs.md)
+- [`test_userdict.py_docs.md_docs.md`](./test_userdict.py_docs.md_docs.md)
+- [`test_bool.diff_docs.md_docs.md`](./test_bool.diff_docs.md_docs.md)
+- [`test_operator.py_docs.md_docs.md`](./test_operator.py_docs.md_docs.md)
+- [`seq_tests.diff_docs.md_docs.md`](./seq_tests.diff_docs.md_docs.md)
+- [`test_list.diff_kw.md_docs.md`](./test_list.diff_kw.md_docs.md)
+- [`test_bool.py_docs.md_docs.md`](./test_bool.py_docs.md_docs.md)
+- [`test_raise.py_docs.md_docs.md`](./test_raise.py_docs.md_docs.md)
+- [`test_itertools.diff_kw.md_docs.md`](./test_itertools.diff_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_with.diff_docs.md_docs.md`
+- **Keyword Index**: `test_with.diff_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

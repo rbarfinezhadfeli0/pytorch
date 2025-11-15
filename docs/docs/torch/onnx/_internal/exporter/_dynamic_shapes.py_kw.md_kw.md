@@ -1,0 +1,78 @@
+# Keyword Index: `docs/torch/onnx/_internal/exporter/_dynamic_shapes.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/onnx/_internal/exporter/_dynamic_shapes.py_kw.md](../../../../../../docs/torch/onnx/_internal/exporter/_dynamic_shapes.py_kw.md)
+- **Documentation**: [`_dynamic_shapes.py_kw.md_docs.md`](./_dynamic_shapes.py_kw.md_docs.md)
+- **Folder**: `docs/torch/onnx/_internal/exporter`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`Any`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`Architecture`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`Basic`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`Complete`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`Considerations`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`Dependencies`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`Design`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`Detailed`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`Documentation`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`Efficiency`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`Extracted`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`File`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`Folder`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`Functions`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`Generated`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`High`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`How`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`Imports`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`In`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`Index`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`Information`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`Keyword`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`Keywords`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`Level`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`Map`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`Metadata`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`Original`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`Overview`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`Performance`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`Purpose`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`PyTorch`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`Related`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`Repository`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`Safety`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`Section`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`Security`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`Sequence`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`Source`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`System`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`Testing`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`The`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`This`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+- **`Usage`**: [_dynamic_shapes.py_kw.md_docs.md](./_dynamic_shapes.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

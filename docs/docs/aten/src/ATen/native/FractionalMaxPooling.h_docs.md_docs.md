@@ -1,0 +1,309 @@
+# Documentation: `docs/aten/src/ATen/native/FractionalMaxPooling.h_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/FractionalMaxPooling.h_docs.md`
+- **Size**: 4,534 bytes (4.43 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/native/FractionalMaxPooling.h`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/FractionalMaxPooling.h`
+- **Size**: 2,161 bytes (2.11 KB)
+- **Type**: C/C++ Header File
+- **Extension**: `.h`
+
+## File Purpose
+
+This is a c/c++ header file that is part of the PyTorch project.
+
+## Original Source
+
+```c
+#pragma once
+#include <ATen/core/Tensor.h>
+#include <ATen/TensorUtils.h>
+#include <c10/util/irange.h>
+
+namespace at::native {
+
+template<typename scalar_t>
+inline std::vector<int64_t> generate_intervals(
+    scalar_t sample,
+    int64_t inputSize,
+    int64_t outputSize,
+    int64_t poolSize) {
+  std::vector<int64_t> sequence(outputSize);
+  if (outputSize > 1) {
+    scalar_t alpha = static_cast<scalar_t>(inputSize - poolSize) /
+      static_cast<scalar_t>(outputSize - 1);
+
+    for (const auto i : c10::irange(outputSize - 1)) {
+      sequence[i] =
+        static_cast<int>((i + sample) * alpha) - static_cast<int>(sample * alpha);
+    }
+  }
+  if (outputSize > 0) {
+    sequence[outputSize - 1] = inputSize - poolSize;
+  }
+  return sequence;
+}
+
+template <int64_t ndim>
+inline void fractional_max_pool_check_shape(
+    const Tensor& input,
+    const Tensor& randomSamples) {
+
+  TORCH_CHECK(
+      input.scalar_type() == randomSamples.scalar_type(),
+      "Expect _random_samples to have the same dtype as input");
+
+  int64_t ndimension = randomSamples.ndimension();
+  TORCH_CHECK(
+      ndimension == 3,
+      "Expect _random_samples to have 3 dimensions, got ", ndimension);
+
+  int64_t N = randomSamples.size(0);
+  int64_t C = randomSamples.size(1);
+  int64_t D = randomSamples.size(2);
+
+  int64_t input_batch = 0, input_channel = 0;
+  if (ndim == 2) {
+    // fractional_max_pool2d
+    if (input.ndimension() == 3) {
+      input_batch = 1;
+      input_channel = input.size(0);
+    } else {
+      input_batch = input.size(0);
+      input_channel = input.size(1);
+    }
+  } else {
+    // factional_max_pool3d
+    if (input.ndimension() == 4) {
+      input_batch = 1;
+      input_channel = input.size(0);
+    } else {
+      input_batch = input.size(0);
+      input_channel = input.size(1);
+    }
+  }
+
+  TORCH_CHECK(
+      N >= input_batch,
+      "Expect _random_samples.size(0) no less then input batch size.");
+  TORCH_CHECK(
+      C == input_channel,
+      "Expect _random_samples.size(1) equals to input channel size.");
+  TORCH_CHECK(
+      D == ndim,
+      "Expect _random_samples.size(2) equals to ", ndim, "; got ", D, ".");
+}
+
+} // namespace at::native
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 3 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `at`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/core/Tensor.h`
+- `ATen/TensorUtils.h`
+- `c10/util/irange.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native`):
+
+- [`LossMulti.h_docs.md`](./LossMulti.h_docs.md)
+- [`NaiveConvolutionTranspose3d.cpp_docs.md`](./NaiveConvolutionTranspose3d.cpp_docs.md)
+- [`UnaryOps.cpp_docs.md`](./UnaryOps.cpp_docs.md)
+- [`ResizeCommon.h_docs.md`](./ResizeCommon.h_docs.md)
+- [`FusedAdagrad.cpp_docs.md`](./FusedAdagrad.cpp_docs.md)
+- [`SharedReduceOps.h_docs.md`](./SharedReduceOps.h_docs.md)
+- [`SpectralOpsUtils.h_docs.md`](./SpectralOpsUtils.h_docs.md)
+- [`TensorDimApply.h_docs.md`](./TensorDimApply.h_docs.md)
+- [`Lerp.cpp_docs.md`](./Lerp.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `FractionalMaxPooling.h_docs.md`
+- **Keyword Index**: `FractionalMaxPooling.h_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native`):
+
+- [`AdaptiveMaxPooling2d.cpp_docs.md_docs.md`](./AdaptiveMaxPooling2d.cpp_docs.md_docs.md)
+- [`Distributions.cpp_docs.md_docs.md`](./Distributions.cpp_docs.md_docs.md)
+- [`im2col_shape_check.h_docs.md_docs.md`](./im2col_shape_check.h_docs.md_docs.md)
+- [`ReduceOps.cpp_kw.md_docs.md`](./ReduceOps.cpp_kw.md_docs.md)
+- [`Lerp.cpp_kw.md_docs.md`](./Lerp.cpp_kw.md_docs.md)
+- [`CPUFallback.h_docs.md_docs.md`](./CPUFallback.h_docs.md_docs.md)
+- [`MetaTensor.cpp_docs.md_docs.md`](./MetaTensor.cpp_docs.md_docs.md)
+- [`Correlation.cpp_kw.md_docs.md`](./Correlation.cpp_kw.md_docs.md)
+- [`im2col_shape_check.h_kw.md_docs.md`](./im2col_shape_check.h_kw.md_docs.md)
+- [`UpSampleNearest2d.cpp_kw.md_docs.md`](./UpSampleNearest2d.cpp_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `FractionalMaxPooling.h_docs.md_docs.md`
+- **Keyword Index**: `FractionalMaxPooling.h_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

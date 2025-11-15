@@ -1,0 +1,93 @@
+# Keyword Index: `c10/core/DispatchKeySet.h`
+
+## File Information
+
+- **Original File**: [c10/core/DispatchKeySet.h](../../../c10/core/DispatchKeySet.h)
+- **Documentation**: [`DispatchKeySet.h_docs.md`](./DispatchKeySet.h_docs.md)
+- **Folder**: `c10/core`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Class/Structs
+
+- **`DispatchKeySet`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`FuncType`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`FunctionalityOffsetAndMask`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`OpTableOffsetAndMask`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`T`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`iterator`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+
+### Functions
+
+- **`DispatchKeySet`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`add`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`backend_bits_to_repr`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`begin`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`empty`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`end`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`from_raw_repr`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`getAutocastRelatedKeySetFromBackend`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`getAutogradRelatedKeySetFromBackend`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`getBackendIndex`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`getDispatchTableIndexForDispatchKey`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`getDispatchTableIndexForDispatchKeySet`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`has`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`has_all`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`has_any`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`has_backend`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`highestBackendKey`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`highestFunctionalityKey`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`highestPriorityBackendTypeId`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`highestPriorityTypeId`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`if`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`indexOfHighestBit`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`isSupersetOf`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`keys_to_repr`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`legacyExtractDispatchKey`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`raw_repr`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`remove`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`remove_backend`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+
+### Includes
+
+- **`array`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`c10/core/DispatchKey.h`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`c10/macros/Export.h`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`c10/macros/Macros.h`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`c10/util/Exception.h`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`c10/util/Metaprogramming.h`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`c10/util/TypeList.h`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`c10/util/llvmMathExtras.h`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`cstddef`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`cstdint`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`initializer_list`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`iterator`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`ostream`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`string`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+- **`type_traits`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+
+### Namespaces
+
+- **`c10`**: [DispatchKeySet.h_docs.md](./DispatchKeySet.h_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

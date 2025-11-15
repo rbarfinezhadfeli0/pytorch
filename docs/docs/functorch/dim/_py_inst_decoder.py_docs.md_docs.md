@@ -1,0 +1,299 @@
+# Documentation: `docs/functorch/dim/_py_inst_decoder.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/functorch/dim/_py_inst_decoder.py_docs.md`
+- **Size**: 4,549 bytes (4.44 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `functorch/dim/_py_inst_decoder.py`
+
+## File Metadata
+
+- **Path**: `functorch/dim/_py_inst_decoder.py`
+- **Size**: 2,107 bytes (2.06 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This is a python source code that is part of the PyTorch project.
+
+## Original Source
+
+```python
+import dis
+from typing import Any, Optional
+
+
+class _PyInstDecoder:
+    """
+    Decodes Python bytecode instructions to extract variable names
+    """
+
+    def __init__(self, code_object: Any, lasti: int) -> None:
+        self.code_object = code_object
+        self.instructions = list(dis.get_instructions(code_object))
+        self.offset = self._find_instruction_index(lasti)
+
+    def _find_instruction_index(self, lasti: int) -> int:
+        """Find instruction index corresponding to lasti (byte offset)."""
+        # Find the instruction at or before lasti
+        # This should find the CALL instruction, not the next one
+        best_idx = 0
+        for i, instr in enumerate(self.instructions):
+            if instr.offset <= lasti:
+                best_idx = i
+            else:
+                break
+        return best_idx
+
+    def next(self) -> None:
+        """Advance to the next instruction."""
+        self.offset += 1
+
+    def opcode(self) -> Optional[str]:
+        """Get the opcode name of the current instruction."""
+        if self.offset < len(self.instructions):
+            return self.instructions[self.offset].opname
+        return None
+
+    def oparg(self) -> int:
+        """Get the argument of the current instruction."""
+        if self.offset < len(self.instructions):
+            return self.instructions[self.offset].arg or 0
+        return 0
+
+    def name(self) -> Optional[str]:
+        """
+        Extract variable name from current instruction.
+        """
+        opname = self.opcode()
+        if not opname:
+            return None
+
+        names = None
+        if opname in ("STORE_NAME", "STORE_GLOBAL"):
+            names = self.code_object.co_names
+        elif opname == "STORE_FAST":
+            names = self.code_object.co_varnames
+        elif opname == "STORE_DEREF":
+            names = self.code_object.co_cellvars
+            if not names:
+                names = self.code_object.co_freevars
+        else:
+            return None
+
+        arg = self.oparg()
+        if names and 0 <= arg < len(names):
+            return names[arg]
+
+        return None
+
+```
+
+
+
+## High-Level Overview
+
+"""    Decodes Python bytecode instructions to extract variable names
+
+This Python file contains 1 class(es) and 6 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `_PyInstDecoder`
+
+**Functions defined**: `__init__`, `_find_instruction_index`, `next`, `opcode`, `oparg`, `name`
+
+**Key imports**: dis, Any, Optional
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `functorch/dim`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `dis`
+- `typing`: Any, Optional
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`functorch/dim`):
+
+- [`magic_trace.py_docs.md`](./magic_trace.py_docs.md)
+- [`_wrap.py_docs.md`](./_wrap.py_docs.md)
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`_dim_entry.py_docs.md`](./_dim_entry.py_docs.md)
+- [`wrap_type.py_docs.md`](./wrap_type.py_docs.md)
+- [`_enable_all_layers.py_docs.md`](./_enable_all_layers.py_docs.md)
+- [`README.md_docs.md`](./README.md_docs.md)
+- [`_tensor_info.py_docs.md`](./_tensor_info.py_docs.md)
+- [`op_properties.py_docs.md`](./op_properties.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `_py_inst_decoder.py_docs.md`
+- **Keyword Index**: `_py_inst_decoder.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/functorch/dim`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/functorch/dim`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/functorch/dim`):
+
+- [`_py_inst_decoder.py_kw.md_docs.md`](./_py_inst_decoder.py_kw.md_docs.md)
+- [`_getsetitem.py_docs.md_docs.md`](./_getsetitem.py_docs.md_docs.md)
+- [`README.md_docs.md_docs.md`](./README.md_docs.md_docs.md)
+- [`_getsetitem.py_kw.md_docs.md`](./_getsetitem.py_kw.md_docs.md)
+- [`_order.py_kw.md_docs.md`](./_order.py_kw.md_docs.md)
+- [`wrap_type.py_kw.md_docs.md`](./wrap_type.py_kw.md_docs.md)
+- [`_tensor_info.py_kw.md_docs.md`](./_tensor_info.py_kw.md_docs.md)
+- [`_dim_entry.py_kw.md_docs.md`](./_dim_entry.py_kw.md_docs.md)
+- [`magic_trace.py_docs.md_docs.md`](./magic_trace.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `_py_inst_decoder.py_docs.md_docs.md`
+- **Keyword Index**: `_py_inst_decoder.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

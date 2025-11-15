@@ -1,0 +1,76 @@
+# Keyword Index: `test/quantization/core/test_backend_config.py`
+
+## File Information
+
+- **Original File**: [test/quantization/core/test_backend_config.py](../../../../test/quantization/core/test_backend_config.py)
+- **Documentation**: [`test_backend_config.py_docs.md`](./test_backend_config.py_docs.md)
+- **Folder**: `test/quantization/core`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Classs
+
+- **`TestBackendConfig`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+
+### Functions
+
+- **`_extra_inputs_getter`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+- **`_get_backend_op_config1`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+- **`_get_backend_op_config2`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+- **`_get_backend_pattern_config_dict1`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+- **`_get_backend_pattern_config_dict2`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+- **`test_backend_config_from_dict`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+- **`test_backend_config_set_backend_pattern_config`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+- **`test_backend_config_set_name`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+- **`test_backend_config_to_dict`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+- **`test_backend_op_config_add_dtype_config`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+- **`test_backend_op_config_from_dict`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+- **`test_backend_op_config_set_extra_inputs_getter`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+- **`test_backend_op_config_set_fused_module`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+- **`test_backend_op_config_set_fuser_method`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+- **`test_backend_op_config_set_input_type_to_index`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+- **`test_backend_op_config_set_num_tensor_args_to_observation_type`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+- **`test_backend_op_config_set_observation_type`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+- **`test_backend_op_config_set_qat_module`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+- **`test_backend_op_config_set_reference_quantized_module`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+- **`test_backend_op_config_set_root_module`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+- **`test_backend_op_config_set_root_node_getter`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+- **`test_backend_op_config_to_dict`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+- **`test_dtype_config_from_dict`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+- **`test_dtype_config_to_dict`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+
+### Imports
+
+- **`QuantizationTestCase`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+- **`_default_root_node_getter`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+- **`_sequential_wrapper2`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+- **`torch`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+- **`torch.ao.nn.intrinsic`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+- **`torch.ao.nn.qat`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+- **`torch.ao.nn.quantized.reference`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+- **`torch.ao.quantization.backend_config`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+- **`torch.ao.quantization.fuser_method_mappings`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+- **`torch.ao.quantization.fx.quantize_handler`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+- **`torch.testing._internal.common_quantization`**: [test_backend_config.py_docs.md](./test_backend_config.py_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

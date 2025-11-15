@@ -1,0 +1,297 @@
+# Documentation: `docs/torch/_higher_order_ops/print.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/_higher_order_ops/print.py_docs.md`
+- **Size**: 4,954 bytes (4.84 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/_higher_order_ops/print.py`
+
+## File Metadata
+
+- **Path**: `torch/_higher_order_ops/print.py`
+- **Size**: 1,966 bytes (1.92 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This is a python source code that is part of the PyTorch project.
+
+## Original Source
+
+```python
+import builtins
+
+import torch
+import torch.utils._pytree as pytree
+from torch._ops import HigherOrderOperator
+from torch.fx.experimental.proxy_tensor import ProxyTorchDispatchMode
+
+
+class Print(HigherOrderOperator):
+    """
+    print(format_str, **kwargs) -> None
+
+    This Higher Order Operator (HOP) provides a functional version of print for use in PyTorch graphs.
+    It enables format printing with named arguments, e.g., torch._higher_order_ops.print("moo {x} {y}", x=1, y=2).
+
+    This HOP enables printing without causing graph break.
+    """
+
+    def __init__(self) -> None:
+        super().__init__("print")
+
+    def __call__(self, format_str: str, **kwargs: object) -> object:
+        assert isinstance(format_str, str)
+        return super().__call__(format_str, **kwargs)
+
+
+print = Print()
+
+
+@print.py_impl(ProxyTorchDispatchMode)
+# pyre-ignore
+def print_proxy_torch_dispatch_mode(
+    mode: ProxyTorchDispatchMode, format_str: str, **kwargs: object
+) -> None:
+    proxy_kwargs = pytree.tree_map(mode.tracer.unwrap_proxy, kwargs)  # type: ignore[union-attr]  # noqa: F841
+    mode.tracer.create_proxy("call_function", print, (format_str,), proxy_kwargs)
+
+
+@print.py_impl(torch._C.DispatchKey.CompositeExplicitAutograd)
+# pyre-ignore
+def print_cpu(format_str: str, **kwargs: object) -> None:
+    # Ensure all immutable_dict/list in kwargs are converted to regular dict/list
+    map_types: dict[type, type] = {
+        torch.fx.immutable_collections.immutable_dict: dict,
+        torch.fx.immutable_collections.immutable_list: list,
+    }
+    new_kwargs = pytree.tree_map_only(
+        tuple(map_types.keys()),
+        lambda a: map_types[type(a)](a),
+        kwargs,
+        lambda a: isinstance(a, tuple(map_types.keys())),
+    )
+    #  Use built-in print to avoid recursion with the HOP print
+    builtins.print(format_str.format(**new_kwargs))
+
+
+print.fallthrough(torch._C.DispatchKey.AutogradCPU)
+print.fallthrough(torch._C.DispatchKey.AutogradCUDA)
+
+```
+
+
+
+## High-Level Overview
+
+"""    print(format_str, **kwargs) -> None    This Higher Order Operator (HOP) provides a functional version of print for use in PyTorch graphs.    It enables format printing with named arguments, e.g., torch._higher_order_ops.print("moo {x} {y}", x=1, y=2).    This HOP enables printing without causing graph break.
+
+This Python file contains 1 class(es) and 4 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `Print`
+
+**Functions defined**: `__init__`, `__call__`, `print_proxy_torch_dispatch_mode`, `print_cpu`
+
+**Key imports**: builtins, torch, torch.utils._pytree as pytree, HigherOrderOperator, ProxyTorchDispatchMode
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/_higher_order_ops`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `builtins`
+- `torch`
+- `torch.utils._pytree as pytree`
+- `torch._ops`: HigherOrderOperator
+- `torch.fx.experimental.proxy_tensor`: ProxyTorchDispatchMode
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/_higher_order_ops`):
+
+- [`associative_scan.py_docs.md`](./associative_scan.py_docs.md)
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`effects.py_docs.md`](./effects.py_docs.md)
+- [`foreach_map.py_docs.md`](./foreach_map.py_docs.md)
+- [`strict_mode.py_docs.md`](./strict_mode.py_docs.md)
+- [`torchbind.py_docs.md`](./torchbind.py_docs.md)
+- [`utils.py_docs.md`](./utils.py_docs.md)
+- [`run_const_graph.py_docs.md`](./run_const_graph.py_docs.md)
+- [`_invoke_quant.py_docs.md`](./_invoke_quant.py_docs.md)
+- [`wrap.py_docs.md`](./wrap.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `print.py_docs.md`
+- **Keyword Index**: `print.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/_higher_order_ops`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/_higher_order_ops`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/_higher_order_ops`):
+
+- [`schema.py_docs.md_docs.md`](./schema.py_docs.md_docs.md)
+- [`run_const_graph.py_docs.md_docs.md`](./run_const_graph.py_docs.md_docs.md)
+- [`effects.py_kw.md_docs.md`](./effects.py_kw.md_docs.md)
+- [`partitioner.py_docs.md_docs.md`](./partitioner.py_docs.md_docs.md)
+- [`strict_mode.py_docs.md_docs.md`](./strict_mode.py_docs.md_docs.md)
+- [`out_dtype.py_kw.md_docs.md`](./out_dtype.py_kw.md_docs.md)
+- [`wrap.py_docs.md_docs.md`](./wrap.py_docs.md_docs.md)
+- [`while_loop.py_kw.md_docs.md`](./while_loop.py_kw.md_docs.md)
+- [`utils.py_docs.md_docs.md`](./utils.py_docs.md_docs.md)
+- [`invoke_subgraph.py_docs.md_docs.md`](./invoke_subgraph.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `print.py_docs.md_docs.md`
+- **Keyword Index**: `print.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

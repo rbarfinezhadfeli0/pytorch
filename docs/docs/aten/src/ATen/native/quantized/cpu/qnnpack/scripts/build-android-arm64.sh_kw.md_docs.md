@@ -1,0 +1,184 @@
+# Documentation: `docs/aten/src/ATen/native/quantized/cpu/qnnpack/scripts/build-android-arm64.sh_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/quantized/cpu/qnnpack/scripts/build-android-arm64.sh_kw.md`
+- **Size**: 4,528 bytes (4.42 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**. This file is a **utility or tool script**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `aten/src/ATen/native/quantized/cpu/qnnpack/scripts/build-android-arm64.sh`
+
+## File Information
+
+- **Original File**: [aten/src/ATen/native/quantized/cpu/qnnpack/scripts/build-android-arm64.sh](../../../../../../../../../aten/src/ATen/native/quantized/cpu/qnnpack/scripts/build-android-arm64.sh)
+- **Documentation**: [`build-android-arm64.sh_docs.md`](./build-android-arm64.sh_docs.md)
+- **Folder**: `aten/src/ATen/native/quantized/cpu/qnnpack/scripts`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ANDROID_NDK`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`All`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`Android`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`BSD`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`Benchmark`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`CMAKE_ARGS`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`CMake`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`Copyright`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`Cross`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`DANDROID_ABI`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`DANDROID_CPP_FEATURES`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`DANDROID_NDK`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`DANDROID_PIE`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`DANDROID_PLATFORM`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`DANDROID_STL`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`DCMAKE_BUILD_TYPE`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`DCMAKE_POSITION_INDEPENDENT_CODE`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`DCMAKE_TOOLCHAIN_FILE`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`DHAVE_POSIX_REGEX`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`DHAVE_STD_REGEX`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`DHAVE_STEADY_CLOCK`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`DPYTORCH_QNNPACK_BUILD_BENCHMARKS`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`DPYTORCH_QNNPACK_BUILD_TESTS`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`DPYTORCH_QNNPACK_LIBRARY_TYPE`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`Darwin`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`Facebook`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`GNinja`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`Google`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`If`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`Inc`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`LICENSE`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`Make`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`NDK`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`Ninja`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`ON`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`Release`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`This`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+- **`Use`**: [build-android-arm64.sh_docs.md](./build-android-arm64.sh_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native/quantized/cpu/qnnpack/scripts`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native/quantized/cpu/qnnpack/scripts`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native/quantized/cpu/qnnpack/scripts`):
+
+- [`build-ios-x86_64.sh_kw.md_docs.md`](./build-ios-x86_64.sh_kw.md_docs.md)
+- [`test-android-arm64.sh_kw.md_docs.md`](./test-android-arm64.sh_kw.md_docs.md)
+- [`build-android-x86.sh_docs.md_docs.md`](./build-android-x86.sh_docs.md_docs.md)
+- [`build-ios-i386.sh_docs.md_docs.md`](./build-ios-i386.sh_docs.md_docs.md)
+- [`build-ios-arm64e.sh_kw.md_docs.md`](./build-ios-arm64e.sh_kw.md_docs.md)
+- [`test-android-armv7.sh_docs.md_docs.md`](./test-android-armv7.sh_docs.md_docs.md)
+- [`build-ios-armv7s.sh_kw.md_docs.md`](./build-ios-armv7s.sh_kw.md_docs.md)
+- [`build-local.sh_kw.md_docs.md`](./build-local.sh_kw.md_docs.md)
+- [`test-android-armv7.sh_kw.md_docs.md`](./test-android-armv7.sh_kw.md_docs.md)
+- [`build-android-arm64.sh_docs.md_docs.md`](./build-android-arm64.sh_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `build-android-arm64.sh_kw.md_docs.md`
+- **Keyword Index**: `build-android-arm64.sh_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,355 @@
+# Documentation: `docs/test/dynamo/cpython/3_13/test_range.diff_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/dynamo/cpython/3_13/test_range.diff_docs.md`
+- **Size**: 7,177 bytes (7.01 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/dynamo/cpython/3_13/test_range.diff`
+
+## File Metadata
+
+- **Path**: `test/dynamo/cpython/3_13/test_range.diff`
+- **Size**: 4,760 bytes (4.65 KB)
+- **Type**: Source File (.diff)
+- **Extension**: `.diff`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**.
+
+## Original Source
+
+```
+diff --git a/test/dynamo/cpython/3_13/test_range.py b/test/dynamo/cpython/3_13/test_range.py
+index 3870b153688..4d3a3d136e4 100644
+--- a/test/dynamo/cpython/3_13/test_range.py
++++ b/test/dynamo/cpython/3_13/test_range.py
+@@ -1,3 +1,23 @@
++# ======= BEGIN Dynamo patch =======
++# Owner(s): ["module: dynamo"]
++
++# ruff: noqa
++# flake8: noqa
++
++# Test copied from
++# https://raw.githubusercontent.com/python/cpython/refs/tags/v3.13.5/Lib/test/test_range.py
++
++import sys
++import torch
++import torch._dynamo.test_case
++import unittest
++from torch._dynamo.test_case import CPythonTestCase
++from torch.testing._internal.common_utils import run_tests, skipIfTorchDynamo
++
++__TestCase = CPythonTestCase
++
++# ======= END DYNAMO PATCH =======
++
+ # Python test set -- built-in functions
+ 
+ import unittest
+@@ -21,7 +41,7 @@ def pyrange_reversed(start, stop, step):
+     return pyrange(stop - step, start - step, -step)
+ 
+ 
+-class RangeTest(unittest.TestCase):
++class RangeTest(__TestCase):
+     def assert_iterators_equal(self, xs, ys, test_id, limit=None):
+         # check that an iterator xs matches the expected results ys,
+         # up to a given limit.
+@@ -74,18 +94,6 @@ class RangeTest(unittest.TestCase):
+         self.assertNotIn(-b, seq)
+         self.assertEqual(len(seq), 2)
+ 
+-        self.assertRaises(TypeError, range)
+-        self.assertRaises(TypeError, range, 1, 2, 3, 4)
+-        self.assertRaises(ValueError, range, 1, 2, 0)
+-
+-        self.assertRaises(TypeError, range, 0.0, 2, 1)
+-        self.assertRaises(TypeError, range, 1, 2.0, 1)
+-        self.assertRaises(TypeError, range, 1, 2, 1.0)
+-        self.assertRaises(TypeError, range, 1e100, 1e101, 1e101)
+-
+-        self.assertRaises(TypeError, range, 0, "spam")
+-        self.assertRaises(TypeError, range, 0, 42, "spam")
+-
+         self.assertEqual(len(range(0, sys.maxsize, sys.maxsize-1)), 2)
+ 
+         r = range(-sys.maxsize, sys.maxsize, 2)
+@@ -354,7 +362,7 @@ class RangeTest(unittest.TestCase):
+         self.assertEqual(range(1, 2**100, 2).count(2**87), 0)
+         self.assertEqual(range(1, 2**100, 2).count(2**87+1), 1)
+ 
+-        self.assertEqual(range(10).count(ALWAYS_EQ), 10)
++        # self.assertEqual(range(10).count(ALWAYS_EQ), 10)
+ 
+         self.assertEqual(len(range(sys.maxsize, sys.maxsize+10)), 10)
+ 
+@@ -403,6 +411,7 @@ class RangeTest(unittest.TestCase):
+                     it = pickle.loads(d)
+                     self.assertEqual(list(it), data[1:])
+ 
++    @skipIfTorchDynamo("infinite loop")
+     def test_iterator_pickling_overflowing_index(self):
+         for proto in range(pickle.HIGHEST_PROTOCOL + 1):
+             with self.subTest(proto=proto):
+@@ -653,28 +662,18 @@ class RangeTest(unittest.TestCase):
+         ranges_ne = [a != b for a in test_ranges for b in test_ranges]
+         self.assertEqual(ranges_ne, [not x for x in ranges_eq])
+ 
+-        # Equal ranges should have equal hashes.
+-        for a in test_ranges:
+-            for b in test_ranges:
+-                if a == b:
+-                    self.assertEqual(hash(a), hash(b))
+-
+         # Ranges are unequal to other types (even sequence types)
+         self.assertIs(range(0) == (), False)
+-        self.assertIs(() == range(0), False)
++        # self.assertIs(() == range(0), False)
+         self.assertIs(range(2) == [0, 1], False)
+ 
+         # Huge integers aren't a problem.
+         self.assertEqual(range(0, 2**100 - 1, 2),
+                          range(0, 2**100, 2))
+-        self.assertEqual(hash(range(0, 2**100 - 1, 2)),
+-                         hash(range(0, 2**100, 2)))
+         self.assertNotEqual(range(0, 2**100, 2),
+                             range(0, 2**100 + 1, 2))
+         self.assertEqual(range(2**200, 2**201 - 2**99, 2**100),
+                          range(2**200, 2**201, 2**100))
+-        self.assertEqual(hash(range(2**200, 2**201 - 2**99, 2**100)),
+-                         hash(range(2**200, 2**201, 2**100)))
+         self.assertNotEqual(range(2**200, 2**201, 2**100),
+                             range(2**200, 2**201 + 1, 2**100))
+ 
+@@ -710,19 +709,6 @@ class RangeTest(unittest.TestCase):
+         self.assertIs(type(rangeobj.stop), int)
+         self.assertIs(type(rangeobj.step), int)
+ 
+-        with self.assertRaises(AttributeError):
+-            rangeobj.start = 0
+-        with self.assertRaises(AttributeError):
+-            rangeobj.stop = 10
+-        with self.assertRaises(AttributeError):
+-            rangeobj.step = 1
+-
+-        with self.assertRaises(AttributeError):
+-            del rangeobj.start
+-        with self.assertRaises(AttributeError):
+-            del rangeobj.stop
+-        with self.assertRaises(AttributeError):
+-            del rangeobj.step
+ 
+ if __name__ == "__main__":
+-    unittest.main()
++    run_tests()
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `test/dynamo/cpython/3_13`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/dynamo/cpython/3_13`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- **Serialization**: Uses pickle - be cautious with untrusted data
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/dynamo/cpython/3_13/test_range.diff
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/dynamo/cpython/3_13`):
+
+- [`mapping_tests.diff_docs.md`](./mapping_tests.diff_docs.md)
+- [`test_float.py_docs.md`](./test_float.py_docs.md)
+- [`test_generators.py_docs.md`](./test_generators.py_docs.md)
+- [`test_dict.py_docs.md`](./test_dict.py_docs.md)
+- [`test_generator_stop.diff_docs.md`](./test_generator_stop.diff_docs.md)
+- [`test_sort.diff_docs.md`](./test_sort.diff_docs.md)
+- [`test_list.diff_docs.md`](./test_list.diff_docs.md)
+- [`test_userdict.diff_docs.md`](./test_userdict.diff_docs.md)
+- [`test_generators.diff_docs.md`](./test_generators.diff_docs.md)
+- [`test_userlist.py_docs.md`](./test_userlist.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_range.diff_docs.md`
+- **Keyword Index**: `test_range.diff_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/dynamo/cpython/3_13`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/dynamo/cpython/3_13`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- **Serialization**: Uses pickle - be cautious with untrusted data
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/dynamo/cpython/3_13/test_range.diff_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/dynamo/cpython/3_13`):
+
+- [`seq_tests.py_kw.md_docs.md`](./seq_tests.py_kw.md_docs.md)
+- [`test_tuple.diff_kw.md_docs.md`](./test_tuple.diff_kw.md_docs.md)
+- [`test_userdict.py_docs.md_docs.md`](./test_userdict.py_docs.md_docs.md)
+- [`test_bool.diff_docs.md_docs.md`](./test_bool.diff_docs.md_docs.md)
+- [`test_operator.py_docs.md_docs.md`](./test_operator.py_docs.md_docs.md)
+- [`seq_tests.diff_docs.md_docs.md`](./seq_tests.diff_docs.md_docs.md)
+- [`test_list.diff_kw.md_docs.md`](./test_list.diff_kw.md_docs.md)
+- [`test_bool.py_docs.md_docs.md`](./test_bool.py_docs.md_docs.md)
+- [`test_raise.py_docs.md_docs.md`](./test_raise.py_docs.md_docs.md)
+- [`test_itertools.diff_kw.md_docs.md`](./test_itertools.diff_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_range.diff_docs.md_docs.md`
+- **Keyword Index**: `test_range.diff_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

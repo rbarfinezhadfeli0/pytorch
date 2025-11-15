@@ -1,0 +1,319 @@
+# Documentation: `docs/test/cpp/profiler/containers.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/cpp/profiler/containers.cpp_docs.md`
+- **Size**: 4,872 bytes (4.76 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/cpp/profiler/containers.cpp`
+
+## File Metadata
+
+- **Path**: `test/cpp/profiler/containers.cpp`
+- **Size**: 2,871 bytes (2.80 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**.
+
+## Original Source
+
+```cpp
+#include <algorithm>
+#include <cmath>
+#include <utility>
+#include <vector>
+
+#include <gtest/gtest.h>
+
+#include <c10/util/ApproximateClock.h>
+#include <c10/util/irange.h>
+#include <torch/csrc/profiler/containers.h>
+#include <torch/csrc/profiler/util.h>
+
+TEST(ProfilerTest, AppendOnlyList) {
+  const int n = 4096;
+  torch::profiler::impl::AppendOnlyList<int, 1024> list;
+  for (const auto i : c10::irange(n)) {
+    list.emplace_back(i);
+    ASSERT_EQ(list.size(), i + 1);
+  }
+
+  int expected = 0;
+  for (const auto i : list) {
+    ASSERT_EQ(i, expected++);
+  }
+  ASSERT_EQ(expected, n);
+
+  list.clear();
+  ASSERT_EQ(list.size(), 0);
+}
+
+TEST(ProfilerTest, AppendOnlyList_ref) {
+  const int n = 512;
+  torch::profiler::impl::AppendOnlyList<std::pair<int, int>, 64> list;
+  std::vector<std::pair<int, int>*> refs;
+  for ([[maybe_unused]] const auto _ : c10::irange(n)) {
+    refs.push_back(list.emplace_back());
+  }
+
+  for (const auto i : c10::irange(n)) {
+    *refs.at(i) = {i, 0};
+  }
+
+  int expected = 0;
+  for (const auto& i : list) {
+    ASSERT_EQ(i.first, expected++);
+  }
+}
+
+// Test that we can convert TSC measurements back to wall clock time.
+TEST(ProfilerTest, clock_converter) {
+  const int n = 10001;
+  c10::ApproximateClockToUnixTimeConverter converter;
+  std::vector<
+      c10::ApproximateClockToUnixTimeConverter::UnixAndApproximateTimePair>
+      pairs;
+  for ([[maybe_unused]] const auto i : c10::irange(n)) {
+    pairs.push_back(c10::ApproximateClockToUnixTimeConverter::measurePair());
+  }
+  auto count_to_ns = converter.makeConverter();
+  std::vector<int64_t> deltas;
+  for (const auto& i : pairs) {
+    deltas.push_back(i.t_ - count_to_ns(i.approx_t_));
+  }
+  std::sort(deltas.begin(), deltas.end());
+
+  // In general it's not a good idea to put clocks in unit tests as it leads
+  // to flakiness. We mitigate this by:
+  //   1) Testing the clock itself. While the time to complete a task may
+  //      vary, two clocks measuring the same time should be much more
+  //      consistent.
+  //   2) Only testing the interquartile range. Context switches between
+  //      calls to the two timers do occur and can result in hundreds of
+  //      nanoseconds of noise, but such switches are only a few percent
+  //      of cases.
+  //   3) We're willing to accept a somewhat large bias which can emerge from
+  //      differences in the cost of calling each clock.
+  EXPECT_LT(std::abs(deltas[n / 2]), 200);
+  EXPECT_LT(deltas[n * 3 / 4] - deltas[n / 4], 50);
+}
+
+TEST(ProfilerTest, soft_assert) {
+  EXPECT_TRUE(SOFT_ASSERT(true));
+  torch::profiler::impl::setSoftAssertRaises(true);
+  EXPECT_ANY_THROW(SOFT_ASSERT(false));
+  torch::profiler::impl::setSoftAssertRaises(false);
+  EXPECT_NO_THROW(SOFT_ASSERT(false));
+  // Reset soft assert behavior to default
+  torch::profiler::impl::setSoftAssertRaises(std::nullopt);
+  EXPECT_NO_THROW(SOFT_ASSERT(false));
+}
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 0 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/cpp/profiler`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `algorithm`
+- `cmath`
+- `utility`
+- `vector`
+- `gtest/gtest.h`
+- `c10/util/ApproximateClock.h`
+- `c10/util/irange.h`
+- `torch/csrc/profiler/containers.h`
+- `torch/csrc/profiler/util.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/cpp/profiler/containers.cpp
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/cpp/profiler`):
+
+- [`record_function.cpp_docs.md`](./record_function.cpp_docs.md)
+- [`perf_events.cpp_docs.md`](./perf_events.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `containers.cpp_docs.md`
+- **Keyword Index**: `containers.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/cpp/profiler`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/cpp/profiler`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/cpp/profiler/containers.cpp_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/cpp/profiler`):
+
+- [`containers.cpp_kw.md_docs.md`](./containers.cpp_kw.md_docs.md)
+- [`record_function.cpp_kw.md_docs.md`](./record_function.cpp_kw.md_docs.md)
+- [`record_function.cpp_docs.md_docs.md`](./record_function.cpp_docs.md_docs.md)
+- [`perf_events.cpp_kw.md_docs.md`](./perf_events.cpp_kw.md_docs.md)
+- [`perf_events.cpp_docs.md_docs.md`](./perf_events.cpp_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `containers.cpp_docs.md_docs.md`
+- **Keyword Index**: `containers.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,309 @@
+# Documentation: `docs/torch/nativert/graph/GraphUtils.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/nativert/graph/GraphUtils.cpp_docs.md`
+- **Size**: 4,752 bytes (4.64 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/nativert/graph/GraphUtils.cpp`
+
+## File Metadata
+
+- **Path**: `torch/nativert/graph/GraphUtils.cpp`
+- **Size**: 2,460 bytes (2.40 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#include <torch/nativert/graph/GraphUtils.h>
+
+#include <c10/core/Device.h>
+
+#include <torch/nativert/graph/Graph.h>
+
+namespace torch::nativert {
+
+bool areAllIOTensorsAttributesOnCpu(const Node& node) {
+  const auto& tensorValuesMeta = node.owningGraph()->tensorValuesMeta();
+
+  // Check inputs
+  for (auto& input : node.inputs()) {
+    if (input.value->type() == Type::Kind::Tensor) {
+      if (auto it = tensorValuesMeta.find(std::string{input.value->name()});
+          it != tensorValuesMeta.end()) {
+        const auto& device = it->second.device();
+        if (!device.is_cpu()) {
+          return false;
+        }
+      }
+    } else if (input.value->type() == Type::Kind::TensorList) {
+      for (const auto& el : input.value->getListElements()) {
+        if (auto it = tensorValuesMeta.find(std::string{el->name()});
+            it != tensorValuesMeta.end()) {
+          const auto& device = it->second.device();
+          if (!device.is_cpu()) {
+            return false;
+          }
+        }
+      }
+    } else {
+      // other input types doesn't affect if the node is on CPU or not
+    }
+  }
+
+  // Check outputs
+  for (auto& output : node.outputs()) {
+    if (!output) {
+      // When a node's output is a Constant, its Value* is nullptr
+      // TODO: this is breaking the invariant of all nodes outputs are non-null
+      // in the graph. We should fix this.
+      continue;
+    }
+    if (output->type() == Type::Kind::Tensor) {
+      if (auto it = tensorValuesMeta.find(std::string{output->name()});
+          it != tensorValuesMeta.end()) {
+        const auto& device = it->second.device();
+        if (!device.is_cpu()) {
+          return false;
+        }
+      }
+    } else if (output->type() == Type::Kind::TensorList) {
+      for (const auto& el : output->getListElements()) {
+        if (auto it = tensorValuesMeta.find(std::string{el->name()});
+            it != tensorValuesMeta.end()) {
+          const auto& device = it->second.device();
+          if (!device.is_cpu()) {
+            return false;
+          }
+        }
+      }
+    } else {
+      // other output types doesn't affect if the node is on CPU or not
+    }
+  }
+
+  // Check attributes
+  for (auto& attribute : node.attributes()) {
+    if (std::holds_alternative<c10::Device>(attribute.value)) {
+      auto device = std::get<c10::Device>(attribute.value);
+      if (!device.is_cpu()) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+} // namespace torch::nativert
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 6 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/nativert/graph`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `torch/nativert/graph/GraphUtils.h`
+- `c10/core/Device.h`
+- `torch/nativert/graph/Graph.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/nativert/graph`):
+
+- [`TensorMeta.cpp_docs.md`](./TensorMeta.cpp_docs.md)
+- [`Serialization.cpp_docs.md`](./Serialization.cpp_docs.md)
+- [`Serialization.h_docs.md`](./Serialization.h_docs.md)
+- [`GraphPasses.cpp_docs.md`](./GraphPasses.cpp_docs.md)
+- [`GraphSignature.cpp_docs.md`](./GraphSignature.cpp_docs.md)
+- [`GraphUtils.h_docs.md`](./GraphUtils.h_docs.md)
+- [`TensorMeta.h_docs.md`](./TensorMeta.h_docs.md)
+- [`Graph.cpp_docs.md`](./Graph.cpp_docs.md)
+- [`Graph.h_docs.md`](./Graph.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `GraphUtils.cpp_docs.md`
+- **Keyword Index**: `GraphUtils.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/nativert/graph`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/nativert/graph`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/nativert/graph`):
+
+- [`Serialization.cpp_docs.md_docs.md`](./Serialization.cpp_docs.md_docs.md)
+- [`GraphSignature.h_docs.md_docs.md`](./GraphSignature.h_docs.md_docs.md)
+- [`GraphSignature.cpp_kw.md_docs.md`](./GraphSignature.cpp_kw.md_docs.md)
+- [`GraphPasses.h_kw.md_docs.md`](./GraphPasses.h_kw.md_docs.md)
+- [`TensorMeta.h_docs.md_docs.md`](./TensorMeta.h_docs.md_docs.md)
+- [`GraphSignature.h_kw.md_docs.md`](./GraphSignature.h_kw.md_docs.md)
+- [`Graph.h_docs.md_docs.md`](./Graph.h_docs.md_docs.md)
+- [`GraphPasses.cpp_docs.md_docs.md`](./GraphPasses.cpp_docs.md_docs.md)
+- [`GraphUtils.h_docs.md_docs.md`](./GraphUtils.h_docs.md_docs.md)
+- [`Graph.cpp_kw.md_docs.md`](./Graph.cpp_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `GraphUtils.cpp_docs.md_docs.md`
+- **Keyword Index**: `GraphUtils.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

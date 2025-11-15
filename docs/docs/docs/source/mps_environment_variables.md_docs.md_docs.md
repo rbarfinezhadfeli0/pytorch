@@ -1,0 +1,257 @@
+# Documentation: `docs/docs/source/mps_environment_variables.md_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/docs/source/mps_environment_variables.md_docs.md`
+- **Size**: 4,612 bytes (4.50 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `docs/source/mps_environment_variables.md`
+
+## File Metadata
+
+- **Path**: `docs/source/mps_environment_variables.md`
+- **Size**: 2,101 bytes (2.05 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+(mps_environment_variables)=
+# MPS Environment Variables
+
+**PyTorch Environment Variables**
+
+
+| Variable                         | Description |
+|----------------------------------|-------------|
+| `PYTORCH_DEBUG_MPS_ALLOCATOR`   | If set to `1`, set allocator logging level to verbose. |
+| `PYTORCH_MPS_LOG_PROFILE_INFO`  | Set log options bitmask to `MPSProfiler`. See `LogOptions` enum in `aten/src/ATen/mps/MPSProfiler.h`. |
+| `PYTORCH_MPS_TRACE_SIGNPOSTS`   | Set profile and signpost bitmasks to `MPSProfiler`. See `ProfileOptions` and `SignpostTypes`. |
+| `PYTORCH_MPS_HIGH_WATERMARK_RATIO` | High watermark ratio for MPS allocator. Default is 1.7. |
+| `PYTORCH_MPS_LOW_WATERMARK_RATIO` | Low watermark ratio for MPS allocator. Default is 1.4 (unified) or 1.0 (discrete). |
+| `PYTORCH_MPS_FAST_MATH`         | If `1`, enables fast math for MPS kernels. See section 1.6.3 in the [Metal Shading Language Spec](https://developer.apple.com/metal/Metal-Shading-Language-Specification.pdf). |
+| `PYTORCH_MPS_PREFER_METAL`      | If `1`, uses metal kernels instead of MPS Graph APIs. Used for matmul. |
+| `PYTORCH_ENABLE_MPS_FALLBACK`   | If `1`, falls back to CPU when MPS ops aren't supported. |
+
+```{note}
+**high watermark ratio** is a hard limit for the total allowed allocations
+
+- `0.0` : disables high watermark limit (may cause system failure if system-wide OOM occurs)
+- `1.0` : recommended maximum allocation size (i.e., device.recommendedMaxWorkingSetSize)
+- `>1.0`: allows limits beyond the device.recommendedMaxWorkingSetSize
+
+e.g., value 0.95 means we allocate up to 95% of recommended maximum
+allocation size; beyond that, the allocations would fail with OOM error.
+
+**low watermark ratio** is a soft limit to attempt limiting memory allocations up to the lower watermark
+level by garbage collection or committing command buffers more frequently (a.k.a, adaptive commit).
+Value between 0 to m_high_watermark_ratio (setting 0.0 disables adaptive commit and garbage collection)
+e.g., value 0.9 means we 'attempt' to limit allocations up to 90% of recommended maximum
+allocation size.
+```
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/source`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/source`, which is part of the PyTorch project infrastructure.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/source`):
+
+- [`torch.compiler_troubleshooting.md_docs.md`](./torch.compiler_troubleshooting.md_docs.md)
+- [`torch.compiler_aot_inductor_debugging_guide.md_docs.md`](./torch.compiler_aot_inductor_debugging_guide.md_docs.md)
+- [`mtia.memory.md_docs.md`](./mtia.memory.md_docs.md)
+- [`torch.compiler_get_started.md_docs.md`](./torch.compiler_get_started.md_docs.md)
+- [`torch.compiler_dynamo_deepdive.md_docs.md`](./torch.compiler_dynamo_deepdive.md_docs.md)
+- [`mtia.mtia_graph.md_docs.md`](./mtia.mtia_graph.md_docs.md)
+- [`hub.md_docs.md`](./hub.md_docs.md)
+- [`torch_nccl_environment_variables.md_docs.md`](./torch_nccl_environment_variables.md_docs.md)
+- [`optim.md_docs.md`](./optim.md_docs.md)
+- [`torch.compiler_aot_inductor.md_docs.md`](./torch.compiler_aot_inductor.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `mps_environment_variables.md_docs.md`
+- **Keyword Index**: `mps_environment_variables.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/docs/source`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/docs/source`, which is part of the PyTorch project infrastructure.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/docs/source`):
+
+- [`distributions.md_docs.md_docs.md`](./distributions.md_docs.md_docs.md)
+- [`distributed.optim.md_docs.md_docs.md`](./distributed.optim.md_docs.md_docs.md)
+- [`torch.compiler_dynamic_shapes.md_kw.md_docs.md`](./torch.compiler_dynamic_shapes.md_kw.md_docs.md)
+- [`tensor_attributes.rst_docs.md_docs.md`](./tensor_attributes.rst_docs.md_docs.md)
+- [`tensor_attributes.rst_kw.md_docs.md`](./tensor_attributes.rst_kw.md_docs.md)
+- [`torch.compiler_dynamo_overview.md_docs.md_docs.md`](./torch.compiler_dynamo_overview.md_docs.md_docs.md)
+- [`mtia.memory.md_kw.md_docs.md`](./mtia.memory.md_kw.md_docs.md)
+- [`nn.attention.varlen.md_kw.md_docs.md`](./nn.attention.varlen.md_kw.md_docs.md)
+- [`cpu.rst_kw.md_docs.md`](./cpu.rst_kw.md_docs.md)
+- [`torch.compiler_faq.md_docs.md_docs.md`](./torch.compiler_faq.md_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `mps_environment_variables.md_docs.md_docs.md`
+- **Keyword Index**: `mps_environment_variables.md_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

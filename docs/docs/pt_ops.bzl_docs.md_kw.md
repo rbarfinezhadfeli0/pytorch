@@ -1,0 +1,134 @@
+# Keyword Index: `docs/pt_ops.bzl_docs.md`
+
+## File Information
+
+- **Original File**: [docs/pt_ops.bzl_docs.md](../../docs/pt_ops.bzl_docs.md)
+- **Documentation**: [`pt_ops.bzl_docs.md_docs.md`](./pt_ops.bzl_docs.md_docs.md)
+- **Folder**: `docs`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`AGENTS`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`BUCK`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Bool`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`CPU`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Code`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Common`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Considerations`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Delete`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Dependencies`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Dependency`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Design`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Detailed`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Dict_bool`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Dict_default_Tensor`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Dict_default_bool`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Dict_default_float`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Dict_default_int`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Dict_default_str`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Dict_float`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Dict_int`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Dict_str`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Dockerfile_docs`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Documentation`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`EnumName`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`EnumValue`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Examples`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Expected`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Extension`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`False`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`File`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Files`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Float`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`FloatImplicit`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Folder`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`For`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`GPU`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Generated`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`High`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`IS_OSS`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Index`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Int`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`IntImplicit`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Is`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`KB`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Keyword`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Level`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Manual`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Model`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Name`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`No`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`None`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Notes`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`NumToTensor`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`OSS`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`OUT`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Original`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Overview`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`PT_BASE_OPS`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`PT_OPS_PRIM`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`PUBLIC`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Pass`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Path`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Patterns`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Performance`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Print`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Purpose`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`PyTorch`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`QuantizedCPU`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`RaiseException`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`References`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Repository`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Role`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Safety`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Sanity`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Scalar`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`ScalarImplicit`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Scalar_Scalar`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Security`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`See`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Since`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Source`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`SparseCPU`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Structure`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`System`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`TODO`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Tensor`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Tensor_hacked_twin`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Test`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Testing`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`The`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`This`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`True`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`TupleIndex`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Type`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Typechecker`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`USED_PT_BACKENDS`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`Uninitialized`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`We`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`While`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+- **`ZVh1AgOKW8Vv`**: [pt_ops.bzl_docs.md_docs.md](./pt_ops.bzl_docs.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,83 @@
+# Keyword Index: `docs/aten/src/ATen/cuda/detail/TensorInfo.cuh_kw.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/cuda/detail/TensorInfo.cuh_kw.md](../../../../../../../docs/aten/src/ATen/cuda/detail/TensorInfo.cuh_kw.md)
+- **Documentation**: [`TensorInfo.cuh_kw.md_docs.md`](./TensorInfo.cuh_kw.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/cuda/detail`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Analysis`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Architecture`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Basic`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Class`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`CollapseDims`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Complete`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Considerations`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Dependencies`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Design`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Detailed`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Documentation`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Efficiency`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Extracted`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`File`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Folder`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Functions`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Generated`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`High`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`How`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`In`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Includes`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Index`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`IndexToOffset`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Information`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Keyword`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Keywords`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Level`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Map`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Metadata`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Namespaces`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Original`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Overview`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Performance`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Purpose`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`PyTorch`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Related`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Repository`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Safety`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Section`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Security`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Source`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Structs`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`System`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`TensorInfo`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Testing`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`The`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`This`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+- **`Usage`**: [TensorInfo.cuh_kw.md_docs.md](./TensorInfo.cuh_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

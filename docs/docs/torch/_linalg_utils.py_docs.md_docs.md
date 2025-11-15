@@ -1,0 +1,384 @@
+# Documentation: `docs/torch/_linalg_utils.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/_linalg_utils.py_docs.md`
+- **Size**: 7,826 bytes (7.64 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/_linalg_utils.py`
+
+## File Metadata
+
+- **Path**: `torch/_linalg_utils.py`
+- **Size**: 5,240 bytes (5.12 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This is a python source code that is part of the PyTorch project.
+
+## Original Source
+
+```python
+# mypy: allow-untyped-defs
+"""Various linear algebra utility methods for internal use."""
+
+from typing import Optional
+
+import torch
+from torch import Tensor
+
+
+def is_sparse(A):
+    """Check if tensor A is a sparse COO tensor. All other sparse storage formats (CSR, CSC, etc...) will return False."""
+    if isinstance(A, torch.Tensor):
+        return A.layout == torch.sparse_coo
+
+    error_str = "expected Tensor"
+    if not torch.jit.is_scripting():
+        error_str += f" but got {type(A)}"
+    raise TypeError(error_str)
+
+
+def get_floating_dtype(A):
+    """Return the floating point dtype of tensor A.
+
+    Integer types map to float32.
+    """
+    dtype = A.dtype
+    if dtype in (torch.float16, torch.float32, torch.float64):
+        return dtype
+    return torch.float32
+
+
+def matmul(A: Optional[Tensor], B: Tensor) -> Tensor:
+    """Multiply two matrices.
+
+    If A is None, return B. A can be sparse or dense. B is always
+    dense.
+    """
+    if A is None:
+        return B
+    if is_sparse(A):
+        return torch.sparse.mm(A, B)
+    return torch.matmul(A, B)
+
+
+def bform(X: Tensor, A: Optional[Tensor], Y: Tensor) -> Tensor:
+    """Return bilinear form of matrices: :math:`X^T A Y`."""
+    return matmul(X.mT, matmul(A, Y))
+
+
+def qform(A: Optional[Tensor], S: Tensor):
+    """Return quadratic form :math:`S^T A S`."""
+    return bform(S, A, S)
+
+
+def basis(A):
+    """Return orthogonal basis of A columns."""
+    return torch.linalg.qr(A).Q
+
+
+def symeig(A: Tensor, largest: Optional[bool] = False) -> tuple[Tensor, Tensor]:
+    """Return eigenpairs of A with specified ordering."""
+    if largest is None:
+        largest = False
+    E, Z = torch.linalg.eigh(A, UPLO="U")
+    # assuming that E is ordered
+    if largest:
+        E = torch.flip(E, dims=(-1,))
+        Z = torch.flip(Z, dims=(-1,))
+    return E, Z
+
+
+# These functions were deprecated and removed
+# This nice error message can be removed in version 1.13+
+def matrix_rank(input, tol=None, symmetric=False, *, out=None) -> Tensor:
+    raise RuntimeError(
+        "This function was deprecated since version 1.9 and is now removed.\n"
+        "Please use the `torch.linalg.matrix_rank` function instead. "
+        "The parameter 'symmetric' was renamed in `torch.linalg.matrix_rank()` to 'hermitian'."
+    )
+
+
+def solve(input: Tensor, A: Tensor, *, out=None) -> tuple[Tensor, Tensor]:
+    raise RuntimeError(
+        "This function was deprecated since version 1.9 and is now removed. "
+        "`torch.solve` is deprecated in favor of `torch.linalg.solve`. "
+        "`torch.linalg.solve` has its arguments reversed and does not return the LU factorization.\n\n"
+        "To get the LU factorization see `torch.lu`, which can be used with `torch.lu_solve` or `torch.lu_unpack`.\n"
+        "X = torch.solve(B, A).solution "
+        "should be replaced with:\n"
+        "X = torch.linalg.solve(A, B)"
+    )
+
+
+def lstsq(input: Tensor, A: Tensor, *, out=None) -> tuple[Tensor, Tensor]:
+    raise RuntimeError(
+        "This function was deprecated since version 1.9 and is now removed. "
+        "`torch.lstsq` is deprecated in favor of `torch.linalg.lstsq`.\n"
+        "`torch.linalg.lstsq` has reversed arguments and does not return the QR decomposition in "
+        "the returned tuple (although it returns other information about the problem).\n\n"
+        "To get the QR decomposition consider using `torch.linalg.qr`.\n\n"
+        "The returned solution in `torch.lstsq` stored the residuals of the solution in the "
+        "last m - n columns of the returned value whenever m > n. In torch.linalg.lstsq, "
+        "the residuals are in the field 'residuals' of the returned named tuple.\n\n"
+        "The unpacking of the solution, as in\n"
+        "X, _ = torch.lstsq(B, A).solution[:A.size(1)]\n"
+        "should be replaced with:\n"
+        "X = torch.linalg.lstsq(A, B).solution"
+    )
+
+
+def _symeig(
+    input,
+    eigenvectors=False,
+    upper=True,
+    *,
+    out=None,
+) -> tuple[Tensor, Tensor]:
+    raise RuntimeError(
+        "This function was deprecated since version 1.9 and is now removed. "
+        "The default behavior has changed from using the upper triangular portion of the matrix by default "
+        "to using the lower triangular portion.\n\n"
+        "L, _ = torch.symeig(A, upper=upper) "
+        "should be replaced with:\n"
+        "L = torch.linalg.eigvalsh(A, UPLO='U' if upper else 'L')\n\n"
+        "and\n\n"
+        "L, V = torch.symeig(A, eigenvectors=True) "
+        "should be replaced with:\n"
+        "L, V = torch.linalg.eigh(A, UPLO='U' if upper else 'L')"
+    )
+
+
+def eig(
+    self: Tensor,
+    eigenvectors: bool = False,
+    *,
+    e=None,
+    v=None,
+) -> tuple[Tensor, Tensor]:
+    raise RuntimeError(
+        "This function was deprecated since version 1.9 and is now removed. "
+        "`torch.linalg.eig` returns complex tensors of dtype `cfloat` or `cdouble` rather than real tensors "
+        "mimicking complex tensors.\n\n"
+        "L, _ = torch.eig(A) "
+        "should be replaced with:\n"
+        "L_complex = torch.linalg.eigvals(A)\n\n"
+        "and\n\n"
+        "L, V = torch.eig(A, eigenvectors=True) "
+        "should be replaced with:\n"
+        "L_complex, V_complex = torch.linalg.eig(A)"
+    )
+
+```
+
+
+
+## High-Level Overview
+
+"""Various linear algebra utility methods for internal use."""from typing import Optionalimport torchfrom torch import Tensordef is_sparse(A):
+
+This Python file contains 0 class(es) and 12 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Functions defined**: `is_sparse`, `get_floating_dtype`, `matmul`, `bform`, `qform`, `basis`, `symeig`, `matrix_rank`, `solve`, `lstsq`, `_symeig`, `eig`
+
+**Key imports**: Optional, torch, Tensor
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `typing`: Optional
+- `torch`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`_tensor_docs.py_docs.md`](./_tensor_docs.py_docs.md)
+- [`_classes.py_docs.md`](./_classes.py_docs.md)
+- [`types.py_docs.md`](./types.py_docs.md)
+- [`_meta_registrations.py_docs.md`](./_meta_registrations.py_docs.md)
+- [`_appdirs.py_docs.md`](./_appdirs.py_docs.md)
+- [`_tensor.py_docs.md`](./_tensor.py_docs.md)
+- [`_streambase.py_docs.md`](./_streambase.py_docs.md)
+- [`_lowrank.py_docs.md`](./_lowrank.py_docs.md)
+- [`_size_docs.py_docs.md`](./_size_docs.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `_linalg_utils.py_docs.md`
+- **Keyword Index**: `_linalg_utils.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch`):
+
+- [`types.py_kw.md_docs.md`](./types.py_kw.md_docs.md)
+- [`storage.py_docs.md_docs.md`](./storage.py_docs.md_docs.md)
+- [`serialization.py_kw.md_docs.md`](./serialization.py_kw.md_docs.md)
+- [`serialization.py_docs.md_docs.md`](./serialization.py_docs.md_docs.md)
+- [`library.py_kw.md_docs.md`](./library.py_kw.md_docs.md)
+- [`overrides.py_docs.md_docs.md`](./overrides.py_docs.md_docs.md)
+- [`script.h_kw.md_docs.md`](./script.h_kw.md_docs.md)
+- [`_sources.py_kw.md_docs.md`](./_sources.py_kw.md_docs.md)
+- [`CMakeLists.txt_docs.md_docs.md`](./CMakeLists.txt_docs.md_docs.md)
+- [`_torch_docs.py_docs.md_docs.md`](./_torch_docs.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `_linalg_utils.py_docs.md_docs.md`
+- **Keyword Index**: `_linalg_utils.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,186 @@
+# Documentation: `docs/torch/csrc/jit/passes/create_autodiff_subgraphs.cpp_kw.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/jit/passes/create_autodiff_subgraphs.cpp_kw.md`
+- **Size**: 4,595 bytes (4.49 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Keyword Index: `torch/csrc/jit/passes/create_autodiff_subgraphs.cpp`
+
+## File Information
+
+- **Original File**: [torch/csrc/jit/passes/create_autodiff_subgraphs.cpp](../../../../../torch/csrc/jit/passes/create_autodiff_subgraphs.cpp)
+- **Documentation**: [`create_autodiff_subgraphs.cpp_docs.md`](./create_autodiff_subgraphs.cpp_docs.md)
+- **Folder**: `torch/csrc/jit/passes`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Class/Structs
+
+- **`ContextMapping`**: [create_autodiff_subgraphs.cpp_docs.md](./create_autodiff_subgraphs.cpp_docs.md)
+- **`SubgraphSlicer`**: [create_autodiff_subgraphs.cpp_docs.md](./create_autodiff_subgraphs.cpp_docs.md)
+- **`Subgraphs`**: [create_autodiff_subgraphs.cpp_docs.md](./create_autodiff_subgraphs.cpp_docs.md)
+- **`WorkBlock`**: [create_autodiff_subgraphs.cpp_docs.md](./create_autodiff_subgraphs.cpp_docs.md)
+- **`all`**: [create_autodiff_subgraphs.cpp_docs.md](./create_autodiff_subgraphs.cpp_docs.md)
+
+### Functions
+
+- **`AddRequiresGradOnOutputNodes`**: [create_autodiff_subgraphs.cpp_docs.md](./create_autodiff_subgraphs.cpp_docs.md)
+- **`AddRequiresGradToDifferentiableGraph`**: [create_autodiff_subgraphs.cpp_docs.md](./create_autodiff_subgraphs.cpp_docs.md)
+- **`buildupSubgraphs`**: [create_autodiff_subgraphs.cpp_docs.md](./create_autodiff_subgraphs.cpp_docs.md)
+- **`cleanupSubgraphs`**: [create_autodiff_subgraphs.cpp_docs.md](./create_autodiff_subgraphs.cpp_docs.md)
+- **`has`**: [create_autodiff_subgraphs.cpp_docs.md](./create_autodiff_subgraphs.cpp_docs.md)
+- **`if`**: [create_autodiff_subgraphs.cpp_docs.md](./create_autodiff_subgraphs.cpp_docs.md)
+- **`inlineIfTooSmall`**: [create_autodiff_subgraphs.cpp_docs.md](./create_autodiff_subgraphs.cpp_docs.md)
+- **`isViewOp`**: [create_autodiff_subgraphs.cpp_docs.md](./create_autodiff_subgraphs.cpp_docs.md)
+- **`processBlock`**: [create_autodiff_subgraphs.cpp_docs.md](./create_autodiff_subgraphs.cpp_docs.md)
+- **`processNode`**: [create_autodiff_subgraphs.cpp_docs.md](./create_autodiff_subgraphs.cpp_docs.md)
+- **`run`**: [create_autodiff_subgraphs.cpp_docs.md](./create_autodiff_subgraphs.cpp_docs.md)
+- **`shouldConsiderForMerge`**: [create_autodiff_subgraphs.cpp_docs.md](./create_autodiff_subgraphs.cpp_docs.md)
+- **`sortReverseTopological`**: [create_autodiff_subgraphs.cpp_docs.md](./create_autodiff_subgraphs.cpp_docs.md)
+- **`unfuseAliasedOutputs`**: [create_autodiff_subgraphs.cpp_docs.md](./create_autodiff_subgraphs.cpp_docs.md)
+
+### Includes
+
+- **`c10/util/Exception.h`**: [create_autodiff_subgraphs.cpp_docs.md](./create_autodiff_subgraphs.cpp_docs.md)
+- **`torch/csrc/jit/ir/alias_analysis.h`**: [create_autodiff_subgraphs.cpp_docs.md](./create_autodiff_subgraphs.cpp_docs.md)
+- **`torch/csrc/jit/ir/ir.h`**: [create_autodiff_subgraphs.cpp_docs.md](./create_autodiff_subgraphs.cpp_docs.md)
+- **`torch/csrc/jit/jit_log.h`**: [create_autodiff_subgraphs.cpp_docs.md](./create_autodiff_subgraphs.cpp_docs.md)
+- **`torch/csrc/jit/passes/canonicalize.h`**: [create_autodiff_subgraphs.cpp_docs.md](./create_autodiff_subgraphs.cpp_docs.md)
+- **`torch/csrc/jit/passes/common_subexpression_elimination.h`**: [create_autodiff_subgraphs.cpp_docs.md](./create_autodiff_subgraphs.cpp_docs.md)
+- **`torch/csrc/jit/passes/create_autodiff_subgraphs.h`**: [create_autodiff_subgraphs.cpp_docs.md](./create_autodiff_subgraphs.cpp_docs.md)
+- **`torch/csrc/jit/passes/remove_redundant_profiles.h`**: [create_autodiff_subgraphs.cpp_docs.md](./create_autodiff_subgraphs.cpp_docs.md)
+- **`torch/csrc/jit/passes/utils/subgraph_utils.h`**: [create_autodiff_subgraphs.cpp_docs.md](./create_autodiff_subgraphs.cpp_docs.md)
+- **`torch/csrc/jit/runtime/autodiff.h`**: [create_autodiff_subgraphs.cpp_docs.md](./create_autodiff_subgraphs.cpp_docs.md)
+
+### Namespaces
+
+- **`std`**: [create_autodiff_subgraphs.cpp_docs.md](./create_autodiff_subgraphs.cpp_docs.md)
+- **`torch`**: [create_autodiff_subgraphs.cpp_docs.md](./create_autodiff_subgraphs.cpp_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/jit/passes`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/jit/passes`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/jit/passes`):
+
+- [`peephole_dict_idioms.h_docs.md_docs.md`](./peephole_dict_idioms.h_docs.md_docs.md)
+- [`remove_redundant_profiles.h_kw.md_docs.md`](./remove_redundant_profiles.h_kw.md_docs.md)
+- [`loop_unrolling.cpp_kw.md_docs.md`](./loop_unrolling.cpp_kw.md_docs.md)
+- [`onnx.h_kw.md_docs.md`](./onnx.h_kw.md_docs.md)
+- [`guard_elimination.h_docs.md_docs.md`](./guard_elimination.h_docs.md_docs.md)
+- [`frozen_conv_add_relu_fusion.cpp_docs.md_docs.md`](./frozen_conv_add_relu_fusion.cpp_docs.md_docs.md)
+- [`hoist_conv_packed_params.h_kw.md_docs.md`](./hoist_conv_packed_params.h_kw.md_docs.md)
+- [`lift_closures.h_kw.md_docs.md`](./lift_closures.h_kw.md_docs.md)
+- [`frozen_conv_folding.h_kw.md_docs.md`](./frozen_conv_folding.h_kw.md_docs.md)
+- [`frozen_graph_optimizations.h_docs.md_docs.md`](./frozen_graph_optimizations.h_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `create_autodiff_subgraphs.cpp_kw.md_docs.md`
+- **Keyword Index**: `create_autodiff_subgraphs.cpp_kw.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,269 @@
+# Documentation: `docs/torch/_awaits/__init__.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/_awaits/__init__.py_docs.md`
+- **Size**: 4,640 bytes (4.53 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**. This is a **Python package initialization file**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/_awaits/__init__.py`
+
+## File Metadata
+
+- **Path**: `torch/_awaits/__init__.py`
+- **Size**: 1,652 bytes (1.61 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This is a **Python package initialization file**.
+
+## Original Source
+
+```python
+from __future__ import annotations
+
+from typing import Generic, TypeVar
+
+import torch
+
+__all__ = ['Await']
+
+W = TypeVar("W")
+
+class _PyAwaitMeta(type(torch._C._Await), type(Generic)):  # type: ignore[misc, no-redef]
+    pass
+
+class _Await(torch._C._Await, Generic[W], metaclass=_PyAwaitMeta):
+    r"""
+    Wrapper around a ``torch._C.Await`` which encapsulates delayed execution
+    of a callable. All manipulations happen with functions ``torch.jit._awaitable``,
+    ``torch.jit._awaitable_wait``, ``torch.jit._awaitable_nowait``.
+
+    Torch scriptable manipulations:
+    ``torch.jit._awaitable(func, *args)``
+    Creates ``Await[W]`` object, where W is return type of func.
+
+    Returns:
+    ``torch.jit._awaitable_wait(Await[W])``
+    Returns the result of the function, specified at ``_awaitable``,  with specified arguments.
+
+    Returns:
+        The result of type ``W`` of the function call. The result is owned by ``Await[W]``
+        and returned on all following ``_awaitable_wait`` calls.
+
+
+    ``torch.jit._awaitable_nowait(W)``
+    Returns:
+        Trivial ``Await[W]`` with specified result.
+
+
+    Only in eager mode:
+    ``fn() -> Callable[Tuple[Any], W]``
+    Returns:
+        Specified at ``_awaitable`` python function ``func``.
+
+    ``args() -> Tuple[Any]``
+    Returns:
+        Specified at ``_awaitable`` python args.
+
+    ``is_nowait() -> _bool``
+    Returns:
+        ``True`` if this object was created via ``_awaitable_nowait`` call (trivial `Await[W]`).
+
+    In eager mode ``Await[W]`` can be used as ``W`` i.e. attributes of W can be called on ``Await[W]``,
+    ``_awaitable_wait()`` call will be transparently added.
+    """
+
+```
+
+
+
+## High-Level Overview
+
+r"""    Wrapper around a ``torch._C.Await`` which encapsulates delayed execution    of a callable. All manipulations happen with functions ``torch.jit._awaitable``,    ``torch.jit._awaitable_wait``, ``torch.jit._awaitable_nowait``.    Torch scriptable manipulations:    ``torch.jit._awaitable(func, *args)``    Creates ``Await[W]`` object, where W is return type of func.    Returns:    ``torch.jit._awaitable_wait(Await[W])``    Returns the result of the function, specified at ``_awaitable``,  with specified arguments.    Returns:        The result of type ``W`` of the function call. The result is owned by ``Await[W]``        and returned on all following ``_awaitable_wait`` calls.    ``torch.jit._awaitable_nowait(W)``    Returns:        Trivial ``Await[W]`` with specified result.    Only in eager mode:    ``fn() -> Callable[Tuple[Any], W]``    Returns:        Specified at ``_awaitable`` python function ``func``.    ``args() -> Tuple[Any]``    Returns:        Specified at ``_awaitable`` python args.    ``is_nowait() -> _bool``    Returns:        ``True`` if this object was created via ``_awaitable_nowait`` call (trivial `Await[W]`).
+
+This Python file contains 2 class(es) and 0 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `_Await`
+
+**Key imports**: annotations, Generic, TypeVar, torch
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/_awaits`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `__future__`: annotations
+- `typing`: Generic, TypeVar
+- `torch`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/_awaits`):
+
+
+
+## Cross-References
+
+- **File Documentation**: `__init__.py_docs.md`
+- **Keyword Index**: `__init__.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/_awaits`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/_awaits`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/_awaits`):
+
+- [`__init__.py_kw.md_docs.md`](./__init__.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `__init__.py_docs.md_docs.md`
+- **Keyword Index**: `__init__.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

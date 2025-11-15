@@ -1,0 +1,80 @@
+# Keyword Index: `docs/torch/onnx/_internal/torchscript_exporter/symbolic_helper.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/onnx/_internal/torchscript_exporter/symbolic_helper.py_kw.md](../../../../../../docs/torch/onnx/_internal/torchscript_exporter/symbolic_helper.py_kw.md)
+- **Documentation**: [`symbolic_helper.py_kw.md_docs.md`](./symbolic_helper.py_kw.md_docs.md)
+- **Folder**: `docs/torch/onnx/_internal/torchscript_exporter`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`Architecture`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`Basic`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`Callable`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`Complete`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`Considerations`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`Dependencies`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`Design`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`Detailed`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`Documentation`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`Efficiency`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`Extracted`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`File`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`Folder`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`Functions`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`GLOBALS`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`Generated`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`High`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`How`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`Imports`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`In`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`Index`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`Information`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`Keyword`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`Keywords`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`Level`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`Map`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`Metadata`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`Number`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`Original`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`Overview`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`ParamSpec`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`Performance`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`Purpose`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`PyTorch`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`Related`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`Repository`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`Safety`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`Section`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`Security`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`Source`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`System`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`Testing`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`The`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`This`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+- **`Usage`**: [symbolic_helper.py_kw.md_docs.md](./symbolic_helper.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

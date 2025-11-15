@@ -1,0 +1,84 @@
+# Keyword Index: `docs/torch/csrc/dynamo/extra_state.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/csrc/dynamo/extra_state.h_kw.md](../../../../../docs/torch/csrc/dynamo/extra_state.h_kw.md)
+- **Documentation**: [`extra_state.h_kw.md_docs.md`](./extra_state.h_kw.md_docs.md)
+- **Folder**: `docs/torch/csrc/dynamo`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Architecture`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Basic`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`CacheEntry`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Class`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Complete`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Considerations`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Dependencies`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Design`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Detailed`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Documentation`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Efficiency`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`ExtraState`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Extracted`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`File`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Folder`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`FrameExecStrategy`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Generated`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`High`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`How`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`In`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Includes`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Index`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Information`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Keyword`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Keywords`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Level`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Map`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Metadata`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Namespaces`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Original`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Overview`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Performance`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`PrecompileEntry`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Purpose`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`PyTorch`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Python`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Related`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Repository`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Safety`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Section`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Security`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Source`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Structs`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`System`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Testing`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`The`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`This`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`Usage`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+- **`VISIBILITY_HIDDEN`**: [extra_state.h_kw.md_docs.md](./extra_state.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

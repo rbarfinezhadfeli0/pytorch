@@ -1,0 +1,80 @@
+# Keyword Index: `torch/csrc/distributed/rpc/request_callback_impl.cpp`
+
+## File Information
+
+- **Original File**: [torch/csrc/distributed/rpc/request_callback_impl.cpp](../../../../../torch/csrc/distributed/rpc/request_callback_impl.cpp)
+- **Documentation**: [`request_callback_impl.cpp_docs.md`](./request_callback_impl.cpp_docs.md)
+- **Folder**: `torch/csrc/distributed/rpc`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Class/Structs
+
+- **`its`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+
+### Functions
+
+- **`serializePyObject`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+
+### Includes
+
+- **`c10/util/Exception.h`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+- **`torch/csrc/autograd/profiler.h`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+- **`torch/csrc/distributed/autograd/context/container.h`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+- **`torch/csrc/distributed/autograd/context/context.h`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+- **`torch/csrc/distributed/autograd/engine/dist_engine.h`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+- **`torch/csrc/distributed/autograd/rpc_messages/cleanup_autograd_context_req.h`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+- **`torch/csrc/distributed/autograd/rpc_messages/cleanup_autograd_context_resp.h`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+- **`torch/csrc/distributed/autograd/rpc_messages/propagate_gradients_req.h`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+- **`torch/csrc/distributed/autograd/rpc_messages/propagate_gradients_resp.h`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+- **`torch/csrc/distributed/autograd/rpc_messages/rpc_with_autograd.h`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+- **`torch/csrc/distributed/autograd/rpc_messages/rpc_with_profiling_req.h`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+- **`torch/csrc/distributed/autograd/rpc_messages/rpc_with_profiling_resp.h`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+- **`torch/csrc/distributed/autograd/rpc_messages/rref_backward_req.h`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+- **`torch/csrc/distributed/autograd/rpc_messages/rref_backward_resp.h`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+- **`torch/csrc/distributed/autograd/utils.h`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+- **`torch/csrc/distributed/rpc/profiler/server_process_global_profiler.h`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+- **`torch/csrc/distributed/rpc/py_rref.h`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+- **`torch/csrc/distributed/rpc/python_call.h`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+- **`torch/csrc/distributed/rpc/python_remote_call.h`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+- **`torch/csrc/distributed/rpc/python_resp.h`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+- **`torch/csrc/distributed/rpc/python_rpc_handler.h`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+- **`torch/csrc/distributed/rpc/request_callback_impl.h`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+- **`torch/csrc/distributed/rpc/rref_context.h`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+- **`torch/csrc/distributed/rpc/rref_impl.h`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+- **`torch/csrc/distributed/rpc/rref_proto.h`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+- **`torch/csrc/distributed/rpc/script_call.h`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+- **`torch/csrc/distributed/rpc/script_remote_call.h`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+- **`torch/csrc/distributed/rpc/script_resp.h`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+- **`torch/csrc/distributed/rpc/unpickled_python_call.h`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+- **`torch/csrc/distributed/rpc/unpickled_python_remote_call.h`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+- **`torch/csrc/distributed/rpc/utils.h`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+- **`torch/csrc/jit/python/python_ivalue.h`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+- **`utility`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+
+### Namespaces
+
+- **`c10`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+- **`torch`**: [request_callback_impl.cpp_docs.md](./request_callback_impl.cpp_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

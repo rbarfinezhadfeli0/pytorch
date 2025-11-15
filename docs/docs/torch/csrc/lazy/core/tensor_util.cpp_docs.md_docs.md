@@ -1,0 +1,304 @@
+# Documentation: `docs/torch/csrc/lazy/core/tensor_util.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/csrc/lazy/core/tensor_util.cpp_docs.md`
+- **Size**: 4,544 bytes (4.44 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/csrc/lazy/core/tensor_util.cpp`
+
+## File Metadata
+
+- **Path**: `torch/csrc/lazy/core/tensor_util.cpp`
+- **Size**: 2,016 bytes (1.97 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#include <torch/csrc/lazy/core/tensor_util.h>
+
+#include <c10/util/BFloat16.h>
+#include <c10/util/Half.h>
+#include <c10/util/complex.h>
+#include <c10/util/irange.h>
+#include <torch/csrc/lazy/backend/backend_device.h>
+#include <torch/csrc/lazy/backend/backend_interface.h>
+#include <torch/csrc/lazy/core/config.h>
+#include <torch/csrc/lazy/core/helpers.h>
+
+#include <cstring>
+
+namespace torch::lazy {
+
+std::vector<int64_t> ComputeArrayStrides(c10::ArrayRef<int64_t> sizes) {
+  std::vector<int64_t> strides(sizes.size(), 1);
+  for (size_t i = sizes.size(); i > 1; --i) {
+    strides[i - 2] = strides[i - 1] * sizes[i - 1];
+  }
+  return strides;
+}
+
+std::vector<at::Tensor> DataHandlesToTensors(
+    c10::ArrayRef<BackendDataPtr> data_handles,
+    at::ScalarType dest_element_type) {
+  std::vector<at::Tensor> tensors;
+  for (const auto& handle : data_handles) {
+    tensors.push_back(
+        getBackend()->MakeTensorFromComputationData(handle, dest_element_type));
+  }
+  return tensors;
+}
+
+BackendDataPtr TensorToDataHandle(
+    const at::Tensor& tensor,
+    const BackendDevice& device) {
+  return getBackend()->MakeComputationDataFromTensor(
+      tensor, Shape(tensor.scalar_type(), tensor.sizes()), device);
+}
+
+std::vector<BackendDataPtr> CreateTensorsData(
+    const std::vector<at::Tensor>& tensors,
+    const std::vector<BackendDevice>& devices) {
+  TORCH_CHECK(tensors.size() == devices.size());
+  std::vector<BackendDataPtr> result;
+  result.reserve(tensors.size());
+  for (const auto i : c10::irange(tensors.size())) {
+    result.push_back(TensorToDataHandle(tensors[i], devices[i]));
+  }
+  return result;
+}
+
+bool IsSpecialScalar(const at::Scalar& value) {
+  if (FLAGS_torch_lazy_handle_special_scalars &&
+      (value.isIntegral(false) || value.isFloatingPoint())) {
+    if (FLAGS_torch_lazy_all_numbers_special_scalars) {
+      return true;
+    }
+    double scalar_value = value.toDouble();
+    return scalar_value == 0.0 || std::fabs(scalar_value) == 1.0;
+  }
+  return false;
+}
+
+} // namespace torch::lazy
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 3 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `torch`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/csrc/lazy/core`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `torch/csrc/lazy/core/tensor_util.h`
+- `c10/util/BFloat16.h`
+- `c10/util/Half.h`
+- `c10/util/complex.h`
+- `c10/util/irange.h`
+- `torch/csrc/lazy/backend/backend_device.h`
+- `torch/csrc/lazy/backend/backend_interface.h`
+- `torch/csrc/lazy/core/config.h`
+- `torch/csrc/lazy/core/helpers.h`
+- `cstring`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/csrc/lazy/core`):
+
+- [`hash.cpp_docs.md`](./hash.cpp_docs.md)
+- [`shape_inference.cpp_docs.md`](./shape_inference.cpp_docs.md)
+- [`tensor_impl.h_docs.md`](./tensor_impl.h_docs.md)
+- [`helpers.h_docs.md`](./helpers.h_docs.md)
+- [`tensor_impl.cpp_docs.md`](./tensor_impl.cpp_docs.md)
+- [`ir_metadata.cpp_docs.md`](./ir_metadata.cpp_docs.md)
+- [`ir_metadata.h_docs.md`](./ir_metadata.h_docs.md)
+- [`trie.cpp_docs.md`](./trie.cpp_docs.md)
+- [`cache.h_docs.md`](./cache.h_docs.md)
+- [`config.cpp_docs.md`](./config.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `tensor_util.cpp_docs.md`
+- **Keyword Index**: `tensor_util.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/csrc/lazy/core`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/csrc/lazy/core`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Implements or uses **caching** mechanisms.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/csrc/lazy/core`):
+
+- [`helpers.cpp_docs.md_docs.md`](./helpers.cpp_docs.md_docs.md)
+- [`tensor_util.h_kw.md_docs.md`](./tensor_util.h_kw.md_docs.md)
+- [`permutation_util.h_kw.md_docs.md`](./permutation_util.h_kw.md_docs.md)
+- [`ir_util.cpp_kw.md_docs.md`](./ir_util.cpp_kw.md_docs.md)
+- [`shape_inference.h_kw.md_docs.md`](./shape_inference.h_kw.md_docs.md)
+- [`ir_builder.h_docs.md_docs.md`](./ir_builder.h_docs.md_docs.md)
+- [`shape_inference.cpp_kw.md_docs.md`](./shape_inference.cpp_kw.md_docs.md)
+- [`hash.h_kw.md_docs.md`](./hash.h_kw.md_docs.md)
+- [`multi_wait.cpp_kw.md_docs.md`](./multi_wait.cpp_kw.md_docs.md)
+- [`lazy_graph_executor.cpp_docs.md_docs.md`](./lazy_graph_executor.cpp_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `tensor_util.cpp_docs.md_docs.md`
+- **Keyword Index**: `tensor_util.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

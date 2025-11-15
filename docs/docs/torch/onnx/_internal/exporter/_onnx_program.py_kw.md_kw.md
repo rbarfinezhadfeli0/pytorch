@@ -1,0 +1,80 @@
+# Keyword Index: `docs/torch/onnx/_internal/exporter/_onnx_program.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/onnx/_internal/exporter/_onnx_program.py_kw.md](../../../../../../docs/torch/onnx/_internal/exporter/_onnx_program.py_kw.md)
+- **Documentation**: [`_onnx_program.py_kw.md_docs.md`](./_onnx_program.py_kw.md_docs.md)
+- **Folder**: `docs/torch/onnx/_internal/exporter`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Any`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Architecture`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Basic`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Callable`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Classs`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Complete`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Considerations`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Dependencies`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Design`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Detailed`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Documentation`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Efficiency`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Extracted`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`File`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Folder`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Functions`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Generated`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`High`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`How`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Imports`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`In`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Index`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Information`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Keyword`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Keywords`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Level`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Map`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Metadata`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`ONNXProgram`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Original`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Overview`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Performance`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Purpose`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`PyTorch`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Related`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Repository`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Safety`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Section`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Security`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Source`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`System`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Testing`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`The`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`This`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+- **`Usage`**: [_onnx_program.py_kw.md_docs.md](./_onnx_program.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

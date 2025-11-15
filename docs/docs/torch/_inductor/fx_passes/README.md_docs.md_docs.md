@@ -1,0 +1,262 @@
+# Documentation: `docs/torch/_inductor/fx_passes/README.md_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/_inductor/fx_passes/README.md_docs.md`
+- **Size**: 4,542 bytes (4.44 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/_inductor/fx_passes/README.md`
+
+## File Metadata
+
+- **Path**: `torch/_inductor/fx_passes/README.md`
+- **Size**: 2,163 bytes (2.11 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This is a markdown documentation that is part of the PyTorch project.
+
+## Original Source
+
+```markdown
+# Implicit Invariants for writing FX Graph Passes
+## Fake Tensor metadata on node
+Each FX node has metadata on it, and in particular, stores a faketensor representing the metadata of that node `node.meta['val']`. This FakeTensor has properties like 1. shape, 2. stride, and 3. aliasing information. However, various passes may change the faketensor values, and so we need to maintain consistency.
+
+The current way we do this is through FakeTensorUpdater (in _inductor/fx_utils.py). Read it for more details, and run it if your pass needs accurate faketensor metadata.
+
+## Mutations throughout the stack
+The invariant about mutation we have is:
+
+**After AOTDispatch tracing and before Inductor, we have no mutation in our graph, except for a copy_ epilogue at the end of the graph.**
+
+For example, passes operating on the joint_graph and post_grad graph do not need to worry about mutation at all.
+
+However, we do still have aliasing in the graph. This does not matter most of the time, but it does mean that **our passes are not allowed to cause any additional inputs/outputs to alias if they did not alias in the original graph**.
+
+For example
+```python
+def f(x: Tensor):
+    return x.clone()
+```
+cannot be turned into a no-op, as this would change the semantics of the compiled graph.
+
+In addition, AOTDispatch can introduce a copy_ epilogue into the graph. For example, we may have a graph like
+```python
+def f(x: Tensor):
+    y = x.clone()
+    x.copy_(y)
+    return y
+```
+In this case, we are also not allowed to eliminate `x.clone()`. Luckily, the
+condition for when this can cause problems is the same as with aliasing,
+which is that **our passes are not allowed to cause the input and output to
+alias if they did not alias in the original graph**. To check whether the
+inputs and outputs have any aliasing, it suffices to check whether the
+storages of the input and the storages of the output have any overlap. See
+`remove_noop_ops` for an example of how to do this.
+
+Additionally, we do have one pass that *does* introduce mutation - `reinplace_inplaceable_ops`. This pass must run *just before Inductor lowering*, as otherwise this breaks our invariant.
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `torch/_inductor/fx_passes`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/_inductor/fx_passes`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/_inductor/fx_passes`):
+
+- [`reinplace.py_docs.md`](./reinplace.py_docs.md)
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`fuse_attention.py_docs.md`](./fuse_attention.py_docs.md)
+- [`efficient_conv_bn_eval.py_docs.md`](./efficient_conv_bn_eval.py_docs.md)
+- [`bucketing.py_docs.md`](./bucketing.py_docs.md)
+- [`numeric_utils.py_docs.md`](./numeric_utils.py_docs.md)
+- [`dedupe_symint_uses.py_docs.md`](./dedupe_symint_uses.py_docs.md)
+- [`post_grad.py_docs.md`](./post_grad.py_docs.md)
+- [`joint_graph.py_docs.md`](./joint_graph.py_docs.md)
+- [`fsdp.py_docs.md`](./fsdp.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `README.md_docs.md`
+- **Keyword Index**: `README.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/_inductor/fx_passes`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/_inductor/fx_passes`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/_inductor/fx_passes`):
+
+- [`dedupe_symint_uses.py_kw.md_docs.md`](./dedupe_symint_uses.py_kw.md_docs.md)
+- [`overlap_preserving_bucketer.py_kw.md_docs.md`](./overlap_preserving_bucketer.py_kw.md_docs.md)
+- [`pre_grad.py_docs.md_docs.md`](./pre_grad.py_docs.md_docs.md)
+- [`b2b_gemm.py_docs.md_docs.md`](./b2b_gemm.py_docs.md_docs.md)
+- [`freezing_patterns.py_kw.md_docs.md`](./freezing_patterns.py_kw.md_docs.md)
+- [`fsdp.py_docs.md_docs.md`](./fsdp.py_docs.md_docs.md)
+- [`replace_random.py_kw.md_docs.md`](./replace_random.py_kw.md_docs.md)
+- [`joint_graph.py_kw.md_docs.md`](./joint_graph.py_kw.md_docs.md)
+- [`numeric_utils.py_docs.md_docs.md`](./numeric_utils.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `README.md_docs.md_docs.md`
+- **Keyword Index**: `README.md_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

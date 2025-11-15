@@ -1,0 +1,53 @@
+# Index: `docs/torchgen/api/`
+
+## Overview
+
+This folder contains source code, configurations, or documentation for the PyTorch project.
+
+**Location**: `docs/torchgen/api/`
+
+## Subfolders
+
+- [`types/`](./types/index.md) - types module
+
+## Files
+
+| File | Description | Documentation | Keywords |
+|------|-------------|---------------|----------|
+| [`__init__.py_docs.md`](../../../../docs/torchgen/api/__init__.py_docs.md) | Package initialization | [docs](./__init__.py_docs.md_docs.md) | [keywords](./__init__.py_docs.md_kw.md) |
+| [`__init__.py_kw.md`](../../../../docs/torchgen/api/__init__.py_kw.md) | Package initialization | [docs](./__init__.py_kw.md_docs.md) | [keywords](./__init__.py_kw.md_kw.md) |
+| [`autograd.py_docs.md`](../../../../docs/torchgen/api/autograd.py_docs.md) | Documentation | [docs](./autograd.py_docs.md_docs.md) | [keywords](./autograd.py_docs.md_kw.md) |
+| [`autograd.py_kw.md`](../../../../docs/torchgen/api/autograd.py_kw.md) | Documentation | [docs](./autograd.py_kw.md_docs.md) | [keywords](./autograd.py_kw.md_kw.md) |
+| [`cpp.py_docs.md`](../../../../docs/torchgen/api/cpp.py_docs.md) | Documentation | [docs](./cpp.py_docs.md_docs.md) | [keywords](./cpp.py_docs.md_kw.md) |
+| [`cpp.py_kw.md`](../../../../docs/torchgen/api/cpp.py_kw.md) | Documentation | [docs](./cpp.py_kw.md_docs.md) | [keywords](./cpp.py_kw.md_kw.md) |
+| [`dispatcher.py_docs.md`](../../../../docs/torchgen/api/dispatcher.py_docs.md) | Documentation | [docs](./dispatcher.py_docs.md_docs.md) | [keywords](./dispatcher.py_docs.md_kw.md) |
+| [`dispatcher.py_kw.md`](../../../../docs/torchgen/api/dispatcher.py_kw.md) | Documentation | [docs](./dispatcher.py_kw.md_docs.md) | [keywords](./dispatcher.py_kw.md_kw.md) |
+| [`functionalization.py_docs.md`](../../../../docs/torchgen/api/functionalization.py_docs.md) | Documentation | [docs](./functionalization.py_docs.md_docs.md) | [keywords](./functionalization.py_docs.md_kw.md) |
+| [`functionalization.py_kw.md`](../../../../docs/torchgen/api/functionalization.py_kw.md) | Documentation | [docs](./functionalization.py_kw.md_docs.md) | [keywords](./functionalization.py_kw.md_kw.md) |
+| [`lazy.py_docs.md`](../../../../docs/torchgen/api/lazy.py_docs.md) | Documentation | [docs](./lazy.py_docs.md_docs.md) | [keywords](./lazy.py_docs.md_kw.md) |
+| [`lazy.py_kw.md`](../../../../docs/torchgen/api/lazy.py_kw.md) | Documentation | [docs](./lazy.py_kw.md_docs.md) | [keywords](./lazy.py_kw.md_kw.md) |
+| [`meta.py_docs.md`](../../../../docs/torchgen/api/meta.py_docs.md) | Documentation | [docs](./meta.py_docs.md_docs.md) | [keywords](./meta.py_docs.md_kw.md) |
+| [`meta.py_kw.md`](../../../../docs/torchgen/api/meta.py_kw.md) | Documentation | [docs](./meta.py_kw.md_docs.md) | [keywords](./meta.py_kw.md_kw.md) |
+| [`native.py_docs.md`](../../../../docs/torchgen/api/native.py_docs.md) | Documentation | [docs](./native.py_docs.md_docs.md) | [keywords](./native.py_docs.md_kw.md) |
+| [`native.py_kw.md`](../../../../docs/torchgen/api/native.py_kw.md) | Documentation | [docs](./native.py_kw.md_docs.md) | [keywords](./native.py_kw.md_kw.md) |
+| [`python.py_docs.md`](../../../../docs/torchgen/api/python.py_docs.md) | Documentation | [docs](./python.py_docs.md_docs.md) | [keywords](./python.py_docs.md_kw.md) |
+| [`python.py_kw.md`](../../../../docs/torchgen/api/python.py_kw.md) | Documentation | [docs](./python.py_kw.md_docs.md) | [keywords](./python.py_kw.md_kw.md) |
+| [`structured.py_docs.md`](../../../../docs/torchgen/api/structured.py_docs.md) | Documentation | [docs](./structured.py_docs.md_docs.md) | [keywords](./structured.py_docs.md_kw.md) |
+| [`structured.py_kw.md`](../../../../docs/torchgen/api/structured.py_kw.md) | Documentation | [docs](./structured.py_kw.md_docs.md) | [keywords](./structured.py_kw.md_kw.md) |
+| [`translate.py_docs.md`](../../../../docs/torchgen/api/translate.py_docs.md) | Documentation | [docs](./translate.py_docs.md_docs.md) | [keywords](./translate.py_docs.md_kw.md) |
+| [`translate.py_kw.md`](../../../../docs/torchgen/api/translate.py_kw.md) | Documentation | [docs](./translate.py_kw.md_docs.md) | [keywords](./translate.py_kw.md_kw.md) |
+| [`ufunc.py_docs.md`](../../../../docs/torchgen/api/ufunc.py_docs.md) | Documentation | [docs](./ufunc.py_docs.md_docs.md) | [keywords](./ufunc.py_docs.md_kw.md) |
+| [`ufunc.py_kw.md`](../../../../docs/torchgen/api/ufunc.py_kw.md) | Documentation | [docs](./ufunc.py_kw.md_docs.md) | [keywords](./ufunc.py_kw.md_kw.md) |
+| [`unboxing.py_docs.md`](../../../../docs/torchgen/api/unboxing.py_docs.md) | Documentation | [docs](./unboxing.py_docs.md_docs.md) | [keywords](./unboxing.py_docs.md_kw.md) |
+| [`unboxing.py_kw.md`](../../../../docs/torchgen/api/unboxing.py_kw.md) | Documentation | [docs](./unboxing.py_kw.md_docs.md) | [keywords](./unboxing.py_kw.md_kw.md) |
+
+
+## Navigation
+
+- **Parent Folder**: [..](../index.md)
+- **Folder Documentation**: [doc.md](./doc.md)
+- **Keyword Index**: [sub.md](./sub.md)
+
+---
+
+*Generated by PyTorch Repository Documentation System*

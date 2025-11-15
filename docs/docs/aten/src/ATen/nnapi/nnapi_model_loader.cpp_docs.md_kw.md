@@ -1,0 +1,127 @@
+# Keyword Index: `docs/aten/src/ATen/nnapi/nnapi_model_loader.cpp_docs.md`
+
+## File Information
+
+- **Original File**: [docs/aten/src/ATen/nnapi/nnapi_model_loader.cpp_docs.md](../../../../../../docs/aten/src/ATen/nnapi/nnapi_model_loader.cpp_docs.md)
+- **Documentation**: [`nnapi_model_loader.cpp_docs.md_docs.md`](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **Folder**: `docs/aten/src/ATen/nnapi`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`A`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`ANEURALNETWORKS_NO_ERROR`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`ANeuralNetworksMemory`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`ANeuralNetworksModel`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`ANeuralNetworksOperandType`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`ATen`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`All`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Analysis`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Architecture`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`C`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`CAFFE_ENFORCE`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`CMakeLists`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Classes`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Code`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Common`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Considerations`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Cross`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Dependencies`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Design`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Detailed`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Documentation`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Examples`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Extension`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`File`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Files`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Folder`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`For`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Generated`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Get`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`High`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Idioms`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Import`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Index`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`It`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`KB`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Keep`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Keyword`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Level`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Library`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Logging`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Manual`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Maybe`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Memory`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Metadata`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Model`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Model_addOperand`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Model_addOperation`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Model_identifyInputsAndOutputs`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Model_setOperandValue`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`NNAPI`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`NNAPI_CHECK`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`NNAPI_LOADER_STANDALONE`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`NOLINTNEXTLINE`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Namespaces`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`NeuralNetworks`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`No`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Notes`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Original`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Overview`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Path`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Patterns`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Performance`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Purpose`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`PyTorch`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`References`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Related`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Repository`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Role`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`SOURCE_IMMEDIATE`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`SOURCE_NUMBERED_BUFFER`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`SOURCE_NUMBERED_MEMORY`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Safety`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Security`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`See`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Serialized`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`SerializedModel`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`SerializedOperand`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`SerializedOperation`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`SerializedValue`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Size`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Source`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`SourceType`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Structs`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Structure`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`System`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`TODO`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Tensor`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Test`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Testing`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`This`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Type`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Unknown`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+- **`Usage`**: [nnapi_model_loader.cpp_docs.md_docs.md](./nnapi_model_loader.cpp_docs.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

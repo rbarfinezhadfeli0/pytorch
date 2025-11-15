@@ -1,0 +1,313 @@
+# Documentation: `tools/linter/adapters/_linter/python_file.py`
+
+## File Metadata
+
+- **Path**: `tools/linter/adapters/_linter/python_file.py`
+- **Size**: 6,116 bytes (5.97 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is a **utility or tool script**.
+
+## Original Source
+
+```python
+from __future__ import annotations
+
+import token
+from functools import cached_property
+from pathlib import Path
+from tokenize import generate_tokens, TokenInfo
+from typing import TYPE_CHECKING
+from typing_extensions import Self
+
+from . import EMPTY_TOKENS, NO_TOKEN, ParseError, ROOT
+from .blocks import blocks
+from .sets import LineWithSets
+
+
+if TYPE_CHECKING:
+    from collections.abc import Sequence
+
+    from .block import Block
+
+
+class PythonFile:
+    contents: str
+    lines: list[str]
+    path: Path | None
+    linter_name: str
+
+    def __init__(
+        self,
+        linter_name: str,
+        path: Path | None = None,
+        contents: str | None = None,
+    ) -> None:
+        self.linter_name = linter_name
+        self.path = path and (path.relative_to(ROOT) if path.is_absolute() else path)
+        if contents is None and path is not None:
+            contents = path.read_text()
+
+        self.contents = contents or ""
+        self.lines = self.contents.splitlines(keepends=True)
+
+    @classmethod
+    def make(cls, linter_name: str, pc: Path | str | None = None) -> Self:
+        if isinstance(pc, Path):
+            return cls(linter_name, path=pc)
+        return cls(linter_name, contents=pc)
+
+    def with_contents(self, contents: str) -> Self:
+        return self.__class__(self.linter_name, self.path, contents)
+
+    @cached_property
+    def omitted(self) -> OmittedLines:
+        assert self.linter_name is not None
+        return OmittedLines(self.lines, self.linter_name)
+
+    @cached_property
+    def tokens(self) -> list[TokenInfo]:
+        # Might raise IndentationError if the code is mal-indented
+        return list(generate_tokens(iter(self.lines).__next__))
+
+    @cached_property
+    def token_lines(self) -> list[list[TokenInfo]]:
+        """Returns lists of TokenInfo segmented by token.NEWLINE"""
+        token_lines: list[list[TokenInfo]] = [[]]
+
+        for t in self.tokens:
+            if t.type not in (token.COMMENT, token.ENDMARKER, token.NL):
+                token_lines[-1].append(t)
+                if t.type == token.NEWLINE:
+                    token_lines.append([])
+        if token_lines and not token_lines[-1]:
+            token_lines.pop()
+        return token_lines
+
+    @cached_property
+    def import_lines(self) -> list[list[int]]:
+        froms, imports = [], []
+        for i, (t, *_) in enumerate(self.token_lines):
+            if t.type == token.INDENT:
+                break
+            if t.type == token.NAME:
+                if t.string == "from":
+                    froms.append(i)
+                elif t.string == "import":
+                    imports.append(i)
+
+        return [froms, imports]
+
+    @cached_property
+    def opening_comment_lines(self) -> int:
+        """The number of comments at the very top of the file."""
+        it = (i for i, s in enumerate(self.lines) if not s.startswith("#"))
+        return next(it, 0)
+
+    def __getitem__(self, i: int | slice) -> TokenInfo | Sequence[TokenInfo]:
+        return self.tokens[i]
+
+    def next_token(self, start: int, token_type: int, error: str) -> int:
+        for i in range(start, len(self.tokens)):
+            if self.tokens[i].type == token_type:
+                return i
+        raise ParseError(self.tokens[-1], error)
+
+    def docstring(self, start: int) -> str:
+        for i in range(start + 1, len(self.tokens)):
+            tk = self.tokens[i]
+            if tk.type == token.STRING:
+                return tk.string
+            if tk.type not in EMPTY_TOKENS:
+                return ""
+        return ""
+
+    @cached_property
+    def indent_to_dedent(self) -> dict[int, int]:
+        dedents = dict[int, int]()
+        stack = list[int]()
+
+        for i, t in enumerate(self.tokens):
+            if t.type == token.INDENT:
+                stack.append(i)
+            elif t.type == token.DEDENT:
+                dedents[stack.pop()] = i
+
+        return dedents
+
+    @cached_property
+    def errors(self) -> dict[str, str]:
+        return {}
+
+    @cached_property
+    def braced_sets(self) -> list[Sequence[TokenInfo]]:
+        lines = [t for tl in self._lines_with_sets for t in tl.braced_sets]
+        return [s for s in lines if not self.omitted(s)]
+
+    @cached_property
+    def sets(self) -> list[TokenInfo]:
+        tokens = [t for tl in self._lines_with_sets for t in tl.sets]
+        return [t for t in tokens if not self.omitted([t])]
+
+    @cached_property
+    def insert_import_line(self) -> int | None:
+        froms, imports = self.import_lines
+        for i in froms + imports:
+            tl = self.token_lines[i]
+            if any(i.type == token.NAME and i.string == "OrderedSet" for i in tl):
+                return None
+        if section := froms or imports:
+            return self._lines_with_sets[section[-1]].tokens[-1].start[0] + 1
+        return self.opening_comment_lines + 1
+
+    @cached_property
+    def _lines_with_sets(self) -> list[LineWithSets]:
+        return [LineWithSets(tl) for tl in self.token_lines]
+
+    @cached_property
+    def blocks(self) -> list[Block]:
+        res = blocks(self.tokens)
+        self.errors.update(res.errors)
+        return res.blocks
+
+
+class OmittedLines:
+    """Read lines textually and find comment lines that end in 'noqa {linter_name}'"""
+
+    omitted: set[int]
+
+    def __init__(self, lines: Sequence[str], linter_name: str) -> None:
+        self.lines = lines
+        suffix = f"# noqa: {linter_name}"
+        omitted = ((i, s.rstrip()) for i, s in enumerate(lines))
+        self.omitted = {i + 1 for i, s in omitted if s.endswith(suffix)}
+
+    def __call__(
+        self, tokens: Sequence[TokenInfo], begin: int = 0, end: int = NO_TOKEN
+    ) -> bool:
+        if end == NO_TOKEN:
+            end = len(tokens)
+        # A token_line might span multiple physical lines
+        start = min((tokens[i].start[0] for i in range(begin, end)), default=0)
+        end = max((tokens[i].end[0] for i in range(begin, end)), default=-1)
+        return self.contains_lines(start, end)
+
+    def contains_lines(self, begin: int, end: int) -> bool:
+        return bool(self.omitted.intersection(range(begin, end + 1)))
+
+```
+
+
+
+## High-Level Overview
+
+
+This Python file contains 2 class(es) and 21 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `PythonFile`, `OmittedLines`
+
+**Functions defined**: `__init__`, `make`, `with_contents`, `omitted`, `tokens`, `token_lines`, `import_lines`, `opening_comment_lines`, `__getitem__`, `next_token`, `docstring`, `indent_to_dedent`, `errors`, `braced_sets`, `sets`, `insert_import_line`, `_lines_with_sets`, `blocks`, `__init__`, `__call__`
+
+**Key imports**: annotations, token, cached_property, Path, generate_tokens, TokenInfo, TYPE_CHECKING, Self, EMPTY_TOKENS, NO_TOKEN, ParseError, ROOT, blocks, LineWithSets
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `tools/linter/adapters/_linter`, which contains **development tools and scripts**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `__future__`: annotations
+- `token`
+- `functools`: cached_property
+- `pathlib`: Path
+- `tokenize`: generate_tokens, TokenInfo
+- `typing`: TYPE_CHECKING
+- `typing_extensions`: Self
+- `.`: EMPTY_TOKENS, NO_TOKEN, ParseError, ROOT
+- `.blocks`: blocks
+- `.sets`: LineWithSets
+- `collections.abc`: Sequence
+- `.block`: Block
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Implements or uses **caching** mechanisms.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`tools/linter/adapters/_linter`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`messages.py_docs.md`](./messages.py_docs.md)
+- [`sets.py_docs.md`](./sets.py_docs.md)
+- [`block.py_docs.md`](./block.py_docs.md)
+- [`argument_parser.py_docs.md`](./argument_parser.py_docs.md)
+- [`blocks.py_docs.md`](./blocks.py_docs.md)
+- [`bracket_pairs.py_docs.md`](./bracket_pairs.py_docs.md)
+- [`file_linter.py_docs.md`](./file_linter.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `python_file.py_docs.md`
+- **Keyword Index**: `python_file.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

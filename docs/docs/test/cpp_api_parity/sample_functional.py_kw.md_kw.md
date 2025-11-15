@@ -1,0 +1,76 @@
+# Keyword Index: `docs/test/cpp_api_parity/sample_functional.py_kw.md`
+
+## File Information
+
+- **Original File**: [docs/test/cpp_api_parity/sample_functional.py_kw.md](../../../../docs/test/cpp_api_parity/sample_functional.py_kw.md)
+- **Documentation**: [`sample_functional.py_kw.md_docs.md`](./sample_functional.py_kw.md_docs.md)
+- **Folder**: `docs/test/cpp_api_parity`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`Architecture`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`Basic`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`Complete`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`Considerations`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`Dependencies`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`Design`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`Detailed`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`Documentation`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`Efficiency`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`Extracted`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`File`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`Folder`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`Functions`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`Generated`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`High`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`How`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`Imports`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`In`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`Index`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`Information`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`Keyword`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`Keywords`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`Level`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`Map`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`Metadata`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`Original`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`Overview`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`Performance`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`Purpose`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`PyTorch`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`Related`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`Repository`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`Safety`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`Section`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`Security`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`Source`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`System`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`Testing`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`The`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`This`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+- **`Usage`**: [sample_functional.py_kw.md_docs.md](./sample_functional.py_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

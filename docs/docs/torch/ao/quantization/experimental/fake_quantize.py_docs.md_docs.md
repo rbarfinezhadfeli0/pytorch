@@ -1,0 +1,284 @@
+# Documentation: `docs/torch/ao/quantization/experimental/fake_quantize.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/ao/quantization/experimental/fake_quantize.py_docs.md`
+- **Size**: 4,475 bytes (4.37 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/ao/quantization/experimental/fake_quantize.py`
+
+## File Metadata
+
+- **Path**: `torch/ao/quantization/experimental/fake_quantize.py`
+- **Size**: 1,821 bytes (1.78 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This is a python source code that is part of the PyTorch project.
+
+## Original Source
+
+```python
+from collections.abc import Callable
+from typing import Any
+
+import torch
+from torch import Tensor
+from torch.ao.quantization.experimental.fake_quantize_function import (
+    fake_quantize_function,
+)
+from torch.ao.quantization.experimental.observer import APoTObserver
+from torch.ao.quantization.fake_quantize import FakeQuantizeBase
+
+
+class APoTFakeQuantize(FakeQuantizeBase):
+    alpha: Tensor
+    gamma: Tensor
+    quantization_levels: Tensor
+    level_indices: Tensor
+
+    def __init__(self, observer: Callable = APoTObserver, **observer_kwargs: Any):
+        super().__init__()
+        self.activation_post_process = observer(**observer_kwargs)
+        self.dtype = self.activation_post_process.dtype
+
+    def calculate_qparams(  # type: ignore[override]
+        self, signed: bool = False
+    ) -> tuple[Tensor, Tensor, Tensor, Tensor]:
+        return self.activation_post_process.calculate_qparams(signed=signed)
+
+    def forward(self, X: torch.Tensor) -> Tensor:  # type: ignore[override]
+        if self.observer_enabled[0] == 1:
+            self.activation_post_process.forward(X)
+            result = self.activation_post_process.calculate_qparams(signed=False)
+            self.alpha = result[0]
+            self.gamma = result[1]
+            self.quantization_levels = result[2]
+            self.level_indices = result[3]
+
+        if self.fake_quant_enabled[0] == 1:
+            if (
+                self.alpha is None
+                or self.gamma is None
+                or self.quantization_levels is None
+                or self.level_indices is None
+            ):
+                raise AssertionError("Must set qparams for fake quant")
+            X = fake_quantize_function.apply(
+                X, self.alpha, self.gamma, self.quantization_levels, self.level_indices
+            )
+        return X
+
+```
+
+
+
+## High-Level Overview
+
+
+This Python file contains 1 class(es) and 3 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `APoTFakeQuantize`
+
+**Functions defined**: `__init__`, `calculate_qparams`, `forward`
+
+**Key imports**: Callable, Any, torch, Tensor, APoTObserver, FakeQuantizeBase
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/ao/quantization/experimental`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `collections.abc`: Callable
+- `typing`: Any
+- `torch`
+- `torch.ao.quantization.experimental.observer`: APoTObserver
+- `torch.ao.quantization.fake_quantize`: FakeQuantizeBase
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/ao/quantization/experimental`):
+
+- [`adaround_fake_quantize.py_docs.md`](./adaround_fake_quantize.py_docs.md)
+- [`linear.py_docs.md`](./linear.py_docs.md)
+- [`adaround_loss.py_docs.md`](./adaround_loss.py_docs.md)
+- [`observer.py_docs.md`](./observer.py_docs.md)
+- [`quantizer.py_docs.md`](./quantizer.py_docs.md)
+- [`fake_quantize_function.py_docs.md`](./fake_quantize_function.py_docs.md)
+- [`APoT_tensor.py_docs.md`](./APoT_tensor.py_docs.md)
+- [`qconfig.py_docs.md`](./qconfig.py_docs.md)
+- [`adaround_optimization.py_docs.md`](./adaround_optimization.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `fake_quantize.py_docs.md`
+- **Keyword Index**: `fake_quantize.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/ao/quantization/experimental`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/ao/quantization/experimental`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/ao/quantization/experimental`):
+
+- [`qconfig.py_docs.md_docs.md`](./qconfig.py_docs.md_docs.md)
+- [`apot_utils.py_docs.md_docs.md`](./apot_utils.py_docs.md_docs.md)
+- [`APoT_tensor.py_kw.md_docs.md`](./APoT_tensor.py_kw.md_docs.md)
+- [`fake_quantize_function.py_kw.md_docs.md`](./fake_quantize_function.py_kw.md_docs.md)
+- [`adaround_loss.py_docs.md_docs.md`](./adaround_loss.py_docs.md_docs.md)
+- [`apot_utils.py_kw.md_docs.md`](./apot_utils.py_kw.md_docs.md)
+- [`adaround_fake_quantize.py_docs.md_docs.md`](./adaround_fake_quantize.py_docs.md_docs.md)
+- [`APoT_tensor.py_docs.md_docs.md`](./APoT_tensor.py_docs.md_docs.md)
+- [`observer.py_kw.md_docs.md`](./observer.py_kw.md_docs.md)
+- [`observer.py_docs.md_docs.md`](./observer.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `fake_quantize.py_docs.md_docs.md`
+- **Keyword Index**: `fake_quantize.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

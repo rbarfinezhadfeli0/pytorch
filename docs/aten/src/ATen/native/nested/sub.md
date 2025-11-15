@@ -1,0 +1,98 @@
+# Subtree Keyword Index: `aten/src/ATen/native/nested/`
+
+## Scope
+
+This index covers all files within `aten/src/ATen/native/nested/` and all its subdirectories (recursively).
+
+## Keywords
+
+
+### NestedTensorAliases
+
+- [`aten/src/ATen/native/nested/NestedTensorAliases.cpp`](./NestedTensorAliases.cpp_docs.md)
+
+### NestedTensorBackward
+
+- [`aten/src/ATen/native/nested/NestedTensorBackward.cpp`](./NestedTensorBackward.cpp_docs.md)
+
+### NestedTensorBinaryOps
+
+- [`aten/src/ATen/native/nested/NestedTensorBinaryOps.cpp`](./NestedTensorBinaryOps.cpp_docs.md)
+- [`aten/src/ATen/native/nested/NestedTensorBinaryOps.h`](./NestedTensorBinaryOps.h_docs.md)
+- [`aten/src/ATen/native/nested/cuda/NestedTensorBinaryOps.cu`](../../../../../aten/src/ATen/native/nested/cuda/NestedTensorBinaryOps.cu_docs.md)
+
+### NestedTensorFactories
+
+- [`aten/src/ATen/native/nested/NestedTensorFactories.cpp`](./NestedTensorFactories.cpp_docs.md)
+
+### NestedTensorMath
+
+- [`aten/src/ATen/native/nested/NestedTensorMath.cpp`](./NestedTensorMath.cpp_docs.md)
+- [`aten/src/ATen/native/nested/NestedTensorMath.h`](./NestedTensorMath.h_docs.md)
+
+### NestedTensorMatmul
+
+- [`aten/src/ATen/native/nested/NestedTensorMatmul.cpp`](./NestedTensorMatmul.cpp_docs.md)
+- [`aten/src/ATen/native/nested/cuda/NestedTensorMatmul.cu`](../../../../../aten/src/ATen/native/nested/cuda/NestedTensorMatmul.cu_docs.md)
+
+### NestedTensorTransformerFunctions
+
+- [`aten/src/ATen/native/nested/NestedTensorTransformerFunctions.h`](./NestedTensorTransformerFunctions.h_docs.md)
+- [`aten/src/ATen/native/nested/NestedTensorTransformerFunctions.cpp`](./NestedTensorTransformerFunctions.cpp_docs.md)
+- [`aten/src/ATen/native/nested/cuda/NestedTensorTransformerFunctions.cu`](../../../../../aten/src/ATen/native/nested/cuda/NestedTensorTransformerFunctions.cu_docs.md)
+- [`aten/src/ATen/native/nested/cuda/NestedTensorTransformerFunctions.cpp`](../../../../../aten/src/ATen/native/nested/cuda/NestedTensorTransformerFunctions.cpp_docs.md)
+
+### NestedTensorTransformerUtils
+
+- [`aten/src/ATen/native/nested/NestedTensorTransformerUtils.h`](./NestedTensorTransformerUtils.h_docs.md)
+- [`aten/src/ATen/native/nested/cuda/NestedTensorTransformerUtils.cpp`](../../../../../aten/src/ATen/native/nested/cuda/NestedTensorTransformerUtils.cpp_docs.md)
+
+### NestedTensorUnaryOps
+
+- [`aten/src/ATen/native/nested/NestedTensorUnaryOps.cpp`](./NestedTensorUnaryOps.cpp_docs.md)
+
+### NestedTensorUtils
+
+- [`aten/src/ATen/native/nested/NestedTensorUtils.cpp`](./NestedTensorUtils.cpp_docs.md)
+- [`aten/src/ATen/native/nested/NestedTensorUtils.h`](./NestedTensorUtils.h_docs.md)
+
+### README
+
+- [`aten/src/ATen/native/nested/README.md`](./README.md_docs.md)
+
+### files-.cpp
+
+- [`aten/src/ATen/native/nested/NestedTensorBinaryOps.cpp`](./NestedTensorBinaryOps.cpp_docs.md)
+- [`aten/src/ATen/native/nested/NestedTensorUtils.cpp`](./NestedTensorUtils.cpp_docs.md)
+- [`aten/src/ATen/native/nested/NestedTensorUnaryOps.cpp`](./NestedTensorUnaryOps.cpp_docs.md)
+- [`aten/src/ATen/native/nested/NestedTensorFactories.cpp`](./NestedTensorFactories.cpp_docs.md)
+- [`aten/src/ATen/native/nested/NestedTensorBackward.cpp`](./NestedTensorBackward.cpp_docs.md)
+- [`aten/src/ATen/native/nested/NestedTensorMatmul.cpp`](./NestedTensorMatmul.cpp_docs.md)
+- [`aten/src/ATen/native/nested/NestedTensorMath.cpp`](./NestedTensorMath.cpp_docs.md)
+- [`aten/src/ATen/native/nested/NestedTensorTransformerFunctions.cpp`](./NestedTensorTransformerFunctions.cpp_docs.md)
+- [`aten/src/ATen/native/nested/NestedTensorAliases.cpp`](./NestedTensorAliases.cpp_docs.md)
+- [`aten/src/ATen/native/nested/cuda/NestedTensorTransformerFunctions.cpp`](../../../../../aten/src/ATen/native/nested/cuda/NestedTensorTransformerFunctions.cpp_docs.md)
+- [`aten/src/ATen/native/nested/cuda/NestedTensorTransformerUtils.cpp`](../../../../../aten/src/ATen/native/nested/cuda/NestedTensorTransformerUtils.cpp_docs.md)
+
+### files-.cu
+
+- [`aten/src/ATen/native/nested/cuda/NestedTensorBinaryOps.cu`](../../../../../aten/src/ATen/native/nested/cuda/NestedTensorBinaryOps.cu_docs.md)
+- [`aten/src/ATen/native/nested/cuda/NestedTensorTransformerFunctions.cu`](../../../../../aten/src/ATen/native/nested/cuda/NestedTensorTransformerFunctions.cu_docs.md)
+- [`aten/src/ATen/native/nested/cuda/NestedTensorMatmul.cu`](../../../../../aten/src/ATen/native/nested/cuda/NestedTensorMatmul.cu_docs.md)
+
+### files-.h
+
+- [`aten/src/ATen/native/nested/NestedTensorBinaryOps.h`](./NestedTensorBinaryOps.h_docs.md)
+- [`aten/src/ATen/native/nested/NestedTensorTransformerFunctions.h`](./NestedTensorTransformerFunctions.h_docs.md)
+- [`aten/src/ATen/native/nested/NestedTensorTransformerUtils.h`](./NestedTensorTransformerUtils.h_docs.md)
+- [`aten/src/ATen/native/nested/NestedTensorUtils.h`](./NestedTensorUtils.h_docs.md)
+- [`aten/src/ATen/native/nested/NestedTensorMath.h`](./NestedTensorMath.h_docs.md)
+
+### files-.md
+
+- [`aten/src/ATen/native/nested/README.md`](./README.md_docs.md)
+
+
+---
+
+*Generated by PyTorch Repository Documentation System*

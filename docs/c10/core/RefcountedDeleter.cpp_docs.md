@@ -1,0 +1,196 @@
+# Documentation: `c10/core/RefcountedDeleter.cpp`
+
+## File Metadata
+
+- **Path**: `c10/core/RefcountedDeleter.cpp`
+- **Size**: 2,543 bytes (2.48 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#include <c10/core/RefcountedDeleter.h>
+
+#include <mutex>
+
+namespace c10 {
+
+void refcounted_deleter(void* ctx_) {
+  RefcountedDeleterContext& ctx =
+      *reinterpret_cast<RefcountedDeleterContext*>(ctx_);
+  ctx.refcount--;
+  if (ctx.refcount == 0) {
+    ctx.other_ctx = nullptr;
+    delete &ctx;
+  }
+}
+
+static std::mutex replace_data_ptr_mutex;
+
+void maybeApplyRefcountedDeleter(const c10::Storage& storage) {
+  std::lock_guard<std::mutex> guard(replace_data_ptr_mutex);
+  c10::DataPtr& data_ptr = storage.mutable_data_ptr();
+
+  if (reinterpret_cast<const void*>(data_ptr.get_deleter()) ==
+      reinterpret_cast<const void*>(&c10::refcounted_deleter)) {
+    // Data pointer is already shared
+    return;
+  }
+
+  void* data = data_ptr.get();
+  void* other_ctx = data_ptr.get_context();
+  c10::DeleterFnPtr other_deleter = data_ptr.get_deleter();
+  c10::Device device = data_ptr.device();
+
+  // Release the context of the original DataPtr so that the data doesn't
+  // get deleted when the original DataPtr is replaced
+  data_ptr.release_context();
+
+  c10::RefcountedDeleterContext* refcount_ctx =
+      new c10::RefcountedDeleterContext(other_ctx, other_deleter);
+
+  c10::DataPtr new_data_ptr(
+      data,
+      reinterpret_cast<void*>(refcount_ctx),
+      &c10::refcounted_deleter,
+      device);
+  storage.set_data_ptr(std::move(new_data_ptr));
+}
+
+c10::Storage newStorageImplFromRefcountedDataPtr(const c10::Storage& storage) {
+  c10::maybeApplyRefcountedDeleter(storage);
+
+  c10::StorageImpl* storage_impl = storage.unsafeGetStorageImpl();
+
+  c10::DataPtr& data_ptr = storage.mutable_data_ptr();
+  c10::DataPtr new_data_ptr(
+      data_ptr.get(),
+      data_ptr.get_context(),
+      data_ptr.get_deleter(),
+      data_ptr.device());
+
+  // NOTE: This refcount increment should always happen immediately after
+  // `new_data_ptr` is created. No other lines of code should be added between
+  // them in the future, unless there's a very good reason for it, because if
+  // any errors are raised and `new_data_ptr` is deleted before the refcount is
+  // incremented, the refcount will get decremented and end up being one less
+  // than it should be.
+  reinterpret_cast<c10::RefcountedDeleterContext*>(data_ptr.get_context())
+      ->refcount++;
+
+  c10::Storage new_storage = c10::make_intrusive<c10::StorageImpl>(
+      c10::StorageImpl::use_byte_size_t(),
+      storage_impl->nbytes(),
+      std::move(new_data_ptr),
+      storage_impl->allocator(),
+      /*resizable=*/storage_impl->resizable());
+  return new_storage;
+}
+
+} // namespace c10
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 5 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `c10`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `c10/core`, which is part of **C10** (Caffe2 Core), the core library providing fundamental abstractions.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `c10/core/RefcountedDeleter.h`
+- `mutex`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`c10/core`):
+
+- [`DispatchKey.cpp_docs.md`](./DispatchKey.cpp_docs.md)
+- [`CopyBytes.h_docs.md`](./CopyBytes.h_docs.md)
+- [`OptionalRef.h_docs.md`](./OptionalRef.h_docs.md)
+- [`TensorOptions.h_docs.md`](./TensorOptions.h_docs.md)
+- [`MemoryFormat.h_docs.md`](./MemoryFormat.h_docs.md)
+- [`SafePyObject.cpp_docs.md`](./SafePyObject.cpp_docs.md)
+- [`DeviceType.cpp_docs.md`](./DeviceType.cpp_docs.md)
+- [`SymBool.cpp_docs.md`](./SymBool.cpp_docs.md)
+- [`Allocator.cpp_docs.md`](./Allocator.cpp_docs.md)
+- [`SymbolicShapeMeta.cpp_docs.md`](./SymbolicShapeMeta.cpp_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `RefcountedDeleter.cpp_docs.md`
+- **Keyword Index**: `RefcountedDeleter.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

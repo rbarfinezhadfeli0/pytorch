@@ -1,0 +1,517 @@
+# Documentation: `docs/aten/src/ATen/native/quantized/cpu/qnnpack/src/conv-prepack.cc_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/native/quantized/cpu/qnnpack/src/conv-prepack.cc_docs.md`
+- **Size**: 12,275 bytes (11.99 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/native/quantized/cpu/qnnpack/src/conv-prepack.cc`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/native/quantized/cpu/qnnpack/src/conv-prepack.cc`
+- **Size**: 9,758 bytes (9.53 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cc`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#include <pytorch_qnnpack.h>
+#include <qnnpack/log.h>
+#include <qnnpack/operator.h>
+#include <qnnpack/pack.h>
+#include <qnnpack_func.h>
+#include <cstring>
+
+namespace qnnpack {
+
+PrePackConvWeights::PrePackConvWeights(
+    const pytorch_qnnp_operator_t convolution,
+    const uint8_t* kernel_zero_points,
+    const uint8_t* kernel,
+    const int32_t* bias) {
+  enum pytorch_qnnp_ukernel_type ukernel_type = convolution->ukernel_type;
+  const uint32_t kernel_width = convolution->kernel_width;
+  const uint32_t kernel_height = convolution->kernel_height;
+  // deconvolution leaves this 0 for now, remove when deconvolution supports 3d
+  const uint32_t kernel_depth =
+      convolution->kernel_depth ? convolution->kernel_depth : 1;
+  const uint32_t groups = convolution->groups;
+
+  if (convolution->transpose &&
+      ukernel_type != pytorch_qnnp_ukernel_type_conv) {
+    pytorch_qnnp_log_error("Wrong micro-kernel for deconvolution");
+    assert(false && "QNNPACK Runtime Error.");
+  }
+
+  const size_t kernel_size = kernel_height * kernel_width * kernel_depth;
+  switch (ukernel_type) {
+    case pytorch_qnnp_ukernel_type_dwconv: {
+      const uint32_t cr = pytorch_qnnp_params.q8dw9.cr;
+      const uint32_t c_stride = (groups + (cr - 1)) & -cr;
+      const size_t packed_weights_size =
+          (sizeof(uint8_t) * kernel_size + sizeof(int32_t)) * c_stride;
+      packed_weights_ = malloc(packed_weights_size);
+      if (packed_weights_ == nullptr) {
+        pytorch_qnnp_log_error(
+            "failed to allocate %zu bytes for packed weights",
+            packed_weights_size);
+        assert(false && "QNNPACK Runtime Error.");
+      }
+
+      switch (kernel_size) {
+        case 9:
+          pytorch_pack_q8dw_wrq(
+              kernel_height,
+              kernel_width,
+              groups,
+              cr,
+              kernel,
+              bias,
+              packed_weights_);
+          break;
+        case 25:
+          /* change this later */
+          pytorch_pack_q8dw_2d_w_dilation(
+              kernel_height,
+              kernel_width,
+              groups,
+              cr,
+              0,
+              kernel_height,
+              0,
+              2,
+              kernel,
+              bias,
+              packed_weights_,
+              true);
+          pytorch_pack_q8dw_2d_w_dilation(
+              kernel_height,
+              kernel_width,
+              groups,
+              cr,
+              0,
+              kernel_height,
+              2,
+              4,
+              kernel,
+              bias,
+              (char*)packed_weights_ +
+                  (10 + sizeof(int32_t) / sizeof(uint8_t)) * c_stride,
+              false);
+          pytorch_pack_q8dw_2d_w_dilation(
+              kernel_height,
+              kernel_width,
+              groups,
+              cr,
+              0,
+              kernel_height,
+              4,
+              5,
+              kernel,
+              bias,
+              (char*)packed_weights_ +
+                  (20 + sizeof(int32_t) / sizeof(uint8_t)) * c_stride,
+              false);
+          break;
+        case 27:
+          pytorch_pack_q8dw_3d_w_dilation(
+              kernel_depth,
+              kernel_height,
+              kernel_width,
+              groups,
+              cr,
+              0,
+              kernel_depth,
+              0,
+              kernel_height,
+              0,
+              1,
+              kernel,
+              bias,
+              packed_weights_,
+              true);
+          pytorch_pack_q8dw_3d_w_dilation(
+              kernel_depth,
+              kernel_height,
+              kernel_width,
+              groups,
+              cr,
+              0,
+              kernel_depth,
+              0,
+              kernel_height,
+              1,
+              2,
+              kernel,
+              bias,
+              (char*)packed_weights_ +
+                  (kernel_depth * kernel_height +
+                   sizeof(int32_t) / sizeof(uint8_t)) *
+                      c_stride,
+              false);
+          pytorch_pack_q8dw_3d_w_dilation(
+              kernel_depth,
+              kernel_height,
+              kernel_width,
+              groups,
+              cr,
+              0,
+              kernel_depth,
+              0,
+              kernel_height,
+              2,
+              3,
+              kernel,
+              bias,
+              (char*)packed_weights_ +
+                  (2 * kernel_depth * kernel_height +
+                   sizeof(int32_t) / sizeof(uint8_t)) *
+                      c_stride,
+              false);
+          break;
+        default:
+          PYTORCH_QNNP_UNREACHABLE;
+      }
+      break;
+    }
+    case pytorch_qnnp_ukernel_type_xzp_gemm: {
+      const uint32_t nr = pytorch_qnnp_params.q8conv_xzp.nr;
+      const uint32_t kr = pytorch_qnnp_params.q8conv_xzp.kr;
+      const uint32_t sr = pytorch_qnnp_params.q8conv_xzp.kc;
+      const uint32_t n_stride =
+          (convolution->group_output_channels + (nr - 1)) & -nr;
+      const uint32_t k_stride =
+          (convolution->group_input_channels + (kr - 1)) & -kr;
+
+      const size_t packed_group_weights_size =
+          (sizeof(uint8_t) * kernel_size * k_stride + sizeof(int32_t)) *
+          n_stride;
+      packed_weights_ = malloc(packed_group_weights_size * groups);
+      if (packed_weights_ == nullptr) {
+        pytorch_qnnp_log_error(
+            "failed to allocate %zu bytes for packed weights",
+            packed_group_weights_size * groups);
+        assert(false && "QNNPACK Runtime Error.");
+      }
+      /* The XZP ukernel needs the padding to be 0 */
+      memset(packed_weights_, 0, packed_group_weights_size * groups);
+
+      for (uint32_t group = 0; group < groups; group++) {
+        pytorch_pack_swizzle_q8gemm_brq(
+            convolution->group_output_channels,
+            convolution->group_input_channels,
+            nr,
+            kr,
+            sr,
+            kernel +
+                group * convolution->group_output_channels *
+                    convolution->group_input_channels,
+            bias + group * convolution->group_output_channels,
+            (void*)((uintptr_t)packed_weights_ + group * packed_group_weights_size));
+      }
+      break;
+    }
+    case pytorch_qnnp_ukernel_type_gemm:
+    case pytorch_qnnp_ukernel_type_conv: {
+      const uint32_t nr = pytorch_qnnp_params.q8conv.nr;
+      const uint32_t kr = pytorch_qnnp_params.q8conv.kr;
+      const uint32_t n_stride =
+          (convolution->group_output_channels + (nr - 1)) & -nr;
+      const uint32_t k_stride =
+          (convolution->group_input_channels + (kr - 1)) & -kr;
+
+      const size_t packed_group_weights_size =
+          (sizeof(uint8_t) * kernel_size * k_stride + sizeof(int32_t)) *
+          n_stride;
+      packed_weights_ = malloc(packed_group_weights_size * groups);
+      if (packed_weights_ == nullptr) {
+        pytorch_qnnp_log_error(
+            "failed to allocate %zu bytes for packed weights",
+            packed_group_weights_size * groups);
+        assert(false && "QNNPACK Runtime Error.");
+      }
+      // We likely won't needs this once packing functions are appropriately
+      // modified. Remove it then.
+      memset(
+          packed_weights_,
+          kernel_zero_points[0],
+          packed_group_weights_size * groups);
+
+      switch (ukernel_type) {
+        case pytorch_qnnp_ukernel_type_gemm:
+          for (uint32_t group = 0; group < groups; group++) {
+            pytorch_pack_q8gemm_wrq(
+                convolution->group_output_channels,
+                convolution->group_input_channels,
+                nr,
+                nr,
+                kr,
+                kernel +
+                    group * convolution->group_output_channels *
+                        convolution->group_input_channels,
+                bias + group * convolution->group_output_channels,
+                kernel_zero_points + group * convolution->group_output_channels,
+                (void*)((uintptr_t)packed_weights_ + group * packed_group_weights_size));
+          }
+          break;
+        case pytorch_qnnp_ukernel_type_conv:  // The transpose can only be here
+          for (uint32_t group = 0; group < groups; group++) {
+            const uint8_t* const kernel_p = kernel +
+                group * convolution->group_output_channels * kernel_size *
+                    convolution->group_input_channels;
+            const int32_t* const bias_p =
+                bias + group * convolution->group_output_channels;
+            if (convolution
+                    ->transpose) { // Note that only runtime packing is here
+              pytorch_pack_q8deconv_wrq(
+                  convolution->group_output_channels,
+                  kernel_size,
+                  convolution->group_input_channels,
+                  nr,
+                  kr,
+                  kernel_p,
+                  bias_p,
+                  kernel_zero_points +
+                      group * convolution->group_output_channels,
+                  (void*)((uintptr_t)packed_weights_ + group * packed_group_weights_size));
+            } else {
+              pytorch_pack_q8conv_wrq(
+                  convolution->group_output_channels,
+                  kernel_size,
+                  convolution->group_input_channels,
+                  nr,
+                  kr,
+                  kernel_p,
+                  bias_p,
+                  kernel_zero_points +
+                      group * convolution->group_output_channels,
+                  (void*)((uintptr_t)packed_weights_ + group * packed_group_weights_size));
+            }
+          }
+          break;
+        default:
+          PYTORCH_QNNP_UNREACHABLE;
+      }
+      break;
+    }
+    default:
+      PYTORCH_QNNP_UNREACHABLE;
+  }
+} // namespace qnnpack
+} // namespace qnnpack
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 2 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `qnnpack`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/native/quantized/cpu/qnnpack/src`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `pytorch_qnnpack.h`
+- `qnnpack/log.h`
+- `qnnpack/operator.h`
+- `qnnpack/pack.h`
+- `qnnpack_func.h`
+- `cstring`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/native/quantized/cpu/qnnpack/src`):
+
+- [`global-average-pooling.c_docs.md`](./global-average-pooling.c_docs.md)
+- [`fully-connected-sparse.c_docs.md`](./fully-connected-sparse.c_docs.md)
+- [`tanh.c_docs.md`](./tanh.c_docs.md)
+- [`add.c_docs.md`](./add.c_docs.md)
+- [`channel-shuffle.c_docs.md`](./channel-shuffle.c_docs.md)
+- [`fc-dynamic-run.cc_docs.md`](./fc-dynamic-run.cc_docs.md)
+- [`softargmax.c_docs.md`](./softargmax.c_docs.md)
+- [`fully-connected.c_docs.md`](./fully-connected.c_docs.md)
+- [`conv-run.cc_docs.md`](./conv-run.cc_docs.md)
+- [`init.c_docs.md`](./init.c_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `conv-prepack.cc_docs.md`
+- **Keyword Index**: `conv-prepack.cc_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/native/quantized/cpu/qnnpack/src`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/native/quantized/cpu/qnnpack/src`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/native/quantized/cpu/qnnpack/src`):
+
+- [`hardsigmoid.c_kw.md_docs.md`](./hardsigmoid.c_kw.md_docs.md)
+- [`indirection.c_docs.md_docs.md`](./indirection.c_docs.md_docs.md)
+- [`conv-prepack.cc_kw.md_docs.md`](./conv-prepack.cc_kw.md_docs.md)
+- [`deconvolution.c_docs.md_docs.md`](./deconvolution.c_docs.md_docs.md)
+- [`fully-connected.c_docs.md_docs.md`](./fully-connected.c_docs.md_docs.md)
+- [`fully-connected-sparse.c_docs.md_docs.md`](./fully-connected-sparse.c_docs.md_docs.md)
+- [`softargmax.c_kw.md_docs.md`](./softargmax.c_kw.md_docs.md)
+- [`operator-run.c_docs.md_docs.md`](./operator-run.c_docs.md_docs.md)
+- [`indirection.c_kw.md_docs.md`](./indirection.c_kw.md_docs.md)
+- [`tanh.c_docs.md_docs.md`](./tanh.c_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `conv-prepack.cc_docs.md_docs.md`
+- **Keyword Index**: `conv-prepack.cc_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

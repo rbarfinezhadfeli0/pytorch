@@ -1,0 +1,85 @@
+# Keyword Index: `docs/torch/csrc/jit/passes/autocast.cpp_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/csrc/jit/passes/autocast.cpp_kw.md](../../../../../../docs/torch/csrc/jit/passes/autocast.cpp_kw.md)
+- **Documentation**: [`autocast.cpp_kw.md_docs.md`](./autocast.cpp_kw.md_docs.md)
+- **Folder**: `docs/torch/csrc/jit/passes`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`ATen`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Analysis`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Architecture`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Autocast`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`AutocastContext`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`AutocastScope`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Basic`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Class`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Complete`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Considerations`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Dependencies`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Design`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Detailed`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Documentation`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Efficiency`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Exception`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Extracted`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`File`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Folder`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Functions`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Generated`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`High`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`How`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`In`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Includes`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Index`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Information`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Keyword`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Keywords`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Level`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Map`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Metadata`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Namespaces`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Original`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Overview`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Performance`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Purpose`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`PyTorch`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Related`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Repository`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Safety`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`ScalarType`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Section`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Security`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Source`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Structs`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`System`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Testing`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`The`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`This`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+- **`Usage`**: [autocast.cpp_kw.md_docs.md](./autocast.cpp_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

@@ -1,0 +1,294 @@
+# Documentation: `docs/torch/distributed/_shard/common_op_utils.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/distributed/_shard/common_op_utils.py_docs.md`
+- **Size**: 4,560 bytes (4.45 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/distributed/_shard/common_op_utils.py`
+
+## File Metadata
+
+- **Path**: `torch/distributed/_shard/common_op_utils.py`
+- **Size**: 2,179 bytes (2.13 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This is a python source code that is part of the PyTorch project.
+
+## Original Source
+
+```python
+# mypy: allow-untyped-defs
+from typing import Optional
+
+import torch
+from torch.utils import _pytree as pytree
+
+
+def _basic_validation(op, args=(), kwargs=None):
+    """
+    Common validation across all ops go in here.
+    """
+    from torch.distributed._shard.sharded_tensor import ShardedTensor
+
+    if len(args) == 0 and (kwargs is None or len(kwargs) == 0):
+        raise ValueError(f" No input for '{op.__name__}'!")
+
+    # Validate types
+    has_distributed_tensor = False
+
+    def is_distributed_tensor(e):
+        nonlocal has_distributed_tensor
+        if isinstance(e, ShardedTensor):
+            has_distributed_tensor = True
+
+    pytree.tree_map_(is_distributed_tensor, args)
+    pytree.tree_map_(is_distributed_tensor, kwargs)
+
+    if not has_distributed_tensor:
+        raise TypeError(
+            f"torch function '{op.__name__}', with args: {args} and "
+            f"kwargs: {kwargs} are called without any distributed tensor!"
+        )
+
+    # Validate all distributed tensors use the same PG.
+    cur_pg: Optional[torch.distributed.ProcessGroup] = None
+
+    def validate_pg(e):
+        nonlocal cur_pg
+        if isinstance(e, ShardedTensor):
+            if cur_pg is not None and e._process_group is not cur_pg:
+                raise RuntimeError(
+                    "All distributed tensors should use the "
+                    "same ProcessGroup if used together in an op."
+                )
+            cur_pg = e._process_group
+
+    pytree.tree_map_(validate_pg, args)
+    pytree.tree_map_(validate_pg, kwargs)
+
+
+def _register_default_op(op, decorator):
+    @decorator(op)
+    def tensor_default_op(types, args=(), kwargs=None, pg=None):
+        """
+        Handles ``__torch_function__`` dispatch for the default tensor ops that
+        behave the same as ``torch.Tensor`` such as ``torch.Tensor.shape`` or
+        ``torch.Tensor.dtype``. We simply lower to the real op call with
+        DisableTorchFunctionSubclass context like ``torch.Tensor.__torch_function__``
+        to avoid recursions.
+        """
+        if kwargs is None:
+            kwargs = {}
+
+        with torch._C.DisableTorchFunctionSubclass():
+            return op(*args, **kwargs)
+
+```
+
+
+
+## High-Level Overview
+
+"""    Common validation across all ops go in here.
+
+This Python file contains 1 class(es) and 5 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Functions defined**: `_basic_validation`, `is_distributed_tensor`, `validate_pg`, `_register_default_op`, `tensor_default_op`
+
+**Key imports**: Optional, torch, _pytree as pytree, ShardedTensor
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/distributed/_shard`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `typing`: Optional
+- `torch`
+- `torch.utils`: _pytree as pytree
+- `torch.distributed._shard.sharded_tensor`: ShardedTensor
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/distributed/_shard`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`op_registry_utils.py_docs.md`](./op_registry_utils.py_docs.md)
+- [`_utils.py_docs.md`](./_utils.py_docs.md)
+- [`metadata.py_docs.md`](./metadata.py_docs.md)
+- [`api.py_docs.md`](./api.py_docs.md)
+- [`sharder.py_docs.md`](./sharder.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `common_op_utils.py_docs.md`
+- **Keyword Index**: `common_op_utils.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/distributed/_shard`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/distributed/_shard`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/distributed/_shard`):
+
+- [`api.py_kw.md_docs.md`](./api.py_kw.md_docs.md)
+- [`metadata.py_docs.md_docs.md`](./metadata.py_docs.md_docs.md)
+- [`metadata.py_kw.md_docs.md`](./metadata.py_kw.md_docs.md)
+- [`_utils.py_kw.md_docs.md`](./_utils.py_kw.md_docs.md)
+- [`_utils.py_docs.md_docs.md`](./_utils.py_docs.md_docs.md)
+- [`__init__.py_docs.md_docs.md`](./__init__.py_docs.md_docs.md)
+- [`sharder.py_docs.md_docs.md`](./sharder.py_docs.md_docs.md)
+- [`sharder.py_kw.md_docs.md`](./sharder.py_kw.md_docs.md)
+- [`op_registry_utils.py_kw.md_docs.md`](./op_registry_utils.py_kw.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `common_op_utils.py_docs.md_docs.md`
+- **Keyword Index**: `common_op_utils.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

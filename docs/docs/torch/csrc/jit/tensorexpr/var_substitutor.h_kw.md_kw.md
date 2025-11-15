@@ -1,0 +1,79 @@
+# Keyword Index: `docs/torch/csrc/jit/tensorexpr/var_substitutor.h_kw.md`
+
+## File Information
+
+- **Original File**: [docs/torch/csrc/jit/tensorexpr/var_substitutor.h_kw.md](../../../../../../docs/torch/csrc/jit/tensorexpr/var_substitutor.h_kw.md)
+- **Documentation**: [`var_substitutor.h_kw.md_docs.md`](./var_substitutor.h_kw.md_docs.md)
+- **Folder**: `docs/torch/csrc/jit/tensorexpr`
+
+## Keywords Extracted
+
+This file contains the following key identifiers, symbols, and concepts:
+
+
+### Identifiers
+
+- **`Analysis`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`Architecture`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`Basic`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`Class`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`Complete`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`Considerations`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`Dependencies`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`Design`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`Detailed`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`Documentation`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`Efficiency`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`Extracted`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`File`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`Folder`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`Generated`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`High`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`How`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`In`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`Includes`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`Index`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`Information`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`Keyword`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`Keywords`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`Level`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`Map`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`Metadata`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`Namespaces`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`Original`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`Overview`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`Performance`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`Purpose`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`PyTorch`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`Related`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`Repository`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`Safety`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`Section`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`Security`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`Source`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`Structs`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`System`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`Testing`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`The`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`This`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`Usage`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+- **`VarSubMutator`**: [var_substitutor.h_kw.md_docs.md](./var_substitutor.h_kw.md_docs.md)
+
+
+## Keyword → Section Map
+
+The following sections in the documentation cover these topics:
+
+- **File Metadata**: Basic file information
+- **Original Source**: Complete source code
+- **High-Level Overview**: Purpose and role
+- **Detailed Analysis**: In-depth code analysis
+- **Architecture & Design**: Design patterns and structure
+- **Dependencies**: Related modules and imports
+- **Performance Considerations**: Efficiency and optimization
+- **Security & Safety**: Security analysis
+- **Testing & Usage**: How to use and test
+
+---
+
+*Generated by PyTorch Repository Documentation System*

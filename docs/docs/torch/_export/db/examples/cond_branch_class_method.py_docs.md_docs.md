@@ -1,0 +1,279 @@
+# Documentation: `docs/torch/_export/db/examples/cond_branch_class_method.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/torch/_export/db/examples/cond_branch_class_method.py_docs.md`
+- **Size**: 4,669 bytes (4.56 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**. This file contains **examples or benchmarks**.
+
+## Original Source
+
+```markdown
+# Documentation: `torch/_export/db/examples/cond_branch_class_method.py`
+
+## File Metadata
+
+- **Path**: `torch/_export/db/examples/cond_branch_class_method.py`
+- **Size**: 1,327 bytes (1.30 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file contains **examples or benchmarks**.
+
+## Original Source
+
+```python
+# mypy: allow-untyped-defs
+import torch
+
+from functorch.experimental.control_flow import cond
+
+class MySubModule(torch.nn.Module):
+    def foo(self, x):
+        return x.cos()
+
+    def forward(self, x):
+        return self.foo(x)
+
+class CondBranchClassMethod(torch.nn.Module):
+    """
+    The branch functions (`true_fn` and `false_fn`) passed to cond() must follow these rules:
+      - both branches must take the same args, which must also match the branch args passed to cond.
+      - both branches must return a single tensor
+      - returned tensor must have the same tensor metadata, e.g. shape and dtype
+      - branch function can be free function, nested function, lambda, class methods
+      - branch function can not have closure variables
+      - no inplace mutations on inputs or global variables
+
+
+    This example demonstrates using class method in cond().
+
+    NOTE: If the `pred` is test on a dim with batch size < 2, it will be specialized.
+    """
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.subm = MySubModule()
+
+    def bar(self, x):
+        return x.sin()
+
+    def forward(self, x):
+        return cond(x.shape[0] <= 2, self.subm.forward, self.bar, [x])
+
+example_args = (torch.randn(3),)
+tags = {
+    "torch.cond",
+    "torch.dynamic-shape",
+}
+model = CondBranchClassMethod()
+
+```
+
+
+
+## High-Level Overview
+
+"""    The branch functions (`true_fn` and `false_fn`) passed to cond() must follow these rules:      - both branches must take the same args, which must also match the branch args passed to cond.      - both branches must return a single tensor      - returned tensor must have the same tensor metadata, e.g. shape and dtype      - branch function can be free function, nested function, lambda, class methods      - branch function can not have closure variables      - no inplace mutations on inputs or global variables    This example demonstrates using class method in cond().    NOTE: If the `pred` is test on a dim with batch size < 2, it will be specialized.
+
+This Python file contains 4 class(es) and 5 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `MySubModule`, `CondBranchClassMethod`
+
+**Functions defined**: `foo`, `forward`, `__init__`, `bar`, `forward`
+
+**Key imports**: torch, cond
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `torch/_export/db/examples`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `torch`
+- `functorch.experimental.control_flow`: cond
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`torch/_export/db/examples`):
+
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`model_attr_mutation.py_docs.md`](./model_attr_mutation.py_docs.md)
+- [`dynamic_shape_round.py_docs.md`](./dynamic_shape_round.py_docs.md)
+- [`null_context_manager.py_docs.md`](./null_context_manager.py_docs.md)
+- [`constrain_as_value_example.py_docs.md`](./constrain_as_value_example.py_docs.md)
+- [`static_if.py_docs.md`](./static_if.py_docs.md)
+- [`cond_branch_nested_function.py_docs.md`](./cond_branch_nested_function.py_docs.md)
+- [`fn_with_kwargs.py_docs.md`](./fn_with_kwargs.py_docs.md)
+- [`cond_branch_nonlocal_variables.py_docs.md`](./cond_branch_nonlocal_variables.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `cond_branch_class_method.py_docs.md`
+- **Keyword Index**: `cond_branch_class_method.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/torch/_export/db/examples`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/torch/_export/db/examples`, which is part of the **core PyTorch library**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/torch/_export/db/examples`):
+
+- [`dynamic_shape_assert.py_kw.md_docs.md`](./dynamic_shape_assert.py_kw.md_docs.md)
+- [`optional_input.py_docs.md_docs.md`](./optional_input.py_docs.md_docs.md)
+- [`static_if.py_docs.md_docs.md`](./static_if.py_docs.md_docs.md)
+- [`nested_function.py_docs.md_docs.md`](./nested_function.py_docs.md_docs.md)
+- [`list_contains.py_kw.md_docs.md`](./list_contains.py_kw.md_docs.md)
+- [`autograd_function.py_docs.md_docs.md`](./autograd_function.py_docs.md_docs.md)
+- [`cond_predicate.py_kw.md_docs.md`](./cond_predicate.py_kw.md_docs.md)
+- [`cond_predicate.py_docs.md_docs.md`](./cond_predicate.py_docs.md_docs.md)
+- [`cond_branch_nonlocal_variables.py_kw.md_docs.md`](./cond_branch_nonlocal_variables.py_kw.md_docs.md)
+- [`dynamic_shape_slicing.py_docs.md_docs.md`](./dynamic_shape_slicing.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `cond_branch_class_method.py_docs.md_docs.md`
+- **Keyword Index**: `cond_branch_class_method.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

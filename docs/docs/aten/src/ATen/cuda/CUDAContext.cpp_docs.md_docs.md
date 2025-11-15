@@ -1,0 +1,325 @@
+# Documentation: `docs/aten/src/ATen/cuda/CUDAContext.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/cuda/CUDAContext.cpp_docs.md`
+- **Size**: 5,024 bytes (4.91 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/cuda/CUDAContext.cpp`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/cuda/CUDAContext.cpp`
+- **Size**: 2,492 bytes (2.43 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#include <ATen/cuda/CUDAContext.h>
+#include <c10/cuda/CUDACachingAllocator.h>
+#include <c10/util/CallOnce.h>
+
+#include <ATen/cuda/CUDAConfig.h>
+#include <deque>
+#include <vector>
+
+namespace at::cuda {
+
+namespace {
+
+DeviceIndex num_gpus = -1;
+std::deque<c10::once_flag> device_flags;
+std::vector<cudaDeviceProp> device_properties;
+
+void initCUDAContextVectors() {
+  static bool init_flag [[maybe_unused]] = []() {
+    num_gpus = c10::cuda::device_count();
+    device_flags.resize(num_gpus);
+    device_properties.resize(num_gpus);
+    return true;
+  }();
+}
+
+void initDeviceProperty(DeviceIndex device_index) {
+  cudaDeviceProp device_prop{};
+  AT_CUDA_CHECK(cudaGetDeviceProperties(&device_prop, device_index));
+  device_properties[device_index] = device_prop;
+}
+
+} // anonymous namespace
+
+// We need this function to force the linking against torch_cuda(_cpp) on Windows.
+// If you need to modify this function, please specify a new function and apply
+// the changes according to https://github.com/pytorch/pytorch/pull/34288.
+// Related issue: https://github.com/pytorch/pytorch/issues/31611.
+/* Device info */
+int warp_size() {
+  return getCurrentDeviceProperties()->warpSize;
+}
+
+cudaDeviceProp* getCurrentDeviceProperties() {
+  auto device = c10::cuda::current_device();
+  return getDeviceProperties(device);
+}
+
+cudaDeviceProp* getDeviceProperties(c10::DeviceIndex device) {
+  initCUDAContextVectors();
+  if (device == -1)
+    device = c10::cuda::current_device();
+  AT_ASSERT(
+      device >= 0 && device < num_gpus,
+      "device=",
+      static_cast<int>(device),
+      ", num_gpus=",
+      static_cast<int>(num_gpus));
+  c10::call_once(device_flags[device], initDeviceProperty, device);
+  return &device_properties[device];
+}
+
+bool canDeviceAccessPeer(
+    c10::DeviceIndex device,
+    c10::DeviceIndex peer_device) {
+  initCUDAContextVectors();
+  if (device == -1)
+    device = c10::cuda::current_device();
+  AT_ASSERT(
+      device >= 0 && device < num_gpus,
+      "device=",
+      static_cast<int>(device),
+      ", num_gpus=",
+      static_cast<int>(num_gpus));
+  AT_ASSERT(
+      peer_device >= 0 && peer_device < num_gpus,
+      "peer_device=",
+      static_cast<int>(peer_device),
+      ", num_gpus=",
+      static_cast<int>(num_gpus));
+  int can_access = 0;
+  AT_CUDA_CHECK(cudaDeviceCanAccessPeer(&can_access, device, peer_device));
+  return can_access != 0;
+}
+
+Allocator* getCUDADeviceAllocator() {
+  return c10::cuda::CUDACachingAllocator::get();
+}
+
+} // namespace at::cuda
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 7 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `at`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen/cuda`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/cuda/CUDAContext.h`
+- `c10/cuda/CUDACachingAllocator.h`
+- `c10/util/CallOnce.h`
+- `ATen/cuda/CUDAConfig.h`
+- `deque`
+- `vector`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen/cuda`):
+
+- [`CublasHandlePool.cpp_docs.md`](./CublasHandlePool.cpp_docs.md)
+- [`llvm_basic.cpp_docs.md`](./llvm_basic.cpp_docs.md)
+- [`CUDABlas.h_docs.md`](./CUDABlas.h_docs.md)
+- [`jiterator.cu_docs.md`](./jiterator.cu_docs.md)
+- [`CUDAGraph.h_docs.md`](./CUDAGraph.h_docs.md)
+- [`llvm_jit_strings.h_docs.md`](./llvm_jit_strings.h_docs.md)
+- [`llvm_complex.cpp_docs.md`](./llvm_complex.cpp_docs.md)
+- [`CUDAGeneratorImpl.cpp_docs.md`](./CUDAGeneratorImpl.cpp_docs.md)
+- [`cub_definitions.cuh_docs.md`](./cub_definitions.cuh_docs.md)
+- [`jiterator_impl.h_docs.md`](./jiterator_impl.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `CUDAContext.cpp_docs.md`
+- **Keyword Index**: `CUDAContext.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen/cuda`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen/cuda`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen/cuda`):
+
+- [`PhiloxCudaState.h_docs.md_docs.md`](./PhiloxCudaState.h_docs.md_docs.md)
+- [`CUDAGeneratorImpl.cpp_docs.md_docs.md`](./CUDAGeneratorImpl.cpp_docs.md_docs.md)
+- [`Exceptions.cpp_docs.md_docs.md`](./Exceptions.cpp_docs.md_docs.md)
+- [`CUDAGeneratorImpl.cpp_kw.md_docs.md`](./CUDAGeneratorImpl.cpp_kw.md_docs.md)
+- [`Sleep.h_docs.md_docs.md`](./Sleep.h_docs.md_docs.md)
+- [`cub-RadixSortPairs-int64-2.cu_kw.md_docs.md`](./cub-RadixSortPairs-int64-2.cu_kw.md_docs.md)
+- [`CUDASparseDescriptors.h_kw.md_docs.md`](./CUDASparseDescriptors.h_kw.md_docs.md)
+- [`jiterator_impl.h_docs.md_docs.md`](./jiterator_impl.h_docs.md_docs.md)
+- [`CUDAContext.h_docs.md_docs.md`](./CUDAContext.h_docs.md_docs.md)
+- [`cub-RadixSortPairs-int64-4.cu_docs.md_docs.md`](./cub-RadixSortPairs-int64-4.cu_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `CUDAContext.cpp_docs.md_docs.md`
+- **Keyword Index**: `CUDAContext.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

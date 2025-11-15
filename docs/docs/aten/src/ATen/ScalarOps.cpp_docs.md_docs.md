@@ -1,0 +1,289 @@
+# Documentation: `docs/aten/src/ATen/ScalarOps.cpp_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/aten/src/ATen/ScalarOps.cpp_docs.md`
+- **Size**: 4,564 bytes (4.46 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **documentation**.
+
+## Original Source
+
+```markdown
+# Documentation: `aten/src/ATen/ScalarOps.cpp`
+
+## File Metadata
+
+- **Path**: `aten/src/ATen/ScalarOps.cpp`
+- **Size**: 2,125 bytes (2.08 KB)
+- **Type**: C++ Source Code
+- **Extension**: `.cpp`
+
+## File Purpose
+
+This is a c++ source code that is part of the PyTorch project.
+
+## Original Source
+
+```cpp
+#define TORCH_ASSERT_ONLY_METHOD_OPERATORS
+#include <ATen/Dispatch.h>
+#include <ATen/Dispatch_v2.h>
+#include <ATen/EmptyTensor.h>
+#include <ATen/ScalarOps.h>
+
+namespace at {
+namespace {
+template <typename scalar_t>
+inline void fill_inplace(Tensor& self, const Scalar& value_scalar) {
+  scalar_t value{};
+
+  if constexpr (std::is_same_v<scalar_t, at::Half> ||
+                std::is_same_v<scalar_t, at::BFloat16> ||
+                std::is_same_v<scalar_t, at::Float8_e5m2> ||
+                std::is_same_v<scalar_t, at::Float8_e5m2fnuz> ||
+                std::is_same_v<scalar_t, at::Float8_e4m3fn> ||
+                std::is_same_v<scalar_t, at::Float8_e4m3fnuz> ||
+                std::is_same_v<scalar_t, at::Float8_e8m0fnu>) {
+    // relaxed float cast: allow inf similar to the torch.tensor constructor
+    //
+    // without this, we had the following divergence:
+    //   torch.tensor(1123581321.0, dtype=torch.float16)
+    //     => tensor(inf, dtype=torch.float16)
+    //   torch.ops.aten.scalar_tensor.default(1123581321, dtype=torch.float16)
+    //     => RuntimeError: value cannot be converted to type at::Half without overflow
+
+    value = static_cast<scalar_t>(value_scalar.to<double>());
+  } else {
+    value = value_scalar.to<scalar_t>();
+  }
+
+  scalar_t* dptr = static_cast<scalar_t*>(self.data_ptr());
+  *dptr = value;
+}
+}
+
+namespace detail {
+Tensor& scalar_fill(Tensor& self, const Scalar& value) {
+  AT_DISPATCH_V2(
+      self.scalar_type(), "fill_out", AT_WRAP([&]() {
+        fill_inplace<scalar_t>(self, value);
+      }), kComplexHalf, kHalf, kBool, kBFloat16, AT_EXPAND(AT_ALL_TYPES_AND_COMPLEX), AT_EXPAND(AT_FLOAT8_TYPES), AT_EXPAND(AT_BAREBONES_UNSIGNED_TYPES));
+  return self;
+}
+
+Tensor scalar_tensor_static(const Scalar& s, std::optional<ScalarType> dtype_opt, std::optional<Device> device_opt) {
+  at::tracer::impl::NoTracerDispatchMode tracer_guard;
+  at::AutoDispatchBelowAutograd mode;
+  Tensor result = at::detail::empty_cpu(
+      {}, dtype_opt, std::nullopt, device_opt, std::nullopt, std::nullopt);
+  scalar_fill(result, s);
+  return result;
+}
+} // namespace detail
+} // namespace at
+
+```
+
+
+
+## High-Level Overview
+
+
+This C++ file contains approximately 0 class(es)/struct(s) and 3 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Namespaces**: `detail`, `at`
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `aten/src/ATen`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file includes:
+
+- `ATen/Dispatch.h`
+- `ATen/Dispatch_v2.h`
+- `ATen/EmptyTensor.h`
+- `ATen/ScalarOps.h`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`aten/src/ATen`):
+
+- [`TensorGeometry.cpp_docs.md`](./TensorGeometry.cpp_docs.md)
+- [`ROCmFABackend.h_docs.md`](./ROCmFABackend.h_docs.md)
+- [`Generator.h_docs.md`](./Generator.h_docs.md)
+- [`ParallelCommon.cpp_docs.md`](./ParallelCommon.cpp_docs.md)
+- [`ZeroTensorFallback.cpp_docs.md`](./ZeroTensorFallback.cpp_docs.md)
+- [`CachedTensorUtils.h_docs.md`](./CachedTensorUtils.h_docs.md)
+- [`LegacyBatchedFallback.cpp_docs.md`](./LegacyBatchedFallback.cpp_docs.md)
+- [`TensorOptions.h_docs.md`](./TensorOptions.h_docs.md)
+- [`ExpandUtils.h_docs.md`](./ExpandUtils.h_docs.md)
+- [`TensorIteratorInternal.h_docs.md`](./TensorIteratorInternal.h_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `ScalarOps.cpp_docs.md`
+- **Keyword Index**: `ScalarOps.cpp_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/aten/src/ATen`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/aten/src/ATen`, which is part of **ATen** (A Tensor Library), PyTorch's C++ tensor library.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+*No specific patterns automatically detected.*
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- This file appears to involve **GPU/parallel computing** capabilities.
+- Implements or uses **caching** mechanisms.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+Test files for this module may be located in the `test/` directory.
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/aten/src/ATen`):
+
+- [`Dispatch.cpp_docs.md_docs.md`](./Dispatch.cpp_docs.md_docs.md)
+- [`Context.cpp_docs.md_docs.md`](./Context.cpp_docs.md_docs.md)
+- [`ThreadLocalState.cpp_docs.md_docs.md`](./ThreadLocalState.cpp_docs.md_docs.md)
+- [`DeviceAccelerator.cpp_kw.md_docs.md`](./DeviceAccelerator.cpp_kw.md_docs.md)
+- [`FunctionalInverses.cpp_kw.md_docs.md`](./FunctionalInverses.cpp_kw.md_docs.md)
+- [`SequenceNumber.h_kw.md_docs.md`](./SequenceNumber.h_kw.md_docs.md)
+- [`ThreadLocalPythonObjects.h_docs.md_docs.md`](./ThreadLocalPythonObjects.h_docs.md_docs.md)
+- [`TensorNames.h_docs.md_docs.md`](./TensorNames.h_docs.md_docs.md)
+- [`LegacyBatchedTensorImpl.h_docs.md_docs.md`](./LegacyBatchedTensorImpl.h_docs.md_docs.md)
+- [`TensorOperators.h_docs.md_docs.md`](./TensorOperators.h_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `ScalarOps.cpp_docs.md_docs.md`
+- **Keyword Index**: `ScalarOps.cpp_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*

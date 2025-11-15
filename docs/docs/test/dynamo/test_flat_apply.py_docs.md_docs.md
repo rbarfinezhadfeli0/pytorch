@@ -1,0 +1,435 @@
+# Documentation: `docs/test/dynamo/test_flat_apply.py_docs.md`
+
+## File Metadata
+
+- **Path**: `docs/test/dynamo/test_flat_apply.py_docs.md`
+- **Size**: 8,479 bytes (8.28 KB)
+- **Type**: Markdown Documentation
+- **Extension**: `.md`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This file is part of the **documentation**. This appears to be a **test file**.
+
+## Original Source
+
+```markdown
+# Documentation: `test/dynamo/test_flat_apply.py`
+
+## File Metadata
+
+- **Path**: `test/dynamo/test_flat_apply.py`
+- **Size**: 5,374 bytes (5.25 KB)
+- **Type**: Python Source Code
+- **Extension**: `.py`
+
+## File Purpose
+
+This file is part of the **testing infrastructure**. This appears to be a **test file**. Can be **executed as a standalone script**.
+
+## Original Source
+
+```python
+# Owner(s): ["module: dynamo", "module: higher order operators"]
+from dataclasses import dataclass
+
+import torch
+import torch._dynamo.test_case
+import torch.utils._pytree as pytree
+from torch._dynamo.testing import (
+    AotEagerAndRecordGraphs,
+    EagerAndRecordGraphs,
+    normalize_gm,
+)
+from torch._higher_order_ops.flat_apply import (
+    flat_apply,
+    func_to_graphable,
+    is_graphable,
+    to_graphable,
+)
+
+
+def distance(a, b, norm):
+    if norm.typ == "l2":
+        return torch.sqrt((a.x - b.x).pow(2) + (a.y - b.y).pow(2))
+    elif norm.typ == "l1":
+        return (a.x - b.x).abs() + (a.y - b.y).abs()
+
+
+@dataclass(frozen=True)
+class Norm:
+    typ: str
+
+
+pytree.register_constant(Norm)
+
+
+@dataclass
+class Point:
+    x: torch.Tensor
+    y: torch.Tensor
+
+
+pytree.register_dataclass(Point)
+
+
+class FlatApplyTests(torch._dynamo.test_case.TestCase):
+    def test_simple(self):
+        tensor = torch.tensor
+
+        a = Point(tensor(0.0), tensor(0.0))
+        b = Point(tensor(3.0), tensor(4.0))
+        norm = Norm("l2")
+
+        args = (a, b)
+        kwargs = {"norm": norm}
+
+        empty_list, func_spec = func_to_graphable(distance)
+        self.assertEqual(empty_list, [])
+
+        flat_args, in_spec = to_graphable((args, kwargs))
+
+        for arg in flat_args:
+            self.assertTrue(is_graphable(arg))
+
+        # Test flat_apply returns same thing as original function
+        result = flat_apply(func_spec, in_spec, *flat_args)
+        self.assertEqual(result, distance(*args, **kwargs))
+
+    def test_non_tensor_output(self):
+        tensor = torch.tensor
+
+        a = Point(tensor(0.0), tensor(0.0))
+        b = Point(tensor(3.0), tensor(4.0))
+
+        args = (a, b)
+        kwargs = {}
+
+        def f(a, b):
+            return [a.x + 1, (b.x + 2, [a.y + 3, 4.0], "5"), 6 + b.y]
+
+        empty_list, func_spec = func_to_graphable(f)
+        self.assertEqual(empty_list, [])
+
+        flat_args, in_spec = to_graphable((args, kwargs))
+
+        for arg in flat_args:
+            self.assertTrue(is_graphable(arg))
+
+        # Test flat_apply returns same thing as original function
+        result = flat_apply(func_spec, in_spec, *flat_args)
+        self.assertEqual(result, f(*args, **kwargs))
+
+    def test_nonstrict_trace_dynamo_graph(self):
+        class Point:
+            x: torch.Tensor
+            y: torch.Tensor
+
+            def __init__(self, x, y):
+                self.x = x
+                self.y = y
+
+        class PointTensor:
+            p: Point
+            t: torch.Tensor
+
+            def __init__(self, p, t):
+                self.p = p
+                self.t = t
+
+        torch.utils._pytree.register_pytree_node(
+            PointTensor,
+            lambda pt: ((pt.p, pt.t), ()),
+            lambda pt, _: PointTensor(pt[0], pt[1]),
+        )
+
+        torch.utils._pytree.register_pytree_node(
+            Point,
+            lambda p: ((p.x, p.y), ()),
+            lambda xy, _: Point(xy[0], xy[1]),
+        )
+
+        def trace_point(p):
+            torch._dynamo.graph_break()
+            return p.x * p.y
+
+        @torch._dynamo.nonstrict_trace
+        def trace_point_tensor(pt):
+            torch._dynamo.graph_break()
+            return pt.t + trace_point(pt.p)
+
+        backend = EagerAndRecordGraphs()
+
+        @torch.compile(fullgraph=True, backend=backend)
+        def fn(x, y):
+            p = Point(x, y)
+            t = x + y
+            pt = PointTensor(p, t)
+            res = trace_point_tensor(pt)
+            return res
+
+        fn(torch.randn(10), torch.randn(10))
+        self.assertExpectedInline(
+            normalize_gm(backend.graphs[0].print_readable(print_output=False)),
+            """\
+class GraphModule(torch.nn.Module):
+    def forward(self, L_x_: "f32[10]", L_y_: "f32[10]"):
+        l_x_ = L_x_
+        l_y_ = L_y_
+
+        t: "f32[10]" = l_x_ + l_y_
+
+        trace_point_tensor_spec : torch.utils._pytree.TreeSpec = self.trace_point_tensor_spec
+        trace_point_tensor_input_spec : torch.utils._pytree.TreeSpec = self.trace_point_tensor_input_spec
+        res: "f32[10]" = torch.ops.higher_order.flat_apply(trace_point_tensor_spec, trace_point_tensor_input_spec, l_x_, l_y_, t);  trace_point_tensor_spec = trace_point_tensor_input_spec = l_x_ = l_y_ = t = None
+        return (res,)
+""",  # NOQA: B950
+        )
+
+    def test_nonstrict_trace_captured_tensor_post_aot_graph(self):
+        cst = torch.ones(1)
+
+        @torch._dynamo.nonstrict_trace
+        def trace_me(x, y):
+            torch._dynamo.graph_break()
+            return x * y + cst
+
+        backend = AotEagerAndRecordGraphs()
+
+        @torch.compile(fullgraph=True, backend=backend)
+        def fn(x, y):
+            return trace_me(x, y)
+
+        fn(torch.randn(10), torch.randn(10))
+        self.assertExpectedInline(
+            normalize_gm(backend.fw_graphs[0].print_readable(print_output=False)),
+            """\
+class <lambda>(torch.nn.Module):
+    def forward(self, arg0_1: "f32[10]", arg1_1: "f32[10]"):
+        mul: "f32[10]" = torch.ops.aten.mul.Tensor(arg0_1, arg1_1);  arg0_1 = arg1_1 = None
+        _tensor_constant0: "f32[1]" = self._tensor_constant0
+        add: "f32[10]" = torch.ops.aten.add.Tensor(mul, _tensor_constant0);  mul = _tensor_constant0 = None
+        return (add,)
+""",  # NOQA: B950
+        )
+
+
+if __name__ == "__main__":
+    from torch._dynamo.test_case import run_tests
+
+    run_tests()
+
+```
+
+
+
+## High-Level Overview
+
+
+This Python file contains 7 class(es) and 15 function(s).
+
+## Detailed Analysis
+
+### Code Structure
+
+**Classes defined**: `Norm`, `Point`, `FlatApplyTests`, `Point`, `PointTensor`, `GraphModule`
+
+**Functions defined**: `distance`, `test_simple`, `test_non_tensor_output`, `f`, `test_nonstrict_trace_dynamo_graph`, `__init__`, `__init__`, `trace_point`, `trace_point_tensor`, `fn`, `forward`, `test_nonstrict_trace_captured_tensor_post_aot_graph`, `trace_me`, `fn`, `forward`
+
+**Key imports**: dataclass, torch, torch._dynamo.test_case, torch.utils._pytree as pytree, run_tests
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `test/dynamo`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+This file imports:
+
+- `dataclasses`: dataclass
+- `torch`
+- `torch._dynamo.test_case`
+- `torch.utils._pytree as pytree`
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python test/dynamo/test_flat_apply.py
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`test/dynamo`):
+
+- [`test_guard_serialization.py_docs.md`](./test_guard_serialization.py_docs.md)
+- [`test_subgraphs.py_docs.md`](./test_subgraphs.py_docs.md)
+- [`__init__.py_docs.md`](./__init__.py_docs.md)
+- [`test_unspec.py_docs.md`](./test_unspec.py_docs.md)
+- [`test_trace_rules.py_docs.md`](./test_trace_rules.py_docs.md)
+- [`test_package.py_docs.md`](./test_package.py_docs.md)
+- [`test_pre_dispatch.py_docs.md`](./test_pre_dispatch.py_docs.md)
+- [`test_autograd_function.py_docs.md`](./test_autograd_function.py_docs.md)
+- [`test_optimizers.py_docs.md`](./test_optimizers.py_docs.md)
+- [`test_callback.py_docs.md`](./test_callback.py_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_flat_apply.py_docs.md`
+- **Keyword Index**: `test_flat_apply.py_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
+
+```
+
+
+
+## High-Level Overview
+
+This file is part of the PyTorch framework located at `docs/test/dynamo`.
+
+## Detailed Analysis
+
+### Code Structure
+
+
+*For complete code details, see the Original Source section above.*
+
+
+## Architecture & Design
+
+### Role in PyTorch Architecture
+
+This file is located in `docs/test/dynamo`, which is part of the **testing infrastructure**.
+
+
+
+## Dependencies
+
+### Import Dependencies
+
+*Dependency analysis not applicable for this file type.*
+
+
+## Code Patterns & Idioms
+
+### Common Patterns
+
+- **Object-Oriented Design**: Uses classes and constructors
+- **Neural Network**: Defines or uses PyTorch neural network components
+
+
+## Performance Considerations
+
+### Performance Notes
+
+- May involve **JIT compilation** or compilation optimizations.
+- Contains **benchmarking** code or performance tests.
+
+*Detailed performance analysis requires profiling and benchmarking.*
+
+
+## Security & Safety
+
+### Security Considerations
+
+- No obvious security concerns detected in automated analysis.
+
+*Manual security review is recommended for production code.*
+
+
+## Testing & Usage
+
+### Testing
+
+This is a test file. Run it with:
+
+```bash
+python docs/test/dynamo/test_flat_apply.py_docs.md
+```
+
+### Usage Examples
+
+*See the source code and related test files for usage examples.*
+
+
+## Related Files
+
+### Related Files
+
+Files in the same folder (`docs/test/dynamo`):
+
+- [`test_error_messages.py_docs.md_docs.md`](./test_error_messages.py_docs.md_docs.md)
+- [`test_hooks.py_kw.md_docs.md`](./test_hooks.py_kw.md_docs.md)
+- [`test_unittest.py_docs.md_docs.md`](./test_unittest.py_docs.md_docs.md)
+- [`test_minifier.py_kw.md_docs.md`](./test_minifier.py_kw.md_docs.md)
+- [`test_aot_autograd.py_kw.md_docs.md`](./test_aot_autograd.py_kw.md_docs.md)
+- [`test_einops.py_docs.md_docs.md`](./test_einops.py_docs.md_docs.md)
+- [`test_compile.py_kw.md_docs.md`](./test_compile.py_kw.md_docs.md)
+- [`test_misc.py_docs.md_docs.md`](./test_misc.py_docs.md_docs.md)
+- [`test_buffers_override.py_kw.md_docs.md`](./test_buffers_override.py_kw.md_docs.md)
+- [`test_frame_init.py_docs.md_docs.md`](./test_frame_init.py_docs.md_docs.md)
+
+
+## Cross-References
+
+- **File Documentation**: `test_flat_apply.py_docs.md_docs.md`
+- **Keyword Index**: `test_flat_apply.py_docs.md_kw.md`
+- **Folder Index**: `index.md`
+- **Folder Documentation**: `doc.md`
+
+---
+
+*Generated by PyTorch Repository Documentation System*
